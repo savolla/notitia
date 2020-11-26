@@ -327,7 +327,7 @@ this tutorial will create a website with a database. also this will be only appl
 3. Name your Project
 4. select *Web Application (Model-View-Controller)* and change the *authentication* to *Individual User Accounts*
 5. .Net Core will generate lots of code for us. so we don't need to do everything from scratch
-6. run the project. let visual studio download thatever it needs to download. the first run will take some time btw
+6. run the project. let visual studio download whatever it needs to download. the first run will take some time btw
 ******* folders and MVC
 + three directories are so important in *solution explorer*;
 1. *Model* : where classes are defined. for example a shopping website has Customer, Shipping classes in Model directory
@@ -336,7 +336,6 @@ this tutorial will create a website with a database. also this will be only appl
     + are combinations of *html* and *c#*.
     + file extension of the razor page is *.cshtml*
 3. *Controller* : controls _when_ pages appear. what data should they show to the user
-
 ******* create first page
 here we will use *Model* and *View* to create first page
 1. right click on *Model/Add/Class*
@@ -463,6 +462,19 @@ now we have a section with search
 :LEFT_HERE:
 ******* hide the joke answer
 ******* limit "create" for logged users
+*** how to
+**** create more than one primary keys in a table
+this technique is called *clustered primary key*
+#+begin_src sql
+CREATE TABLE [dbo].[StudentCourse]
+(
+    [StudentId] INT NOT NULL,
+    [CourseId] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ("StudentId","CourseId"),
+    CONSTRAINT [FK_StudentCourse_Course] FOREIGN KEY ([CourseId]) REFERENCES [Course]([CourseId]),
+    CONSTRAINT [FK_StudentCourse_Student] FOREIGN KEY ([StudentId]) REFERENCES [Student]([StudentId])
+)
+#+end_src
 ** Java
 *** consepts
 **** nested classes
