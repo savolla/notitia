@@ -1,0 +1,947 @@
+#+TITLE: Notitia
+#+AUTHOR: Oleksiy Nehlyadyuk
+#+EMAIL: savolla@protonmail.com
+#+DATE: Fri Nov 13 09:19:17 2020
+#+LANGUAGE: tr
+#+STARTUP: overview
+
+* Topics
+** ERP
+** web programming
+** probability and statistics
+* Programming Languages
+** Python
+*** facts
++ sınıf metodları hiç parametre almasa bile, içinde mutlaka *self* parametresi barındırmalıdır. örnek: [[sınıf oluşturmak]]
++ python'da bir sınıf oluştururken __init__ metodu kullanmak zorunda değiliz.
++ python'da kalıtım almak için sadece sınıf tanımlamasında, sınıf isminin yanına, parantez içine super classın adını yazmak yeterlidir. örnek: [[python'da inheritance]]
++ kalıtım almış bir sınıfın base sınıfınından method çağırmak için *super* keywordü kullanılır. örnek: [[base class'a ulaşmak]]
++ private değişken tanımlamak için, değişkenin başına iki kere '_' koymamız gerekir. örnek: [[private değişken oluşturmak]]
+*** consepts
+**** __init__
+python classları için kullanılan *constructor*. diğer çoğu dilde genelde sınıfın adı kullanılır init yerine ama python'da bu şekilde. örnek: [[sınıf oluşturmak]]
+**** self
+C++'daki *this*'in aynısı. bunun özel bi olayı var, sınıf oluştururken kesinlikle her methodun içine parametre olarak verilmelidir. örnek : [[sınıf oluşturmak]]
+**** format string
+normalde print fonksiyonu içine yazdığımız string'e dışardan bir değişken eklemeye kalktığımızda, stringi ve değişkenleri + ile toplamamız vs gerekir. bunun yerine format string kullanılır. örnek: [[format string oluşturma]]
+**** pipenv
+kesinlikle virtualenv'den daha kullanışlı bir pakettir. bununla sanal ortam oluşturmak için [[virtual environment oluşturmak][şuna]] bak
+*** builtin function
+**** type()
+- *işlev*: bir objenin sınıfını döndürür
+- *params*: objenin kendisi
+- *kullanım*: [[pt1]]
+*** tutorial / howto
+**** bir objenin sınıfını nasıl döndürürüz | <<pt1>>
+#+BEGIN_SRC python :results output
+msg = "hello"
+print(type(msg))
+#+END_SRC
+
+#+RESULTS:
+: <class 'str'>
+**** sınıf oluşturmak
+#+BEGIN_SRC python :results output
+class Dog:
+# constructor
+def __init__(self): # self must be here
+    print("New Dog is created")
+
+def bark(self):
+    print("BARK!")
+
+d = Dog() # instantiation
+d.bark() # bark the dog
+#+END_SRC
+
+#+RESULTS:
+: New Dog is created
+: BARK!
+
+**** class property'si oluşturma ve erişme
+#+BEGIN_SRC python :results output
+class Dog:
+# class properties
+name = ""
+age = 0
+
+# constructor
+def __init__(self, dog_name):
+    self.name = dog_name # set name property
+
+d = Dog("Ares")
+print(d.name)
+#+END_SRC
+
+#+RESULTS:
+: Ares
+**** format string oluşturma
+normal print fonksiyonunun içine, tıknaktan önce bir *f* karakteri eklenir
+
+#+BEGIN_SRC python :results output
+name = "savolla"
+age = 28
+print(f"Hi! My name is {name} and I'm {age} years old")
+#+END_SRC
+
+#+RESULTS:
+: Hi! My name is savolla and I'm 28 years old
+**** python'da inheritance
+#+BEGIN_SRC python :results output
+class Mammal:
+pass
+
+class Human(Mammal):
+pass
+
+class Dog(Mammal):
+pass
+#+END_SRC
+
+**** base class'a ulaşmak
+#+BEGIN_SRC python :results output
+class Mammal:
+age = 12;
+
+class Human(Mammal):
+def someMethod(self):
+    print(super().age)
+
+h = Human()
+h.someMethod()
+#+END_SRC
+
+#+RESULTS:
+: 12
+**** private değişken oluşturmak
+#+BEGIN_SRC python :results output
+class A:
+public_var = 11
+__private_var = 43
+
+m = A()
+print(m.public_var) # this will be printed
+print(m.__private_var) # this won't
+#+END_SRC
+
+#+RESULTS:
+: 11
+: 43
+**** virtual environment oluşturmak
+1. önce *pipenv* paketi kurulur
+#+BEGIN_SRC sh
+sudo pip install pipenv
+#+END_SRC
+2. proje klasörü oluşturulup oraya girilir ve şu komut yazılır
+#+BEGIN_SRC sh
+pipenv shell
+#+END_SRC
+bu komuttan sonra, klasör adı ile bir ortam oluşacaktır. terminalin solunda projenin adı görünecek ve bu dizince bir Pipfile oluşacaktır. onu elleme lazım o.
+3. istenen python paketleri kurulur. sanal dizinde olduğundan emin ol
+#+BEGIN_SRC sh
+pipenv install django==3.0.1
+#+END_SRC
+artık ne kuruluyorsa bu klasöre kurulacak ve sistemden tamamen izole bir şekilde çalışacaktır
+4. paket silme
+#+BEGIN_SRC sh
+pipenv uninstall django==3.0.1
+#+END_SRC
+5. ortamdan çıkmak istersen
+#+BEGIN_SRC sh
+exit
+#+END_SRC
+**** pipenv ile requirements.txt'den dependency'leri kurmak
+bazen bir projenin düzgün çalışması için *requirements.txt* dosyasıyla beraber gelir
+#+BEGIN_SRC sh
+pipenv install -r ./requirements.txt
+#+END_SRC
+
+*** problems and solutions
+*** modules
+**** Matplotlib
+***** facts
++ matplotlib, veri grafiği çizdirme kütüphanesidir
++
+***** concept / term
+****** subplot()
++ birden fazla grafiği aynı anda çizdirmek için kullanılan bir matplotlib methodudur. örnek için [[birden fazla grafiği üst üste çizdirme][şuna]] ve [[birden fazla grafiği yan yana çizdirme][şuna]] bak
++ örnek kullanım: subplot(1,2,1)
+
+***** tutorial / howto
+****** basit bir grafik oluşturma
+#+BEGIN_SRC python :results graphics
+from matplotlib import pyplot as plt
+import numpy as np
+
+x = np.linspace(0,5,50)       # 0'dan başla, 5er 5er 50'ye kadar giden bir dizi oluştur
+y = x ** 2                    # x dizisininin karesini al ve y'ye ata
+plt.plot(x,y)                 # grafiği oluştur
+plt.title("squares")          # grafik başlığı
+plt.xlabel("x ekseni")        # x eksenine başlık ata
+plt.ylabel("y ekseni")        # y eksenine başlık ata
+plt.show()                    # grafiği göster
+#+END_SRC
+
+****** birden fazla grafiği üst üste çizdirme
++ üst üste çizdirmek için, iki grafiğin subplot fonksiyonundaki son parametrelerin aynı olması gerekir
+#+BEGIN_SRC python
+from matplotlib import pyplot as plt
+import numpy as np
+
+# first graphic
+x1 = np.array([1,2,3,4,5,6,7,8])
+y1 = np.array([8,7,6,5,4,3,2,1])
+plt.subplot(1,1,1)
+plt.plot(x1, y1, 'r')
+
+# second graphic
+x2 = np.array([1,2,3,4,5,6,7,8])
+y2 = np.array([1,2,3,4,5,6,7,8])
+plt.subplot(1,1,1)
+plt.plot(x2, y2, 'b')
+
+plt.show()
+#+END_SRC
+
+****** birden fazla grafiği yan yana çizdirme
+#+BEGIN_SRC python
+from matplotlib import pyplot as plt
+import numpy as np
+
+# first graphic
+x1 = np.array([1,2,3,4,5,6,7,8])
+y1 = np.array([8,7,6,5,4,3,2,1])
+plt.subplot(1,2,1)                  # son parametreye dikkat
+plt.plot(x1, y1, 'r')
+
+# second graphic
+x2 = np.array([1,2,3,4,5,6,7,8])
+y2 = np.array([1,2,3,4,5,6,7,8])
+plt.subplot(1,2,2)                  # son parametreye dikkat
+plt.plot(x2, y2, 'b')
+
+plt.show()
+#+END_SRC
+
+***** problems and solutions
+****** Tkinter hatası alınıyorsan şunu dene
+#+BEGIN_SRC sh
+xrdb -load /dev/null
+xrdb -query
+#+END_SRC
+
+**** Seaborn
+***** facts
+***** concept / term
+***** tutorial / howto
+***** problems and solutions
+**** Pandas
+***** facts
+***** concept / term
+***** tutorial / howto
+***** problems and solutions
+**** Sklearn
+***** facts
+***** concept / term
+***** tutorial / howto
+***** problems and solutions
+** VHDL
+*** facts
++ HDL : Hardware Descriptive Language
++ found in 1981
++ IEEE standard
++ initially created for ASIC synthesis
+
+** Verilog
+*** facts
++ found in 1985
++ IEEE standar
++
+*** how to
+**** create a basic module
+
+#+BEGIN_SRC verilog
+module And(x, y, out);
+input x, y;
+output out;
+assign out = x & y;
+endmodule
+#+END_SRC
+
+**** work with array of inputs and outputs
+
+#+BEGIN_SRC verilog
+module And(x, y, out);
+input [15:0] x, y; // [15:0] is the syntax of 16-bit arrays
+output [15:0] out;
+assign out = x & y;
+endmodule
+#+END_SRC
+
+**** [X] for loop in verilog
+
+#+BEGIN_SRC verilog
+integer k;                                // you have to define integer k outside
+for (k = 0; k <= 15; k=k+1) begin         // note that k++ does not work in verilog
+Xor tmp(x[k], y[k], out[k]);
+end
+#+END_SRC
+
+** C#
+*** frameworks
+**** .Net Core
+***** concepts
+****** methods
+******* Startup.cs/ConfigureServices
++ sets some initial configurations for the project. web app will read and run this method first
++ the following line will be there by default to make MVC work
+
+#+BEGIN_SRC cpp
+services.AddCountrollersWithViews();
+#+END_SRC
+
+******* Startup.cs/Configure
++ this determines if web app should run in development mode or product mode
++ under this method, developers can add a special setting that makes site routing according to Controllers;
+
+#+BEGIN_SRC cpp
+endpoints.MapDefaultControllerRoute();
+#+END_SRC
+
+***** how to
+****** use getter and setter methods
+in C# there is no need to write long *get* and *set* functions like in C++. you simply put those inside property
+#+BEGIN_SRC cpp
+public class Joke
+{
+    public int Id {get; set;}
+    public string joke_question {get; set;}
+    public string joke_answer {get; set;}
+}
+#+END_SRC
+****** create a simple website with .NET Core MVC
+this tutorial will create a website with a database. also this will be only applicable on *windows* platform and *visual studio 2019*
+******* project creation
+1. open up visual studio and press *create a new project*
+2. select *ASP .NET Core Web Application*
+3. Name your Project
+4. select *Web Application (Model-View-Controller)* and change the *authentication* to *Individual User Accounts*
+5. .Net Core will generate lots of code for us. so we don't need to do everything from scratch
+6. run the project. let visual studio download thatever it needs to download. the first run will take some time btw
+******* folders and MVC
++ three directories are so important in *solution explorer*;
+1. *Model* : where classes are defined. for example a shopping website has Customer, Shipping classes in Model directory
+2. *View* : displays the data to the user. this folder contains different kinds of files called *razor pages*
+    - razor pages
+    + are combinations of *html* and *c#*.
+    + file extension of the razor page is *.cshtml*
+3. *Controller* : controls _when_ pages appear. what data should they show to the user
+
+******* create first page
+here we will use *Model* and *View* to create first page
+1. right click on *Model/Add/Class*
+2. select *Class* from popup menu and name your class (Joke.cs) and press *Add*
+3. create some properties if you like. see [[shortcuts]] for visual studio (optinal)
+4. you _must create_ an *empty constructor* of the class. because  it will be used by other classes. because of visual studio generated lots of code for us, we actually don't know exactly what those codes are (yet)
+5. unfold *Data* directory from solution explorer (will be used later)
+6. right click on *Controller/Add/Controller*
+7. select *MVC Controller with Views, using Entity Framework* from popup
+8. from popup menu, on *Model* section, select the _name of the class you just created_ in Model directory (Joke Class)
+9. for *Data Context Class*, press _plus button_ (or add)
+10. look at the solution explorer's *Data* section. in textbox, delete the highlighted part and write what you see under Data directory (ApplicationDbContext in my case)
+11. tick everyhting below (3 of things need to be ticked)
+12. click *create*. this might take some time. after this step, several new directories will be created in our solution (you need internet connection for this to work)
+******* database migration
+our pages will not be *dynamic* if we don't create a database. Here are steps for database creation;
+
+1. check if a file starts with *0000000* is created under *Data/Migrations* directory. this contains some database informations.
+2. go to *Tools/NuGet Package Manager/Package Manager Console* to open package manager. wait for initialization
+3. enter the command:
+#+BEGIN_SRC sh
+add-migration "first-database-migration"
+#+END_SRC
+after this command, a c# file will be created under *Data/Migrations*. This is a code that creates a database table (Joke Table) see [[ORM]]
+4. finally enter this command in package manager console to create a new database inside SQL server
+#+BEGIN_SRC sh
+update-database
+#+END_SRC
+
+now go and check the tables of our newly created database if you want by clicking *View/SQL Server Object Explorer* (optional). now we have a website with database connected
+
+******* add our controller to the front page
+go to *Views/Shared/_Layout.cshtml* and copy one of the *nav-bar* classes and change it to
+#+BEGIN_SRC html
+asp-controller="Jokes" <!-- out controller's name -->
+asp-action="Index" <!-- front page of our Joke controller -->
+#+END_SRC
+this will add *Jokes view* to the front page.
+******* add search bar feature I
+
+1. go to *_Layout.cshtml* and copy another *nav-bar* element and start modifying it;
+#+BEGIN_SRC html
+asp-controller="Jokes" <!-- out controller's name -->
+asp-action="ShowSearchForm" <!-- this will be our search bar -->
+<a>Search</a> <!-- change link to more reasonable name -->
+#+END_SRC
+
+*ShowSearchForm* doesn't exist yet. So we need to define it in *Jokes Controller*. if you try to access this link, it will give "page not found" error
+
+2. go to *Controllers/JokesController.cs* and copy the first *Task* method and start modifying it
+#+BEGIN_SRC c++
+public async Task<IActionResult> ShowSearchForm() { // we changed Index to ShowSearchForm
+    return View(); // we deleted everything inside the paranthesis
+}
+#+END_SRC
+
+3. right click on *ShowSearchForm* in the code and click *Add View*. select *Razor View* instead of empty one
+(we could create a view called *ShowSearchForm* under *View* folder but we choose the shorter way)
+
+4. on the popup menu;
+- leave the View Name as is
+- Template : create
+- Model Class : Joke
+- options:
+    [x] partial view
+    [x] reference script
+
+this *will not* create a search bar. we will modify this code to make a search bar now
+
+******* add search bar feature II
+
+1. open *View/Jokes/ShowSearchForm.cshtml*
+
+2. since do not *modify* or *create* Jokes Model, we delete this line;
+#+BEGIN_SRC html
+@model JokesWebsite.Models.Joke
+#+END_SRC
+
+3. there is a line at the bottom for Joke validation. it's basically check if user inputs a joke in correct format. delete this line as well
+#+BEGIN_SRC html
+@section Scripts {
+@{await Html.RenderPartialAsync("__ValidationScriptPartial");}
+}
+#+END_SRC
+
+4. finaly convert the code into this:
+#+BEGIN_SRC html
+<h4>Search for a Joke</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ShowSearchResults"> <!-- where we want to go after submition -->
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />          <!-- SearchPhrase will be a parameter -->
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+#+END_SRC
+
+5. *SearchPhrase* will go to our Joke Controller's *ShowSearchResults* method as a parameter. Go to *Controllers/JokeController.sh*
+#+BEGIN_SRC cpp
+// GET: Jokes/ShowSearchResults
+public async Task<IActionResult> ShowSearchResults(string SearchPhrase)  // SearchPhrase is coming from ShowSearchForm
+{
+    return View("Index", await _context.Joke.Where( j => j.JokeQuestion.Contains
+                (SearchPhrase)).ToListAsync());
+}
+#+END_SRC
+
+this code snippet uses a lambda function inside the return statement
+
+now we have a section with search
+
+******* show joke owner
+:LEFT_HERE:
+******* hide the joke answer
+******* limit "create" for logged users
+** Java
+*** consepts
+**** nested classes
+- java allows you to define a class into another class. they called nested classes
+***** inner class
+- inner class _have access_ to outer class members
+- inner class' main function _cannot be static_
+
+  #+begin_src java
+  public class OuterClass {
+      int a = 3;
+      public class InnerClass {
+          int b = a; // can use outer class' members
+      }
+  }
+  #+end_src
+
+***** inner static class
+- inner static classes _don't have access_ to outer class members
+
+  #+begin_src java
+  public class OuterClass {
+      int a = 3;
+      public static class InnerClass {
+          int b = a; // this is not allowed
+      }
+  }
+  #+end_src
+
+*** facts
+*** how to
+*** problems & solutions
+* Tools
+** text editors
+*** emacs
+**** General
+***** facts
+***** concept / term
+***** tutorials / howto
+***** problems and solutions
+**** Org Mode
+***** facts
++ *radio link*'ler tez ve referans dökümanları yazımında çok etkilidir | [[radio link]]
+***** concept / term
+****** radio link
+mesela metin içinde *newton* geçen her yere wikipedia linkini eklemek istiyorsun, o zaman bunu kullanırsın. kullanıcı nerede newton görse, artık tıklanabilir bir link görür. [[radio link oluşturma][örnek]]
+***** tutorial / howto
+****** döküman içi hızlı arama
+1. Emacs için : =C-c C-j=
+Doom için : =SPC m .=
+2. aranmak istenen şeyi yaz
+3. =Enter=
+****** radio link oluşturma
+1. sayfanın herhangi bir yerine <<<>>> içine kelimeyi yaz
+
+[[radio link]] nedir?
+
+****** external sitelere link oluşturma?
+1. use [[][]] structure
+2. enter *url* in first bracket
+3. enter *alias* in second bracket
+****** show only headers on startup
+add =#+STARTUP: overview= to the beginning of the file
+****** add footnotes to the bottom
+1. create a heading in org mode
+2. add [fn::footnote content] after the heading. for example;
+******* Heading [fn::footnote content]
+
+***** problems and solutions
+*** doom
+**** tips
++ great modules to use:
+1. *pass* for password storing
+2. *irc*
+3. *org-roam* better note taking
+4. *magit* awesome git tool
+5. *deft* browse the notes
+**** how to
+***** create new keybinding for whichkey?
+#+BEGIN_SRC elisp
+(map! :leader :desc "toggle undo tree" "- c u" #'undo-tree-visualize )
+#+END_SRC
+***** do password management with pass
+1. install pass on the system
+#+BEGIN_SRC sh
+sudo pacman -S pass
+#+END_SRC
+2. uncomment *:tools pass* in [[~/.doom.d/init.el][init.el]]
+3. synchronize the doom
+#+BEGIN_SRC sh
+~/.doom.d/bin/doom sync
+#+END_SRC
+4. generate [[gpg]]
+#+BEGIN_SRC sh
+gpg --full-gen-key
+#+END_SRC
+5. generate your password directory
+use email address that you entered while [[generate a gpg key][generating]] the gpg.
+#+BEGIN_SRC sh
+pass init $GPG_EMAIL
+#+END_SRC
+6. git integration for your passwords
+this is a cool feature. you never loose your passwords even if you delete it!
+#+BEGIN_SRC sh
+pass git init
+#+END_SRC
+7. now fire up *doom*
+8. open pass
+SPC : pass
+***** fast commit!
+=SPC g g S c c "commit desc" C-c C-c q=
+***** see the value of a variable?
+1. =SPC ;=
+2. type the variable name
+3. =RET=
+***** disable line wrapping
+=SPC w t=
+***** search usage of a function online
+1. cursor over the *function*
+2. =SPC s O=
+3. =github RET=
+4. add the extension of your programming language at the end of the promt;
+example: /org-beamer-theme extension:el/
+5. =RET=
+**** cheat sheet
+
+=SPC - t t=                                 toggle tabs
+=SPC - t l=                                 list tabs
+=SPC - t n=                                 next tab
+=SPC - t p=                                 previous tab
+=SPC - t o=                                 create new tab
+=SPC - t k=                                 kill tab
+
+=SPC - c t=                                 open tagbar
+=SPC - c g=                                 run gdb
+=SPC - c u=                                 open undo tree
+=SPC t z=                                   toggle zen mode
+=SPC /=                                     ag
+=SPC g g S c c "msg" C-c C-c q=             fast commit
+=SPC X t=                                   enter a new todo
+=SPC w t=                                   disable line wrapping
+
+=SPC n r t a=                               add roam tag
+=SPC n r t d=                               delete roam tag
+=SPC n r G=                                 start [[http://localhost:8080][graph server]]
+
+**** problems & solutions
+***** with-editor.elc failed to provide feature ‘with-editor’
+#+begin_src sh
+rm -rf ~/.emacs.d/.local/straight/build*/with-editor && doom sync
+#+end_src
+
+*** vim
+**** code blocks
++ essential vimrc
+#+BEGIN_SRC sh
+set tabstop=4
+set shiftwidth=4
+set expandtab
+syntax on
+inoremap jk <Esc>
+#+END_SRC
+
+*** spacevim
+**** tutorials / howto
+***** how to installation
+1. install dependencies
+#+BEGIN_SRC sh
+sudo pacman -S neovim
+sudo pacman -S clang
+sudo pip install --user pynvim
+sudo pip3 install --user pynvim
+#+END_SRC
+2. download and install
+#+BEGIN_SRC sh
+curl -sLf https://spacevim.org/install.sh | bash
+#+END_SRC
+3. open nvim and type *VimProcInstall*
+#+BEGIN_SRC sh
+nvim
+:VimProcInstall
+#+END_SRC
+4. restart nvim. it will download all the plugins
+
+***** essential keys
+1. <F3> opens *file manager*
+2. <F2> opens *Tagbar*
+3. \ is the leader in spacevim
+***** open configuration
+SPC f v d
+*** visual studio
+**** shortcuts
+1. create a class property by doing:
+=prop TAB TAB=
+2. constructor
+=ctor TAB TAB=
+
+** programming tools
+*** Make
+**** one makefile
++ makefile for this file structure:
+
+project /
+├── include
+├── build
+├── lib
+├── obj
+├── src
+├── test
+├── main.c
+└── Makefile
+
+#+BEGIN_SRC makefile
+TARGET_EXEC ?= a.out
+
+BUILD_DIR ?= ./build
+SRC_DIRS ?= ./src
+
+SRCS := $(shell find $(SRC_DIRS) -name *.cpp -or -name *.c -or -name *.s)
+OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
+DEPS := $(OBJS:.o=.d)
+
+INC_DIRS := $(shell find $(SRC_DIRS) -type d)
+INC_FLAGS := $(addprefix -I,$(INC_DIRS))
+
+CPPFLAGS ?= $(INC_FLAGS) -MMD -MP
+
+$(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
+$(CC) $(OBJS) -o $@ $(LDFLAGS)
+
+# assembly
+$(BUILD_DIR)/%.s.o: %.s
+$(MKDIR_P) $(dir $@)
+$(AS) $(ASFLAGS) -c $< -o $@
+
+# c source
+$(BUILD_DIR)/%.c.o: %.c
+$(MKDIR_P) $(dir $@)
+$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+# c++ source
+$(BUILD_DIR)/%.cpp.o: %.cpp
+$(MKDIR_P) $(dir $@)
+$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+
+
+.PHONY: clean
+
+clean:
+$(RM) -r $(BUILD_DIR)
+
+-include $(DEPS)
+
+MKDIR_P ?= mkdir -p
+#+END_SRC
+
+** security
+*** gpg
++ also called *gnu privacy guard*
++ this is a key which helps to encrypt and decript files
++ there are 2 types of gpg keys;
+1. private : unlocks everything you lock with that
+2. public : you send to other people
++ gpg keys _expire_ ! so you need to generate them once or twice a year
+**** how to
+***** generate a gpg key
+1. first generate personal key:
+#+BEGIN_SRC sh
+gpg --full-gen-key
+#+END_SRC
+2. choose *RSA and RSA*
+3. choose *4096* for maximum security
+4. choose *y = 1* to make the key expire in one year
+5. enter your *real name and surname*
+6. enter your *email*
+7. confirm
+8. enter a password. this is the password of your key. _DON'T FORGET IT_
+
+***** encrypt files with gpg
+1. navigate to directory you want to encrypt (here I generate a random file)
+#+BEGIN_SRC sh
+echo "secret message" > ~/secret-file.txt
+#+END_SRC
+
+2. encrypt the file
+#+BEGIN_SRC sh
+# -r : recepient (in this case me)
+# -e : file to encrypt
+gpg -r savolla@protonmail -e secret-file.txt
+#+END_SRC
+after this command, a file with *gpg* extension will be created. so now you can put this file (*secret-file.txt.gpg*) on the internet and no one will know what it is
+
+3. remove the original file (optional)
+
++ basic remove
+#+BEGIN_SRC sh
+rm secret-file.txt
+#+END_SRC
+
++ deep remove (more secure)
+#+BEGIN_SRC sh
+shred -u secret-file.txt
+#+END_SRC
+
+***** decrypt files with gpg
+1. decrypt command
+#+BEGIN_SRC sh
+gpg -d secret-file.txt
+#+END_SRC
+2. then enter the password of your *gpg key*. the password you entered while [[generate a gpg key][generating]] the key
+** command line utility
+*** imagemagick
+**** how to
+***** resize an image (ignore aspect ratio)
+#+BEGIN_SRC sh
+convert example.png -resize 200x100 example.png
+#+END_SRC
+***** resize an image (respect aspect ratio)
+#+BEGIN_SRC sh
+convert example.png -resize %50 example.png
+#+END_SRC
+***** convert between formats
+#+BEGIN_SRC sh
+convert howtogeek.png howtogeek.jpg
+#+END_SRC
+***** rotate an image
+#+BEGIN_SRC sh
+convert howtogeek.jpg -rotate 90 howtogeek-rotated.jpg
+#+END_SRC
+***** negate an image
+#+BEGIN_SRC sh
+convert splash.png -negate splash.png
+#+END_SRC
+*** vboxmanage
+**** how to
+***** start a vm
+#+begin_src sh
+vboxmanage startvm win10
+#+end_src
+***** take a snapshot of a vm
+#+begin_src sh
+vboxmanage snapshot win10 take $NAME
+#+end_src
+***** restore snapshot
+#+begin_src sh
+vboxmanage snapshot win10 restore $NAME
+#+end_src
+** CASIO fx-991ex
+*** how to
+**** solve and equation for x
+1. enter an equation. for example:
+/x + 7 = 10/
+2. press: *SHIFT CALC*
+you will see x=some_value. don't worry. this is just x with previous stored value
+3. press *=*
+now you see the value for x
+** github
+*** how to
+**** search github
+1. go to [[www.github.com/search][github search]]
+2. search like this for more accurate results
+   #+begin_src txt
+keyword_to_search extension:el path:.doom.d filename:config.el language:"Emacs Lisp"
+   #+end_src
+
+* Concepts
+** ORM
++ this is a technique that *takes the class* and converts it's properties into a database table
++ for example consider this class:
+#+BEGIN_SRC python
+class Human:
+    id = 0
+    name = ""
+    surname = ""
+    birthday = ""
+#+END_SRC
+this class will be converted to the *database table* called *Human*
+
+| Id | name | surname | birthday |
+|----+------+---------+----------|
+|    |      |         |          |
+
++ Window's ORM technology is the *Entity Framework*
+
+** MVC
++ Model, View and Controller
++ it's a *design pattern*
++ found in 1970
++ currently widely adopted in *Web Development*
++ examples of MVC frameworks;
+  1. .Net Core
+  2. Ruby on Rails
+  3. Express
++ Model : contains all classes
++ Controller : instantiates classes from Model and returns them to View
++ View : represents Controller's results to the user
+
+* Foreign Languages
+** English
+*** unknown words
+=concise=               özlü, kısa
+=conservative=          muhafazakar
+=contenteditable=       memnun
+=prescient=             ileri görüşlü
+=thesauruses=           eş anlamlı
+** Русский
+*** неизвестные слова
+* Linux
+** packages
+*** stow
+restores dotfiles from a directory
+** how to
+*** manage dotfiles
+**** create dotfiles
+1. initialize git
+#+begin_src sh
+git init --bare $HOME/.dotfiles
+#+end_src
+
+2. add alias to your .bashrc
+#+begin_src sh
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+#+end_src
+
+3. don't show untracked files since they are too much
+#+begin_src sh
+cd ~/.dotfiles
+git config status.showUntrackedFiles no
+#+end_src
+
+4. source the .bashrs
+#+begin_src sh
+source ~/.bashrc
+#+end_src
+
+5. add your dotfiles
+#+begin_src sh
+dotfiles add $YOUR_DOTFILE
+#+end_src
+
+6. commit
+#+begin_src sh
+dotfiles commit
+#+end_src
+
+7. create a repository called *dotfiles* on *github*
+
+8. essentials
+#+begin_src sh
+dotfiles branch -M main
+dotfiles remote add origin https://github.com/savolla/dotfiles.git
+dotfiles push -u origin main
+#+end_src
+
+**** restore dotfiles on a new system
+
+1. install *stow*
+#+begin_src sh
+sudo pacman -S stow
+#+end_src
+
+2. clone your dotfiles from github
+#+begin_src sh
+git clone https://github.com/savolla/dotfiles.git ~/.dotfiles
+#+end_src
+
+3. restore your dotfiles
+#+begin_src sh
+cd ~/.dotfiles
+stow *
+#+end_src
+
+
+* Template
+** facts
+** concept / term
+** tutorial / howto
+** quiz
+** lists / tables
+** code blocks
+** problems and solutions
+* Idea
