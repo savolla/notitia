@@ -463,18 +463,6 @@ now we have a section with search
 ******* hide the joke answer
 ******* limit "create" for logged users
 *** how to
-**** create more than one primary keys in a table
-this technique is called *clustered primary key*
-#+begin_src sql
-CREATE TABLE [dbo].[StudentCourse]
-(
-    [StudentId] INT NOT NULL,
-    [CourseId] INT NOT NULL,
-    PRIMARY KEY CLUSTERED ("StudentId","CourseId"),
-    CONSTRAINT [FK_StudentCourse_Course] FOREIGN KEY ([CourseId]) REFERENCES [Course]([CourseId]),
-    CONSTRAINT [FK_StudentCourse_Student] FOREIGN KEY ([StudentId]) REFERENCES [Student]([StudentId])
-)
-#+end_src
 ** Java
 *** consepts
 **** nested classes
@@ -730,6 +718,20 @@ $(RM) -r $(BUILD_DIR)
 
 MKDIR_P ?= mkdir -p
 #+END_SRC
+*** Microsoft SQL Server
+**** how to
+***** create more than one primary keys in a table
+this technique is called *clustered primary key*
+#+begin_src sql
+CREATE TABLE [dbo].[StudentCourse]
+(
+    [StudentId] INT NOT NULL,
+    [CourseId] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ("StudentId","CourseId"),
+    CONSTRAINT [FK_StudentCourse_Course] FOREIGN KEY ([CourseId]) REFERENCES [Course]([CourseId]),
+    CONSTRAINT [FK_StudentCourse_Student] FOREIGN KEY ([StudentId]) REFERENCES [Student]([StudentId])
+)
+#+end_src
 
 ** security
 *** gpg
@@ -839,6 +841,12 @@ now you see the value for x
    #+begin_src txt
 keyword_to_search extension:el path:.doom.d filename:config.el language:"Emacs Lisp"
    #+end_src
+** retroarch
+*** facts
+**** best cores for specific platforms
++ *snes* : bsnes-hd beta
++ *n64*: mupen43plus-next
++ *ps1*: epsxe
 
 * Concepts
 ** ORM
