@@ -532,6 +532,17 @@ add =#+STARTUP: overview= to the beginning of the file
 2. add [fn::footnote content] after the heading. for example;
 ******* Heading [fn::footnote content]
 
+****** convert org file to html from outside emacs
+1. you need to open emacs as a daemon to make this work
+   #+begin_src sh
+   emacs --daemon
+   #+end_src
+2. use *emacsclient -e* command to use emacs comands outside emacs.
+   #+begin_src sh
+   emacsclient -e "(progn (find-file \"~/txt/notitia.org\") (org-html-export-to-html) (kill-buffer))"
+   #+end_src
+you can also use every other command this way.
+
 ***** problems and solutions
 *** doom
 **** tips
@@ -588,6 +599,12 @@ SPC : pass
 4. add the extension of your programming language at the end of the promt;
 example: /org-beamer-theme extension:el/
 5. =RET=
+***** convert org file to html on command line
+1. start emacs daemon
+   #+begin_src sh
+   emacs --daemon
+   #+end_src
+
 **** cheat sheet
 
 =SPC - t t=                                 toggle tabs
@@ -837,7 +854,7 @@ now you see the value for x
 ** github
 *** how to
 **** search github
-1. go to [[www.github.com/search][github search]]
+1. go to [[https://www.github.com/search][github search]]
 2. search like this for more accurate results
    #+begin_src txt
 keyword_to_search extension:el path:.doom.d filename:config.el language:"Emacs Lisp"
