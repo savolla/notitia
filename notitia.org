@@ -10,7 +10,7 @@
 ** web programming
 ** probability and statistics
 * Programming Languages
-** Python
+** python
 *** facts
 + sınıf metodları hiç parametre almasa bile, içinde mutlaka *self* parametresi barındırmalıdır. örnek: [[sınıf oluşturmak]]
 + python'da bir sınıf oluştururken __init__ metodu kullanmak zorunda değiliz.
@@ -245,14 +245,15 @@ xrdb -query
 ***** concept / term
 ***** tutorial / howto
 ***** problems and solutions
-** VHDL
+** bash
+** vhdl
 *** facts
 + HDL : Hardware Descriptive Language
 + found in 1981
 + IEEE standard
 + initially created for ASIC synthesis
 
-** Verilog
+** verilog
 *** facts
 + found in 1985
 + IEEE standar
@@ -287,7 +288,7 @@ Xor tmp(x[k], y[k], out[k]);
 end
 #+END_SRC
 
-** C#
+** c#
 *** frameworks
 **** .Net Core
 ***** concepts
@@ -463,7 +464,7 @@ now we have a section with search
 ******* hide the joke answer
 ******* limit "create" for logged users
 *** how to
-** Java
+** java
 *** consepts
 **** nested classes
 - java allows you to define a class into another class. they called nested classes
