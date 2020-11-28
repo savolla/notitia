@@ -841,6 +841,10 @@ now you see the value for x
    #+begin_src txt
 keyword_to_search extension:el path:.doom.d filename:config.el language:"Emacs Lisp"
    #+end_src
+**** undo the "git add"
+#+begin_src sh
+git reset $YOUR_FILE
+#+end_src
 ** retroarch
 *** facts
 **** best cores for specific platforms
