@@ -624,6 +624,10 @@ example: /org-beamer-theme extension:el/
 ***** how to block with doom
 read [[https://ox-hugo.scripter.co/][this]]
 
+***** add and delete projects in treemacs
+=C-c C-p a=               add project to treemacs
+=C-c C-p d=               remove project from treemacs
+
 **** cheat sheet
 
 =SPC - t t=                                 toggle tabs
@@ -645,6 +649,9 @@ read [[https://ox-hugo.scripter.co/][this]]
 =SPC n r t a=                               add roam tag
 =SPC n r t d=                               delete roam tag
 =SPC n r G=                                 start [[http://localhost:8080][graph server]]
+
+=C-c C-p a=                                 add project to treemacs
+=C-c C-p d=                                 remove project from treemacs
 
 **** problems & solutions
 ***** with-editor.elc failed to provide feature ‘with-editor’
@@ -902,6 +909,28 @@ git reset $YOUR_FILE
    git --git-dir=$HOME/path/to/.git add -u
    git --git-dir=$HOME/path/to/.git commit -m "initial"
    #+end_src
+**** store your credentials for automatic pushes
+#+begin_quote
+this is not secure! your password and username will be stores inside *.git* directory in *planetext*. enyone on your PC will have access to them
+#+end_quote
+
+1. go to your repository
+   #+begin_src sh
+   cd $YOUR_REPO
+   #+end_src
+2. make some changes
+3. modify the *git config* for password and username storing
+   #+begin_src sh
+   git config --global credential.helper store
+   #+end_src
+4. commit and push your changes
+   #+begin_src sh
+   git commit -m "username and password adjustment"
+   git push -u origin $YOUR_BRANCH
+   #+end_src
+5. now the git utility will ask you *username* and *password*. enter those and you are good to go
+
+after this operation, git won't ask about username and password for this repository. this is not a global modification btw. you can do it for your repositories one by one
 ** retroarch
 *** facts
 **** best cores for specific platforms
@@ -1187,6 +1216,10 @@ cd ~/.dotfiles
 stow *
 #+end_src
 
+*** see lastly modified 5 files
+#+begin_src sh
+ls -tl | head -n 5
+#+end_src
 
 * Template
 ** facts
