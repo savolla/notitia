@@ -1,13 +1,15 @@
 +++
-title = "whoami"
+title = "~/about"
 description = "i do digital electronics, linux, c/c++ dev, x86, ARM, os development, embedded systems and everything bare-metal!"
 type = "about"
 date = "2020-11-29"
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hey I'm Oleksiy! I do digital electronics, Linux, C/C++ dev, x86, ARM, Os Development, Embedded Systems and everything bare-metal! I'm a Computer Engineering student in Turkey. My interests are mostly between hardware and software. By the way I use Arch Linux 
 
-Hugo makes use of a variety of open source projects including:
+You can contact me from;
+
+* 
 
 * https://github.com/russross/blackfriday
 * https://github.com/alecthomas/chroma

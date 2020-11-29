@@ -1,25 +1,25 @@
 [[main]]
-  identifier = "whoami"
-  name = "whoami"
+  identifier = "about"
+  name = "~/about"
   url = "about"
   weight = 1
 
 [[main]]
-  identifier = "archive"
-  name = "Archive"
-  url = "archive"
+  identifier = "projects"
+  name = "~/projects"
+  url = "projects"
   weight = 2
 
 [[main]]
-  identifier = "presentation"
-  name = "Pt"
-  url = "presentation"
+  identifier = "notes"
+  name = "~/notes"
+  url = "notes"
   weight = 3
 
 [[main]]
-  identifier = "gallery"
-  name = "Gallery"
-  url = "gallery"
+  identifier = "books"
+  name = "~/books"
+  url = "books"
   weight = 4
     
 [[main]]
