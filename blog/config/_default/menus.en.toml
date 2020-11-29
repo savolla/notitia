@@ -34,27 +34,27 @@
 [[main]]
   parent = "notes"
   name = "languages"
-  url = "notes/xkarna"
+  url = "notes/languages"
 
 [[main]]
   parent = "notes"
   name = "tools"
-  url = "notes/xkarna"
+  url = "notes/tools"
 
 [[main]]
   parent = "notes"
   name = "concepts"
-  url = "notes/xkarna"
+  url = "notes/concepts"
 
 [[main]]
   parent = "notes"
   name = "linux"
-  url = "notes/xkarna"
+  url = "notes/linux"
 
 [[main]]
   parent = "notes"
   name = "electronics"
-  url = "notes/xkarna"
+  url = "notes/electronics"
 
 [[main]]
   identifier = "books"
