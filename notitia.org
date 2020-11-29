@@ -6,6 +6,7 @@
 #+STARTUP: overview
 #+HUGO_BASE_DIR: ~/dev/web/blog/
 
+testing
 * Topics
 ** ERP
 ** web programming
