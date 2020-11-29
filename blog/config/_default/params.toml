@@ -69,7 +69,7 @@ link = "https://savollas-vault.blogspot.com/2019/"
 enableBio = true
 enableBioImage = true
 enableSidebar = true
-enableSidebarTags = true
+enableSidebarTags = false
 enableSidebarSeries = true
 enableSidebarCategories = true
 enableHomeSidebarTitles = true
@@ -80,7 +80,7 @@ tocFolding = true
 tocPosition = "inner" # inner, outer
 enableTocSwitch = true
 itemsPerCategory = 5
-sidebarPosition = "right"
+sidebarPosition = "left"
 tocLevels = ["h2", "h3", "h4"]
 enableSidebarPostsByOrder = false
 
@@ -94,7 +94,7 @@ enableThemeChange = true
 # service
 googleTagManager = "" # GTM-XXXXXX
 baiduAnalytics = ""
-enableBusuanzi = false
+enableBusuanzi = true
 busuanziSiteUV = true
 busuanziSitePV = true
 busuanziPagePV = true
@@ -157,7 +157,7 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions]
-  email = "savolla@protonmail.com"
+  email = "mailto:savolla@protonmail.com"
   phone = ""
   # facebook = "http://example.org/"
   twitter = "https://twitter.com/savolla64"
@@ -189,11 +189,11 @@ commento = false
   google-scholar = ""
 
 [donationOptions]
-  enable = false
+  enable = true
   alipay = "" 
   wechat = ""
   paypal = ""
-  patreon = ""
+  patreon = "https://www.patreon.com/savolla"
 
 # possible share name: ["facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line", "pocket", "feedly", "hatena", "pinterest", "delicious", "google"]
 [[share]]
