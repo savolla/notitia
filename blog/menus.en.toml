@@ -1,5 +1,5 @@
 [[main]]
   identifier = "posts"
-  name = "Posts"
+  name = "~/posts"
   url = "posts"
   weight = 1

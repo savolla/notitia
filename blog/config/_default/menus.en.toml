@@ -11,41 +11,65 @@
   weight = 2
 
 [[main]]
+  parent = "projects"
+  name = "zenith"
+  url = "projects/zenith"
+
+[[main]]
+  parent = "projects"
+  name = "wk"
+  url = "projects/wk"
+
+[[main]]
+  parent = "projects"
+  name = "xkarna"
+  url = "projects/xkarna"
+
+[[main]]
   identifier = "notes"
   name = "~/notes"
   url = "notes"
   weight = 3
 
 [[main]]
+  parent = "notes"
+  name = "languages"
+  url = "notes/xkarna"
+
+[[main]]
+  parent = "notes"
+  name = "tools"
+  url = "notes/xkarna"
+
+[[main]]
+  parent = "notes"
+  name = "concepts"
+  url = "notes/xkarna"
+
+[[main]]
+  parent = "notes"
+  name = "linux"
+  url = "notes/xkarna"
+
+[[main]]
+  parent = "notes"
+  name = "electronics"
+  url = "notes/xkarna"
+
+[[main]]
   identifier = "books"
   name = "~/books"
   url = "books"
   weight = 4
-    
-[[main]]
-  parent = "gallery"
-  name = "Cartoon"
-  url = "gallery/cartoon"
-
-[[main]]
-  parent = "gallery"
-  name = "Photo"
-  url = "gallery/photo"
 
 [[main]]
   identifier = "posts"
-  name = "Posts"
+  name = "~/posts"
   url = "posts"
   weight = 5
 
 [[main]]
-  identifier = "showcase"
-  name = "Showcase"
-  url = "showcase"
+  identifier = "music"
+  name = "~/music"
+  url = "music"
   weight = 6
-
-[[main]]
-  identifier = "publication"
-  name = "Pub"
-  url = "publication"
-  weight = 7
