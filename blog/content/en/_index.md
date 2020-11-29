@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - HUGO
+      - welcome!
     subtitle:
-      - The world’s fastest framework for building websites
+      - hey it's Oleksiy and this is my blog. enjoy! 
     titleColor: 
     titleShadow: true
     titleFontSize: 44
