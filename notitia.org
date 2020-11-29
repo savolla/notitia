@@ -967,6 +967,16 @@ this is a static website generator
    #+begin_src sh
    $YOUR_BROSWER http://localholt:$PORT_NUMBER
    #+end_src
+**** embed your telegram account
+1. fire up your *telegram*
+2. go to *settings*
+3. click on your *username* (it has '@' at the beginning)
+4. at the bottom of the menu, you will see a link like;
+   #+begin_quote
+https://t.me/YOUR_USERNAME
+   #+end_quote
+5. take this link and add to your website by following your theme's *social settings*
+
 *** examples
 **** config.toml file
 #+begin_src toml

@@ -1,6 +1,6 @@
-logoText = "Zzo"
+logoText = "Oleksiy Nehlyadyuk"
 logoType = "short" # long, short
-description = "The Zzo theme for Hugo example site."
+description = "Oleksiy's Vault"
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -13,7 +13,7 @@ notAllowedTypesInHomeSidebar = ["about", "archive", "showcase", "publication", "
 notAllowedTypesInArchive = ["about", "talks", "showcase", "publication", "presentation", "resume"]
 notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
 
-viewportSize = "normal" # widest, wider, wide, normal, narrow
+viewportSize = "widest" # widest, wider, wide, normal, narrow
 enableUiAnimation = true
 hideSingleContentsWhenJSDisabled = false
 enablePinnedPosts = true
@@ -56,14 +56,14 @@ publicationIcon = "📚"
 typeIcon = "🎯"
 
 # whoami
-myname = "zzossig"
-email = "zzossig@gmail.com"
-whoami = "Web Developer"
+myname = "savolla"
+email = "savolla@protonmail.com"
+whoami = "Oleksiy Nehlyadyuk"
 bioImageUrl = ""
 useGravatar = false
-location = "Seoul, Korea"
-organization = "Hugo"
-link = "https://zzossig.io/ko"
+location = "Kocaeli, Turkey"
+# organization = "Hugo"
+link = "https://savollas-vault.blogspot.com/2019/"
 
 # sidebar
 enableBio = true
@@ -100,7 +100,7 @@ busuanziSitePV = true
 busuanziPagePV = true
 
 # rss
-updatePeriod = "" # Possible values: 'hourly', 'daily', 'weekly', 'monthly', or 'yearly'.
+updatePeriod = "daily" # Possible values: 'hourly', 'daily', 'weekly', 'monthly', or 'yearly'.
 updateFrequency = ""
 fullContents = false
 
@@ -157,21 +157,21 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions]
-  email = "mailto:your@email.com"
+  email = "savolla@protonmail.com"
   phone = ""
-  facebook = "http://example.org/"
-  twitter = "http://example.org/"
-  github = "https://github.com/zzossig/hugo-theme-zzo"
+  # facebook = "http://example.org/"
+  twitter = "https://twitter.com/savolla64"
+  github = "https://github.com/savolla"
   stack-overflow = ""
   instagram = ""
   google-plus = ""
-  youtube = ""
+  youtube = "https://www.youtube.com/channel/UCoD-hIdg-gHhrandVLaof1w"
   medium = ""
   tumblr = ""
   linkedin = ""
   pinterest = ""
   stack-exchange = ""
-  telegram = ""
+  telegram = "https://t.me/savolla92"
   steam = ""
   weibo = ""
   douban = ""
@@ -201,6 +201,7 @@ commento = false
   username = ""
 [[share]]
   name = "twitter"
+  username = "savolla64"
 
 [[footerLinks]]
   name = ""
