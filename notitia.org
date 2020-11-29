@@ -1230,6 +1230,40 @@ stow *
 #+begin_src sh
 ls -tl | head -n 5
 #+end_src
+*** pause a program
+this can be usefull when you want to pause a running script or a program
+1. find the process id and assign it to a variable
+   #+begin_src sh
+   PROCESS_ID=$(ps aux | grep -i $YOUR_PROCESS | grep -v grep | awk '{ print $2 }')
+   #+end_src
+2. pause the process.
+   #+begin_src sh
+   kill -STOP $PROCESS_ID
+   #+end_src
+3. process will stop. now you can bring it back to live with:
+   #+begin_src sh
+   kill -CONT $PROCESS_ID
+   #+end_src
+
+**** I have a better idea
+let's add two functions in /.bashrc/ !
+1. open up =~/.bashrc= then add the following
+   #+begin_src sh
+pause() {
+   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
+   kill -STOP $PROCESS_ID
+}
+
+cont() {
+   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
+   kill -CONT $PROCESS_ID
+}
+   #+end_src
+
+2. refresh your =.bashrc=
+   #+begin_src sh
+source ~/.bashrc
+   #+end_src
 
 * Template
 ** facts

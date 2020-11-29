@@ -1,6 +1,7 @@
 logoText = "Oleksiy Nehlyadyuk"
 logoType = "short" # long, short
 description = "oleksiy nehlyadyuk savolla"
+# custom_css = ["resources/_gen/css/font.css"]
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
