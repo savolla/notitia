@@ -687,7 +687,7 @@ to make things work enable *specified* modules in your *init* file
    - magit
    - treemacs
 3. reload doom by doing =SPC h r r=
-****** cloning your project with doom
+****** cloning projects
 1. =SPC g C= to run magit clone
 2. press =u= to specify repo url
 3. paste your url with =Ctrl Shift v= (for linux)
@@ -695,16 +695,16 @@ to make things work enable *specified* modules in your *init* file
 5. press =y= to make *origin* default branch
 6. wait until the cloning is finished
 7. press =q= to quit
-****** add your project to doom
+****** adding projects
 1. =SPC o p= to open treemacs
 2. =C-c C-p a=
 3. specify the path for your porject
 4. now you see your project directory appeared in your *treemacs* menu
-****** find any file in your project
+****** navigate files
 1. =SPC SPC= brings menu with all files in your project
 2. type any keyword you want
 you don't have to type entire name of your file. menu items will be reduced once you type some characters.
-****** find any keyword in your entire project
+****** find symbols (method, variable, objects)
 1. press =SPC /=
 2. type your keyword or /function/, /variable/, /class/ or /struct/ names.
 3. once you enter the keyword, doom will jump to that file instantly
@@ -714,6 +714,22 @@ you don't have to type entire name of your file. menu items will be reduced once
 if you work on other things other than your project, for example editin some config files while coding etc, then you probably write the *path* every single time to navigate to that config file. doom solves it with
 1. =SPC f r= brings a menu or recently visited files
 2. find and navigate
+****** lookup code
+sometimes we can't find a good documentation on a method/module when coding. the best way to understand something is to looking at examples
+1. navigate your cursor on method, module you want to understand
+2. do =SCP s o=
+3. choose *Github*
+4. before hitting =RET= you can optionally specify the following items for more accurate results;
+   - filename:
+   - path:
+   - extension:
+here is an example for searching *printf* on github
+#+begin_quote
+printf extension:.c filename:main.c path:src
+#+end_quote
+
+
+
 **** how to
 ***** create new keybinding for whichkey?
 #+BEGIN_SRC elisp
@@ -773,7 +789,6 @@ read [[https://ox-hugo.scripter.co/][this]]
 =C-c C-p a=               add project to treemacs
 =C-c C-p d=               remove project from treemacs
 
-
 **** cheat sheet
 
 =SPC - t t=                                 toggle tabs
@@ -816,6 +831,11 @@ set expandtab
 syntax on
 inoremap jk <Esc>
 #+END_SRC
+**** how to
+***** permanent macros
+1. fire up *vim*
+2. do =q a=
+3. it's now recording to 'a' _make your magical macro_
 
 *** spacevim
 **** tutorials / howto
