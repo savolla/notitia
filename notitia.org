@@ -493,9 +493,118 @@ now we have a section with search
       }
   }
   #+end_src
-
+*** tips
++ if you don't know the name of the exception while making try catch methods, you can always make the program spit this error and then get the name from the error log
 *** facts
 *** how to
+**** use linked lists
+***** create item
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.add("item 3");
+        x.add("item 4");
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+***** set/change items
+use =set= method to do this
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.set(1,"ITEM 1"); // set method
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+***** remove an item
+use =remove= method to do this
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.remove(0);
+        x.remove(1);
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+***** sort items
+use =Collections.sort()= sorts *alphabetically*
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.add("item 3");
+        x.add("item 4");
+        Collections.sort(x);
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+
+***** reverse sort items
+use =Collections.reverse()= sorts *alphabetically*
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.add("item 3");
+        x.add("item 4");
+        Collections.reverse(x);
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+**** handle errors
+#+begin_src java
+public static int takeNumberData() {
+    Scanner input = new Scanner(System.in);
+    String data;
+    int number;
+    data = input.next();
+    try {
+        number = Integer.parseInt(data);
+    } catch (NumberFormatException e) {
+        System.out.println("this is not a number!");
+        return -1;
+    }
+    return number;
+}
+#+end_src
+
 *** problems & solutions
 * Tools
 ** text editors
