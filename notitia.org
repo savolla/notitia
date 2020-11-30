@@ -849,7 +849,23 @@ inoremap jk <Esc>
 11. save and exit =ESC :wq=
 12. fire up *vim* again
 13. do =@ q=
-
+***** redirect command output into vim session
+1. press =ESC=
+2. =:r !ls -la=
+3. =RET=
+***** remove all trailing whitespaces
+1. press =ESC=
+2. =:%s/\s\+$//e=
+3. =RET=
+***** time travel
++ show the file 10 mins *ago*
+  1. press =ESC=
+  2. =:earlier 10m=
+  3. =RET=
++ show the file *after* 10 mins
+  1. press =ESC=
+  2. =:later 10m=
+  3. =RET=
 
 *** spacevim
 **** tutorials / howto
@@ -1285,6 +1301,17 @@ this is not secure! your password and username will be stores inside *.git* dire
 after this operation, git won't ask about username and password for this repository. this is not a global modification btw. you can do it for your repositories one by one
 *** stow
 restores dotfiles from a directory
+*** youtube-dl
+**** how to
+***** download video with best quality
+#+begin_src sh
+youtube-dl -f 22 $VIDEO_LINK
+#+end_src
+***** download a playlist
+#+begin_src sh
+youtube-dl -cio -f 22 '%(autonumber)s-%(title)s.%(ext)s' $VIDEO_LINK
+#+end_src
+
 ** hardware
 *** CASIO fx-991ex
 **** how to
