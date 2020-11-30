@@ -570,7 +570,14 @@ while True:
 4. *magit* awesome git tool
 5. *deft* browse the notes
 ***** effective coding with doom emacs
-Th is how I use doom emacs for daily coding. Doom and it's packages are doing great job for programming. The knowledge of doing programming is spread to the internet so you have to find every bit of information and collect it. Here I made a complete list for you guys. This is a *step by step* guide so I'm not gonna load your brain with bullshit
+Th is how I use doom emacs for daily coding. Doom and it's packages are doing great job for programming. The knowledge of doing programming is spread to the internet so you have to find every bit of information and collect it. Here I made a complete list for you guys. This is a *step by step* guide so I'm not gonna load your brain with bullshit. By the way when I say things like =C-c C-p= it means =CTRL + c + p=
+****** before we start
+to make things work enable *specified* modules in your *init* file
+1. do =SPC f p= and select *init.el*
+2. enable the following modules;
+   - magit
+   - treemacs
+3. reload doom by doing =SPC h r r=
 ****** cloning your project with doom
 1. =SPC g C= to run magit clone
 2. press =u= to specify repo url
@@ -580,9 +587,24 @@ Th is how I use doom emacs for daily coding. Doom and it's packages are doing gr
 6. wait until the cloning is finished
 7. press =q= to quit
 ****** add your project to doom
-1. add your project
-****** find function, string or variable in project
-+ press =SPC
+1. =SPC o p= to open treemacs
+2. =C-c C-p a=
+3. specify the path for your porject
+4. now you see your project directory appeared in your *treemacs* menu
+****** find any file in your project
+1. =SPC SPC= brings menu with all files in your project
+2. type any keyword you want
+you don't have to type entire name of your file. menu items will be reduced once you type some characters.
+****** find any keyword in your entire project
+1. press =SPC /=
+2. type your keyword or /function/, /variable/, /class/ or /struct/ names.
+3. once you enter the keyword, doom will jump to that file instantly
+4. =C-o= to go *back*
+5. =C-i= to go *forward*
+****** recent files
+if you work on other things other than your project, for example editin some config files while coding etc, then you probably write the *path* every single time to navigate to that config file. doom solves it with
+1. =SPC f r= brings a menu or recently visited files
+2. find and navigate
 **** how to
 ***** create new keybinding for whichkey?
 #+BEGIN_SRC elisp
