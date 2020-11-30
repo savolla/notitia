@@ -835,7 +835,21 @@ inoremap jk <Esc>
 ***** permanent macros
 1. fire up *vim*
 2. do =q a=
-3. it's now recording to 'a' _make your magical macro_
+3. create your macro
+4. press =q= to finish
+5. exit vim =:q!=
+6. =vim ~/.vimrc=
+7. type =let @q = ''=
+8. put your cursor on *first single quote*
+9. do =" a p=
+10. macro should be pasted inside single quotes:
+    #+begin_src
+    let @q = 'your_macro_content'
+    #+end_src
+11. save and exit =ESC :wq=
+12. fire up *vim* again
+13. do =@ q=
+
 
 *** spacevim
 **** tutorials / howto
