@@ -1,8 +1,8 @@
-#+TITLE: Notitia
+#+TITL E: Notitia
 #+AUTHOR: Oleksiy Nehlyadyuk
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Nov 13 09:19:17 2020
-#+LANGUAGE: tr
+#+LANGUAGE: en
 #+STARTUP: overview
 #+HUGO_BASE_DIR: ~/dev/web/blog/
 
@@ -728,7 +728,14 @@ here is an example for searching *printf* on github
 printf extension:.c filename:main.c path:src
 #+end_quote
 
-
+****** find and replace projectwise
+this is usefull in *code refactoring*.
+1. =SPC /=
+2. enter the *symbol name*. "emacs" in this example
+3. =C-c C-e=
+4. =:%s/emacs/doom/g=
+5. =RET=
+6. =Z Z=
 
 **** how to
 ***** create new keybinding for whichkey?
@@ -805,15 +812,19 @@ read [[https://ox-hugo.scripter.co/][this]]
 =SPC /=                                     ag
 =SPC f r=                                   fast navigate recent files
 =SPC g g S c c "msg" C-c C-c q=             fast commit
+=SPC / foo C-c C-e :%s/foo/bar/g RET Z Z=   find foo and replace with bar in project
 =SPC X t=                                   enter a new todo
 =SPC w t=                                   disable line wrapping
 
 =SPC n r t a=                               add roam tag
 =SPC n r t d=                               delete roam tag
 =SPC n r G=                                 start [[http://localhost:8080][graph server]]
+=SPC SPC=                                   find file in project tree
 
 =C-c C-p a=                                 add project to treemacs
 =C-c C-p d=                                 remove project from treemacs
+
+=SPC s f=                                   locate file in system
 
 **** problems & solutions
 ***** with-editor.elc failed to provide feature ‘with-editor’
@@ -1310,6 +1321,13 @@ youtube-dl -f 22 $VIDEO_LINK
 ***** download a playlist
 #+begin_src sh
 youtube-dl -cio -f 22 '%(autonumber)s-%(title)s.%(ext)s' $VIDEO_LINK
+#+end_src
+*** rofi
+program launcher and more
+**** how to
+***** change theme
+#+begin_src sh
+rofi-theme-selector
 #+end_src
 
 ** hardware
