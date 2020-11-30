@@ -569,6 +569,20 @@ while True:
 3. *org-roam* better note taking
 4. *magit* awesome git tool
 5. *deft* browse the notes
+***** effective coding with doom emacs
+Th is how I use doom emacs for daily coding. Doom and it's packages are doing great job for programming. The knowledge of doing programming is spread to the internet so you have to find every bit of information and collect it. Here I made a complete list for you guys. This is a *step by step* guide so I'm not gonna load your brain with bullshit
+****** cloning your project with doom
+1. =SPC g C= to run magit clone
+2. press =u= to specify repo url
+3. paste your url with =Ctrl Shift v= (for linux)
+4. specify the path for the repo
+5. press =y= to make *origin* default branch
+6. wait until the cloning is finished
+7. press =q= to quit
+****** add your project to doom
+1. add your project
+****** find function, string or variable in project
++ press =SPC
 **** how to
 ***** create new keybinding for whichkey?
 #+BEGIN_SRC elisp
@@ -628,6 +642,7 @@ read [[https://ox-hugo.scripter.co/][this]]
 =C-c C-p a=               add project to treemacs
 =C-c C-p d=               remove project from treemacs
 
+
 **** cheat sheet
 
 =SPC - t t=                                 toggle tabs
@@ -642,6 +657,7 @@ read [[https://ox-hugo.scripter.co/][this]]
 =SPC - c u=                                 open undo tree
 =SPC t z=                                   toggle zen mode
 =SPC /=                                     ag
+=SPC f r=                                   fast navigate recent files
 =SPC g g S c c "msg" C-c C-c q=             fast commit
 =SPC X t=                                   enter a new todo
 =SPC w t=                                   disable line wrapping
@@ -777,173 +793,21 @@ CREATE TABLE [dbo].[StudentCourse]
 )
 #+end_src
 
-** security
-*** gpg
-+ also called *gnu privacy guard*
-+ this is a key which helps to encrypt and decript files
-+ there are 2 types of gpg keys;
-1. private : unlocks everything you lock with that
-2. public : you send to other people
-+ gpg keys _expire_ ! so you need to generate them once or twice a year
+*** github
 **** how to
-***** generate a gpg key
-1. first generate personal key:
-#+BEGIN_SRC sh
-gpg --full-gen-key
-#+END_SRC
-2. choose *RSA and RSA*
-3. choose *4096* for maximum security
-4. choose *y = 1* to make the key expire in one year
-5. enter your *real name and surname*
-6. enter your *email*
-7. confirm
-8. enter a password. this is the password of your key. _DON'T FORGET IT_
-
-***** encrypt files with gpg
-1. navigate to directory you want to encrypt (here I generate a random file)
-#+BEGIN_SRC sh
-echo "secret message" > ~/secret-file.txt
-#+END_SRC
-
-2. encrypt the file
-#+BEGIN_SRC sh
-# -r : recepient (in this case me)
-# -e : file to encrypt
-gpg -r savolla@protonmail -e secret-file.txt
-#+END_SRC
-after this command, a file with *gpg* extension will be created. so now you can put this file (*secret-file.txt.gpg*) on the internet and no one will know what it is
-
-3. remove the original file (optional)
-
-+ basic remove
-#+BEGIN_SRC sh
-rm secret-file.txt
-#+END_SRC
-
-+ deep remove (more secure)
-#+BEGIN_SRC sh
-shred -u secret-file.txt
-#+END_SRC
-
-***** decrypt files with gpg
-1. decrypt command
-#+BEGIN_SRC sh
-gpg -d secret-file.txt
-#+END_SRC
-2. then enter the password of your *gpg key*. the password you entered while [[generate a gpg key][generating]] the key
-** command line utility
-*** imagemagick
-**** how to
-***** resize an image (ignore aspect ratio)
-#+BEGIN_SRC sh
-convert example.png -resize 200x100 example.png
-#+END_SRC
-***** resize an image (respect aspect ratio)
-#+BEGIN_SRC sh
-convert example.png -resize %50 example.png
-#+END_SRC
-***** convert between formats
-#+BEGIN_SRC sh
-convert howtogeek.png howtogeek.jpg
-#+END_SRC
-***** rotate an image
-#+BEGIN_SRC sh
-convert howtogeek.jpg -rotate 90 howtogeek-rotated.jpg
-#+END_SRC
-***** negate an image
-#+BEGIN_SRC sh
-convert splash.png -negate splash.png
-#+END_SRC
-*** vboxmanage
-**** how to
-***** start a vm
-#+begin_src sh
-vboxmanage startvm win10
-#+end_src
-***** take a snapshot of a vm
-#+begin_src sh
-vboxmanage snapshot win10 take $NAME
-#+end_src
-***** restore snapshot
-#+begin_src sh
-vboxmanage snapshot win10 restore $NAME
-#+end_src
-*** bc
-**** how to
-***** use bc
-#+begin_src sh
-echo "1+1" | bc # outputs 2
-#+end_src
-
-** CASIO fx-991ex
-*** how to
-**** solve and equation for x
-1. enter an equation. for example:
-/x + 7 = 10/
-2. press: *SHIFT CALC*
-you will see x=some_value. don't worry. this is just x with previous stored value
-3. press *=*
-now you see the value for x
-** github
-*** how to
-**** search github
+***** search github
 1. go to [[https://www.github.com/search][github search]]
 2. search like this for more accurate results
    #+begin_src txt
 keyword_to_search extension:el path:.doom.d filename:config.el language:"Emacs Lisp"
    #+end_src
-** git
-*** how to
-**** undo the "git add"
-#+begin_src sh
-git reset $YOUR_FILE
-#+end_src
-**** control a repository from outside
-1. use *--git-dir=* option
-2. specify the *.git* folder of your project
-   #+begin_src sh
-   git --git-dir=$HOME/path/to/.git
-   #+end_src
-3. you can now issue normal git commands after that string like:
-   #+begin_src sh
-   git --git-dir=$HOME/path/to/.git add -u
-   git --git-dir=$HOME/path/to/.git commit -m "initial"
-   #+end_src
-**** store your credentials for automatic pushes
-#+begin_quote
-this is not secure! your password and username will be stores inside *.git* directory in *planetext*. enyone on your PC will have access to them
-#+end_quote
-
-1. go to your repository
-   #+begin_src sh
-   cd $YOUR_REPO
-   #+end_src
-2. make some changes
-3. modify the *git config* for password and username storing
-   #+begin_src sh
-   git config --global credential.helper store
-   #+end_src
-4. commit and push your changes
-   #+begin_src sh
-   git commit -m "username and password adjustment"
-   git push -u origin $YOUR_BRANCH
-   #+end_src
-5. now the git utility will ask you *username* and *password*. enter those and you are good to go
-
-after this operation, git won't ask about username and password for this repository. this is not a global modification btw. you can do it for your repositories one by one
-** retroarch
-*** facts
-**** best cores for specific platforms
-+ *snes* : bsnes-hd beta
-+ *n64*: mupen43plus-next
-+ *ps1*: epsxe
-** hugo
+*** hugo
 this is a static website generator
-*** what is
+**** what is
 + draft: this is a parameter which determines the post state. if draft is =true= then the post will not be shown to users
 
-*** how to
-**** get started
+**** how to
+***** get started
 1. install first
    #+begin_src sh
    sudo pacman -S hugo
@@ -967,7 +831,7 @@ this is a static website generator
    #+begin_src sh
    $YOUR_BROSWER http://localholt:$PORT_NUMBER
    #+end_src
-**** embed your telegram account
+***** embed your telegram account
 1. fire up your *telegram*
 2. go to *settings*
 3. click on your *username* (it has '@' at the beginning)
@@ -977,8 +841,8 @@ https://t.me/YOUR_USERNAME
    #+end_quote
 5. take this link and add to your website by following your theme's *social settings*
 
-*** examples
-**** config.toml file
+**** examples
+***** config.toml file
 #+begin_src toml
 baseURL = "http://example.org/"
 languageCode = "en-us"
@@ -1119,6 +983,160 @@ custom_css = ["css/custom.css"]
         url = "#"
 #+end_src
 
+** command line utility
+*** imagemagick
+**** how to
+***** resize an image (ignore aspect ratio)
+#+BEGIN_SRC sh
+convert example.png -resize 200x100 example.png
+#+END_SRC
+***** resize an image (respect aspect ratio)
+#+BEGIN_SRC sh
+convert example.png -resize %50 example.png
+#+END_SRC
+***** convert between formats
+#+BEGIN_SRC sh
+convert howtogeek.png howtogeek.jpg
+#+END_SRC
+***** rotate an image
+#+BEGIN_SRC sh
+convert howtogeek.jpg -rotate 90 howtogeek-rotated.jpg
+#+END_SRC
+***** negate an image
+#+BEGIN_SRC sh
+convert splash.png -negate splash.png
+#+END_SRC
+*** vboxmanage
+**** how to
+***** start a vm
+#+begin_src sh
+vboxmanage startvm win10
+#+end_src
+***** take a snapshot of a vm
+#+begin_src sh
+vboxmanage snapshot win10 take $NAME
+#+end_src
+***** restore snapshot
+#+begin_src sh
+vboxmanage snapshot win10 restore $NAME
+#+end_src
+*** bc
+**** how to
+***** use bc
+#+begin_src sh
+echo "1+1" | bc # outputs 2
+#+end_src
+*** gpg
++ also called *gnu privacy guard*
++ this is a key which helps to encrypt and decript files
++ there are 2 types of gpg keys;
+1. private : unlocks everything you lock with that
+2. public : you send to other people
++ gpg keys _expire_ ! so you need to generate them once or twice a year
+**** how to
+***** generate a gpg key
+1. first generate personal key:
+#+BEGIN_SRC sh
+gpg --full-gen-key
+#+END_SRC
+2. choose *RSA and RSA*
+3. choose *4096* for maximum security
+4. choose *y = 1* to make the key expire in one year
+5. enter your *real name and surname*
+6. enter your *email*
+7. confirm
+8. enter a password. this is the password of your key. _DON'T FORGET IT_
+
+***** encrypt files with gpg
+1. navigate to directory you want to encrypt (here I generate a random file)
+#+BEGIN_SRC sh
+echo "secret message" > ~/secret-file.txt
+#+END_SRC
+
+2. encrypt the file
+#+BEGIN_SRC sh
+# -r : recepient (in this case me)
+# -e : file to encrypt
+gpg -r savolla@protonmail -e secret-file.txt
+#+END_SRC
+after this command, a file with *gpg* extension will be created. so now you can put this file (*secret-file.txt.gpg*) on the internet and no one will know what it is
+
+3. remove the original file (optional)
+
++ basic remove
+#+BEGIN_SRC sh
+rm secret-file.txt
+#+END_SRC
+
++ deep remove (more secure)
+#+BEGIN_SRC sh
+shred -u secret-file.txt
+#+END_SRC
+
+***** decrypt files with gpg
+1. decrypt command
+#+BEGIN_SRC sh
+gpg -d secret-file.txt
+#+END_SRC
+2. then enter the password of your *gpg key*. the password you entered while [[generate a gpg key][generating]] the key
+*** git
+**** how to
+***** undo the "git add"
+#+begin_src sh
+git reset $YOUR_FILE
+#+end_src
+***** control a repository from outside
+1. use *--git-dir=* option
+2. specify the *.git* folder of your project
+   #+begin_src sh
+   git --git-dir=$HOME/path/to/.git
+   #+end_src
+3. you can now issue normal git commands after that string like:
+   #+begin_src sh
+   git --git-dir=$HOME/path/to/.git add -u
+   git --git-dir=$HOME/path/to/.git commit -m "initial"
+   #+end_src
+***** store your credentials for automatic pushes
+#+begin_quote
+this is not secure! your password and username will be stores inside *.git* directory in *planetext*. enyone on your PC will have access to them
+#+end_quote
+
+1. go to your repository
+   #+begin_src sh
+   cd $YOUR_REPO
+   #+end_src
+2. make some changes
+3. modify the *git config* for password and username storing
+   #+begin_src sh
+   git config --global credential.helper store
+   #+end_src
+4. commit and push your changes
+   #+begin_src sh
+   git commit -m "username and password adjustment"
+   git push -u origin $YOUR_BRANCH
+   #+end_src
+5. now the git utility will ask you *username* and *password*. enter those and you are good to go
+
+after this operation, git won't ask about username and password for this repository. this is not a global modification btw. you can do it for your repositories one by one
+*** stow
+restores dotfiles from a directory
+** hardware
+*** CASIO fx-991ex
+**** how to
+***** solve and equation for x
+1. enter an equation. for example:
+/x + 7 = 10/
+2. press: *SHIFT CALC*
+you will see x=some_value. don't worry. this is just x with previous stored value
+3. press *=*
+now you see the value for x
+
+** retroarch
+*** facts
+**** best cores for specific platforms
++ *snes* : bsnes-hd beta
++ *n64*: mupen43plus-next
++ *ps1*: epsxe
 * Concepts
 ** ORM
 + this is a technique that *takes the class* and converts it's properties into a database table
@@ -1162,9 +1180,6 @@ this class will be converted to the *database table* called *Human*
 ** Русский
 *** неизвестные слова
 * Linux
-** packages
-*** stow
-restores dotfiles from a directory
 ** how to
 *** manage dotfiles
 **** create dotfiles
