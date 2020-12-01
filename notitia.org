@@ -4,8 +4,6 @@
 #+DATE: Fri Nov 13 09:19:17 2020
 #+LANGUAGE: en
 #+STARTUP: overview
-#+HUGO_BASE_DIR: ~/txt/blog/
-#+HUGO_SECTION: en/posts
 
 * Topics
 ** ERP
@@ -844,7 +842,14 @@ syntax on
 inoremap jk <Esc>
 #+END_SRC
 **** how to
-***** permanent macros
+***** permanent macros in vim :vim:howto:tools:
+:PROPERTIES:
+:AUTHOR: test author
+:EXPORT_FILE_NAME: permanent-macros-in-vim
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:END:
+this is a short *step by step* tutorial to save your *vim macro* and use it everytime
 1. fire up *vim*
 2. do =q a=
 3. create your macro
@@ -854,13 +859,14 @@ inoremap jk <Esc>
 7. type =let @q = ''=
 8. put your cursor on *first single quote*
 9. do =" a p=
-10. macro should be pasted inside single quotes:
-    #+begin_src
+10. macro should be pasted inside single quotes like:
+    #+begin_src sh
     let @q = 'your_macro_content'
     #+end_src
 11. save and exit =ESC :wq=
 12. fire up *vim* again
 13. do =@ q=
+now you should have your macro saved. after this moment everytime you open a vim session, this macro will be read from =.vimrc= and you will able to use it.
 ***** redirect command output into vim session
 1. press =ESC=
 2. =:r !ls -la=
