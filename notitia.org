@@ -679,65 +679,6 @@ while True:
 3. *org-roam* better note taking
 4. *magit* awesome git tool
 5. *deft* browse the notes
-***** effective coding with doom emacs
-Th is how I use doom emacs for daily coding. Doom and it's packages are doing great job for programming. The knowledge of doing programming is spread to the internet so you have to find every bit of information and collect it. Here I made a complete list for you guys. This is a *step by step* guide so I'm not gonna load your brain with bullshit. By the way when I say things like =C-c C-p= it means =CTRL + c + p=
-****** before we start
-to make things work enable *specified* modules in your *init* file
-1. do =SPC f p= and select *init.el*
-2. enable the following modules;
-   - magit
-   - treemacs
-3. reload doom by doing =SPC h r r=
-****** cloning projects
-1. =SPC g C= to run magit clone
-2. press =u= to specify repo url
-3. paste your url with =Ctrl Shift v= (for linux)
-4. specify the path for the repo
-5. press =y= to make *origin* default branch
-6. wait until the cloning is finished
-7. press =q= to quit
-****** adding projects
-1. =SPC o p= to open treemacs
-2. =C-c C-p a=
-3. specify the path for your porject
-4. now you see your project directory appeared in your *treemacs* menu
-****** navigate files
-1. =SPC SPC= brings menu with all files in your project
-2. type any keyword you want
-you don't have to type entire name of your file. menu items will be reduced once you type some characters.
-****** find symbols (method, variable, objects)
-1. press =SPC /=
-2. type your keyword or /function/, /variable/, /class/ or /struct/ names.
-3. once you enter the keyword, doom will jump to that file instantly
-4. =C-o= to go *back*
-5. =C-i= to go *forward*
-****** recent files
-if you work on other things other than your project, for example editin some config files while coding etc, then you probably write the *path* every single time to navigate to that config file. doom solves it with
-1. =SPC f r= brings a menu or recently visited files
-2. find and navigate
-****** lookup code
-sometimes we can't find a good documentation on a method/module when coding. the best way to understand something is to looking at examples
-1. navigate your cursor on method, module you want to understand
-2. do =SCP s o=
-3. choose *Github*
-4. before hitting =RET= you can optionally specify the following items for more accurate results;
-   - filename:
-   - path:
-   - extension:
-here is an example for searching *printf* on github
-#+begin_quote
-printf extension:.c filename:main.c path:src
-#+end_quote
-
-****** find and replace projectwise
-this is usefull in *code refactoring*.
-1. =SPC /=
-2. enter the *symbol name*. "emacs" in this example
-3. =C-c C-e=
-4. =:%s/emacs/doom/g=
-5. =RET=
-6. =Z Z=
-
 **** how to
 ***** create new keybinding for whichkey?
 #+BEGIN_SRC elisp
@@ -797,6 +738,65 @@ read [[https://ox-hugo.scripter.co/][this]]
 =C-c C-p a=               add project to treemacs
 =C-c C-p d=               remove project from treemacs
 
+***** effective coding with doom emacs
+This is how I use doom emacs for daily coding. Doom and it's packages are working together to make developer's life easier. Here I made a complete list for you guys. This is a *step by step* guide to do coding on doom emacs. By the way when I say things like =C-c C-p= it means =CTRL + c + p=
+****** before we start
+to make things work enable *specified* modules in your *init* file
+1. do =SPC f p= and select *init.el*
+2. enable the following modules;
+   - magit
+   - treemacs
+3. reload doom by doing =SPC h r r=
+****** cloning projects
+1. =SPC g C= to run magit clone
+2. press =u= to specify repo url
+3. paste your url with =Ctrl Shift v= (for linux)
+4. specify the path for the repo
+5. press =y= to make *origin* default branch
+6. wait until the cloning is finished
+7. press =q= to quit
+****** adding projects
+1. =SPC o p= to open treemacs
+2. =C-c C-p a=
+3. specify the path for your porject
+4. now you see your project directory appeared in your *treemacs* menu
+****** navigate files
+1. =SPC SPC= brings menu with all files in your project
+2. type any keyword you want
+you don't have to type entire name of your file. menu items will be reduced once you type some characters.
+****** find symbols (method, variable, objects)
+1. press =SPC /=
+2. type your keyword or /function/, /variable/, /class/ or /struct/ names.
+3. once you enter the keyword, doom will jump to that file instantly
+4. =C-o= to go *back*
+5. =C-i= to go *forward*
+****** recent files
+if you work on other things other than your project, for example editin some config files while coding etc, then you probably write the *path* every single time to navigate to that config file. doom solves it with
+1. =SPC f r= brings a menu or recently visited files
+2. find and navigate
+****** lookup code
+sometimes we can't find a good documentation on a method/module when coding. the best way to understand something is to looking at examples
+1. navigate your cursor on method, module you want to understand
+2. do =SCP s o=
+3. choose *Github*
+4. before hitting =RET= you can optionally specify the following items for more accurate results;
+   - filename:
+   - path:
+   - extension:
+here is an example for searching *printf* on github
+#+begin_quote
+printf extension:.c filename:main.c path:src
+#+end_quote
+
+****** find and replace projectwise
+this is usefull in *code refactoring*.
+1. =SPC /=
+2. enter the *symbol name*. "emacs" in this example
+3. =C-c C-e=
+4. =:%s/emacs/doom/g=
+5. =RET=
+6. =Z Z=
+
 **** cheat sheet
 
 =SPC - t t=                                 toggle tabs
@@ -834,6 +834,33 @@ rm -rf ~/.emacs.d/.local/straight/build*/with-editor && doom sync
 #+end_src
 
 *** vim
+**** blog
+***** less known vim tricks :vim:howto:tools:
+:PROPERTIES:
+:EXPORT_FILE_NAME: less-known-vim-tricks
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+****** ourput redirection
++ you can redirect outputs of a *shell command* in vim
+  1. press =ESC=
+  2. =:r !ls -la=
+  3. =RET=
+****** whitespace removal
++ remove all *trailing whitespaces*. you can also make the following a *permanent macro*
+  1. press =ESC=
+  2. =:%s/\s\+$//e=
+  3. =RET=
+****** time travel
++ show the file 10 mins *ago*
+  1. press =ESC=
+  2. =:earlier 10m=
+  3. =RET=
++ show the file *after* 10 mins
+  1. press =ESC=
+  2. =:later 10m=
+  3. =RET=
 **** code blocks
 + essential vimrc
 #+BEGIN_SRC sh
@@ -923,9 +950,16 @@ SPC f v d
 
 ** programming tools
 *** make
-**** one makefile
-+ makefile for this file structure:
+**** one Makefile for everything :tools:make:programming:
+:PROPERTIES:
+:EXPORT_FILE_NAME: one-makefile-for-everything
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+here! you found it! this is one single Makefile that fits all projects with this file structure:
 
+#+begin_src txt
 project /
 ├── include
 ├── build
@@ -935,6 +969,7 @@ project /
 ├── test
 ├── main.c
 └── Makefile
+#+end_src
 
 #+BEGIN_SRC makefile
 TARGET_EXEC ?= a.out
@@ -996,11 +1031,18 @@ CREATE TABLE [dbo].[StudentCourse]
 
 *** github
 **** how to
-***** search github
-1. go to [[https://www.github.com/search][github search]]
-2. search like this for more accurate results
+***** search code in Github :howto:tools:git:
+:PROPERTIES:
+:EXPORT_FILE_NAME: search-code-in-github
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+1. for example I'm searching for "setq" keyword which exists in ".doom.d" directory, file is called "config.el" and is written in "Emacs Lisp" language
+2. go to [[https://www.github.com/search][github search]]
+3. search for the following string
    #+begin_src txt
-keyword_to_search extension:el path:.doom.d filename:config.el language:"Emacs Lisp"
+setq extension:el path:.doom.d filename:config.el language:"Emacs Lisp" extension:.el
    #+end_src
 *** hugo
 this is a static website generator
@@ -1227,7 +1269,14 @@ vboxmanage snapshot win10 restore $NAME
 #+begin_src sh
 echo "1+1" | bc # outputs 2
 #+end_src
-*** gpg
+*** gpg :tools:howto:gpg:
+:PROPERTIES:
+:EXPORT_FILE_NAME: what-is-gpg
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_TITLE: what is gpg
+:EXPORT_AUTHOR: savolla
+:END:
 + also called *gnu privacy guard*
 + this is a key which helps to encrypt and decript files
 + there are 2 types of gpg keys;
@@ -1237,9 +1286,9 @@ echo "1+1" | bc # outputs 2
 **** how to
 ***** generate a gpg key
 1. first generate personal key:
-#+BEGIN_SRC sh
+   #+BEGIN_SRC sh
 gpg --full-gen-key
-#+END_SRC
+   #+END_SRC
 2. choose *RSA and RSA*
 3. choose *4096* for maximum security
 4. choose *y = 1* to make the key expire in one year
@@ -1250,35 +1299,34 @@ gpg --full-gen-key
 
 ***** encrypt files with gpg
 1. navigate to directory you want to encrypt (here I generate a random file)
-#+BEGIN_SRC sh
+   #+BEGIN_SRC sh
 echo "secret message" > ~/secret-file.txt
-#+END_SRC
+   #+END_SRC
 
 2. encrypt the file
-#+BEGIN_SRC sh
+   #+BEGIN_SRC sh
 # -r : recepient (in this case me)
 # -e : file to encrypt
-gpg -r savolla@protonmail -e secret-file.txt
-#+END_SRC
-after this command, a file with *gpg* extension will be created. so now you can put this file (*secret-file.txt.gpg*) on the internet and no one will know what it is
+gpg -r your_mail@provider.com -e secret-file.txt
+   #+END_SRC
+   after this command, a file with *gpg* extension will be created. so now you can put this file (*secret-file.txt.gpg*) on the internet and no one will know what it is
 
 3. remove the original file (optional)
-
-+ basic remove
-#+BEGIN_SRC sh
+   + basic remove
+   #+BEGIN_SRC sh
 rm secret-file.txt
-#+END_SRC
+   #+END_SRC
 
-+ deep remove (more secure)
-#+BEGIN_SRC sh
+   + deep remove (more secure)
+   #+BEGIN_SRC sh
 shred -u secret-file.txt
-#+END_SRC
+   #+END_SRC
 
 ***** decrypt files with gpg
 1. decrypt command
-#+BEGIN_SRC sh
+   #+BEGIN_SRC sh
 gpg -d secret-file.txt
-#+END_SRC
+   #+END_SRC
 2. then enter the password of your *gpg key*. the password you entered while [[generate a gpg key][generating]] the key
 *** git
 **** how to
