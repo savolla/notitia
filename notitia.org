@@ -1,10 +1,11 @@
-#+TITL E: Notitia
+#+TITLE: Notitia
 #+AUTHOR: Oleksiy Nehlyadyuk
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Nov 13 09:19:17 2020
 #+LANGUAGE: en
 #+STARTUP: overview
 #+HUGO_BASE_DIR: ~/dev/web/blog/
+#+HUGO_SECTION: en/posts
 
 * Topics
 ** ERP
@@ -1340,6 +1341,8 @@ rofi-theme-selector
 you will see x=some_value. don't worry. this is just x with previous stored value
 3. press *=*
 now you see the value for x
+***** take percentage of a number
+/$NUMBER * $percentage %/
 
 ** retroarch
 *** facts
