@@ -4,6 +4,8 @@
 #+DATE: Fri Nov 13 09:19:17 2020
 #+LANGUAGE: en
 #+STARTUP: overview
+#+HUGO_BASE_DIR: ~/txt/blog/
+#+HUGO_SECTION: en/posts
 
 * Topics
 ** ERP
@@ -844,10 +846,10 @@ inoremap jk <Esc>
 **** how to
 ***** permanent macros in vim :vim:howto:tools:
 :PROPERTIES:
-:AUTHOR: test author
 :EXPORT_FILE_NAME: permanent-macros-in-vim
 :HUGO_BASE_DIR: ~/txt/blog/
 :HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
 :END:
 this is a short *step by step* tutorial to save your *vim macro* and use it everytime
 1. fire up *vim*
@@ -860,9 +862,9 @@ this is a short *step by step* tutorial to save your *vim macro* and use it ever
 8. put your cursor on *first single quote*
 9. do =" a p=
 10. macro should be pasted inside single quotes like:
-    #+begin_src sh
-    let @q = 'your_macro_content'
-    #+end_src
+#+begin_src sh
+let @q = 'your_macro_content'
+#+end_src
 11. save and exit =ESC :wq=
 12. fire up *vim* again
 13. do =@ q=
