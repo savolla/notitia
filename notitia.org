@@ -14,8 +14,21 @@
 * Programming Languages
 ** c
 *** facts
++ you can't assign values to variables in a struct. for example the following code will spit out an error
+  #+begin_src c
+typedef struct A {
+    int x = 333;
+}
+  #+end_src
 *** concept
 *** how to
+**** define a struct
+#+begin_src c
+typedef struct A{
+    int a = 0;
+    char c = 'x';
+} A;
+#+end_src
 *** problems & solutions
 ** python
 *** facts
