@@ -1457,6 +1457,11 @@ this class will be converted to the *database table* called *Human*
 =prescient=             ileri görüşlü
 =thesauruses=           eş anlamlı
 =constitute=            oluşturmak
+=predicate=             yüklem
+=subsequent=            sonraki
+==
+==
+==
 ** Русский
 *** неизвестные слова
 * Linux
