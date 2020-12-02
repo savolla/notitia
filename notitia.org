@@ -1471,6 +1471,8 @@ this class will be converted to the *database table* called *Human*
 =precisely=             kesin olarak
 =differing=             farklı
 =intern=                asistan
+=uncharted=             keşvedilmemiş
+=curated=
 ** Русский
 *** неизвестные слова
 * Linux
