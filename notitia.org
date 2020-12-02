@@ -27,7 +27,7 @@ typedef struct A {
     int x;
 }
   #+end_src
-**** struct sizes doesn't make sense?
+**** struct sizes doesn't make sense
 the following struct's size is 12 bytes.
 #+begin_src c
 typedef struct A {
@@ -40,7 +40,21 @@ this doesn't make sense right? because;
 - int x  : 4 bytes
 - char y : 1 byte
 - int z  : 4 bytes
-it must be 9 bytes.. but in fact, compilers make padding operations
+it must be 9 bytes.. but in fact, compilers make padding operations to keep the memory layout stable. for example after defining variable x which occupies 4 bytes, compiler occupies 1 byte for variable y and right after that does 3 bytes padding! now our memory layout becomes stable ($$2^n$$). then it occupies 4 more bytes for variable z which is 4 bytes. and sizeof operator returns 12
+
+consider the following example of code, where we define one more *char* variable after y;
+#+begin_src c
+typedef struct A {
+    int x;
+    char y;
+    char k; // new char
+    // 2 bytes padding
+    int z;
+} A;
+#+end_src
+=sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
+
+
 
 *** concept
 *** how to
