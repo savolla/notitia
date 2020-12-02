@@ -14,12 +14,34 @@
 * Programming Languages
 ** c
 *** facts
-+ you can't assign values to variables in a struct. for example the following code will spit out an error
+**** struct variable assignment
+you can't assign values to variables in a struct. for example the following code will spit out an error
   #+begin_src c
 typedef struct A {
     int x = 333;
 }
   #+end_src
+the valid version of the code abovo is:
+  #+begin_src c
+typedef struct A {
+    int x;
+}
+  #+end_src
+**** struct sizes doesn't make sense?
+the following struct's size is 12 bytes.
+#+begin_src c
+typedef struct A {
+    int x;
+    char y;
+    int z;
+} A;
+#+end_src
+this doesn't make sense right? because;
+- int x  : 4 bytes
+- char y : 1 byte
+- int z  : 4 bytes
+it must be 9 bytes.. but in fact, compilers make padding operations
+
 *** concept
 *** how to
 **** define a struct
