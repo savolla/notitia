@@ -1456,6 +1456,7 @@ this class will be converted to the *database table* called *Human*
 =contenteditable=       memnun
 =prescient=             ileri görüşlü
 =thesauruses=           eş anlamlı
+=constitute=            oluşturmak
 ** Русский
 *** неизвестные слова
 * Linux
