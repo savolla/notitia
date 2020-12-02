@@ -12,6 +12,11 @@
 ** web programming
 ** probability and statistics
 * Programming Languages
+** c
+*** facts
+*** concept
+*** how to
+*** problems & solutions
 ** python
 *** facts
 + sınıf metodları hiç parametre almasa bile, içinde mutlaka *self* parametresi barındırmalıdır. örnek: [[sınıf oluşturmak]]
@@ -1459,9 +1464,13 @@ this class will be converted to the *database table* called *Human*
 =constitute=            oluşturmak
 =predicate=             yüklem
 =subsequent=            sonraki
-==
-==
-==
+=evidently=             belli ki
+=however=               ancak
+=rigorously=            titizlikle
+=vocabulary=            kelime bilgisi
+=precisely=             kesin olarak
+=differing=             farklı
+=intern=                asistan
 ** Русский
 *** неизвестные слова
 * Linux
