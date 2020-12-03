@@ -1698,22 +1698,26 @@ source ~/.bashrc
 
 * Music
 :PROPERTIES:
-:EXPORT_FILE_NAME: music
+:EXPORT_FILE_NAME: one-makefile-for-everything
 :HUGO_BASE_DIR: ~/txt/blog/
-:HUGO_SECTION: en/music
+:HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
+:EXPORT_TITLE: savolla's music recommendations
 :END:
-this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string
-** for normies
-+ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
-+ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
-+ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
-
-** metal
-+ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
-+ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
-+ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
-
+Here I made some album recommendations for you. This is what i listen to when i really want to get into the mood. i made my best by separating genres into two categories. this list will grow up. I'll trow goodies here when i think it's worthy
+** music for normies
+this is /normal music for normal people/
++ [[https://tokyoroseofficial.com/album/chases-2][Tokyo Rose - Chases 2]]
+ great synthwave album.. my favorite song on this is *midnight chase*
++ [[https://dancewiththedead.bandcamp.com/album/loved-to-death][Dance with the Dead - Loved to Death]]
+  synthwave + some metal elements. great if you like distortion guitar riffs. this one includes *awesome* guitar solos. and the production is just incredible
++ [[https://alix2084.bandcamp.com/album/alix-2084-ep-2][ALIX 2084 (EP)]]
+  directly jump to *Elevator Dance Party* song. great work and really underrated. those tempo changes will shake your brain inside
++ [[https://megadrive.bandcamp.com/album/hardwired-v14][Mega Drive - Hardwired V1.4]]
+  *Dataline* *Dataline* *Dataline* !!
+** edgy stuff
+=WARNING= this list is not for pregrant or ppl have hearth conditions. this is actually what I usually listen to.
++ [[https://www.youtube.com/watch?v=_TfPd0jlavA][Rings of Saturn -  Embryonic Anomaly]]
 * Template
 ** facts
 ** concept / term
