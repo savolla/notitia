@@ -55,7 +55,6 @@ typedef struct A {
 =sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
 
 
-
 *** concept
 *** how to
 **** define a struct
@@ -1696,6 +1695,24 @@ cont() {
    #+begin_src sh
 source ~/.bashrc
    #+end_src
+
+* Music
+:PROPERTIES:
+:EXPORT_FILE_NAME: music
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/music
+:EXPORT_AUTHOR: savolla
+:END:
+this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string this is a test string
+** for normies
++ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
++ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
++ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
+
+** metal
++ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
++ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
++ [[https://tokyoroseofficial.com/track/hot-pursuit][hot pursuit]]
 
 * Template
 ** facts
