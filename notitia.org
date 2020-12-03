@@ -1706,7 +1706,7 @@ source ~/.bashrc
 :END:
 Here I made some album recommendations for you. This is what i listen to when i really want to get into the mood. i made my best by separating genres into two categories. this list will grow up. I'll trow goodies here when i think it's worthy
 ** music for normies
-this is /normal music for normal people/
+this is /normal music for normal people/.
 + [[https://tokyoroseofficial.com/album/chases-2][Tokyo Rose - Chases 2]]
  great synthwave album.. my favorite song on this is *midnight chase*
 + [[https://dancewiththedead.bandcamp.com/album/loved-to-death][Dance with the Dead - Loved to Death]]
@@ -1715,9 +1715,41 @@ this is /normal music for normal people/
   directly jump to *Elevator Dance Party* song. great work and really underrated. those tempo changes will shake your brain inside
 + [[https://megadrive.bandcamp.com/album/hardwired-v14][Mega Drive - Hardwired V1.4]]
   *Dataline* *Dataline* *Dataline* !!
-** edgy stuff
-=WARNING= this list is not for pregrant or ppl have hearth conditions. this is actually what I usually listen to.
++ [[https://plini.bandcamp.com/album/sweet-nothings][Plini - Sweet Nothings]]
+  I bet this will be the sweetest thing you will ever listened. your ears will overflow with candies
+
+** danger zone
+=WARNING= this list is not for pregrant or ppl with hearth conditions. this is actually what I usually listen to. I'll list the following content from most "normie" to *deepest depths of hell*
++ [[https://www.youtube.com/watch?v=dheNB2erMZI][Horrific - Your Worst Nightmare]]
+  very underrated album.I'm not gonna call this album a metal album. this is like introduction to metal music. songs in this album have 80's rock flavor. Guitars are not in tune and songs are played very sloppy. contains funny elements.. great album
++ [[https://www.youtube.com/watch?v=qcpmtd-baKU][Heptaedium - KAWAII!!]]
+  underrated stuff. has some djenty elements also inherits from *nintendo core* genre. really interesting album
++ [[https://www.youtube.com/watch?v=nzvLiwUK3R8][Aphex Twin Live at Field Day]]
+  did you ever experienced ear bleeding? just skip to 1:51:00 and wait.
++ [[https://www.youtube.com/watch?v=szk5vGqPn2U][The LONGING - Original Soundtrack]]
+  depressed and sad melodies..
++ [[https://www.youtube.com/watch?v=PkVenDN7Y9A][Hrsta - Ghosts Will Come And Kiss Our Eyes]]
+  don't listen to this if you lost someone recently
++ [[https://www.youtube.com/watch?v=dWxd05N8zXc][Carach Angren - Death Came Through a Phantom Ship]]
+  do you like ghost stories?
++ [[https://boardsofcanada.bandcamp.com/album/twoism][Boards of Canada - Twoism]]
+  this album might look harmless but wait until your soul evaporates completely
++ [[https://thehelixnebula.bandcamp.com/releases][The Helix Nebula - Meridian]]
+  now we're talking..
++ [[https://www.youtube.com/watch?v=RL84JVt6sjs][Bloodbath - Live At Wacken 2005]]
+  this is the best metal live performance
++ [[https://www.youtube.com/watch?v=cOhEgg2jNSw][Bloodbath - Unblessing The Purity]]
+  blasting the virginborn
++ [[https://www.youtube.com/watch?v=5-E4ZRZg2bY][Krallice - Diotima]]
+  actual masterpiece. check *Telluric Rings* song if you still with me
++ [[https://www.youtube.com/watch?v=9MIHr_Ypql4][Krallice - Dimensional Bleedthrough]]
++ [[https://www.youtube.com/watch?v=WngGXkLEJ0Y][Infant Annihilator - The Palpable Leprosy of Pollution]]
+  this will beat the shit out of your ears..
 + [[https://www.youtube.com/watch?v=_TfPd0jlavA][Rings of Saturn -  Embryonic Anomaly]]
+  brain drill but with major scales
++ [[https://cryochamber.bandcamp.com/album/kapnobatai][Atrium Carceri - Kapnobatai]]
+  things get serious and deep after this. especialy after the track called "A Stroll Through the Ancient City"
++ [[https://cryochamber.bandcamp.com/album/dubbed-in-black][Alt3r3d Stat3 - Dubbed in Black]]
 * Template
 ** facts
 ** concept / term
