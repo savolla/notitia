@@ -87,7 +87,7 @@ kesinlikle virtualenv'den daha kullanışlı bir pakettir. bununla sanal ortam o
 - *işlev*: bir objenin sınıfını döndürür
 - *params*: objenin kendisi
 - *kullanım*: [[pt1]]
-*** tutorial / howto
+*** howto
 **** bir objenin sınıfını nasıl döndürürüz | <<pt1>>
 #+BEGIN_SRC python :results output
 msg = "hello"
@@ -195,12 +195,12 @@ pipenv shell
 bu komuttan sonra, klasör adı ile bir ortam oluşacaktır. terminalin solunda projenin adı görünecek ve bu dizince bir Pipfile oluşacaktır. onu elleme lazım o.
 3. istenen python paketleri kurulur. sanal dizinde olduğundan emin ol
 #+BEGIN_SRC sh
-pipenv install django==3.0.1
+sudo pipenv install django==3.0.1
 #+END_SRC
 artık ne kuruluyorsa bu klasöre kurulacak ve sistemden tamamen izole bir şekilde çalışacaktır
 4. paket silme
 #+BEGIN_SRC sh
-pipenv uninstall django==3.0.1
+sudo pipenv uninstall django==3.0.1
 #+END_SRC
 5. ortamdan çıkmak istersen
 #+BEGIN_SRC sh
@@ -211,19 +211,49 @@ bazen bir projenin düzgün çalışması için *requirements.txt* dosyasıyla b
 #+BEGIN_SRC sh
 pipenv install -r ./requirements.txt
 #+END_SRC
+**** scrape web with python
+***** create a python environment
+1. install *pypenv* for easily creating /healthy/ python environments
+   #+begin_src sh
+sudo pip install pipenv
+   #+end_src
+2. create your project directory (web-scraper in this example)
+   #+begin_src sh
+mkdir web-scraper && cd web-scraper
+   #+end_src
+3. create and start the enviroment
+   #+begin_src sh
+pipenv shell
+   #+end_src
+   after this command a new file called =Pipfile= will be created. don't mess with it yet
+***** install dependencies
+1. install *bs4* module for /html parsing/
+   #+begin_src sh
+sudo pipenv install bs4
+   #+end_src
+2. install *requests* for taking html code from websites
+   #+begin_src sh
+sudo pipenv install requests
+   #+end_src
+***** import modules
+#+begin_src python
+import bs4
+from urllib.request import urlopen as uReq
+from bs4 import BeautifulSoup as soup
+#+end_src
 
-*** problems and solutions
+*** problems & solutions
 *** modules
-**** Matplotlib
+**** matplotlib
 ***** facts
 + matplotlib, veri grafiği çizdirme kütüphanesidir
 +
-***** concept / term
+***** concept
 ****** subplot()
 + birden fazla grafiği aynı anda çizdirmek için kullanılan bir matplotlib methodudur. örnek için [[birden fazla grafiği üst üste çizdirme][şuna]] ve [[birden fazla grafiği yan yana çizdirme][şuna]] bak
 + örnek kullanım: subplot(1,2,1)
 
-***** tutorial / howto
+***** howto
 ****** basit bir grafik oluşturma
 #+BEGIN_SRC python :results graphics
 from matplotlib import pyplot as plt
@@ -279,28 +309,34 @@ plt.plot(x2, y2, 'b')
 plt.show()
 #+END_SRC
 
-***** problems and solutions
+***** problems & solutions
 ****** Tkinter hatası alınıyorsan şunu dene
 #+BEGIN_SRC sh
 xrdb -load /dev/null
 xrdb -query
 #+END_SRC
 
-**** Seaborn
+**** seaborn
 ***** facts
-***** concept / term
-***** tutorial / howto
-***** problems and solutions
-**** Pandas
+***** concept
+***** howto
+***** problems & solutions
+**** pandas
 ***** facts
-***** concept / term
-***** tutorial / howto
-***** problems and solutions
-**** Sklearn
+***** concept
+***** howto
+***** problems & solutions
+**** sklearn
 ***** facts
-***** concept / term
-***** tutorial / howto
-***** problems and solutions
+***** concept
+***** howto
+***** problems & solutions
+**** bs4
+used for parsing html text. widely used in *web scrapping*
+***** facts
+***** concept
+***** how to
+***** problems & solutions
 ** bash
 ** vhdl
 *** facts
