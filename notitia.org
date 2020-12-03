@@ -1698,15 +1698,16 @@ source ~/.bashrc
 
 * Music
 :PROPERTIES:
-:EXPORT_FILE_NAME: one-makefile-for-everything
+:EXPORT_FILE_NAME: music-recommendations
 :HUGO_BASE_DIR: ~/txt/blog/
 :HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
 :EXPORT_TITLE: savolla's music recommendations
 :END:
-Here I made some album recommendations for you. This is what i listen to when i really want to get into the mood. i made my best by separating genres into two categories. this list will grow up. I'll trow goodies here when i think it's worthy
-** music for normies
-this is *normal music for normal people*. (see what I did?)
+Here I made some album recommendations. this is my personal playlist which consists of very "non-normie" stuff. albums in this list will start with the most "normie" music and will incrementally get heavier
+
+** level 1
+easier to digest and fun
 + [[https://tokyoroseofficial.com/album/chases-2][Tokyo Rose - Chases 2]]
  great synthwave album.. my favorite song on this is *midnight chase*
 + [[https://dancewiththedead.bandcamp.com/album/loved-to-death][Dance with the Dead - Loved to Death]]
@@ -1715,17 +1716,36 @@ this is *normal music for normal people*. (see what I did?)
   directly jump to *Elevator Dance Party* song. great work and really underrated. those tempo changes will shake your brain inside
 + [[https://megadrive.bandcamp.com/album/hardwired-v14][Mega Drive - Hardwired V1.4]]
   *Dataline* *Dataline* *Dataline* !!
-+ [[https://plini.bandcamp.com/album/sweet-nothings][Plini - Sweet Nothings]]
-  I bet this will be the sweetest thing you will ever listened. your ears will overflow with candies
 + [[https://www.youtube.com/watch?v=Xw5AiRVqfqk][Aphex Twin - Selected Ambient Works 85-92]]
   legent album from a legend
++ [[https://plini.bandcamp.com/album/sweet-nothings][Plini - Sweet Nothings]]
+  I bet this will be the sweetest thing you will ever listened. your ears will overflow with candies
 
-** danger zone
-=WARNING= this list is not for pregrant ladies or people with hearth conditions. I'll list the following content from most "normie" to *deepest depths of hell*
+** level 2
+still electronic but with some interesting elements
 + [[https://www.youtube.com/watch?v=OooYpuBd3gY][Heptaedium - "A M E N"]]
   did you ever listened to *break core*? edgy..
 + [[https://www.youtube.com/watch?v=nzvLiwUK3R8][Aphex Twin Live at Field Day]]
   did you ever experienced ear bleeding? just skip to 1:51:00 and wait.
+
+** level 3
+still electronic but.. this time adding depression
++ [[https://boardsofcanada.bandcamp.com/album/twoism][Boards of Canada - Twoism]]
+  this album might look harmless but wait until your soul evaporates completely
++ [[https://www.youtube.com/watch?v=PkVenDN7Y9A][Hrsta - Ghosts Will Come And Kiss Our Eyes]]
+  don't listen to this if you lost someone recently
++ [[https://www.youtube.com/watch?v=szk5vGqPn2U][The LONGING - Original Soundtrack]]
+  wait 400 days
+
+** level 6
+dark ambient passage. contains some horror material
++ [[https://cryochamber.bandcamp.com/album/kapnobatai][Atrium Carceri - Kapnobatai]]
+  things get serious and deep after this. especialy after the track called "A Stroll Through the Ancient City"
++ [[https://cryochamber.bandcamp.com/album/dubbed-in-black][Alt3r3d Stat3 - Dubbed in Black]]
+  paranormal stuff
+
+** level 4
+"guitars and drums" era begins but without vocals. get heavier and heavier
 + [[https://www.youtube.com/watch?v=4z9X0htC3mg][Modern Day Babylon - Travelers]]
   my first djent album. this is the first metal album without vocals
 + [[https://www.youtube.com/watch?v=qcpmtd-baKU][Heptaedium - KAWAII!!]]
@@ -1736,50 +1756,46 @@ this is *normal music for normal people*. (see what I did?)
   now we're talking..
 + [[https://www.youtube.com/watch?v=WngGXkLEJ0Y][Infant Annihilator - The Palpable Leprosy of Pollution]]
   this will beat the shit out of your ears..
-+ [[https://www.youtube.com/watch?v=TTs9AUo5R3U][Dissonance In Design - Sentient ]]
-  technical death albums suppose to contain some imposible riffs right? but this album breaks this rule. and it sounds so good!
-+ [[https://konkeror.bandcamp.com/][Konkeror - The Abysmal Horizons]]
-  just heavy.. skip to "Towers" song you'll get what i mean
-+ [[https://www.youtube.com/watch?v=_TfPd0jlavA][Rings of Saturn -  Embryonic Anomaly]]
-  brain drill but with major scales
+
+** level 5
+vocals come to play. death metal, technical death metal stuff. list gets *heavier and HEAVIER*.
 + [[https://www.youtube.com/watch?v=dWxd05N8zXc][Carach Angren - Death Came Through a Phantom Ship]]
   do you like ghost stories?
++ [[https://www.youtube.com/watch?v=TTs9AUo5R3U][Dissonance In Design - Sentient ]]
+  technical death metal album but without crazy riffs
++ [[https://konkeror.bandcamp.com/][Konkeror - The Abysmal Horizons]]
+  just heavy.. skip to "Towers" song you'll get what i mean
 + [[https://www.youtube.com/watch?v=RL84JVt6sjs][Bloodbath - Live At Wacken 2005]]
   this is the best metal live performance
++ [[https://www.youtube.com/watch?v=St6lJaiHYIc][Edge of Sanity - Crimson]]
+  this album contains only one song
 + [[https://www.youtube.com/watch?v=cOhEgg2jNSw][Bloodbath - Unblessing The Purity]]
   blasting the virginborn
++ [[https://www.youtube.com/watch?v=dm3i7fWufrw][Ouroboros - Glorification of a Myth]]
+  fine album. lots of solos and great (hard to play) guitar riffs
 + [[https://www.youtube.com/watch?v=5-E4ZRZg2bY][Krallice - Diotima]]
   actual masterpiece. check *Telluric Rings* song if you still with me
 + [[https://www.youtube.com/watch?v=9MIHr_Ypql4][Krallice - Dimensional Bleedthrough]]
   I like those feedbacks man..
-+ [[https://boardsofcanada.bandcamp.com/album/twoism][Boards of Canada - Twoism]]
-  this album might look harmless but wait until your soul evaporates completely
-+ [[https://www.youtube.com/watch?v=PkVenDN7Y9A][Hrsta - Ghosts Will Come And Kiss Our Eyes]]
-  don't listen to this if you lost someone recently
-+ [[https://www.youtube.com/watch?v=szk5vGqPn2U][The LONGING - Original Soundtrack]]
-  depressed and sad melodies..
-+ [[https://www.youtube.com/watch?v=67BcCqnn8-s][Thy Light - Suici.De.pression]]
-  enabling *depression mode* of yours. skip to *7:20*
-+ [[https://cryochamber.bandcamp.com/album/kapnobatai][Atrium Carceri - Kapnobatai]]
-  things get serious and deep after this. especialy after the track called "A Stroll Through the Ancient City"
-+ [[https://cryochamber.bandcamp.com/album/dubbed-in-black][Alt3r3d Stat3 - Dubbed in Black]]
-  paranormal stuff
++ [[https://zenithpassage.bandcamp.com/album/cosmic-dissonance-remastered][The Zenith Passage - Cosmic Dissconance]]
+  i don't know in which category should I put this album
 + [[https://www.youtube.com/watch?v=ShiEuQk5agg][Inferi - The Path of Apotheosis]]
   this is one of those albums when your entire body chills. guitars sound awesome and played by highly skilled musicians. those tremolo pickings man..
 + [[https://uniqueleaderrecords.bandcamp.com/album/dasein][First Fragment - Dasein]]
   this album contains some guitar techniques...
-+ [[https://www.youtube.com/watch?v=dm3i7fWufrw][Ouroboros - Glorification of a Myth]]
-  fine album. lots of solos and great (hard to play) guitar riffs
++ [[https://www.youtube.com/watch?v=_TfPd0jlavA][Rings of Saturn -  Embryonic Anomaly]]
+  brain drill but with major scales
 + [[https://spawnofpossession.bandcamp.com/album/incurso][Spawn Of Possession - Incurso]]
   wait until "Bodiless Sleeper" song
-+ [[https://cryptopsyofficial.bandcamp.com/album/none-so-vile][Cryptopsy - None So Vile]]
-  old and good Cryptopsy.
-+ [[https://www.youtube.com/watch?v=xGGK93eqAMo][Abominable Putridity - The Anomalies Of Artificial Origin]]
-  Russians really know how to do it
 + [[https://severetorture.bandcamp.com/][Severe Torture - Slaughtered]]
   brutality takes another form
-+ [[https://www.youtube.com/watch?v=dheNB2erMZI][Horrific - Your Worst Nightmare]]
-  very underrated album.I'm not gonna call this album a metal album. this is like introduction to metal music. songs in this album have 80's rock flavor. Guitars are not in tune and songs are played very sloppy. contains funny elements.. great album
++ [[https://cryptopsyofficial.bandcamp.com/album/none-so-vile][Cryptopsy - None So Vile]]
+  insane vocals and drums
++ [[https://www.youtube.com/watch?v=xGGK93eqAMo][Abominable Putridity - The Anomalies Of Artificial Origin]]
+  ...
++ [[https://www.youtube.com/watch?v=Uc-E9KODwpM][Extermination Dismemberment - Serial Urbicide]]
+  ......
+
 * Template
 ** facts
 ** concept / term
