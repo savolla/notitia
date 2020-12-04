@@ -234,48 +234,71 @@ sudo pipenv install bs4
    #+begin_src sh
 sudo pipenv install requests
    #+end_src
+3. install *fake-useragent* to avoid captchas
+   #+begin_src sh
+sudo pipenv install fake-useragent
+   #+end_src
 ***** import modules
+
 1. create a python file and open it with your favorite text editor
    #+begin_src sh
 touch web-scrapping-application.py
 emacs web-scrapping-application.py
    #+end_src
+
 2. add the following to your file
    #+begin_src python
-from urllib.request import urlopen as uReq
+from urllib.request import urlopen as req
 from bs4 import BeautifulSoup as soup
+from fake_useragent import UserAgent
+
    #+end_src
 3. execute the file
    #+begin_src sh
 python web-scrapping-application.py
    #+end_src
+
 if you don't get any import errors, then it means that modules are installed and you're ready to go.
+
 ***** retrieve the web page
+
 1. add the *url* of the site that your want to scrape.
     #+begin_src py
-url = "https://www.newegg.com/global/tr-en/p/pl?d=graphics+card"
+url = "https://github.com/savolla"
     #+end_src
-2. get the page from the internet. this might take a while depending on your internet connection and size of the page
+
+2. get the html content from the internet. this might take a while depending on your internet connection and size of the page
    #+begin_src py
-uClient = uReq(url)
+webpage = req(url)
    #+end_src
+
 3. assign html content to a variable
    #+begin_src py
-page_html = uClient.read()
+page_html = req.read()
    #+end_src
+
 4. close the connection
    #+begin_src py
-uClint.close()
+req.close()
    #+end_src
-5. beautify the soup
+
+5. make the html code manageble
    #+begin_src py
-page_soup = soup(page_html, "html.parser")
+page_html = soup(page_html, "html.parser")
    #+end_src
-***** ---------
-now we can get every html element value like this;
-#+begin_src py
-print( page_soup.h1 )
-#+end_src
+
+***** extract content from html
+1. go to your browser and find the section you want to scrape
+2. right click on this section and select "inspect element"
+3. find the elements you want to scrape. (div, span, a..)
+4. crop your html content
+
+   #+begin_src python
+container = page_html.find_all("div", {"class":"div-class-name"})
+   #+end_src
+   container is a list of divs now. every element in this list is a class of =div-class-name=
+
+5. check how many items container have
 
 *** problems & solutions
 *** modules
