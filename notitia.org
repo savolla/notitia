@@ -1561,7 +1561,7 @@ git reset $YOUR_FILE
    #+end_src
 ***** store your credentials for automatic pushes
 #+begin_quote
-this is not secure! your password and username will be stores inside *.git* directory in *planetext*. enyone on your PC will have access to them
+this is not secure! your password and username will be stored inside *.git* directory in *planetext*. enyone on your PC will have access to them. you've been warned!
 #+end_quote
 
 1. go to your repository
@@ -1580,7 +1580,18 @@ this is not secure! your password and username will be stores inside *.git* dire
    #+end_src
 5. now the git utility will ask you *username* and *password*. enter those and you are good to go
 
-after this operation, git won't ask about username and password for this repository. this is not a global modification btw. you can do it for your repositories one by one
+after this operation, git won't ask for username and password for this repository. this is not a global modification btw. you have to do this for every repo
+***** switch to specific commit
+useful if you want to go back to the last checkpoint in your project. let's say you commited your project when it was working without problems. you code a little bit more and bam.. it's not working now.. insted of fixing bugs, you might go back in git commit history
+1. get the last commit's *id*
+   #+begin_src sh
+git log
+   #+end_src
+2. go back to last commit
+   #+begin_src sh
+git reset --hard $COMMIT_ID
+   #+end_src
+now all the local changes you made will be lost
 *** stow
 restores dotfiles from a directory
 *** youtube-dl
