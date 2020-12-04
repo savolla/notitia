@@ -21,13 +21,13 @@ typedef struct A {
     int x = 333;
 }
   #+end_src
-the valid version of the code abovo is:
+the valid version of the above code is:
   #+begin_src c
 typedef struct A {
     int x;
 }
   #+end_src
-**** struct sizes doesn't make sense
+**** struct sizes don't make sense
 the following struct's size is 12 bytes.
 #+begin_src c
 typedef struct A {
@@ -53,7 +53,6 @@ typedef struct A {
 } A;
 #+end_src
 =sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
-
 
 *** concept
 *** how to
