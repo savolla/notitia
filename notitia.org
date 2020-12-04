@@ -430,6 +430,27 @@ driver = webdriver.Chrome()
 driver.get("https://savolla.github.io") # open up a page
 driver.close() # close the driver
 #+end_src
+****** search google
+#+begin_src python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("https://google.com")
+search_bar = driver.find_element_by_name("q") # you can search by other things as well
+search_bar.send_keys("Kurotogake bandcamp")
+search_bar.send_keys(Keys.RETURN)
+#+end_src
+****** get page source
+this is usefull when websited block automatic http requests.
+#+begin_src python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("https://github.com/savolla")
+page_html = driver.page_source  # now you have all the html content in page_html
+#+end_src
 
 ** bash
 ** vhdl
