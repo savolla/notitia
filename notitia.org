@@ -210,7 +210,7 @@ bazen bir projenin düzgün çalışması için *requirements.txt* dosyasıyla b
 #+BEGIN_SRC sh
 pipenv install -r ./requirements.txt
 #+END_SRC
-**** scrape web with python
+**** +scrape web with python+
 ***** create a python environment
 1. install *pypenv* for easily creating /healthy/ python environments
    #+begin_src sh
@@ -395,6 +395,42 @@ used for parsing html text. widely used in *web scrapping*
 ***** concept
 ***** how to
 ***** problems & solutions
+**** selenium
+***** methods
+#+begin_src python
+driver.get("https://savolla.github.io")     # open up a page
+driver.title                                # get page title
+driver.close()                              # close the driver
+#+end_src
+***** how to
+****** install
+1. create a python environment
+
+   #+begin_src sh
+sudo pip install pipenv
+mkdir project
+cd project
+pipenv shell
+   #+end_src
+
+2. install selenium
+
+   #+begin_src sh
+sudo pipenv install selenium
+   #+end_src
+
+3. install *chromium*. this package comes with *chromedriver* which we will need
+   #+begin_src sh
+pacman -S chromium
+   #+end_src
+****** run webdriver
+#+begin_src python
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get("https://savolla.github.io") # open up a page
+driver.close() # close the driver
+#+end_src
+
 ** bash
 ** vhdl
 *** facts
@@ -1762,6 +1798,8 @@ still electronic but.. this time adding depression
 
 *** level 4
 dark ambient passage. contains some depressive and horror materials
++ [[https://www.youtube.com/watch?v=g3xQCMDz5Vs][Kurotokage - Call To The Deep]]
+  contains ethnic sounds. it's like a ritual music + dark ambient elements
 + [[https://cryochamber.bandcamp.com/album/kapnobatai][Atrium Carceri - Kapnobatai]]
   things get serious and deep after this. especialy after the track called "A Stroll Through the Ancient City"
 + [[https://cryochamber.bandcamp.com/album/dubbed-in-black][Alt3r3d Stat3 - Dubbed in Black]]
