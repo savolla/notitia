@@ -428,6 +428,13 @@ used for parsing html text. widely used in *web scrapping*
 ***** facts
 ***** concept
 ***** how to
+****** navigate the html tree
+you can zoom into html content by using *dot* operator in bs4
+#+begin_src python
+page_html.title # get title
+page_html.body.p # get the first p element in body
+page_html.body.find_all("p") # find all p elements inside body
+#+end_src
 ***** problems & solutions
 **** selenium
 ***** methods
@@ -486,6 +493,10 @@ driver.get("https://github.com/savolla")
 page_html = driver.page_source  # now you have all the html content in page_html
 #+end_src
 ****** find elements in html
+#+begin_src python
+from selenium.webdriver.common.by import By
+
+#+end_src
 
 
 ** bash
