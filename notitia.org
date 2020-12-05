@@ -343,6 +343,19 @@ print(x)
 #+RESULTS:
 : [2, 3, 4]
 
+**** change list elements
+this example changes all 2's to 0
+#+begin_src python
+a=[1,2,1,2,1,2]
+a = [0 if x==2 else x for x in a]
+#+end_src
+**** convert list to string
+=WARNING= list items must be type of string
+#+begin_src python
+x = ['h', 'e', 'l', 'l', 'o']
+x = ''.join(x)
+#+end_src
+
 *** problems & solutions
 *** modules
 **** matplotlib
