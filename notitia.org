@@ -485,22 +485,8 @@ driver = webdriver.Chrome()
 driver.get("https://github.com/savolla")
 page_html = driver.page_source  # now you have all the html content in page_html
 #+end_src
-****** make selenium wait for pages to load
-#+begin_src python
-def selenium_wait( html_content, seconds, driver, ID ):
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
+****** find elements in html
 
-    try:
-        html_content = WebDriverWait( driver, seconds ).until(
-            EC.presence_of_element_located((By.ID, ID))
-        )
-    except:
-        driver.quit()
-
-    return html_content
-#+end_src
 
 ** bash
 ** vhdl
