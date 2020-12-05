@@ -434,6 +434,7 @@ you can zoom into html content by using *dot* operator in bs4
 page_html.title # get title
 page_html.body.p # get the first p element in body
 page_html.body.find_all("p") # find all p elements inside body
+page_html.body.find_all(attrs={"itemprop":"description"})[0].text # you just need this
 #+end_src
 ***** problems & solutions
 **** selenium
