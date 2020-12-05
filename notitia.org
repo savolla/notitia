@@ -59,8 +59,8 @@ typedef struct A {
 **** define a struct
 #+begin_src c
 typedef struct A{
-    int a = 0;
-    char c = 'x';
+    int a;
+    char c;
 } A;
 #+end_src
 *** problems & solutions
@@ -520,7 +520,6 @@ page_html = driver.page_source  # now you have all the html content in page_html
 from selenium.webdriver.common.by import By
 
 #+end_src
-
 
 ** bash
 ** vhdl
