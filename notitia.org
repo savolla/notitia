@@ -1920,7 +1920,11 @@ source ~/.bashrc
   3. set *BorderStyle* to Fixed3D.
   4. set *AutoSize* to false.
   5. set *size* to 800,2
-+
++ :log: after button placement is done, I'll need to display retriewed results from the database (student and book database) inside form. I found a tutorial [[https://www.youtube.com/watch?v=RRmdwqHKN7A][here]] for this operation
++ :conclusion: gridview element let's us to enter, edit and delete data by default. so maybe I won't need separate add, edit and delete buttons
++ :howto: Retrieve Data & Display it on GridView
+  1.
+
 
 * Music
 ** recommendations :music:
