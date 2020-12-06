@@ -1898,6 +1898,18 @@ cont() {
 source ~/.bashrc
    #+end_src
 
+* Project Journal
+** Library Automation in C# .NET Form
++ :conclusion: it turns out that a .NET project can have multiple forms
++ :howto: to add a new form to aproject;
+  1. right click solution root
+  2. =Add=
+  3. =new item=
+  4. select =form (windows form)=
+  5. click =add=
++ :log: i renamed my newly created form "crud_ogrenciler"
++ :conclusion: visual studio makes it simple for renaming stuff projectwise
++
 * Music
 ** recommendations :music:
 :PROPERTIES:
