@@ -1909,7 +1909,19 @@ source ~/.bashrc
   5. click =add=
 + :log: i renamed my newly created form "crud_ogrenciler"
 + :conclusion: visual studio makes it simple for renaming stuff projectwise
++ :log: i copyed and pasted buttons from the first menu to newly created form. so the user will think he is still in the same menu
++ :log: changed names of both forms to "Library Automation"
++ :conclusion: when i add an element and press 't', it directly focuses to properties menu and changes the *text* field. so I don't need to find a property every time from properties menu. I'll try other characters now
++ :conclusion: it is not about 't'. when i select any element from the form and press any key, it changes it's text area. it must be button, label etc
++ :log: added a line seperator below buttons. so it will look like a toolbar
++ :howto: adding a line seperator;
+  1. add a *Label* control to your form.
+  2. set *Label* Text to empty.
+  3. set *BorderStyle* to Fixed3D.
+  4. set *AutoSize* to false.
+  5. set *size* to 800,2
 +
+
 * Music
 ** recommendations :music:
 :PROPERTIES:
