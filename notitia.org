@@ -1121,6 +1121,10 @@ there must be an easier way..
 #+begin_src sh
 rm -rf ~/.emacs.d/.local/straight/build*/with-editor && doom sync
 #+end_src
+***** omnisharp sever is not installed
+1. =SPC :=
+2. =omnisharp-install-server=
+3. =RET=
 
 *** vim
 **** blog
