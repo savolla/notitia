@@ -8,9 +8,14 @@
 #+HUGO_SECTION: en/posts
 
 * Topics
-** ERP
 ** web programming
 ** probability and statistics
+** SOLID principles
+*** SRP
+*** OCP
+*** LSP
+*** ISP
+*** DIP
 * Programming Languages
 ** c
 *** facts
@@ -1755,7 +1760,16 @@ this layer manages different kind of tables like /user tables/, /report tables/,
 operates retrieved data from data layer. basic CRUD operations or other application spesific logic, permissions works there
 
 *** presentation layer
-how user sees the results from business layer. this includes some User Interface Design thingies. html, javascript, css play here together
+how user sees the results from business layer. this includes some User Interface Design thingies. user interface might be;
+1. desktop form application
+2. web
+3. console
+
+** NoSQL
++ NoSQL = "Not Only SQL"
++ it's a database but;
+  a. uses XML or JSON instead of tables
+  b. stores data into RAM instead of harddisk
 
 * Foreign Languages
 ** English
@@ -1922,11 +1936,11 @@ still electronic but.. this time adding depression
   wait 400 days
 
 *** level 4
-dark ambient passage. contains some depressive and horror materials
-+ [[https://www.youtube.com/watch?v=g3xQCMDz5Vs][Kurotokage - Call To The Deep]]
-  contains ethnic sounds. it's like a ritual music + dark ambient elements
+dark ambient passage. contains some depressive and horror materials. you also might want to stop there and enjoy 1st, 2nd and 3rd levels because things get non-normie here
 + [[https://www.youtube.com/watch?v=ZKa5LwFgAOA][Gates of Morheim - Omagatoki]]
-  similar to Kurotokage but deeper and darker. Japanese Synth is the meta now btw
+  contains ethnic sounds. it's like a ritual music + dark ambient elements
++ [[https://www.youtube.com/watch?v=g3xQCMDz5Vs][Kurotokage - Call To The Deep]]
+  similar to Gates of Morheim but deeper and darker. this album will make you dizzy and tired
 + [[https://cryochamber.bandcamp.com/album/kapnobatai][Atrium Carceri - Kapnobatai]]
   things get serious and deep after this. especialy after the track called "A Stroll Through the Ancient City"
 + [[https://cryochamber.bandcamp.com/album/dubbed-in-black][Alt3r3d Stat3 - Dubbed in Black]]
