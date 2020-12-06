@@ -1732,6 +1732,30 @@ this class will be converted to the *database table* called *Human*
 + Model : contains all classes
 + Controller : instantiates classes from Model and returns them to View
 + View : represents Controller's results to the user
+** Layered Architecture
++ this is a standard in software development
++ software must respond to variety of requirements. this can't be done if our software is coupled and messy. so this standard was developed. it makes software open to new requirements
++ 3 pillars of Layered Architecture;
+  1. Data Layer (database)
+  2. Business Layer (UML / Logic)
+  3. Presentation Layer (UI / UX)
+*** data layer
+this layer is responsible for data transmission between business layer and database.
+#+begin_src text
+
+    +----+          +------+          +----------+
+    | DB | <------> | Data | <------> | Business |
+    +----+   data   | Layer|   data   | Layer    |
+                    +------+          +----------+
+
+#+end_src
+this layer manages different kind of tables like /user tables/, /report tables/, /general application tables/
+
+*** business layer
+operates retrieved data from data layer. basic CRUD operations or other application spesific logic, permissions works there
+
+*** presentation layer
+how user sees the results from business layer. this includes some User Interface Design thingies. html, javascript, css play here together
 
 * Foreign Languages
 ** English
@@ -1901,6 +1925,8 @@ still electronic but.. this time adding depression
 dark ambient passage. contains some depressive and horror materials
 + [[https://www.youtube.com/watch?v=g3xQCMDz5Vs][Kurotokage - Call To The Deep]]
   contains ethnic sounds. it's like a ritual music + dark ambient elements
++ [[https://www.youtube.com/watch?v=ZKa5LwFgAOA][Gates of Morheim - Omagatoki]]
+  similar to Kurotokage but deeper and darker. Japanese Synth is the meta now btw
 + [[https://cryochamber.bandcamp.com/album/kapnobatai][Atrium Carceri - Kapnobatai]]
   things get serious and deep after this. especialy after the track called "A Stroll Through the Ancient City"
 + [[https://cryochamber.bandcamp.com/album/dubbed-in-black][Alt3r3d Stat3 - Dubbed in Black]]
