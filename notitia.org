@@ -775,6 +775,9 @@ now we have a section with search
   #+end_src
 **** Maven, Gradle and Ant
 they are three build tools for java
+**** swing
++ this is a library for GUI development in java.
++ it is really *outdated* but it teaches the basics
 *** tips
 + if you don't know the name of the exception while making try catch methods, you can always make the program spit this error and then get the name from the error log
 *** facts
@@ -884,6 +887,32 @@ public static int takeNumberData() {
         return -1;
     }
     return number;
+}
+#+end_src
+**** create a swing application
+1. open up *netbeans*
+2. create new project
+3. select; Ant -> Java Application
+4. name your project
+5. untick "create main class"
+6. wait for project creation
+7. right click on your project;
+   New -> JFrame Form
+8. name your form
+9. a new frame with controls will be open
+**** create a blank GUI window
+we use JFrame class from swing library to do this
+#+begin_src java
+import javax.swing.JFrame;
+
+public class GUI {
+    public GUI() {
+        JFrame frame = new JFrame();
+    }
+
+    public static void main(String[] args) {
+        new GUI();
+    }
 }
 #+end_src
 
