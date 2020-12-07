@@ -527,6 +527,73 @@ from selenium.webdriver.common.by import By
 #+end_src
 
 ** bash
+** javascript
+*** concepts
+**** JSON
++ javascript object notation
++ data representation format
++ used in *config* files
++ supported types;
+  1. strings: "hello world", "savolla"
+  2. numbers: 10, 1.5, -30
+  3. boolean: true, false
+  4. null: null
+  5. arrays: [1,2,3], ["Hello", "world"]
+  6. objects: {"key":"value"}, {"age":30}
++ everything in json is _valid javascript code_
+*** tips
+*** facts
+*** how to
+**** create a json file
+this is actually an _array_ in javascript. this is why it starts with '[]'
+#+begin_src js
+[
+    {
+        "name":"software engineering",
+        "delay": 2,
+        "book":
+        [
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"}
+        ]
+]
+#+end_src
+**** display json contents in html
+1. paste the json string inside script tag and make it a string by surroud it with `
+2. use =JSON.parse= method to make JSON parsable with indexes
+
+#+begin_src html
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>MultiTasker</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let topics =
+        `[
+                {
+                    "name":"software engineering",
+                    "delay": 2,
+                    "book":
+                    [
+                        {"name" : "codecomplete2"},
+                        {"name" : "Applying UML"},
+                        {"name" : "clean code"},
+                        {"name" : "clean coder"},
+                        {"name" : "solid principles"}
+                    ]
+                }
+        ]`
+        console.log( JSON.parse(topics)[0].book)
+    </script>
+  </body>
+</html>
+#+end_src
+*** problems & solutions
 ** vhdl
 *** facts
 + HDL : Hardware Descriptive Language
@@ -746,7 +813,7 @@ now we have a section with search
 ******* limit "create" for logged users
 *** how to
 ** java
-*** consepts
+*** concepts
 **** nested classes
 - java allows you to define a class into another class. they called nested classes
 ***** inner class
@@ -1805,12 +1872,6 @@ how user sees the results from business layer. this includes some User Interface
 + it's a database but;
   a. uses XML or JSON instead of tables
   b. stores data into RAM instead of harddisk
-** JSON
-+ javascript object notation
-+ data representation format
-+ used in;
-  1. config files
-  2.
 
 * Linux
 ** how to
