@@ -2,6 +2,7 @@
 #+AUTHOR: Oleksiy Nehlyadyuk
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Nov 13 09:19:17 2020
+#+OPTIONS: inline: images
 #+LANGUAGE: en
 #+STARTUP: overview
 #+HUGO_BASE_DIR: ~/txt/blog/
@@ -1112,8 +1113,20 @@ example: /org-beamer-theme extension:el/
 read [[https://ox-hugo.scripter.co/][this]]
 
 ***** add and delete projects in treemacs
+****** I. way
+this way will only affect the current workspace
 =C-c C-p a=               add project to treemacs
 =C-c C-p d=               remove project from treemacs
+****** II. way
+this will globally add your projects
+1. =SPC :=
+2. =treemacs-edit-workspaces=
+3. add your project under *Default* like this;
+   #+begin_src org
+   ,** YOUR_PROJECT_NAME
+        - path :: PATH_TO_PROJECT
+   #+end_src
+4. finish editing by doing =treemacs-finish-edit=
 
 ***** effective coding with doom emacs :tools:doom:emacs:programming:howto:
 :PROPERTIES:
@@ -2105,6 +2118,17 @@ deepest depths of hell..
   ...
 + [[https://www.youtube.com/watch?v=Uc-E9KODwpM][Extermination Dismemberment - Serial Urbicide]]
   ......
+** blash beats
+1. traditional blast
+   [[file:./images/screenshot-03.png]]
+2. hyper blast
+   [[file:./images/screenshot-04.png]]
+3. bomb blast
+   [[file:./images/screenshot-05.png]]
+4. pussy blast
+   [[file:./images/screenshot-06.png]]
+5. diarrhea blast
+   [[file:./images/screenshot-07.png]]
 
 * Foreign Languages
 ** English
@@ -2128,7 +2152,7 @@ deepest depths of hell..
 =curated=
 ** Русский
 *** неизвестные слова
-* Template
+]]* Template
 ** facts
 ** concept / term
 ** tutorial / howto
