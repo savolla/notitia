@@ -851,6 +851,7 @@ they are three build tools for java
 + if you don't know the name of the exception while making try catch methods, you can always make the program spit this error and then get the name from the error log
 + all SQL queries must be used in try-catch blocks. because query result may not be return something
 + if you see "Must be Caught" errors then this statment must be used in try-catch blocks
++ when working with databases, whatch out those varchar[25] varaibles. java gets those variables as *string* so strings are not limited to 25. always check the length before storing varchar elements from java to database.
 **** facts
 **** how to
 ***** use linked lists
@@ -986,7 +987,7 @@ public class GUI {
     }
 }
 #+end_src
-
+***** use database in java
 **** problems & solutions
 ** databases
 *** mysql
