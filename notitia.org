@@ -2128,7 +2128,7 @@ deepest depths of hell..
 4. pussy blast
    [[file:./images/screenshot-06.png]]
 5. diarrhea blast
-   [[file:./images/screenshot-07.png]]
+    [[file:./images/screenshot-07.png]]
 
 * Foreign Languages
 ** English
@@ -2152,7 +2152,7 @@ deepest depths of hell..
 =curated=
 ** Русский
 *** неизвестные слова
-]]* Template
+* Template
 ** facts
 ** concept / term
 ** tutorial / howto
