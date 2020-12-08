@@ -17,10 +17,11 @@
 *** LSP
 *** ISP
 *** DIP
-* Programming Languages
-** c
-*** facts
-**** struct variable assignment
+* Programming
+** languages
+*** c
+**** facts
+***** struct variable assignment
 you can't assign values to variables in a struct. for example the following code will spit out an error
   #+begin_src c
 typedef struct A {
@@ -33,7 +34,7 @@ typedef struct A {
     int x;
 }
   #+end_src
-**** struct sizes don't make sense
+***** struct sizes don't make sense
 the following struct's size is 12 bytes.
 #+begin_src c
 typedef struct A {
@@ -60,18 +61,18 @@ typedef struct A {
 #+end_src
 =sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
 
-*** concept
-*** how to
-**** define a struct
+**** concept
+**** how to
+***** define a struct
 #+begin_src c
 typedef struct A{
     int a;
     char c;
 } A;
 #+end_src
-*** problems & solutions
-** perl
-*** facts
+**** problems & solutions
+*** perl
+**** facts
 + perl's extension is *.pl*
 + perl is more useful than shell scripting because it is compatible with other shells
 + perl is very powerfull when it comes to *Regex*
@@ -85,14 +86,14 @@ typedef struct A{
 + perl is more secure than shell
 + every expression must end with a semicolon ';'
 
-*** concepts
-**** shebang
+**** concepts
+***** shebang
 this must be on the first line of every perl script
 #+begin_src perl
 #!/usr/bin/perl
 #+end_src
-*** how to
-**** run perl program
+**** how to
+***** run perl program
 1. open up a file
    #+begin_src sh
 emacs program.pl
@@ -105,29 +106,29 @@ $name = <STDIN>;
 print("hello $name");
    #+end_src
 
-** python
-*** facts
+*** python
+**** facts
 + sınıf metodları hiç parametre almasa bile, içinde mutlaka *self* parametresi barındırmalıdır. örnek: [[sınıf oluşturmak]]
 + python'da bir sınıf oluştururken __init__ metodu kullanmak zorunda değiliz.
 + python'da kalıtım almak için sadece sınıf tanımlamasında, sınıf isminin yanına, parantez içine super classın adını yazmak yeterlidir. örnek: [[python'da inheritance]]
 + kalıtım almış bir sınıfın base sınıfınından method çağırmak için *super* keywordü kullanılır. örnek: [[base class'a ulaşmak]]
 + private değişken tanımlamak için, değişkenin başına iki kere '_' koymamız gerekir. örnek: [[private değişken oluşturmak]]
-*** consepts
-**** __init__
+**** consepts
+***** __init__
 python classları için kullanılan *constructor*. diğer çoğu dilde genelde sınıfın adı kullanılır init yerine ama python'da bu şekilde. örnek: [[sınıf oluşturmak]]
-**** self
+***** self
 C++'daki *this*'in aynısı. bunun özel bi olayı var, sınıf oluştururken kesinlikle her methodun içine parametre olarak verilmelidir. örnek : [[sınıf oluşturmak]]
-**** format string
+***** format string
 normalde print fonksiyonu içine yazdığımız string'e dışardan bir değişken eklemeye kalktığımızda, stringi ve değişkenleri + ile toplamamız vs gerekir. bunun yerine format string kullanılır. örnek: [[format string oluşturma]]
-**** pipenv
+***** pipenv
 kesinlikle virtualenv'den daha kullanışlı bir pakettir. bununla sanal ortam oluşturmak için [[virtual environment oluşturmak][şuna]] bak
-*** builtin function
-**** type()
+**** builtin function
+***** type()
 - *işlev*: bir objenin sınıfını döndürür
 - *params*: objenin kendisi
 - *kullanım*: [[pt1]]
-*** howto
-**** bir objenin sınıfını nasıl döndürürüz | <<pt1>>
+**** howto
+***** bir objenin sınıfını nasıl döndürürüz | <<pt1>>
 #+BEGIN_SRC python :results output
 msg = "hello"
 print(type(msg))
@@ -135,7 +136,7 @@ print(type(msg))
 
 #+RESULTS:
 : <class 'str'>
-**** sınıf oluşturmak
+***** sınıf oluşturmak
 #+BEGIN_SRC python :results output
 class Dog:
 # constructor
@@ -153,7 +154,7 @@ d.bark() # bark the dog
 : New Dog is created
 : BARK!
 
-**** class property'si oluşturma ve erişme
+***** class property'si oluşturma ve erişme
 #+BEGIN_SRC python :results output
 class Dog:
 # class properties
@@ -170,7 +171,7 @@ print(d.name)
 
 #+RESULTS:
 : Ares
-**** format string oluşturma
+***** format string oluşturma
 normal print fonksiyonunun içine, tıknaktan önce bir *f* karakteri eklenir
 
 #+BEGIN_SRC python :results output
@@ -181,7 +182,7 @@ print(f"Hi! My name is {name} and I'm {age} years old")
 
 #+RESULTS:
 : Hi! My name is savolla and I'm 28 years old
-**** python'da inheritance
+***** python'da inheritance
 #+BEGIN_SRC python :results output
 class Mammal:
 pass
@@ -193,7 +194,7 @@ class Dog(Mammal):
 pass
 #+END_SRC
 
-**** base class'a ulaşmak
+***** base class'a ulaşmak
 #+BEGIN_SRC python :results output
 class Mammal:
 age = 12;
@@ -208,7 +209,7 @@ h.someMethod()
 
 #+RESULTS:
 : 12
-**** private değişken oluşturmak
+***** private değişken oluşturmak
 #+BEGIN_SRC python :results output
 class A:
 public_var = 11
@@ -222,7 +223,7 @@ print(m.__private_var) # this won't
 #+RESULTS:
 : 11
 : 43
-**** virtual environment oluşturmak
+***** virtual environment oluşturmak
 1. önce *pipenv* paketi kurulur
 #+BEGIN_SRC sh
 sudo pip install pipenv
@@ -245,13 +246,13 @@ sudo pipenv uninstall django==3.0.1
 #+BEGIN_SRC sh
 exit
 #+END_SRC
-**** pipenv ile requirements.txt'den dependency'leri kurmak
+***** pipenv ile requirements.txt'den dependency'leri kurmak
 bazen bir projenin düzgün çalışması için *requirements.txt* dosyasıyla beraber gelir
 #+BEGIN_SRC sh
 pipenv install -r ./requirements.txt
 #+END_SRC
-**** +scrape web with python+
-***** create a python environment
+***** +scrape web with python+
+****** create a python environment
 1. install *pypenv* for easily creating /healthy/ python environments
    #+begin_src sh
 sudo pip install pipenv
@@ -265,7 +266,7 @@ mkdir web-scraper && cd web-scraper
 pipenv shell
    #+end_src
    after this command a new file called =Pipfile= will be created. don't mess with it yet
-***** install dependencies
+****** install dependencies
 1. install *bs4* module for /html parsing/
    #+begin_src sh
 sudo pipenv install bs4
@@ -278,7 +279,7 @@ sudo pipenv install requests
    #+begin_src sh
 sudo pipenv install fake-useragent
    #+end_src
-***** import modules
+****** import modules
 
 1. create a python file and open it with your favorite text editor
    #+begin_src sh
@@ -300,7 +301,7 @@ python web-scrapping-application.py
 
 if you don't get any import errors, then it means that modules are installed and you're ready to go.
 
-***** retrieve the web page
+****** retrieve the web page
 
 1. add the *url* of the site that your want to scrape.
     #+begin_src py
@@ -327,7 +328,7 @@ req.close()
 page_html = soup(page_html, "html.parser")
    #+end_src
 
-***** extract content from html
+****** extract content from html
 1. go to your browser and find the section you want to scrape
 2. right click on this section and select "inspect element"
 3. find the elements you want to scrape. (div, span, a..)
@@ -339,7 +340,7 @@ container = page_html.find_all("div", {"class":"div-class-name"})
    container is a list of divs now. every element in this list is a class of =div-class-name=
 
 5. check how many items container have
-**** delete the elements from a list
+***** delete the elements from a list
 #+begin_src python :results output
 x = [1,2,3,4]
 x.remove(x[0]) # remove the first element
@@ -349,32 +350,32 @@ print(x)
 #+RESULTS:
 : [2, 3, 4]
 
-**** change list elements
+***** change list elements
 this example changes all 2's to 0
 #+begin_src python
 a=[1,2,1,2,1,2]
 a = [0 if x==2 else x for x in a]
 #+end_src
-**** convert list to string
+***** convert list to string
 =WARNING= list items must be type of string
 #+begin_src python
 x = ['h', 'e', 'l', 'l', 'o']
 x = ''.join(x)
 #+end_src
 
-*** problems & solutions
-*** modules
-**** matplotlib
-***** facts
+**** problems & solutions
+**** modules
+***** matplotlib
+****** facts
 + matplotlib, veri grafiği çizdirme kütüphanesidir
 +
-***** concept
-****** subplot()
+****** concept
+******* subplot()
 + birden fazla grafiği aynı anda çizdirmek için kullanılan bir matplotlib methodudur. örnek için [[birden fazla grafiği üst üste çizdirme][şuna]] ve [[birden fazla grafiği yan yana çizdirme][şuna]] bak
 + örnek kullanım: subplot(1,2,1)
 
-***** howto
-****** basit bir grafik oluşturma
+****** howto
+******* basit bir grafik oluşturma
 #+BEGIN_SRC python :results graphics
 from matplotlib import pyplot as plt
 import numpy as np
@@ -388,7 +389,7 @@ plt.ylabel("y ekseni")        # y eksenine başlık ata
 plt.show()                    # grafiği göster
 #+END_SRC
 
-****** birden fazla grafiği üst üste çizdirme
+******* birden fazla grafiği üst üste çizdirme
 + üst üste çizdirmek için, iki grafiğin subplot fonksiyonundaki son parametrelerin aynı olması gerekir
 #+BEGIN_SRC python
 from matplotlib import pyplot as plt
@@ -409,7 +410,7 @@ plt.plot(x2, y2, 'b')
 plt.show()
 #+END_SRC
 
-****** birden fazla grafiği yan yana çizdirme
+******* birden fazla grafiği yan yana çizdirme
 #+BEGIN_SRC python
 from matplotlib import pyplot as plt
 import numpy as np
@@ -429,34 +430,34 @@ plt.plot(x2, y2, 'b')
 plt.show()
 #+END_SRC
 
-***** problems & solutions
-****** Tkinter hatası alınıyorsan şunu dene
+****** problems & solutions
+******* Tkinter hatası alınıyorsan şunu dene
 #+BEGIN_SRC sh
 xrdb -load /dev/null
 xrdb -query
 #+END_SRC
 
-**** seaborn
-***** facts
-***** concept
-***** howto
-***** problems & solutions
-**** pandas
-***** facts
-***** concept
-***** howto
-***** problems & solutions
-**** sklearn
-***** facts
-***** concept
-***** howto
-***** problems & solutions
-**** bs4
+***** seaborn
+****** facts
+****** concept
+****** howto
+****** problems & solutions
+***** pandas
+****** facts
+****** concept
+****** howto
+****** problems & solutions
+***** sklearn
+****** facts
+****** concept
+****** howto
+****** problems & solutions
+***** bs4
 used for parsing html text. widely used in *web scrapping*
-***** facts
-***** concept
-***** how to
-****** navigate the html tree
+****** facts
+****** concept
+****** how to
+******* navigate the html tree
 you can zoom into html content by using *dot* operator in bs4
 #+begin_src python
 page_html.title # get title
@@ -464,16 +465,16 @@ page_html.body.p # get the first p element in body
 page_html.body.find_all("p") # find all p elements inside body
 page_html.body.find_all(attrs={"itemprop":"description"})[0].text # you just need this
 #+end_src
-***** problems & solutions
-**** selenium
-***** methods
+****** problems & solutions
+***** selenium
+****** methods
 #+begin_src python
 driver.get("https://savolla.github.io")     # open up a page
 driver.title                                # get page title
 driver.close()                              # close the driver
 #+end_src
-***** how to
-****** install
+****** how to
+******* install
 1. create a python environment
 
    #+begin_src sh
@@ -493,14 +494,14 @@ sudo pipenv install selenium
    #+begin_src sh
 pacman -S chromium
    #+end_src
-****** run webdriver
+******* run webdriver
 #+begin_src python
 from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://savolla.github.io") # open up a page
 driver.close() # close the driver
 #+end_src
-****** search google
+******* search google
 #+begin_src python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -511,7 +512,7 @@ search_bar = driver.find_element_by_name("q") # you can search by other things a
 search_bar.send_keys("Kurotogake bandcamp")
 search_bar.send_keys(Keys.RETURN)
 #+end_src
-****** get page source
+******* get page source
 this is usefull when websited block automatic http requests.
 #+begin_src python
 from selenium import webdriver
@@ -521,16 +522,16 @@ driver = webdriver.Chrome()
 driver.get("https://github.com/savolla")
 page_html = driver.page_source  # now you have all the html content in page_html
 #+end_src
-****** find elements in html
+******* find elements in html
 #+begin_src python
 from selenium.webdriver.common.by import By
 
 #+end_src
 
-** bash
-** javascript
-*** concepts
-**** JSON
+*** bash
+*** javascript
+**** concepts
+***** JSON
 + javascript object notation
 + data representation format
 + used in *config* files
@@ -542,10 +543,10 @@ from selenium.webdriver.common.by import By
   5. arrays: [1,2,3], ["Hello", "world"]
   6. objects: {"key":"value"}, {"age":30}
 + everything in json is _valid javascript code_
-*** tips
-*** facts
-*** how to
-**** create a json file
+**** tips
+**** facts
+**** how to
+***** create a json file
 this is actually an _array_ in javascript. this is why it starts with '[]'
 #+begin_src js
 [
@@ -562,7 +563,7 @@ this is actually an _array_ in javascript. this is why it starts with '[]'
         ]
 ]
 #+end_src
-**** display json contents in html
+***** display json contents in html
 1. paste the json string inside script tag and make it a string by surroud it with `
 2. use =JSON.parse= method to make JSON parsable with indexes
 
@@ -594,21 +595,21 @@ this is actually an _array_ in javascript. this is why it starts with '[]'
   </body>
 </html>
 #+end_src
-*** problems & solutions
-** vhdl
-*** facts
+**** problems & solutions
+*** vhdl
+**** facts
 + HDL : Hardware Descriptive Language
 + found in 1981
 + IEEE standard
 + initially created for ASIC synthesis
 
-** verilog
-*** facts
+*** verilog
+**** facts
 + found in 1985
 + IEEE standar
 +
-*** how to
-**** create a basic module
+**** how to
+***** create a basic module
 
 #+BEGIN_SRC verilog
 module And(x, y, out);
@@ -618,7 +619,7 @@ assign out = x & y;
 endmodule
 #+END_SRC
 
-**** work with array of inputs and outputs
+***** work with array of inputs and outputs
 
 #+BEGIN_SRC verilog
 module And(x, y, out);
@@ -628,7 +629,7 @@ assign out = x & y;
 endmodule
 #+END_SRC
 
-**** [X] for loop in verilog
+***** [X] for loop in verilog
 
 #+BEGIN_SRC verilog
 integer k;                                // you have to define integer k outside
@@ -637,12 +638,12 @@ Xor tmp(x[k], y[k], out[k]);
 end
 #+END_SRC
 
-** c#
-*** frameworks
-**** .Net Core
-***** concepts
-****** methods
-******* Startup.cs/ConfigureServices
+*** c#
+**** frameworks
+***** .Net Core
+****** concepts
+******* methods
+******** Startup.cs/ConfigureServices
 + sets some initial configurations for the project. web app will read and run this method first
 + the following line will be there by default to make MVC work
 
@@ -650,7 +651,7 @@ end
 services.AddCountrollersWithViews();
 #+END_SRC
 
-******* Startup.cs/Configure
+******** Startup.cs/Configure
 + this determines if web app should run in development mode or product mode
 + under this method, developers can add a special setting that makes site routing according to Controllers;
 
@@ -658,8 +659,8 @@ services.AddCountrollersWithViews();
 endpoints.MapDefaultControllerRoute();
 #+END_SRC
 
-***** how to
-****** use getter and setter methods
+****** how to
+******* use getter and setter methods
 in C# there is no need to write long *get* and *set* functions like in C++. you simply put those inside property
 #+BEGIN_SRC cpp
 public class Joke
@@ -669,16 +670,16 @@ public class Joke
     public string joke_answer {get; set;}
 }
 #+END_SRC
-****** create a simple website with .NET Core MVC
+******* create a simple website with .NET Core MVC
 this tutorial will create a website with a database. also this will be only applicable on *windows* platform and *visual studio 2019*
-******* project creation
+******** project creation
 1. open up visual studio and press *create a new project*
 2. select *ASP .NET Core Web Application*
 3. Name your Project
 4. select *Web Application (Model-View-Controller)* and change the *authentication* to *Individual User Accounts*
 5. .Net Core will generate lots of code for us. so we don't need to do everything from scratch
 6. run the project. let visual studio download whatever it needs to download. the first run will take some time btw
-******* folders and MVC
+******** folders and MVC
 + three directories are so important in *solution explorer*;
 1. *Model* : where classes are defined. for example a shopping website has Customer, Shipping classes in Model directory
 2. *View* : displays the data to the user. this folder contains different kinds of files called *razor pages*
@@ -686,7 +687,7 @@ this tutorial will create a website with a database. also this will be only appl
     + are combinations of *html* and *c#*.
     + file extension of the razor page is *.cshtml*
 3. *Controller* : controls _when_ pages appear. what data should they show to the user
-******* create first page
+******** create first page
 here we will use *Model* and *View* to create first page
 1. right click on *Model/Add/Class*
 2. select *Class* from popup menu and name your class (Joke.cs) and press *Add*
@@ -700,7 +701,7 @@ here we will use *Model* and *View* to create first page
 10. look at the solution explorer's *Data* section. in textbox, delete the highlighted part and write what you see under Data directory (ApplicationDbContext in my case)
 11. tick everyhting below (3 of things need to be ticked)
 12. click *create*. this might take some time. after this step, several new directories will be created in our solution (you need internet connection for this to work)
-******* database migration
+******** database migration
 our pages will not be *dynamic* if we don't create a database. Here are steps for database creation;
 
 1. check if a file starts with *0000000* is created under *Data/Migrations* directory. this contains some database informations.
@@ -717,14 +718,14 @@ update-database
 
 now go and check the tables of our newly created database if you want by clicking *View/SQL Server Object Explorer* (optional). now we have a website with database connected
 
-******* add our controller to the front page
+******** add our controller to the front page
 go to *Views/Shared/_Layout.cshtml* and copy one of the *nav-bar* classes and change it to
 #+BEGIN_SRC html
 asp-controller="Jokes" <!-- out controller's name -->
 asp-action="Index" <!-- front page of our Joke controller -->
 #+END_SRC
 this will add *Jokes view* to the front page.
-******* add search bar feature I
+******** add search bar feature I
 
 1. go to *_Layout.cshtml* and copy another *nav-bar* element and start modifying it;
 #+BEGIN_SRC html
@@ -755,7 +756,7 @@ public async Task<IActionResult> ShowSearchForm() { // we changed Index to ShowS
 
 this *will not* create a search bar. we will modify this code to make a search bar now
 
-******* add search bar feature II
+******** add search bar feature II
 
 1. open *View/Jokes/ShowSearchForm.cshtml*
 
@@ -808,16 +809,16 @@ this code snippet uses a lambda function inside the return statement
 
 now we have a section with search
 
-******* show joke owner
+******** show joke owner
 :LEFT_HERE:
-******* hide the joke answer
-******* limit "create" for logged users
-*** how to
-** java
-*** concepts
-**** nested classes
+******** hide the joke answer
+******** limit "create" for logged users
+**** how to
+*** java
+**** concepts
+***** nested classes
 - java allows you to define a class into another class. they called nested classes
-***** inner class
+****** inner class
 - inner class _have access_ to outer class members
 - inner class' main function _cannot be static_
 
@@ -830,7 +831,7 @@ now we have a section with search
   }
   #+end_src
 
-***** inner static class
+****** inner static class
 - inner static classes _don't have access_ to outer class members
 
   #+begin_src java
@@ -841,17 +842,19 @@ now we have a section with search
       }
   }
   #+end_src
-**** Maven, Gradle and Ant
+***** Maven, Gradle and Ant
 they are three build tools for java
-**** swing
+***** swing
 + this is a library for GUI development in java.
 + it is really *outdated* but it teaches the basics
-*** tips
+**** tips
 + if you don't know the name of the exception while making try catch methods, you can always make the program spit this error and then get the name from the error log
-*** facts
-*** how to
-**** use linked lists
-***** create item
++ all SQL queries must be used in try-catch blocks. because query result may not be return something
++ if you see "Must be Caught" errors then this statment must be used in try-catch blocks
+**** facts
+**** how to
+***** use linked lists
+****** create item
 #+begin_src java
 import java.util.List;
 import java.util.ArrayList;
@@ -868,7 +871,7 @@ public class JavaLinkedListApp {
     }
 }
 #+end_src
-***** set/change items
+****** set/change items
 use =set= method to do this
 #+begin_src java
 import java.util.List;
@@ -884,7 +887,7 @@ public class JavaLinkedListApp {
     }
 }
 #+end_src
-***** remove an item
+****** remove an item
 use =remove= method to do this
 #+begin_src java
 import java.util.List;
@@ -902,7 +905,7 @@ public class JavaLinkedListApp {
     }
 }
 #+end_src
-***** sort items
+****** sort items
 use =Collections.sort()= sorts *alphabetically*
 #+begin_src java
 import java.util.List;
@@ -922,7 +925,7 @@ public class JavaLinkedListApp {
 }
 #+end_src
 
-***** reverse sort items
+****** reverse sort items
 use =Collections.reverse()= sorts *alphabetically*
 #+begin_src java
 import java.util.List;
@@ -941,7 +944,7 @@ public class JavaLinkedListApp {
     }
 }
 #+end_src
-**** handle errors
+***** handle errors
 #+begin_src java
 public static int takeNumberData() {
     Scanner input = new Scanner(System.in);
@@ -957,7 +960,7 @@ public static int takeNumberData() {
     return number;
 }
 #+end_src
-**** create a swing application
+***** create a swing application
 1. open up *netbeans*
 2. create new project
 3. select; Ant -> Java Application
@@ -968,7 +971,7 @@ public static int takeNumberData() {
    New -> JFrame Form
 8. name your form
 9. a new frame with controls will be open
-**** create a blank GUI window
+***** create a blank GUI window
 we use JFrame class from swing library to do this
 #+begin_src java
 import javax.swing.JFrame;
@@ -984,7 +987,16 @@ public class GUI {
 }
 #+end_src
 
-*** problems & solutions
+**** problems & solutions
+** databases
+*** mysql
+**** facts
+**** concepts
+**** how to
+***** enter date format
++ in mysql you enter date like this =2020-03-20=
+**** problems & solutions
+
 * Tools
 ** text editors
 *** emacs
