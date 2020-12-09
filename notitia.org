@@ -853,6 +853,28 @@ they are three build tools for java
 + if you see "Must be Caught" errors then this statment must be used in try-catch blocks
 + when working with databases, whatch out those varchar[25] varaibles. java gets those variables as *string* so strings are not limited to 25. always check the length before storing varchar elements from java to database.
 **** facts
++ non-static class members can't be used with *this* keyword
+
+  #+begin_src java
+public class A {
+    public static int x;
+    public static assign() {
+        this.x = 111; // spits out error
+    }
+}
+  #+end_src
+
+  correct code: remove *this*
+  #+begin_src java
+public class A {
+    public static int x;
+    public static assign() {
+        x = 111; // works fine
+    }
+}
+  #+end_src
+
+
 **** how to
 ***** use linked lists
 ****** create item
