@@ -874,7 +874,6 @@ public class A {
 }
   #+end_src
 
-
 **** how to
 ***** use linked lists
 ****** create item
@@ -1019,6 +1018,7 @@ public class GUI {
 ***** enter date format
 + in mysql you enter date like this =2020-03-20=
 **** problems & solutions
+*** mongodb
 
 * Tools
 ** text editors
