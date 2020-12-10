@@ -2315,6 +2315,8 @@ deepest depths of hell..
 =intern=                asistan
 =uncharted=             keşvedilmemiş
 =curated=
+=suppress=              bastırmak
+=superstition=          batıl inanç
 ** Русский
 *** неизвестные слова
 * Template
