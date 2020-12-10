@@ -16,6 +16,15 @@
 *** LSP
 *** ISP
 *** DIP
+** Embedded Systems
+*** articles
++ [[https://jaycarlson.net/][jay carlson's entire website]]
+*** books
+*** tips
+*** facts
+*** how to
+*** concepts
+*** problems & solutions
 * Programming
 ** languages
 *** c
