@@ -864,6 +864,7 @@ they are three build tools for java
 + all SQL queries must be used in try-catch blocks. because query result may not be return something
 + if you see "Must be Caught" errors then this statment must be used in try-catch blocks
 + when working with databases, whatch out those varchar[25] varaibles. java gets those variables as *string* so strings are not limited to 25. always check the length before storing varchar elements from java to database.
++ when adding values to database, use =execute= method. when getting some value from database use =executeQuery=. the "executeQuery" method will return a =Resultset= object. catch it
 **** facts
 + non-static class members can't be used with *this* keyword
 
@@ -1034,6 +1035,16 @@ public class GUI {
 ALTER TABLE $tabl_name MODIFY COLUMN $colmn_name $your_type;
 #+end_src
 + if you are working from mysql's GUI, then you can TAB complete type name
+***** insert values
+#+begin_src sql
+--                                                                                                       values to add
+--            table name                                                                           .---------------------------.
+--             /                                                                                  /         |          |        \
+insert into Personel (PersonelName, PersonelSurname, PersonelSalary, PersonelBirthday) values ("Ahmet", "Albayrak", "2000", "1990-05-06");
+--                          \               |                |             /
+--                           '--------------------------------------------'
+--                                            column names
+#+end_src
 **** problems & solutions
 *** mongodb
 
