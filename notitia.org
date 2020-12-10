@@ -2,7 +2,6 @@
 #+AUTHOR: Oleksiy Nehlyadyuk
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Nov 13 09:19:17 2020
-#+OPTIONS: inline: images
 #+LANGUAGE: en
 #+STARTUP: overview
 #+HUGO_BASE_DIR: ~/txt/blog/
