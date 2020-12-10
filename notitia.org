@@ -2190,7 +2190,7 @@ deepest depths of hell..
     d. how *efficient* was your algorithm
   - coding skills
     a. how *clean* your code is
-    b. how *good* was your *style* is
+    b. how *good* your *style* was
     c. did you *handle errors* or not
   - computer science knowledge. do you have *strong foundation* or not
   - did you make *challanging* / *interesting* projects before or not
