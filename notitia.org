@@ -2174,7 +2174,14 @@ deepest depths of hell..
 5. diarrhea blast
     [[file:./images/screenshot-07.png]]
 * Book Notes
-** Cracking the Coding Interview
+** Cracking the Coding Interview Notes :book:
+:PROPERTIES:
+:EXPORT_FILE_NAME: cracking-the-coding-interview-notes
+:EXPORT_TITLE: *Cracking the Coding Interview* Notes
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
 *** Chapter 1
 + recruiters look for the following;
   - analytical skills
@@ -2184,17 +2191,27 @@ deepest depths of hell..
     d. how *efficient* was your algorithm
   - coding skills
     a. how *clean* your code is
-    b. how *good* was your *style*
-    c. did you *hangle errors*
-  - computer science knowledge. do you have strong foundation or not
-  - did you make *challanging* / *interesting* projects or not
-  - do you communicate well or not
+    b. how *good* was your *style* is
+    c. did you *handle errors* or not
+  - computer science knowledge. do you have *strong foundation* or not
+  - did you make *challanging* / *interesting* projects before or not
+  - do you *communicate well* or not
 + having knowledge of data structures and algorithms is really important and positively corelates with being a good developer
-+ the reason behind *whiteboard coding* is that recruiters want you to focus on _actual problem solving_ instead of *restricted* computer environment when compilers spit errors all over the place. the code you write does not need to be perfect and it's okay if it contain some syntactical errors. just show to the interviewer how you approach to the problem
++ the reason behind *whiteboard coding* is that recruiters want you to focus on _actual problem solving_ instead of struggling in *restricted* computer environment when compilers spit errors all over the place. the code you write does not need to be perfect and it's okay if it contains some syntactical errors. just show to the interviewer how you approach to the problem and write an acceptable code
 + companies usually follow a pattern when selecting interview questions. there are two types of questions;
   1. algorithm questions
   2. technology questions (do you have experience with techonology X?)
-+ interviewers always be compare your performance to others that came before and after you. even if you think that you performed well, a japanese hacker who came before you can change all the game. it's all about luck m8
++ interviewers always compare your performance to other's that came before and after you. even if you think that you performed well, a japanese hacker who came before you can change all the game. it's all about luck m8
++ don't think that you've been rejected immediately if you don't get response in 2-3 days. your interviewer might still work on your and other assessments. be patient and calm
++ if you've been rejected but really want that job you must wait for at least *6 months* before re-application.
+*** Chapter 2
++ before face-to-face interview you always get a *screen* interview. this is actually a phone interview where skype or relative apps are used
++ coding and algorithms questions are asked during the screen interview. questions are hard as ones that asked in face-to-face interview
++ sometimes interviewer might give you a *homework* which you solve and send the code through e-mail. (rare case)
++ the most of the time questions are asked in real time and you try to solve them while interviewer watches (common case)
++ you do one or two screens before they take you to face-to-face arena
+
+*** Chapter 3
 
 * Foreign Languages
 ** English
