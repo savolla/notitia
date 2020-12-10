@@ -2176,7 +2176,26 @@ deepest depths of hell..
 * Book Notes
 ** Cracking the Coding Interview
 *** Chapter 1
-+
++ recruiters look for the following;
+  - analytical skills
+    a. how *confidently* you solved the problem
+    b. how *optimal* was your solution
+    c. how *fast* you are
+    d. how *efficient* was your algorithm
+  - coding skills
+    a. how *clean* your code is
+    b. how *good* was your *style*
+    c. did you *hangle errors*
+  - computer science knowledge. do you have strong foundation or not
+  - did you make *challanging* / *interesting* projects or not
+  - do you communicate well or not
++ having knowledge of data structures and algorithms is really important and positively corelates with being a good developer
++ the reason behind *whiteboard coding* is that recruiters want you to focus on _actual problem solving_ instead of *restricted* computer environment when compilers spit errors all over the place. the code you write does not need to be perfect and it's okay if it contain some syntactical errors. just show to the interviewer how you approach to the problem
++ companies usually follow a pattern when selecting interview questions. there are two types of questions;
+  1. algorithm questions
+  2. technology questions (do you have experience with techonology X?)
++ interviewers always be compare your performance to others that came before and after you. even if you think that you performed well, a japanese hacker who came before you can change all the game. it's all about luck m8
+
 * Foreign Languages
 ** English
 *** unknown words
