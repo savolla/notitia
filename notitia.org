@@ -1029,6 +1029,11 @@ public class GUI {
 **** how to
 ***** enter date format
 + in mysql you enter date like this =2020-03-20=
+***** change the type of a column
+#+begin_src sql
+ALTER TABLE $tabl_name MODIFY COLUMN $colmn_name $your_type;
+#+end_src
++ if you are working from mysql's GUI, then you can TAB complete type name
 **** problems & solutions
 *** mongodb
 
