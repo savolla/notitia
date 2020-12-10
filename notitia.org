@@ -886,6 +886,11 @@ public class A {
     }
 }
   #+end_src
++ in java, you can't include more than one package
+  #+begin_src java
+package path.to.package1;
+package path.to.package2; // second one is not allowed
+  #+end_src
 
 **** how to
 ***** use linked lists
@@ -1022,6 +1027,11 @@ public class GUI {
 }
 #+end_src
 ***** use database in java
+***** type cast in java
+#+begin_src java
+int number = 11;
+String text = (String)number;
+#+end_src
 **** problems & solutions
 ** databases
 *** mysql
@@ -2219,6 +2229,7 @@ vocals come to play. death metal, technical death metal stuff. list gets *heavie
 
 *** level 7
 deepest depths of hell..
++ [[https://www.youtube.com/watch?v=uXNHYb14U7U][]]
 + [[https://severetorture.bandcamp.com/][Severe Torture - Slaughtered]]
 [[file:./images/screenshot-49.png]]
   brutality takes another form
