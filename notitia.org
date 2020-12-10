@@ -20,6 +20,10 @@
 *** articles
 + [[https://jaycarlson.net/][jay carlson's entire website]]
 *** books
+1. An Embedded Software Primer
+   [[file:./images/screenshot-09.png]]
+   According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
+
 *** tips
 *** facts
 *** how to
@@ -2123,6 +2127,7 @@ dark ambient passage. contains some depressive and horror materials. you also mi
 + [[https://www.youtube.com/watch?v=4z9X0htC3mg][Modern Day Babylon - Travelers]]
   my first djent album. this is the first metal album without vocals on this list
 + [[https://amoghsymphony.bandcamp.com/album/the-quantum-hack-code][Amogh Symphony - The Quantum Hack Code]]
+  [[file:./images/screenshot-10.png]]
   awesome concept album. there are some Indian ethnic elements on that one. good one.
 + [[https://www.youtube.com/watch?v=qcpmtd-baKU][Heptaedium - KAWAII!!]]
   underrated stuff. has some djenty elements also inherits from *nintendo core* genre. really interesting album
