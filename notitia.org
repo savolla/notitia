@@ -1928,6 +1928,7 @@ how user sees the results from business layer. this includes some User Interface
   b. stores data into RAM instead of harddisk
 ** Turing Completeness
 ** CMS
+** EmbOS
 
 * Linux
 ** how to
@@ -2172,7 +2173,10 @@ deepest depths of hell..
    [[file:./images/screenshot-06.png]]
 5. diarrhea blast
     [[file:./images/screenshot-07.png]]
-
+* Book Notes
+** Cracking the Coding Interview
+*** Chapter 1
++
 * Foreign Languages
 ** English
 *** unknown words
