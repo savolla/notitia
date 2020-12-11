@@ -1033,7 +1033,24 @@ public class GUI {
 int number = 11;
 String text = (String)number;
 #+end_src
+***** iterate java list/array
++ the traditional =arr[0]= notation doesn't work in java
+#+begin_src java
+ArrayList<int> x = new ArrayList<int>();
+x.add(1);
+x.add(2);
+
+x.get(0); // 0th index
+#+end_src
 **** problems & solutions
+*** sql
+**** concepts
+**** tips
+**** facts
+**** how to
+***** write search query
+**** problems & solutions
+
 ** databases
 *** mysql
 **** facts
