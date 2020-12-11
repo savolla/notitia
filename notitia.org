@@ -2295,9 +2295,50 @@ deepest depths of hell..
 + you do one or two screens before they take you to face-to-face arena
 
 *** Chapter 3
-+ şirketler, algoritma sorularını hem yeni mezunlara hem de tecrübeli geliştiricilere sorarlar. bu da herkesin, algoritma konusunda bilgi sahibi olmanın ne kadar önemli olduğunu anlamasını sağlar
-+ görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
-+
++ aşağıdaki maddelerde, bazı _değişken_ durumlar anlatılmıştır;
+
+  - şirketler, algoritma sorularını hem yeni mezunlara hem de tecrübeli geliştiricilere sorarlar. bu da herkesin, algoritma konusunda bilgi sahibi olmanın ne kadar önemli olduğunu anlamasını sağlar
+
+  - görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
+
+  - bazı şirketlerde de tam tersi olabilir. yani uzun süre çalışanların daha çok problem çözdüğünü ve bu konuda yıllar geçtikçe daha iyi olduklarını düşünürler ve yeni mezunlara göre daha zor sorabilirler
+
+  - çoğu zaman tecrübeli kişilere *system tasarımı* soruları gelirken yeni mezun olanlar bu konuda çalşma yapmadıkları için (daha çok akademik derlere ağırlık verdiklerinden) genelde bu sorulardan kurtulabilirler
+
+  - yeni mezunlara göre tecrübelilerin, sorulara çok daha ayrıntılı cevap vermeleri beklenir. yani yeni mezunsak iş çok daha kolay. sadece algoritma sorularına çalışmamız (hackerrank, codewars) ve şu an zaman varken bol bol proje yapmamız yeterli olacaktır. tecrübelilerin iş bulması bizden daha zor
+
++ *skill atrophy*: bir yetenek ya da bilgi kullanılmadığında, o yeteneğin körelmesi anlamına gelir. bizim perspektifimizden bakıldığında, algoritma ve kodlama bir yetenektir ve asla atrofiye uğramaması gerekir
+
++ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri verilmiş. bu bizi şu anda ilgilendirmiyor.
+
+  - SDET: (software design engineer and tester) yazılımları test eden elemanlardır. bunların genelde normal bir developerdan daha iyi olması beklenir çünkü bu iş aynı zamanda *kalite kontrol*'ün yazılım camiasındaki karşılığıdır. bu yüzden bir SDET'in iş bulması demek, buraya kadar bahsi geçen pozisyonlardan daha çok çalışması gerek demek oluyor
+
+  - PM (Product Manager): daha çok takım yönetimi yapan ve geliştiricilerin ürettiği yazılımın sorumluluğunu üstlenen elemandır. kod yazmaktan çok işin business tarafıyla ilgilenir
+
++ bir startup'a katılmak istiyorsan;
+
+  - CV'de ilk göze çarpan kısmın, *yapılan projeler* olması gerekir. startup alım süreçlerinde CV incelemesi sırasında kişinin ne kadar *girişimci* ve programlama konusunda ne kadar *üretken* olduğu, bu kısımda göze çarpar. yani "ben şu dilleri biliyorum", "şu teknolojileri biliyorum"'a bakmazlar (genelde)
+
+  - kesinlikle, bir startup görüşmecisiyle "samimi" ve "arkadaşça" iletişim kurulması gerekir. şirket henüz çok küçüktür ve insanlar yanlarında genelde takılabilecekleri insanlar arar. burada işin sosyal tarafı, iş tarafı kadar ağır basabilir
+
+  - startup'daki projede kullanılan dil ile ilgili çok iyi bir derinliğe sahip ol çünkü sorular genelde dil spesifik gelir. (bir startup'a göre dil öğrenmek değil de bildiğimiz dilde iş yapan bir startup'a başvurmak çok daha efektif olur)
+
+  - strtuplar tecrübe de isterler. buradan benim çıkarttığım, büyük şirketler, tecrübeli developerları görüşme esnasında çok hırpalarken, startuplarda genelde iş küçük olduğundan tecrübelileri havada kapıyor olabilirler. bu yüzden yeni mezun birinin büyük bir şirkette iş bulması, startup'da iş bulmasından daha kolaydır (?)
+
+  -
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * Foreign Languages
 ** English
@@ -2306,14 +2347,14 @@ deepest depths of hell..
 =conservative=          muhafazakar
 =contenteditable=       memnun
 =prescient=             ileri görüşlü
-=thesauruses=           eş anlamlı
+=th+ sauruses=           eş anlamlı
 =constitute=            oluşturmak
 =predicate=             yüklem
 =subsequent=            sonraki
 =evidently=             belli ki
 =however=               ancak
 =rigorously=            titizlikle
-=vocabulary=            kelime bilgisi
+=vocabulary=            kelime bi+ gisi
 =precisely=             kesin olarak
 =differing=             farklı
 =intern=                asistan
@@ -2321,6 +2362,9 @@ deepest depths of hell..
 =curated=
 =suppress=              bastırmak
 =superstition=          batıl inanç
+=initiative=            girişim
+=entrepreneurial=       girişimci
+=diligence=             çalışkanlık
 ** Русский
 *** неизвестные слова
 * Template
