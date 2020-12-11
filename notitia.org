@@ -29,6 +29,9 @@
 *** how to
 *** concepts
 *** problems & solutions
+** software architecture
+*** notes from armağan amcalar's youtube stream
++
 * Programming
 ** languages
 *** c
@@ -2354,7 +2357,6 @@ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri ve
 #+begin_quote
 buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
 #+end_quote
-
 
 
 
