@@ -2309,11 +2309,13 @@ deepest depths of hell..
 
 + *skill atrophy*: bir yetenek ya da bilgi kullanılmadığında, o yeteneğin körelmesi anlamına gelir. bizim perspektifimizden bakıldığında, algoritma ve kodlama bir yetenektir ve asla atrofiye uğramaması gerekir
 
-+ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri verilmiş. bu bizi şu anda ilgilendirmiyor.
+#+begin_quote
+kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri verilmiş. bu bizi şu anda ilgilendirmiyor.
+#+end_quote
 
-  - SDET: (software design engineer and tester) yazılımları test eden elemanlardır. bunların genelde normal bir developerdan daha iyi olması beklenir çünkü bu iş aynı zamanda *kalite kontrol*'ün yazılım camiasındaki karşılığıdır. bu yüzden bir SDET'in iş bulması demek, buraya kadar bahsi geçen pozisyonlardan daha çok çalışması gerek demek oluyor
++ SDET: (software design engineer and tester) yazılımları test eden elemanlardır. bunların genelde normal bir developerdan daha iyi olması beklenir çünkü bu iş aynı zamanda *kalite kontrol*'ün yazılım camiasındaki karşılığıdır. bu yüzden bir SDET'in iş bulması demek, buraya kadar bahsi geçen pozisyonlardan daha çok çalışması gerek demek oluyor
 
-  - PM (Product Manager): daha çok takım yönetimi yapan ve geliştiricilerin ürettiği yazılımın sorumluluğunu üstlenen elemandır. kod yazmaktan çok işin business tarafıyla ilgilenir
++ PM (Product Manager): daha çok takım yönetimi yapan ve geliştiricilerin ürettiği yazılımın sorumluluğunu üstlenen elemandır. kod yazmaktan çok işin business tarafıyla ilgilenir
 
 + bir startup'a katılmak istiyorsan;
 
@@ -2325,7 +2327,9 @@ deepest depths of hell..
 
   - strtuplar tecrübe de isterler. buradan benim çıkarttığım, büyük şirketler, tecrübeli developerları görüşme esnasında çok hırpalarken, startuplarda genelde iş küçük olduğundan tecrübelileri havada kapıyor olabilirler. bu yüzden yeni mezun birinin büyük bir şirkette iş bulması, startup'da iş bulmasından daha kolaydır (?)
 
-  -
+#+begin_quote
+buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
+#+end_quote
 
 
 
@@ -2339,6 +2343,8 @@ deepest depths of hell..
 
 
 
+
+*** Chapter 4
 
 * Foreign Languages
 ** English
