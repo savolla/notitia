@@ -63,6 +63,18 @@
   2. satınalma
   3. stok yönetimi
   4. teslimat
++ domain driven design will consider every domain as a different and discrete software. those softwares are called modules in ERP. every module is developed by people who has experience and concrete knowledge with said domain.
++ modules will communicate with some each other by interfaces when added.
++ modules/domains can work on their own since those are concrete softwares
++ the biggest difference of DDD from other architectures is that every module is completely discrete and one module can be glued together with interfaces
+**** event sourcing
++ every unit of the system communicate with other units via signals. signals are called *events*
++ for example when a user scrolls the page or click on a button, then those buttons or scroll bars send some events to some other units
++ every unit knows which signal it recieves
++ event deiven architecture is more discributed than DDD. because in DDD, there are static interfaces between modules. in event sourcing, modules ara completely discrete
++ in Event Sourcing, modules are *completely unaware* from each other and there is a program called *broker* which handles signals coming from modules and sends those signals to other modules
++ in ESA, one signal can be sent to multiple modlues/services. (sometimes 0 which is bad..)
+
 
 * Programming
 ** languages
