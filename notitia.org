@@ -31,7 +31,39 @@
 *** problems & solutions
 ** software architecture
 *** notes from armağan amcalar's youtube stream
-+
++ *design* and *architecuture* are different things
++ what is software design?
+  when you design classes, interfaces, controllers etc.
++ what is software architecture
+  when you design how component should communicate, which pattern you will be using
++ every developer should understand and implement software architecture.
++ before attempting to make a software always go through these steps;
+  1. software architecture
+  2. software design
+  3. coding
++ some kinds of software architecture;
+  1. domain driven design
+  2. even sourcing
+  3. event driven architecture
+  4. serverless architecture
+  5. monolith architecture
+  6. microservices architecture
++ *system architecture* and *software architectures* are different things
++ system architecture is not something that has restricted rules or formulas. one developer can;
+  1. combine two or more architectures
+  2. customize existing architectures
++ read Martin Fowler and Bob Martin's books
+**** domain driven design (DDD)
++ still arguable if it is a design technique or arthitecture
++ it's intent is to merge business world and software world. it is a translator between business and software
++ if an architect designs a domain driven design architecture and he/she is not familiar with business the final result won't be very accurate
++ it's second intent is to create a software that scalable. so when you add a new feature, the next feature won't be hard to implement with ddd
++ a good example of ddd is an ERP software. it contains some discrete modules and each module is a *domain*;
+  1. fatura
+  2. satınalma
+  3. stok yönetimi
+  4. teslimat
+
 * Programming
 ** languages
 *** c
