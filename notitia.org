@@ -2301,7 +2301,7 @@ deepest depths of hell..
 
   - bazı şirketlerde de tam tersi olabilir. yani uzun süre çalışanların daha çok problem çözdüğünü ve bu konuda yıllar geçtikçe daha iyi olduklarını düşünürler ve yeni mezunlara göre daha zor sorabilirler
 
-  - çoğu zaman tecrübeli kişilere *system tasarımı* soruları gelirken yeni mezun olanlar bu konuda çalşma yapmadıkları için (daha çok akademik derlere ağırlık verdiklerinden) genelde bu sorulardan kurtulabilirler
+  - çoğu zaman tecrübeli kişilere *system tasarımı* soruları gelirken yeni mezun olanlar bu konuda çalşma yapmadıkları için (daha çok akademik derslere ağırlık verdiklerinden) genelde bu sorulardan kurtulabilirler
 
   - yeni mezunlara göre tecrübelilerin, sorulara çok daha ayrıntılı cevap vermeleri beklenir. yani yeni mezunsak iş çok daha kolay. sadece algoritma sorularına çalışmamız (hackerrank, codewars) ve şu an zaman varken bol bol proje yapmamız yeterli olacaktır. tecrübelilerin iş bulması bizden daha zor
 
@@ -2328,7 +2328,6 @@ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri ve
 #+begin_quote
 buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
 #+end_quote
-
 
 
 
