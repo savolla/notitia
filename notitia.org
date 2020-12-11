@@ -1049,6 +1049,15 @@ x.get(0); // 0th index
 **** facts
 **** how to
 ***** write search query
+#+begin_src sql
+SELECT #column1, #column2 FROM #tablename WHERE #columnN = #search_keyword;
+SELECT * FROM #tablename WHERE #column_N = #search_keyword;
+SELECT * FROM #tablename WHERE #column_N LIKE #search_keyword;
+#+end_src
+***** delete values from table
+#+begin_src sql
+DELETE FROM #table_name WHERE #column_name = #value
+#+end_src
 **** problems & solutions
 
 ** databases
