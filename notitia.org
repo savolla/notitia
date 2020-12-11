@@ -2297,8 +2297,6 @@ deepest depths of hell..
 *** Chapter 3
 + aşağıdaki maddelerde, bazı _değişken_ durumlar anlatılmıştır;
 
-  - şirketler, algoritma sorularını hem yeni mezunlara hem de tecrübeli geliştiricilere sorarlar. bu da herkesin, algoritma konusunda bilgi sahibi olmanın ne kadar önemli olduğunu anlamasını sağlar
-
   - görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
 
   - bazı şirketlerde de tam tersi olabilir. yani uzun süre çalışanların daha çok problem çözdüğünü ve bu konuda yıllar geçtikçe daha iyi olduklarını düşünürler ve yeni mezunlara göre daha zor sorabilirler
