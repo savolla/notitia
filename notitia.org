@@ -865,6 +865,7 @@ they are three build tools for java
 + if you see "Must be Caught" errors then this statment must be used in try-catch blocks
 + when working with databases, whatch out those varchar[25] varaibles. java gets those variables as *string* so strings are not limited to 25. always check the length before storing varchar elements from java to database.
 + when adding values to database, use =execute= method. when getting some value from database use =executeQuery=. the "executeQuery" method will return a =Resultset= object. catch it
++ when querying a database, give the full path to tables. like =databas_ename.table_name=. this is important. mysql might allow this kind of notation since it is a full blown database application. JDBC is not that clever
 **** facts
 + non-static class members can't be used with *this* keyword
 
@@ -2294,6 +2295,9 @@ deepest depths of hell..
 + you do one or two screens before they take you to face-to-face arena
 
 *** Chapter 3
++ şirketler, algoritma sorularını hem yeni mezunlara hem de tecrübeli geliştiricilere sorarlar. bu da herkesin, algoritma konusunda bilgi sahibi olmanın ne kadar önemli olduğunu anlamasını sağlar
++ görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
++
 
 * Foreign Languages
 ** English
