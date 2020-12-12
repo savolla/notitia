@@ -2465,7 +2465,8 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
   3. en büyük başarılarını
   yukarıdakilerden daha fazla şey yazmak, iş verenin sadece dikkatini dağıtır.
 + bazı işverenler, uzun CV gördüklerinde direk fırlatırlar..
-+ CV her zaman İngilizce olmalıdır.
++ CV her zaman İngilizce olmalıdır. her zaman ana dili ingilizce olan ya da bir tercumana okutup gramer ya da yazım yanlışlarınızı kontrol ettirin.
++ CV'de *yaş*, *cinsiyet*, *medeni durum* _belirtmeyin_. bunu yaparsanız, özellikle Amerika'da ters teper
 ***** Tecrübeler
 + eğer çok tecrübeliysen ve 1 sayfaya sığdıramıyorsan, 1 sayfaya sığdırmanın yollarını ara. ya da en önemsizleri ele. 1 sayfa *is the key*
 + tecrübe kısmında, iş geçmişinin tamamını yazmak önerilmez. çünkü çok iş değiştiren biri olarak görünürsün. onun yerine sadece en önemlileri yaz. her şirket isminin altına tek cümleyle ne yaptığını anlat. örnek bir cümle kalıbı;
@@ -2491,7 +2492,18 @@ Y'yi yaparak X'i başardım
   2. C++ (proficient)
   3. javascript (prior experience)
 + yetkinlik seviyesi için yıl yazmayın. 10 sene önce javascript öğrenip sadece bir kaç kere yazdıysanız bu gerçeten 10 yıllık bir tecrübe mi?
++ eğer bir sertifikanız varsa ve bu bir programlama diliyle alakalıysa kesinlikle CV'de buna yer vermeyin. iş verenler bu sertifikaları ciddiye almazlar
++ eğer bir dilin belli bir versiyonuyla ilgili tecrubeniz varsa mesela, C11, C99, Perl5 gibi, iş verenler kesinlikle bu tarz bir şeyi ciddiye almazlar. bunun yerine C ve Perl demek daha doğrudur. aslında bu tarz bir şey, yazılımcının dil konusunda ne kadar spesifik olduğunu gösterir ama çoğu şirket buna değer vermez
++ *stigma*: bir programlamma dilinin zaman içinde ön yargılara maruz kalıp değerini yitirmesidir. örnek olarak Visual Basic ve .NET teknolojileri. eğer .NET işine baş vurmuyorsanız, bu teknolojileri ve diğer stigma kazanmış (ön yargı kazanmış) dilleri ya da teknolojileri CV'de belirtmeye gerek yok
++ yukarıdaki maddeden yola çıkarak şirketlerin (özellikle Amerikadakilerin) önem verdikleri diller en az'dan en çoğa sıralanmıştır;
 
+  1. C#, .NET, Visual Basic
+  2. Ruby, Python, Javascript
+  3. Java, C++
+
+***** İş Başvurusuna Hazırlık Haritası
+[[file:./images/screenshot-54.png]]
+[[file:./images/screenshot-55.png]]
 
 
 
