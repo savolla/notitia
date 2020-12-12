@@ -29,7 +29,7 @@
 *** how to
 *** concepts
 *** problems & solutions
-** software architecture
+** Software Architecture
 *** notes from armağan amcalar's youtube stream
 + *design* and *architecuture* are different things
 + what is software design?
@@ -103,6 +103,7 @@
   3. event parameters
   4. event history
 + event sourcing is useful in *debugging* because all events are stored and with history. developers can pause the application or roll back to more older version etc
+** Software Design
 
 * Programming
 ** languages
@@ -2440,8 +2441,37 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
 
 
 
-
 *** Chapter 4
+**** Tecrübe Kazanma Yolları
++ iyi bir tecrübe yoksa, iyi bir CV olmaz. iyi bir CV yoksa da kimse sizi iş görüşmesine çağırmaz
++ öğrenciler bakımından yukarıdaki sorunun çözümü;
+  1. gerçek sorunlar çözen projeler yap
+  2. staj yap
+  3. startup ara
+  4. boş zamanında bir proje yap,
+  5. hackatonlara katıl,
+  6. github'da open source bir projeye katkıda bulun
+**** Iyi Bir CV Yazma Yolları
++ aslında şirketler birinde sadece şunları ararlar;
+  1. *zeki misin?*
+  2. *kod yazabilir misin?*
+  CV'de yazanlar, bu iki şeyin kanıtı olmalıdır. şirketlere zeki ve çalışkan olduğunuzu katınladığınız anda işi kaparsınız
++ CV yazarken, odak noktası kesinlikle "zeki misin?" ve "kod yazabiliyor musun?" sorularına cevap vermeli. teknik olmayan şeyeri (hobi gibi) CV'ye eklemek çok akıllıca değildir
++ öğrencilerin ve 10 seneden az tecrübesi olan kişilerin CV'si _1 sayfa_ olmalıdır. data tecrübeliler _1.5 ya da 2 sayfa_ olmalıdır
++ uzun bir CV hiç bir zaman faydalı değildir çünkü iş verenler CV'ye bakarken en fazla 10 saniye harcarlar.
++ CV'ye sadece _sırasıyla_;
+  1. en büyük projeleri
+  2. en büyük tecrübeleri
+  3. en büyük başarılarını
+  yukarıdakilerden daha fazla şey yazmak, iş verenin sadece dikkatini dağıtır.
++ bazı işverenler, uzun CV gördüklerinde direk fırlatırlar..
++ eğer çok tecrübeliysen ve 1 sayfaya sığdıramıyorsan, 1 sayfaya sığdırmanın yollarını ara. ya da en önemsizleri ele. 1 sayfa *is the key*
++ tecrübe kısmında, iş geçmişinin tamamını yazmak önerilmez. çünkü çok iş değiştiren biri olarak görünürsün. onun yerine sadece en önemlileri yaz. her şirket isminin altına tek cümleyle ne yaptığını anlat. örnek bir cümle kalıbı;
+
+  #+begin_quote
+
+  #+end_quote
+
 
 * Foreign Languages
 ** English
