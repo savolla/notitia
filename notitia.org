@@ -1988,6 +1988,14 @@ program launcher and more
 #+begin_src sh
 rofi-theme-selector
 #+end_src
+*** find
+**** how to
+***** search more than one file names
+1. use *-o* parameter for *or*
+#+begin_src sh
+find ~/lib* -type f -name '*.pdf' -o -name '*.epub'
+#+end_src
+
 
 ** hardware
 *** CASIO fx-991ex
