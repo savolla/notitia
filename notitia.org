@@ -2461,16 +2461,38 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
 + uzun bir CV hiç bir zaman faydalı değildir çünkü iş verenler CV'ye bakarken en fazla 10 saniye harcarlar.
 + CV'ye sadece _sırasıyla_;
   1. en büyük projeleri
-  2. en büyük tecrübeleri
+  2. en büyük tecrübeleri (iş tecrübesi, programlama dilleri)
   3. en büyük başarılarını
   yukarıdakilerden daha fazla şey yazmak, iş verenin sadece dikkatini dağıtır.
 + bazı işverenler, uzun CV gördüklerinde direk fırlatırlar..
++ CV her zaman İngilizce olmalıdır.
+***** Tecrübeler
 + eğer çok tecrübeliysen ve 1 sayfaya sığdıramıyorsan, 1 sayfaya sığdırmanın yollarını ara. ya da en önemsizleri ele. 1 sayfa *is the key*
 + tecrübe kısmında, iş geçmişinin tamamını yazmak önerilmez. çünkü çok iş değiştiren biri olarak görünürsün. onun yerine sadece en önemlileri yaz. her şirket isminin altına tek cümleyle ne yaptığını anlat. örnek bir cümle kalıbı;
 
   #+begin_quote
-
+Y'yi yaparak X'i başardım
   #+end_quote
+***** Projeler
++ proje kısmı, yaptığınız en büyük 2-4 projeden oluşmalı
++ projelerin açıklama kısmında;
+  1. hangi dil ya da dillerle yazıldı
+  2. hangi teknolojiler kullanıldı
+  3. proje bir takım projesi mi? bir kurs yardımıyla mı yapıldı? kendin mi yaptın?
++ yukarıdaki her maddeye uyulması mecburi değildir. eğer maddeler sizi iyi gösteriyorsa o zaman belirtin.
++ 3. maddede, eğer projeyi bağımsız olarak tek başınıza yaptıysanız bunu belirtin. bu, iş verenler için takım projesi'nden daha değerlidir
++ çoğu insan CV'sine yaptığı bütün projeleri yazar ki bu iş verenleri yoran bir şey. maximum 4 proje yazın
+***** Programlama Dilleri
++ bu güne kadar çalıştığınız bütün dilleri yazmaya kalkmayın
++ en iyi olduğunuz ve en iyi bildiğiniz dilleri yazın çünkü bir insan bütün dillerin tüm teknik detaylarını bilemez. abartılmış bir liste, iş verenin sizin hakkınızda pozitif düşünceler oluşturmaz
++ uzun dil listesine sahip adayları genelde iş görüşmesinde özellikle sınarlar ve normal bir listeye sahip birine nazaran çok daha zor sorular yöneltebilirler.
++ yetkinlik seviyenizi kabaca parantezler içinde belirtin. örnek bir liste;
+  1. java (fluent)
+  2. C++ (proficient)
+  3. javascript (prior experience)
++ yetkinlik seviyesi için yıl yazmayın. 10 sene önce javascript öğrenip sadece bir kaç kere yazdıysanız bu gerçeten 10 yıllık bir tecrübe mi?
+
+
 
 
 * Foreign Languages
