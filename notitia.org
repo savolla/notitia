@@ -19,6 +19,7 @@
 ** Embedded Systems
 *** articles
 + [[https://jaycarlson.net/][jay carlson's entire website]]
++ [[https://www.livecareer.com/resume-search/r/senior-embedded-software-engineer-29aac52d404b476e87fdb747db1370e7][good example CV for embedded systems]]
 *** books
 1. An Embedded Software Primer
    [[file:./images/screenshot-09.png]]
