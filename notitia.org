@@ -2599,11 +2599,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + behavior diyagramlara örnekler;
    [[file:./images/screenshot-58.png]]
 + UML diyagramları kesinlikle kabataslak olmalıdır. fazla detay, yazılımcıyı kısıtlar ve UML'i yapan mimarın aynı zamanda yazılım geliştirme tarafını da düşünmesine sebep olur ki bu çok mantıklı bir şey değildir
-+ package diyagramları: çok karmaşık UML class diyagramlarını parçalara bölmek için kullanılır
++ package diyagramları: UML elemanlarını gruplamak için kullanılır
 + bir private ve bir public sınıfın bir package içine alınması:
 [[file:./images/screenshot-59.png]]
 + eğer sınıflar birbirine bağımlıysa bu bağımlılıklar _kesikli oklarla_ gösterilir;
 [[file:./images/screenshot-60.png]]
++ package diyagramları aynı zamanda *use case*'leri de gruplayabilir
+[[file:./images/screenshot-61.png]]
 +
 
 ** Reading List to Become a Professional
@@ -2894,6 +2896,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 =arrogance=             kibir
+=allude=                ima etmek
 =aspect=                yön (kitap her *yön*'den iyidi)
 =concise=               özlü, kısa
 =conservative=          muhafazakar
