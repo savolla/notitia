@@ -2521,14 +2521,14 @@ Y'yi yaparak X'i başardım
 + CV'de yazılan projeler incelenip genelde bu projelerle ilgili size soru yöneltilir. CV'yi inceleyen kişi, görüşmeden önce bu projelere ne kadar hakim olduğunuzu görmek için zor sorular hazırlayabilir.
 + CV'deki projeleri çok iyi çalşıp, şöyle bir tablo hazırlanması çok faydalı olacaktır;
 
-  | yaygın soru             | proje1 | proje2 | proje3 |
-  |-------------------------+--------+--------+--------|
-  | zorluklar/buglar        | ---    | ---    | ---    |
-  | hatalar/başarısızlıklar | ---    | ---    | ---    |
-  | keyif alınan taraflar   | ---    | ---    | ---    |
-  | liderlik                | ---    | ---    | ---    |
-  | çatışmalar (takım ise)  | ---    | ---    | ---    |
-  | neyi farklı yapardın    | ---    | ---    | ---    |
+  | yaygın soru             | proje1    | proje2    | proje3    |
+  |-------------------------+-----------+-----------+-----------|
+  | zorluklar/buglar        | --------- | --------- | --------- |
+  | hatalar/başarısızlıklar | --------- | --------- | --------- |
+  | keyif alınan taraflar   | --------- | --------- | --------- |
+  | liderlik                | --------- | --------- | --------- |
+  | çatışmalar (takım ise)  | --------- | --------- | --------- |
+  | neyi farklı yapardın    | --------- | --------- | --------- |
 
 + bu tabloyu doldurup iyice çalış. iş veren projeler hakkında soru sordukça burda yazdıklarını hatırla ve cevapla
 + size "zayıf yanlarınız" nelerdir diye sorduklarında gerçek bir zayıflık söyleyin. "çok çalışmak" gibi cevaplar çok ciddiye alınmaz ve dürüst olmadığınızı düşündürür.
