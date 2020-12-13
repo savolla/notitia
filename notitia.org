@@ -2953,6 +2953,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
+=loan=                  kredi
+=excerpt=               alıntı
 =arrogance=             kibir
 =allude=                ima etmek
 =aspect=                yön (kitap her *yön*'den iyidi)
