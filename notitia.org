@@ -2523,12 +2523,12 @@ Y'yi yaparak X'i başardım
 
   | yaygın soru             | proje1 | proje2 | proje3 |
   |-------------------------+--------+--------+--------|
-  | zorluklar/buglar        |        |        |        |
-  | hatalar/başarısızlıklar |        |        |        |
-  | keyif alınan taraflar   |        |        |        |
-  | liderlik                |        |        |        |
-  | çatışmalar (takım ise)  |        |        |        |
-  | neyi farklı yapardın    |        |        |        |
+  | zorluklar/buglar        | ---    | ---    | ---    |
+  | hatalar/başarısızlıklar | ---    | ---    | ---    |
+  | keyif alınan taraflar   | ---    | ---    | ---    |
+  | liderlik                | ---    | ---    | ---    |
+  | çatışmalar (takım ise)  | ---    | ---    | ---    |
+  | neyi farklı yapardın    | ---    | ---    | ---    |
 
 + bu tabloyu doldurup iyice çalış. iş veren projeler hakkında soru sordukça burda yazdıklarını hatırla ve cevapla
 + size "zayıf yanlarınız" nelerdir diye sorduklarında gerçek bir zayıflık söyleyin. "çok çalışmak" gibi cevaplar çok ciddiye alınmaz ve dürüst olmadığınızı düşündürür.
@@ -2569,14 +2569,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 #+end_quote
 
 
-
 **** Dikkat edilmesi gereken hususlar
 + projelerle ilgili konuşurken ya da sorular yöneltirken asla ama asla *kibirli* görünme. Kendini her zaman bir çaylakmışçasına *alçak gönüllü* ve *saygılı* olarak göster. /(genel olarak öyle ol zaten)/
 + görüşmeciler bu tarz çok insan ile karşılaştıklarından, artık insan sarrafı olma yolunda ilerliyorlardır. en ufak bir kibir belirtisinde çizerler
 + soruları cevaplarken, karşınızdakini detaya boğmayın. çok önemli noktalara değinin ve daha fazla detay gerektiren bir konuda, karşınızdakinden izin alıp öyle devam etmeye özen gösterin. çünkü gelen kişinin, teknik detaylardan ne kadar anladığını ya da duymaktan hoşlanıp hoşlanmadığını bilemezsiniz.
 + takım projesinde yer aldıysanız, takımın başarılarını anlatmak yerine kendinizin bu takımdaki başarılarınızdan bahsedin. çünkü takım ile ilgili konuşmalarınızda, sizin ne yaptığınız ile ilgili bir fikir oluşmaz
 + "kendininden biraz bahseder misiniz?" tarzı bir soru geldiğinde kronolojik sıraya gitmeye dikkat edin ve sırasıyla şunlardan bahsedin;
-  1. Şu anda bir yerde çalışıyorsanız rol belirteren söze girin
+  1. Şu anda bir yerde çalışıyorsanız rol belirterek söze girin
   2. hangi okulda okudun ve hangi bölüm
   3. stajlar
   4. okuldan sonra ne yaptın
