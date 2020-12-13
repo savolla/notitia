@@ -1996,7 +1996,6 @@ rofi-theme-selector
 find ~/lib* -type f -name '*.pdf' -o -name '*.epub'
 #+end_src
 
-
 ** hardware
 *** CASIO fx-991ex
 **** how to
@@ -2590,6 +2589,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 *** Bölüm 6
 ** Object-Oriented Analysis and Design with Applications Türkçe Özet :book:
 *** Bölüm 5
++ 2 tip UML diyagramı vardır;
+  1. Structured Diyagramlar
+  2. Behavioral Diyagramlar
++ structural diyagramlar: sistemin mimarisini gösteirler. static diyagramlardır
++ structural diyagramlar;
+   [[file:./images/screenshot-57.png]]
++
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
@@ -2878,31 +2884,34 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
+=arrogance=             kibir
+=aspect=                yön (kitap her *yön*'den iyidi)
 =concise=               özlü, kısa
 =conservative=          muhafazakar
-=contenteditable=       memnun
-=prescient=             ileri görüşlü
-=th+ sauruses=           eş anlamlı
 =constitute=            oluşturmak
-=predicate=             yüklem
-=subsequent=            sonraki
-=evidently=             belli ki
-=however=               ancak
-=rigorously=            titizlikle
-=vocabulary=            kelime bi+ gisi
-=precisely=             kesin olarak
-=differing=             farklı
-=intern=                asistan
-=uncharted=             keşvedilmemiş
+=contenteditable=       memnun
 =curated=
-=suppress=              bastırmak
-=superstition=          batıl inanç
-=initiative=            girişim
-=entrepreneurial=       girişimci
+=differing=             farklı
 =diligence=             çalışkanlık
-=aspect=                yön (kitap her *yön*'den iyidi)
+=depict=                göstermek
+=entrepreneurial=       girişimci
+=evidently=             belli ki
 =genuine=               gerçek, hakiki
-=arrogance=             kibir
+=however=               ancak
+=initiative=            girişim
+=intern=                asistan
+=lattice=               kafes
+=precisely=             kesin olarak
+=predicate=             yüklem
+=prescient=             ileri görüşlü
+=quintessentially=      özetle
+=rigorously=            titizlikle
+=subsequent=            sonraki
+=superstition=          batıl inanç
+=suppress=              bastırmak
+=th+ sauruses=           eş anlamlı
+=uncharted=             keşvedilmemiş
+=vocabulary=            kelime bi+ gisi
 ** Русский
 *** неизвестные слова
 * Template
