@@ -2652,13 +2652,19 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   [[file:./images/screenshot-65.png]]
 **** component diyagramları
 + bir component, tekrar kullanılabilir (reusable) bütün bir program, kütüphane ya da bir framework'dür
-+ componentler içinde benzer bir işi yapan sınıflar barındırırlar. bu sınıflar tabiki package'larla ayrılmış da olabilir
++ componentler, içlerinde benzer bir iş yapan sınıflar barındırırlar. bu sınıflar tabiki package'larla ayrılmış da olabilir
 + özetle packagelar sınıfları, componentler de package'ları içine alabilir. bazen componentler, içine başka componentler bile alabilirler
 + componentler birbirine bir interface ile bağlıdır
   [[file:./images/screenshot-66.png]]
 + yukarıda component'lerin sağ üstündeki işaretler, component simgesidir. componentleri şu şekilde *stereotype* kullanarak da ifade edebiliriz;
   [[file:./images/screenshot-67.png]]
-+ componentler, bir binanın tuğlaları gibi düşünülebilir
++ componentler *interface*'ler ile birbirlerine bağlanmak zorundadırlar. bu sayede istendiği zaman birbirlerinden kolayca ayrılabilirler
++ interface'lerin bir başka güzel tarafı da, componentlerden biri, daha iyi bir component ile birleştirilebilir. (tak çıkar)
++ yarım ay şeklinde gösterilen interface, *required interface* adını alır
+  [[file:./images/screenshot-68.png]]
++ top şeklinde olan ise *provided interface* adını alır
+  [[file:./images/screenshot-69.png]]
++
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
