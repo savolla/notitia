@@ -2611,6 +2611,22 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + eğer sınıflar birbirine bağımlıysa bu bağımlılıklar _kesikli oklarla_ gösterilir;
   [[file:./images/screenshot-60.png]]
 + genelde birbirinden kalıtım alan sınıfları, bir package altına koyarız
+***** visibility
++ bir package içinde public ve private sınıflar bulunabilir. private sınıfın bir package içinde yer alması demek, aynı package içinde bulunan tüm sınıflar tarafından kullanılabileceği, ancak package dışından erişilemeyeceği anlamına gelir
++ aşağıda *cruncher* sınıfı private'dir ve aynı package içindeki tüm sınıflar onu görebilir
+  [[file:./images/screenshot-63.png]]
+***** relationship
++ diğer UML elemanları gibi package'ler de izole olarak bulunmazlar. onların da bir şekilde ilişki kurmaları ve kullanılmaları gerekir
++ package'larda 3 tip ilişki (relation) vardır;
+  1. dependency (bağımlılık)
+  2. generalization
+  3. refinement
++ dependency ilikisi, örneğin balık, suya ihtiyaç duyar. susuz yaşayamaz. buna bağımlılık diyoruz.
++ package arası bağımlılıklar kesikli çizgi ile gösterilir;
+  [[file:./images/screenshot-64.png]]
++ generalization ise aslında kalıtım olarak çevrilebilir. örneğin balık aslında bir hayvandır.
++ packagelar arası generalization, şu şekilde gösterilir;
+  [[file:./images/screenshot-65.png]]
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
@@ -2932,6 +2948,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =th+ sauruses=           eş anlamlı
 =uncharted=             keşvedilmemiş
 =vocabulary=            kelime bi+ gisi
+=venue=                 buluşma yeri
 ** Русский
 *** неизвестные слова
 * Template
