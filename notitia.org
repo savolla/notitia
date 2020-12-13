@@ -2455,7 +2455,6 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
 
 
 
-
 *** Bölüm 4
 **** Tecrübe Kazanma Yolları
 + iyi bir tecrübe yoksa, iyi bir CV olmaz. iyi bir CV yoksa da kimse sizi iş görüşmesine çağırmaz
@@ -2537,17 +2536,20 @@ Y'yi yaparak X'i başardım
 + size "zayıf yanlarınız" nelerdir diye sorduklarında gerçek bir zayıflık söyleyin. "çok çalışmak" gibi cevaplar çok ciddiye alınmaz ve dürüst olmadığınızı düşündürür.
 + zayıflıklarınızdan bahsederken aynı zamanda bu zayıflıklarla nasıl başa çıkmaya çalıştığınızı da anlatmanız gerekir. örnek;
 
-  1. "bazen pasifagresif davranabiliyorum. ancak bu konuyla ilgili psikolojik kitaplar okuyorum ve nerede hata yaptığımı görmemi sağlayıp başa çıkmama yardımcı oluyorlar"
+  #+begin_quote
+  yeni bir projeye başladığımda çok hızlı burn out olabiliyorum. başa çıkmak için pomodoro tekniğini kullanıyorum
+  #+end_quote
 
-  2. "yeni bir proje fikri geldiğinde çok hızlı burn out olabiliyorum. başa çıkmak için pomodoro tekniğini kullanıyorum"
+  #+begin_quote
+  yeni bir teknolojiyi öğrenirken, kendimi bu konuda sonuna kadar gitmem gerektiğine inandırıyorum. bundan dolayı teknolojiye öğrenmeye odaklanmak yerine, kendimi en iyi kaynağı araştırmaya zaman harcarken bulabiliyorum. Bu konuda tecrübe kazandığım için artık çoğu kez yaptığım yanlışın farkına varabiliyorum
+  #+end_quote
 
-  3. "yeni bir teknolojiyi öğrenirken, kendimi bu konuda sonuna kadar gitmem gerektiğine inandırıyorum. bundan dolayı teknolojiye öğrenmeye odaklanmak yerine, kendimi en iyi kaynağı araştırmaya zaman harcarken bulabiliyorum. Bu konuda tecrübe kazandığım için artık çoğu kez yaptığım yanlışın farkına varabiliyorum"
 **** Interviewer'a Yöneltilebilecek Sorular
 + interviewer size soru sormanıza izin verebilir. bir iş görüşmesinde, 3 tip önemli soru çeşidi vardır;
 ***** Hakiki Sorular
 cevaplarını gerçekten bilmek istediğiniz sorulardır
 #+begin_quote
-şirkette, geliştirici, tester ve yönetici dengesi var mı? takımda proje planlaması nasıl yapılıyor?
+şirkette, geliştirici, tester ve yönetici dengesi nasıl? takımda proje planlaması nasıl yapılıyor?
 #+end_quote
 #+begin_quote
 peki siz bu şirkete nasıl geldiniz? genelde bu çalışma ortamında sizi en çok zorlayan ne oluyor?
@@ -2571,7 +2573,6 @@ Yazılımın ölçeklenebilirliği konusunda kendimi geliştirmeye çalışıyor
 Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç bir yönteme benziyor. Nasıl çalıştığından biraz bahseder misiniz?
 #+end_quote
 
-
 **** Dikkat edilmesi gereken hususlar
 + projelerle ilgili konuşurken ya da sorular yöneltirken asla ama asla *kibirli* görünme. Kendini her zaman bir çaylakmışçasına *alçak gönüllü* ve *saygılı* olarak göster. /(genel olarak öyle ol zaten)/
 + görüşmeciler bu tarz çok insan ile karşılaştıklarından, artık insan sarrafı olma yolunda ilerliyorlardır. en ufak bir kibir belirtisinde çizerler
@@ -2587,6 +2588,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
 
 *** Bölüm 6
+
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
