@@ -2372,7 +2372,7 @@ deepest depths of hell..
 5. diarrhea blast
     [[file:./images/screenshot-07.png]]
 * Book Notes
-** Cracking the Coding Interview Notes :book:
+** Cracking the Coding Interview Türkçe Özet :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: cracking-the-coding-interview-notes
 :EXPORT_TITLE: *Cracking the Coding Interview* Notes
@@ -2380,7 +2380,8 @@ deepest depths of hell..
 :HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
 :END:
-*** Chapter 1
+Bu post'da Türkçe olarak /Cracking the Coding Interview/ kitabının özetini çıkartıyorum. Ilk ve ikinci bölümleri ingilizce yazdım, dert etmeyin onları revize edip Türkçeleştireceğim. Bu kitapta, iş başvurularında dikkat edilecek hususlar çok güzel anlatılmıştır. Ben de en azından özetini çıkararak önemli yerleri sizinle paylaşmaya karar verdim. İyi okumalar
+*** Bölüm 1
 + recruiters look for the following;
   - analytical skills
     a. how *confidently* you solved the problem
@@ -2402,14 +2403,14 @@ deepest depths of hell..
 + interviewers always compare your performance to other's that came before and after you. even if you think that you performed well, a japanese hacker who came before you can change all the game. it's all about luck m8
 + don't think that you've been rejected immediately if you don't get response in 2-3 days. your interviewer might still work on your and other assessments. be patient and calm
 + if you've been rejected but really want that job you must wait for at least *6 months* before re-application.
-*** Chapter 2
+*** Bölüm 2
 + before face-to-face interview you always get a *screen* interview. this is actually a phone interview where skype or relative apps are used
 + coding and algorithms questions are asked during the screen interview. questions are hard as ones that asked in face-to-face interview
 + sometimes interviewer might give you a *homework* which you solve and send the code through e-mail. (rare case)
 + the most of the time questions are asked in real time and you try to solve them while interviewer watches (common case)
 + you do one or two screens before they take you to face-to-face arena
 
-*** Chapter 3
+*** Bölüm 3
 + aşağıdaki maddelerde, bazı _değişken_ durumlar anlatılmıştır;
 
   - görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
@@ -2452,8 +2453,7 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
 
 
 
-
-*** Chapter 4
+*** Bölüm 4
 **** Tecrübe Kazanma Yolları
 + iyi bir tecrübe yoksa, iyi bir CV olmaz. iyi bir CV yoksa da kimse sizi iş görüşmesine çağırmaz
 + öğrenciler bakımından yukarıdaki sorunun çözümü;
@@ -2517,7 +2517,7 @@ Y'yi yaparak X'i başardım
 [[file:./images/screenshot-54.png]]
 [[file:./images/screenshot-55.png]]
 
-*** Chapter 5
+*** Bölüm 5
 + CV'de yazılan projeler incelenip genelde bu projelerle ilgili size soru yöneltilir. CV'yi inceleyen kişi, görüşmeden önce bu projelere ne kadar hakim olduğunuzu görmek için zor sorular hazırlayabilir.
 + CV'deki projeleri çok iyi çalşıp, şöyle bir tablo hazırlanması çok faydalı olacaktır;
 
@@ -2583,7 +2583,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   6. şu anda neden burda olduğunu anlatarak toparla bitir
   hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
 
-*** Chapter 6
+*** Bölüm 6
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
