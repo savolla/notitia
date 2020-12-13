@@ -2587,7 +2587,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
 
 *** Bölüm 6
-** Object-Oriented Analysis and Design with Applications Türkçe Özet :book:
+** Object-Oriented Analysis and Design with Applications Türkçe Notlar :book:
 *** Bölüm 5
 + 2 tip UML diyagramı vardır;
   1. Structured Diyagramlar
@@ -2595,6 +2595,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + structural diyagramlar: sistemin mimarisini gösteirler. static diyagramlardır
 + structural diyagramlar;
    [[file:./images/screenshot-57.png]]
++ behavior diyagramlar: sisteme giren çıkan sinyal/event/mesaj gibi unsurların gösterilmesini amaçlar
++ behavior diyagramlara örnekler;
+   [[file:./images/screenshot-58.png]]
++ UML diyagramları kesinlikle kabataslak olmalıdır. fazla detay, yazılımcıyı kısıtlar ve UML'i yapan mimarın aynı zamanda yazılım geliştirme tarafını da düşünmesine sebep olur ki bu çok mantıklı bir şey değildir
 +
 
 ** Reading List to Become a Professional
@@ -2891,6 +2895,9 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =constitute=            oluşturmak
 =contenteditable=       memnun
 =curated=
+=convey=                iletmek
+=rough=                 kaba
+=comprise=              içermek
 =differing=             farklı
 =diligence=             çalışkanlık
 =depict=                göstermek
@@ -2902,6 +2909,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =intern=                asistan
 =lattice=               kafes
 =precisely=             kesin olarak
+=precise=               kesin
 =predicate=             yüklem
 =prescient=             ileri görüşlü
 =quintessentially=      özetle
