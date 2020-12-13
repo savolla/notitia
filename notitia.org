@@ -2627,6 +2627,15 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + generalization ise aslında kalıtım olarak çevrilebilir. örneğin balık aslında bir hayvandır.
 + packagelar arası generalization, şu şekilde gösterilir;
   [[file:./images/screenshot-65.png]]
+**** component diyagramları
++ bir component, tekrar kullanılabilir (reusable) bütün bir program, kütüphane ya da bir framework'dür
++ componentler içinde benzer bir işi yapan sınıflar barındırırlar. bu sınıflar tabiki package'larla ayrılmış da olabilir
++ özetle packagelar sınıfları, componentler de package'ları içine alabilir. bazen componentler, içine başka componentler bile alabilirler
++ componentler birbirine bir interface ile bağlıdır
+  [[file:./images/screenshot-66.png]]
++ yukarıda component'lerin sağ üstündeki işaretler, component simgesidir. componentleri şu şekilde *stereotype* kullanarak da ifade edebiliriz;
+  [[file:./images/screenshot-67.png]]
++ componentler, bir binanın tuğlaları gibi düşünülebilir
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
@@ -2921,6 +2930,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =concise=               özlü, kısa
 =conservative=          muhafazakar
 =constitute=            oluşturmak
+=depics=                ifade etmek, göstermek
 =contenteditable=       memnun
 =curated=
 =convey=                iletmek
