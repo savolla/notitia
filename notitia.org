@@ -2381,6 +2381,9 @@ deepest depths of hell..
 :EXPORT_AUTHOR: savolla
 :END:
 Bu post'da Türkçe olarak /Cracking the Coding Interview/ kitabının özetini çıkartıyorum. Ilk ve ikinci bölümleri ingilizce yazdım, dert etmeyin onları revize edip Türkçeleştireceğim. Bu kitapta, iş başvurularında dikkat edilecek hususlar çok güzel anlatılmıştır. Ben de en azından özetini çıkararak önemli yerleri sizinle paylaşmaya karar verdim. İyi okumalar
+
+[[file:./images/screenshot-56.png]]
+
 *** Bölüm 1
 + recruiters look for the following;
   - analytical skills
