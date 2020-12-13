@@ -2453,7 +2453,6 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
 
 
 
-
 *** Chapter 4
 **** Tecrübe Kazanma Yolları
 + iyi bir tecrübe yoksa, iyi bir CV olmaz. iyi bir CV yoksa da kimse sizi iş görüşmesine çağırmaz
@@ -2518,8 +2517,40 @@ Y'yi yaparak X'i başardım
 [[file:./images/screenshot-54.png]]
 [[file:./images/screenshot-55.png]]
 
-
 *** Chapter 5
++ CV'de yazılan projeler incelenip genelde bu projelerle ilgili size soru yöneltilir. CV'yi inceleyen kişi, görüşmeden önce bu projelere ne kadar hakim olduğunuzu görmek için zor sorular hazırlayabilir.
++ CV'deki projeleri çok iyi çalşıp, şöyle bir tablo hazırlanması çok faydalı olacaktır;
+
+  | yaygın soru             | proje1 | proje2 | proje3 |
+  |-------------------------+--------+--------+--------|
+  | zorluklar/buglar        |        |        |        |
+  | hatalar/başarısızlıklar |        |        |        |
+  | keyif alınan taraflar   |        |        |        |
+  | liderlik                |        |        |        |
+  | çatışmalar (takım ise)  |        |        |        |
+  | neyi farklı yapardın    |        |        |        |
+
++ bu tabloyu doldurup iyice çalış. iş veren projeler hakkında soru sordukça burda yazdıklarını hatırla ve cevapla
++ size "zayıf yanlarınız" nelerdir diye sorduklarında gerçek bir zayıflık söyleyin. "çok çalışmak" gibi cevaplar çok ciddiye alınmaz ve dürüst olmadığınızı düşündürür.
++ zayıflıklarınızdan bahsederken aynı zamanda bu zayıflıklarla nasıl başa çıkmaya çalıştığınızı da anlatmanız gerekir. örnek;
+
+  1. "bazen pasifagresif davranabiliyorum. ancak bu konuyla ilgili psikolojik kitaplar okuyorum ve nerede hata yaptığımı görmemi sağlayıp başa çıkmama yardımcı oluyorlar"
+
+  2. "yeni bir proje fikri geldiğinde çok hızlı burn out olabiliyorum. başa çıkmak için pomodoro tekniğini kullanıyorum"
+
+  3. "yeni bir teknolojiyi öğrenirken, kendimi bu konuda sonuna kadar gitmem gerektiğine inandırıyorum. bundan dolayı teknolojiye öğrenmeye odaklanmak yerine, kendimi en iyi kaynağı araştırmaya zaman harcarken bulabiliyorum. Bu konuda tecrübe kazandığım için artık çoğu kez yaptığım yanlışın farkına varabiliyorum"
+**** interviewer'a sorulması gereken sorular
++ interviewer size soru sormanıza izin verebilir. bir iş görüşmesinde, 3 tip önemli soru çeşidi vardır;
+  1. Hakiki Sorular /(cevaplarını gerçekten bilmek istediğiniz sorulardır)/
+     - "şirkette, geliştirici, tester ve yönetici dengesi var mı? takımda proje planlaması nasıl yapılıyor?"
+     - "peki siz bu şirkete nasıl geldiniz? genelde bu çalışma ortamında sizi en çok zorlayan ne oluyor?"
+  2. Teknik Sorular
+     bu sorular genelde şirkete başvurmadan önce bayağı bir araştırdığınızı anlatır
+     - "gördüğüm kadarıyla X teknolojisini kullanıyorsunuz. bununla Y problemini nasıl çözüyorsunuz?"
+     - "yaptığınız ürün X teknolojisi yerine neden Y'yi seçti? Y'nin A,B,C konularında avantajları olduğunu biliyorum ancak diper şirketler Y'yi D sorunu yüzünden kullanmıyorlar"
+  3.
+
+
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
@@ -2535,7 +2566,6 @@ Y'yi yaparak X'i başardım
 *** Junior Software Engineer Reading List
 **** Read This First
 1. Pragmatic Thinking and Learning: Refactor Your Wetware
-
 **** Fundementals
 1. Code Complete: A Practical Handbook of Software Construction
 2. Software Estimation: Demystifying the Black Art
@@ -2551,7 +2581,6 @@ Y'yi yaparak X'i başardım
 12. Debugging the Development Process: Practical Strategies for Staying Focused, Hitting Ship Dates, and Building Solid Teams
 13. Rapid Development: Taming Wild Software Schedules
 14. Peopleware: Productive Projects and Teams
-
 *** Mentality
 1. Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency
 2. Against Method
@@ -3029,6 +3058,8 @@ Bit by Bit
 =initiative=            girişim
 =entrepreneurial=       girişimci
 =diligence=             çalışkanlık
+=aspect=                yön (kitap her *yön*'den iyidi)
+=genuine=               gerçek, hakiki
 ** Русский
 *** неизвестные слова
 * Template
