@@ -2588,7 +2588,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
 
 *** Bölüm 6
-
+** Head First OOAD Türkçe Özet :book:
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
@@ -2626,26 +2626,19 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 
 *** History
 The Mythical Man-Month: Essays on Software Engineering
-
 Computing Calamities: Lessons Learned from Products, Projects, and Companies That Failed
-
 The Deadline: A Novel About Project Management
 
 *** Mid Level Software Engineer Reading List
-Read This First
+**** Read This First
 Personal Development for Smart People: The Conscious Pursuit of Personal Growth
 
-Fundementals
+**** Fundementals
 The Clean Coder: A Code of Conduct for Professional Programmers
-
 Clean Code: A Handbook of Agile Software Craftsmanship
-
 Solid Code
-
 Code Craft: The Practice of Writing Excellent Code
-
 Software Craftsmanship: The New Imperative
-
 Writing Solid Code
 
 *** Software Design
