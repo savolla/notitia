@@ -2604,7 +2604,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Read This First
 1. Pragmatic Thinking and Learning: Refactor Your Wetware
 **** Fundementals
-1. Code Complete: A Practical Handbook of Software Construction
+1. Code Complete 2
 2. Software Estimation: Demystifying the Black Art
 3. Software Engineering: A Practitioner's Approach
 4. Refactoring: Improving the Design of Existing Code
@@ -2872,7 +2872,6 @@ Writing Solid Code
 27. Computer Vision
 28. Alice's Adventures in Wonderland
 29. Gödel, Escher, Bach: An Eternal Golden Braid
-
 
 * Foreign Languages
 ** English
