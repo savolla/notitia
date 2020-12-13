@@ -2599,14 +2599,18 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + behavior diyagramlara örnekler;
    [[file:./images/screenshot-58.png]]
 + UML diyagramları kesinlikle kabataslak olmalıdır. fazla detay, yazılımcıyı kısıtlar ve UML'i yapan mimarın aynı zamanda yazılım geliştirme tarafını da düşünmesine sebep olur ki bu çok mantıklı bir şey değildir
-+ package diyagramları: UML elemanlarını gruplamak için kullanılır
-+ bir private ve bir public sınıfın bir package içine alınması:
-[[file:./images/screenshot-59.png]]
+**** package diyagramları
++ package diyagramları şu işe yarar;
+  1. ortak amaca hizmet eden sınıfları gruplamak
+  2. ortak amaca yönelik usecase'leri gruplamak
+  3. şemanın daha derli toplu ve anlaşılır görünmesini sağlamak
++ örnek bir package diyagramı;
+  [[file:./images/screenshot-62.png]]
+  - *FileHandling* ve *Graphics* sınıfları *Utilities* package'ının içine konulmuş. Utility de Java altına
+  - en aşağıdaki ise aslında bir sınıftır. ancak görsel olarak package içinde görünmese de isminin arkasındakiler *package*'dır
 + eğer sınıflar birbirine bağımlıysa bu bağımlılıklar _kesikli oklarla_ gösterilir;
-[[file:./images/screenshot-60.png]]
-+ package diyagramları aynı zamanda *use case*'leri de gruplayabilir
-[[file:./images/screenshot-61.png]]
-+
+  [[file:./images/screenshot-60.png]]
++ genelde birbirinden kalıtım alan sınıfları, bir package altına koyarız
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
