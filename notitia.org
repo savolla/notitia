@@ -2539,18 +2539,52 @@ Y'yi yaparak X'i başardım
   2. "yeni bir proje fikri geldiğinde çok hızlı burn out olabiliyorum. başa çıkmak için pomodoro tekniğini kullanıyorum"
 
   3. "yeni bir teknolojiyi öğrenirken, kendimi bu konuda sonuna kadar gitmem gerektiğine inandırıyorum. bundan dolayı teknolojiye öğrenmeye odaklanmak yerine, kendimi en iyi kaynağı araştırmaya zaman harcarken bulabiliyorum. Bu konuda tecrübe kazandığım için artık çoğu kez yaptığım yanlışın farkına varabiliyorum"
-**** interviewer'a sorulması gereken sorular
+**** Interviewer'a Yöneltilebilecek Sorular
 + interviewer size soru sormanıza izin verebilir. bir iş görüşmesinde, 3 tip önemli soru çeşidi vardır;
-  1. Hakiki Sorular /(cevaplarını gerçekten bilmek istediğiniz sorulardır)/
-     - "şirkette, geliştirici, tester ve yönetici dengesi var mı? takımda proje planlaması nasıl yapılıyor?"
-     - "peki siz bu şirkete nasıl geldiniz? genelde bu çalışma ortamında sizi en çok zorlayan ne oluyor?"
-  2. Teknik Sorular
-     bu sorular genelde şirkete başvurmadan önce bayağı bir araştırdığınızı anlatır
-     - "gördüğüm kadarıyla X teknolojisini kullanıyorsunuz. bununla Y problemini nasıl çözüyorsunuz?"
-     - "yaptığınız ürün X teknolojisi yerine neden Y'yi seçti? Y'nin A,B,C konularında avantajları olduğunu biliyorum ancak diper şirketler Y'yi D sorunu yüzünden kullanmıyorlar"
-  3.
+***** Hakiki Sorular
+cevaplarını gerçekten bilmek istediğiniz sorulardır
+#+begin_quote
+şirkette, geliştirici, tester ve yönetici dengesi var mı? takımda proje planlaması nasıl yapılıyor?
+#+end_quote
+#+begin_quote
+peki siz bu şirkete nasıl geldiniz? genelde bu çalışma ortamında sizi en çok zorlayan ne oluyor?
+#+end_quote
+
+***** Teknik Sorular
+bu sorular genelde şirkete başvurmadan önce bayağı bir araştırdığınızı anlatır
+#+begin_quote
+gördüğüm kadarıyla X teknolojisini kullanıyorsunuz. bununla Y problemini nasıl çözüyorsunuz?
+#+end_quote
+#+begin_quote
+yaptığınız ürün X teknolojisi yerine neden Y'yi seçti? Y'nin A,B,C konularında avantajları olduğunu biliyorum ancak diğer şirketler Y'yi D sorunu yüzünden kullanmıyorlar
+#+end_quote
+
+***** Çalışkanlık Yansıtan Sorular
+bu tarz sorular iş verenin, sizin ne kadar azimli olduğunuzu görmesini ve şirket için faydalı olacağınızı düşünmesini sağlar
+#+begin_quote
+Yazılımın ölçeklenebilirliği konusunda kendimi geliştirmeye çalışıyorum. bu şirkette bu konuyla alakalı neler öğrenebilirim?
+#+end_quote
+#+begin_quote
+Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç bir yönteme benziyor. Nasıl çalıştığından biraz bahseder misiniz?
+#+end_quote
 
 
+
+**** Dikkat edilmesi gereken hususlar
++ projelerle ilgili konuşurken ya da sorular yöneltirken asla ama asla *kibirli* görünme. Kendini her zaman bir çaylakmışçasına *alçak gönüllü* ve *saygılı* olarak göster. /(genel olarak öyle ol zaten)/
++ görüşmeciler bu tarz çok insan ile karşılaştıklarından, artık insan sarrafı olma yolunda ilerliyorlardır. en ufak bir kibir belirtisinde çizerler
++ soruları cevaplarken, karşınızdakini detaya boğmayın. çok önemli noktalara değinin ve daha fazla detay gerektiren bir konuda, karşınızdakinden izin alıp öyle devam etmeye özen gösterin. çünkü gelen kişinin, teknik detaylardan ne kadar anladığını ya da duymaktan hoşlanıp hoşlanmadığını bilemezsiniz.
++ takım projesinde yer aldıysanız, takımın başarılarını anlatmak yerine kendinizin bu takımdaki başarılarınızdan bahsedin. çünkü takım ile ilgili konuşmalarınızda, sizin ne yaptığınız ile ilgili bir fikir oluşmaz
++ "kendininden biraz bahseder misiniz?" tarzı bir soru geldiğinde kronolojik sıraya gitmeye dikkat edin ve sırasıyla şunlardan bahsedin;
+  1. Şu anda bir yerde çalışıyorsanız rol belirteren söze girin
+  2. hangi okulda okudun ve hangi bölüm
+  3. stajlar
+  4. okuldan sonra ne yaptın
+  5. iş dışında yaptığın projeler/çalışmalar
+  6. şu anda neden burda olduğunu anlatarak toparla bitir
+  hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
+
+*** Chapter 6
 
 ** Reading List to Become a Professional
 *** Job Interview Prep
@@ -3060,6 +3094,7 @@ Bit by Bit
 =diligence=             çalışkanlık
 =aspect=                yön (kitap her *yön*'den iyidi)
 =genuine=               gerçek, hakiki
+=arrogance=             kibir
 ** Русский
 *** неизвестные слова
 * Template
