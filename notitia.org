@@ -160,6 +160,29 @@ typedef struct A{
 } A;
 #+end_src
 **** problems & solutions
+*** c++
+**** facts
++ in C++ there is no =interface= keyword. but we can still implement intrefaces with classes
+**** how to
+***** implement interfaces in c++
+1. create a class with only abstract methods with =virtual= keywords and adding ==0= to the ent of methods
+   #+begin_src cpp
+   class Shape {
+   public:
+       virtual double calculateArea() = 0;
+   }
+   #+end_src
+2. now create a class that implements that interface;
+   #+begin_src cpp
+   class Triangle : public Shape {
+   public:
+       double height, floor;
+
+       double calculateArea() {
+            return (height * floor) / 2;
+       }
+   }
+   #+end_src
 *** perl
 **** facts
 + perl's extension is *.pl*
