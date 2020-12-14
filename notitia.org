@@ -975,7 +975,6 @@ they are three build tools for java
 + when querying a database, give the full path to tables. like =databas_ename.table_name=. this is important. mysql might allow this kind of notation since it is a full blown database application. JDBC is not that clever
 **** facts
 + non-static class members can't be used with *this* keyword
-
   #+begin_src java
 public class A {
     public static int x;
@@ -999,6 +998,7 @@ public class A {
 package path.to.package1;
 package path.to.package2; // second one is not allowed
   #+end_src
++ you don't have to import classes if they are in the same package
 
 **** how to
 ***** use linked lists
