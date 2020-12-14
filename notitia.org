@@ -2961,6 +2961,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =unconventional=        alışılmadık
 =allude=                ima etmek
 =arrogance=             kibir
+=adhare=                bağlı
 =aspect=                yön (kitap her *yön*'den iyidi)
 =bottleneck=            darboğaz
 =comprise=              içermek
