@@ -2956,6 +2956,9 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
+=expose=                maruz kalma
+=relevance=             alaka
+=brittle=               kırılgan
 =exhibiting=            sergilemek
 =intermingling=         birbirine karıştırmak
 =unconventional=        alışılmadık
