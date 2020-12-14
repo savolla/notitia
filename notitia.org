@@ -2964,6 +2964,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
+=prethora=              bolluk
 =adhare=                bağlı
 =allude=                ima etmek
 =arrogance=             kibir
