@@ -2403,9 +2403,7 @@ deepest depths of hell..
 :EXPORT_AUTHOR: savolla
 :END:
 Bu post'da Türkçe olarak /Cracking the Coding Interview/ kitabının özetini çıkartıyorum. Ilk ve ikinci bölümleri ingilizce yazdım, dert etmeyin onları revize edip Türkçeleştireceğim. Bu kitapta, iş başvurularında dikkat edilecek hususlar çok güzel anlatılmıştır. Ben de en azından özetini çıkararak önemli yerleri sizinle paylaşmaya karar verdim. İyi okumalar
-
 [[file:./images/screenshot-56.png]]
-
 *** Bölüm 1
 + recruiters look for the following;
   - analytical skills
@@ -2469,7 +2467,6 @@ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri ve
 #+begin_quote
 buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
 #+end_quote
-
 
 
 
@@ -2610,6 +2607,9 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
 
 *** Bölüm 6
+**** Big O
++ içini dışını bilmezseniz kötü gözle bakarlar
++
 ** Object-Oriented Analysis and Design with Applications Türkçe Notlar :book:
 *** Bölüm 5
 + 2 tip UML diyagramı vardır;
@@ -2986,7 +2986,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =subsequent=            sonraki
 =superstition=          batıl inanç
 =suppress=              bastırmak
-=th+ sauruses=           eş anlamlı
+=thesaurus=             eş anlamlılar sözlüğü
 =uncharted=             keşvedilmemiş
 =vocabulary=            kelime bi+ gisi
 =venue=                 buluşma yeri
