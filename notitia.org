@@ -2964,19 +2964,12 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
-=judiciously=           akıllıca
-=facade=                cephe (evin dış cehesi)
-=expose=                maruz kalma
-=relevance=             alaka
-=brittle=               kırılgan
-=exhibiting=            sergilemek
-=intermingling=         birbirine karıştırmak
-=unconventional=        alışılmadık
+=adhare=                bağlı
 =allude=                ima etmek
 =arrogance=             kibir
-=adhare=                bağlı
 =aspect=                yön (kitap her *yön*'den iyidi)
 =bottleneck=            darboğaz
+=brittle=               kırılgan
 =comprise=              içermek
 =concise=               özlü, kısa
 =conservative=          muhafazakar
@@ -2991,10 +2984,15 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =entrepreneurial=       girişimci
 =evidently=             belli ki
 =excerpt=               alıntı
+=exhibiting=            sergilemek
+=expose=                maruz kalma
+=facade=                cephe (evin dış cehesi)
 =genuine=               gerçek, hakiki
 =however=               ancak
 =initiative=            girişim
+=intermingling=         birbirine karıştırmak
 =intern=                asistan
+=judiciously=           akıllıca
 =lattice=               kafes
 =loan=                  kredi
 =precise=               kesin
@@ -3002,13 +3000,16 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =predicate=             yüklem
 =prescient=             ileri görüşlü
 =quintessentially=      özetle
+=relevance=             alaka
 =rigorously=            titizlikle
 =rough=                 kaba
 =subsequent=            sonraki
 =superstition=          batıl inanç
 =suppress=              bastırmak
+=tenet=                 ilke
 =thesaurus=             eş anlamlılar sözlüğü
 =uncharted=             keşvedilmemiş
+=unconventional=        alışılmadık
 =venue=                 buluşma yeri
 =vocabulary=            kelime bi+ gisi
 ** Русский
