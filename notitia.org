@@ -2964,6 +2964,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
+=judiciously=           akıllıca
+=facade=                cephe (evin dış cehesi)
 =expose=                maruz kalma
 =relevance=             alaka
 =brittle=               kırılgan
