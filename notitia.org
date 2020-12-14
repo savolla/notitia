@@ -2608,7 +2608,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 
 *** Bölüm 6
 **** Big O
-+ içini dışını bilmezseniz kötü gözle bakarlar
++ içini dışını bilmezsen, kötü gözle bakarlar
 +
 ** Object-Oriented Analysis and Design with Applications Türkçe Notlar :book:
 *** Bölüm 5
