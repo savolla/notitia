@@ -109,7 +109,8 @@
 *** facts
 *** concepts
 **** programming to an interface
-+ this is not the =interface= keyword in Java or C#. this is *design principle* a concept
++ this is a *design principle*
++ the keyword =interface= sometimes confuced with "interface keyword" in Java and C#. but this is not the keyword is discussed here
 *** how to
 
 * Programming
