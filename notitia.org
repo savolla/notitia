@@ -105,6 +105,12 @@
   4. event history
 + event sourcing is useful in *debugging* because all events are stored and with history. developers can pause the application or roll back to more older version etc
 ** Software Design
+** Design Patterns
+*** facts
+*** concepts
+**** programming to an interface
++ this is not the =interface= keyword in Java or C#. this is *design principle* a concept
+*** how to
 
 * Programming
 ** languages
@@ -2108,6 +2114,7 @@ how user sees the results from business layer. this includes some User Interface
 ** HAL
 + hardware abstraction layer: this is a separation line between *firmware* and *software*
    [[file:./images/screenshot-70.png]]
+** Interface
 
 * Linux
 ** how to
