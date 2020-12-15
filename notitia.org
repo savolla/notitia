@@ -81,29 +81,29 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   #+RESULTS:
   [[file:/tmp/babel-AKVKVd/plantuml-nebork.png]]
 + yukarıdaki UML diyagramının kod karşılığı;
+  - A.cpp
+    #+begin_src cpp
+    #include "B.cpp"
 
-  #+begin_src cpp
-// filename : A.cpp
-import "B.cpp"
-
-class A {
+    class A {
+      B b;
     public:
-        void method1() {
-            method2();
-            method3();
-        }
-};
-
-// filename : B.cpp
-class B {
+      void method1() {
+        b.method2();
+        b.method3();
+      }
+    };
+    #+end_src
+  - B.cpp
+    #+begin_src cpp
+    class B {
     public:
-        void method2();
-        void method3();
-        void method4();
-};
-  #+end_src
-+ A sınıfı, B'yi import etti ve B'den sadece 2 method kullandı. method4'de B.cpp ile beraber geldi ki A ona ihtiyaç duymuyor. bu senaryoda yarın öbür gün B yerine başka bir sınıf kullanmak istersek, A classında bir çok değişiklik yapmamız gerekir. bunu önlemek için *programming to interface* dizayn prensibini kullanırız. UML diyagramı ve kod örneği aşağıda verilmiştir;
-
+      void method2() { /* some code */}
+      void method3() { /* some code */}
+      void method4() { /* some code */}
+    };
+    #+end_src
++ A sınıfı, B'yi import etti ve B'den sadece 2 method kullandı. method4 de B.cpp ile beraber geldi ki A ona ihtiyaç duymuyor. bu senaryoda yarın öbür gün B yerine başka bir sınıf kullanmak istersek, A classında bir çok değişiklik yapmamız gerekir. bunu önlemek için *programming to interface* dizayn prensibini kullanırız. UML diyagramı ve kod örneği aşağıda verilmiştir;
   #+begin_src plantuml :results output
   @startuml
   class A {
@@ -128,11 +128,11 @@ class B {
   #+RESULTS:
   [[file:/tmp/babel-AKVKVd/plantuml-d1lACU.png]]
 
-  yukarıdaki UML diyagramının kod hali;
+  yukarıdaki UML diyagramına göre, A class'ı artık direk B'ye bağlıd değil. ikisi arsına bir interface koyduk (Abstract class) ve A sınıfı bu interface'i include ediyor. B ise bu interface'i implemente ediyor;
 
   - A.cpp
     #+begin_src cpp
-    import "IC.cpp"
+    #include "IC.cpp"
 
     class A {
         public:
@@ -148,11 +148,11 @@ class B {
     public:
         virtual void method2() = 0;
         virtual void method3() = 0;
-    }
+    };
     #+end_src
   - B.cpp
     #+begin_src cpp
-    import "IC.cpp"
+    #include "IC.cpp"
     class B : public IC {
         public:
             void method2() {/* some code */}
