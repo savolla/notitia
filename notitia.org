@@ -9,6 +9,28 @@
 
 * Topics
 ** web programming
+** Software Engineering
+*** Kod yazarken dikkat edilmesi gerekenler
+**** Encapsulation
+***** method encapsulation'ı
+bir method yazarken, if else, ya da switch case silsilesi başladı ise o ifleri ve elseleri başka bir methoda aktar
++ eski kod;
+#+begin_src cpp
+class A {
+public:
+    void method1( int param ) {
+       if ( param == 12 ) {
+           return 24;
+       }
+       else if ( param == 13 ) {
+           return 25;
+       }
+       else {
+           return 26;
+       }
+    }
+}
+#+end_src
 ** probability and statistics
 ** SOLID principles
 *** SRP
