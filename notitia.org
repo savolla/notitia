@@ -61,19 +61,105 @@ bir method yazarken, if else, ya da switch case silsilesi başladı ise o ifleri
 ***** class encapsulation
 baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başladı, fonksiyonalitesi arttı, o zaman bu mehodu da küçük methodlara ayırıp ayrı bir class aç
 **** 2. Programming to Interface
-programındaki classları yarın öbür gün başka projelerde kullanmak isteyebilirsin. bunun mümkün olması için, sınıfları birbirine bağımlı hale getirmeden kullanman gerekir. bunu nasıl yaparız? aşağıda birbirine bağımlı sınıflar gösterilmiştir;
-#+begin_src plantuml :results output
-@startuml
++ code *reuse* için kullanılan prensiptir. sınıfları birbirine bağımlı hale getirmeden kullanman gerekir. bunu nasıl yaparız? aşağıda birbirine bağımlı sınıflar gösterilmiştir;
+  #+begin_src plantuml :results output
+  @startuml
+  class A {
+      ...
+      method1()
+  }
+  class B {
+      ...
+      method2()
+      method3()
+      method4()
+  }
+  A -> B
+  @enduml
+  #+end_src
+
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-nebork.png]]
++ yukarıdaki UML diyagramının kod karşılığı;
+
+  #+begin_src cpp
+// filename : A.cpp
+import "B.cpp"
+
 class A {
+    public:
+        void method1() {
+            method2();
+            method3();
+        }
+};
 
-}
+// filename : B.cpp
 class B {
-}
-@enduml
-#+end_src
+    public:
+        void method2();
+        void method3();
+        void method4();
+};
+  #+end_src
++ A sınıfı, B'yi import etti ve B'den sadece 2 method kullandı. method4'de B.cpp ile beraber geldi ki A ona ihtiyaç duymuyor. bu senaryoda yarın öbür gün B yerine başka bir sınıf kullanmak istersek, A classında bir çok değişiklik yapmamız gerekir. bunu önlemek için *programming to interface* dizayn prensibini kullanırız. UML diyagramı ve kod örneği aşağıda verilmiştir;
 
-#+RESULTS:
-[[file:/tmp/babel-AKVKVd/plantuml-K0IIS1.png]]
+  #+begin_src plantuml :results output
+  @startuml
+  class A {
+      ...
+      method1()
+  }
+  class B {
+      ...
+      method2()
+      method3()
+      method4()
+  }
+  interface IC {
+      method2()
+      method3()
+  }
+  A -> IC
+  IC <|.. B
+  @enduml
+  #+end_src
+
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-d1lACU.png]]
+
+  yukarıdaki UML diyagramının kod hali;
+
+  - A.cpp
+    #+begin_src cpp
+    import "IC.cpp"
+
+    class A {
+        public:
+            void method1() {
+                method2() {/* some code */}
+                method3() {/* some code */}
+            }
+    };
+    #+end_src
+  - IC.cpp
+    #+begin_src cpp
+    class IC {
+    public:
+        virtual void method2() = 0;
+        virtual void method3() = 0;
+    }
+    #+end_src
+  - B.cpp
+    #+begin_src cpp
+    import "IC.cpp"
+    class B : public IC {
+        public:
+            void method2() {/* some code */}
+            void method3() {/* some code */}
+            void method4() {/* some code */}
+    };
+    #+end_src
 
 ** probability and statistics
 ** SOLID principles
@@ -1911,6 +1997,32 @@ custom_css = ["css/custom.css"]
 **** tips
 **** facts
 **** how to
+**** problems & solutions
+*** plantuml
+**** concepts
+**** tips
+**** facts
+**** how to
+***** create a basic class diagram
+1. use "results output" to show image result
+  #+begin_src plantuml :results output
+  @startuml
+  class A {
+      ...
+      method1();
+      method2();
+  }
+  class B {
+      ...
+      method3();
+      method4();
+  }
+  A -> B
+  @enduml
+#+end_src
+***** draw horizontal lines and vertical lines
+1. use =->= for horizontal line drawings
+2. use =-->= for vertical lines
 **** problems & solutions
 
 ** command line utility
