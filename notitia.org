@@ -11,26 +11,70 @@
 ** web programming
 ** Software Engineering
 *** Kod yazarken dikkat edilmesi gerekenler
-**** Encapsulation
+**** 1. Encapsulation
 ***** method encapsulation'ı
 bir method yazarken, if else, ya da switch case silsilesi başladı ise o ifleri ve elseleri başka bir methoda aktar
 + eski kod;
-#+begin_src cpp
+  #+begin_src cpp
+  class A {
+  public:
+      int method1( int param ) {
+          /*
+             bazı önemli kodlar (10 satır)
+          */
+         if ( param == 12 ) {
+             return 24;
+         }
+         else if ( param == 13 ) {
+             return 25;
+         }
+         else {
+             return 26;
+         }
+      }
+  }
+  #+end_src
++ yeni kod;
+  #+begin_src cpp
+  class A {
+  public:
+      int method1( int value ) {
+          /*
+             bazı önemli kodlar (10 satır)
+          ,*/
+          return getValue( value );
+      }
+
+      int getValue ( int value ) {
+         if ( value == 12 ) {
+             return 24;
+         }
+         else if ( value == 13 ) {
+             return 25;
+         }
+         else {
+             return 26;
+         }
+      }
+  }
+  #+end_src
+***** class encapsulation
+baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başladı, fonksiyonalitesi arttı, o zaman bu mehodu da küçük methodlara ayırıp ayrı bir class aç
+**** 2. Programming to Interface
+programındaki classları yarın öbür gün başka projelerde kullanmak isteyebilirsin. bunun mümkün olması için, sınıfları birbirine bağımlı hale getirmeden kullanman gerekir. bunu nasıl yaparız? aşağıda birbirine bağımlı sınıflar gösterilmiştir;
+#+begin_src plantuml :results output
+@startuml
 class A {
-public:
-    void method1( int param ) {
-       if ( param == 12 ) {
-           return 24;
-       }
-       else if ( param == 13 ) {
-           return 25;
-       }
-       else {
-           return 26;
-       }
-    }
+
 }
+class B {
+}
+@enduml
 #+end_src
+
+#+RESULTS:
+[[file:/tmp/babel-AKVKVd/plantuml-K0IIS1.png]]
+
 ** probability and statistics
 ** SOLID principles
 *** SRP
