@@ -2294,6 +2294,7 @@ how user sees the results from business layer. this includes some User Interface
 + hardware abstraction layer: this is a separation line between *firmware* and *software*
    [[file:./images/screenshot-70.png]]
 ** Interface
+** late binding
 
 * Linux
 ** how to
