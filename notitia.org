@@ -165,6 +165,84 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 **** UML
 ***** arrows and their meanings
 
+****** inheritance
++ UML representation
+  #+begin_src plantuml :results output
+    @startuml
+    class A{}
+    class B{}
+    A -|> B
+    @enduml
+    #+end_src
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-B49axT.png]]
++ relation
+  A *is a* B
+****** composition
++ UML representation
+  #+begin_src plantuml :results output
+    @startuml
+    class A{}
+    class B{}
+    A *-> B
+    @enduml
+    #+end_src
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-SSWv0Y.png]]
++ relation
+  A *has a* B
+****** aggregation
++ UML representation
+  #+begin_src plantuml :results output
+    @startuml
+    class A{}
+    class B{}
+    A o-> B
+    @enduml
+    #+end_src
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-6uvrGL.png]]
++ relation
+  A *may have a* B
+****** association
++ UML representation
+  #+begin_src plantuml :results output
+    @startuml
+    class A{}
+    class B{}
+    A -> B
+    @enduml
+    #+end_src
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-3DBNuI.png]]
++ relation
+  A *uses* B
+****** implementation
++ UML representation
+  #+begin_src plantuml :results output
+    @startuml
+    class A{}
+    interface B{}
+    A .up.|> B
+    @enduml
+    #+end_src
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-O3lcOD.png]]
++ relation
+  A *implements* B
+****** dependency
++ UML representation
+  #+begin_src plantuml :results output
+    @startuml
+    class A{}
+    interface B{}
+    A .up.> B
+    @enduml
+    #+end_src
+  #+RESULTS:
+  [[file:/tmp/babel-AKVKVd/plantuml-dWqnIQ.png]]
++ relation
+  A *needs* B *to be able to work*
 **** SOLID principles
 ***** SRP
 + rules;
@@ -182,9 +260,13 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   a. we should not modify the existing and already tested and working classes when new scenario comes out
   b. to extend the functionality use *Startegy Pattern*. it is like *Dependency Injection*
   c. violate this principle when your code has some bugs. open and modify the existing code to fix the issue
+  d. if switch and case statements started to show up in methods it's time for open close principle
+
 ***** LSP
 ***** ISP
 ***** DIP
+**** Dependency Injection (DI)
+
 ** probability and statistics
 ** Embedded Systems
 *** articles
@@ -342,24 +424,46 @@ typedef struct A{
 + in C++ there is no =interface= keyword. but we can still implement intrefaces with classes
 **** how to
 ***** implement interfaces in c++
-1. create a class with only abstract methods with =virtual= keywords and adding ==0= to the ent of methods
+1. create a class with only abstract methods with =virtual= keywords and adding ==0= to the ent of methods. and don't forget *virtual destructor*
    #+begin_src cpp
+   // Shape.cpp
    class Shape {
    public:
+       virtual ~Shape() = default;
        virtual double calculateArea() = 0;
    }
    #+end_src
 2. now create a class that implements that interface;
    #+begin_src cpp
+   // Triangle.cpp
+   #include "Shape.cpp"
+
    class Triangle : public Shape {
    public:
        double height, floor;
-
        double calculateArea() {
             return (height * floor) / 2;
        }
    }
    #+end_src
+3. here is how this code will look in UML;
+   #+begin_src plantuml :results output
+@startuml
+interface Shape {
+    calculateArea()
+}
+class Triangle {
+    height : double
+    floor : double
+    calculateArea()
+}
+Triangle .up.|> Shape
+@enduml
+   #+end_src
+
+   #+RESULTS:
+   [[file:/tmp/babel-AKVKVd/plantuml-f7twXB.png]]
+
 *** perl
 **** facts
 + perl's extension is *.pl*
