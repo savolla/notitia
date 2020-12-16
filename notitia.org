@@ -10,9 +10,10 @@
 * Topics
 ** web programming
 ** Software Engineering
-*** Kod yazarken dikkat edilmesi gerekenler
-**** 1. Encapsulation
-***** method encapsulation'ı
+*** tips
+**** Kod yazarken dikkat edilmesi gerekenler
+***** 1. Encapsulation
+****** method encapsulation'ı
 bir method yazarken, if else, ya da switch case silsilesi başladı ise o ifleri ve elseleri başka bir methoda aktar
 + eski kod;
   #+begin_src cpp
@@ -58,9 +59,9 @@ bir method yazarken, if else, ya da switch case silsilesi başladı ise o ifleri
       }
   }
   #+end_src
-***** class encapsulation
+****** class encapsulation
 baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başladı, fonksiyonalitesi arttı, o zaman bu mehodu da küçük methodlara ayırıp ayrı bir class aç
-**** 2. Programming to Interface
+***** 2. Programming to Interface
 + code *reuse* için kullanılan prensiptir. sınıfları birbirine bağımlı hale getirmeden kullanman gerekir. bunu nasıl yaparız? aşağıda birbirine bağımlı sınıflar gösterilmiştir;
   #+begin_src plantuml :results output
   @startuml
@@ -160,14 +161,31 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
             void method4() {/* some code */}
     };
     #+end_src
+*** concepts
+**** UML
+***** arrows and their meanings
 
+**** SOLID principles
+***** SRP
++ rules;
+  a. every *operation* should be a separate class
+  b. classes should be _small_
+  c. class methods should be max 15-20 lines of code
++ SRP creates bunch of classes but here are the benefits;
+  a. easier to debug
+  b. new developers will adapt faster to codebase
+  c. code is easier to read
+  d. development speed increases
+
+***** OCP
++ rules;
+  a. we should not modify the existing and already tested and working classes when new scenario comes out
+  b. to extend the functionality use *Startegy Pattern*. it is like *Dependency Injection*
+  c. violate this principle when your code has some bugs. open and modify the existing code to fix the issue
+***** LSP
+***** ISP
+***** DIP
 ** probability and statistics
-** SOLID principles
-*** SRP
-*** OCP
-*** LSP
-*** ISP
-*** DIP
 ** Embedded Systems
 *** articles
 + [[https://jaycarlson.net/][jay carlson's entire website]]
