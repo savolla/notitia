@@ -266,7 +266,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 ***** LSP
 + about *subclasses*
 ***** ISP
-+ about *interfaces*
++ about *large interfaces*
 ***** DIP
 + about *separating dependencies*
 **** Dependency Injection (DI)
