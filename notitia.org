@@ -164,7 +164,6 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 *** concepts
 **** UML
 ***** arrows and their meanings
-
 ****** inheritance
 + UML representation
   #+begin_src plantuml :results output
@@ -245,6 +244,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   A *needs* B *to be able to work*
 **** SOLID principles
 ***** SRP
++ about sizes of *classes* and *methods*
 + rules;
   a. every *operation* should be a separate class
   b. classes should be _small_
@@ -256,6 +256,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   d. development speed increases
 
 ***** OCP
++ about *interfaces*
 + rules;
   a. we should not modify the existing and already tested and working classes when new scenario comes out
   b. to extend the functionality use *Startegy Pattern*. it is like *Dependency Injection*
@@ -263,8 +264,11 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   d. if switch and case statements started to show up in methods it's time for open close principle
 
 ***** LSP
++ about *subclasses*
 ***** ISP
++ about *interfaces*
 ***** DIP
++ about *separating dependencies*
 **** Dependency Injection (DI)
 
 ** probability and statistics
