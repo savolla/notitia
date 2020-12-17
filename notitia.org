@@ -1840,6 +1840,20 @@ SPC f v d
 =prop TAB TAB=
 2. constructor
 =ctor TAB TAB=
+**** how to
+***** create a Layered Architecture project
+1. create new project
+2. select *blank solution*
+3. give solution a name
+4. right click on solution add / new project
+5. select *Class Library (.NET Framework)
+6. use this naming convention: "YourApp.Layer"
+7. create the following projects;
+   a. YourApp.Entities
+   b. YourApp.Business
+   c. YourApp.DataAccess
+8. the last one is UI layer. add a new "Windows Forms App (.NET Framwork)"
+9. name it "YourApp.WebFormsUI"
 
 ** programming tools
 *** make
