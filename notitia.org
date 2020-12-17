@@ -1842,6 +1842,7 @@ SPC f v d
 =ctor TAB TAB=
 **** how to
 ***** create a Layered Architecture project
+****** project creation part
 1. create new project
 2. select *blank solution*
 3. give solution a name
@@ -1854,6 +1855,13 @@ SPC f v d
    c. YourApp.DataAccess
 8. the last one is UI layer. add a new "Windows Forms App (.NET Framwork)"
 9. name it "YourApp.WebFormsUI"
+****** structuring
+1. delete all auto generated classes
+2. create two folders for each layer;
+   - Abstract
+   - Concrete
+   interfaces and abstract classes go inside *Abstract* folder, concrete implementations go inside *Concrete*
+3. apply step 1 and 2 to DataAccess, Business and Entities layers. User Interface layer has it's own properties
 
 ** programming tools
 *** make
