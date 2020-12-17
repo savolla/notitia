@@ -2443,6 +2443,8 @@ how user sees the results from business layer. this includes some User Interface
    [[file:./images/screenshot-70.png]]
 ** Interface
 ** late binding
+** LGTM :abbriviation:
+looks good to me
 
 * Linux
 ** how to
