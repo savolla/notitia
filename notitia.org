@@ -3346,7 +3346,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** Русский
 *** неизвестные слова
 * Schedule
-** 6:06 :wakeup:
+** 6:06 :morning_ritual:
 *** stretch
 - neck
 - arms
@@ -3371,15 +3371,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** data structures
 **** 1800 cards
 ** 7:07 :study:
-*** software engineering
-**** read one chapter
-***** dive into design patterns
-***** domain driven design
-***** dive into refactoring
-***** clean code
-***** code complete
-***** object oriented analysis and design
-***** working effectively with legacy code
 *** embedded systems
 **** electronics
 ***** read one chapter
@@ -3434,25 +3425,17 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ***** codewars kata
 - review notes
 - solve a kata
-** 10:10 :go_walk:
-- workout when back
+** 10:10 :break:
+- walk the doggo
+*** workoup when back
+  - chest day
+  - arm day
+  - leg day
 ** 12:12 :lunch:
 ** 13:13 :work:
 - enable *air-plane mode* in phone
 - No Youtube
 - work on current daily tasks like lectures, projects etc
-** 14:14 :break:
-*** jamming
-- jam through backing tracks on youtube
-*** gaming
-**** retroarch
-- ninja gaiden III
-- Super Mario 3
-- Super Mario 2
-**** path of exile
-*** other
-** 15:15 :work:
-- continue to work on daily stuff
 ** 17:17 :break:
 *** jamming
 - jam through backing tracks on youtube
@@ -3463,12 +3446,22 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - Super Mario 2
 **** path of exile
 *** other
-** 17:47 :work:
-** 20:20 :break:
-** 21:21 :reading:
+** 17:47 :study:
+*** software engineering
+**** read one chapter
+***** dive into design patterns
+***** domain driven design
+***** dive into refactoring
+***** clean code
+***** code complete
+***** object oriented analysis and design
+***** working effectively with legacy code
+** 21:21 :finish:
+*** reading
 - outliers
 - siddhardtha
 - semerkant
 - yer altından notlar
 - bir delinin anı defteri
 - zor kişiliklerle yaşamak
+*** watch movie
