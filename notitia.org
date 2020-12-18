@@ -3345,3 +3345,130 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =vocabulary=            kelime bi+ gisi
 ** Русский
 *** неизвестные слова
+* Schedule
+** 6:06 :wakeup:
+*** stretch
+- neck
+- arms
+- legs
+*** vocabulary
+**** english
+- memorize unknown words in notitia
+**** russian
+- memorize unknown words in notitia
+**** japan
+***** hiragana
+- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
+***** katakana
+- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
+***** kanji
+- learn 3 kanjies
+- draw each kanji
+- repeat learned kanjies
+*** flash cards drill
+**** regex
+**** algorithms
+**** data structures
+**** 1800 cards
+** 7:07 :study:
+*** software engineering
+**** read one chapter
+***** dive into design patterns
+***** domain driven design
+***** dive into refactoring
+***** clean code
+***** code complete
+***** object oriented analysis and design
+***** working effectively with legacy code
+*** embedded systems
+**** electronics
+***** read one chapter
+=NOTE= review notes first
+- the art of electronics
+- digital fundamentals floyd
+- hardware design know it all
+**** software
+***** read one chapter
+- making embedded systems
+- programming embedded systems
+- the art of concurrency
+- embedded-primer
+**** Qt
+***** read one chapter
+- learning Qt
+**** video course
+***** FastBit
+*** programming language
+**** C
+***** read one chapter
+- The C programming Language
+- Learn C the Hard Way
+- Practical C
+- Understanding and Using C Pointers
+- deep C secrets
+***** codewars kata
+- review notes
+- solve kata
+***** video lectures
+- [[https://www.youtube.com/watch?v=ypG9W33LOTk&list=PLfqABt5AS4FmErobw8YyTwXDUE5nPH5lH][Code Vault]]
+**** C++
+***** read one chapter
+- C++ Primer (bone book)
+- Object Oriented Programming in C++ by Robert Lafore
+- Effective C++
+***** codewars kata
+- review notes
+- solve kata
+**** Rust
+***** read one chapter
+- embedded rust discovery
+- the embedded rust book
+- the embedonomicon
+***** codewars kata
+- review notes
+- solve kata
+**** ARM
+***** read one chapter
+- arm assembly language
+- arm baremetal ebook
+***** codewars kata
+- review notes
+- solve a kata
+** 10:10 :go_walk:
+- workout when back
+** 12:12 :lunch:
+** 13:13 :work:
+- enable *air-plane mode* in phone
+- No Youtube
+- work on current daily tasks like lectures, projects etc
+** 14:14 :break:
+*** jamming
+- jam through backing tracks on youtube
+*** gaming
+**** retroarch
+- ninja gaiden III
+- Super Mario 3
+- Super Mario 2
+**** path of exile
+*** other
+** 15:15 :work:
+- continue to work on daily stuff
+** 17:17 :break:
+*** jamming
+- jam through backing tracks on youtube
+*** gaming
+**** retroarch
+- ninja gaiden III
+- Super Mario 3
+- Super Mario 2
+**** path of exile
+*** other
+** 17:47 :work:
+** 20:20 :break:
+** 21:21 :reading:
+- outliers
+- siddhardtha
+- semerkant
+- yer altından notlar
+- bir delinin anı defteri
+- zor kişiliklerle yaşamak
