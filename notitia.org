@@ -3345,12 +3345,19 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =vocabulary=            kelime bi+ gisi
 ** Русский
 *** неизвестные слова
-* Template
-** facts
-** concept / term
-** tutorial / howto
-** quiz
-** lists / tables
-** code blocks
-** problems and solutions
-* Idea
+* Schedule
+** 6:06
+*** stretch
+*** vocabulary
+**** english
+- unknown words in notitia
+**** russian
+- unknown words in notitia
+**** japan
+***** hiragana
+- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
+***** katakana
+- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
+***** kanji
+- 3 kanjies
+- repeat learned kanjies
