@@ -3345,32 +3345,3 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 =vocabulary=            kelime bi+ gisi
 ** Русский
 *** неизвестные слова
-* Schedule
-** 6:06 :wakeup:
-*** stretch
-- neck
-- arms
-- legs
-*** vocabulary
-**** english
-- memorize unknown words in notitia
-**** russian
-- memorize unknown words in notitia
-**** japan
-***** hiragana
-- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
-***** katakana
-- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
-***** kanji
-- learn 3 kanjies
-- draw each kanji
-- repeat learned kanjies
-*** flash cards drill
-**** regex
-**** algorithms
-**** data structures
-**** 1800 cards
-** 7:07 :study:
-*** software engineering
-*** embedded systems
-*** programming language
