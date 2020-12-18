@@ -2546,6 +2546,34 @@ cont() {
    #+begin_src sh
 source ~/.bashrc
    #+end_src
+*** unfuck subtitles
+#+begin_src bash
+iconv -f iso-8859-9 bozuk-encoding.srt > turkce-encoding.srt
+#+end_src
+*** find all font names in system
+    #+BEGIN_SRC bash
+    fc-list
+    #+END_SRC
+
+*** set time and date
+   #+BEGIN_SRC bash
+   date +%Y%m%d -s "20120418" # date
+   date +%T -s "11:14:00" # time
+   #+END_SRC
+
+***  zip files
+   #+BEGIN_SRC bash
+   zip -r $ARCHIVE_NAME.zip $DIRECTORY_TO_ZIP
+   #+END_SRC
+
+***  sync clock with network or set system clock
+   #+BEGIN_SRC bash
+   pacman -S ntp # install the service first
+   systemctl enable ntpd.service # enable the service
+   timedatectl set-ntp 1 # update clock
+   hwclock --systohc
+   systemctl start ntpd # start the service
+   #+END_SRC
 
 * Project Journal
 ** Library Automation in C# .NET Form
