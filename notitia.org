@@ -3346,18 +3346,31 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** Русский
 *** неизвестные слова
 * Schedule
-** 6:06
+** 6:06 :wakeup:
 *** stretch
+- neck
+- arms
+- legs
 *** vocabulary
 **** english
-- unknown words in notitia
+- memorize unknown words in notitia
 **** russian
-- unknown words in notitia
+- memorize unknown words in notitia
 **** japan
 ***** hiragana
 - [[https://drlingua.com/japanese/games/kana-bento/][play this]]
 ***** katakana
 - [[https://drlingua.com/japanese/games/kana-bento/][play this]]
 ***** kanji
-- 3 kanjies
+- learn 3 kanjies
+- draw each kanji
 - repeat learned kanjies
+*** flash cards drill
+**** regex
+**** algorithms
+**** data structures
+**** 1800 cards
+** 7:07 :study:
+*** software engineering
+*** embedded systems
+*** programming language
