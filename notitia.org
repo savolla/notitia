@@ -2561,12 +2561,12 @@ iconv -f iso-8859-9 bozuk-encoding.srt > turkce-encoding.srt
    date +%T -s "11:14:00" # time
    #+END_SRC
 
-***  zip files
+*** zip files
    #+BEGIN_SRC bash
    zip -r $ARCHIVE_NAME.zip $DIRECTORY_TO_ZIP
    #+END_SRC
 
-***  sync clock with network or set system clock
+*** sync clock with network or set system clock
    #+BEGIN_SRC bash
    pacman -S ntp # install the service first
    systemctl enable ntpd.service # enable the service
