@@ -3321,56 +3321,56 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
-=adhare=                bağlı
-=allude=                ima etmek
-=annually=              yıllık
-=arrogance=             kibir
-=aspect=                yön (kitap her *yön*'den iyidi)
-=bottleneck=            darboğaz
-=brittle=               kırılgan
-=comprise=              içermek
-=concise=               özlü, kısa
-=conservative=          muhafazakar
-=constitute=            oluşturmak
-=contenteditable=       memnun
-=convey=                iletmek
-=curated=
-=depics=                ifade etmek, göstermek
-=depict=                göstermek
-=differing=             farklı
-=diligence=             çalışkanlık
-=entrepreneurial=       girişimci
-=evidently=             belli ki
-=excerpt=               alıntı
-=exhibiting=            sergilemek
-=expose=                maruz kalma
-=facade=                cephe (evin dış cehesi)
-=genuine=               gerçek, hakiki
-=however=               ancak
-=initiative=            girişim
-=intermingling=         birbirine karıştırmak
-=intern=                asistan
-=judiciously=           akıllıca
-=lattice=               kafes
-=loan=                  kredi
-=precise=               kesin
-=precisely=             kesin olarak
-=predicate=             yüklem
-=prescient=             ileri görüşlü
-=prethora=              bolluk
-=quintessentially=      özetle
-=relevance=             alaka
-=rigorously=            titizlikle
-=rough=                 kaba
-=subsequent=            sonraki
-=superstition=          batıl inanç
-=suppress=              bastırmak
-=tenet=                 ilke
-=thesaurus=             eş anlamlılar sözlüğü
-=uncharted=             keşvedilmemiş
-=unconventional=        alışılmadık
-=venue=                 buluşma yeri
-=vocabulary=            kelime bi+ gisi
+- =adhare=                bağlı
+- =allude=                ima etmek
+- =annually=              yıllık
+- =arrogance=             kibir
+- =aspect=                yön (kitap her *yön*'den iyidi)
+- =bottleneck=            darboğaz
+- =brittle=               kırılgan
+- =comprise=              içermek
+- =concise=               özlü, kısa
+- =conservative=          muhafazakar
+- =constitute=            oluşturmak
+- =contenteditable=       memnun
+- =convey=                iletmek
+- =curated=
+- =depics=                ifade etmek, göstermek
+- =depict=                göstermek
+- =differing=             farklı
+- =diligence=             çalışkanlık
+- =entrepreneurial=       girişimci
+- =evidently=             belli ki
+- =excerpt=               alıntı
+- =exhibiting=            sergilemek
+- =expose=                maruz kalma
+- =facade=                cephe (evin dış cehesi)
+- =genuine=               gerçek, hakiki
+- =however=               ancak
+- =initiative=            girişim
+- =intermingling=         birbirine karıştırmak
+- =intern=                asistan
+- =judiciously=           akıllıca
+- =lattice=               kafes
+- =loan=                  kredi
+- =precise=               kesin
+- =precisely=             kesin olarak
+- =predicate=             yüklem
+- =prescient=             ileri görüşlü
+- =prethora=              bolluk
+- =quintessentially=      özetle
+- =relevance=             alaka
+- =rigorously=            titizlikle
+- =rough=                 kaba
+- =subsequent=            sonraki
+- =superstition=          batıl inanç
+- =suppress=              bastırmak
+- =tenet=                 ilke
+- =thesaurus=             eş anlamlılar sözlüğü
+- =uncharted=             keşvedilmemiş
+- =unconventional=        alışılmadık
+- =venue=                 buluşma yeri
+- =vocabulary=            kelime bi+ gisi
 ** Русский
 *** неизвестные слова
 * Schedule
