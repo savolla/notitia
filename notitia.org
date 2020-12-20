@@ -3804,6 +3804,13 @@ custom_css = ["css/custom.css"]
 ***** draw horizontal lines and vertical lines
 1. use =->= for horizontal line drawings
 2. use =-->= for vertical lines
+***** avoid diagonal relation lines
+add the following line under @startuml
+#+begin_src plantuml
+@startuml
+skinparam linetype ortho
+@enduml
+#+end_src
 **** problems & solutions
 
 ** command line utility
