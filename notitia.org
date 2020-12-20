@@ -347,6 +347,11 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 *** Software Design
 *** Design Patterns
 **** facts
++ designs usually start with *Factory Method* and then evolves toward;
+  1. Abstract Factory
+  2. Prototype
+  3. Builder
++ more flexibiliry = more complex code
 **** concepts
 ***** programming to an interface
 + this is a *design principle*
@@ -5043,7 +5048,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   2. mimar bir tasarım yapar : *yazılım mimari dizaynı*
   3. evin planının çıkarılması : *detaylı yazılım tasarımı*
 ** Dive Into Design Patterns :book:
-*** Factory Method
+*** Factory Pattern
 ** Reading List to Become a Professional
 ***** Job Interview Prep
 1. Cracking the Coding Interview: 189 Programming Questions and Solutions
