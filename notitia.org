@@ -926,73 +926,6 @@ from selenium.webdriver.common.by import By
 #+end_src
 
 *** bash
-*** javascript
-**** concepts
-***** JSON
-+ javascript object notation
-+ data representation format
-+ used in *config* files
-+ supported types;
-  1. strings: "hello world", "savolla"
-  2. numbers: 10, 1.5, -30
-  3. boolean: true, false
-  4. null: null
-  5. arrays: [1,2,3], ["Hello", "world"]
-  6. objects: {"key":"value"}, {"age":30}
-+ everything in json is _valid javascript code_
-**** tips
-**** facts
-**** how to
-***** create a json file
-this is actually an _array_ in javascript. this is why it starts with '[]'
-#+begin_src js
-[
-    {
-        "name":"software engineering",
-        "delay": 2,
-        "book":
-        [
-            {"name" : "codecomplete2"},
-            {"name" : "codecomplete2"},
-            {"name" : "codecomplete2"},
-            {"name" : "codecomplete2"},
-            {"name" : "codecomplete2"}
-        ]
-]
-#+end_src
-***** display json contents in html
-1. paste the json string inside script tag and make it a string by surroud it with `
-2. use =JSON.parse= method to make JSON parsable with indexes
-
-#+begin_src html
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-    <title>MultiTasker</title>
-  </head>
-  <body>
-    <script type="text/javascript">
-      let topics =
-        `[
-                {
-                    "name":"software engineering",
-                    "delay": 2,
-                    "book":
-                    [
-                        {"name" : "codecomplete2"},
-                        {"name" : "Applying UML"},
-                        {"name" : "clean code"},
-                        {"name" : "clean coder"},
-                        {"name" : "solid principles"}
-                    ]
-                }
-        ]`
-        console.log( JSON.parse(topics)[0].book)
-    </script>
-  </body>
-</html>
-#+end_src
-**** problems & solutions
 *** vhdl
 **** facts
 + HDL : Hardware Descriptive Language
@@ -1448,7 +1381,946 @@ DELETE FROM #table_name WHERE #column_name = #value
 insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3" );
 #+end_src
 **** problems & solutions
+*** html
+:PROPERTIES:
+:EXPORT_FILE_NAME: html-cheat-sheet
+:EXPORT_TITLE: HTML Cheat Sheet
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+**** how to
++ create a *heading*?
+  #+BEGIN_SRC html
+<h1>Heading</h1>
+  #+END_SRC
++ create a *paragraph element*?
+  #+BEGIN_SRC html
+<p>paragraph</p>
+  #+END_SRC
++ create an *image element*?
+  notice there are _no closing forward slashes_ in *img* elements
+  #+BEGIN_SRC html
+<img src="path/to/image">
+  #+END_SRC
++ *break a line*?
+  #+BEGIN_SRC html
+<br/>
+  #+END_SRC
++ tell html to use latest html version?
+  by putting the *docstring*
+  #+BEGIN_SRC html
+<!DOCTYPE html>
+  #+END_SRC
++ generate all *initial html structure* with *emmet*?
+  =! + TAB=
++ generate a *div* with a *class* with *emmet*?
+  =div.class_name + TAB=
++ generate a *div* with an *id* with *emmet*?
+  =div#id_name + TAB=
++ create 5 div elements with unique class names?
+  =.container$*5=
++ get *dummy text* for experimenting?
+  __NUMBER__ is a number of words you want
+  =lorem__NUMBER__ + TAB=
++ get 5 dummy texts that has 4 words per line ?
+  =lorem__WORDS__*__LINES__=
++ display an image ?
+  #+BEGIN_SRC html
+<img src="./path/to/image.png" alt="alternative text"/>
+  #+END_SRC
++ display images from internet (external images)?
+  #+BEGIN_SRC html
+<img src="http://www.addrsofpic.com/pic.png" alt="blah" />
+  #+END_SRC
++ *adjust the size* of very big images?
+  just use *width*. height will be adjusted automatically as soon as we don't specify it explicitly.
+  #+BEGIN_SRC html
+<img src="./path/to/img.png" width="256" alt="pexels" />
+  #+END_SRC
++ add links?
+  #+BEGIN_SRC html
+<a href="www.google.com">GOOGLE</a>
+  #+END_SRC
++ add link that opens a new tab when opened?
+  use *target="_blank"*
+  #+BEGIN_SRC html
+<a href="www.google.com" target="_blank">GOOGLE</a>
+  #+END_SRC
++ add internal link? (in site link)
+  specify html file path in link element
+  #+BEGIN_SRC html
+<a href="./path/to/html">Home</a>
+  #+END_SRC
++ scroll and focus on an element with a link?
+  #+BEGIN_SRC html
+<a id="top" href="#bottom">go bottom</a>
+<!-- Some looooooong text (5000 lines) -->
+<a id="bottom href="#top">go to top</a>
+  #+END_SRC
++ convert an image into a link?
+  use *a>img* + TAB
+  #+BEGIN_SRC html
+<a href="www.google.com">
+  <img src="google_icon.png" alt="icon"/>
+</a>
+  #+END_SRC
++ use special characters in html? like copyright?
+  #+BEGIN_SRC html
+<p>copyright &copy;</p>
+  #+END_SRC
++ make left, down, right, up arrows?
+  #+BEGIN_SRC html
+<p>left &larr;</p>
+<p>right &rarr;</p>
+<p>up &uarr;</p>
+<p>down &darr;</p>
+  #+END_SRC
++ make *unordered list* ?
+  #+BEGIN_SRC html
+<ul>
+  <li>peter</li>
+  <li>john</li>
+  <li>sarah</li>
+  <li>michael</li>
+  <li>melinda</li>
+</ul>
+  #+END_SRC
++ make *ordered list* ?
+  #+BEGIN_SRC html
+<ol>
+  <li>michael</li>
+  <li>melinda</li>
+  <li>opeth</li>
+  <li>axe</li>
+</ol>
+  #+END_SRC
++ create *table* in html?
+  always start with *<table>* element and then *<tr>* for rows
+  #+BEGIN_SRC html
+<table>
 
+  <!-- row of table headers -->
+  <tr>
+   <th>header1</th>
+   <th>header2</th>
+   <th>header3</th>
+  </tr>
+
+  <!-- row of table data -->
+  <tr>
+    <td>data1</td>
+    <td>data2</td>
+    <td>data3</td>
+  </tr>
+
+  <!-- second row of table data -->
+  <tr>
+    <td>data1</td>
+    <td>data2</td>
+    <td>data3</td>
+  </tr>
+
+</table>
+  #+END_SRC
++ take an input from user?
+  1. create a form element *form + TAB*
+  2. *input + TAB*
+    #+BEGIN_SRC html
+  <form method="" action="">
+    <input type="text" name="" value="" />
+  </form>
+    #+END_SRC
++ *label* the *input bar*
+  #+BEGIN_SRC html
+<form method="" action="">
+  <label for="nick">username</label> <!-- label the input bar -->
+  <input type="text" name="username" id="nick" /> <!-- input bar -->
+  <input type="submit" /> <!-- submit button -->
+</form>
+  #+END_SRC
++ make passwords invisible when typing?
+  notice *input type="password"* here. thi is the important one
+  #+BEGIN_SRC html
+<input type="password" name="password" value="" />
+  #+END_SRC
++ show *example input* inside input box?
+  #+BEGIN_SRC html
+<input type="text" name="email" placeholder="john@protonmail.com" />
+  #+END_SRC
++ use *radio buttons* in html?
+  #+BEGIN_SRC html
+<p>Your favorite language</p>
+<input name="coding" type="radio" value=""/>Javascript
+<br />
+<input name="coding" type="radio" value=""/>C++
+<br />
+<input name="coding" type="radio" value=""/>C
+<br />
+<input name="coding" type="radio" value=""/>Python
+<br />
+  #+END_SRC
++ make a big *text area* ?
+  *rows* how many rows should be in our text area
+  *cols* how many columns should be in our text area
+  #+BEGIN_SRC html
+<textarea rows="" cols=""></textarea>
+  #+END_SRC
++ make *check boxes* in html?
+  #+BEGIN_SRC html
+<p>What are your favorite languages?</p>
+<input name="" type="checkbox" value=""/> C++ <br />
+<input name="" type="checkbox" value=""/> C <br />
+<input name="" type="checkbox" value=""/> Python <br />
+<input name="" type="checkbox" value=""/> Javascript <br />
+<input name="" type="checkbox" value=""/> Rust <br />
+  #+END_SRC
++ make a *checkbox* that already checked by default?
+  put *checked="checked"* inside input element
+  #+BEGIN_SRC html
+<input type="checkbox" checked="checked"/> testbox
+  #+END_SRC
++ make a *dropdown menu* in html?
+  label is not really necessary here but hey!
+  #+BEGIN_SRC html
+<label for="menu0">favorite PL</label>
+<select id="manu0" name="">
+  <option value="#">select language</option>
+  <option value="js">javascript</option>
+  <option value="c">C</option>
+  <option value="cpp">C++</option>
+  <option value="rs">Rust</option>
+</select>
+  #+END_SRC
+**** what is
++ what is the first html line should be in a web page?
+  #+BEGIN_SRC html
+<!DOCTYPE html>
+  #+END_SRC
++ what is the root element of html page?
+  #+BEGIN_SRC html
+<html>
+  #+END_SRC
++ what *head* should contain?
+  it contains the *information* about the page
+  1. page title
+  2. links to external resources like *css* and *js* files
+  3. metadata
++ what *<tr>* means?
+  table row
++ what *<td>* means?
+  table data
++ what *<th>* means?
+  table header
++ what is the importance of *value* attribute in *radio buttons* ?
+  value in radio buttons is the data that will be passed into database or somewhere. when we select a radio button *A* and A contains *value="C++"* then "C++" string will be sent from this radio button when submitted
++ what is the difference between *radio buttons* and *check box* ?
+  - radio buttons: choose only one
+  - check boxes: choose multiple
++ what is the *checkbox shortcut* with *emmet*
+  input:c + TAB
++ what is the *submit button* shortcut with *emmet*
+  input:s + TAB
+**** flash cards
++ is content in *head* element visible in page?
+  No.
++ where <title>page0</title> will be displayed?
+  in the browser tab!
++ generate 5 list items with line numbers using *emmet*
+  ul>li.cls${$.}*5
++ what will *.container + TAB* output?
+  div is the most used element. so we don't need to write *div.container*
+  #+BEGIN_SRC html
+<div class="container">
+
+</div>
+  #+END_SRC
++ how many *headings* there are in html?
+  there are 6 hadings
+  #+BEGIN_SRC html
+<h1>BIGGEST</h1>
+<h2>Bigger</h2>
+<h3>normal</h3>
+<h4>smaller</h4>
+<h5>smallest</h5>
+<h6>tiny</h6>
+  #+END_SRC
++ what path convention should be used in html?
+  dot and a slash "./" is used in most frameworks and languages like *react* *php* etc.
++ how initial html page structure look?
+  #+BEGIN_SRC html
+<!DOCTYPE html>
+<html>
+  <head>
+    some code..
+  </head>
+  <body>
+    some code..
+  </body>
+</html>
+  #+END_SRC
++ where to get *copyright free* pictures?
+  1. [[https://www.pexels.com/][pexels]] also has videos
+  2. [[https://pixabay.com/tr/][pixabay]]
+  3. [[https://gratisography.com/][gratisography]]
++ how comments look in html?
+  #+BEGIN_SRC html
+<!-- this is a comment -->
+  #+END_SRC
++ what do *sup* and *sub* elements do?
+  *sup*: pushes text up. it's like x^2 (where 2 in above x)
+  *sub*: pushed text down. it's like index x_i (where i below x)
+  #+BEGIN_SRC html
+<p>x<sub>i</sub> = 2<sup>x</sup></p>
+  #+END_SRC
++ create 5 unordered list element which are links using *emmet*
+  ul>(li>a)*5 + TAB
++ what happens when user enters nonsense in *email input box*?
+  page will say something like "you forgot to put \@" symbol bla bla bla
++ what *value* attribute does in *input* elements?
+  it is the _hardcoded_ value. here is the example;
+  #+BEGIN_SRC html
+<!-- "GO!" will be written on submit button -->
+<input type="submit" value="GO!" />
+
+<!-- "deleteme first" will be written in input box -->
+<input type="text" value="deleteme first!" />
+  #+END_SRC
++ why *name* attributes need to be same in *radio buttons*
+  if we don't make them same then we can select more than one radio buttons. And this doesn't make sense
++ what *value* attribute in elements actually do ?
+  it returns that value when submitted. *value* is important in buttons, dropdown manus, checkboxes, radio buttons etc.
+*** css
+:PROPERTIES:
+:EXPORT_FILE_NAME: css-cheat-sheet
+:EXPORT_TITLE: CSS Cheat Sheet
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+**** how to
+ + name a css file?
+   *style.css* or *main.css*
+ + how to link *style.css* with *index.html* ?
+   in html file,
+   #+BEGIN_SRC html
+<link href="./style.css" rel="stylesheet"/>
+   #+END_SRC
+ + write internal css?
+   put css code into <style> elements which is inside <head> element
+   #+BEGIN_SRC html
+<head>
+  <style>
+    h3 {
+      color : red;
+    }
+  </style>
+</head>
+   #+END_SRC
+ + how comments look in css?
+   #+BEGIN_SRC css
+/* this is a comment */
+   #+END_SRC
+ + change h1,h2 and h3 at the same *selector*?
+   #+BEGIN_SRC css
+h1,h2,h3 {
+    color : olive;
+}
+   #+END_SRC
+ + change *background color* of the entire page?
+   #+BEGIN_SRC css
+body {
+    background-color : black;
+}
+   #+END_SRC
+ + style by *classes* or *id*?
+   #+BEGIN_SRC html
+<h3 class="cls0"> TITLE0 </h3>
+<h3 id="cls1"> TITLE1 </h3>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+.cls0 {
+    color : red;
+}
+
+#cls1 {
+    color : blue;
+}
+   #+END_SRC
+ + set *space between two lines*?
+   #+BEGIN_SRC css
+line-height : 1.5em;
+   #+END_SRC
+ + set *font* ?
+   #+BEGIN_SRC css
+font-family : monospace;
+   #+END_SRC
+ + set a background image?
+   #+BEGIN_SRC css
+background-image: url("../img/bg.png");
+   #+END_SRC
+ + set opacity of text?
+   use *rgba()* with a value between 1 and 0 at the end
+   #+BEGIN_SRC css
+.class0 {
+    color : rgba(100,53,81,0.5);
+}
+   #+END_SRC
+ + make *links* without _underline_ ?
+   #+BEGIN_SRC css
+a {
+    text-decoration : none;
+}
+   #+END_SRC
+ + cancel all the *default margins*?
+   #+BEGIN_SRC css
+   *{
+       margin : 0;
+   }
+   #+END_SRC
+ + *change font* of an element?
+   #+BEGIN_SRC css
+.element {
+    font-family : Fira Code;
+}
+   #+END_SRC
+ + use *google fonts*
+   1. go to *google fonts* page
+   2. select your font
+   3. click *select this style*
+   4. copy <link> part and paste is between <head> element
+   5. copy *CSS rules* and paste it to CSS file where you want to use that font
+   6. click on *@import* section and copy the code inside <style> element
+   7. paste it into the top of your CSS file
+ + make a font bolder?
+   use *font-weight*
+   #+BEGIN_SRC css
+.element {
+    font-weight: bold;
+}
+   #+END_SRC
+ + make font italic?
+   use *font-style*
+   #+BEGIN_SRC css
+.element {
+    font-style : italic;
+}
+   #+END_SRC
+ + reach a *nested element* inside a class?
+   use *>* syntax
+   #+BEGIN_SRC html
+<div class="cls0">
+  <ul>
+    <li>item</li>
+    <li>item</li>
+  </ul>
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+cls0 > ul > li {
+    /* your code */
+}
+   #+END_SRC
+ + increase space between *letters* in a paragraph?
+   #+BEGIN_SRC css
+.element {
+    letter-spacing: 5px;
+}
+   #+END_SRC
+ + increase space between *words* ?
+   #+BEGIN_SRC css
+.element {
+    word-spacing: 5px;
+}
+   #+END_SRC
+ + capitalize an entire *paragraph* ?
+   #+BEGIN_SRC css
+.element {
+    text-transform: capitalize;
+}
+   #+END_SRC
+ + add *hover* action to an element?
+    #+BEGIN_SRC css
+    .element:hover {
+    /* code */
+    }
+    #+END_SRC
+ + add *opacity* to an element?
+   #+BEGIN_SRC css
+.element {
+    opacity: 0.5;
+}
+
+   #+END_SRC
+ + add a *border* around an element?
+   #+BEGIN_SRC css
+.element {
+    border-style: solid;
+}
+   #+END_SRC
+ + add *border width* of an element?
+   #+BEGIN_SRC css
+.element {
+    border-width: 10px;
+}
+   #+END_SRC
+ + overlap two elements?
+   with *negative margin*
+ + make list items on one line?
+   #+BEGIN_SRC html
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+</ul>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+ul > li {
+   display: inline;
+}
+   #+END_SRC
+ + display text in the center of the element?
+   use *text-align: center*
+ + create a *navigation bar* of a website?
+   #+BEGIN_SRC html
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#">Contact</a>
+  <a href="#">Coffee</a>
+  <a href="#">Music</a>
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+.navbar a {
+    font-family: Fira Code;
+    margin-right: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.navbar {
+    background: black;
+}
+   #+END_SRC
+ + add a *custom font* to the css?
+   add the following on the top of css file
+   #+BEGIN_SRC css
+@font-face {
+    font-family: "font-name";
+    src: url("../fonts/my-font.ttf");
+}
+   #+END_SRC
+ + set opacity of an element?
+   use *opacity* attribute
+   #+BEGIN_SRC css
+.element {
+    opacity: 0.5;
+}
+   #+END_SRC
+ + use *image* as a background instead of straight color?
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.extension");
+}
+   #+END_SRC
+ + make an image non-repeatable?
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.extension");
+    background-repeat: no-repeat;
+}
+   #+END_SRC
+ + *spread* the image into one area (div) ?
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.extension");
+    background-size: cover;
+}
+   #+END_SRC
+ + *center* the background image?
+   #+BEGIN_SRC css
+.element {
+    background-position: center;
+}
+   #+END_SRC
+ + adjust the position by x and y values of a background image?
+   use persentages to adjust
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.extension");
+    background-position: 20% 50%;
+}
+   #+END_SRC
+ + add an image with protected *aspect ratio*?
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.jpg");
+    background-size: contain;
+}
+   #+END_SRC
+ + align text to the center?
+   #+BEGIN_SRC css
+.element {
+    text-align: center;
+}
+   #+END_SRC
+ + make a *parallax* effect?
+   use *background-attachment*
+   #+BEGIN_SRC css
+.banner {
+    background: url("../img/bg.jpg");
+    background-attachment: fixed;
+}
+   #+END_SRC
+ + make a gradient element? use *grey* and *white*
+   #+BEGIN_SRC css
+.element {
+    background-attachment: linear-gradient(grey, white);
+}
+   #+END_SRC
+ + give *angle* to the gradient?
+   #+BEGIN_SRC css
+.element {
+    background: linear-gradient(45deg, white, black);
+}
+   #+END_SRC
+ + make a nice *transition effect* ? when user scrolls down the transparent
+   screen comes on the background image. the background image does not change btw
+   #+BEGIN_SRC html
+<div class="first">
+</div>
+
+<div class="second">
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+.first {
+    background: url("../img/bg2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.second {
+    background: url("../img/bg2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    height: 100vh;
+}
+   #+END_SRC
+**** what is
+ + what css stands for?
+   cascading style sheets
+ + what is the *syntax* for css?
+   #+BEGIN_SRC css
+selector{
+    property0 : value0;
+    property1 : value1;
+}
+   #+END_SRC
+ + what is the difference between *span* and *div*
+   - div is usefull for grouping elements together
+   - span is usefull for assigning some class or id names inline
+   - when elements grouped with *div* it will cause a new line
+   - hovewer span won't cause a new line
+ + what is the best way to represent a color ?
+   using *rgb*
+   #+BEGIN_SRC css
+h1 {
+    color : rgb(100,100,100);
+}
+   #+END_SRC
+ + what is the most primitive way to represent size?
+   pixels.
+   #+BEGIN_SRC css
+.cls0 {
+    font-size : 12px;
+}
+   #+END_SRC
+ + what is the drawbacks of representing something in pixels?
+   since pixels are constant and depends on nothing, it makes the element non-responsive. so the size will not change when screen size change
+ + what is *font stack* ?
+   it is a concept where we present different font families to the web browser. if web browser fails to render the first font family then it tryes out the second one. if web browser fails at every font then the last one (monospace) font will be assumed
+
+   example usage;
+   #+BEGIN_SRC css
+.element {
+    font-family : 'Courier New' Courier, monospace;
+}
+   #+END_SRC
+ + what is *css box mode* ?
+   #+BEGIN_SRC text
++-------------------------------------+
+|               Margin                |
+|  +-------------------------------+  |
+|  |            Border             |  |
+|  |  +-------------------------+  |  |
+|  |  |         Padding         |  |  |
+|  |  |  +-------------------+  |  |  |
+|  |  |  |      Content      |  |  |  |
+|  |  |  +-------------------+  |  |  |
+|  |  +-------------------------+  |  |
+|  +-------------------------------+  |
++-------------------------------------+
+   #+END_SRC
+ + what is the shortcut way of writin *borders*?
+   parameter order matters!
+   #+BEGIN_SRC css
+.element {
+    /* width style and color */
+    border: 5px solid blue;
+}
+   #+END_SRC
+ + what is the *difference* between _border_ and _outline_ ?
+   - borders are like glued to the content. we can't put space between content and border
+   - outlines in other hand they are more flexible than borders. also we can use only outlines instead of borders. we can give *offset* to outlines which borders can't quite handle.
+
+      #+BEGIN_SRC css
+   .element {
+       outline: 0.2rem solid black;
+       outline-offset: 10px /* set outline 10px above the content */
+       outline-offset: -10px /* set outline 10px inside the content */
+   }
+      #+END_SRC
+ + what are *gradients* ?
+   it's a color effect. _two or more_ colors are mixed into one element. and result will look
+   like an _oval_ object. used in button coloring
+**** flash cards
+ + where css can be added?
+   1. inline
+   2. inside <head> element
+   3. seperate file
+ + when you have multiple css files in which directory should we put them?
+   css/
+ + what happens if we add *internal css* in a page that has *external css* ?
+   internal css will override external one
+ + what happens if we add *inline css* in a page that has *external css* or *internal css* ?
+   *inline* css will override *external* and *internal* ones
+ + what does *color* attrubute do?
+   it changes the text color
+ + can we add *multiple classes* inside an element?
+   we can also add *classes* with *ids*
+   #+BEGIN_SRC html
+<h3 class="title" class="lowercase" id="testid"> hello </h3>
+   #+END_SRC
+ + unique elements should have ...
+   id
+ + why *div* blocks are used?
+   to group elements. this helps us to specify elements in css
+ + which grouping style causes *new line* ?
+   div
+ + where to get cool color schemes?
+   1. [[https://coolors.co/][coolors]]
+   2. [[https://color.adobe.com/explore][adobe color]]
+ + what happens when we use *width* and *height* in persentage?
+   the persentage will work depending on the *parent div*'s sizes. for example if parent div has 20px height and we give 50% height to the child then child will have 10px height
+   #+BEGIN_SRC css
+.parent {
+    height : 20px;
+    width : 20px;
+}
+.child {
+    height : 50%; /* 20%50 = 10 */
+    width : 50%; /* 20%50 = 10 */
+}
+   #+END_SRC
+ + persentages will depend on ...
+   parent values!
+ + what *vw* and *vh* do?
+   vw and vh are *measure units* in css. they are relative values depend on *screen size*. when browser window size change, then those values are also change
+   example;
+
+   #+BEGIN_SRC html
+<div class="cls0">
+</div>
+<div class="cls1">
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+.cls0 {
+    background-color : orange;
+    width : 50vw;
+    height : 50vh;
+}
+
+.cls1 {
+    background-color : yellow;
+    width : 50vw;
+    height : 50vh;
+    margin-left: 50vw;
+}
+   #+END_SRC
+ + what *calc()* function does in css?
+   it takes two values with *px*, *vh*, *vw*, *rem*, *em* etc and applies arithmatic operations on them.
+ + use case scenario of *calc()* function
+   assume we have a *navbar* on top of the page and it has 100px height. now let's say we need a *banner* below navbar. this banner will have height of entire page (without scroll bar). how do we adjust that height automatically?
+
+   in this case we can use *calc()* function like this:
+   #+BEGIN_SRC html
+<div class="navbar">
+</div>
+
+<div class="banner">
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+*{
+    margin : 0; /* zero out default margins */
+}
+
+.navbar {
+    background : blue;
+    height : 100px;
+}
+
+.banner {
+    background : green;
+    height : calc(100vh - 100px); /* 100vh - navbar.height */
+}
+   #+END_SRC
+ + what *measure* type should we use on *line-height* property ?
+   em
+   #+BEGIN_SRC css
+.element {
+    line-height: 1em;
+}
+   #+END_SRC
+ + what areas a,b,c and d effect in *padding: a b c d* ?
+   #+BEGIN_SRC css
+.element {
+    padding: top, right, left, bottom;
+}
+   #+END_SRC
+ + what border-radius value turn element into circle?
+   50%
+ + what *block elements* do when rendered?
+   - always start a new line
+   - takes over full width
+ + what *inline elements* do when rendered?
+   - does not start a new line
+   - does not occupy the full width
+ + for *block centering* what topics are used in css?
+   flex and grids
+ + browser will ignore margin's *margin-top* and *margin-bottom* properties if the element is ...
+   inline
+ + browser will ignore margin's *margin-left* and *margin-right* properties if the element is ...
+   block
+ + what property should we use to make the browser respect to *inline element* top and bottom margins?
+   use *inline-block*
+   #+BEGIN_SRC html
+<a href="#">Home</a>
+<a href="#">Contact</a>
+<a href="#">Coffee</a>
+<a href="#">Music</a>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+a {
+    inline-block:
+}
+   #+END_SRC
+ + create a nice banner with an image in bakcground
+   #+BEGIN_SRC html
+<div class=".banner">
+  <p>some text here</p>
+</div>
+   #+END_SRC
+
+  #+BEGIN_SRC css
+.banner {
+    background: url("../img/bg1.jpg"); /* load the image */
+    background-size: cover; /* spread image across the div area */
+    background-repeat: no-repeat; /* prevent repetition */
+}
+  #+END_SRC
+ + what to do if background image is too bright and text on it is not visible?
+   add some *opacity*
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.jpg");
+    opacity: 0.5;
+}
+   #+END_SRC
+
+*** javascript
+**** concepts
+***** JSON
++ javascript object notation
++ data representation format
++ used in *config* files
++ supported types;
+  1. strings: "hello world", "savolla"
+  2. numbers: 10, 1.5, -30
+  3. boolean: true, false
+  4. null: null
+  5. arrays: [1,2,3], ["Hello", "world"]
+  6. objects: {"key":"value"}, {"age":30}
++ everything in json is _valid javascript code_
+**** tips
+**** facts
+**** how to
+***** create a json file
+this is actually an _array_ in javascript. this is why it starts with '[]'
+#+begin_src js
+[
+    {
+        "name":"software engineering",
+        "delay": 2,
+        "book":
+        [
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"}
+        ]
+]
+#+end_src
+***** display json contents in html
+1. paste the json string inside script tag and make it a string by surroud it with `
+2. use =JSON.parse= method to make JSON parsable with indexes
+
+#+begin_src html
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>MultiTasker</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let topics =
+        `[
+                {
+                    "name":"software engineering",
+                    "delay": 2,
+                    "book":
+                    [
+                        {"name" : "codecomplete2"},
+                        {"name" : "Applying UML"},
+                        {"name" : "clean code"},
+                        {"name" : "clean coder"},
+                        {"name" : "solid principles"}
+                    ]
+                }
+        ]`
+        console.log( JSON.parse(topics)[0].book)
+    </script>
+  </body>
+</html>
+#+end_src
+**** problems & solutions
 ** databases
 *** mysql
 **** facts
@@ -1863,6 +2735,49 @@ SPC f v d
    - Concrete
    interfaces and abstract classes go inside *Abstract* folder, concrete implementations go inside *Concrete*
 3. apply step 1 and 2 to DataAccess, Business and Entities layers. User Interface layer has it's own properties
+*** spacemacs
+**** key bindings
+
+#+BEGIN_SRC sh
+  spc f t   # toggle treemacs
+  spc w c c # distraction free editing
+  spc l o   # switch to custom layout
+  spc h spc # lookup documentation for a layer
+  spc j j   # easy motion on emacs. also can be used with commands
+  spc j i   # show semantic tags in code. functions, dependencies etc.
+  spc j l   # jump to line. I think it's more convinient that spc jj
+  spc j q   # navigate on a variable and use this to see other occurencies
+  spc m g g # go to deffinition
+  C-o       # jump back through the window traverse history
+  C-i       # jump forward through the window traverse history
+  spc x d w # delete trailing white spaces
+#+END_SRC
+
+**** how to
+  + create a custom layout
+    put the following under *defun dotspacemacs/user-config ()*. The following code
+    is just an example but you can find your way from here
+
+    #+BEGIN_SRC emacs-lisp
+      (spacemacs|define-custom-layout "@coding"
+        :binding "d"
+        :body
+        (helm-projectile-switch-project)
+        (split-window-right-and-focus)
+        (split-window-below-and-focus)
+        (multi-term) ;; launch shell
+        (treemacs-select-window) ;; fire up file manager
+        )
+    #+END_SRC
+
+    now restart emacs and press *SPC l o* then select *@coding*
+
+  + see instant documentation about a function
+    if you want to know what a specific function does just navigate your cursor on it
+    and press *Shift K*
+
+**** info
+**** tips
 
 ** programming tools
 *** make
@@ -2481,6 +3396,16 @@ N               # seek to previous funciton
 1. always use ~-A~ argument when opening a binary with radare. so you don't have to do
    ~aaa~ everytime. ~-AA~ also can be used bug takes long time on huge binaries
 
+*** mpv
+**** key bindings
+**** how to
+1. play youtube videos with only audio
+   #+BEGIN_SRC sh
+   mpv -vo=null $VIDEO_URL
+   #+END_SRC
+**** info
+1. you can play videos from youtube with only audio (see: hot to 1)
+**** tips
 ** hardware
 *** CASIO fx-991ex
 **** how to
@@ -2550,6 +3475,111 @@ now you see the value for x
 + add shadow to text
   1. write a text
   2. Layer/Light and Shadow/Drop Shadow
+** unity
+*** key bindings
+
+~f~               : focus on an object
+~q~               : toggle hand mode. helps to move around the level
+~w~               : toggle move tool
+~e~               : toggle rotate tool
+~r~               : toggle resize tool
+~t~               : toggle rectangle moving, resizing tool
+~y~               : toggles multi mode. resize, rotate and move at the same time
+~<CTRL> d~        : duplicate object. don't forget to select it first
+~<SHIFT> <SPACE>~ : maximize game windows
+
+*** how to
+
+1. *focus* on an _object_
+
+   + first way:
+     - *select* _object_ from the _scene_
+     - *press* ~f~
+
+   + second way
+     - *select* _object_ from _hierarchy menu_
+     - *double click* on _object_
+2. *set* object on _origin_
+   - *select* _object_
+   - *right click* on menu Inspector/Transform
+   - *click* _reset_
+
+3. *color* an *object*
+   - *right click* on menu Project/Create/Material
+   - *rename* it to something reasonable
+   - *click* color bar next to *albedo*
+   - *press* ~<ENTER>~ (optional for first time run. if you have tiling WM)
+   - select your color
+   - *drag* your _new skin_ on the object you want to color
+
+4. add *rigid body* to an *object*
+   - *select* the *object*
+   - *go to* *inspector* menu
+   - *click* *add component* below the menu
+   - *click* Physics/Rigidbody
+
+   you can test this future by giving a bit height to the object and randomly rotate it
+   then press *play* button. you should see the object falls
+
+5. *change* *sky color*
+   - *click* on *main camera*
+   - *click* Inspector/Camera/Skybox
+   - *click* *solid color*
+   - *select* *background color*
+
+6. *add* a *script*
+   - *right click* on *project* menu
+   - *click* Create/C# Script
+   - *write* your *code* inside script and *save*
+   - *drag and drop* your *script* on target *object*
+
+7. *change* _snapping_ behaviour
+   - *go to* ~Edit/Snap Settings~
+   - *change* x,y,z values
+
+   now when you move any object by holding ~Ctrl~ key it's movement will be snappy
+8. *create* an _object of objects_
+   - *create* an object with simple cube, sphere etc. and rename it to "obj_child"
+   - *press* ~Ctrl Shift n~ and a new _empty_ object will be created in _main menu_
+   - *rename* it to "obj_parent"
+   - *drag* _obj_child_ into _obj_parent_
+
+   you can create a compound objects like _houses_ and easily *resize* and *move* them
+
+*** info
+1. Unity can be programmed by *C#* and *javascript*
+
+2. when you move an object in editor it will move in very high resolution so later
+   you will always need to set it's coordinates manualy. to prevent this hold
+   ~Ctrl~ key, click on any axis of the object (x | y | z) then drag. it will move
+   smoothly. snappy
+
+3. you can create an _object of objects_. for example you created a *house* from
+   basic elements like cubes. you can now make that house a *compound object*
+   a.k.a. _object of objects_. see line 8 in _how to_ section
+
+4. list of Menus:
+   - =Hierarchy=: contains *game objects*, *camera*, *lighting*, *characters* etc.
+   - =Inspector=: contains all the properties of selectred object from *Hierarchy* menu
+   - =Project/Assets=: contains *backgrounds*, *sprites*, *weapon* *sprites*, *torches*,
+     *rocks*, *trees*, *game scripts*, materials
+
+   you should create a folder for every class in *Assests* section. for example create
+   *sprites* folder and store them here. same thing for *scripts* and *materials*
+
+5. *rigid body* component makes the object fall through gravity
+
+6. *collider* component makes objects collide with other collider objects. collider
+   object do not fall.
+
+*** tips
+1. you can *grab* the _game window_ and *place* it next to _scene_. and *move* the
+   _camera_. it really helps while testing
+
+2. you can think of *scenes* as *levels* in the game
+
+3. [2D] if you want your character stay on the ground, add *collider* and *rigid body*
+   to your character object. add *edge collider* to the top of your ground
 
 * Concepts
 ** ORM
