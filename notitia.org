@@ -2394,7 +2394,7 @@ nasm -f elf -o test <CODE>.asm #
 :EXPORT_AUTHOR: savolla
 :END:
 **** key bindings
-** normal mode
+***** normal mode
 
 #+BEGIN_SRC sh
 V               # enter visual mode and show hexdump view
@@ -2410,7 +2410,7 @@ iz              # show ascii strings
 iI              # general binary information
 #+END_SRC
 
-** visual mode
+**** visual mode
 
 #+BEGIN_SRC sh
 p               # disassembler view
@@ -2539,7 +2539,7 @@ now you see the value for x
 + pressing *<shift>* and _arrow keys_ will also select a region
 ** gimp
 *** key bindings
-*** * how to
+*** how to
 + center the text
   1. press Q
   2. click image
@@ -2551,8 +2551,6 @@ now you see the value for x
   1. write a text
   2. Layer/Light and Shadow/Drop Shadow
 
-* info
-* tips
 * Concepts
 ** ORM
 + this is a technique that *takes the class* and converts it's properties into a database table
