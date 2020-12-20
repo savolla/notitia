@@ -1697,15 +1697,15 @@ insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3
 :EXPORT_AUTHOR: savolla
 :END:
 **** how to
- + name a css file?
+ 1. name a css file?
    *style.css* or *main.css*
- + how to link *style.css* with *index.html* ?
+ 2. how to link *style.css* with *index.html* ?
    in html file,
    #+BEGIN_SRC html
 <link href="./style.css" rel="stylesheet"/>
    #+END_SRC
- + write internal css?
-   put css code into *<style>* elements which is inside *<head>* element
+ 3. write internal css?
+   put your css code inside *style* tags
    #+BEGIN_SRC html
    <head>
      <style>
@@ -1715,23 +1715,23 @@ insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3
      </style>
    </head>
    #+END_SRC
- + how comments look in css?
+ 4. how comments look in css?
    #+BEGIN_SRC css
 /* this is a comment */
    #+END_SRC
- + change h1,h2 and h3 at the same *selector*?
+ 5. change h1,h2 and h3 at the same *selector*?
    #+BEGIN_SRC css
 h1,h2,h3 {
     color : olive;
 }
    #+END_SRC
- + change *background color* of the entire page?
+ 6. change *background color* of the entire page?
    #+BEGIN_SRC css
 body {
     background-color : black;
 }
    #+END_SRC
- + style by *classes* or *id*?
+ 7. style by *classes* or *id*?
    #+BEGIN_SRC html
 <h3 class="cls0"> TITLE0 </h3>
 <h3 id="cls1"> TITLE1 </h3>
@@ -1746,276 +1746,277 @@ body {
     color : blue;
 }
    #+END_SRC
- + set *space between two lines*?
+ 8. set *space between two lines*?
    #+BEGIN_SRC css
 line-height : 1.5em;
    #+END_SRC
- + set *font* ?
+ 9. set *font* ?
    #+BEGIN_SRC css
 font-family : monospace;
    #+END_SRC
- + set a background image?
-   #+BEGIN_SRC css
-background-image: url("../img/bg.png");
-   #+END_SRC
- + set opacity of text?
-   use *rgba()* with a value between 1 and 0 at the end
-   #+BEGIN_SRC css
-.class0 {
-    color : rgba(100,53,81,0.5);
-}
-   #+END_SRC
- + make *links* without _underline_ ?
-   #+BEGIN_SRC css
-a {
-    text-decoration : none;
-}
-   #+END_SRC
- + cancel all the *default margins*?
-   #+BEGIN_SRC css
-   *{
-       margin : 0;
-   }
-   #+END_SRC
- + *change font* of an element?
-   #+BEGIN_SRC css
-.element {
-    font-family : Fira Code;
-}
-   #+END_SRC
- + use *google fonts*
-   1. go to *google fonts* page
-   2. select your font
-   3. click *select this style*
-   4. copy <link> part and paste is between <head> element
-   5. copy *CSS rules* and paste it to CSS file where you want to use that font
-   6. click on *@import* section and copy the code inside <style> element
-   7. paste it into the top of your CSS file
- + make a font bolder?
-   use *font-weight*
-   #+BEGIN_SRC css
-.element {
-    font-weight: bold;
-}
-   #+END_SRC
- + make font italic?
-   use *font-style*
-   #+BEGIN_SRC css
-.element {
-    font-style : italic;
-}
-   #+END_SRC
- + reach a *nested element* inside a class?
-   use *>* syntax
-   #+BEGIN_SRC html
-<div class="cls0">
-  <ul>
-    <li>item</li>
-    <li>item</li>
-  </ul>
-</div>
-   #+END_SRC
-
-   #+BEGIN_SRC css
-cls0 > ul > li {
-    /* your code */
-}
-   #+END_SRC
- + increase space between *letters* in a paragraph?
-   #+BEGIN_SRC css
-.element {
-    letter-spacing: 5px;
-}
-   #+END_SRC
- + increase space between *words* ?
-   #+BEGIN_SRC css
-.element {
-    word-spacing: 5px;
-}
-   #+END_SRC
- + capitalize an entire *paragraph* ?
-   #+BEGIN_SRC css
-.element {
-    text-transform: capitalize;
-}
-   #+END_SRC
- + add *hover* action to an element?
+ 10. set a background image?
     #+BEGIN_SRC css
-    .element:hover {
-    /* code */
+ background-image: url("../img/bg.png");
+    #+END_SRC
+ 11. set opacity of text?
+    use *rgba()* with a value between 1 and 0 at the end
+    #+BEGIN_SRC css
+ .class0 {
+     color : rgba(100,53,81,0.5);
+ }
+    #+END_SRC
+ 12. make *links* without _underline_ ?
+    #+BEGIN_SRC css
+ a {
+     text-decoration : none;
+ }
+    #+END_SRC
+ 13. cancel all the *default margins*?
+    #+BEGIN_SRC css
+    *{
+        margin : 0;
     }
     #+END_SRC
- + add *opacity* to an element?
-   #+BEGIN_SRC css
-.element {
-    opacity: 0.5;
-}
+ 14. *change font* of an element?
+    #+BEGIN_SRC css
+ .element {
+     font-family : Fira Code;
+ }
+    #+END_SRC
+ 15. use *google fonts*
+     1. go to *google fonts* page
+     2. select your font
+     3. click *select this style*
+     4. copy <link> part and paste is between <head> element
+     5. copy *CSS rules* and paste it to CSS file where you want to use that font
+     6. click on *@import* section and copy the code inside =<style>= element
+     7. paste it into the top of your CSS file
+ 16. make a font bolder?
+    use *font-weight*
+    #+BEGIN_SRC css
+ .element {
+     font-weight: bold;
+ }
+    #+END_SRC
+ 17. make font italic?
+    use *font-style*
+    #+BEGIN_SRC css
+ .element {
+     font-style : italic;
+ }
+    #+END_SRC
+ 18. reach a *nested element* inside a class?
+    use *>* syntax
+    #+BEGIN_SRC html
+ <div class="cls0">
+   <ul>
+     <li>item</li>
+     <li>item</li>
+   </ul>
+ </div>
+    #+END_SRC
 
-   #+END_SRC
- + add a *border* around an element?
-   #+BEGIN_SRC css
-.element {
-    border-style: solid;
-}
-   #+END_SRC
- + add *border width* of an element?
-   #+BEGIN_SRC css
-.element {
-    border-width: 10px;
-}
-   #+END_SRC
- + overlap two elements?
-   with *negative margin*
- + make list items on one line?
-   #+BEGIN_SRC html
-<ul>
-    <li>item1</li>
-    <li>item2</li>
-    <li>item3</li>
-</ul>
-   #+END_SRC
+    #+BEGIN_SRC css
+ cls0 > ul > li {
+     /* your code */
+ }
+    #+END_SRC
+ 19. increase space between *letters* in a paragraph?
+    #+BEGIN_SRC css
+ .element {
+     letter-spacing: 5px;
+ }
+    #+END_SRC
+ 20. increase space between *words* ?
+    #+BEGIN_SRC css
+ .element {
+     word-spacing: 5px;
+ }
+    #+END_SRC
+ 21. capitalize an entire *paragraph* ?
+    #+BEGIN_SRC css
+ .element {
+     text-transform: capitalize;
+ }
+    #+END_SRC
+ 22. add *hover* action to an element?
+     #+BEGIN_SRC css
+     .element:hover {
+     /* code */
+     }
+     #+END_SRC
+ 23. add *opacity* to an element?
+    #+BEGIN_SRC css
+ .element {
+     opacity: 0.5;
+ }
 
-   #+BEGIN_SRC css
-ul > li {
-   display: inline;
-}
-   #+END_SRC
- + display text in the center of the element?
-   use *text-align: center*
- + create a *navigation bar* of a website?
-   #+BEGIN_SRC html
-<div class="navbar">
-  <a href="#">Home</a>
-  <a href="#">Contact</a>
-  <a href="#">Coffee</a>
-  <a href="#">Music</a>
-</div>
-   #+END_SRC
+    #+END_SRC
+ 24. add a *border* around an element?
+    #+BEGIN_SRC css
+ .element {
+     border-style: solid;
+ }
+    #+END_SRC
+ 25. add *border width* of an element?
+    #+BEGIN_SRC css
+ .element {
+     border-width: 10px;
+ }
+    #+END_SRC
+ 26. overlap two elements?
+    with *negative margin*
+ 27. make list items on one line?
+    #+BEGIN_SRC html
+ <ul>
+     <li>item1</li>
+     <li>item2</li>
+     <li>item3</li>
+ </ul>
+    #+END_SRC
 
-   #+BEGIN_SRC css
-.navbar a {
-    font-family: Fira Code;
-    margin-right: 20px;
-    font-size: 1rem;
-    text-decoration: none;
-}
+    #+BEGIN_SRC css
+ ul > li {
+    display: inline;
+ }
+    #+END_SRC
+ 28. display text in the center of the element?
+    use *text-align: center*
+ 29. create a *navigation bar* of a website?
+    #+BEGIN_SRC html
+ <div class="navbar">
+   <a href="#">Home</a>
+   <a href="#">Contact</a>
+   <a href="#">Coffee</a>
+   <a href="#">Music</a>
+ </div>
+    #+END_SRC
 
-.navbar {
-    background: black;
-}
-   #+END_SRC
- + add a *custom font* to the css?
-   add the following on the top of css file
-   #+BEGIN_SRC css
-@font-face {
-    font-family: "font-name";
-    src: url("../fonts/my-font.ttf");
-}
-   #+END_SRC
- + set opacity of an element?
-   use *opacity* attribute
-   #+BEGIN_SRC css
-.element {
-    opacity: 0.5;
-}
-   #+END_SRC
- + use *image* as a background instead of straight color?
-   #+BEGIN_SRC css
-.element {
-    background: url("/path/to/image.extension");
-}
-   #+END_SRC
- + make an image non-repeatable?
-   #+BEGIN_SRC css
-.element {
-    background: url("/path/to/image.extension");
-    background-repeat: no-repeat;
-}
-   #+END_SRC
- + *spread* the image into one area (div) ?
-   #+BEGIN_SRC css
-.element {
-    background: url("/path/to/image.extension");
-    background-size: cover;
-}
-   #+END_SRC
- + *center* the background image?
-   #+BEGIN_SRC css
-.element {
-    background-position: center;
-}
-   #+END_SRC
- + adjust the position by x and y values of a background image?
-   use persentages to adjust
-   #+BEGIN_SRC css
-.element {
-    background: url("/path/to/image.extension");
-    background-position: 20% 50%;
-}
-   #+END_SRC
- + add an image with protected *aspect ratio*?
-   #+BEGIN_SRC css
-.element {
-    background: url("/path/to/image.jpg");
-    background-size: contain;
-}
-   #+END_SRC
- + align text to the center?
-   #+BEGIN_SRC css
-.element {
-    text-align: center;
-}
-   #+END_SRC
- + make a *parallax* effect?
-   use *background-attachment*
-   #+BEGIN_SRC css
-.banner {
-    background: url("../img/bg.jpg");
-    background-attachment: fixed;
-}
-   #+END_SRC
- + make a gradient element? use *grey* and *white*
-   #+BEGIN_SRC css
-.element {
-    background-attachment: linear-gradient(grey, white);
-}
-   #+END_SRC
- + give *angle* to the gradient?
-   #+BEGIN_SRC css
-.element {
-    background: linear-gradient(45deg, white, black);
-}
-   #+END_SRC
- + make a nice *transition effect* ? when user scrolls down the transparent
-   screen comes on the background image. the background image does not change btw
-   #+BEGIN_SRC html
-<div class="first">
-</div>
+    #+BEGIN_SRC css
+ .navbar a {
+     font-family: Fira Code;
+     margin-right: 20px;
+     font-size: 1rem;
+     text-decoration: none;
+ }
 
-<div class="second">
-</div>
-   #+END_SRC
+ .navbar {
+     background: black;
+ }
+    #+END_SRC
+ 30. add a *custom font* to the css?
+    add the following on the top of css file
+    #+BEGIN_SRC css
+ @font-face {
+     font-family: "font-name";
+     src: url("../fonts/my-font.ttf");
+ }
+    #+END_SRC
+ 31. set opacity of an element?
+    use *opacity* attribute
+    #+BEGIN_SRC css
+ .element {
+     opacity: 0.5;
+ }
+    #+END_SRC
+ 32. use *image* as a background instead of straight color?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+ }
+    #+END_SRC
+ 33. make an image non-repeatable?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+     background-repeat: no-repeat;
+ }
+    #+END_SRC
+ 34. *spread* the image into one area (div) ?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+     background-size: cover;
+ }
+    #+END_SRC
+ 35. *center* the background image?
+    #+BEGIN_SRC css
+ .element {
+     background-position: center;
+ }
+    #+END_SRC
+ 36. adjust the position by x and y values of a background image?
+    use persentages to adjust
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+     background-position: 20% 50%;
+ }
+    #+END_SRC
+ 37. add an image with protected *aspect ratio*?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.jpg");
+     background-size: contain;
+ }
+    #+END_SRC
+ 38. align text to the center?
+    #+BEGIN_SRC css
+ .element {
+     text-align: center;
+ }
+    #+END_SRC
+ 39. make a *parallax* effect?
+    use *background-attachment*
+    #+BEGIN_SRC css
+ .banner {
+     background: url("../img/bg.jpg");
+     background-attachment: fixed;
+ }
+    #+END_SRC
+ 40. make a gradient element? use *grey* and *white*
+    #+BEGIN_SRC css
+ .element {
+     background-attachment: linear-gradient(grey, white);
+ }
+    #+END_SRC
+ 41. give *angle* to the gradient?
+    #+BEGIN_SRC css
+ .element {
+     background: linear-gradient(45deg, white, black);
+ }
+    #+END_SRC
+ 42. make a nice *transition effect* ? when user scrolls down the transparent
+    screen comes on the background image. the background image does not change btw
+    #+BEGIN_SRC html
+ <div class="first">
+ </div>
 
-   #+BEGIN_SRC css
-.first {
-    background: url("../img/bg2.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+ <div class="second">
+ </div>
+    #+END_SRC
 
-.second {
-    background: url("../img/bg2.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    height: 100vh;
-}
-   #+END_SRC
+    #+BEGIN_SRC css
+ .first {
+     background: url("../img/bg2.jpg");
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100vh;
+ }
+
+ .second {
+     background: url("../img/bg2.jpg");
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     opacity: 0.5;
+     height: 100vh;
+ }
+    #+END_SRC
+ 43. 
 **** what is
  + what css stands for?
    cascading style sheets
