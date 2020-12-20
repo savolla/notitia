@@ -5042,6 +5042,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   1. nasıl bir ev yapmak istiyoruz? : *problemi anlamak*
   2. mimar bir tasarım yapar : *yazılım mimari dizaynı*
   3. evin planının çıkarılması : *detaylı yazılım tasarımı*
+** Dive Into Design Patterns :book:
 
 ** Reading List to Become a Professional
 ***** Job Interview Prep
