@@ -8,7 +8,6 @@
 #+HUGO_SECTION: en/posts
 
 * Topics
-** web programming
 ** Software Engineering
 *** tips
 **** Kod yazarken dikkat edilmesi gerekenler
@@ -271,23 +270,8 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 + about *separating dependencies*
 **** Dependency Injection (DI)
 
-** probability and statistics
-** Embedded Systems
-*** articles
-+ [[https://jaycarlson.net/][jay carlson's entire website]]
-+ [[https://www.livecareer.com/resume-search/r/senior-embedded-software-engineer-29aac52d404b476e87fdb747db1370e7][good example CV for embedded systems]]
-*** books
-1. An Embedded Software Primer
-   [[file:./images/screenshot-09.png]]
-   According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
-
-*** tips
-*** facts
-*** how to
-*** concepts
-*** problems & solutions
-** Software Architecture
-*** notes from armağan amcalar's youtube stream
+*** Software Architecture
+**** notes from armağan amcalar's youtube stream
 + *design* and *architecuture* are different things
 + what is software design?
   when you design classes, interfaces, controllers etc.
@@ -311,7 +295,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   2. customize existing architectures
 + read Martin Fowler and Bob Martin's books
 + Model View Controller (MVC) is _not an architecture_. it is a _software design technique_
-**** Domain Driven Design (DDD)
+***** Domain Driven Design (DDD)
 + still arguable if it is a design technique or arthitecture
 + it's intent is to merge business world and software world. it is a translator between business and software
 + if an architect designs a domain driven design architecture and he/she is not familiar with business the final result won't be very accurate
@@ -325,7 +309,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 + modules will communicate with some each other by interfaces when added.
 + modules/domains can work on their own since those are concrete softwares
 + the biggest difference of DDD from other architectures is that every module is completely discrete and one module can be glued together with interfaces
-**** Event Driven Design (EDD)
+***** Event Driven Design (EDD)
 + every unit of the system communicate with other units via signals. signals are called *events*
 + for example when a user scrolls the page or click on a button, then those buttons or scroll bars send some events to some other units
 + every unit knows which signal it recieves
@@ -340,7 +324,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   - increases complexity of signal management
 + one question is very rapid in EDD "I just threw that event but which module recieved?"
 
-**** Microservice Architecture
+***** Microservice Architecture
 + in this architecture *containers* are the key
 + these containers are actually an operating system but very small operatin systems
 + every container contains a separate and standalone application which can run on its own
@@ -351,8 +335,8 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 + when something goes wrong in a container, all the system continues to work without any problems. developers can easily roll back the problematic container to more stable/working version to bring system back to life, take a copy of buggy container, fix the bug and plug it in again
 + microservice architecture is also very beneficial from social perspective. people simply don't want to depend on each other. every team writes it's own container and ships it
 + also every container has it's own database. there is no centralized database which make it very secure. hacker must hack every container to access all the data
-**** Service Orriented Architecture (SOA)
-**** Event Sourcing
+***** Service Orriented Architecture (SOA)
+***** Event Sourcing
 + this is a solution to EDD's event management
 + basically all sent events are logged into a database with thsese information;
   1. event name
@@ -360,15 +344,29 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   3. event parameters
   4. event history
 + event sourcing is useful in *debugging* because all events are stored and with history. developers can pause the application or roll back to more older version etc
-** Software Design
-** Design Patterns
-*** facts
-*** concepts
-**** programming to an interface
+*** Software Design
+*** Design Patterns
+**** facts
+**** concepts
+***** programming to an interface
 + this is a *design principle*
 + the keyword =interface= sometimes confuced with "interface keyword" in Java and C#. but this is not the keyword is discussed here
-*** how to
+**** how to
 
+** Embedded Systems
+*** articles
++ [[https://jaycarlson.net/][jay carlson's entire website]]
++ [[https://www.livecareer.com/resume-search/r/senior-embedded-software-engineer-29aac52d404b476e87fdb747db1370e7][good example CV for embedded systems]]
+*** books
+1. An Embedded Software Primer
+   [[file:./images/screenshot-09.png]]
+   According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
+
+*** tips
+*** facts
+*** how to
+*** concepts
+*** problems & solutions
 * Programming
 ** languages
 *** c
@@ -1707,7 +1705,7 @@ insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3
 <link href="./style.css" rel="stylesheet"/>
    #+END_SRC
  + write internal css?
-   put css code into <style> elements which is inside <head> element
+   put css code into *<style>* elements which is inside *<head>* element
    #+BEGIN_SRC html
    <head>
      <style>
