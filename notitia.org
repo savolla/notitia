@@ -1525,17 +1525,17 @@ insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3
   1. create a form element *form + TAB*
   2. *input + TAB*
     #+BEGIN_SRC html
-  <form method="" action="">
-    <input type="text" name="" value="" />
-  </form>
+    <form method="" action="">
+      <input type="text" name="" value="" />
+    </form>
     #+END_SRC
 + *label* the *input bar*
   #+BEGIN_SRC html
-<form method="" action="">
-  <label for="nick">username</label> <!-- label the input bar -->
-  <input type="text" name="username" id="nick" /> <!-- input bar -->
-  <input type="submit" /> <!-- submit button -->
-</form>
+  <form method="" action="">
+    <label for="nick">username</label> <!-- label the input bar -->
+    <input type="text" name="username" id="nick" /> <!-- input bar -->
+    <input type="submit" /> <!-- submit button -->
+  </form>
   #+END_SRC
 + make passwords invisible when typing?
   notice *input type="password"* here. thi is the important one
