@@ -3077,7 +3077,7 @@ insert into Personel (PersonelName, PersonelSurname, PersonelSalary, PersonelBir
 ***** concept / term
 ****** radio link
 mesela metin içinde *newton* geçen her yere wikipedia linkini eklemek istiyorsun, o zaman bunu kullanırsın. kullanıcı nerede newton görse, artık tıklanabilir bir link görür. [[radio link oluşturma][örnek]]
-***** tutorial / howto
+***** how to
 ****** döküman içi hızlı arama
 1. Emacs için : =C-c C-j=
 Doom için : =SPC m .=
@@ -3124,6 +3124,10 @@ while True:
     print("*****")
     print("Emacs is LOVE")
     print("*****")
+#+end_src
+****** disable table of contects
+#+begin_src org
+#+OPTIONS: toc:nil
 #+end_src
 
 ***** problems and solutions
@@ -3809,6 +3813,13 @@ add the following line under @startuml
 #+begin_src plantuml
 @startuml
 skinparam linetype ortho
+@enduml
+#+end_src
+***** increase output image size
+add the following line under @startuml
+#+begin_src plantuml
+@startuml
+skinparam dpi 300
 @enduml
 #+end_src
 **** problems & solutions
