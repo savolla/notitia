@@ -1715,6 +1715,7 @@ there must be an easier way..
 =C-c C-p d=                                 remove project from treemacs
 
 =SPC s f=                                   locate file in system
+=SPC s b=                                   search inside buffer (usefull for searching notes)
 
 **** problems & solutions
 ***** with-editor.elc failed to provide feature ‘with-editor’
@@ -2351,6 +2352,134 @@ rofi-theme-selector
 #+begin_src sh
 find ~/lib* -type f -name '*.pdf' -o -name '*.epub'
 #+end_src
+*** objdump
+**** how to
+***** display only executable sections
+#+BEGIN_SRC sh
+objdump -d <BINARY>
+#+END_SRC
+***** display all sections
+#+BEGIN_SRC sh
+objdump -D <BINARY>
+#+END_SRC
+***** display with source code
+- this requires =-g= option when compiling with *gdb*
+#+BEGIN_SRC sh
+objdump -S <BINARY>
+#+END_SRC
+***** switch to intel syntax
+#+BEGIN_SRC sh
+objdump -M intel -[d|D] <BINARY>
+#+END_SRC
+***** display assembly in 32-bit layout
+#+BEGIN_SRC sh
+objdump -M i386,intel -[d|D] <BINARY>
+#+END_SRC
+*** nasm
+**** how to
+***** make binary executable
+#+BEGIN_SRC sh
+nasm -f bin -o test <CODE>.asm #
+#+END_SRC
+***** make elf executable
+#+BEGIN_SRC sh
+nasm -f elf -o test <CODE>.asm #
+#+END_SRC
+*** radare2
+:PROPERTIES:
+:EXPORT_FILE_NAME: radare-notes
+:EXPORT_TITLE: radare notes
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+**** key bindings
+** normal mode
+
+#+BEGIN_SRC sh
+V               # enter visual mode and show hexdump view
+aaa             # analyse the binary. unlocks other functions. do this first you open up a binary
+aaaa            # experimnetal analysis. might take more time for huge binaries
+afl             # see all funcitons (also called symbols) in the binary
+afll            # really cool color coded function list
+s <FUNCTION>    # seek to <FUNCTION>
+ii              # show imports don't forget to analyse first
+iS              # show sections in memory
+is              # show all symbols including global, local variables
+iz              # show ascii strings
+iI              # general binary information
+#+END_SRC
+
+** visual mode
+
+#+BEGIN_SRC sh
+p               # disassembler view
+pp              # debuggin view
+ppp             # byte distribution view
+pppp            # byte string view for copying in C or Pyhton
+n               # seek to next function
+N               # seek to previous funciton
+#+END_SRC
+
+**** how to
+
++ jump to a function from *debug* or *disassembler* view
+   1. use j/k keys to navigate on ~call~ instruction
+   2. when call instruction is on the top press ~<ENTER>~ key
+   3. hit ~u~ to come back
+
++ see *hex dump* of a function from *disassembler* view
+   1. navigate to call just like you do for jumping to funciton
+   2. press ~<Shift> p~
+   3. come back with ~p~
+
++ see where a specific function is called across the binary using ~xref~
+   1. from *visual mode*
+     - seek to the function you want to see where it's called
+     - press ~<ENTER>~ key
+     - do ~:axt~
+   2. from *normal mode*
+     - ~s <FUNCTION*NAME>~
+     - ~axt~
+     this iformation can also be seen from *visual mode* above function name. also if you want to
+     see ~jumps~ from a function. use ~axf~
+
++ ~patch~ a binary
+   1. ~r2 -w <BINARY>~ open the binary with *write* permissions
+   2. ~aaa~ analyze
+   3. ~V~ enter visual mode
+   4. ~p~ go to disassembler view
+   5. ~:s <ADDRESS*TO*MODIFY>~ seek to address you want to modify
+   6. ~:e asm.var.sub=false~ "[var*4h]" notations don't work when modifying. change to [rbp - 4]
+   7. ~A~ enter modification mode and *write new instruction in assembly*
+   8. hit ~<ENTER>~ two times and done
+   9. additionally you can set `asm.var.sub` back to ~true~ if you want
+
++ how to ~debug~ a binary
+   1. ~r2 -d <BINARY>~ open binary with debug mode
+   2. ~V~ enter visual mode
+   3. ~pp~ enter *disassembler* view
+   4. additionally you can increase the *stack size* if you want with ~:e stack.size=256~
+   5. ~<F8>~ next instruction
+   6. ~<F7>~ step into call
+   7. ~db <FUNCTION|ADDRESS>~ set brakepoint
+   8. ~dc~ continue. hits the first breakpoint it encounters
+   9. ~do~ reopens binary. saves breakpoints so you don't have to set them everytime
+   10. in case you lost hit ~.~ to come back to *ip*(instruction pointer)
+   11. ~dsf~ step until end of frame. this is handy when you accidentally step into a function
+
+**** info
+1. most *visual mode* keys have a *command* equivalent
+2. to show *hex dump* in non-visual mode use +*px <BYTE*AMOUNT>**
+3. most function won't work in radare2 until you analyze the binary. use +*aaa** and *aaaa* for experimental analysis.
+4. you can use *normal mode* commands in *visual mode* as well. use +*:** when you wanna run some r2 commands
+5. with +*iI** some important information like *nx*(non-executable stack), *canary*, *pic*(position independent code) can be seen
+6. if *pic* is true then the file will randomize *base address* for every run
+7. use *<COMMAND>~..* to pipe output to *less* like shell
+
+**** tips
+1. always use ~-A~ argument when opening a binary with radare. so you don't have to do
+   ~aaa~ everytime. ~-AA~ also can be used bug takes long time on huge binaries
 
 ** hardware
 *** CASIO fx-991ex
@@ -2371,6 +2500,59 @@ now you see the value for x
 + *snes* : bsnes-hd beta
 + *n64*: mupen43plus-next
 + *ps1*: epsxe
+** famitracker
+*** key bindings
+
+#+BEGIN_SRC sh
+<F1> # open documentation
+<SPACE> # toggle record mode. write music
+<Enter> # start over the song / stop the song
+<F7> # start player
+<F8> # stop player
+<PageUp> # go up faster (4 moves at once)
+<PageDown> # go down faster (4 moves at once)
+<Home> # go to start of the frame
+<End> # go to the end of the frame
+<Ctrl> v # pastes selected notes and overwrites previous notes
+<Ctrl> m # pastes selected notes but does not overwrite anything
+#+END_SRC
+
+*** how to
++ create sound
+  1. *go to* toolbar and *click* on _instruments_
+  2. *click* on _new instrument_
+  3. *press* *<space>* to enter _edit mode_
+  4. *click* on editor below
+  5. *click* on first bar and press +*z**
+  6. it will create a _C-3_ sound
+
++ selecting a group of notes and pressing *<Ctrl> <F1>* will _decrease_ notes by a _semitone_
++ selecting a group of notes and pressing *<Ctrl> <F2>* will _increase_ notes by a _semitone_
++ selecting a group of notes and pressing *<Ctrl> <F3>* will _decrease_ notes by an _octave_
++ selecting a group of notes and pressing *<Ctrl> <F4>* will _increase_ notes by an _octave_
+
+*** info
++ each channel has 4 collumns. _note, instrument, volume, effect_ for example: _C-3 00 F 462_
++ Nintendo can use only 5 channels. _pulse1, pulse2, triangle, noice, DPSM_
++ keyboard keys from +*z** to **ç** can be used as piano keys
++ you can select region of notes with _mouse_ then _copy_ and _paste_ notes
++ pressing *<shift>* and _arrow keys_ will also select a region
+** gimp
+*** key bindings
+*** * how to
++ center the text
+  1. press Q
+  2. click image
+  3. select text layer
+  4. Layer/Crop to Content
+  5. use Align options at left
+
++ add shadow to text
+  1. write a text
+  2. Layer/Light and Shadow/Drop Shadow
+
+* info
+* tips
 * Concepts
 ** ORM
 + this is a technique that *takes the class* and converts it's properties into a database table
