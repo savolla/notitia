@@ -1709,13 +1709,13 @@ insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3
  + write internal css?
    put css code into <style> elements which is inside <head> element
    #+BEGIN_SRC html
-<head>
-  <style>
-    h3 {
-      color : red;
-    }
-  </style>
-</head>
+   <head>
+     <style>
+       h3 {
+         color : red;
+       }
+     </style>
+   </head>
    #+END_SRC
  + how comments look in css?
    #+BEGIN_SRC css
