@@ -2255,6 +2255,13 @@ a {
    #+END_SRC
 
 *** javascript
+:PROPERTIES:
+:EXPORT_FILE_NAME: javascript-cheat-sheet
+:EXPORT_TITLE: Javascript Cheat Sheet
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
 **** concepts
 ***** JSON
 + javascript object notation
@@ -2320,6 +2327,718 @@ this is actually an _array_ in javascript. this is why it starts with '[]'
   </body>
 </html>
 #+end_src
+***** from codecamp
++ print something on screen?
+  #+BEGIN_SRC js
+  console.log("hello");
+  #+END_SRC
++ declare a local variable?
+  #+BEGIN_SRC js
+  let loc = 5;
+  #+END_SRC
++ declare a global variable?
+  #+BEGIN_SRC js
+  glob = 5;
+  #+END_SRC
++ declare a constant variable?
+  #+BEGIN_SRC js
+  const c = 5;
+  #+END_SRC
++ declare a function scope variable?
+  #+BEGIN_SRC js
+  var c = 5;
+  #+END_SRC
++ concat two strings?
+  #+BEGIN_SRC js
+  let v0 = "Hello";
+  let v1 = "World";
+  let v2 = v0 + " " + v1;
+  #+END_SRC
++ you increment and decrement numbers
+  #+BEGIN_SRC js
+  let a = 3;
+  a++; // increment
+  a--; // decrement
+  console.log(a);
+  #+END_SRC
++ declare floating point numbers?
+  #+BEGIN_SRC js
+  let f0 = 2.38;
+  #+END_SRC
++ get the *length* of a string?
+  #+BEGIN_SRC js
+  let name = "savolla";
+  console.log(name.length);
+  #+END_SRC
++ reach first letter of a string?
+  #+BEGIN_SRC js
+  let x = "hello";
+  console.log(x[0]);
+  #+END_SRC
++ get the last character of a string?
+  #+BEGIN_SRC js
+  let name = "savolla";
+  console.log(name[name.length - 1]);
+  #+END_SRC
++ create an array ?
+  #+BEGIN_SRC js
+  let numbers = [1,2,3,4,5];
+  #+END_SRC
++ create a multi-dimentional array?
+  #+BEGIN_SRC js
+  let A = [["abatox", 20],
+           ["savolla", 28],
+           ["lena", 48]];
+  console.log(A[1][0]);
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla
+  : undefined
++ *append* data into an array?
+  #+BEGIN_SRC js
+  let A = [1,2,3,4];
+  A.push(5);
+  console.log(A[A.length -1 ]);
+  #+END_SRC
+
+  #+RESULTS:
+  : 5
+  : undefined
++ remove an item from an array?
+  #+BEGIN_SRC js
+  let A = [1,2,3,4];
+  A.pop();
+  console.log(A[A.length -1 ]);
+  #+END_SRC
+
+  #+RESULTS:
+  : 3
+  : undefined
++ remove *first* element from an array?
+  #+BEGIN_SRC js
+  let A = [1,2,3];
+  A.shift();
+  console.log(A);
+  #+END_SRC
+
+  #+RESULTS:
+  : [2 (\, 3)]
++ add an element to the beginning of the array?
+  #+BEGIN_SRC js
+  let A = [1,2,3,4];
+  A.unshift(0);
+  #+END_SRC
++ define a functions?
+  #+BEGIN_SRC js
+function sayHi( name ) {
+    console.log("Hello " + name);
+}
+sayHi("lenacka");
+sayHi("savolla");
+sayHi("abatox");
+  #+END_SRC
+
+  #+RESULTS:
+  : Hello lenacka
+  : Hello savolla
+  : Hello abatox
+  : undefined
++ *dequeue* one element from an array?
+  #+BEGIN_SRC js
+function dequeue( array ) {
+    return array.shift();
+}
+let A = [1,2,3,4,5];
+console.log(dequeue(A));
+  #+END_SRC
+
+  #+RESULTS:
+  : 1
+  : undefined
++ write an *if* structure?
+  #+BEGIN_SRC js
+if ( condition ) {
+    // code
+}
+else if ( condition ) {
+    // code
+}
+else {
+    // code
+}
+  #+END_SRC
++ use *and* and *or* operators in if statements?
+  #+BEGIN_SRC js
+if ( code && code || code )
+    code
+  #+END_SRC
++ create an object in js?
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "Ares",
+    "color" : "brown",
+    "age" : 12,
+    "personality" : "calm"
+};
+  #+END_SRC
++ access a property of an object ?
+  use *dot notation*
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "Ares",
+    "color" : "brown",
+    "age" : 12,
+    "personality" : "calm"
+};
+
+n = dog.name;
+m = dog.age;
+  #+END_SRC
++ update an object property?
+  #+BEGIN_SRC js
+dog = {
+    "name" : "",
+    "color" : "",
+    "age" : null,
+    "personality" : ""
+};
+
+my_dog = dog;
+my_dog.name = "Ares";
+my_dog.color = "brown";
+my_dog.age = 12;
+my_dog.personality = "calm";
+  #+END_SRC
++ *delete* a property from an object?
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "Ares",
+    "color" : "brown",
+    "age" : 12,
+    "personality" : "calm"
+};
+
+delete dog.personality;
+  #+END_SRC
++ test if an object has a specific property?
+  use *hasOwnProperty* method of an object
+  #+BEGIN_SRC js
+dog = {
+    "name" : "Ares",
+    "color" : "",
+    "age" : null
+};
+
+if ( dog.hasOwnProperty("color") )
+    console.log("yes");
+else
+    console.log("no");
+
+  #+END_SRC
+
+  #+RESULTS:
+  : yes
+  : undefined
++ access nested object properties?
+  #+BEGIN_SRC js
+obj = {
+    "p0" : "ABC",
+    "internal" : {
+        "p0" : "abc",
+        "p1" : "def",
+    }
+}
+
+console.log(obj.internal.p0);
+  #+END_SRC
++ make a while loop?
+  #+BEGIN_SRC js
+  let i = 5;
+  while ( i > 0 ) {
+      console.log(i);
+      i--;
+  }
+  #+END_SRC
++ make a for loop?
+  just like in C or C++
+  #+BEGIN_SRC js
+for ( let i = 0; i < 5; ++i ) {
+    console.log(i);
+}
+  #+END_SRC
++ lookup a value in an object list?
+  when looking inside a list of objects use "[]" instead of "."
+  #+BEGIN_SRC js
+var contacts = [
+    {
+        "first_name" : "Akira",
+        "last_name" : "Laine",
+        "number" : "05330000000",
+    },
+    {
+        "first_name" : "Harry",
+        "last_name" : "Potter",
+        "number" : "05330000001",
+    },
+    {
+        "first_name" : "Sherlock",
+        "last_name" : "Holmes",
+        "number" : "05330000002",
+    },
+]
+
+function lookup( name, property ) {
+    for ( let i = 0; i < contacts.length; i++ ) {
+        if ( contacts[i].first_name === name ) {
+            return contacts[i][property] || "No such property " + property;
+        }
+    }
+    return "No such contact";
+}
+
+let prop = lookup("Akira", "number");
+console.log(prop);
+  #+END_SRC
+
+  #+RESULTS:
+  : 05330000000
+  : undefined
++ generate random number between 0 and 1?
+ #+BEGIN_SRC js
+Math.random();
+ #+END_SRC
++ generate a *whole random* number between 0 & 100 ?
+  #+BEGIN_SRC js
+let r = Math.floor( Math.random() * 100 );
+console.log(r);
+  #+END_SRC
+
+  #+RESULTS:
+  : 48
+  : undefined
++ generate a *whole random* number between any range?
+  #+BEGIN_SRC js
+function gen_rand( min, max ) {
+    let r = Math.floor( Math.random() * (max - min) + min );
+    return r;
+}
+
+let x = gen_rand(50, 100);
+console.log(x);
+  #+END_SRC
++ convert a *string* to *integer* ? (stoi)
+  #+BEGIN_SRC js
+let s = "54";
+let q = "54";
+console.log(s + q); /* outputs: 5454 */
+s = parseInt(s);
+q = parseInt(q);
+console.log(s + q); /* outputs: 108 */
+  #+END_SRC
++ convert a string to integer with a special base?
+  #+BEGIN_SRC js
+  let m = "10010111001";
+  let n = parseInt(m, 2); /* outputs: 1209 */
+  #+END_SRC
++ prevent objects from *mutation* ?
+  use *Object.freeze(MY_OBJ)*
+  #+BEGIN_SRC js
+const MATH_CONSTANTS = {
+    PI : 3.141592,
+    E : 2.718281,
+    PHI : 1.61803399
+}
+// const itself will not prevent mutation. need an extra step
+Object.freeze(MATH_CONSTANTS);
+  #+END_SRC
++ make *anonimous functions* in js?
+  they also called *arrow functions* in js
+  #+BEGIN_SRC js
+  const magic = () => new Date();
+  console.log(magic());
+  #+END_SRC
++ make *anonimous functions* with parameters?
+  used *s0* as a parameter below
+  #+BEGIN_SRC js
+const stoi = (s0) => parseInt(s0);
+console.log(stoi("54"));
+  #+END_SRC
++ concat two arrays into one?
+  use *concat*
+  #+BEGIN_SRC js
+let A = [1,2,3,4];
+let B = [5,6,7,8];
+A = A.concat(B);
+console.log(A);
+  #+END_SRC
+
+  #+RESULTS:
+  : [1 (\, 2) (\, 3) (\, 4) (\, 5) (\, 6) (\, 7) (\, 8)]
++ check a number if it's an *integer* ?
+  #+BEGIN_SRC js
+  Number.isInteger(123);
+  #+END_SRC
++ filter an array ?
+  use *filter* function
+  #+BEGIN_SRC js
+let A = [1,2,3,4,5,6,7];
+A = A.filter(x => (x > 4));
+console.log(A);
+  #+END_SRC
++ convert a string into an *array of words*?
+  #+BEGIN_SRC js
+let s = "that was a dark and stormy night";
+let words = s.split(" ");
+console.log(words);
+  #+END_SRC
++ run a function through array elements?
+  use *map()* function. it works like *transform* in C++
+  #+BEGIN_SRC js
+let A = [1,2,3,4,5];
+A = A.map(x => x*2);
+console.log(A);
+  #+END_SRC
++ fill an array with random values?
+  1. create an array with 10 elements
+  2. *fill* the array with zeros
+  3. *map* the array with random values
+
+  #+BEGIN_SRC js
+  let A = new Array(10);
+  A.fill(0);
+  A = A.map(x => Math.floor(Math.random() * 10));
+  #+END_SRC
++ create fixed size array like *int A[100];* in C?
+  #+BEGIN_SRC js
+let A = new Array(100);
+  #+END_SRC
++ use *variables* inside *string template literals* ?
+  use *${VAR_NAME}*
+  #+BEGIN_SRC js
+var Person = {
+    "name" : "savolla",
+    "age" : 28
+}
+let s = `Hello, my name is ${Person.name}`;
+  #+END_SRC
++ write a function that returns an object?
+  this is the best way to return an object
+
+  here is the *long one*
+  #+BEGIN_SRC js
+function makeDog( name, age, color ) {
+    return {
+        name : name,
+        age : age,
+        color : color
+    };
+}
+ares = makeDog("ares", 12, "brown");
+puki = makeDog("puki", 8, "white");
+  #+END_SRC
+
+  here is the *short one*
+  #+BEGIN_SRC js
+const makeDog = ( name, age, color ) => ( {name, age, color} );
+ares = makeDog("ares", 12, "brown");
+puki = makeDog("puki", 8, "white");
+  #+END_SRC
++ make objects have methods?
+  #+BEGIN_SRC js
+const circle = {
+    x : 0,
+    y : 0,
+    grow : function() {
+        this.x++;
+        this.y++;
+    },
+    shrink : function() {
+        this.x--;
+        this.y--;
+    },
+    eliptic : function( px, py ) {
+        this.x = px;
+        this.y = py;
+    }
+}
+  #+END_SRC
++ create a constructor of a class?
+  just like in C++
+  #+BEGIN_SRC js
+class veggie {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+cabbage = new veggie("cabb");
+console.log(cabbage.name);
+  #+END_SRC
++ import a specific function from another js file?
+  it's like *from matplotlib import pyplot* in python
+  #+BEGIN_SRC js
+import { function_name } from "path/to/file"
+  #+END_SRC
+  notice that we didn't use file extension in *path/to/file*
+**** flashcards
++ 4 ways to declare a variable?
+    #+BEGIN_SRC js
+    var a = "savolla"; // function scope variable
+    let a = "savolla"; // local variable
+    const pi = 3.141592 // constant variable
+    x = 87; // global variable
+    #+END_SRC
++ what are *function scope* variables?
+  they are *global* just in function scope
+  #+BEGIN_SRC js
+function f() {
+    for ( let i = 0; i < 5; ++i ) {
+        var f_global = 10;
+    }
+    console.log(f_global);
+}
+
+f();
+  #+END_SRC
+
+  #+RESULTS:
+  : 10
+  : undefined
++ do javascript confused with integer division?
+  No. it can output floats when dividing two integers
+  #+BEGIN_SRC js
+  let a = 7;
+  let b = 2;
+  let c = a / b;
+  console.log(c);
+  #+END_SRC
++ do javascript support compound operators?
+  Yes.
+  #+BEGIN_SRC js
+  let a = 3;
+  a += 2;
+  a -= 2;
+  a *= 3;
+  a /= 2;
+  #+END_SRC
++ what to do if there are *double quotes* inside a string?
+  single quote that string to avoid *escaping*
+  #+BEGIN_SRC js
+  let ling = '<a href="https://www.example.com">Click</a>';
+  #+END_SRC
++ can we change a specific character in a string by indexy?
+  No. strings are immutable
+  #+BEGIN_SRC js
+  let name = "vavolla";
+  name[0] = "s"; // FIXME: ERROR
+  #+END_SRC
+
+  #+RESULTS:
++ can we store *different typed* values in an array?
+  Yes!
+  #+BEGIN_SRC js
+  let multi = ["savolla", 28, 105.43, true, 2==1];
+  console.log(multi[0]);
+  console.log(multi[1]);
+  console.log(multi[2]);
+  console.log(multi[3]);
+  console.log(multi[4]);
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla
+  : 28
+  : 105.43
+  : true
+  : false
+  : undefined
++ can we also store *expressions* into an array?
+  Yes!
+  #+BEGIN_SRC js
+  let multi = [2==2, 2==1];
+  console.log(multi[0]);
+  console.log(multi[1]);
+  #+END_SRC
+
+  #+RESULTS:
+  : true
+  : false
+  : undefined
++ can we modify arrays using bracket notation?
+  Yes! this does not work with strings but arrays are okay with that
+  #+BEGIN_SRC js
+  let A = ['a','b','c'];
+  A[0] = 'x';
+  A[1] = 'y';
+  A[2] = 'z';
+  #+END_SRC
++ what happens if we *pop* a multi-dimentional array?
+  #+BEGIN_SRC js
+  let A = [[1,2],
+           [3,3],
+           [4,5]];
+  A.pop();
+  console.log(A);
+  #+END_SRC
+
+  #+RESULTS:
+  : [[1 (\, 2)] (\, [3 (\, 3)])]
++ can we remove *curly brackets* from single lined *if* ?
+  Yes! javascript *allows* that
+  #+BEGIN_SRC js
+  if ( condition )
+      x = 10;
+  #+END_SRC
++ how *==* operator behaves in javascript?
+  it can compare values *type independent*
+  #+BEGIN_SRC js
+let a = '3';
+let b = 3;
+if ( a == b )
+    console.log("yes");
+else
+    console.log("no");
+  #+END_SRC
+
+  #+RESULTS:
+  : yes
+  : undefined
++ how *===* operator behaves in javascript?
+  it works like *==* but this time it compares *same types*
+  #+BEGIN_SRC js
+let a = '3';
+let b = 3;
+if ( a === b )
+    console.log("yes");
+else
+    console.log("no");
+  #+END_SRC
+
+  #+RESULTS:
+  : no
+  : undefined
++ what is the opposite of *===* operator ?
+  #+BEGIN_SRC js
+  !==
+  #+END_SRC
++ how *switch* statements work in js?
+  just like in C++ :)
++ iterate *nested loops*
+  #+BEGIN_SRC js
+A =[];
+for ( let i = 0; i<3; ++i ) {
+    A.push([]);
+    for ( let j = 0; j<3; ++j ) {
+        A[i].push(j);
+    }
+}
+console.log(A);
+  #+END_SRC
++ example of contacts list with js objects
+  #+BEGIN_SRC js
+var contacts = [
+    {
+        "first_name" : "Akira",
+        "last_name" : "Laine",
+        "number" : "05330000000",
+    },
+    {
+        "first_name" : "Harry",
+        "last_name" : "Potter",
+        "number" : "05330000001",
+    },
+    {
+        "first_name" : "Sherlock",
+        "last_name" : "Holmes",
+        "number" : "05330000002",
+    },
+]
+
+for ( let i = 0; i< contacts.length; ++i ) {
+    console.log(contacts[i].first_name);
+    console.log(contacts[i].last_name);
+    console.log(contacts[i].number);
+}
+  #+END_SRC
++ does javascript allow us to use *ternary* operators?
+  Yes!
+  #+BEGIN_SRC js
+let a = 2;
+let b = 7;
+let c;
+a > b ? c = 3 : c = 1;
+console.log(c);
+  #+END_SRC
++ how to do *nested ternary* operator?
+  #+BEGIN_SRC js
+function sign( n ) {
+    return n > 0 ? "+" : n < 0 ? "-" : "0";
+}
+
+console.log(sign(-32)); // outputs: -
+  #+END_SRC
++ can we change values of *const* array?
+  Yes! I don't know why but yes we can!
+  #+BEGIN_SRC js
+const s = [1,2,3,4,5];
+s[0] = 111;
+s[4] = 112;
+s[2] = 113;
+  #+END_SRC
++ which *higher order* functions javascript have?
+  #+BEGIN_SRC js
+filter();
+map();
+sort();
+split();
+reduce();
+  #+END_SRC
++ what *higher order function* can be used to sum every element in an array?
+
+  use *reduce()*
+  #+BEGIN_SRC js
+  let A = [1,2,3,4,5];
+  A = A.reduce((result = 0, x) => result += x);
+  console.log(A);
+  #+END_SRC
++ what the *rest operator* does?
+  it let's us to call functions with infinite arguments. when it's used in function parameters, it treats arguments as *array*
+
+  #+BEGIN_SRC js
+function sum(...args) {
+    return args.reduce( (x, result = 0) => result += x);
+}
+console.log(sum(1,2,3,4,5,6)); // outputs: 21
+  #+END_SRC
++ what is *destructuring technique* ?
+  it's a shortcut for assigning *Object properties* to another Object
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "ares",
+    "color" : "brown",
+    "age" : 12
+};
+
+var NEW_DOG = {
+    "name" : a,
+    "color" : b,
+    "age" : c
+} = dog;
+  #+END_SRC
++ what are the benefits of *string template literals* ?
+  1. variables can be used inside the string. without concatination
+  2. double quotes can be used without escaping them
+  3. new lines treated as new lines. so we can make multi-line strings
++ how *private* class members look in js?
+  use *underscore* before the name
+  #+BEGIN_SRC js
+class Person {
+    constructor(name) {
+        this._name = name;
+    }
+}
+  #+END_SRC
 **** problems & solutions
 ** databases
 *** mysql
@@ -3972,7 +4691,7 @@ deepest depths of hell..
 5. diarrhea blast
     [[file:./images/screenshot-07.png]]
 * Book Notes
-** Cracking the Coding Interview Türkçe Özet :book:
+** Cracking the Coding Interview :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: cracking-the-coding-interview-notes
 :EXPORT_TITLE: *Cracking the Coding Interview* Notes
@@ -4045,7 +4764,6 @@ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri ve
 #+begin_quote
 buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
 #+end_quote
-
 
 
 
@@ -4188,7 +4906,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Big O
 + içini dışını bilmezsen, kötü gözle bakarlar
 +
-** Object-Oriented Analysis and Design with Applications Türkçe Notlar :book:
+** Object-Oriented Analysis and Design with Applications :book:
 *** Bölüm 5
 + 2 tip UML diyagramı vardır;
   1. Structured Diyagramlar
@@ -4243,9 +4961,73 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + top şeklinde olan ise *provided interface* adını alır
   [[file:./images/screenshot-69.png]]
 +
+** Code Complete :book:
+:PROPERTIES:
+:EXPORT_FILE_NAME: code-complete-notes
+:EXPORT_TITLE: Code Complete Notlarım
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+*** bölüm 1 - yazılım inşasına giriş
++ yazara göre, bu kitap, etrafa dağılmış bilginin bir yere toplanmış hali
 
-** Reading List to Become a Professional
-*** Job Interview Prep
++ *yazılım geliştirme* ve *programlama* aynı şey değildir
+
++ *yazılım inşası*, yazılım geliştirme alanındaki bazı konuları içinde barındıran özelleşmiş bir alt daldır. yazılım inşası'nın (construction) dokunuğu dallar:
+
+  1. coding and debugging
+  2. unit testing
+  3. detailed design
+  4. integration
+  5. construction planning
+
++ construction terimi, *programlama* termine benzemektedir.
+
++ construction'ın yazılım konusunda yaptığı işler:
+
+  1. kodun temelini oturtmak
+  2. kodun nasıl test edileceğini belirlemek
+  3. sınıfları tasarlama ve yazmak
+  4. değişkenleri oluşturmak ve isimlendirmek
+  5. kontrol yapılarının seçimi ve kod bloklarının organizasyonunu sağlamak
+  6. unit test, integrasyon test ve debug yapmak
+  7. varsa diğer takım üyelerinin kodunu incelemek ve kendi kodunun incelemesine izin vermek
+  8. koda yorum satırı eklemek ve dikkatli bir şekilde organize etmek/formatlamak
+  9. üçüncü parti yazılımları, koda entegre etme
+  10. koda ince ayar yaparak daha hızlı çalışmasını ve daha az memory yemesini sağlamak
+
++ construction'ın dışında kalan alanlar
+
+  1. yönetim
+  2. gereksinim geliştirme
+  3. yazılım mimarisi
+  4. kullanıcı arayüzü tasarımı
+  5. sistem testi
+
++ construction, boyuta bağlı olarak, bir yazılım projesinin %30 veya %80'ini kaplayabilir
+
++ mimari ve gereksinimler, construction'dan önce gerçekleşen şeylerdir. bu sayede construction çok daha hızlı ve verimli bir şekilde ilerler
+
++ kaynak kodu, construction evresinin bir ürünüdür. zamanla beraber, gereksinim ve dizayn dökümanları güncelliğini yitirse dahi kaynak kodu her zaman güncel kalır.
+
+*** bölüm 2 - yazılım geliştirme metaforları
++ çok iyi anlamadığımız şeyleri bazen çok iyi bildiğimiz bir şeylerle ilişkilendirdiğimizde yani *metafor* kullandığımızda, olayı *modellemiş* oluruz ve daha iyi anlamış oluruz
+
++ kitapta yazılım geliştirme için kullanılan metafor ise *ev inşaatı*
+
++ mesela köpeğin için bir kulube yapmaya kalkarsak, ihtiyacımız olan sadece bir kaç tahta ve çivi. kulube bittiğinde eğer bir şeyleri yanlış yaptıysak, bu çok büyük bir sorun teşkil etmez. ya var olan kulubeyi alıp üzerinde oynamalar yaparak düzeltiriz ya da onun yerine yeni bir kulube yapabiliriz.
+
++ yukarıdaki metafor, yazdığımız küçük kodlar/projeler için de geçerlidir. program düzgün çalışmıyorsa ya üstünde oynama yapar düzeltmeye çalışırız ya da sil baştan yeni bir tane yazarız
+
++ daha büyük bir ev yapmak istediğimizde ise metaforu genişletmemiz gerekir:
+
+  1. nasıl bir ev yapmak istiyoruz? : *problemi anlamak*
+  2. mimar bir tasarım yapar : *yazılım mimari dizaynı*
+  3. evin planının çıkarılması : *detaylı yazılım tasarımı*
+
+**** Reading List to Become a Professional
+***** Job Interview Prep
 1. Cracking the Coding Interview: 189 Programming Questions and Solutions
 2. Programming Interviews Exposed: Coding Your Way Through the Interview
 3. Introduction to Algorithms
@@ -4255,10 +5037,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 7. Modern Operating Systems
 8. Programming Pearls
 9. Discrete Mathematics for Computer Scientists
-*** Junior Software Engineer Reading List
-**** Read This First
+***** Junior Software Engineer Reading List
+****** Read This First
 1. Pragmatic Thinking and Learning: Refactor Your Wetware
-**** Fundementals
+****** Fundementals
 1. Code Complete 2
 2. Software Estimation: Demystifying the Black Art
 3. Software Engineering: A Practitioner's Approach
@@ -4273,21 +5055,21 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 12. Debugging the Development Process: Practical Strategies for Staying Focused, Hitting Ship Dates, and Building Solid Teams
 13. Rapid Development: Taming Wild Software Schedules
 14. Peopleware: Productive Projects and Teams
-**** Mentality
+****** Mentality
 1. Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency
 2. Against Method
 3. The Passionate Programmer: Creating a Remarkable Career in Software Development
 
-**** History
+****** History
 1. The Mythical Man-Month: Essays on Software Engineering
 2. Computing Calamities: Lessons Learned from Products, Projects, and Companies That Failed
 3. The Deadline: A Novel About Project Management
 
-*** Mid Level Software Engineer Reading List
-**** Read This First
+***** Mid Level Software Engineer Reading List
+****** Read This First
 1. Personal Development for Smart People: The Conscious Pursuit of Personal Growth
 
-**** Fundementals
+****** Fundementals
 1. The Clean Coder: A Code of Conduct for Professional Programmers
 2. Clean Code: A Handbook of Agile Software Craftsmanship
 3. Solid Code
@@ -4295,7 +5077,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 5. Software Craftsmanship: The New Imperative
 6. Writing Solid Code
 
-**** Software Design
+****** Software Design
 1. Head First Design Patterns: A Brain-Friendly Guide
 2. Design Patterns: Elements of Reusable Object-Oriented Software
 3. Domain-Driven Design: Tackling Complexity in the Heart of Software
@@ -4304,7 +5086,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 6. Design Patterns in C# - Even though this is specific to C# the pattern can be used in any OO language.
 7. Refactoring to Patterns
 
-**** Software Engineering Skill Sets
+****** Software Engineering Skill Sets
 1. Building Microservices: Designing Fine-Grained Systems
 2. Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools
 3. NoEstimates: How To Measure Project Progress Without Estimating
@@ -4314,27 +5096,27 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 7. Working Effectively with Legacy Code
 8. Test Driven Development: By Example
 
-**** Databases
+****** Databases
 1. Database System Concepts
 2. Database Management Systems
 3. Foundation for Object / Relational Databases: The Third Manifesto
 4. Refactoring Databases: Evolutionary Database Design
 5. Data Access Patterns: Database Interactions in Object-Oriented Applications
 
-**** User Experience
+****** User Experience
 1. Don't Make Me Think: A Common Sense Approach to Web Usability
 2. The Design of Everyday Things
 3. Programming Collective Intelligence: Building Smart Web 2.0 Applications
 4. User Interface Design for Programmers
 5. GUI Bloopers 2.0: Common User Interface Design Don'ts and Dos
 
-**** Mentality
+****** Mentality
 1. jThe Productive Programmer
 2. jExtreme Programming Explained: Embrace Change
 3. jCoders at Work: Reflections on the Craft of Programming
 4. jFacts and Fallacies of Software Engineering
 
-**** History
+****** History
 1. Dreaming in Code: Two Dozen Programmers, Three Years, 4,732 Bugs, and One Quest for Transcendent Software
 2. New Turning Omnibus: 66 Excursions in Computer Science
 3. Hacker's Delight
@@ -4342,7 +5124,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 5. Masterminds of Programming: Conversations with the Creators of Major Programming Languages
 6. The Information: A History, A Theory, A Flood
 
-**** Specialist Skills
+****** Specialist Skills
 1. Peter Norton's Assembly Language Book for the IBM PC
 2. Expert C Programming: Deep C Secrets
 3. Enough Rope to Shoot Yourself in the Foot: Rules for C and C++ Programming
@@ -4360,11 +5142,11 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 15. Programming Perl: Unmatched Power for Text Processing and Scripting
 16. Dive into Python 3
 
-*** Senior Level Software Engineer Reading List
-**** Read This First
+***** Senior Level Software Engineer Reading List
+****** Read This First
 1. Mastery: The Keys to Success and Long-Term Fulfillment
 
-**** Fundamentals
+****** Fundamentals
 1. Patterns of Enterprise Application Architecture
 2. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions
 3. Enterprise Patterns and MDA: Building Better Software with Archetype Patterns and UML
@@ -4373,7 +5155,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 6. Writing Secure Code
 7. Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries
 
-**** Development Theory
+****** Development Theory
 1. Growing Object-Oriented Software, Guided by Tests
 2. Object-Oriented Analysis and Design with Applications
 3. Introduction to Functional Programming
@@ -4384,7 +5166,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 8. The Elements of Computing Systems: Building a Modern Computer from First Principles
 9. Code: The Hidden Language of Computer Hardware and Software
 
-**** Philosophy of Programming
+****** Philosophy of Programming
 1. Making Software: What Really Works, and Why We Believe It
 2. Beautiful Code: Leading Programmers Explain How They Think
 3. The Elements of Programming Style
@@ -4395,7 +5177,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 8. How to Solve It by Computer
 9. 97 Things Every Programmer Should Know: Collective Wisdom from the Experts
 
-**** Mentality
+****** Mentality
 1. Hackers and Painters: Big Ideas from the Computer Age
 2. The Intentional Stance
 3. Things That Make Us Smart: Defending Human Attributes In The Age Of The Machine
@@ -4406,7 +5188,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 8. YOUTH
 9. Understanding Comics: The Invisible Art
 
-**** Software Engineering Skill Sets
+****** Software Engineering Skill Sets
 1. Software Tools
 2. UML Distilled: A Brief Guide to the Standard Object Modeling Language
 3. Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
@@ -4421,13 +5203,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 12. Data Mining: Practical Machine Learning Tools and Techniques
 13. Data Crunching: Solve Everyday Problems Using Java, Python, and more.
 
-**** Design
+****** Design
 1. The Psychology Of Everyday Things
 2. About Face 3: The Essentials of Interaction Design
 3. Design for Hackers: Reverse Engineering Beauty
 4. The Non-Designer's Design Book
 
-**** History
+****** History
 1. Micro-ISV: From Vision to Reality
 2. Death March
 3. Showstopper! the Breakneck Race to Create Windows NT and the Next Generation at Microsoft
@@ -4435,7 +5217,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 5. The Business of Software: What Every Manager, Programmer, and Entrepreneur Must Know to Thrive and Survive in Good Times and Bad
 6. In the Beginning...was the Command Line
 
-**** Specialist Skills
+****** Specialist Skills
 1. The Art of UNIX Programming
 2. Advanced Programming in the UNIX Environment
 3. Programming Windows
@@ -4449,7 +5231,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 11. Agile Principles, Patterns, and Practices in C#
 12. Pragmatic Unit Testing in C# with NUnit
 
-*** DevOps Reading List
+***** DevOps Reading List
 1. Time Management for System Administrators: Stop Working Late and Start Working Smart
 2. The Practice of Cloud System Administration: DevOps and SRE Practices for Web Services
 3. The Practice of System and Network Administration: DevOps and other Best Practices for Enterprise IT
@@ -4461,7 +5243,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 9. Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation
 10. Migrating Large-Scale Services to the Cloud
 
-*** Entrepreneur Reading List
+***** Entrepreneur Reading List
 1. Disrupted: My Misadventure in the Start-Up Bubble
 2. The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
 3. The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It
@@ -4497,7 +5279,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 33. Zen and the Art of Motorcycle Maintenance: An Inquiry into Values
 34. The Inmates Are Running the Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity
 
-*** Computer Science Grad School Reading List
+***** Computer Science Grad School Reading List
 1. All the Mathematics You Missed: But Need to Know for Graduate School
 2. Introductory Linear Algebra: An Applied First Course
 3. Introduction to Probability
