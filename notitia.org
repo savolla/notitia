@@ -5056,7 +5056,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + bu iş/meslek dallarına kısaca *domain* diyoruz
 + yazılımdaki karmaşanın azaltılması için asıl yapılması gereken şey, mevcut domain'in çok iyi modellenmesidir
 + bu kitap, karmaşık domainlerde yazılım geliştirmeye çalışan yazılımcılara bir kaynak şeklinde yazılmıştır. domainlere yaklaşırken, adım adım ne yapmaları gerektiği anlatılmıştır
-+
+*** Bölüm 1
 ** Reading List to Become a Professional
 ***** Job Interview Prep
 1. Cracking the Coding Interview: 189 Programming Questions and Solutions
@@ -5345,6 +5345,17 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 - =adhare=                bağlı
+- =coherent=              tutarlı
+- =ossify=                kemikleşmek
+- =discourse=             söyleşi
+- =prominent=             belirgin
+- =condense=              condense
+- =seldom=                nadiren
+- =inextricable=          içinden çıkılmaz
+- =rigorous=              titiz
+- =premise=               öncül
+- =hinder=                engellemek
+- =vivid=                 canlı
 - =emerge=                ortaaya çıkmak
 - =ambition=              hırs
 - =gestate=               gebelik
@@ -5360,6 +5371,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =conservative=          muhafazakar
 - =constitute=            oluşturmak
 - =contenteditable=       memnun
+- =comprehencive=         kapsamlı
 - =convey=                iletmek
 - =curated=
 - =depics=                ifade etmek, göstermek
@@ -5424,6 +5436,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** regex
 **** algorithms
 **** data structures
+** 7:07 :work:
 *** embedded systems
 **** electronics
 ***** read one chapter
@@ -5551,8 +5564,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** 17:47 :study:
 *** software engineering
 **** read one chapter
-- [X] dive into design patterns
-- [ ] domain driven design
+- [-] dive into design patterns
+- [-] domain driven design
 - [ ] dive into refactoring
 - [ ] clean code
 - [ ] code complete
