@@ -10,6 +10,7 @@
 * Topics
 ** Software Engineering
 *** tips
++ Bir katman, diğer bir katmanı *new*'lememelidir. onun yerine her zaman araya bir *interface* konulmalıdır. Bu sayede SOLID'in DIP ilkesi çalışmış olur
 **** Kod yazarken dikkat edilmesi gerekenler
 ***** 1. Encapsulation
 ****** method encapsulation'ı
