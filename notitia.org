@@ -3286,6 +3286,10 @@ you can change a variable or method name projectwise. this is usefull in *code r
 6. =Z Z=
 there must be an easier way..
 
+***** launch without X
+#+BEGIN_SRC bash
+emacs -nw
+#+END_SRC
 **** cheat sheet
 
 =SPC - t t=                                 toggle tabs
@@ -4148,6 +4152,12 @@ N               # seek to previous funciton
 **** info
 1. you can play videos from youtube with only audio (see: hot to 1)
 **** tips
+*** pacman
+**** how to
+***** how to see only AUR packages I've installed
+#+BEGIN_SRC bash
+pacman -Qm
+#+END_SRC
 ** hardware
 *** CASIO fx-991ex
 **** how to
@@ -4527,6 +4537,14 @@ iconv -f iso-8859-9 bozuk-encoding.srt > turkce-encoding.srt
    systemctl start ntpd # start the service
    #+END_SRC
 
+*** add a directory to $PATH
+**** temporary
+#+BEGIN_SRC bash
+PATH=$PATH:/path/to/directory
+export PATH
+#+END_SRC
+**** permanent
+add the temporary commands into .bashrc or .zshrc
 * Project Journal
 ** Library Automation in C# .NET Form
 + :conclusion: it turns out that a .NET project can have multiple forms
