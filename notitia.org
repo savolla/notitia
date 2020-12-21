@@ -5050,6 +5050,12 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   3. evin planının çıkarılması : *detaylı yazılım tasarımı*
 ** Dive Into Design Patterns :book:
 *** Factory Pattern
+** Domain Driven Design
+*** Bölüm 0
++ yazılım'ı asıl karmaşık yapan şey kod ya da yanlış tasarım değildir. asıl karmaşaya neden olan, insanın kendi iş sistemidir. yazılım sadece bu iş sistemini yazılımlaştırıp otomatize etmeye yarar.
++ bu iş/meslek dallarına kısaca *domain* diyoruz
++ yazılımdaki karmaşanın azaltılması için asıl yapılması gereken şey, mevcut domain'in çok iyi modellenmesidir
++
 ** Reading List to Become a Professional
 ***** Job Interview Prep
 1. Cracking the Coding Interview: 189 Programming Questions and Solutions
@@ -5338,6 +5344,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 - =adhare=                bağlı
+- =emerge=                ortaaya çıkmak
+- =ambition=              hırs
+- =gestate=               gebelik
+- =intricacy=             karmaşa
 - =allude=                ima etmek
 - =annually=              yıllık
 - =arrogance=             kibir
