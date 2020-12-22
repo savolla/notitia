@@ -391,8 +391,12 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 - slaves are easily replacable
 - here is how I²C looks like
  [[file:./images/screenshot-71.png]]
-**** SPD EEPROM
 **** NVRAM
+- non volatile RAM
+- data does not go away when power goes off
+- this is a costy component
+ [[file:./images/screenshot-72.png]] 
+
 *** problems & solutions
 * Programming
 ** languages
