@@ -1151,7 +1151,8 @@ now we have a section with search
 ****** controls
 + *group box* : a container of elements. it provides an easier way to access the elements
 + *link label* : this is a label. when clicked, it redirects the user to a web page
-
+****** facts
++ the difference between *show()* and *showDialog()* is the show() will let you do operations on previous form while showDialog() won't
 ****** how to
 ******* open a new form when a button is clicked
 1. double click on the button. a new button click event method will be generated
