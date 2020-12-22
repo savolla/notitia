@@ -401,8 +401,20 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 * Programming
 ** languages
 *** c
-**** facts
-***** struct variable assignment
+**** embedded C
+***** facts
+****** C standards
+- currently the most widely used language is C. but C++ and Rust are gaining popularity
+- the first C standard was *ANSI C* this standard is called =C89= or =C90= for short
+- more features added to C in 1999. so this standard is called =C99=. C with more features
+- in 2011 new standard came out and it is called =C11=
+- *C11* is the compiler default for *gcc*
+- all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) C99 to C90
+***** concepts
+***** hot to
+**** normal C
+***** facts
+****** struct variable assignment
 you can't assign values to variables in a struct. for example the following code will spit out an error
   #+begin_src c
 typedef struct A {
@@ -415,7 +427,7 @@ typedef struct A {
     int x;
 }
   #+end_src
-***** struct sizes don't make sense
+****** struct sizes don't make sense
 the following struct's size is 12 bytes.
 #+begin_src c
 typedef struct A {
@@ -442,16 +454,16 @@ typedef struct A {
 #+end_src
 =sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
 
-**** concept
-**** how to
-***** define a struct
+***** concept
+***** how to
+****** define a struct
 #+begin_src c
 typedef struct A{
     int a;
     char c;
 } A;
 #+end_src
-**** problems & solutions
+***** problems & solutions
 *** c++
 **** facts
 + in C++ there is no =interface= keyword. but we can still implement intrefaces with classes
