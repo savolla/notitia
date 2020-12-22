@@ -427,6 +427,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 ***** tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
 ****** always write descriptions like this
+ignore the commas ','. it is org-mode thing
 #+begin_src c
 /**
    ,**
@@ -4243,6 +4244,12 @@ N               # seek to previous funciton
 #+BEGIN_SRC bash
 pacman -Qm
 #+END_SRC
+*** gcc
+**** how to
+***** save .i, .o and .s files while compiling
+#+begin_src sh
+gcc -save-temps -o your_program your_program.c
+#+end_src
 ** hardware
 *** CASIO fx-991ex
 **** how to
@@ -5448,6 +5455,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 1. =acommodation=            konaklama
+1. =constipated=             kabız
 2. =across=                  karşısında
 3. =adhare=                  bağlı
 4. =advantage=               avantaj
