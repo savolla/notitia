@@ -5644,7 +5644,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - learning Qt
 **** video course
 ***** FastBit
-- [-] embedded C
+- [-] embedded C :escape sequence:
 - [ ] cortex m4
 - [ ] microcontrollers 1
 - [ ] microcontrollers 2
