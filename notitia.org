@@ -1147,6 +1147,21 @@ now we have a section with search
 :LEFT_HERE:
 ******** hide the joke answer
 ******** limit "create" for logged users
+***** Windows Form
+****** controls
++ *group box* : a container of elements. it provides an easier way to access the elements
++ *link label* : this is a label. when clicked, it redirects the user to a web page
+
+****** how to
+******* open a new form when a button is clicked
+1. double click on the button. a new button click event method will be generated
+2. create a new object of your form
+3. use show() method to pop the form when clicked
+   #+begin_src c++
+   YOUR_FORM f = new YOUR_FORM();
+   f.show();
+   #+end_src
+
 **** how to
 *** java
 **** concepts
