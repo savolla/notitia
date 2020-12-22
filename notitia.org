@@ -5362,72 +5362,148 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
-- =adhare=                bağlı
-- =coherent=              tutarlı
-- =ossify=                kemikleşmek
-- =discourse=             söyleşi
-- =prominent=             belirgin
-- =condense=              condense
-- =seldom=                nadiren
-- =inextricable=          içinden çıkılmaz
-- =rigorous=              titiz
-- =premise=               öncül
-- =hinder=                engellemek
-- =vivid=                 canlı
-- =emerge=                ortaaya çıkmak
-- =ambition=              hırs
-- =gestate=               gebelik
-- =intricacy=             karmaşa
-- =allude=                ima etmek
-- =annually=              yıllık
-- =arrogance=             kibir
-- =aspect=                yön (kitap her *yön*'den iyidi)
-- =bottleneck=            darboğaz
-- =brittle=               kırılgan
-- =comprise=              içermek
-- =concise=               özlü, kısa
-- =conservative=          muhafazakar
-- =constitute=            oluşturmak
-- =contenteditable=       memnun
-- =comprehencive=         kapsamlı
-- =convey=                iletmek
-- =curated=
-- =depics=                ifade etmek, göstermek
-- =depict=                göstermek
-- =differing=             farklı
-- =diligence=             çalışkanlık
-- =entrepreneurial=       girişimci
-- =evidently=             belli ki
-- =excerpt=               alıntı
-- =exhibiting=            sergilemek
-- =expose=                maruz kalma
-- =facade=                cephe (evin dış cehesi)
-- =genuine=               gerçek, hakiki
-- =however=               ancak
-- =initiative=            girişim
-- =intermingling=         birbirine karıştırmak
-- =intern=                asistan
-- =judiciously=           akıllıca
-- =lattice=               kafes
-- =loan=                  kredi
-- =precise=               kesin
-- =precisely=             kesin olarak
-- =predicate=             yüklem
-- =prescient=             ileri görüşlü
-- =prethora=              bolluk
-- =quintessentially=      özetle
-- =relevance=             alaka
-- =rigorously=            titizlikle
-- =rough=                 kaba
-- =subsequent=            sonraki
-- =superstition=          batıl inanç
-- =suppress=              bastırmak
-- =tenet=                 ilke
-- =thesaurus=             eş anlamlılar sözlüğü
-- =uncharted=             keşvedilmemiş
-- =unconventional=        alışılmadık
-- =venue=                 buluşma yeri
-- =vocabulary=            kelime bi+ gisi
+1. =acommodation=            konaklama
+2. =across=                  karşısında
+3. =adhare=                  bağlı
+4. =advantage=               avantaj
+5. =allude=                  ima etmek
+6. =ambition=                hırs
+7. =annually=                yıllık
+8. =arrogance=               kibir
+9. =aside=                   bir kenara
+10. =aspect=                 yön (kitap her *yön*'den iyidi)
+11. =assessing=              değerlendirmek
+12. =attic=                  çatı katı
+13. =audible=                duyulabilir
+14. =bottleneck=             darboğaz
+15. =boundary=               sınır
+16. =brittle=                kırılgan
+17. =cater=                  sağlamak
+18. =certain=                belli
+19. =coherent=               tutarlı
+20. =comprehencive=          kapsamlı
+21. =comprise=               içermek
+22. =concise=                özlü, kısa
+23. =concrete=               beton
+24. =condense=               condense
+25. =conductor=              iletken
+26. =conservative=           muhafazakar
+27. =consideration=          düşünce
+28. =constitute=             oluşturmak
+29. =constraint=             kısıtlama
+30. =contenteditable=        memnun
+31. =convey=                 iletmek
+32. =crook=                  hırsız
+33. =curated=
+34. =deafening=              sağır edici
+35. =dedicated=              adanmış
+36. =delimeter=              sınırlayıcı
+37. =depics=                 ifade etmek, göstermek
+38. =depict=                 göstermek
+39. =differing=              farklı
+40. =diligence=              çalışkanlık
+41. =discourse=              söyleşi
+42. =dispatch=               sevk etmek
+43. =ease off=               gevşemek, hafiflemek
+44. =emerge=                 ortaaya çıkmak
+45. =entrepreneurial=        girişimci
+46. =estate=                 arazi
+47. =estimate=               tahmin
+48. =evidently=              belli ki
+49. =excerpt=                alıntı
+50. =exhibiting=             sergilemek
+51. =expose=                 maruz kalma
+52. =facade=                 cephe (evin dış cehesi)
+53. =faul=                   faul
+54. =fellow=                 adam (?)
+55. =fluency=                akıcılık
+56. =forward=                ileri
+57. =frontier=               sınır
+58. =fuzzy=                  belirsiz
+59. =genuine=                gerçek, hakiki
+60. =gestate=                gebelik
+61. =go round=               dolaşmak
+62. =hardboard=              sunta
+63. =headed=                 başlı
+64. =hinder=                 engellemek
+65. =houseing-department=    konut-bölüm
+66. =however=                ancak
+67. =however=                ancak
+68. =idiom=                  deyim
+69. =inextricable=           içinden çıkılmaz
+70. =initiative=             girişim
+71. =insulator=              yalıtkan
+72. =intermingling=          birbirine karıştırmak
+73. =intern=                 asistan
+74. =intimately=             yakından
+75. =intricacy=              karmaşa
+76. =intuitive=              sezgisel
+77. =judiciously=            akıllıca
+78. =lattice=                kafes
+79. =lawn=                   çim
+80. =letter box=             mektup kutusu
+81. =loan=                   kredi
+82. =masquarading=           maskelemek
+83. =mud=                    çamur
+84. =muffled=                örtülü
+85. =occasionally=           bazen
+86. =oppurtunity=            fırsat
+87. =ossify=                 kemikleşmek
+88. =outlined=               özetlenen
+89. =persuade=               ikna etmek
+90. =pinnacle=               çukur
+91. =pins out=               iğnelemek
+92. =precise=                kesin
+93. =precise=                kesin
+94. =precisely=              kesin olarak
+95. =predicate=              yüklem
+96. =premise=                öncül
+97. =prescient=              ileri görüşlü
+98. =prethora=               bolluk
+99. =privilege=              ayrıcalık
+100. =profound=              derin (konu olarak)
+101. =prominent=             belirgin
+102. =proposal=              öneri
+103. =query=                 sorgu
+104. =quintessentially=      özetle
+105. =recipient=             alıcı
+106. =relational=            bağlantılı
+107. =relevance=             alaka
+108. =responsive=            duyarlı
+109. =retrieve=              geri almak
+110. =rigorous=              titiz
+111. =rigorously=            titizlikle
+112. =rough=                 kaba
+113. =rough=                 kaba
+114. =row=                   sıra (matrisin satırı)
+115. =scruple=               vicdan
+116. =seldom=                nadiren
+117. =semblance=             görünüş
+118. =several=               birkaç
+119. =shrug=                 omuz silkmek
+120. =snuggle=               sokulmak
+121. =stairway=              merdiven
+122. =statement=             ifade
+123. =stitch=                dikiş/dikmek
+124. =subsequent=            sonraki
+125. =superstition=          batıl inanç
+126. =supervisor=            gözetmen/yönetici
+127. =suppress=              bastırmak
+128. =surgeon=               cerrah
+129. =tenet=                 ilke
+130. =therefore=             bu nedenle
+131. =thesaurus=             eş anlamlılar sözlüğü
+132. =trailed=               izledi
+133. =unbolted=              sürgüsü açılmış
+134. =uncharted=             keşvedilmemiş
+135. =unconventional=        alışılmadık
+136. =undertaken=            üstlenilen
+137. =unselfish=             özverili
+138. =venue=                 buluşma yeri
+139. =vivid=                 canlı
+140. =vocabulary=            kelime bi+ gisi
+141. =walkway=               yürüyüş yolu
+142. =wrap up=               sarmak (ambalajlamak anlamında)
 ** Русский
 *** неизвестные слова
 * Schedule
