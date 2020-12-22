@@ -1162,7 +1162,12 @@ now we have a section with search
    YOUR_FORM f = new YOUR_FORM();
    f.show();
    #+end_src
-
+******* exit the application
+there are two exit methods in windows form applications
+#+begin_src c++
+Application.Exit();
+Environment.Exit(0);
+#+end_src
 **** how to
 *** java
 **** concepts
