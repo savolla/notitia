@@ -372,6 +372,27 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 *** facts
 *** how to
 *** concepts
+**** I²C
+- developed by Philips (now NXP)
+- serial communication protocol
+- I²C enables designers to add more GPIO pins to MCU
+- some MCUs have this feature
+- I²C bus consists of two data lines;
+  1. SDA (serial data line)
+  2. SCA (serial clock line)
+- with I²C you can add bunch of *slaves* such as;
+  a. SPD EEPROMS
+  b. LED/LCD drivers
+  c. NVRAM CHIPS
+  d. DAC, ADC
+  e. Sound Controller
+  f. sensors
+  g. write/read real time clocks
+- slaves are easily replacable
+- here is how I²C looks like
+ [[file:./images/screenshot-71.png]]
+**** SPD EEPROM
+**** NVRAM
 *** problems & solutions
 * Programming
 ** languages
@@ -5528,7 +5549,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** Русский
 *** неизвестные слова
 * Schedule
-** 6:06 :morning_ritual:
+** 06:06 :morning_ritual:
 *** stretch
 - neck
 - arms
@@ -5551,7 +5572,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** regex
 **** algorithms
 **** data structures
-** 7:07 :work:
+** 07:07 :work:
 *** embedded systems
 **** electronics
 ***** read one chapter
