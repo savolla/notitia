@@ -442,6 +442,7 @@ ignore the commas ','. it is org-mode thing
 ***** how to
 **** normal C
 ***** facts
+- =%p= is the format specifier for printing addresses in hexadeicmal format
 ****** struct variable assignment
 you can't assign values to variables in a struct. for example the following code will spit out an error
   #+begin_src c
@@ -490,6 +491,11 @@ typedef struct A{
     int a;
     char c;
 } A;
+#+end_src
+****** print the address of a variable
+#+begin_src c
+char c = 'a';
+printf( "%p", &c );
 #+end_src
 ***** problems & solutions
 *** c++
