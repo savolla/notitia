@@ -5599,6 +5599,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 142. =wrap up=               sarmak (ambalajlamak anlamında)
 ** Русский
 *** неизвестные слова
+* facts
++ all IoT devices receive updates that brake their functionality over time. so you will need to buy a new version. Apple is the first company that used this marketing strategy
 * Schedule
 ** 06:06 :morning_ritual:
 *** stretch
