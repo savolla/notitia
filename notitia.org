@@ -415,12 +415,14 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 ** languages
 *** c
 **** facts
+- all executable statements must be written inside a function. variable assignements can be used outside of the functions
 ***** format specifiers
 1. =%p= addresses in hexadeicmal format
 2. =%lu= long unsigned integer
 3. =%lld= long long integer
 4. =%llu= long long unsigned integer
 5. =%llx= long long integer with hexadecimal representation
+6. =%c= char data
 ***** struct's attribute assignment
 you can't assign values to struct attributes. for example the following code will spit out an error
   #+begin_src c
@@ -491,7 +493,29 @@ this won't compile
 - *C11* is the compiler default for *gcc*
 - all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) C99 to C90
 ***** static functions are private
-functions in one file can be used from another file with *extern* keyword. however if we use the *static* keyword, this function will not be accessible form other files anymore
+functions in one file can be used from another file with *extern* keyword. however if we use the *static* keyword, this function will not be accessible form other files anymore. for example;
+
+- file1.c
+  #+begin_src c
+static int secret_function(void) {
+    return 3;
+}
+  #+end_src
+
+- file2.c
+  #+begin_src c
+extern int secret_function(void);
+
+void using_secret_function() {
+    int c = secret_function();
+}
+  #+end_src
+if we compile these files with;
+#+begin_src sh
+gcc file1.c file2.c
+#+end_src
+compiler will complain
+
 **** tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
 ***** always write descriptions like this
@@ -506,6 +530,32 @@ ignore the commas ','. it is org-mode thing
    ,**
 ,*/
 #+end_src
+***** always declare functions before call
+- in C, functions are always need to be declared before deffinition
+#+begin_src c
+void func1(int c); // func declarations
+void func2(int c); // func declarations
+
+int main(void) {
+    int x = func1(3); // function call
+    int y = func2(3); // function call
+    return 0;
+}
+
+// deffinitions of functions
+void func1(int c) {
+    return c++;
+}
+
+void func2(int c) {
+    return c*c;
+}
+#+end_src
+this is the case when you work in just one file. the better solution will be;
+1. declare functions in *header* file
+2. define functions in another *c file*
+3. import header file into main.c
+
 **** concept
 **** how to
 ***** define a struct
@@ -5484,149 +5534,149 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
-1. =acommodation=            konaklama
-1. =constipated=             kabız
-2. =across=                  karşısında
-3. =adhare=                  bağlı
-4. =advantage=               avantaj
-5. =allude=                  ima etmek
-6. =ambition=                hırs
-7. =annually=                yıllık
-8. =arrogance=               kibir
-9. =aside=                   bir kenara
-10. =aspect=                 yön (kitap her *yön*'den iyidi)
-11. =assessing=              değerlendirmek
-12. =attic=                  çatı katı
-13. =audible=                duyulabilir
-14. =bottleneck=             darboğaz
-15. =boundary=               sınır
-16. =brittle=                kırılgan
-17. =cater=                  sağlamak
-18. =certain=                belli
-19. =coherent=               tutarlı
-20. =comprehencive=          kapsamlı
-21. =comprise=               içermek
-22. =concise=                özlü, kısa
-23. =concrete=               beton
-24. =condense=               condense
-25. =conductor=              iletken
-26. =conservative=           muhafazakar
-27. =consideration=          düşünce
-28. =constitute=             oluşturmak
-29. =constraint=             kısıtlama
-30. =contenteditable=        memnun
-31. =convey=                 iletmek
-32. =crook=                  hırsız
-33. =curated=
-34. =deafening=              sağır edici
-35. =dedicated=              adanmış
-36. =delimeter=              sınırlayıcı
-37. =depics=                 ifade etmek, göstermek
-38. =depict=                 göstermek
-39. =differing=              farklı
-40. =diligence=              çalışkanlık
-41. =discourse=              söyleşi
-42. =dispatch=               sevk etmek
-43. =ease off=               gevşemek, hafiflemek
-44. =emerge=                 ortaaya çıkmak
-45. =entrepreneurial=        girişimci
-46. =estate=                 arazi
-47. =estimate=               tahmin
-48. =evidently=              belli ki
-49. =excerpt=                alıntı
-50. =exhibiting=             sergilemek
-51. =expose=                 maruz kalma
-52. =facade=                 cephe (evin dış cehesi)
-53. =faul=                   faul
-54. =fellow=                 adam (?)
-55. =fluency=                akıcılık
-56. =forward=                ileri
-57. =frontier=               sınır
-58. =fuzzy=                  belirsiz
-59. =genuine=                gerçek, hakiki
-60. =gestate=                gebelik
-61. =go round=               dolaşmak
-62. =hardboard=              sunta
-63. =headed=                 başlı
-64. =hinder=                 engellemek
-65. =houseing-department=    konut-bölüm
-66. =however=                ancak
-67. =however=                ancak
-68. =idiom=                  deyim
-69. =inextricable=           içinden çıkılmaz
-70. =initiative=             girişim
-71. =insulator=              yalıtkan
-72. =intermingling=          birbirine karıştırmak
-73. =intern=                 asistan
-74. =intimately=             yakından
-75. =intricacy=              karmaşa
-76. =intuitive=              sezgisel
-77. =judiciously=            akıllıca
-78. =lattice=                kafes
-79. =lawn=                   çim
-80. =letter box=             mektup kutusu
-81. =loan=                   kredi
-82. =masquarading=           maskelemek
-83. =mud=                    çamur
-84. =muffled=                örtülü
-85. =occasionally=           bazen
-86. =oppurtunity=            fırsat
-87. =ossify=                 kemikleşmek
-88. =outlined=               özetlenen
-89. =persuade=               ikna etmek
-90. =pinnacle=               çukur
-91. =pins out=               iğnelemek
-92. =precise=                kesin
-93. =precise=                kesin
-94. =precisely=              kesin olarak
-95. =predicate=              yüklem
-96. =premise=                öncül
-97. =prescient=              ileri görüşlü
-98. =prethora=               bolluk
-99. =privilege=              ayrıcalık
-100. =profound=              derin (konu olarak)
-101. =prominent=             belirgin
-102. =proposal=              öneri
-103. =query=                 sorgu
-104. =quintessentially=      özetle
-105. =recipient=             alıcı
-106. =relational=            bağlantılı
-107. =relevance=             alaka
-108. =responsive=            duyarlı
-109. =retrieve=              geri almak
-110. =rigorous=              titiz
-111. =rigorously=            titizlikle
-112. =rough=                 kaba
-113. =rough=                 kaba
-114. =row=                   sıra (matrisin satırı)
-115. =scruple=               vicdan
-116. =seldom=                nadiren
-117. =semblance=             görünüş
-118. =several=               birkaç
-119. =shrug=                 omuz silkmek
-120. =snuggle=               sokulmak
-121. =stairway=              merdiven
-122. =statement=             ifade
-123. =stitch=                dikiş/dikmek
-124. =subsequent=            sonraki
-125. =superstition=          batıl inanç
-126. =supervisor=            gözetmen/yönetici
-127. =suppress=              bastırmak
-128. =surgeon=               cerrah
-129. =tenet=                 ilke
-130. =therefore=             bu nedenle
-131. =thesaurus=             eş anlamlılar sözlüğü
-132. =trailed=               izledi
-133. =unbolted=              sürgüsü açılmış
-134. =uncharted=             keşvedilmemiş
-135. =unconventional=        alışılmadık
-136. =undertaken=            üstlenilen
-137. =unselfish=             özverili
-138. =venue=                 buluşma yeri
-139. =vivid=                 canlı
-140. =vocabulary=            kelime bi+ gisi
-141. =walkway=               yürüyüş yolu
-142. =wrap up=               sarmak (ambalajlamak anlamında)
+- =acommodation=           konaklama
+- =across=                 karşısında
+- =adhare=                 bağlı
+- =advantage=              avantaj
+- =allude=                 ima etmek
+- =ambition=               hırs
+- =annually=               yıllık
+- =arrogance=              kibir
+- =aside=                  bir kenara
+- =aspect=                 yön (kitap her *yön*'den iyidi)
+- =assessing=              değerlendirmek
+- =attic=                  çatı katı
+- =audible=                duyulabilir
+- =bottleneck=             darboğaz
+- =boundary=               sınır
+- =brittle=                kırılgan
+- =cater=                  sağlamak
+- =certain=                belli
+- =coherent=               tutarlı
+- =comprehencive=          kapsamlı
+- =comprise=               içermek
+- =concise=                özlü, kısa
+- =concrete=               beton
+- =condense=               condense
+- =conductor=              iletken
+- =conservative=           muhafazakar
+- =consideration=          düşünce
+- =constipated=            kabız
+- =constitute=             oluşturmak
+- =constraint=             kısıtlama
+- =contenteditable=        memnun
+- =convey=                 iletmek
+- =crook=                  hırsız
+- =curated=
+- =deafening=              sağır edici
+- =dedicated=              adanmış
+- =delimeter=              sınırlayıcı
+- =depics=                 ifade etmek, göstermek
+- =depict=                 göstermek
+- =differing=              farklı
+- =diligence=              çalışkanlık
+- =discourse=              söyleşi
+- =dispatch=               sevk etmek
+- =ease off=               gevşemek, hafiflemek
+- =emerge=                 ortaaya çıkmak
+- =entrepreneurial=        girişimci
+- =estate=                 arazi
+- =estimate=               tahmin
+- =evidently=              belli ki
+- =excerpt=                alıntı
+- =exhibiting=             sergilemek
+- =expose=                 maruz kalma
+- =facade=                 cephe (evin dış cehesi)
+- =faul=                   faul
+- =fellow=                 adam (?)
+- =fluency=                akıcılık
+- =forward=                ileri
+- =frontier=               sınır
+- =fuzzy=                  belirsiz
+- =genuine=                gerçek, hakiki
+- =gestate=                gebelik
+- =go round=               dolaşmak
+- =hardboard=              sunta
+- =headed=                 başlı
+- =hinder=                 engellemek
+- =houseing-department=    konut-bölüm
+- =however=                ancak
+- =however=                ancak
+- =idiom=                  deyim
+- =inextricable=           içinden çıkılmaz
+- =initiative=             girişim
+- =insulator=              yalıtkan
+- =intermingling=          birbirine karıştırmak
+- =intern=                 asistan
+- =intimately=             yakından
+- =intricacy=              karmaşa
+- =intuitive=              sezgisel
+- =judiciously=            akıllıca
+- =lattice=                kafes
+- =lawn=                   çim
+- =letter box=             mektup kutusu
+- =loan=                   kredi
+- =masquarading=           maskelemek
+- =mud=                    çamur
+- =muffled=                örtülü
+- =occasionally=           bazen
+- =oppurtunity=            fırsat
+- =ossify=                 kemikleşmek
+- =outlined=               özetlenen
+- =persuade=               ikna etmek
+- =pinnacle=               çukur
+- =pins out=               iğnelemek
+- =precise=                kesin
+- =precise=                kesin
+- =precisely=              kesin olarak
+- =predicate=              yüklem
+- =premise=                öncül
+- =prescient=              ileri görüşlü
+- =prethora=               bolluk
+- =privilege=              ayrıcalık
+- =profound=               derin (konu olarak)
+- =prominent=              belirgin
+- =proposal=               öneri
+- =query=                  sorgu
+- =quintessentially=       özetle
+- =recipient=              alıcı
+- =relational=             bağlantılı
+- =relevance=              alaka
+- =responsive=             duyarlı
+- =retrieve=               geri almak
+- =rigorous=               titiz
+- =rigorously=             titizlikle
+- =rough=                  kaba
+- =rough=                  kaba
+- =row=                    sıra (matrisin satırı)
+- =scruple=                vicdan
+- =seldom=                 nadiren
+- =semblance=              görünüş
+- =several=                birkaç
+- =shrug=                  omuz silkmek
+- =snuggle=                sokulmak
+- =stairway=               merdiven
+- =statement=              ifade
+- =stitch=                 dikiş/dikmek
+- =subsequent=             sonraki
+- =superstition=           batıl inanç
+- =supervisor=             gözetmen/yönetici
+- =suppress=               bastırmak
+- =surgeon=                cerrah
+- =tenet=                  ilke
+- =therefore=              bu nedenle
+- =thesaurus=              eş anlamlılar sözlüğü
+- =trailed=                izledi
+- =unbolted=               sürgüsü açılmış
+- =uncharted=              keşvedilmemiş
+- =unconventional=         alışılmadık
+- =undertaken=             üstlenilen
+- =unselfish=              özverili
+- =venue=                  buluşma yeri
+- =vivid=                  canlı
+- =vocabulary=             kelime bi+ gisi
+- =walkway=                yürüyüş yolu
+- =wrap up=                sarmak (ambalajlamak anlamında)
 ** Русский
 *** неизвестные слова
 * facts
