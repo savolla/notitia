@@ -417,6 +417,9 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   c. add breakpoints
   d. stop/run CPU
   e. printf style debugging
+**** ITM unit
+- instrumentation trace macrocell unit
+- a unit inside the *ARM Cortex M4* Processor
 
 *** platforms
 **** STM32F407VGT6
