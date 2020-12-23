@@ -490,6 +490,8 @@ this won't compile
 - in 2011 new standard came out and it is called =C11=
 - *C11* is the compiler default for *gcc*
 - all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) C99 to C90
+***** static functions are private
+functions in one file can be used from another file with *extern* keyword. however if we use the *static* keyword, this function will not be accessible form other files anymore
 **** tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
 ***** always write descriptions like this
