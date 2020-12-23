@@ -416,6 +416,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 *** c
 **** facts
 - all executable statements must be written inside a function. variable assignements can be used outside of the functions
+- all user defined header files must be included in *double quotes*
 ***** format specifiers
 1. =%p= addresses in hexadeicmal format
 2. =%lu= long unsigned integer
@@ -555,8 +556,23 @@ this is the case when you work in just one file. the better solution will be;
 1. declare functions in *header* file
 2. define functions in another *c file*
 3. import header file into main.c
+***** use this convention while making include guards
+  #+begin_src c
+#ifndef _YOUR_HEADER_H__
+#define _YOUR_HEADER_H__
+// your function declarations go here
+#endif /* _YOUR_HEADER_H__ */
+  #+end_src
 
 **** concept
+***** Include Guards
+- prevent multiple inclusion of same header file
+  #+begin_src c
+#ifndef _YOUR_HEADER_H__
+#define _YOUR_HEADER_H__
+// your function declarations go here
+#endif /* _YOUR_HEADER_H__ */
+  #+end_src
 **** how to
 ***** define a struct
 #+begin_src c
