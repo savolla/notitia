@@ -404,6 +404,20 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 **** DMA
 - direct memory access
 - translator between peripherals and the RAM
+**** SWD
+- serial wired debug
+- two-wire protocol for accessing the ARM debug interface
+- alternative to JTAG (just in ARM MPUs)
+- has two wires;
+  1. SWDIO : bidirectional data line
+  2. SWCLK : clock driven by the host
+- capabilities of SWD;
+  a. program MCU's internal flash memory
+  b. access memory regions
+  c. add breakpoints
+  d. stop/run CPU
+  e. printf style debugging
+
 *** platforms
 **** STM32F407VGT6
 - comes with it's own debugger called *ST-LINK/V2-A*
@@ -516,6 +530,22 @@ if we compile these files with;
 gcc file1.c file2.c
 #+end_src
 compiler will complain
+***** compiler help the programmer with division operations
+- in C if *numerator* is explicitly casted to =float=, compiler will assume that the *denominator* is also =float=. so you don't need to cast the denominator to float
+
+- the following code will output =integer= type value "26.0000" (no explicit cast);
+  #+begin_src c
+  float x = 80 / 3;
+  printf("%f", x);
+  #+end_src
+
+- the following code will output =float= type value "26.6666";
+  #+begin_src c
+  float x = (float) 80 / 3;
+  printf("%f", x);
+  #+end_src
+
+- by doing explicit casting, 3 will be casted to float by compiler automatically
 
 **** tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
