@@ -369,6 +369,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
    According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
 
 *** tips
+- don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead
 *** facts
 *** how to
 *** concepts
@@ -396,7 +397,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 - data does not go away when power goes off
 - this is a costy component
  [[file:./images/screenshot-72.png]]
-**** interrupt storm
+**** Interrupt Storm
 - this even happends when amount of _incoming interrupts_ is an astronomic number
 - ISRs are working constantly and the main system is busy all the time.
 - system is not responsive anymore.
@@ -420,6 +421,8 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 **** ITM unit
 - instrumentation trace macrocell unit
 - a unit inside the *ARM Cortex M4* Processor
+- this is the core hardware that provides *printf style* debugging via SWD protocol
+- contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
 
 *** platforms
 **** STM32F407VGT6
