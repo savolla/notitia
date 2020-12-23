@@ -414,53 +414,27 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 * Programming
 ** languages
 *** c
-**** embedded C
-***** facts
-****** C standards
-- currently the most widely used language is C. but C++ and Rust are gaining popularity
-- the first C standard was *ANSI C* this standard is called =C89= or =C90= for short
-- more features added to C in 1999. so this standard is called =C99=. C with more features
-- in 2011 new standard came out and it is called =C11=
-- *C11* is the compiler default for *gcc*
-- all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) C99 to C90
-***** concepts
-***** tips
-- you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
-****** always write descriptions like this
-ignore the commas ','. it is org-mode thing
-#+begin_src c
-/**
-   ,**
-   ,* @file      main.c
-   ,* @author    savolla
-   ,* @version   V1.0
-   ,* @brief     Default main function.
-   ,**
-,*/
-#+end_src
-***** how to
-**** normal C
-***** facts
-****** format specifiers
+**** facts
+***** format specifiers
 1. =%p= addresses in hexadeicmal format
 2. =%lu= long unsigned integer
 3. =%lld= long long integer
 4. =%llu= long long unsigned integer
 5. =%llx= long long integer with hexadecimal representation
-****** struct variable assignment
-you can't assign values to variables in a struct. for example the following code will spit out an error
+***** struct's attribute assignment
+you can't assign values to struct attributes. for example the following code will spit out an error
   #+begin_src c
-typedef struct A {
+struct A {
     int x = 333;
-}
+};
   #+end_src
 the valid version of the above code is:
   #+begin_src c
-typedef struct A {
+struct A {
     int x;
-}
+};
   #+end_src
-****** struct sizes don't make sense
+***** struct sizes don't make sense
 the following struct's size is 12 bytes.
 #+begin_src c
 typedef struct A {
@@ -473,7 +447,7 @@ this doesn't make sense right? because;
 - int x  : 4 bytes
 - char y : 1 byte
 - int z  : 4 bytes
-it must be 9 bytes.. but in fact, compilers make padding operations to keep the memory layout stable. for example after defining variable x which occupies 4 bytes, compiler occupies 1 byte for variable y and right after that does 3 bytes padding! now our memory layout becomes stable ($$2^n$$). then it occupies 4 more bytes for variable z which is 4 bytes. and sizeof operator returns 12
+it must be 9 bytes.. however compilers make _padding operations_ to keep the memory layout stable. for example after defining variable x which occupies 4 bytes, compiler occupies 1 byte for variable y and right after that does 3 bytes padding! now our memory layout becomes stable ($$2^n$$). then it occupies 4 more bytes for variable z which is 4 bytes. and sizeof operator returns 12
 
 consider the following example of code, where we define one more *char* variable after y;
 #+begin_src c
@@ -486,7 +460,7 @@ typedef struct A {
 } A;
 #+end_src
 =sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
-****** static keyword makes global variables private
+***** static keyword makes global variables private
 yes! when we use *static* on a global variable that is declared in one file (say file1.c) and if another file (file2.c) tryies to access that with *extern* then compiler will complain. so static provides some privacy for globals
 
 - file1.c
@@ -509,21 +483,42 @@ void changeGlobal() {
 
 this won't compile
 
-***** concept
-***** how to
-****** define a struct
+***** c standards
+- currently the most widely used language in Embedded is C. but C++ and Rust are gaining popularity
+- the first C standard was *ANSI C* this standard is called =C89= or =C90= for short
+- more features added to C in 1999. so this standard is called =C99=. C with more features
+- in 2011 new standard came out and it is called =C11=
+- *C11* is the compiler default for *gcc*
+- all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) C99 to C90
+**** tips
+- you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
+***** always write descriptions like this
+ignore the commas ','. it is org-mode thing
+#+begin_src c
+/**
+   ,**
+   ,* @file      main.c
+   ,* @author    savolla
+   ,* @version   V1.0
+   ,* @brief     Default main function.
+   ,**
+,*/
+#+end_src
+**** concept
+**** how to
+***** define a struct
 #+begin_src c
 typedef struct A{
     int a;
     char c;
 } A;
 #+end_src
-****** print the address of a variable
+***** print the address of a variable
 #+begin_src c
 char c = 'a';
 printf( "%p", &c );
 #+end_src
-***** problems & solutions
+**** problems & solutions
 *** c++
 **** facts
 + in C++ there is no =interface= keyword. but we can still implement intrefaces with classes
@@ -2400,6 +2395,7 @@ a {
 + everything in json is _valid javascript code_
 **** tips
 **** facts
++ best learningn resource : [[https://www.amazon.com/gp/bookseries/B01N9EBP9V][You Don't Know JS]]
 **** how to
 ***** create a json file
 this is actually an _array_ in javascript. this is why it starts with '[]'
