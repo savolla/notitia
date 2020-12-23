@@ -573,6 +573,27 @@ this is the case when you work in just one file. the better solution will be;
 // your function declarations go here
 #endif /* _YOUR_HEADER_H__ */
   #+end_src
+***** Implicit Casting
+- this is a *casting type* that made by the compiler
+- this happens when the programmer tries to make operations with two different types
+  #+begin_src c
+  unsigned char c = 0x55;
+  unsigned int i = 0x11;
+  char z = c + i;
+  #+end_src
+
+- compiler gives error when implicit casting results with *data loss*. in the following code programmer is trying to add one byte data with two byte data and assigning the result to =unsigned char= type. "FF" part will be lost and compiler complains
+
+  #+begin_src c
+  unsigned char c = 0x80 + 0xFF00;
+  #+end_src
+
+- hovewer in the following example the programmer trying to do the same thing but this time there is no data loss. so compiler will not complain
+
+  #+begin_src c
+  unsigned char c = 0x80 + 0x0011; // no problem
+  #+end_src
+
 **** how to
 ***** define a struct
 #+begin_src c
