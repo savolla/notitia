@@ -438,11 +438,15 @@ ignore the commas ','. it is org-mode thing
    ,**
 ,*/
 #+end_src
-
 ***** how to
 **** normal C
 ***** facts
-- =%p= is the format specifier for printing addresses in hexadeicmal format
+****** format specifiers
+1. =%p= addresses in hexadeicmal format
+2. =%lu= long unsigned integer
+3. =%lld= long long integer
+4. =%llu= long long unsigned integer
+5. =%llx= long long integer with hexadecimal representation
 ****** struct variable assignment
 you can't assign values to variables in a struct. for example the following code will spit out an error
   #+begin_src c
@@ -482,6 +486,28 @@ typedef struct A {
 } A;
 #+end_src
 =sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
+****** static keyword makes global variables private
+yes! when we use *static* on a global variable that is declared in one file (say file1.c) and if another file (file2.c) tryies to access that with *extern* then compiler will complain. so static provides some privacy for globals
+
+- file1.c
+#+begin_src c
+static int globalVariable;
+
+int main(void) {
+    return 0;
+}
+#+end_src
+
+- file2.c
+#+begin_src c
+extern int globalVariable;
+
+void changeGlobal() {
+    globalVariable = 90000;
+}
+#+end_src
+
+this won't compile
 
 ***** concept
 ***** how to
@@ -5650,7 +5676,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - learning Qt
 **** video course
 ***** FastBit
-- [-] embedded C :escape sequence:
+- [-] embedded C =usecase of static with functions=
 - [ ] cortex m4
 - [ ] microcontrollers 1
 - [ ] microcontrollers 2
