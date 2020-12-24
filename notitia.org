@@ -5005,7 +5005,7 @@ deepest depths of hell..
     [[file:./images/screenshot-07.png]]
 * Books
 ** summaries
-** Cracking the Coding Interview :book:
+*** Cracking the Coding Interview :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: cracking-the-coding-interview-notes
 :EXPORT_TITLE: *Cracking the Coding Interview* Notes
@@ -5015,7 +5015,7 @@ deepest depths of hell..
 :END:
 Bu post'da Türkçe olarak /Cracking the Coding Interview/ kitabının özetini çıkartıyorum. Ilk ve ikinci bölümleri ingilizce yazdım, dert etmeyin onları revize edip Türkçeleştireceğim. Bu kitapta, iş başvurularında dikkat edilecek hususlar çok güzel anlatılmıştır. Ben de en azından özetini çıkararak önemli yerleri sizinle paylaşmaya karar verdim. İyi okumalar
 [[file:./images/screenshot-56.png]]
-*** Bölüm 1
+**** Bölüm 1
 + recruiters look for the following;
   - analytical skills
     a. how *confidently* you solved the problem
@@ -5037,14 +5037,14 @@ Bu post'da Türkçe olarak /Cracking the Coding Interview/ kitabının özetini 
 + interviewers always compare your performance to other's that came before and after you. even if you think that you performed well, a japanese hacker who came before you can change all the game. it's all about luck m8
 + don't think that you've been rejected immediately if you don't get response in 2-3 days. your interviewer might still work on your and other assessments. be patient and calm
 + if you've been rejected but really want that job you must wait for at least *6 months* before re-application.
-*** Bölüm 2
+**** Bölüm 2
 + before face-to-face interview you always get a *screen* interview. this is actually a phone interview where skype or relative apps are used
 + coding and algorithms questions are asked during the screen interview. questions are hard as ones that asked in face-to-face interview
 + sometimes interviewer might give you a *homework* which you solve and send the code through e-mail. (rare case)
 + the most of the time questions are asked in real time and you try to solve them while interviewer watches (common case)
 + you do one or two screens before they take you to face-to-face arena
 
-*** Bölüm 3
+**** Bölüm 3
 + aşağıdaki maddelerde, bazı _değişken_ durumlar anlatılmıştır;
 
   - görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
@@ -5078,14 +5078,8 @@ kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri ve
 #+begin_quote
 buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
 #+end_quote
-
-
-
-
-
-
-*** Bölüm 4
-**** Tecrübe Kazanma Yolları
+**** Bölüm 4
+***** Tecrübe Kazanma Yolları
 + iyi bir tecrübe yoksa, iyi bir CV olmaz. iyi bir CV yoksa da kimse sizi iş görüşmesine çağırmaz
 + öğrenciler bakımından yukarıdaki sorunun çözümü;
   1. gerçek sorunlar çözen projeler yap
@@ -5094,7 +5088,7 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
   4. boş zamanında bir proje yap,
   5. hackatonlara katıl,
   6. github'da open source bir projeye katkıda bulun
-**** Iyi Bir CV Yazma Yolları
+***** Iyi Bir CV Yazma Yolları
 + aslında şirketler birinde sadece şunları ararlar;
   1. *zeki misin?*
   2. *kod yazabilir misin?*
@@ -5110,14 +5104,14 @@ buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiye
 + bazı işverenler, uzun CV gördüklerinde direk fırlatırlar..
 + CV her zaman İngilizce olmalıdır. her zaman ana dili ingilizce olan ya da bir tercumana okutup gramer ya da yazım yanlışlarınızı kontrol ettirin.
 + CV'de *yaş*, *cinsiyet*, *medeni durum* _belirtmeyin_. bunu yaparsanız, özellikle Amerika'da ters teper
-***** Tecrübeler
+****** Tecrübeler
 + eğer çok tecrübeliysen ve 1 sayfaya sığdıramıyorsan, 1 sayfaya sığdırmanın yollarını ara. ya da en önemsizleri ele. 1 sayfa *is the key*
 + tecrübe kısmında, iş geçmişinin tamamını yazmak önerilmez. çünkü çok iş değiştiren biri olarak görünürsün. onun yerine sadece en önemlileri yaz. her şirket isminin altına tek cümleyle ne yaptığını anlat. örnek bir cümle kalıbı;
 
   #+begin_quote
 Y'yi yaparak X'i başardım
   #+end_quote
-***** Projeler
+****** Projeler
 + proje kısmı, yaptığınız en büyük 2-4 projeden oluşmalı
 + projelerin açıklama kısmında;
   1. hangi dil ya da dillerle yazıldı
@@ -5126,7 +5120,7 @@ Y'yi yaparak X'i başardım
 + yukarıdaki her maddeye uyulması mecburi değildir. eğer maddeler sizi iyi gösteriyorsa o zaman belirtin.
 + 3. maddede, eğer projeyi bağımsız olarak tek başınıza yaptıysanız bunu belirtin. bu, iş verenler için takım projesi'nden daha değerlidir
 + çoğu insan CV'sine yaptığı bütün projeleri yazar ki bu iş verenleri yoran bir şey. maximum 4 proje yazın
-***** Programlama Dilleri
+****** Programlama Dilleri
 + bu güne kadar çalıştığınız bütün dilleri yazmaya kalkmayın
 + en iyi olduğunuz ve en iyi bildiğiniz dilleri yazın çünkü bir insan bütün dillerin tüm teknik detaylarını bilemez. abartılmış bir liste, iş verenin sizin hakkınızda pozitif düşünceler oluşturmaz
 + uzun dil listesine sahip adayları genelde iş görüşmesinde özellikle sınarlar ve normal bir listeye sahip birine nazaran çok daha zor sorular yöneltebilirler.
@@ -5144,11 +5138,11 @@ Y'yi yaparak X'i başardım
   2. Ruby, Python, Javascript
   3. Java, C++
 
-***** İş Başvurusuna Hazırlık Haritası
+****** İş Başvurusuna Hazırlık Haritası
 [[file:./images/screenshot-54.png]]
 [[file:./images/screenshot-55.png]]
 
-*** Bölüm 5
+**** Bölüm 5
 + CV'de yazılan projeler incelenip genelde bu projelerle ilgili size soru yöneltilir. CV'yi inceleyen kişi, görüşmeden önce bu projelere ne kadar hakim olduğunuzu görmek için zor sorular hazırlayabilir.
 + CV'deki projeleri çok iyi çalşıp, şöyle bir tablo hazırlanması çok faydalı olacaktır;
 
@@ -5173,9 +5167,9 @@ Y'yi yaparak X'i başardım
   yeni bir teknolojiyi öğrenirken, kendimi bu konuda sonuna kadar gitmem gerektiğine inandırıyorum. bundan dolayı teknolojiye öğrenmeye odaklanmak yerine, kendimi en iyi kaynağı araştırmaya zaman harcarken bulabiliyorum. Bu konuda tecrübe kazandığım için artık çoğu kez yaptığım yanlışın farkına varabiliyorum
   #+end_quote
 
-**** Interviewer'a Yöneltilebilecek Sorular
+***** Interviewer'a Yöneltilebilecek Sorular
 + interviewer size soru sormanıza izin verebilir. bir iş görüşmesinde, 3 tip önemli soru çeşidi vardır;
-***** Hakiki Sorular
+****** Hakiki Sorular
 cevaplarını gerçekten bilmek istediğiniz sorulardır
 #+begin_quote
 şirkette, geliştirici, tester ve yönetici dengesi nasıl? takımda proje planlaması nasıl yapılıyor?
@@ -5184,7 +5178,7 @@ cevaplarını gerçekten bilmek istediğiniz sorulardır
 peki siz bu şirkete nasıl geldiniz? genelde bu çalışma ortamında sizi en çok zorlayan ne oluyor?
 #+end_quote
 
-***** Teknik Sorular
+****** Teknik Sorular
 bu sorular genelde şirkete başvurmadan önce bayağı bir araştırdığınızı anlatır
 #+begin_quote
 gördüğüm kadarıyla X teknolojisini kullanıyorsunuz. bununla Y problemini nasıl çözüyorsunuz?
@@ -5193,7 +5187,7 @@ gördüğüm kadarıyla X teknolojisini kullanıyorsunuz. bununla Y problemini n
 yaptığınız ürün X teknolojisi yerine neden Y'yi seçti? Y'nin A,B,C konularında avantajları olduğunu biliyorum ancak diğer şirketler Y'yi D sorunu yüzünden kullanmıyorlar
 #+end_quote
 
-***** Çalışkanlık Yansıtan Sorular
+****** Çalışkanlık Yansıtan Sorular
 bu tarz sorular iş verenin, sizin ne kadar azimli olduğunuzu görmesini ve şirket için faydalı olacağınızı düşünmesini sağlar
 #+begin_quote
 Yazılımın ölçeklenebilirliği konusunda kendimi geliştirmeye çalışıyorum. bu şirkette bu konuyla alakalı neler öğrenebilirim?
@@ -5202,7 +5196,7 @@ Yazılımın ölçeklenebilirliği konusunda kendimi geliştirmeye çalışıyor
 Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç bir yönteme benziyor. Nasıl çalıştığından biraz bahseder misiniz?
 #+end_quote
 
-**** Dikkat edilmesi gereken hususlar
+***** Dikkat edilmesi gereken hususlar
 + projelerle ilgili konuşurken ya da sorular yöneltirken asla ama asla *kibirli* görünme. Kendini her zaman bir çaylakmışçasına *alçak gönüllü* ve *saygılı* olarak göster. /(genel olarak öyle ol zaten)/
 + görüşmeciler bu tarz çok insan ile karşılaştıklarından, artık insan sarrafı olma yolunda ilerliyorlardır. en ufak bir kibir belirtisinde çizerler
 + soruları cevaplarken, karşınızdakini detaya boğmayın. çok önemli noktalara değinin ve daha fazla detay gerektiren bir konuda, karşınızdakinden izin alıp öyle devam etmeye özen gösterin. çünkü gelen kişinin, teknik detaylardan ne kadar anladığını ya da duymaktan hoşlanıp hoşlanmadığını bilemezsiniz.
@@ -5216,12 +5210,12 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   6. şu anda neden burda olduğunu anlatarak toparla bitir
   hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
 
-*** Bölüm 6
-**** Big O
+**** Bölüm 6
+***** Big O
 + içini dışını bilmezsen, kötü gözle bakarlar
 +
-** Object-Oriented Analysis and Design with Applications :book:
-*** Bölüm 5
+*** Object-Oriented Analysis and Design with Applications :book:
+**** Bölüm 5
 + 2 tip UML diyagramı vardır;
   1. Structured Diyagramlar
   2. Behavioral Diyagramlar
@@ -5232,7 +5226,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + behavior diyagramlara örnekler;
    [[file:./images/screenshot-58.png]]
 + UML diyagramları kesinlikle kabataslak olmalıdır. fazla detay, yazılımcıyı kısıtlar ve UML'i yapan mimarın aynı zamanda yazılım geliştirme tarafını da düşünmesine sebep olur ki bu çok mantıklı bir şey değildir
-**** package diyagramları
+***** package diyagramları
 + package diyagramları şu işe yarar;
   1. ortak amaca hizmet eden sınıfları gruplamak
   2. ortak amaca yönelik usecase'leri gruplamak
@@ -5244,11 +5238,11 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + eğer sınıflar birbirine bağımlıysa bu bağımlılıklar _kesikli oklarla_ gösterilir;
   [[file:./images/screenshot-60.png]]
 + genelde birbirinden kalıtım alan sınıfları, bir package altına koyarız
-***** visibility
+****** visibility
 + bir package içinde public ve private sınıflar bulunabilir. private sınıfın bir package içinde yer alması demek, aynı package içinde bulunan tüm sınıflar tarafından kullanılabileceği, ancak package dışından erişilemeyeceği anlamına gelir
 + aşağıda *cruncher* sınıfı private'dir ve aynı package içindeki tüm sınıflar onu görebilir
   [[file:./images/screenshot-63.png]]
-***** relationship
+****** relationship
 + diğer UML elemanları gibi package'ler de izole olarak bulunmazlar. onların da bir şekilde ilişki kurmaları ve kullanılmaları gerekir
 + package'larda 3 tip ilişki (relation) vardır;
   1. dependency (bağımlılık)
@@ -5260,7 +5254,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + generalization ise aslında kalıtım olarak çevrilebilir. örneğin balık aslında bir hayvandır.
 + packagelar arası generalization, şu şekilde gösterilir;
   [[file:./images/screenshot-65.png]]
-**** component diyagramları
+***** component diyagramları
 + bir component, tekrar kullanılabilir (reusable) bütün bir program, kütüphane ya da bir framework'dür
 + componentler, içlerinde benzer bir iş yapan sınıflar barındırırlar. bu sınıflar tabiki package'larla ayrılmış da olabilir
 + özetle packagelar sınıfları, componentler de package'ları içine alabilir. bazen componentler, içine başka componentler bile alabilirler
@@ -5275,7 +5269,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + top şeklinde olan ise *provided interface* adını alır
   [[file:./images/screenshot-69.png]]
 +
-** Code Complete :book:
+*** Code Complete :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: code-complete-notes
 :EXPORT_TITLE: Code Complete Notlarım
@@ -5283,7 +5277,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 :HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
 :END:
-*** bölüm 1 - yazılım inşasına giriş
+**** bölüm 1 - yazılım inşasına giriş
 + yazara göre, bu kitap, etrafa dağılmış bilginin bir yere toplanmış hali
 
 + *yazılım geliştirme* ve *programlama* aynı şey değildir
@@ -5325,7 +5319,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 
 + kaynak kodu, construction evresinin bir ürünüdür. zamanla beraber, gereksinim ve dizayn dökümanları güncelliğini yitirse dahi kaynak kodu her zaman güncel kalır.
 
-*** bölüm 2 - yazılım geliştirme metaforları
+**** bölüm 2 - yazılım geliştirme metaforları
 + çok iyi anlamadığımız şeyleri bazen çok iyi bildiğimiz bir şeylerle ilişkilendirdiğimizde yani *metafor* kullandığımızda, olayı *modellemiş* oluruz ve daha iyi anlamış oluruz
 
 + kitapta yazılım geliştirme için kullanılan metafor ise *ev inşaatı*
@@ -5339,17 +5333,20 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   1. nasıl bir ev yapmak istiyoruz? : *problemi anlamak*
   2. mimar bir tasarım yapar : *yazılım mimari dizaynı*
   3. evin planının çıkarılması : *detaylı yazılım tasarımı*
-** Dive Into Design Patterns :book:
-*** Factory Pattern
-** Domain Driven Design :book:
-*** Bölüm 0
+*** Dive Into Design Patterns :book:
+**** Factory Pattern
+*** Domain Driven Design :book:
+**** Bölüm 0
 + yazılım'ı asıl karmaşık yapan şey kod ya da yanlış tasarım değildir. asıl karmaşaya neden olan, insanın kendi iş sistemidir. yazılım sadece bu iş sistemini yazılımlaştırıp otomatize etmeye yarar.
 + bu iş/meslek dallarına kısaca *domain* diyoruz
 + yazılımdaki karmaşanın azaltılması için asıl yapılması gereken şey, mevcut domain'in çok iyi modellenmesidir
 + bu kitap, karmaşık domainlerde yazılım geliştirmeye çalışan yazılımcılara bir kaynak şeklinde yazılmıştır. domainlere yaklaşırken, adım adım ne yapmaları gerektiği anlatılmıştır
-*** Bölüm 1
-** Reading List to Become a Professional
-***** Job Interview Prep
+**** Bölüm 1
+*** Dive Into Refactoring
+
+** reading lists
+*** Reading List to Become a Professional
+**** Job Interview Prep
 1. Cracking the Coding Interview: 189 Programming Questions and Solutions
 2. Programming Interviews Exposed: Coding Your Way Through the Interview
 3. Introduction to Algorithms
@@ -5359,10 +5356,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 7. Modern Operating Systems
 8. Programming Pearls
 9. Discrete Mathematics for Computer Scientists
-***** Junior Software Engineer Reading List
-****** Read This First
+**** Junior Software Engineer Reading List
+***** Read This First
 1. Pragmatic Thinking and Learning: Refactor Your Wetware
-****** Fundementals
+***** Fundementals
 1. Code Complete 2
 2. Software Estimation: Demystifying the Black Art
 3. Software Engineering: A Practitioner's Approach
@@ -5377,21 +5374,21 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 12. Debugging the Development Process: Practical Strategies for Staying Focused, Hitting Ship Dates, and Building Solid Teams
 13. Rapid Development: Taming Wild Software Schedules
 14. Peopleware: Productive Projects and Teams
-****** Mentality
+***** Mentality
 1. Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency
 2. Against Method
 3. The Passionate Programmer: Creating a Remarkable Career in Software Development
 
-****** History
+***** History
 1. The Mythical Man-Month: Essays on Software Engineering
 2. Computing Calamities: Lessons Learned from Products, Projects, and Companies That Failed
 3. The Deadline: A Novel About Project Management
 
-***** Mid Level Software Engineer Reading List
-****** Read This First
+**** Mid Level Software Engineer Reading List
+***** Read This First
 1. Personal Development for Smart People: The Conscious Pursuit of Personal Growth
 
-****** Fundementals
+***** Fundementals
 1. The Clean Coder: A Code of Conduct for Professional Programmers
 2. Clean Code: A Handbook of Agile Software Craftsmanship
 3. Solid Code
@@ -5399,7 +5396,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 5. Software Craftsmanship: The New Imperative
 6. Writing Solid Code
 
-****** Software Design
+***** Software Design
 1. Head First Design Patterns: A Brain-Friendly Guide
 2. Design Patterns: Elements of Reusable Object-Oriented Software
 3. Domain-Driven Design: Tackling Complexity in the Heart of Software
@@ -5408,7 +5405,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 6. Design Patterns in C# - Even though this is specific to C# the pattern can be used in any OO language.
 7. Refactoring to Patterns
 
-****** Software Engineering Skill Sets
+***** Software Engineering Skill Sets
 1. Building Microservices: Designing Fine-Grained Systems
 2. Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools
 3. NoEstimates: How To Measure Project Progress Without Estimating
@@ -5418,27 +5415,27 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 7. Working Effectively with Legacy Code
 8. Test Driven Development: By Example
 
-****** Databases
+***** Databases
 1. Database System Concepts
 2. Database Management Systems
 3. Foundation for Object / Relational Databases: The Third Manifesto
 4. Refactoring Databases: Evolutionary Database Design
 5. Data Access Patterns: Database Interactions in Object-Oriented Applications
 
-****** User Experience
+***** User Experience
 1. Don't Make Me Think: A Common Sense Approach to Web Usability
 2. The Design of Everyday Things
 3. Programming Collective Intelligence: Building Smart Web 2.0 Applications
 4. User Interface Design for Programmers
 5. GUI Bloopers 2.0: Common User Interface Design Don'ts and Dos
 
-****** Mentality
+***** Mentality
 1. jThe Productive Programmer
 2. jExtreme Programming Explained: Embrace Change
 3. jCoders at Work: Reflections on the Craft of Programming
 4. jFacts and Fallacies of Software Engineering
 
-****** History
+***** History
 1. Dreaming in Code: Two Dozen Programmers, Three Years, 4,732 Bugs, and One Quest for Transcendent Software
 2. New Turning Omnibus: 66 Excursions in Computer Science
 3. Hacker's Delight
@@ -5446,7 +5443,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 5. Masterminds of Programming: Conversations with the Creators of Major Programming Languages
 6. The Information: A History, A Theory, A Flood
 
-****** Specialist Skills
+***** Specialist Skills
 1. Peter Norton's Assembly Language Book for the IBM PC
 2. Expert C Programming: Deep C Secrets
 3. Enough Rope to Shoot Yourself in the Foot: Rules for C and C++ Programming
@@ -5464,11 +5461,11 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 15. Programming Perl: Unmatched Power for Text Processing and Scripting
 16. Dive into Python 3
 
-***** Senior Level Software Engineer Reading List
-****** Read This First
+**** Senior Level Software Engineer Reading List
+***** Read This First
 1. Mastery: The Keys to Success and Long-Term Fulfillment
 
-****** Fundamentals
+***** Fundamentals
 1. Patterns of Enterprise Application Architecture
 2. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions
 3. Enterprise Patterns and MDA: Building Better Software with Archetype Patterns and UML
@@ -5477,7 +5474,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 6. Writing Secure Code
 7. Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries
 
-****** Development Theory
+***** Development Theory
 1. Growing Object-Oriented Software, Guided by Tests
 2. Object-Oriented Analysis and Design with Applications
 3. Introduction to Functional Programming
@@ -5488,7 +5485,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 8. The Elements of Computing Systems: Building a Modern Computer from First Principles
 9. Code: The Hidden Language of Computer Hardware and Software
 
-****** Philosophy of Programming
+***** Philosophy of Programming
 1. Making Software: What Really Works, and Why We Believe It
 2. Beautiful Code: Leading Programmers Explain How They Think
 3. The Elements of Programming Style
@@ -5499,7 +5496,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 8. How to Solve It by Computer
 9. 97 Things Every Programmer Should Know: Collective Wisdom from the Experts
 
-****** Mentality
+***** Mentality
 1. Hackers and Painters: Big Ideas from the Computer Age
 2. The Intentional Stance
 3. Things That Make Us Smart: Defending Human Attributes In The Age Of The Machine
@@ -5510,7 +5507,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 8. YOUTH
 9. Understanding Comics: The Invisible Art
 
-****** Software Engineering Skill Sets
+***** Software Engineering Skill Sets
 1. Software Tools
 2. UML Distilled: A Brief Guide to the Standard Object Modeling Language
 3. Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
@@ -5525,13 +5522,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 12. Data Mining: Practical Machine Learning Tools and Techniques
 13. Data Crunching: Solve Everyday Problems Using Java, Python, and more.
 
-****** Design
+***** Design
 1. The Psychology Of Everyday Things
 2. About Face 3: The Essentials of Interaction Design
 3. Design for Hackers: Reverse Engineering Beauty
 4. The Non-Designer's Design Book
 
-****** History
+***** History
 1. Micro-ISV: From Vision to Reality
 2. Death March
 3. Showstopper! the Breakneck Race to Create Windows NT and the Next Generation at Microsoft
@@ -5539,7 +5536,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 5. The Business of Software: What Every Manager, Programmer, and Entrepreneur Must Know to Thrive and Survive in Good Times and Bad
 6. In the Beginning...was the Command Line
 
-****** Specialist Skills
+***** Specialist Skills
 1. The Art of UNIX Programming
 2. Advanced Programming in the UNIX Environment
 3. Programming Windows
@@ -5553,7 +5550,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 11. Agile Principles, Patterns, and Practices in C#
 12. Pragmatic Unit Testing in C# with NUnit
 
-***** DevOps Reading List
+**** DevOps Reading List
 1. Time Management for System Administrators: Stop Working Late and Start Working Smart
 2. The Practice of Cloud System Administration: DevOps and SRE Practices for Web Services
 3. The Practice of System and Network Administration: DevOps and other Best Practices for Enterprise IT
@@ -5565,7 +5562,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 9. Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation
 10. Migrating Large-Scale Services to the Cloud
 
-***** Entrepreneur Reading List
+**** Entrepreneur Reading List
 1. Disrupted: My Misadventure in the Start-Up Bubble
 2. The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
 3. The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It
@@ -5601,7 +5598,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 33. Zen and the Art of Motorcycle Maintenance: An Inquiry into Values
 34. The Inmates Are Running the Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity
 
-***** Computer Science Grad School Reading List
+**** Computer Science Grad School Reading List
 1. All the Mathematics You Missed: But Need to Know for Graduate School
 2. Introductory Linear Algebra: An Applied First Course
 3. Introduction to Probability
@@ -5636,6 +5633,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 - =acommodation=           konaklama
+- =cram=                   tıkmak
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =advantage=              avantaj
