@@ -5349,10 +5349,14 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ******* belirtiler
 - genel olarak 10 satırdan daha fazla olan metodlar bu gruba girer
 ******* çözüm
-- kod aralarında *yorumlar* varsa hemen o kodu başka bir metoda aktar.
+- kod aralarında *yorumlar* bu, methodun ayrıştırılabileceğini gösteren bir ipucudur
 - yorum satırları genelde bize yapılan işi anlatmaya çalışır. bu yapılan işe _en anlamlı bir isim bul_ ve yeni methodun adı bu olsun
 - if-else'ler varsa hemen ayrı bir methoda aktar ve methodun adını *isA* , *isB* gibi yap
 - aynı şekilde döngüler varsa da hemen ayrı bir methoda aktar
+- eğer method parametreleri ve lokal değişkenler metodun ayrıştırılmasına müdahale ediyorlarsa o zaman şu refaktoring technique'lerini kullan;
+  1. Replace Remp with Query
+  2. Introduce Parameter Object
+  3. Preserve Whole Object
 ****** uzun classlar
 çok _attributu_, _methodu_ olan sınıflar ya bu gruba girer
 ****** çok parametreli methodlar
