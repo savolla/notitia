@@ -3394,6 +3394,14 @@ This is useful when your config files are huge and messy. this way of writing co
 4. =SPC : org-babel-tangle= this will write your source blocks to the config
 
 after that you will never gonna edit i3 config file again. all you is to come back to this README.org file and add some code blocks here
+****** recude size of an image
+1. import an image
+2. write =#+ATTR_HTML::width 500= on top of the image
+3. withoud attribute;
+   [[file:./images/screenshot-74.png]]
+4. with attribute
+   #+ATTR_HTML::width 500
+   [[file:./images/screenshot-74.png]]
 
 ***** problems and solutions
 *** doom
