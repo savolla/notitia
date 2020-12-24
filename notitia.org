@@ -5346,6 +5346,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Bölüm 1 : Code Smells
 ***** Bloaters
 ****** uzun methodlar
+[[file:./images/screenshot-76.png]]
 + küçük methodlarla donatılan küçük classlar uzun yaşar
 + uzun method, istenmeyen _tekrar eden_ kodu içinde saklar
 + methodları ayrıştırmak demek, daha fazla method ve class oluşturmak demektir. bu ilk bakışta karmaşaya sebebiyet veren bir durum olarak görülebilir ancak tam tersidir
@@ -5362,9 +5363,48 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   2. Introduce Parameter Object
   3. Preserve Whole Object
 ****** uzun classlar
-çok _attributu_, _methodu_ olan sınıflar ya bu gruba girer
+[[file:./images/screenshot-75.png]]
++ kendine verilen işten fazlasını yapan sınıflardır
++ sınıflar ilk etapta küçük başlarlar ancak zaman içinde yazılımın gelişmesiyle büyütler
++ büyük sınıflar, yazılımcıda *cognitive load*'a sebep olur
+******* belirtiler
+- çok _field_ ve _methodu_ olan sınıflar
+******* çözüm
+- önce methodları küçült. methodlar küçüldükçe hangi classlara ait olabilecekleri yavaş yavaş ortaya çıkar. bu olduğunda sınıf da istemsizce parçalara ayrılır
+****** primitive obsession
+- primitive tipler genelde gerçek tipleri simüle etmek için varlardır. gerçek tipler yerine kullanılmaları profesyoel alamda uygun değildir. onun yerine bir struct ya da sınıf oluşturmak daha profesyoneldir
+- bu sorun düzeltildiği anda tipler arası karmaşa ortadan kalkmış olur ve özellikle method parametrelerinin aslında ne olduğuna dair iyi bir fikir oluşacağı için kodun okunurluğu artırılmış olur
+******* belirtiler
+- primitive tiplerin (int, string, double gibi), basit işler için var olabilecek tiplerin yerine kullanılması. örneğin;
+  1. para birimi yerine *double*
+  2. özel stringler (yorum, telefon numarası gibi) yerine *string*
+- _global sabitlerin_ kullanılması
+******* sebepler
+- bazen yazılımcılar, örneğin bir para birimini ifade etmek için ayrı bir class/struct oluşturmak yerine kolaya kaçıp direk *double* primitive tipi kullanırlar
+******* çözüm
+- primitive tipler yerine objeler kullanın;
+  #+begin_src c++
+  double money;
+  #+end_src
+  yerine =Money= class/struct'ı oluşturun
+  #+begin_src c++
+  Money money;
+  #+end_src
+- bir çok primitive field'dan oluşan sınıfınız varsa (boy, para, kuruş gibi) bu tiplere uygun birer struct oluşturmak hem kodun okunurluğunu kolaylaştırır hem de kötü kokuları giderir
+- primitive obsession ile savaşmada kullanılan refactoring teknikleri;
+  1. Replace Data Value with Object
+  2. Introduce Parameter Object
+  3. Preserve Whole Object
+  4. Replace Type Code with Class
+  5. Replace Type Code with Subclass
+  6. Replace Type Code with State/Strategy
+  7. Replace Array with Object
+
 ****** çok parametreli methodlar
-4 parametreden fazla olan fonksiyon/metodlar
+******* sebepler
+- bir method içinde birden fazla işlem yapılıyorsa her işlem için dışarıdan ayrıca parametre alınması gerekebilir. bu da method parametrelerinin artması anlamına gelir
+******* belirtiler
+- 4 parametreden fazla olan fonksiyon/metodlar
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
