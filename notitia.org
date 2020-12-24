@@ -3325,10 +3325,9 @@ insert into Personel (PersonelName, PersonelSurname, PersonelSalary, PersonelBir
 mesela metin içinde *newton* geçen her yere wikipedia linkini eklemek istiyorsun, o zaman bunu kullanırsın. kullanıcı nerede newton görse, artık tıklanabilir bir link görür. [[radio link oluşturma][örnek]]
 ***** how to
 ****** döküman içi hızlı arama
-1. Emacs için : =C-c C-j=
-Doom için : =SPC m .=
-2. aranmak istenen şeyi yaz
-3. =Enter=
+Doom için : =SPC s b=
+1. aranmak istenen şeyi yaz
+2. =Enter=
 ****** radio link oluşturma
 1. sayfanın herhangi bir yerine <<<>>> içine kelimeyi yaz
 
@@ -3363,7 +3362,6 @@ while True:
     print("Emacs is LOVE")
     print("*****")
 #+end_src
-
 + line numbers will start from 20
 #+begin_src python -n 20
 while True:
@@ -3375,6 +3373,27 @@ while True:
 #+begin_src org
 #+OPTIONS: toc:nil
 #+end_src
+****** auto generate table of contents
+1. create a header on top of the org document
+2. add :toc: word after header name
+3. save the file
+internal links will be generated
+****** write your configs in org-mode
+This is useful when your config files are huge and messy. this way of writing config files will help you to organize the code and make it more understandable. you can also create code documentations with org-mode. I'm going to use i3 config as an example. (ignore periods in code blocks) so here are the steps.
+
+1. create a README.org next to your config file
+2. add the title like on top of your file;
+   #+begin_src org
+   .#+TITLE: i3 Cofiguration
+   #+end_src
+3. add the this property to write code blocks to the separate file (config)
+   #+begin_src org
+   .#+TITLE: i3 Cofiguration
+   .#+PROPERTY: header-args :tangle config
+   #+end_src
+4. =SPC : org-babel-tangle= this will write your source blocks to the config
+
+after that you will never gonna edit i3 config file again. all you is to come back to this README.org file and add some code blocks here
 
 ***** problems and solutions
 *** doom
