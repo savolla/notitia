@@ -80,7 +80,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   #+end_src
 
   #+RESULTS:
-  [[file:/tmp/babel-AKVKVd/plantuml-nebork.png]]
+  [[file:/tmp/babel-OrQQfK/plantuml-o9I6aH.png]]
 + yukarıdaki UML diyagramının kod karşılığı;
   - A.cpp
     #+begin_src cpp
@@ -127,20 +127,20 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   #+end_src
 
   #+RESULTS:
-  [[file:/tmp/babel-AKVKVd/plantuml-d1lACU.png]]
+  [[file:/tmp/babel-OrQQfK/plantuml-BGoqJN.png]]
 
-  yukarıdaki UML diyagramına göre, A class'ı artık direk B'ye bağlıd değil. ikisi arsına bir interface koyduk (Abstract class) ve A sınıfı bu interface'i include ediyor. B ise bu interface'i implemente ediyor;
+  yukarıdaki UML diyagramına göre, A class'ı artık direk B'ye bağlı değil. ikisi arasına bir interface koyduk (Abstract class) ve A sınıfı bu interface'i include ediyor. B ise bu interface'i implemente ediyor;
 
   - A.cpp
     #+begin_src cpp
     #include "IC.cpp"
 
     class A {
-        public:
-            void method1() {
-                method2() {/* some code */}
-                method3() {/* some code */}
-            }
+    public:
+        void method1() {
+            method2() {/* some code */}
+            method3() {/* some code */}
+        }
     };
     #+end_src
   - IC.cpp
