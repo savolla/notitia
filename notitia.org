@@ -5405,6 +5405,12 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - bir method içinde birden fazla işlem yapılıyorsa her işlem için dışarıdan ayrıca parametre alınması gerekebilir. bu da method parametrelerinin artması anlamına gelir
 ******* belirtiler
 - 4 parametreden fazla olan fonksiyon/metodlar
+******* sonuçlar
+- eğer parametreler genelde primitive tipler yerine class objeleri ise, sınıflar birbirine bağımlı hele gelir;
+  #+begin_src cpp
+  Person bloatedMethod( Money m, Salary s, Car c, Phone p );
+  #+end_src
+  yukarıdaki sınıf, diğer 5 sınıfa bağımlı hale geldi
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
