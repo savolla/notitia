@@ -5003,7 +5003,8 @@ deepest depths of hell..
    [[file:./images/screenshot-06.png]]
 5. diarrhea blast
     [[file:./images/screenshot-07.png]]
-* Book Notes
+* Books
+** summaries
 ** Cracking the Coding Interview :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: cracking-the-coding-interview-notes
@@ -5340,7 +5341,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   3. evin planının çıkarılması : *detaylı yazılım tasarımı*
 ** Dive Into Design Patterns :book:
 *** Factory Pattern
-** Domain Driven Design
+** Domain Driven Design :book:
 *** Bölüm 0
 + yazılım'ı asıl karmaşık yapan şey kod ya da yanlış tasarım değildir. asıl karmaşaya neden olan, insanın kendi iş sistemidir. yazılım sadece bu iş sistemini yazılımlaştırıp otomatize etmeye yarar.
 + bu iş/meslek dallarına kısaca *domain* diyoruz
@@ -5935,7 +5936,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** read one chapter
 - [-] dive into design patterns
 - [-] domain driven design
-- [ ] dive into refactoring
+- [-] dive into refactoring
 - [ ] clean code
 - [ ] code complete
 - [ ] object oriented analysis and design
