@@ -5346,7 +5346,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Bölüm 1 : Code Smells
 ***** Bloaters
 ****** uzun methodlar
-[[file:./images/screenshot-76.png]]
 + küçük methodlarla donatılan küçük classlar uzun yaşar
 + uzun method, istenmeyen _tekrar eden_ kodu içinde saklar
 + methodları ayrıştırmak demek, daha fazla method ve class oluşturmak demektir. bu ilk bakışta karmaşaya sebebiyet veren bir durum olarak görülebilir ancak tam tersidir
@@ -5363,7 +5362,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   2. Introduce Parameter Object
   3. Preserve Whole Object
 ****** uzun classlar
-[[file:./images/screenshot-75.png]]
 + kendine verilen işten fazlasını yapan sınıflardır
 + sınıflar ilk etapta küçük başlarlar ancak zaman içinde yazılımın gelişmesiyle büyütler
 + büyük sınıflar, yazılımcıda *cognitive load*'a sebep olur
@@ -5411,6 +5409,67 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   Person bloatedMethod( Money m, Salary s, Car c, Phone p );
   #+end_src
   yukarıdaki sınıf, diğer 5 sınıfa bağımlı hale geldi
+******* çözüm
+- uzun parametre alan bir method görüyorsak sorun uzun method olabilir
+- method ayrışmasına rağmen hala uzun bir parametre listesi almaya devam ediyorsa, bu parametreleri içine alan _başka bir sınıf_ oluşturabiliriz. Ardından, methodumuza da bu yeni oluşan sınıfın objesini verebiliriz. UML örneği aşağıda verilmiştir
+  - kötü kokan UML
+    #+begin_src plantuml results: output
+skinparam linetype ortho
+class A {}
+class B {}
+class C {}
+class D {}
+class E {}
+class User {
+   method(A,B,C,D,E)
+}
+User -up-> A
+User -up-> B
+User -up-> C
+User -up-> D
+User -up-> E
+ #+end_src
+
+  #+RESULTS:
+  [[file:/tmp/babel-WSBkMf/plantuml-o74lIv.png]]
+  - olması gereken
+    #+begin_src plantuml results: output
+skinparam linetype ortho
+class A {}
+class B {}
+class C {}
+class D {}
+class E {}
+class P {
+    A a
+    B b
+    C c
+    D d
+    E e
+}
+
+class User {
+   method(P)
+}
+User -up-> P
+P -up-> A
+P -up-> B
+P -up-> C
+P -up-> D
+P -up-> E
+   #+end_src
+
+   #+RESULTS:
+   [[file:/tmp/babel-WSBkMf/plantuml-SHJJia.png]]
+- bu sorunu çözmede kullanılan refactoring teknikler;
+  1. Replace Parameter with Method Call
+  2. Preserve Whole Object
+  3. Introduce Parameter Object
+
+
+******* uyarılar
+- sınıflar arası istenmeyen oranda bir *dependency* olacaksa methodları olduğu gibi bırakın (yukarıda verilen UML buna dahil. sadece örnek olsun diye vermiştim)
+
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -5699,8 +5758,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
-** Русский
-*** неизвестные слова
 - =acommodation=           konaklama
 - =interfere=              karışmak (engellemek anlamında)
 - =across=                 karşısında
@@ -5851,8 +5908,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =vocabulary=             kelime bi+ gisi
 - =walkway=                yürüyüş yolu
 - =wrap up=                sarmak (ambalajlamak anlamında)
+** Русский
+*** неизвестные слова
 * facts
-- all IoT devices receive updates that brake their functionality over time. so you will need to buy a new version. Apple is the first company that used this marketing strategy
+- most IoT devices receive updates that brake their functionality over time. so you will need to buy a new version. Apple is the first company that used this marketing strategy
 * Schedule
 ** 06:06 :morning_ritual:
 *** stretch
