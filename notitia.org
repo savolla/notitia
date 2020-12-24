@@ -5346,6 +5346,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Bölüm 1 : Code Smells
 ***** Bloaters
 ****** uzun methodlar
++ küçük methodlarla donatılan küçük classlar uzun yaşar
++ uzun method, istenmeyen _tekrar eden_ kodu içinde saklar
++ methodları ayrıştırmak demek, daha fazla method ve class oluşturmak demektir. bu ilk bakışta karmaşaya sebebiyet veren bir durum olarak görülebilir ancak tam tersidir
++ çok method demek çok *jmp* instructionı demek. performansı kötü etkiler ama farkına bile varamayacak kadar
 ******* belirtiler
 - genel olarak 10 satırdan daha fazla olan metodlar bu gruba girer
 ******* çözüm
