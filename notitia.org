@@ -5343,7 +5343,20 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + bu kitap, karmaşık domainlerde yazılım geliştirmeye çalışan yazılımcılara bir kaynak şeklinde yazılmıştır. domainlere yaklaşırken, adım adım ne yapmaları gerektiği anlatılmıştır
 **** Bölüm 1
 *** Dive Into Refactoring
-
+**** Bölüm 1 : Code Smells
+***** Bloaters
+****** uzun methodlar
+******* belirtiler
+- genel olarak 10 satırdan daha fazla olan metodlar bu gruba girer
+******* çözüm
+- kod aralarında *yorumlar* varsa hemen o kodu başka bir metoda aktar.
+- yorum satırları genelde bize yapılan işi anlatmaya çalışır. bu yapılan işe _en anlamlı bir isim bul_ ve yeni methodun adı bu olsun
+- if-else'ler varsa hemen ayrı bir methoda aktar ve methodun adını *isA* , *isB* gibi yap
+- aynı şekilde döngüler varsa da hemen ayrı bir methoda aktar
+****** uzun classlar
+çok _attributu_, _methodu_ olan sınıflar ya bu gruba girer
+****** çok parametreli methodlar
+4 parametreden fazla olan fonksiyon/metodlar
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -5632,8 +5645,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 * Foreign Languages
 ** English
 *** unknown words
+** Русский
+*** неизвестные слова
 - =acommodation=           konaklama
-- =cram=                   tıkmak
+- =interfere=              karışmak (engellemek anlamında)
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =advantage=              avantaj
@@ -5646,6 +5661,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =assessing=              değerlendirmek
 - =attic=                  çatı katı
 - =audible=                duyulabilir
+- =auxiliary=              yardımcı
 - =bottleneck=             darboğaz
 - =boundary=               sınır
 - =brittle=                kırılgan
@@ -5665,6 +5681,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =constraint=             kısıtlama
 - =contenteditable=        memnun
 - =convey=                 iletmek
+- =cram=                   tıkmak
 - =crook=                  hırsız
 - =curated=
 - =deafening=              sağır edici
@@ -5672,6 +5689,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =delimeter=              sınırlayıcı
 - =depics=                 ifade etmek, göstermek
 - =depict=                 göstermek
+- =despite=                rağmen
 - =differing=              farklı
 - =diligence=              çalışkanlık
 - =discourse=              söyleşi
@@ -5679,6 +5697,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =ease off=               gevşemek, hafiflemek
 - =emerge=                 ortaaya çıkmak
 - =entrepreneurial=        girişimci
+- =eradicate=              kökünü kurutmak
 - =estate=                 arazi
 - =estimate=               tahmin
 - =evidently=              belli ki
@@ -5707,6 +5726,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =insulator=              yalıtkan
 - =intermingling=          birbirine karıştırmak
 - =intern=                 asistan
+- =intertwined=            iç içe
 - =intimately=             yakından
 - =intricacy=              karmaşa
 - =intuitive=              sezgisel
@@ -5748,6 +5768,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =rough=                  kaba
 - =rough=                  kaba
 - =row=                    sıra (matrisin satırı)
+- =scattered=              dağılmış
 - =scruple=                vicdan
 - =seldom=                 nadiren
 - =semblance=              görünüş
@@ -5776,8 +5797,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =vocabulary=             kelime bi+ gisi
 - =walkway=                yürüyüş yolu
 - =wrap up=                sarmak (ambalajlamak anlamında)
-** Русский
-*** неизвестные слова
 * facts
 - all IoT devices receive updates that brake their functionality over time. so you will need to buy a new version. Apple is the first company that used this marketing strategy
 * Schedule
