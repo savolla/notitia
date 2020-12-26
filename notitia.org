@@ -428,7 +428,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 **** STM32F407VGT6
 - comes with it's own debugger called *ST-LINK/V2-A*
 - the overview of the platform:
-  [[file:./images/screenshot-73.png]]
+  [[file  :./images/screenshot-73.png]]
 - comes with *ARM Cortex-M4*
 *** problems & solutions
 
