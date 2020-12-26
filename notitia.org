@@ -431,6 +431,20 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   [[file:./images/screenshot-73.png]]
 - comes with *ARM Cortex-M4*
 *** problems & solutions
+** Probability and Statistics
+** My Note Taking Technique
+*** tags bullet
+- =F= fact
+- =S= subject
+- =C= concept / term
+- =T= step by step tutorial
+- =E= example
+- =I= personal idea / opinion
+- =N= independent note
+- =Q= quiz
+- =L= list / table / chart
+- =D= date
+
 * Programming
 ** languages
 *** c
@@ -5910,7 +5924,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =wrap up=                sarmak (ambalajlamak anlamında)
 ** Русский
 *** неизвестные слова
-* facts
+* Facts
 - most IoT devices receive updates that brake their functionality over time. so you will need to buy a new version. Apple is the first company that used this marketing strategy
 * Schedule
 ** 06:06 :morning_ritual:
@@ -6055,7 +6069,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   d. Functions of Random Variables
   e. Continuous Random Variables
 - [ ] ERP
-  a.
+- [ ] Betik Diller
+  a. scikit learn
+  b. flask
+- [ ] Wireless Communication
+  a. wireless slide 7
+  b. wireless slide 8
+  c. wireless slide 9
 ** 17:17 :break:
 *** jamming
 - jam through backing tracks on youtube
