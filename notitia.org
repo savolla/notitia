@@ -6048,9 +6048,14 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   - [ ] off day
 ** 12:12 :lunch:
 ** 13:13 :work:
-- enable *air-plane mode* in phone
-- No Youtube
-- work on current daily tasks like lectures, projects etc
+- [ ] Probability and Statistics
+  a. Cumulative Distribution Funcion (CDF)
+  b. Median / Mod
+  c. Variance And Standard Deviation
+  d. Functions of Random Variables
+  e. Continuous Random Variables
+- [ ] ERP
+  a.
 ** 17:17 :break:
 *** jamming
 - jam through backing tracks on youtube
