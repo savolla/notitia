@@ -432,6 +432,9 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 - comes with *ARM Cortex-M4*
 *** problems & solutions
 ** Probability and Statistics
+=S= Probability and Statistics
+=C= Cummulative Distribution Function (CDF):
+
 ** My Note Taking Technique
 *** tags bullet
 - =F= fact
@@ -6062,20 +6065,20 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   - [ ] off day
 ** 12:12 :lunch:
 ** 13:13 :work:
-- [ ] Probability and Statistics
-  a. Cumulative Distribution Funcion (CDF)
-  b. Median / Mod
-  c. Variance And Standard Deviation
-  d. Functions of Random Variables
-  e. Continuous Random Variables
+- [-] Probability and Statistics
+  - [X] Cumulative Distribution Funcion (CDF)
+  - [X] Median / Mod
+  - [X] Variance And Standard Deviation
+  - [ ] Functions of Random Variables
+  - [ ] Continuous Random Variables
 - [ ] ERP
-- [ ] Betik Diller
-  a. scikit learn
-  b. flask
+- [-] Betik Diller
+  - [-] scikit learn
+  - [ ] flask
 - [ ] Wireless Communication
-  a. wireless slide 7
-  b. wireless slide 8
-  c. wireless slide 9
+  - [ ] wireless slide 7
+  - [ ] wireless slide 8
+  - [ ] wireless slide 9
 ** 17:17 :break:
 *** jamming
 - jam through backing tracks on youtube
@@ -6104,4 +6107,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - yer altından notlar
 - bir delinin anı defteri
 - zor kişiliklerle yaşamak
+- suç ve ceza
 *** watch movie
+- [ ] [[https://www.youtube.com/watch?v=onM1l2F-2o4][Zeitgeist III]]
