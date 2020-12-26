@@ -261,7 +261,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   a. we should not modify the existing and already tested and working classes when new scenario comes out
   b. to extend the functionality use *Startegy Pattern*. it is like *Dependency Injection*
   c. violate this principle when your code has some bugs. open and modify the existing code to fix the issue
-  d. if switch and case statements started to show up in methods it's time for open close principle
+  d. if switch and case statements started to show up in methods it's time to apply _open close principle_
 
 ***** LSP
 + about *subclasses*
@@ -285,7 +285,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   3. coding
 + some kinds of software architecture;
   1. domain driven design
-  2. even sourcing
+  2. event sourcing
   3. event driven architecture
   4. serverless architecture
   5. monolith architecture
@@ -302,10 +302,10 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 + if an architect designs a domain driven design architecture and he/she is not familiar with business the final result won't be very accurate
 + it's second intent is to create a software that scalable. so when you add a new feature, the next feature won't be hard to implement with ddd
 + a good example of ddd is an ERP software. it contains some discrete modules and each module is a *domain*;
-  1. fatura
-  2. satınalma
-  3. stok yönetimi
-  4. teslimat
+  1. invoice module
+  2. purchasing module
+  3. stock management module
+  4. delivery module
 + domain driven design will consider every domain as a different and discrete software. those softwares are called modules in ERP. every module is developed by people who has experience and concrete knowledge with said domain.
 + modules will communicate with some each other by interfaces when added.
 + modules/domains can work on their own since those are concrete softwares
@@ -5414,58 +5414,58 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - method ayrışmasına rağmen hala uzun bir parametre listesi almaya devam ediyorsa, bu parametreleri içine alan _başka bir sınıf_ oluşturabiliriz. Ardından, methodumuza da bu yeni oluşan sınıfın objesini verebiliriz. UML örneği aşağıda verilmiştir
   - kötü kokan UML
     #+begin_src plantuml results: output
-skinparam linetype ortho
-class A {}
-class B {}
-class C {}
-class D {}
-class E {}
-class User {
-   method(A,B,C,D,E)
-}
-User -up-> A
-User -up-> B
-User -up-> C
-User -up-> D
-User -up-> E
- #+end_src
+    skinparam linetype ortho
+    class A {}
+    class B {}
+    class C {}
+    class D {}
+    class E {}
+    class User {
+       method(A,B,C,D,E)
+    }
+    User -up-> A
+    User -up-> B
+    User -up-> C
+    User -up-> D
+    User -up-> E
+    #+end_src
 
-  #+RESULTS:
-  [[file:/tmp/babel-WSBkMf/plantuml-o74lIv.png]]
+    #+RESULTS:
+    [[file:/tmp/babel-WSBkMf/plantuml-o74lIv.png]]
+
   - olması gereken
     #+begin_src plantuml results: output
-skinparam linetype ortho
-class A {}
-class B {}
-class C {}
-class D {}
-class E {}
-class P {
-    A a
-    B b
-    C c
-    D d
-    E e
-}
+    skinparam linetype ortho
+    class A {}
+    class B {}
+    class C {}
+    class D {}
+    class E {}
+    class P {
+        A a
+        B b
+        C c
+        D d
+        E e
+    }
 
-class User {
-   method(P)
-}
-User -up-> P
-P -up-> A
-P -up-> B
-P -up-> C
-P -up-> D
-P -up-> E
-   #+end_src
+    class User {
+       method(P)
+    }
+    User -up-> P
+    P -up-> A
+    P -up-> B
+    P -up-> C
+    P -up-> D
+    P -up-> E
+    #+end_src
 
-   #+RESULTS:
-   [[file:/tmp/babel-WSBkMf/plantuml-SHJJia.png]]
+    #+RESULTS:
+    [[file:/tmp/babel-WSBkMf/plantuml-SHJJia.png]]
 - bu sorunu çözmede kullanılan refactoring teknikler;
   1. Replace Parameter with Method Call
   2. Preserve Whole Object
   3. Introduce Parameter Object
-
 
 ******* uyarılar
 - sınıflar arası istenmeyen oranda bir *dependency* olacaksa methodları olduğu gibi bırakın (yukarıda verilen UML buna dahil. sadece örnek olsun diye vermiştim)
