@@ -5540,8 +5540,39 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 *** Clean Code
 
 **** İsimlendirme
+***** variable
 1. "accountList" gibi bir isim verilecekse, bunun bir "Liste" veri yapısı olduğundan emin olun. Eğer bu bir bağlı liste değilse, mutlaka farklı bir isim bulmak gerekir. "accounts", "accountGroup" gibi isimler verilebilir
 2. isimlendirmeler daima *telaffuz edilebilir* olmalıdır. bu sayede bir iş toplantısında, değişken ya da method adından bahsederken "DraRcrd102" gibi şeyler telaffuz etmek zorunda kalmazsınız
+3. değişken isimlendirmede "camelCase", sabit ya da global değişkenlerde ise "ALL_CAPS" kullanılmalıdır
+4. asla loop counter'ının ismini 'l' yapma. kullanılan font'a göre bazen '1'(bir) gibi görünebilir. i, j ve k kullan
+5. domain terimleri kullanabilirsin
+***** method
+1. method'lar "camelCase" olmalıdır
+2. method isimleri daima "yüklem" belirten isimler olmalıdır;
+   a. deletePage
+   b. save
+   c. getName
+3. erişim methodlarının başına =get= getir
+4. mutator methodlarının başına =set= getir
+5. sadece =True= ya da =False= göndüren methodların başına prefix olarak =is= getir. bu sayede kod, ingilizce bir cümleye dönüşüp okunurluk artar
+   #+begin_src java
+if (paychaeck.isPosted())
+   #+end_src
+6. farklı işler için aynı kelimeler kullanma. örneğin =add= kelimesi hem iki sayıyı toplamak için kullanılır, hem de yeni obje yaratmak için de kullanılabilir. kısaca "eş anlamlı" kelimelerden kaçın.
+5. domain terimleri kullanabilirsin
+***** class
+1. classes should be "PascalCase"
+2. class'ları isimlendirirken asla "yüklem" kullanılmamalıdır. onun yerine "isim" kullanılmalıdır. kullanılan isimler, sınıfın niyetini belli etmelidir. "Data", "Info", "Manager" gibi ne olduğu belli olmayan isimlerden kaçınılmalıdır
+3. örnek class isimleri;
+   a. Customer
+   b. WikiPage
+   c. CustomerAccount
+   d. AddressParser
+4. teknik isimler kullanabilirsin. örnek olarak Pattern isimleri "AccountVisitor" gibi isimler
+5. domain terimleri kullanabilirsin
+***** interface
+1. interface'lerin önüne 'I' koy
+5. domain terimleri kullanabilirsin
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
