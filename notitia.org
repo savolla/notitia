@@ -6107,4 +6107,4 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - zor kişiliklerle yaşamak
 - suç ve ceza
 *** watch movie
-- [ ] [[https://www.youtube.com/watch?v=onM1l2F-2o4][Zeitgeist III]]
+- [X] [[https://www.youtube.com/watch?v=onM1l2F-2o4][Zeitgeist III]]
