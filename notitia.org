@@ -5539,6 +5539,9 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + in the *intel instruction reference manual* volume 2 chapter 3 every instruction is documented.
 *** Clean Code
 
+**** İsimlendirme
+1. "accountList" gibi bir isim verilecekse, bunun bir "Liste" veri yapısı olduğundan emin olun. Eğer bu bir bağlı liste değilse, mutlaka farklı bir isim bulmak gerekir. "accounts", "accountGroup" gibi isimler verilebilir
+2. isimlendirmeler daima *telaffuz edilebilir* olmalıdır. bu sayede bir iş toplantısında, değişken ya da method adından bahsederken "DraRcrd102" gibi şeyler telaffuz etmek zorunda kalmazsınız
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -5828,6 +5831,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 - =acommodation=           konaklama
+- =beware=                 dikkat et
 - =interfere=              karışmak (engellemek anlamında)
 - =across=                 karşısında
 - =adhare=                 bağlı
