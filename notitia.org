@@ -5484,6 +5484,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + some of important exceptions are **PF**(page fault) and **GP**(general protection)
 + Using the *bin* format puts *nasm* by default into *16-bit* mode.  To enable 32-bit code to be generated, we must add this line at the be- ginning of an nasm source file: *bits 32*
 + in the *intel instruction reference manual* volume 2 chapter 3 every instruction is documented.
+*** Clean Code
 
 ** reading lists
 *** Reading List to Become a Professional
