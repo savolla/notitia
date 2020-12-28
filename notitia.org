@@ -489,8 +489,14 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 ** languages
 *** c
 **** facts
-- all executable statements must be written inside a function. variable assignements can be used outside of the functions
+- all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
 - all user defined header files must be included in *double quotes*
+- you always need to pass _the size of an array_ when using arrays in functions
+  #+begin_src c
+void printArray(int *arr, size_t size) {
+    // some code
+}
+  #+end_src
 ***** format specifiers
 1. =%p= addresses in hexadeicmal format
 2. =%lu= long unsigned integer
@@ -5538,41 +5544,31 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 + Using the *bin* format puts *nasm* by default into *16-bit* mode.  To enable 32-bit code to be generated, we must add this line at the be- ginning of an nasm source file: *bits 32*
 + in the *intel instruction reference manual* volume 2 chapter 3 every instruction is documented.
 *** Clean Code
-
-**** İsimlendirme
-***** variable
-1. "accountList" gibi bir isim verilecekse, bunun bir "Liste" veri yapısı olduğundan emin olun. Eğer bu bir bağlı liste değilse, mutlaka farklı bir isim bulmak gerekir. "accounts", "accountGroup" gibi isimler verilebilir
-2. isimlendirmeler daima *telaffuz edilebilir* olmalıdır. bu sayede bir iş toplantısında, değişken ya da method adından bahsederken "DraRcrd102" gibi şeyler telaffuz etmek zorunda kalmazsınız
-3. değişken isimlendirmede "camelCase", sabit ya da global değişkenlerde ise "ALL_CAPS" kullanılmalıdır
-4. asla loop counter'ının ismini 'l' yapma. kullanılan font'a göre bazen '1'(bir) gibi görünebilir. i, j ve k kullan
-5. domain terimleri kullanabilirsin
-***** method
-1. method'lar "camelCase" olmalıdır
-2. method isimleri daima "yüklem" belirten isimler olmalıdır;
-   a. deletePage
-   b. save
-   c. getName
-3. erişim methodlarının başına =get= getir
-4. mutator methodlarının başına =set= getir
-5. sadece =True= ya da =False= göndüren methodların başına prefix olarak =is= getir. bu sayede kod, ingilizce bir cümleye dönüşüp okunurluk artar
-   #+begin_src java
-if (paychaeck.isPosted())
-   #+end_src
-6. farklı işler için aynı kelimeler kullanma. örneğin =add= kelimesi hem iki sayıyı toplamak için kullanılır, hem de yeni obje yaratmak için de kullanılabilir. kısaca "eş anlamlı" kelimelerden kaçın.
-5. domain terimleri kullanabilirsin
-***** class
-1. classes should be "PascalCase"
-2. class'ları isimlendirirken asla "yüklem" kullanılmamalıdır. onun yerine "isim" kullanılmalıdır. kullanılan isimler, sınıfın niyetini belli etmelidir. "Data", "Info", "Manager" gibi ne olduğu belli olmayan isimlerden kaçınılmalıdır
-3. örnek class isimleri;
-   a. Customer
-   b. WikiPage
-   c. CustomerAccount
-   d. AddressParser
-4. teknik isimler kullanabilirsin. örnek olarak Pattern isimleri "AccountVisitor" gibi isimler
-5. domain terimleri kullanabilirsin
-***** interface
-1. interface'lerin önüne 'I' koy
-5. domain terimleri kullanabilirsin
+**** Naming
+***** variable naming
+1. is "accountList" a LinkedList?
+2. use Pronnclbe nmes
+3. useCamelCase
+4. USE_ALL_CAPS_FOR_CONSTANTS_OR_GLOBALS
+5. 1 != l
+6. can't find name? use *Domain Term*
+***** method naming
+1. useCamelCase
+2. use VERBS
+3. isReturnedTrueOrFalse()
+4. accessor ? "get"
+5. mutator ? "set"
+6. add() != add() && state() != state()
+7. can't find name? use *Domain Term*
+***** class naming
+1. UsePascalCase
+2. always use NOUNS
+3. include Design Pattern names
+4. can't find name? use *Domain Term*
+***** interface naming
+1. use 'I' prefix
+1. UsePascalCase
+4. can't find name? use *Domain Term*
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -6110,11 +6106,11 @@ if (paychaeck.isPosted())
 *** programming language
 **** C
 ***** read one chapter
-- The C programming Language
-- Learn C the Hard Way
-- Practical C
-- Understanding and Using C Pointers
-- deep C secrets
+- [ ] The C programming Language
+- [ ] Learn C the Hard Way
+- [ ] Practical C
+- [ ] Understanding and Using C Pointers
+- [ ] deep C secrets
 ***** codewars kata
 - review notes
 - solve kata
@@ -6182,7 +6178,7 @@ if (paychaeck.isPosted())
 - [-] dive into design patterns
 - [-] domain driven design
 - [-] dive into refactoring
-- [ ] clean code
+- [-] clean code
 - [ ] code complete
 - [ ] object oriented analysis and design
 - [ ] working effectively with legacy code
