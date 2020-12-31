@@ -5580,6 +5580,10 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 1. use 'I' prefix
 1. UsePascalCase
 4. can't find name? use *Domain Term*
+*** Making Embedded Systems
+**** Bölüm 0
+- *microcontroller*: kendi içinde, RAM'i kod hafızası yani FLASH (ROM, EEPROM) ve bir işlemcisi olan bütün bir cihazdır
+- *DSP*: özelleşmiş bir microcontroller'dır. ana amacı, gelen analog bir sinyali işleyip ilginç sonuçlar elde etmektir. Normal microcontrollerlardan farkı, matematiksel işlemleri çok daha hızlı yapabiliyor olmasıdır.
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -6057,7 +6061,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - [ ] hardware design know it all
 **** software
 ***** read one chapter
-- [ ] making embedded systems
+- [-] making embedded systems
 - [ ] programming embedded systems
 - [ ] the art of concurrency
 - [ ] embedded-primer
