@@ -2331,7 +2331,7 @@ font-family : monospace;
      height: 100vh;
  }
     #+END_SRC
- 43. 
+ 43.
 **** what is
  + what css stands for?
    cascading style sheets
@@ -5594,6 +5594,11 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - Java için artan bir destek var ancak Java'yı destekleyen bir sistemin genelde büyük bir sistem olması gerekir. dar ve ucuz alanlarda C hala hüküm sürer
 - kullanacağın dile takılma. dizayn ve mimari çok çok daha önemli
 ***** Gömülü Yazılım Geliştirmek
+- oıuwww wouwwooou
+- oıuwww wouwwooou
+- oıuwww wouwwooou
+- oıuwww wouwwooou
+
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
