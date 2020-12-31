@@ -5584,6 +5584,16 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Bölüm 0
 - *microcontroller*: kendi içinde, RAM'i kod hafızası yani FLASH (ROM, EEPROM) ve bir işlemcisi olan bütün bir cihazdır
 - *DSP*: özelleşmiş bir microcontroller'dır. ana amacı, gelen analog bir sinyali işleyip ilginç sonuçlar elde etmektir. Normal microcontrollerlardan farkı, matematiksel işlemleri çok daha hızlı yapabiliyor olmasıdır.
+**** Bölüm 1
+- *Gömülü Sistem*: tek bir amaç için tasarlanmış, içinde bir yazılım barındıran, genel amaçlı bir bilgisayara göre çok daha az işlem gücü ve hafızaya sahip cihazlara denir.
+- gömülü sistemlerde, işlemciler normal bilgisayarların işlemcilerine göre daha yavaş çalışırlar ki güç tüketimi az olsun. RAM açısından da aynı şekilde daha zayıftır ki maliyeti daha az olsun.
+- yazılımın da bu kısıtlı imkanlarda doğru bir şekilde çalışması gerekir. O kadar doğru çalışması gerekir ki örneğin bir kalp pilinde her hangi bir bug, ölümle sonuçlanabilir. Bir uçağın elektronik devresinde en ufak bir yazılım hatası, onca insanın ölümüne yol açabilir
+***** Compilerlar, OOP ve Yazılım dilleri
+- çoğu büyük MCU üreticisi, cross-compiler olarak GNU araçlarını kullanır
+- gömülü yazılım çoğu kez C dilini destekler. C++ gibi diller kısmen desteklenir. Genelde cross-compilerlar C++ için çoklu kalıtım, templateleri vs desteklenmez
+- Java için artan bir destek var ancak Java'yı destekleyen bir sistemin genelde büyük bir sistem olması gerekir. dar ve ucuz alanlarda C hala hüküm sürer
+- kullanacağın dile takılma. dizayn ve mimari çok çok daha önemli
+***** Gömülü Yazılım Geliştirmek
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
