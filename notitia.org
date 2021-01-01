@@ -5665,6 +5665,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - 64-bit, 4PB ancak 64-bit sistemler çok fazla RAM desteklediği için şu anda dünyada bu kadar RAM'e sahip bir makine yok (mu acaba?). Bu yüzden çoğu CPU üreticisi adreslenebilecek miktarı 1 TB olarak ayarlayıp -ki hala çok yüksek RAM- bit sayısını 50 yaparlar; $$2^{50}\div1024^4 = 1TB$$
 - 8-bit cihazların yaşam ömrü şaşırtıcı:
   [[file:./images/screenshot-85.png]]
+- Dijital saatler gibi cihazlar ve buna benzer gömülü sistemler RAM'e gerek duymayıp, CPU'nun kendi registerlarını kullanabilir. Dijital saatler 8-bit CPU kullanabilir
+-
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
