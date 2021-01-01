@@ -3667,6 +3667,9 @@ rm -rf ~/.emacs.d/.local/straight/build*/with-editor && doom sync
 1. =SPC :=
 2. =omnisharp-install-server=
 3. =RET=
+***** 'Re-entering top level after C stack overflow'
+delete all undo-tree cache files in =~/.emacs.d/.local/cache/undo-tree=
+
 
 *** vim
 **** blog
@@ -5594,10 +5597,12 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - Java için artan bir destek var ancak Java'yı destekleyen bir sistemin genelde büyük bir sistem olması gerekir. dar ve ucuz alanlarda C hala hüküm sürer
 - kullanacağın dile takılma. dizayn ve mimari çok çok daha önemli
 ***** Gömülü Yazılım Geliştirmek
-- oıuwww wouwwooou
-- oıuwww wouwwooou
-- oıuwww wouwwooou
-- oıuwww wouwwooou
+****** Debugging
+- yazılımı başka bir platform için yazdığımızdan dolayı, yazılımı, kod yazdığımız bilgisayarda debug edemeyiz. Bunun için *cross debugger*'lar kullanılır
+- cross debugger'ın çalışması için JTAG'e ihtiyacın var. Bu kendi başına bir cihaz ve fiyatı 500 lira civarında. ama platforma göre değişir. örneğin STM'in ST-Link diye onboard bir debuggerı var
+- cross compiler senin bilgisayarında çalışıp, JTAG ile haberleşir. JTAG ise senin üstünde uğraştığın MCU'nun JTAG arayüzüne bağlanır. oradan debug yapar
+-
+
 
 ** reading lists
 *** Reading List to Become a Professional
