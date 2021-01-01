@@ -424,6 +424,19 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 *** tips
 - don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead
 *** facts
+**** what happens before main()
+0. _start function
+1. Early low-level initialization, such as;
+   a. Configuring processor registers
+   b. Initializing external memory
+   c. Enabling caches
+   d. Configuring the MMU
+2. Stack initialization, making sure that the stack is properly aligned per the ABI requirements
+3. Frame pointer initialization
+4. C/C++ runtime setup
+5. Initializing other scaffolding required by the system
+6. Jumping to main
+7. Exiting the program with the return code from main
 *** how to
 *** concepts
 **** I²C
@@ -481,7 +494,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 **** STM32F407VGT6
 - comes with it's own debugger called *ST-LINK/V2-A*
 - the overview of the platform:
-  [[file  :./images/screenshot-73.png]]
+  [[./images/screenshot-73.png]]
 - comes with *ARM Cortex-M4*
 *** problems & solutions
 
@@ -5584,6 +5597,15 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 1. UsePascalCase
 4. can't find name? use *Domain Term*
 *** Making Embedded Systems
+:PROPERTIES:
+:EXPORT_FILE_NAME: making-embedded-systems-notes
+:EXPORT_TITLE: Making Embedded Systems Notlarım
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+*Making Embedded Systems* Türkçe kitap özeti
+[[file:./images/screenshot-84.png]]
 **** Bölüm 0
 - *microcontroller*: kendi içinde, RAM'i kod hafızası yani FLASH (ROM, EEPROM) ve bir işlemcisi olan bütün bir cihazdır
 - *DSP*: özelleşmiş bir microcontroller'dır. ana amacı, gelen analog bir sinyali işleyip ilginç sonuçlar elde etmektir. Normal microcontrollerlardan farkı, matematiksel işlemleri çok daha hızlı yapabiliyor olmasıdır.
@@ -5629,6 +5651,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   3. dökümante et
   4. tüm testlerden geçtiyse, optimizasyon işlemine geç
   5. 2. adıma git
+**** Bölüm 2
+hhh
 
 ** reading lists
 *** Reading List to Become a Professional
