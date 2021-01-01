@@ -5596,7 +5596,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 1. use 'I' prefix
 1. UsePascalCase
 4. can't find name? use *Domain Term*
-*** Making Embedded Systems
+*** Making Embedded Systems :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: making-embedded-systems-notes
 :EXPORT_TITLE: Making Embedded Systems Notlarım
@@ -5629,18 +5629,18 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - çoğu gömülü sistem donanımı *printf* tabanlı debuggingi destekler. bazen kullanılmayan bir I/O portundana bir LED bağlayıp belli durumlarda bir işlevin gerçekleşip gerçekleşmediğini kontrol etmek için o LED yakıp söndürülür. bir emulator satın almak yerine bu tarz çözümler mevcuttur
 - Yine de gömülü sistemleri debug etmek, her şeyin düzgün çalışacağı anlamına gelmez. bazı buglar vardır ki debugging işlemi bittikten sonra kendini gösterir...
 ****** Zorluklar
-- gömülü alanda kısıtlayıcı nitelikeler;
+- gömülü alanda kısıtlayıcı nitelikler;
   1. RAM (memory)
   2. ROM (code space)
   3. CPU speed
   4. battery life
   5. çevre birimler (peripherals)
-- üzerinde uğraştığın donanımı çok iyi bilmen gerek. çünkü eğer donanımın desteklemediği bir şeyi yaptırmaya çalışırsan, donanıma zarar vermez ihtimalin var.
+- üzerinde uğraştığın donanımı çok iyi bilmen gerek. çünkü eğer donanımın desteklemediği bir şeyi yaptırmaya çalışırsan, donanıma zarar verme ihtimalin var.
 
 ****** Zorlukların Üstesinden Gelmek
 - sistemi modüllere böl
-- modüller arasına *interface*'ler koy ki modüller birbirlerine bağlı kalıp *coupling* artmasın
-- gömülü sistemlerde sistemi modüllere bölmek çok daha kolaydır. örneğin bir X sensörü Y haberleşme kanalından Z ile haberleşiyorsa, demek ki bunların hepsi farklı objelerdir yani farklı modüllere aitler demek olur. sırasıyla X, Y ve Z diye 3 ayrı modül oluşturulabilir
+- modüller arasına *interface*'ler koy ki modüller birbirlerine bağlı kalıp *coupling*'i arttırmasın
+- gömülü sistemlerde sistemi modüllere bölmek çok daha kolaydır. örneğin bir X sensörü Y haberleşme kanalından Z ile haberleşiyorsa, demek ki bunların hepsi farklı objelerdir yani farklı modüllere aittirler. sırasıyla X, Y ve Z diye 3 ayrı modül oluşturulabilir
 - modüllere ayırmak'da kullanılan temel soru şu; "bu kısım kendi başına bağımsız bir donanım/protokol mü?". sorunun cevabı evet ise o parça için farklı modül oluşturulur
 - modüller kendi başlarına test edilebilir. Böylelikle kod kalitesi ve "maintainabiliry" artmış olur
 - modüllerin arasına interface koymayı unutma. direk *pound include* kötü fikir
@@ -5652,7 +5652,12 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   4. tüm testlerden geçtiyse, optimizasyon işlemine geç
   5. 2. adıma git
 **** Bölüm 2
-hhh
+*** Programming Embedded Systems :book:
+**** Bölüm 1
+- Gömülü sistemler genelde daha büyük bir sistemin parçası olurlar. örnek olarak bir araba içindeki sistemler; fren sistemi ya da hava yastığı sistemi için olan devrenin içindeki yazılım bir gömülü sistemdir
+- Genel amaçlı bir bilgisayarın içinde de gömülü sistemler mevcuttur; klavye, mouse, hard drive, ses kartı. Bunların hepsi kendi başına içinde küçük yazılımlar olan tek başına gömülü sistemlerdir
+***** Tarihsel Gelişim ve Gelecek
+- Gömülü sistemlerin tarihi ilk olarak 1971'de Intel'in Japon bir firma için ürettiği 4004 mikroişlemcisi ile başlıyor. ilk mikroişlemcidir bu. kendi RAM'i, ROM'u ve I/O pinleri vardı.
 
 ** reading lists
 *** Reading List to Become a Professional
@@ -6132,7 +6137,7 @@ hhh
 **** software
 ***** read one chapter
 - [-] making embedded systems
-- [ ] programming embedded systems
+- [-] programming embedded systems
 - [ ] the art of concurrency
 - [ ] embedded-primer
 **** Qt
