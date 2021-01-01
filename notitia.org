@@ -5654,6 +5654,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Bölüm 2
 *** Programming Embedded Systems :book:
 **** Bölüm 1
+:PROPERTIES:
+:EXPORT_FILE_NAME: programming-embedded-systems-notes
+:EXPORT_TITLE: Programming Embedded Systems Notlarım
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
 ***** Gömülü Sistem Nedir
 - Gömülü sistemler genelde daha büyük bir sistemin parçası olurlar. örnek olarak bir araba içindeki sistemler; fren sistemi ya da hava yastığı sistemi için olan devrenin içindeki yazılım bir gömülü sistemdir
 - Genel amaçlı bir bilgisayarın içinde de gömülü sistemler mevcuttur; klavye, mouse, hard drive, ses kartı. Bunların hepsi kendi başına içinde küçük yazılımlar olan tek başına gömülü sistemlerdir
