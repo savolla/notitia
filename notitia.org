@@ -5622,6 +5622,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - modüllere ayırmak'da kullanılan temel soru şu; "bu kısım kendi başına bağımsız bir donanım/protokol mü?". sorunun cevabı evet ise o parça için farklı modül oluşturulur
 - modüller kendi başlarına test edilebilir. Böylelikle kod kalitesi ve "maintainabiliry" artmış olur
 - modüllerin arasına interface koymayı unutma. direk *pound include* kötü fikir
+- her zaman test ve dökümantasyon yaz
+- kodu ilk zaman için küçük ve optimize yazmaya çalışma. donanımın kısıtlı olduğu bir alanda bu şekilde çalışmanın gerekli olduğu düşünülür ancak çoğu problem ve bug buralardan gelebilir. onun yerine şu adımları izle;
+  1. çalışan basit bir kod yaz
+  2. kodu test et
+  3. dökümante et
+  4. tüm testlerden geçtiyse, optimizasyon işlemine geç
+  5. 2. adıma git
 
 ** reading lists
 *** Reading List to Become a Professional
