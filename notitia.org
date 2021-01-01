@@ -5654,9 +5654,11 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 **** Bölüm 2
 *** Programming Embedded Systems :book:
 **** Bölüm 1
+***** Gömülü Sistem Nedir
 - Gömülü sistemler genelde daha büyük bir sistemin parçası olurlar. örnek olarak bir araba içindeki sistemler; fren sistemi ya da hava yastığı sistemi için olan devrenin içindeki yazılım bir gömülü sistemdir
 - Genel amaçlı bir bilgisayarın içinde de gömülü sistemler mevcuttur; klavye, mouse, hard drive, ses kartı. Bunların hepsi kendi başına içinde küçük yazılımlar olan tek başına gömülü sistemlerdir
-- Gömülü sistemlerin tarihi ilk olarak 1971'de Intel'in Japon bir firma için ürettiği 4004 mikroişlemcisi ile başlıyor. ilk mikroişlemcidir bu. kendi RAM'i, ROM'u ve I/O pinleri vardı.
+***** Donanım
+- Gömülü sistemlerin tarihi ilk olarak 1971'de Intel'in Japon bir firma için ürettiği 4004 mikroişlemcisi ile başlıyor. ilk mikroişlemcidir bu.
 - işlemci gücü MIPS ile ölçülür (Millions of Instruction Per Second)
 - işlemci gücünü etkileyen bir başka özellik de register boyutudur. 8-bit ya da 16-bit işlemcilerin register boyutları da sırasıyla 8 ve 16 bittir
 - 8-bit işlemci, yalnızda 256 byte kadar RAM destekler çünkü $2^8=256$
@@ -5666,7 +5668,16 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - 8-bit cihazların yaşam ömrü şaşırtıcı:
   [[file:./images/screenshot-85.png]]
 - Dijital saatler gibi cihazlar ve buna benzer gömülü sistemler RAM'e gerek duymayıp, CPU'nun kendi registerlarını kullanabilir. Dijital saatler 8-bit CPU kullanabilir
--
+- Oyun konsolu tasarlayan mühendisler, konsolun maliyetini ucuzlatmak adına, hafıza ve diğer pahalı birimleri dışardan takılabilir olarak üretirler. Bu sayede konsolun maliyeti düşerken, oyunların maliyeti yükselir. Bunun bir örneği Ateri Kasetlerinde görülür
+***** Diller
+- C dilinin yazılış amacı, *low level* bir dil oluşturmaktır
+- C'nin gömülü sistemler için en avantajlı 2 yanı vardır;
+  1. neredeyse her işlemci için kod üretebiliyor olması
+  2. donanımla bu kadar kolay konuşabiliyor olması
+- Assembly, C++, Ada, Rust, µPython, Java diğer Gömülü alanlarda kullanılan dillerdendir
+- Assembly, donanımın tam kontrolünü ele alır, çok hızlı çalışır ancak kodu başka bir işlemciye port edemezsin. kod çok uzundur ve okuması zordur
+- C++, C diline bir de Object Oriented özellikler ve bir çok Abstraction eklemiştir ve bu yazılım geliştirme açısından çok verimli bir dil olmasına neden olmuştur. Ancak bu özellikler, kodun çalışmasını kötü yönde etkilemiştir ve C kadar hızlı olamamasına sebep olmuştur. C++'a özgü özellikler, büyük projelerde iyi rol oynayabilir ancak örneğin bir dijital saat gibi basit bir gömülü sistemde çok da ihtiyaç yoktur
+- Ada, Gömülü sistemlerde önemli bir dildir. C++ yerine kullanılabilecek bir dil olma niteliğindedir. Kullanım alanı daha çok Amerikan Savunma Sanaiinden dışarıya çıkamadığı için yine popülaritesini kaybeden şanssız dillerdendir
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -5956,6 +5967,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 - =acommodation=           konaklama
+- =pejorative=             aşağılayıcı
 - =beware=                 dikkat et
 - =interfere=              karışmak (engellemek anlamında)
 - =across=                 karşısında
