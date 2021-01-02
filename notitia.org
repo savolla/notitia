@@ -5685,6 +5685,9 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - Assembly, donanımın tam kontrolünü ele alır, çok hızlı çalışır ancak kodu başka bir işlemciye port edemezsin. kod çok uzundur ve okuması zordur
 - C++, C diline bir de Object Oriented özellikler ve bir çok Abstraction eklemiştir ve bu yazılım geliştirme açısından çok verimli bir dil olmasına neden olmuştur. Ancak bu özellikler, kodun çalışmasını kötü yönde etkilemiştir ve C kadar hızlı olamamasına sebep olmuştur. C++'a özgü özellikler, büyük projelerde iyi rol oynayabilir ancak örneğin bir dijital saat gibi basit bir gömülü sistemde çok da ihtiyaç yoktur
 - Ada, Gömülü sistemlerde önemli bir dildir. C++ yerine kullanılabilecek bir dil olma niteliğindedir. Kullanım alanı daha çok Amerikan Savunma Sanaiinden dışarıya çıkamadığı için yine popülaritesini kaybeden şanssız dillerdendir
+**** Bölüm 2
+- Gömülü sistemlerde "hello world" programı, çoğu zaman bir LED'i 1 Hz hızında yakıp söndürmektir.
+
 ** reading lists
 *** Reading List to Become a Professional
 **** Job Interview Prep
@@ -5974,9 +5977,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 ** English
 *** unknown words
 - =acommodation=           konaklama
-- =pejorative=             aşağılayıcı
-- =beware=                 dikkat et
-- =interfere=              karışmak (engellemek anlamında)
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =advantage=              avantaj
@@ -5990,6 +5990,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =attic=                  çatı katı
 - =audible=                duyulabilir
 - =auxiliary=              yardımcı
+- =beware=                 dikkat et
 - =bottleneck=             darboğaz
 - =boundary=               sınır
 - =brittle=                kırılgan
@@ -6052,6 +6053,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =inextricable=           içinden çıkılmaz
 - =initiative=             girişim
 - =insulator=              yalıtkan
+- =interfere=              karışmak (engellemek anlamında)
 - =intermingling=          birbirine karıştırmak
 - =intern=                 asistan
 - =intertwined=            iç içe
@@ -6070,6 +6072,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =oppurtunity=            fırsat
 - =ossify=                 kemikleşmek
 - =outlined=               özetlenen
+- =pejorative=             aşağılayıcı
 - =persuade=               ikna etmek
 - =pinnacle=               çukur
 - =pins out=               iğnelemek
@@ -6099,6 +6102,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - =scattered=              dağılmış
 - =scruple=                vicdan
 - =seldom=                 nadiren
+- =self-reliant=           kendine güvenen
 - =semblance=              görünüş
 - =several=                birkaç
 - =shrug=                  omuz silkmek
