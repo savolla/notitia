@@ -490,6 +490,10 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 - a unit inside the *ARM Cortex M4* Processor
 - this is the core hardware that provides *printf style* debugging via SWD protocol
 - contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
+**** newlib
+- *Newlib* is a C standard library implementation intended for use on embedded systems
+**** Renesas
+Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
 
 *** platforms
 **** STM32F407VGT6
@@ -5595,8 +5599,8 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 4. can't find name? use *Domain Term*
 ***** interface naming
 1. use 'I' prefix
-1. UsePascalCase
-4. can't find name? use *Domain Term*
+2. UsePascalCase
+3. can't find name? use *Domain Term*
 *** Making Embedded Systems :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: making-embedded-systems-notes
