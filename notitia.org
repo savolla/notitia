@@ -5725,6 +5725,30 @@ void toggleLed( unsigned char ledMask ) {
 - Gömülü yazılımların, diğer saf yazılımlardan farkı, daima sonsuz bir döngü ile bitiyor olmasıdır
 - Cihazlar ya resetlenene kadar ya da bozulana kadar çalışmaya devam ederler
 **** Bölüm 3
+- compiler, linker gibi toolların içinde bulunduğu paket halindekii programa, *toolchain* denir
+- Malesef her platform için kullanılan toolchain farklılık gösterir. ARM için farklı, Atmel, Microchip için farklı toolchainler kurulması gerekir
+- kaynak kodu, bir gömülü sistemde çalışabilir bir yazılıma dönüştürmek için şu 3 adım izlenmesi gerekir;
+  1. her kaynak dosyasının *compile* edilip *object* dosyasına dönüşmesi
+  2. birinci adımda oluşan her object dosyasının bir *linker* ile bağlanıp tek bir obje dosyasına dönüşmesi. üretilen bu son dosyaya *relocatable program* denir
+  3. relocatable program, bir *locator* ile hedef gömülü sistemde çalıştırılabilir bir dosyaya dönüştürülür
+  [[file:./images/screenshot-86.png]]
+
+- bazı eski işlemciler. bu işlemciler 2000'lerde beyaz eşya, otomobil vs gibi ürünlerin yapımında kullanılan işlemcilerdir;
+  a. Fujitsu SPARClite
+  b. Hitachi H8/300
+  c. Hitachi H8/300H
+  d. Hitachi H8/S
+  e. Hitachi SH
+  f. IBM/Motorola PowerPC
+  g. Intel i960
+  h. MIPS R3xxx
+  i. MIPS R4xx0
+  j. Mitsubishi D10V
+  k. Mitsubishi M32R/D
+  l. Motorola 68k
+  m. Sun Sparc
+  n. Sun MicroSPARC
+  o. Toshiba TX39
 
 ** reading lists
 *** Reading List to Become a Professional
@@ -6129,6 +6153,7 @@ void toggleLed( unsigned char ledMask ) {
 - =quintessentially=       özetle
 - =recipient=              alıcı
 - =relational=             bağlantılı
+- =regardless=             ne olursa olsun
 - =relevance=              alaka
 - =responsive=             duyarlı
 - =retrieve=               geri almak
