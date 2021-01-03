@@ -5773,6 +5773,15 @@ void toggleLed( unsigned char ledMask ) {
 
 - linker'ın kendi scripting dili vardır. bu dil sayesinde kod bölümleri /(text, data, bss)/ birbiriyle istendiği gibi bağlanıp, istenen bölümler başka bölümlere aktarılabilir
 
+***** startup code
+- yarın öbür gün bir C ya da C++ programındaki =main()= fonksiyonundan önce gerçekleşen işlemler sorulduğunda - ki gömülü sistemler iş mülakatlarında bunlar sorulur - startup kodunda neler olup bittiğini bilmek faydalı olacaktır
+
+- yazılım geliştirme araçlarının geleneksel olarak yaptıkları işlemlerden biri, programın önüne bir =startup= kodu yerleştirmektir
+
+- startup kodu, o platforma özel olan Assembly diliyle yazılıp, daha yüksek seviyeli dillerin çalışması için uygun bir ortam hazırlar
+
+- her yüksek seviyeli dil, çalışmak için değişik kriterlere ihtiyaç duyar. örnek olarak C ve C++, =main()= çağırılmadan önce startup kodunun, *stack*'i ayarlamasına ihtiyaç duyar. stack oluşturulmazsa C ve C++ kodu çalışamaz. Bu sadece C ve C++ için gereken işlemlerden sadece biridir
+
 -
 
 ** reading lists
