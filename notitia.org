@@ -411,7 +411,6 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 + this is a *design principle*
 + the keyword =interface= sometimes confuced with "interface keyword" in Java and C#. but this is not the keyword is discussed here
 **** how to
-
 ** Embedded Systems
 *** articles
 + [[https://jaycarlson.net/][jay carlson's entire website]]
