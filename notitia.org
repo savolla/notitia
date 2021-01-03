@@ -5687,6 +5687,44 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - Ada, Gömülü sistemlerde önemli bir dildir. C++ yerine kullanılabilecek bir dil olma niteliğindedir. Kullanım alanı daha çok Amerikan Savunma Sanaiinden dışarıya çıkamadığı için yine popülaritesini kaybeden şanssız dillerdendir
 **** Bölüm 2
 - Gömülü sistemlerde "hello world" programı, çoğu zaman bir LED'i 1 Hz hızında yakıp söndürmektir.
+- *delay* fonksiyonlarında kullanılan sadece bir sayacı sıfıra kadar geriye sayan C kod yapısı şu şekilde kısaca kurulabilir;
+  #+begin_src c
+int i = 100;
+while (i--);
+  #+end_src
+- basit bir LED yanıp söndürme programı;
+  #+begin_src c
+#define LED_GREEN 0x40
+#define P2LTCH    0xFF5E
+void delay( unsigned int nMilliseconds );
+void toggleLed( unsigned char ledMask );
+
+void main(void) {
+    while (1) {
+        toggleLed(LED_GREEN);
+        delay(500);
+    }
+}
+
+void delay( unsigned int nMilliseconds ) {
+    #define CYCLES_PER_MS 260
+    unsigned long nCycles = nMilliseconds * CYCLES_PER_MS;
+    while (nCycles--);
+}
+
+void toggleLed( unsigned char ledMask ) {
+    asm {
+        mov dx, P2LTCH
+        in al, dx
+        mov ah, ledMask
+        xor al, ah
+        out dx, al
+    }
+}
+  #+end_src
+- Gömülü yazılımların, diğer saf yazılımlardan farkı, daima sonsuz bir döngü ile bitiyor olmasıdır
+- Cihazlar ya resetlenene kadar ya da bozulana kadar çalışmaya devam ederler
+**** Bölüm 3
 
 ** reading lists
 *** Reading List to Become a Professional
