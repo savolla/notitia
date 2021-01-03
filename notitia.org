@@ -5687,11 +5687,13 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 - Ada, Gömülü sistemlerde önemli bir dildir. C++ yerine kullanılabilecek bir dil olma niteliğindedir. Kullanım alanı daha çok Amerikan Savunma Sanaiinden dışarıya çıkamadığı için yine popülaritesini kaybeden şanssız dillerdendir
 **** Bölüm 2
 - Gömülü sistemlerde "hello world" programı, çoğu zaman bir LED'i 1 Hz hızında yakıp söndürmektir.
+
 - *delay* fonksiyonlarında kullanılan sadece bir sayacı sıfıra kadar geriye sayan C kod yapısı şu şekilde kısaca kurulabilir;
   #+begin_src c
 int i = 100;
 while (i--);
   #+end_src
+
 - basit bir LED yanıp söndürme programı;
   #+begin_src c
 #define LED_GREEN 0x40
@@ -5722,11 +5724,16 @@ void toggleLed( unsigned char ledMask ) {
     }
 }
   #+end_src
+
 - Gömülü yazılımların, diğer saf yazılımlardan farkı, daima sonsuz bir döngü ile bitiyor olmasıdır
+
 - Cihazlar ya resetlenene kadar ya da bozulana kadar çalışmaya devam ederler
+
 **** Bölüm 3
 - compiler, linker gibi toolların içinde bulunduğu paket halindekii programa, *toolchain* denir
+
 - Malesef her platform için kullanılan toolchain farklılık gösterir. ARM için farklı, Atmel, Microchip için farklı toolchainler kurulması gerekir
+
 - kaynak kodu, bir gömülü sistemde çalışabilir bir yazılıma dönüştürmek için şu 3 adım izlenmesi gerekir;
   1. her kaynak dosyasının *compile* edilip *object* dosyasına dönüşmesi
   2. birinci adımda oluşan her object dosyasının bir *linker* ile bağlanıp tek bir obje dosyasına dönüşmesi. üretilen bu son dosyaya *relocatable program* denir
@@ -5749,6 +5756,24 @@ void toggleLed( unsigned char ledMask ) {
   m. Sun Sparc
   n. Sun MicroSPARC
   o. Toshiba TX39
+
+- object dosyalarının belli başlı formatları vardır. bunlardan ikisi COFF ve ELF'dir. COFF (Common Object File Format), ELF (Extended Linker Format)
+
+- eğer bir gömülü sistem projesinde birden çok dil ya da compiler kullanılacaksa object dosyalarının formatlarının aynı olmasına dikkat edilmelidir. aksi taktirde linker farklı formatlardaki obje dosyalarının bağlayamayabilir
+
+- bir obje dosyası 3 temel kısımdan oluşur;
+  a. =text= bu kısımda kodun kendisi yer alır
+  b. =data= global değişkenler burada yer alır
+  c. =bss= henüz değer atanmamış ve static değişkenler burada bulunur
+
+- kaynak dosyalarında bazen =extern= komutu ile başka kaynak dosyalarındaki değişkenler referans verilebilir. linkleme sırasında bu komutlarda tarif edilen değişkenleri yerine koymak, linkerın görevidir
+
+***** linking
+- linker, obje dosyalarında bulunan =text=, =data= ve =bss= bölümü tek bir dosya içine yazar ve =extern= komutuyla tarif edilen değişkenleri yerine koyar
+
+- linker'ın kendi scripting dili vardır. bu dil sayesinde kod bölümleri /(text, data, bss)/ birbiriyle istendiği gibi bağlanıp, istenen bölümler başka bölümlere aktarılabilir
+
+-
 
 ** reading lists
 *** Reading List to Become a Professional
