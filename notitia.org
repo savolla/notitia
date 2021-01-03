@@ -425,6 +425,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 - don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead
 *** facts
 **** what happens before main()
+***** According to Making Embedded Systems book
 0. _start function
 1. Early low-level initialization, such as;
    a. Configuring processor registers
@@ -437,6 +438,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 5. Initializing other scaffolding required by the system
 6. Jumping to main
 7. Exiting the program with the return code from main
+***** According to Programming Embedded Systems book
 *** how to
 *** concepts
 **** I²C
@@ -5660,6 +5662,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 :HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
 :END:
+[[file:./images/screenshot-87.png]]
 **** Bölüm 1
 ***** Gömülü Sistem Nedir
 - Gömülü sistemler genelde daha büyük bir sistemin parçası olurlar. örnek olarak bir araba içindeki sistemler; fren sistemi ya da hava yastığı sistemi için olan devrenin içindeki yazılım bir gömülü sistemdir
@@ -5782,7 +5785,22 @@ void toggleLed( unsigned char ledMask ) {
 
 - her yüksek seviyeli dil, çalışmak için değişik kriterlere ihtiyaç duyar. örnek olarak C ve C++, =main()= çağırılmadan önce startup kodunun, *stack*'i ayarlamasına ihtiyaç duyar. stack oluşturulmazsa C ve C++ kodu çalışamaz. Bu sadece C ve C++ için gereken işlemlerden sadece biridir
 
--
+- startup kodu genellikle ya =startup.asm= ya da =crt0.s= olarak isimli dosyalarda yer alır. *crt0.s*, "C Runtime"'ın kısaltılmışıdır
+
+- =main= fonksiyonundan önce olanlar sırasıyla;
+  1. disable all interrupts  (=cli= command in x86)
+  2. Copy initialized data from ROM to RAM (=data=)
+  3. zero-out uninitialized data area (=bss=)
+  4. Allocate space for and initialize the stack
+  5. initialize the processor's stack pointer
+  6. create and initialize the heap
+  7. execute "constructors" and "initializers" for global vars (only in C++)
+  8. enable interrupts
+  9. call =main()=
+
+- 9. adımdan sonra da program eğer =main()='den çıkarsa diye sonsuz döngü konur. sonsuz döngü yerine istenirse program akışı istenen yere doğru yönlendirilebilir
+
+- startup kodu *ilk çalışan* kod olduğu için bunun linker scriptinde belirtilmesi gerekir. linker scriptingde ilk belirtilmesi gereken şey programın ilk çalışacağı kısmın neresi olduğudur. bir yazılımın ilk çalışan kod satırına ya da fonksiyonuna *entry point* denir
 
 ** reading lists
 *** Reading List to Become a Professional
