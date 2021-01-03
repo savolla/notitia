@@ -5662,6 +5662,7 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 :HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
 :END:
+Programming Embedded Systems 1999'da yazılan 200 sayfalık bir kitaptır. Bir Gömülü Yazılım gelitirmek için adım adım nelerin yapılması gerektiğini anlatır. Bu da benim çıkardığım Türkçe Özet
 [[file:./images/screenshot-87.png]]
 **** Bölüm 1
 ***** Gömülü Sistem Nedir
@@ -5801,6 +5802,9 @@ void toggleLed( unsigned char ledMask ) {
 - 9. adımdan sonra da program eğer =main()='den çıkarsa diye sonsuz döngü konur. sonsuz döngü yerine istenirse program akışı istenen yere doğru yönlendirilebilir
 
 - startup kodu *ilk çalışan* kod olduğu için bunun linker scriptinde belirtilmesi gerekir. linker scriptingde ilk belirtilmesi gereken şey programın ilk çalışacağı kısmın neresi olduğudur. bir yazılımın ilk çalışan kod satırına ya da fonksiyonuna *entry point* denir
+
+-
+***
 
 ** reading lists
 *** Reading List to Become a Professional
