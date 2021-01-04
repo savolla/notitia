@@ -5425,6 +5425,14 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
   1. nasıl bir ev yapmak istiyoruz? : *problemi anlamak*
   2. mimar bir tasarım yapar : *yazılım mimari dizaynı*
   3. evin planının çıkarılması : *detaylı yazılım tasarımı*
+  4. evin inşası : *yazılım tasarımının kodlanması*
+  5. bahçınavlar, boyacılar gelip etrafı güzelleştirir: *optimizasyon*
+
+**** Bölüm 3
+- yazılım inşasından önce planlama ve dizayn çok önemli bir rol oynar
+- Yazılım Geliştirme sacede _kod yazmak değildir_
+- WISCA sendromu: "Why Isn't Sam Coding Anymore?"
+- WIMP sendromu: "Why Isn't Mary Programming"
 *** Dive Into Design Patterns :book:
 **** Factory Pattern
 *** Domain Driven Design :book:
@@ -8590,7 +8598,7 @@ program bigger at the same time.
 - [-] domain driven design
 - [-] dive into refactoring
 - [-] clean code
-- [ ] code complete
+- [-] code complete
 - [ ] object oriented analysis and design
 - [ ] working effectively with legacy code
 ** 21:21 :finish:
