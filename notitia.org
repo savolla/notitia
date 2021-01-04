@@ -5807,6 +5807,9 @@ void toggleLed( unsigned char ledMask ) {
 - startup kodu *ilk çalışan* kod olduğu için bunun linker scriptinde belirtilmesi gerekir. linker scriptingde ilk belirtilmesi gereken şey programın ilk çalışacağı kısmın neresi olduğudur. bir yazılımın ilk çalışan kod satırına ya da fonksiyonuna *entry point* denir
 
 -
+***** locator
+- linking işlemi bittiğinde geriye son işlem olan locator işlemi kalır
+- locator genelde ayrı bir programdır ancak GNU araçlarında, locator işlevini linker otomatik gerçekleştirir
 *** C++ Primer :book:
 :PROPERTIES:
 :EXPORT_FILE_NAME: cpp-primer-notes
