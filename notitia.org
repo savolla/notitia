@@ -5430,9 +5430,26 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 
 **** Bölüm 3
 - yazılım inşasından önce planlama ve dizayn çok önemli bir rol oynar
+
 - Yazılım Geliştirme sacede _kod yazmak değildir_
+
 - WISCA sendromu: "Why Isn't Sam Coding Anymore?"
+
 - WIMP sendromu: "Why Isn't Mary Programming"
+
+- Eğer patronun gerizekalıysa ve her hangi bir dizayn ya da mimariden yoksun bir biçimde kod yazmayı istiyorsa, eski bir projeyi aç ve yan pencerede dizayn ve mimarini yap. Bu sayede hem sen hem de gerizekalı patronun huzurlu bir şekilde hayatına devam eder
+
+- hayat, etrafta daha iyi alternatifler varken cahil bir patronla çalışmak için çok kısa. işi bırak ve başka şirket bul
+
+- bir yazılım geliştirme sürecine farklı bir bakış;
+  a. mimar + requirements = *mimari*
+  b. dizayner + mimary = *dizayn*
+  c. programcı + dizayn = *program*
+
+- yukarıda görüldüğü gibi, program, zincirin en sonundadır. Bu demek oluyor ki, iyi bir programın ortaya çıkması için dizayın iyi yapılması, dizaynın iyi yapılması için de mimarın işini iyi yapması gerekir. _yani aslında yazılımın kaliteli mimarın elindedir_
+
+-
+
 *** Dive Into Design Patterns :book:
 **** Factory Pattern
 *** Domain Driven Design :book:
