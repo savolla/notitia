@@ -5448,8 +5448,6 @@ Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç b
 
 - yukarıda görüldüğü gibi, program, zincirin en sonundadır. Bu demek oluyor ki, iyi bir programın ortaya çıkması için dizayın iyi yapılması, dizaynın iyi yapılması için de mimarın işini iyi yapması gerekir. _yani aslında yazılımın kaliteli mimarın elindedir_
 
--
-
 *** Dive Into Design Patterns :book:
 **** Factory Pattern
 *** Domain Driven Design :book:
@@ -8620,12 +8618,12 @@ program bigger at the same time.
 - [ ] working effectively with legacy code
 ** 21:21 :finish:
 *** reading
-- outliers
-- siddhardtha
-- semerkant
-- yer altından notlar
-- bir delinin anı defteri
-- zor kişiliklerle yaşamak
-- suç ve ceza
+- [ ] outliers
+- [ ] siddhardtha
+- [ ] semerkant
+- [ ] yer altından notlar
+- [ ] bir delinin anı defteri
+- [ ] zor kişiliklerle yaşamak
+- [-] suç ve ceza
 *** watch movie
 - [X] [[https://www.youtube.com/watch?v=onM1l2F-2o4][Zeitgeist III]]
