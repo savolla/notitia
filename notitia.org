@@ -505,16 +505,35 @@ Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/R
 
 * Programming
 ** languages
+*** ARM Assembly
+**** facts
++ *mov* command can only be used with *general purpose* registers (r0 - r12)
++ *msr* or *mrs* instructions used to move values from or to *special purpose* registers
+
+  | instruction | description               |
+  |-------------+---------------------------|
+  | MSR         | mov Special_reg, Register |
+  | MRS         | mov Register, Special_reg |
+
 *** c
 **** facts
 - all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
 - all user defined header files must be included in *double quotes*
 - you always need to pass _the size of an array_ when using arrays in functions
+- every compiler has _it's own_ *inline assembly* syntax
   #+begin_src c
 void printArray(int *arr, size_t size) {
     // some code
 }
   #+end_src
+***** scenarios for using inline assembly
+1. *C variable* --> *CPU register*
+2. *CPU register* --> *C variable*
+3. operate on multiple C variables inside assembly
+***** inline assembly is used for;
+  1. accessing CPU *general purpose registers*
+  2. accessing CPU *special registers*
+  3. accessing *stack pointer*
 ***** format specifiers
 1. =%p= addresses in hexadeicmal format
 2. =%lu= long unsigned integer
@@ -676,6 +695,7 @@ p = &a;
 
 **** tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
+- use =__asm__= when writing inline assembly. this is because the word =asm= might conflict with other variable name in code
 ***** always write descriptions like this
 ignore the commas ','. it is org-mode thing
 #+begin_src c
@@ -765,29 +785,71 @@ char c = 'a';
 printf( "%p", &c );
 #+end_src
 ***** write inline assembly
-- here are two different ways you can write inline assembly in C
+****** single line inline assembly
++ syntax for *arm-none-eabi-gcc* inline assembly
+  #+BEGIN_SRC c
+  //
+  //    mendatory        use quotes
+  //        /              /
+        __asm__ volatile( "mov r0, r1" );
+  //    --      --------   ----------
+  //     \        \            \
+  // underscores  type        assembly
+  // are optional  qualifier   code
+  //
+  #+END_SRC
 
-  1. with "__asm" and with *volatile* keyword
-    #+begin_src c
-void add(void) {
-    __asm volatile ( "mov eax, 2" );
-    __asm volatile ( "mov ebx, 3" );
-    __asm volatile ( "add eax, ebx" );
-}
-    #+end_src
+****** multiline assemby
++ use this syntax in case of *multiple asm lines*. only addition is '\n\t' part
+  #+BEGIN_SRC c
+  __asm__ volatile( "mov r0, r1\n\t"
+                    "mov r1, 0x43\n\t"
+                    "inc r1\n\t");
+  #+END_SRC
 
-  2. more flexible way but ends with "\n\t"
-    #+begin_src c
-void add(void) {
-    asm (
-        "mov eax, 2\n\t"
-        "mov ebx, 3\n\t"
-        "add eax, ebx\n\t"
-    );
-}
-    #+end_src
 
-- *volatile* keyword is used if programmer doesn't want to enable _compiler optimizatino_ on the given assembly line
++ x86 gcc uses the same syntax but it adds double '%' symbols in front of register names
+  #+BEGIN_SRC c
+  __asm__ volatile("mov %%rax, 0x1\n\t"
+                   "mov %%rbx, %%rax\n\t");
+  #+END_SRC
+
+
++ here is the full syntax for inline assembly for *arm-none-eaby-gcc*
+  #+BEGIN_SRC c
+  //               your asm      C vars or imm
+  //              mnemonics     values for input  idk yet
+  //                  /               /            /
+     __asm volatile( code : output : input : clobber );
+  //          \                \            \
+  //     instruct gcc      C vars go      ':' colons are
+  //     to not optimize   here to store   mendatory!
+  //     this line         code results
+  //
+  #+END_SRC
+
+****** pass C variable into CPU register
++ example of scenario *C variable* --> *CPU register*
+  #+BEGIN_SRC c
+  #include <stdint.h>
+  int main(void) {
+      uint32_t x = 12;
+      __asm volatile( "mov eax, %0" : : "r"(x) : );
+      return 0;
+  }
+  #+END_SRC
+
+****** pass CPU register into C variable
++ example of scenario *CPU register* --> *C variable*
+  #+BEGIN_SRC c
+  #include <stdint.h>
+  int main(void) {
+      uint32_t x;
+      __asm volatile( "mrs %0, control" : "=r"(x) : : );
+      return 0;
+  }
+  #+END_SRC
+
 **** problems & solutions
 *** c++
 **** facts
