@@ -764,6 +764,30 @@ typedef struct A{
 char c = 'a';
 printf( "%p", &c );
 #+end_src
+***** write inline assembly
+- here are two different ways you can write inline assembly in C
+
+  1. with "__asm" and with *volatile* keyword
+    #+begin_src c
+void add(void) {
+    __asm volatile ( "mov eax, 2" );
+    __asm volatile ( "mov ebx, 3" );
+    __asm volatile ( "add eax, ebx" );
+}
+    #+end_src
+
+  2. more flexible way but ends with "\n\t"
+    #+begin_src c
+void add(void) {
+    asm (
+        "mov eax, 2\n\t"
+        "mov ebx, 3\n\t"
+        "add eax, ebx\n\t"
+    );
+}
+    #+end_src
+
+- *volatile* keyword is used if programmer doesn't want to enable _compiler optimizatino_ on the given assembly line
 **** problems & solutions
 *** c++
 **** facts
