@@ -646,6 +646,33 @@ void *p = &a;
 p = &a;
 p = &a;
   #+end_src
+***** working with sleep functions
++ weirdly this code will not output anything on the screen
+  #+begin_src c
+  #include <unistd.h>
+  #include <stdio.h>
+
+  int main(void) {
+      while (1) {
+          printf("hello brother");
+          sleep(1);
+      }
+      return 0;
+  }
+  #+end_src
++ however when we add *new line* this will work..
+  #+begin_src c
+  #include <unistd.h>
+  #include <stdio.h>
+
+  int main(void) {
+      while (1) {
+          printf("hello brother\n");
+          sleep(1);
+      }
+      return 0;
+  }
+  #+end_src
 
 **** tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
