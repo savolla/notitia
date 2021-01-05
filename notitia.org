@@ -586,11 +586,16 @@ this won't compile
 
 ***** c standards
 - currently the most widely used language in Embedded is C. but C++ and Rust are gaining popularity
+
 - the first C standard was *ANSI C* this standard is called =C89= or =C90= for short
+
 - more features added to C in 1999. so this standard is called =C99=. C with more features
+
 - in 2011 new standard came out and it is called =C11=
+
 - *C11* is the compiler default for *gcc*
-- all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) C99 to C90
+
+- all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) from C99 to C90
 ***** static functions are private
 functions in one file can be used from another file with *extern* keyword. however if we use the *static* keyword, this function will not be accessible form other files anymore. for example;
 
@@ -615,7 +620,7 @@ gcc file1.c file2.c
 #+end_src
 compiler will complain
 ***** compiler help the programmer with division operations
-- in C if *numerator* is explicitly casted to =float=, compiler will assume that the *denominator* is also =float=. so you don't need to cast the denominator to float
+- in C if *numerator* is explicitly casted to =float=, compiler will assume that the *denominator* is also =float=. so you don't need to cast the denominator to float again
 
 - the following code will output =integer= type value "26.0000" (no explicit cast);
   #+begin_src c
@@ -629,7 +634,7 @@ compiler will complain
   printf("%f", x);
   #+end_src
 
-- by doing explicit casting, 3 will be casted to float by compiler automatically
+- by doing explicit casting, number 3 will be casted to float by compiler _automatically_
 ***** void pointer
 - void pointers can hold any value
   #+begin_src c
