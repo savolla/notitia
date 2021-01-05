@@ -8487,7 +8487,7 @@ program bigger at the same time.
 ***** read one chapter
 - [-] making embedded systems
 - [-] programming embedded systems
-- [ ] the art of concurrency
+- [-] the art of concurrency
 - [ ] embedded-primer
 **** Qt
 ***** read one chapter
