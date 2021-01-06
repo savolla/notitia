@@ -785,6 +785,20 @@ char c = 'a';
 printf( "%p", &c );
 #+end_src
 ***** write inline assembly
+****** example code
+the following example work on =gcc= and takes no special parameters while compiling
+#+begin_src c
+int inc( int number ) {
+  __asm__(".intel_syntax noprefix;" // switch to intel syntax
+          "mov eax, %0;"
+          "inc eax;"
+          "mov %1, eax;"
+          ".att_syntax prefix;" // enable this to make the following codes work
+          : "=r"(number) // outputs(=) to (r)egister
+          : "r"(number)); // input comes from (r)egister
+  return number;
+}
+#+end_src
 ****** single line inline assembly
 + syntax for *arm-none-eabi-gcc* inline assembly
   #+BEGIN_SRC c
