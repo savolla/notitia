@@ -505,16 +505,6 @@ Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/R
 
 * Programming
 ** languages
-*** ARM Assembly
-**** facts
-+ *mov* command can only be used with *general purpose* registers (r0 - r12)
-+ *msr* or *mrs* instructions used to move values from or to *special purpose* registers
-
-  | instruction | description               |
-  |-------------+---------------------------|
-  | MSR         | mov Special_reg, Register |
-  | MRS         | mov Register, Special_reg |
-
 *** c
 **** facts
 - all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
@@ -3523,6 +3513,43 @@ class Person {
 }
   #+END_SRC
 **** problems & solutions
+*** Assembly
+**** facts
+**** how to
+***** make a Linux Syscalls in different Architectures
+
+| arch   | syscall NR | return | arg0 | arg1 | arg2 | arg3 | arg4 | arg5 |
+|--------+------------+--------+------+------+------+------+------+------|
+| ARM    | r7         | r0     | r0   | r1   | r2   | r3   | r4   | r5   |
+| ARM64  | x8         | x0     | x0   | x1   | x2   | x3   | x4   | x5   |
+| x86    | eax        | eax    | ebx  | ecx  | edx  | esi  | edi  | ebp  |
+| x86_64 | rax        | rax    | rdi  | rsi  | rdx  | r10  | r8   | r9   |
+
+**** 32-bit ARM Linux Assembly
+***** facts
++ *mov* command can only be used with *general purpose* registers (r0 - r12)
++ *msr* or *mrs* instructions used to move values from or to *special purpose* registers
+
+  | instruction | description               |
+  |-------------+---------------------------|
+  | MSR         | mov Special_reg, Register |
+  | MRS         | mov Register, Special_reg |
+**** 64-bit ARM Linux Assembly
+***** facts
+**** 32-bit Linux Assembly
+***** facts
+***** how to
+****** call a syscall
+#+begin_src asm
+int 0x80
+#+end_src
+**** 64-bit Linux Assembly
+***** facts
+***** how to
+****** call a syscall
+#+begin_src asm
+syscall
+#+end_src
 ** databases
 *** mysql
 **** facts
