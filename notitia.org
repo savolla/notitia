@@ -439,6 +439,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
 7. Exiting the program with the return code from main
 ***** According to Programming Embedded Systems book
 *** how to
+**** run ARM binaries on x86 Linux
 *** concepts
 **** I²C
 - developed by Philips (now NXP)
