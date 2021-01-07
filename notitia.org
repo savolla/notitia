@@ -5134,16 +5134,19 @@ internal links will be generated
 ****** write your configs in org-mode
 This is useful when your config files are huge and messy. this way of writing config files will help you to organize the code and make it more understandable. you can also create code documentations with org-mode. I'm going to use i3 config as an example. (ignore periods in code blocks) so here are the steps.
 
-1. create a README.org next to your config file
+1. create a =README.org= next to your config file
+
 2. add the title like on top of your file;
    #+begin_src org
    .#+TITLE: i3 Cofiguration
    #+end_src
-3. add the this property to write code blocks to the separate file (config)
+
+3. add this property to write code blocks to the separate file (config)
    #+begin_src org
    .#+TITLE: i3 Cofiguration
    .#+PROPERTY: header-args :tangle config
    #+end_src
+
 4. =SPC : org-babel-tangle= this will write your source blocks to the config
 
 after that you will never gonna edit i3 config file again. all you is to come back to this README.org file and add some code blocks here
