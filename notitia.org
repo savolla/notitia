@@ -1076,20 +1076,24 @@ print(m.__private_var) # this won't
 #+BEGIN_SRC sh
 sudo pip install pipenv
 #+END_SRC
+
 2. proje klasörü oluşturulup oraya girilir ve şu komut yazılır
 #+BEGIN_SRC sh
 pipenv shell
 #+END_SRC
 bu komuttan sonra, klasör adı ile bir ortam oluşacaktır. terminalin solunda projenin adı görünecek ve bu dizince bir Pipfile oluşacaktır. onu elleme lazım o.
+
 3. istenen python paketleri kurulur. sanal dizinde olduğundan emin ol
 #+BEGIN_SRC sh
 sudo pipenv install django==3.0.1
 #+END_SRC
 artık ne kuruluyorsa bu klasöre kurulacak ve sistemden tamamen izole bir şekilde çalışacaktır
+
 4. paket silme
 #+BEGIN_SRC sh
 sudo pipenv uninstall django==3.0.1
 #+END_SRC
+
 5. ortamdan çıkmak istersen
 #+BEGIN_SRC sh
 exit
@@ -1375,7 +1379,6 @@ page_html = driver.page_source  # now you have all the html content in page_html
 from selenium.webdriver.common.by import By
 
 #+end_src
-
 *** bash
 *** vhdl
 **** facts
@@ -5853,7 +5856,9 @@ skinparam dpi 300
 @enduml
 #+end_src
 **** problems & solutions
-
+*** pip
+python package manager
+**** how to
 ** command line utility
 *** imagemagick
 **** how to
