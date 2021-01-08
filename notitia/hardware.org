@@ -1,0 +1,12 @@
+#+TITLE: Hardware
+
+* Calculators
+** CASIO fx-991ex
+*** how to
+**** solve an equation for x
+1. enter an equation. for example: /x + 7 = 10/
+2. press: *SHIFT CALC*. you will see something like "x=some_value". don't worry. this is just x with previous stored value
+3. press *=*
+now you see the value for x
+**** take percentage of a number
+/$NUMBER * $percentage %/

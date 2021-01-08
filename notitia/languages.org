@@ -1,0 +1,31 @@
+#+TITLE: Programming Languages
+#+AUTHOR: savolla
+#+EMAIL: savolla@protonmail.com
+#+DATE: Fri Jan  8 22:02:29 2021
+#+DESCRIPTION: Index of Various Programming Languages
+
+* System
+ * [[./c.org][c]]
+ * [[./cpp.org][cpp]]
+ * [[./assembly.org][assembly]]
+
+* Scripting
+ * [[./perl.org][perl]]
+ * [[./python.org][python]]
+ * [[./bash.org][bash]]
+
+* Hardware Description
+ * [[./vhdl.org][vhdl]]
+ * [[./verilog.org][verilog]]
+
+* OOP
+ * [[./java.org][java]]
+ * [[./csharp.org][c#]]
+
+* Databases
+ * [[./sql.org][sql]]
+
+* Web
+ * [[./html.org][html]]
+ * [[./css.org][css]]
+ * [[./javascript.org][javascript]]

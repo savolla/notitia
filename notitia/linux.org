@@ -1,0 +1,138 @@
+#+TITLE: Linux
+
+* How To
+** manage dotfiles
+*** create dotfiles
+1. initialize git
+#+begin_src sh
+git init --bare $HOME/.dotfiles
+#+end_src
+
+2. add alias to your .bashrc
+#+begin_src sh
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+#+end_src
+
+3. don't show untracked files since they are too much
+#+begin_src sh
+cd ~/.dotfiles
+git config status.showUntrackedFiles no
+#+end_src
+
+4. source the .bashrs
+#+begin_src sh
+source ~/.bashrc
+#+end_src
+
+5. add your dotfiles
+#+begin_src sh
+dotfiles add $YOUR_DOTFILE
+#+end_src
+
+6. commit
+#+begin_src sh
+dotfiles commit
+#+end_src
+
+7. create a repository called *dotfiles* on *github*
+
+8. essentials
+#+begin_src sh
+dotfiles branch -M main
+dotfiles remote add origin https://github.com/savolla/dotfiles.git
+dotfiles push -u origin main
+#+end_src
+
+*** restore dotfiles on a new system
+
+1. install *stow*
+#+begin_src sh
+sudo pacman -S stow
+#+end_src
+
+2. clone your dotfiles from github
+#+begin_src sh
+git clone https://github.com/savolla/dotfiles.git ~/.dotfiles
+#+end_src
+
+3. restore your dotfiles
+#+begin_src sh
+cd ~/.dotfiles
+stow *
+#+end_src
+
+** see lastly modified 5 files
+#+begin_src sh
+ls -tl | head -n 5
+#+end_src
+** pause a program
+this can be usefull when you want to pause a running script or a program
+1. find the process id and assign it to a variable
+   #+begin_src sh
+   PROCESS_ID=$(ps aux | grep -i $YOUR_PROCESS | grep -v grep | awk '{ print $2 }')
+   #+end_src
+2. pause the process.
+   #+begin_src sh
+   kill -STOP $PROCESS_ID
+   #+end_src
+3. process will stop. now you can bring it back to live with:
+   #+begin_src sh
+   kill -CONT $PROCESS_ID
+   #+end_src
+
+*** I have a better idea
+let's add two functions in /.bashrc/ !
+1. open up =~/.bashrc= then add the following
+   #+begin_src sh
+pause() {
+   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
+   kill -STOP $PROCESS_ID
+}
+
+cont() {
+   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
+   kill -CONT $PROCESS_ID
+}
+   #+end_src
+
+2. refresh your =.bashrc=
+   #+begin_src sh
+source ~/.bashrc
+   #+end_src
+** unfuck subtitles
+#+begin_src bash
+iconv -f iso-8859-9 bozuk-encoding.srt > turkce-encoding.srt
+#+end_src
+** find all font names in system
+    #+BEGIN_SRC bash
+    fc-list
+    #+END_SRC
+
+** set time and date
+   #+BEGIN_SRC bash
+   date +%Y%m%d -s "20120418" # date
+   date +%T -s "11:14:00" # time
+   #+END_SRC
+
+** zip files
+   #+BEGIN_SRC bash
+   zip -r $ARCHIVE_NAME.zip $DIRECTORY_TO_ZIP
+   #+END_SRC
+
+** sync clock with network or set system clock
+   #+BEGIN_SRC bash
+   pacman -S ntp # install the service first
+   systemctl enable ntpd.service # enable the service
+   timedatectl set-ntp 1 # update clock
+   hwclock --systohc
+   systemctl start ntpd # start the service
+   #+END_SRC
+
+** add a directory to $PATH
+*** temporary
+#+BEGIN_SRC bash
+PATH=$PATH:/path/to/directory
+export PATH
+#+END_SRC
+*** permanent
+add the temporary commands into .bashrc or .zshrc

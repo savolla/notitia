@@ -1,0 +1,8 @@
+#+TITLE: Domain Driven Design
+
+* Bölüm 0
++ yazılım'ı asıl karmaşık yapan şey kod ya da yanlış tasarım değildir. asıl karmaşaya neden olan, insanın kendi iş sistemidir. yazılım sadece bu iş sistemini yazılımlaştırıp otomatize etmeye yarar.
++ bu iş/meslek dallarına kısaca *domain* diyoruz
++ yazılımdaki karmaşanın azaltılması için asıl yapılması gereken şey, mevcut domain'in çok iyi modellenmesidir
++ bu kitap, karmaşık domainlerde yazılım geliştirmeye çalışan yazılımcılara bir kaynak şeklinde yazılmıştır. domainlere yaklaşırken, adım adım ne yapmaları gerektiği anlatılmıştır
+* Bölüm 1

@@ -1,0 +1,35 @@
+#+TITLE: Verilog
+
+* Facts
++ found in 1985
++ IEEE standar
++
+* How To
+** create a basic module
+
+#+BEGIN_SRC verilog
+module And(x, y, out);
+input x, y;
+output out;
+assign out = x & y;
+endmodule
+#+END_SRC
+
+** work with array of inputs and outputs
+
+#+BEGIN_SRC verilog
+module And(x, y, out);
+input [15:0] x, y; // [15:0] is the syntax of 16-bit arrays
+output [15:0] out;
+assign out = x & y;
+endmodule
+#+END_SRC
+
+** [X] for loop in verilog
+
+#+BEGIN_SRC verilog
+integer k;                                // you have to define integer k outside
+for (k = 0; k <= 15; k=k+1) begin         // note that k++ does not work in verilog
+Xor tmp(x[k], y[k], out[k]);
+end
+#+END_SRC

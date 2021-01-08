@@ -1,0 +1,182 @@
+#+TITLE: Daily Schedule
+
+* 06:06 :morning_ritual:
+** stretch
+- neck
+- arms
+- legs
+** vocabulary
+*** english
+- memorize unknown words in notitia
+*** russian
+- memorize unknown words in notitia
+*** japan
+**** hiragana
+- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
+**** katakana
+- [[https://drlingua.com/japanese/games/kana-bento/][play this]]
+**** kanji
+- learn 3 kanjies
+- draw each kanji
+- repeat learned kanjies
+** flash cards drill
+*** regex
+*** algorithms
+*** data structures
+* 07:07 :work:
+** embedded systems
+*** electronics
+**** read one chapter
+=NOTE= review notes first
+- [ ] the art of electronics
+- [ ] digital fundamentals floyd
+- [ ] hardware design know it all
+*** software
+**** read one chapter
+- [-] making embedded systems
+- [-] programming embedded systems
+- [-] the art of concurrency
+- [ ] embedded-primer
+*** Qt
+**** read one chapter
+- learning Qt
+*** video course
+**** FastBit
+- [-] embedded C =usecase of static with functions=
+- [ ] cortex m4
+- [ ] microcontrollers 1
+- [ ] microcontrollers 2
+- [ ] RTOS
+- [ ] DMA
+- [ ] bootloader
+- [ ] embedded linux
+- [ ] linux device drivers
+**** Quantum Leaps
+- [ ] lesson 0
+- [ ] lesson 1
+- [ ] lesson 2
+- [ ] lesson 3
+- [ ] lesson 4
+- [ ] lesson 5
+- [ ] lesson 6
+- [ ] lesson 7
+- [ ] lesson 8
+- [ ] lesson 9
+- [ ] lesson 10
+- [ ] lesson 11
+- [ ] lesson 12
+- [ ] lesson 13
+- [ ] lesson 14
+- [ ] lesson 15
+- [ ] lesson 16
+- [ ] lesson 17
+- [ ] lesson 18
+- [ ] lesson 19
+- [ ] lesson 20
+- [ ] lesson 21
+- [ ] lesson 22
+- [ ] lesson 23
+- [ ] lesson 24
+- [ ] lesson 25
+- [ ] lesson 26
+- [ ] lesson 27
+- [ ] lesson 28
+- [ ] lesson 29
+- [ ] lesson 30
+- [ ] lesson 31
+- [ ] lesson 32
+- [ ] lesson 33
+- [ ] lesson 34
+- [ ] lesson 35
+- [ ] lesson 36
+
+** programming language
+*** C
+**** read one chapter
+- [ ] The C programming Language
+- [ ] Learn C the Hard Way
+- [ ] Practical C
+- [ ] Understanding and Using C Pointers
+- [ ] deep C secrets
+**** codewars kata
+- review notes
+- solve kata
+**** video lectures
+- [[https://www.youtube.com/watch?v=ypG9W33LOTk&list=PLfqABt5AS4FmErobw8YyTwXDUE5nPH5lH][Code Vault]]
+*** C++
+**** read one chapter
+- C++ Primer (bone book)
+- Object Oriented Programming in C++ by Robert Lafore
+- Effective C++
+**** codewars kata
+- review notes
+- solve kata
+*** Rust
+**** read one chapter
+- embedded rust discovery
+- the embedded rust book
+- the embedonomicon
+**** codewars kata
+- review notes
+- solve kata
+*** ARM
+**** read one chapter
+- arm assembly language
+- arm baremetal ebook
+**** codewars kata
+- review notes
+- solve a kata
+* 10:10 :break:
+- walk the doggo
+** workoup when back
+  - [ ] chest day
+  - [ ] arm day
+  - [ ] leg day
+  - [ ] off day
+* 12:12 :lunch:
+* 13:13 :work:
+- [-] Probability and Statistics
+  - [X] Cumulative Distribution Funcion (CDF)
+  - [X] Median / Mod
+  - [X] Variance And Standard Deviation
+  - [ ] Functions of Random Variables
+  - [ ] Continuous Random Variables
+- [ ] ERP
+- [-] Betik Diller
+  - [-] scikit learn
+  - [ ] flask
+- [ ] Wireless Communication
+  - [ ] wireless slide 7
+  - [ ] wireless slide 8
+  - [ ] wireless slide 9
+* 17:17 :break:
+** jamming
+- jam through backing tracks on youtube
+** gaming
+*** retroarch
+- [ ] ninja gaiden III
+- [ ] Super Mario 3
+- [ ] Super Mario 2
+*** path of exile
+** other
+* 17:47 :study:
+** software engineering
+*** read one chapter
+- [-] dive into design patterns
+- [-] domain driven design
+- [-] dive into refactoring
+- [-] clean code
+- [-] code complete
+- [ ] object oriented analysis and design
+- [ ] working effectively with legacy code
+* 21:21 :finish:
+** reading
+- [ ] outliers
+- [ ] siddhardtha
+- [ ] semerkant
+- [ ] yer altından notlar
+- [ ] bir delinin anı defteri
+- [ ] zor kişiliklerle yaşamak
+- [-] suç ve ceza
+** watch movie
+- [X] [[https://www.youtube.com/watch?v=onM1l2F-2o4][Zeitgeist III]]

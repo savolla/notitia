@@ -1,0 +1,116 @@
+#+TITLE: Embedded Systems
+#+AUTHOR: savolla
+#+EMAIL: savolla@protonmail.com
+#+DATE: Fri Jan  8 22:02:29 2021
+#+OPTIONS: Knowledge collected for Embedded Systems
+
+* Articles
+
++ [[https://jaycarlson.net/][jay carlson's entire website]]
++ [[https://www.livecareer.com/resume-search/r/senior-embedded-software-engineer-29aac52d404b476e87fdb747db1370e7][good example CV for embedded systems]]
+
+* Books
+1. An Embedded Software Primer
+   [[file:./images/screenshot-09.png]]
+   According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
+
+* Tips
+
+- don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead
+
+* Facts
+** what happens before main()
+*** According to Making Embedded Systems book
+0. _start function
+1. Early low-level initialization, such as;
+   a. Configuring processor registers
+   b. Initializing external memory
+   c. Enabling caches
+   d. Configuring the MMU
+2. Stack initialization, making sure that the stack is properly aligned per the ABI requirements
+3. Frame pointer initialization
+4. C/C++ runtime setup
+5. Initializing other scaffolding required by the system
+6. Jumping to main
+7. Exiting the program with the return code from main
+*** According to Programming Embedded Systems book
+
+* How To
+** run ARM binaries on x86 Linux
+
+* Concepts
+** I²C
+- developed by Philips (now NXP)
+- serial communication protocol
+- I²C enables designers to add more GPIO pins to MCU
+- some MCUs have this feature
+- I²C bus consists of two data lines;
+  1. SDA (serial data line)
+  2. SCA (serial clock line)
+- with I²C you can add bunch of *slaves* such as;
+  a. SPD EEPROMS
+  b. LED/LCD drivers
+  c. NVRAM CHIPS
+  d. DAC, ADC
+  e. Sound Controller
+  f. sensors
+  g. write/read real time clocks
+- slaves are easily replacable
+- here is how I²C looks like
+ [[file:./images/screenshot-71.png]]
+
+** NVRAM
+- non volatile RAM
+- data does not go away when power goes off
+- this is a costy component
+ [[file:./images/screenshot-72.png]]
+
+** Interrupt Storm
+- this even happends when amount of _incoming interrupts_ is an astronomic number
+- ISRs are working constantly and the main system is busy all the time.
+- system is not responsive anymore.
+- requires a reset
+
+** DMA
+- direct memory access
+- translator between peripherals and the RAM
+
+** SWD
+- serial wired debug
+- two-wire protocol for accessing the ARM debug interface
+- alternative to JTAG (just in ARM MPUs)
+- has two wires;
+  1. SWDIO : bidirectional data line
+  2. SWCLK : clock driven by the host
+- capabilities of SWD;
+  a. program MCU's internal flash memory
+  b. access memory regions
+  c. add breakpoints
+  d. stop/run CPU
+  e. printf style debugging
+
+** ITM unit
+- instrumentation trace macrocell unit
+
+- a unit inside the *ARM Cortex M4* Processor
+
+- this is the core hardware that provides *printf style* debugging via SWD protocol
+
+- contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
+
+** newlib
+- *Newlib* is a C standard library implementation intended for use on embedded systems
+
+** Renesas
+Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+
+* Platforms
+** STM32F407VGT6
+- comes with it's own debugger called *ST-LINK/V2-A*
+
+- the overview of the platform:
+  [[./images/screenshot-73.png]]
+
+- comes with *ARM Cortex-M4*
+
+* Problems & Solutions

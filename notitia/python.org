@@ -1,0 +1,430 @@
+#+TITLE: Python
+
+* Facts
++ sınıf metodları hiç parametre almasa bile, içinde mutlaka *self* parametresi barındırmalıdır. örnek: [[sınıf oluşturmak]]
++ python'da bir sınıf oluştururken __init__ metodu kullanmak zorunda değiliz.
++ python'da kalıtım almak için sadece sınıf tanımlamasında, sınıf isminin yanına, parantez içine super classın adını yazmak yeterlidir. örnek: [[python'da inheritance]]
++ kalıtım almış bir sınıfın base sınıfınından method çağırmak için *super* keywordü kullanılır. örnek: [[base class'a ulaşmak]]
++ private değişken tanımlamak için, değişkenin başına iki kere '_' koymamız gerekir. örnek: [[private değişken oluşturmak]]
+* Consepts
+** __init__
+python classları için kullanılan *constructor*. diğer çoğu dilde genelde sınıfın adı kullanılır init yerine ama python'da bu şekilde. örnek: [[sınıf oluşturmak]]
+** self
+C++'daki *this*'in aynısı. bunun özel bi olayı var, sınıf oluştururken kesinlikle her methodun içine parametre olarak verilmelidir. örnek : [[sınıf oluşturmak]]
+** format string
+normalde print fonksiyonu içine yazdığımız string'e dışardan bir değişken eklemeye kalktığımızda, stringi ve değişkenleri + ile toplamamız vs gerekir. bunun yerine format string kullanılır. örnek: [[format string oluşturma]]
+** pipenv
+kesinlikle virtualenv'den daha kullanışlı bir pakettir. bununla sanal ortam oluşturmak için [[virtual environment oluşturmak][şuna]] bak
+* Builtin Function
+** type()
+- *işlev*: bir objenin sınıfını döndürür
+- *params*: objenin kendisi
+- *kullanım*: [[pt1]]
+* Howto
+** bir objenin sınıfını nasıl döndürürüz | <<pt1>>
+#+BEGIN_SRC python :results output
+msg = "hello"
+print(type(msg))
+#+END_SRC
+
+#+RESULTS:
+: <class 'str'>
+** sınıf oluşturmak
+#+BEGIN_SRC python :results output
+class Dog:
+# constructor
+def __init__(self): # self must be here
+    print("New Dog is created")
+
+def bark(self):
+    print("BARK!")
+
+d = Dog() # instantiation
+d.bark() # bark the dog
+#+END_SRC
+
+#+RESULTS:
+: New Dog is created
+: BARK!
+
+** class property'si oluşturma ve erişme
+#+BEGIN_SRC python :results output
+class Dog:
+# class properties
+name = ""
+age = 0
+
+# constructor
+def __init__(self, dog_name):
+    self.name = dog_name # set name property
+
+d = Dog("Ares")
+print(d.name)
+#+END_SRC
+
+#+RESULTS:
+: Ares
+** format string oluşturma
+normal print fonksiyonunun içine, tıknaktan önce bir *f* karakteri eklenir
+
+#+BEGIN_SRC python :results output
+name = "savolla"
+age = 28
+print(f"Hi! My name is {name} and I'm {age} years old")
+#+END_SRC
+
+#+RESULTS:
+: Hi! My name is savolla and I'm 28 years old
+** python'da inheritance
+#+BEGIN_SRC python :results output
+class Mammal:
+pass
+
+class Human(Mammal):
+pass
+
+class Dog(Mammal):
+pass
+#+END_SRC
+
+** base class'a ulaşmak
+#+BEGIN_SRC python :results output
+class Mammal:
+age = 12;
+
+class Human(Mammal):
+def someMethod(self):
+    print(super().age)
+
+h = Human()
+h.someMethod()
+#+END_SRC
+
+#+RESULTS:
+: 12
+** private değişken oluşturmak
+#+BEGIN_SRC python :results output
+class A:
+public_var = 11
+__private_var = 43
+
+m = A()
+print(m.public_var) # this will be printed
+print(m.__private_var) # this won't
+#+END_SRC
+
+#+RESULTS:
+: 11
+: 43
+** virtual environment oluşturmak
+1. önce *pipenv* paketi kurulur
+#+BEGIN_SRC sh
+sudo pip install pipenv
+#+END_SRC
+
+2. proje klasörü oluşturulup oraya girilir ve şu komut yazılır
+#+BEGIN_SRC sh
+pipenv shell
+#+END_SRC
+bu komuttan sonra, klasör adı ile bir ortam oluşacaktır. terminalin solunda projenin adı görünecek ve bu dizince bir Pipfile oluşacaktır. onu elleme lazım o.
+
+3. istenen python paketleri kurulur. sanal dizinde olduğundan emin ol
+#+BEGIN_SRC sh
+sudo pipenv install django==3.0.1
+#+END_SRC
+artık ne kuruluyorsa bu klasöre kurulacak ve sistemden tamamen izole bir şekilde çalışacaktır
+
+4. paket silme
+#+BEGIN_SRC sh
+sudo pipenv uninstall django==3.0.1
+#+END_SRC
+
+5. ortamdan çıkmak istersen
+#+BEGIN_SRC sh
+exit
+#+END_SRC
+** pipenv ile requirements.txt'den dependency'leri kurmak
+bazen bir projenin düzgün çalışması için *requirements.txt* dosyasıyla beraber gelir
+#+BEGIN_SRC sh
+pipenv install -r ./requirements.txt
+#+END_SRC
+** +scrape web with python+
+*** create a python environment
+1. install *pypenv* for easily creating /healthy/ python environments
+   #+begin_src sh
+sudo pip install pipenv
+   #+end_src
+2. create your project directory (web-scraper in this example)
+   #+begin_src sh
+mkdir web-scraper && cd web-scraper
+   #+end_src
+3. create and start the enviroment
+   #+begin_src sh
+pipenv shell
+   #+end_src
+   after this command a new file called =Pipfile= will be created. don't mess with it yet
+*** install dependencies
+1. install *bs4* module for /html parsing/
+   #+begin_src sh
+sudo pipenv install bs4
+   #+end_src
+2. install *requests* for taking html code from websites
+   #+begin_src sh
+sudo pipenv install requests
+   #+end_src
+3. install *fake-useragent* to avoid captchas
+   #+begin_src sh
+sudo pipenv install fake-useragent
+   #+end_src
+*** import modules
+
+1. create a python file and open it with your favorite text editor
+   #+begin_src sh
+touch web-scrapping-application.py
+emacs web-scrapping-application.py
+   #+end_src
+
+2. add the following to your file
+   #+begin_src python
+from urllib.request import urlopen as req
+from bs4 import BeautifulSoup as soup
+from fake_useragent import UserAgent
+
+   #+end_src
+3. execute the file
+   #+begin_src sh
+python web-scrapping-application.py
+   #+end_src
+
+if you don't get any import errors, then it means that modules are installed and you're ready to go.
+
+*** retrieve the web page
+
+1. add the *url* of the site that your want to scrape.
+    #+begin_src py
+url = "https://github.com/savolla"
+    #+end_src
+
+2. get the html content from the internet. this might take a while depending on your internet connection and size of the page
+   #+begin_src py
+webpage = req(url)
+   #+end_src
+
+3. assign html content to a variable
+   #+begin_src py
+page_html = req.read()
+   #+end_src
+
+4. close the connection
+   #+begin_src py
+req.close()
+   #+end_src
+
+5. make the html code manageble
+   #+begin_src py
+page_html = soup(page_html, "html.parser")
+   #+end_src
+
+*** extract content from html
+1. go to your browser and find the section you want to scrape
+2. right click on this section and select "inspect element"
+3. find the elements you want to scrape. (div, span, a..)
+4. crop your html content
+
+   #+begin_src python
+container = page_html.find_all("div", {"class":"div-class-name"})
+   #+end_src
+   container is a list of divs now. every element in this list is a class of =div-class-name=
+
+5. check how many items container have
+** delete the elements from a list
+#+begin_src python :results output
+x = [1,2,3,4]
+x.remove(x[0]) # remove the first element
+print(x)
+#+end_src
+
+#+RESULTS:
+: [2, 3, 4]
+
+** change list elements
+this example changes all 2's to 0
+#+begin_src python
+a=[1,2,1,2,1,2]
+a = [0 if x==2 else x for x in a]
+#+end_src
+** convert list to string
+=WARNING= list items must be type of string
+#+begin_src python
+x = ['h', 'e', 'l', 'l', 'o']
+x = ''.join(x)
+#+end_src
+
+* Problems & Solutions
+* Modules
+** matplotlib
+*** facts
++ matplotlib, veri grafiği çizdirme kütüphanesidir
++
+*** concept
+**** subplot()
++ birden fazla grafiği aynı anda çizdirmek için kullanılan bir matplotlib methodudur. örnek için [[birden fazla grafiği üst üste çizdirme][şuna]] ve [[birden fazla grafiği yan yana çizdirme][şuna]] bak
++ örnek kullanım: subplot(1,2,1)
+
+*** howto
+**** basit bir grafik oluşturma
+#+BEGIN_SRC python :results graphics
+from matplotlib import pyplot as plt
+import numpy as np
+
+x = np.linspace(0,5,50)       # 0'dan başla, 5er 5er 50'ye kadar giden bir dizi oluştur
+y = x ** 2                    # x dizisininin karesini al ve y'ye ata
+plt.plot(x,y)                 # grafiği oluştur
+plt.title("squares")          # grafik başlığı
+plt.xlabel("x ekseni")        # x eksenine başlık ata
+plt.ylabel("y ekseni")        # y eksenine başlık ata
+plt.show()                    # grafiği göster
+#+END_SRC
+
+**** birden fazla grafiği üst üste çizdirme
++ üst üste çizdirmek için, iki grafiğin subplot fonksiyonundaki son parametrelerin aynı olması gerekir
+#+BEGIN_SRC python
+from matplotlib import pyplot as plt
+import numpy as np
+
+# first graphic
+x1 = np.array([1,2,3,4,5,6,7,8])
+y1 = np.array([8,7,6,5,4,3,2,1])
+plt.subplot(1,1,1)
+plt.plot(x1, y1, 'r')
+
+# second graphic
+x2 = np.array([1,2,3,4,5,6,7,8])
+y2 = np.array([1,2,3,4,5,6,7,8])
+plt.subplot(1,1,1)
+plt.plot(x2, y2, 'b')
+
+plt.show()
+#+END_SRC
+
+**** birden fazla grafiği yan yana çizdirme
+#+BEGIN_SRC python
+from matplotlib import pyplot as plt
+import numpy as np
+
+# first graphic
+x1 = np.array([1,2,3,4,5,6,7,8])
+y1 = np.array([8,7,6,5,4,3,2,1])
+plt.subplot(1,2,1)                  # son parametreye dikkat
+plt.plot(x1, y1, 'r')
+
+# second graphic
+x2 = np.array([1,2,3,4,5,6,7,8])
+y2 = np.array([1,2,3,4,5,6,7,8])
+plt.subplot(1,2,2)                  # son parametreye dikkat
+plt.plot(x2, y2, 'b')
+
+plt.show()
+#+END_SRC
+
+*** problems & solutions
+**** Tkinter hatası alınıyorsan şunu dene
+#+BEGIN_SRC sh
+xrdb -load /dev/null
+xrdb -query
+#+END_SRC
+
+** seaborn
+*** facts
+*** concept
+*** howto
+*** problems & solutions
+** pandas
+*** facts
+*** concept
+*** howto
+*** problems & solutions
+** sklearn
+*** facts
+*** concept
+*** howto
+*** problems & solutions
+** bs4
+used for parsing html text. widely used in *web scrapping*
+*** facts
+*** concept
+*** how to
+**** navigate the html tree
+you can zoom into html content by using *dot* operator in bs4
+#+begin_src python
+page_html.title # get title
+page_html.body.p # get the first p element in body
+page_html.body.find_all("p") # find all p elements inside body
+page_html.body.find_all(attrs={"itemprop":"description"})[0].text # you just need this
+#+end_src
+*** problems & solutions
+** selenium
+*** methods
+#+begin_src python
+driver.get("https://savolla.github.io")     # open up a page
+driver.title                                # get page title
+driver.close()                              # close the driver
+#+end_src
+*** how to
+**** install
+1. create a python environment
+
+   #+begin_src sh
+sudo pip install pipenv
+mkdir project
+cd project
+pipenv shell
+   #+end_src
+
+2. install selenium
+
+   #+begin_src sh
+sudo pipenv install selenium
+   #+end_src
+
+3. install *chromium*. this package comes with *chromedriver* which we will need
+   #+begin_src sh
+pacman -S chromium
+   #+end_src
+**** run webdriver
+#+begin_src python
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get("https://savolla.github.io") # open up a page
+driver.close() # close the driver
+#+end_src
+**** search google
+#+begin_src python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("https://google.com")
+search_bar = driver.find_element_by_name("q") # you can search by other things as well
+search_bar.send_keys("Kurotogake bandcamp")
+search_bar.send_keys(Keys.RETURN)
+#+end_src
+**** get page source
+this is usefull when websited block automatic http requests.
+#+begin_src python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("https://github.com/savolla")
+page_html = driver.page_source  # now you have all the html content in page_html
+#+end_src
+**** find elements in html
+#+begin_src python
+from selenium.webdriver.common.by import By
+
+#+end_src
+
+* pip
+python package manager
+** how to

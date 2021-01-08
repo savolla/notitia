@@ -1,0 +1,2170 @@
+#+TITLE: Cpp Primer
+#+HUGO_BASE_DIR: ~/txt/blog/
+#+HUGO_SECTION: en/posts
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: cpp-primer-notes
+:EXPORT_TITLE: C++ Primer Notes
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+This is my summary and notes of C++ Primer by Stanley B. Lippman.
+[[file:./images/screenshot-88.png]]
+
+* Day 1 (Chapter 1. Getting Started)
+- every c++ program contains at least one function (main)
+- simplest c++ program
+  #+BEGIN_SRC cpp
+int main() {
+    return 0;
+}
+  #+END_SRC
+- the return value of main function
+  - 0 means success
+  - -1 means failure
+  - non-zero returns are defined by the system
+- c++ file extensions
+  1. .cc
+  2. .cxx
+  3. .cpp (mostly used)
+  4. .cp
+  5. .C
+- checking main's return value after execution
+  - on UNIX
+    #+BEGIN_SRC bash
+echo $?
+    #+END_SRC
+  - on windows
+    #+BEGIN_SRC bash
+echo %ERRORLEVEL%
+    #+END_SRC
+- enabling all warnings from the compiler
+  - on UNIX (GNU)
+    #+BEGIN_SRC bash
+g++ -o program -Wall source.cpp
+    #+END_SRC
+- c++ does not provide I/O operations by default. Therefore people created a
+  library for this kind of purposes called *standard library*.
+  - standard library is not only for I/O operarionts. I/O is just one of usefull sublibrares
+  - I/O library is *iostream*
+    - input : istream
+    - output: ostream
+    - btw you can't include those ~istream~ and ~ostream~ alone. You include ~iostream~
+- 4 I/O objects
+  - *cin* : takes input
+  - *cout*: outputs
+  - *cerr*: outputs warning and error messages
+  - *clog*: information about program execution
+- danger of namespaces
+  - code does not compile (with namespace)
+    #+BEGIN_SRC cpp
+    #include <iostream>
+    using namespace std;
+
+    void cout(char x){
+            std::cout << x << std::endl;
+    }
+
+    int main(void){
+            int a;
+            std::cin >> a;
+            std::cout << a << std::endl;
+            std::cerr << "this is an error?" << std::endl;
+            std::clog << "this is a log message" << std::endl;
+            cout('j');
+
+            return 0;
+    }
+    #+END_SRC
+
+    #+RESULTS:
+
+  - code that compiles (without namespace)
+    #+BEGIN_SRC cpp
+    #include <iostream>
+
+    void cout(char x){
+            std::cout << x << std::endl;
+    }
+
+    int main(void){
+            int a;
+            std::cin >> a;
+            std::cout << a << std::endl;
+            std::cerr << "this is an error?" << std::endl;
+            std::clog << "this is a log message" << std::endl;
+            cout('j');
+
+            return 0;
+    }
+    #+END_SRC
+  - the cause of the problem is *same function names* =cout=
+- cin tips
+  instead of taking the input in separate lines
+  #+BEGIN_SRC cpp
+#include <iostream>
+int main(void){
+		int a, b;
+		std::cin >> a;
+        std::cin >> b;
+		return 0;
+}
+  #+END_SRC
+  we can take it like:
+  #+BEGIN_SRC cpp
+#include <iostream>
+int main(void){
+		int a, b;
+		std::cin >> a >> b;
+		return 0;
+}
+  #+END_SRC
+- comments
+  - // comment
+  - /* comment */
+  - comments inside /**/ do *NOT* nest!
+    - /* comment1 /* nested comment*/ comment2 */
+      results error
+    - not the case for single line comments //
+- taking unknown number of values
+  #+BEGIN_SRC cpp
+#include <iostream>
+
+int main(void){
+    int value, sum = 0;
+    while(std::cin >> value){
+        sum += value;
+    }
+    std::cout << sum;
+}
+  #+END_SRC
+  ~while~ executes untill it encounters end-of-line ~Ctrl+d~ or an input error
+  like taking characters instead of integer
+- end-of-line character
+  - UNIX & Mac: ~Ctrl+d~
+  - windows: ~Ctrl+z~
+- error types that c++ compiler can detect
+  - =syntax errors= (hide and seek champion ';')
+  - =type errors= (variable types =int=, =string= etc.)
+  - =declaration errors= (forgetting to use std::)
+- error structure in c++
+  - usually contains a line number
+  - brief description of the error
+- =edit-compile-debug= cycle
+  - self descriptive..
+
+* Day 2 (Chapter 2. Variables and Basic Types)
++ ~void~ type used for few situations. mostly for returning values
++ C++ builtin types
+  | Type        | Meaning            | Minimum size          | unsigned |
+  |-------------+--------------------+-----------------------+----------|
+  | bool        | boolean            | NA                    | no       |
+  | char        | character          | 1 byte                | yes      |
+  | wchar_t     | wide character     | 2 byte                | yes      |
+  | char16_t    | unicode character  | 2 byte                | no       |
+  | char32_t    | unicode character  | 4 byte                | no       |
+  | short       | short integer      | 2 byte                | yes      |
+  | int         | integer            | 2 byte                | yes      |
+  | long        | long integer       | 4 byte                | yes      |
+  | long long   | long integer       | 8 byte                | yes      |
+  | float       | single-precision   | 6 significant digits  | no       |
+  | double      | double-precision   | 10 significant digits | no       |
+  | long double | extended-precision | 10 significant digits | no       |
+  |-------------+--------------------+-----------------------+----------|
+
++ ~wchar_t~ is used in windows. Represents Unicode characters. Used in
+  international languages like Japanesse
+  #+BEGIN_SRC cpp
+  wchar_t a = L'ü';  // L is a suffix which converts char to wchar_t
+  #+END_SRC
++ ~unsigned~ property can be applied to only =integral types=
++ =unsigned int= can be abbreviated as =unsigned=
++ =signed int= can be abbreviated as =signed= as well
+
+** 4 Rules For Choosing Types
+1. Use ~unsigned~ type when you know that value can't be negative
+2. Use ~int~ for aritmetic. Don't use ~short~ because it's too small. Use ~long
+   long~ when ~int~ is not enough. Don't use ~long~ because its mostly same size
+   with ~int~
+3. Do not use _plain_ ~char~ . char types can be signed on some machines and
+   unsigned on others. Explicitly specify either ~signed char~ or ~unsigned char~
+4. Use ~double~ for floating-point computations. Do not use ~float~ its
+   unnecesary. On some machines ~double~ is *faster*. ~long double~ is also
+   unnecesary and *slow*
+* Day 3 (Type conversions)
+** A goog example on type conversions
+#+BEGIN_SRC cpp
+bool b = 42; // b is true (1)
+bool k = -33; // k is true (1)
+int i = b; // i = 1
+i = 3.14; // i = 3
+double pi = i; // i = 3.0
+unsigned char c = -1; // c = 255
+signed char c2 = 256; // undefined
+#+END_SRC
+
+** btw in c++ this is ok..
+#+BEGIN_SRC cpp
+#include <iostream>
+
+int main(void)
+{
+	unsigned char c = -128; // -129 gives Woverflow
+	unsigned char d = 255; // 256 gives Woverflow
+
+	return 0;
+}
+#+END_SRC
+
+** unsigned char
+**** Assigning to out of range value
+the range of unsigned char is 0-256. if assigning to -1, resutl is max_value -
+assigned_value
+
+#+BEGIN_SRC cpp
+unsigned char c = -1; // c = 256-1
+// resutl: 256 - 1 = 255
+#+END_SRC
+
+**** Assigning to in-range value
+There is no problem here. Just be aware that two examples are resulting to same velue
+#+BEGIN_SRC cpp
+unsigned char d = 255; // d = 255
+#+END_SRC
+
+** signed char
+- =unsigned= values were fine on out-or-range values but this time they are not.
+- Assigning out-or-range values to ~signed~ types are very dangerous. The
+  program might work, it might crash or might produce garbage values
+- it is a good idea to use =unsigned char= ;)
+** notes
++ don't mix ~signed~ and ~unsigned~ values in arithmatic expressions !. Your
+  program may enter infinite loop or produce unexpected values
++ btw in c++, variables are =signed= as default
+
+  example
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  int main(void) {
+      unsigned u = 10, u2 = 42;
+      std::cout << u2 - u << std::endl; // 32
+      std::cout << u - u2 << std::endl; // 4294967264
+
+      int i = 10, i2 = 42;
+      std::cout << i2 - i << std::endl; // 32
+      std::cout << i - i2 << std::endl; // -32
+
+      std::cout << i - u << std::endl;  // 0
+      std::cout << u - i << std::endl;  // 0
+      return 0;
+  }
+  #+END_SRC
+
++ c++ supports representing values as:
+  - octal
+  - decimal
+  - hexadecimal
+
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  int main() {
+      int a = 0xFFFF; // hex
+      int b = 05376; // octal
+      int c = 8943; // decimal
+
+      std::cout << a << std::endl;
+      std::cout << b << std::endl;
+      std::cout << c << std::endl;
+      // do arithmatic operations with differnt bases!!
+      std::cout << a + b + c << std::endl;
+
+
+      return 0;
+  }
+  #+END_SRC
+
+** Escape Sequences
+|---------------------+-------------|
+| character           | description |
+|---------------------+-------------|
+| newline             | \n          |
+| horizontal tab      | \t          |
+| alert (bell)        | \a          |
+| vertical tab        | \v          |
+| backspace           | \b          |
+| double quote        | \"          |
+| backslash           | \\          |
+| question mark       | \?          |
+| single quote        | \'          |
+| carriage return     | \r          |
+| formfeed            | \f          |
+| hexadecimal (chars) | \x[number]  |
+| octal (chars)       | \[number]   |
+|---------------------+-------------|
+
+#+BEGIN_SRC cpp
+#include <iostream>
+int main() {
+    std::cout << "\n" << std::endl; // newline
+    std::cout << "\115" << std::endl;// 'M'
+    std::cout << "\40" << std::endl; // White Space
+    std::cout
+        << "\t\x48\x69\x20\x4d\x6f\x6d\x21\n"
+        << std::endl; << std::endl; // Hi Mom!
+    return 0;
+}
+#+END_SRC
+
+btw octal values work only for 3 characters after \ character while hexadecimal
+values work only for 2 characters.
+
+#+BEGIN_SRC cpp
+#include <iostream>
+int main() {
+    std::cout << "\123" <<  std::endl; // S
+    std::cout << "\1234" <<  std::endl; // S4
+    std::cout << "\x12" <<  std::endl; // ^R
+    std::cout << "\x1234" <<  std::endl; // 4
+    return 0;
+}
+#+END_SRC
+
+** literal suffixes
+We can override integer, floating point or char literals by applying a ~suffix~
+to it
+
+| suffix        | example | description              |
+|---------------+---------+--------------------------|
+| L             | L'a'    | char -> wchar_t          |
+| u8            | u8"hi!" | utf-8 string literal     |
+| U             | 78U     | makes 78 unsigned        |
+| ULL           | 48ULL   | unsigned long long       |
+| <num>E-<num>F | 2E-4F   | outputs 0.0002           |
+| L             | 8493L   | makes the number long    |
+| true          | true    | boolean literal. means 1 |
+| false         | false   | boolean literal. means 0 |
+| nullptr       | ~FIX~   | ~FIX~                    |
+|---------------+---------+--------------------------|
+
+
++ When using long literal use upper case 'L'. lower case usually mistaken with
+  number 1.. 'l' and '1' (depends on font)
+
++ Literal usages and their sizes
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  int main() {
+      std::cout << sizeof('a') << std::endl; // char 1 byte
+      std::cout << sizeof(l'a') << std::endl; // wchar_t 4 byte
+      std::cout << sizeof("a") << std::endl; // string "a\0"" 2 bytes
+      std::cout << sizeof("abcd") << std::endl; // string "abcd\0" 5 bytes
+      std::cout << sizeof(l"a") << std::endl; // idk why it's 8 byte
+
+      std::cout << sizeof(10) << std::endl; // int 4 bytes
+      std::cout << sizeof(10u) << std::endl; // unsigned int
+      std::cout << sizeof(10l) << std::endl; // int -> long
+      std::cout << sizeof(10ul) << std::endl; // int -> unsigned long
+      std::cout << sizeof(012) << std::endl; // 0 -> octal literal
+      std::cout << sizeof(0xc) << std::endl; // 0x -> hexadecimal literal
+
+      std::cout << sizeof(3.14) << std::endl; // double 8 bytes
+      std::cout << sizeof(3.14f) << std::endl; // double -> float 4 bytes
+      std::cout << sizeof(3.14l) << std::endl; // double -> long double
+
+      std::cout << sizeof(10) << std::endl; // int 4 bytes
+      std::cout << sizeof(10u) << std::endl; // unsigned int 4 bytes
+      std::cout << sizeof(10.) << 10. << std::endl; // double 8 bytes (10)
+      std::cout << sizeof(10e-2) << 10e-2 << std::endl; // double 8 bytes (0.1)
+
+      return 0;
+  }
+  #+END_SRC
+
+* Day 4 (Variables)
++ C++ programmers might call a variable as object. Don't be confused. it's the same
+  thing in theory actually..
++ initialization examples
+  #+BEGIN_SRC cpp
+  int a = 3; // a initialized as 3
+  int b = a * 3; // b initialized as a result of arithmatic expression
+  int c = func(b,a); // c initialized as a return value of func()
+  #+END_SRC
++ =INITIALIZATION= and =ASSIGNMENT= are _NOT THE SAME_
+  + initialization: gives a _first value_ to a variable
+  + assignment: changes or replaces the value of a variable
+  #+BEGIN_SRC cpp
+  int a = 4; // initialization
+  a = 33; // assignment
+  #+END_SRC
++ initialization is a complicated thing in c++. Here is why;
+  #+BEGIN_SRC cpp
+  // initializing an int object with a value with 4 ways
+  int x = 0; // normal initialization
+  int x = {0}; // this is called list initialization
+  int x(0);
+  int x{0};
+  // damn son... why...
+  #+END_SRC
++ default initialization;
+  #+BEGIN_SRC cpp
+  int a; // assigns a random value
+  string b; // b is an empty string ""
+  #+END_SRC
++ not every class lets us to initialize objects as default. Compiler will
+  complain about this.
++ _PROTIP_: never leave an undefined variable in your programs. if you
+  initialized a variable as default, give it a value before compilation.
+  Otherwise the program might produce stupid results or unexpected errors. hard
+  to debug
++ declaration and deffinition;
+  + declaration: is just a mention of a variable
+  + deffinition: givin it a value
+  #+BEGIN_SRC cpp
+  int j; // declaration and definition. mentioning and giving random value
+  extern int i; // declares but does not define. mentioning but not giving any value
+  extern double c = 3.1415; // definition and declaraion
+  #+END_SRC
++ =identifier= is the actual _name_ of the variable
+  #+BEGIN_SRC cpp
+  int a = 39; // identifier of the variable is 'a'
+  #+END_SRC
++ using global variables if there is a local variable with the same identifier
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  int nonLocalVariable = 39;
+  int main(void)
+  {
+      std::cout << nonLocalVariable << std::endl; // outputs 39
+      int nonLocalVariable = 3; // overriding identifier
+      std::cout << nonLocalVariable << std::endl; // outputs 3 (local var)
+      std::cout << ::nonLocalVariable << std::endl; // outputs 39. (global var)
+      return 0;
+  }
+  #+END_SRC
+
++ _PROTIP_: it is always a bad idea to define a variable with the same name as a
+  global variable..
++ =reference= is just an alias of another variable identifier
+  #+BEGIN_SRC cpp
+  int a = 1024; // name(identifier) of the variable is 'a'
+  int &b = a; // now variable 'a' has a second name b!. 1024 has two identifiers now.
+  int &c = b; // now variable has 3 identifiers! a,b and c
+
+  // following lines output 1024 but they are not separate variables!
+  // they are the same!
+  std::cout << a << std::endl; // output: 1024
+  std::cout << b << std::endl; // output: 1024
+  std::cout << c << std::endl; // output: 1024
+  #+END_SRC
++ we _can't_ define a ~reference~ to a =reference= or a =constant value=.
+  #+BEGIN_SRC cpp
+  unsigned a = 333;
+  unsigned &b = 34; // assigning to a constant value. NOT ALLOWED!
+
+  unsigned &c = a;
+  unsigned &d = &c; // assigning to another reference. NOT ALLOWED!
+  unsigned &d = c; // this would be a correct way
+  #+END_SRC
++ reference _must be_ the same =type= with referencing identifier
+  #+BEGIN_SRC cpp
+  char a = 'A';
+  int &b = a; // not same type as identifier 'a'
+  #+END_SRC
++ references can't be default initialized
+  #+BEGIN_SRC cpp
+  int &a; // error..
+  #+END_SRC
++ if a reference changed in program, referenced value also changes
+  #+BEGIN_SRC cpp
+  int a = 1024;
+  int &b = a;
+  std::cout << a << std::endl; // outputs 1024
+  std::cout << b << std::endl; // outputs 1024
+
+  b = 333;
+  std::cout << a << std::endl; // outputs 333
+  std::cout << b << std::endl; // outputs 333
+  #+END_SRC
+* Day 5 (Pointers)
++ a pointer holds _address_ of an =object=
++ unlike a reference, pointers can be defaultly initialized
+  #+BEGIN_SRC cpp
+  unsigned char *p; // don't use uninitialized pointers!!!
+  #+END_SRC
++ =address-of= operator: '&'
+  #+BEGIN_SRC cpp
+  double x = 3.44;
+  double *p = &x; // variable p now has x's address
+  #+END_SRC
+  _WARNING:_ '&' is not a reference operator that I covered before! This is
+  totally different operator when used with pointers. It takes the address of an
+  object. It called *address-of* operator
++ since pointers can hold only =object= addresses, we cannot assign a reference
+  to a pointer because references don't have addresses
++ pointer and pointed variable must be matched in types
+  #+BEGIN_SRC cpp
+  double a = 383;
+  int *p = &a; // spits error. pointer and variable are different type
+  #+END_SRC
++ =dereference= operator: '*'
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  int main(void)
+  {
+        int x = 333;
+        int *p = &x; // variable p now has x's address. * is not dereference
+        int i = *p // using dereference operator to assign value that being hold by pointer
+        unsigned char c = *p; // assigning 333 to unsigned char
+
+        std::cout << *p << std::endl; // outputs 333
+        std::cout << i << std::endl; // outputs 333
+        std::cout << c << std::endl; // 333 - 256 = 77 --> outputs 'M'
+        std::cout << char(77) << std::endl; // proof that char 77 is 'M'
+
+        return 0;
+  }
+#+END_SRC
+
++ it is also posible to change pointed variable's value with dereference
+  #+BEGIN_SRC cpp
+  #include <iostream>
+
+  int main(void)
+  {
+      // changing pointed value with dereference
+      int x = 33; // normal value assignment
+      int *p = &x; // loading pointer with x's address
+      std::cout << *p << std::endl; // output: 33
+      *p = 44; // chaning pointing value with dereference
+      // x is now changed
+      std::cout << x << std::endl; // output: 44
+
+      // doint the same thing with references
+      int a = 33;
+      int &b = a;
+      std::cout << b << std::endl; // output: 33
+      b = 44;
+      std::cout << a << std::endl; // output: 44
+      return 0;
+  }
+  #+END_SRC
+
++ REALLY REALLY IMPORTANT !!!!
+  | symbol | example      | usecase     | meaning              |
+  |--------+--------------+-------------+----------------------|
+  | &      | int &b = a;  | declaration | reference operator   |
+  | &      | int *p = &x; | expression  | address-of operator  |
+  | \*     | int *p;      | declaration | defining a pointer   |
+  | \*     | int i = *j   | expression  | dereference operator |
+
++ in normal conditions we can't assign a constant value to a pointer. Except
+  value '0'. It means null pointer
+  #+BEGIN_SRC cpp
+  int *p = 33; // this is an error. constant value assigned to pointer
+  int *q = 0; // this is legal. q is a null pointer now
+  #+END_SRC
++ null pointers do not point to any object. It can be obtained in three ways in
+  c++
+  #+BEGIN_SRC cpp
+  int *q = nullptr; // This is preferable way to declare null pointers in c++
+  int *q = 0; // this is legal but nullptr is mostly used way. avoid
+  int *q = NULL; // C way but might require extra headers (cstdlib.h). avoid
+  #+END_SRC
++ using / leaving unitialized pointers in programs can cause catastrophic errors
+  and those errors are really hard to debug.
+  #+BEGIN_SRC cpp
+  int *p; // avoid!!
+  #+END_SRC
++ if possible define pointers after deffinition of the objects. Good habbit
+
+  wrong way:
+  #+BEGIN_SRC cpp
+  int *p; // pointer defined before the object. avoid
+  int a = 3;
+  p = &a;
+  #+END_SRC
+
+  right way:
+  #+BEGIN_SRC cpp
+  int a = 3;
+  int *p = &a; // pointer defined after the object. good
+  #+END_SRC
++ if you /really/ need a pointer without any value use *nullptr*
+  #+BEGIN_SRC cpp
+  int *p = nullptr; // use it instead
+  #+END_SRC
+
++ pointers can be used in comparison operators. in if statements. if a pointer
+  has nonzero value it returns 1. if null pointer it returns 0
+
+  + example:
+    #+BEGIN_SRC cpp :results output
+    #include <iostream>
+
+    int main(void)
+    {
+        int a = 3;
+        int *p = &a;
+        int *q = nullptr;
+        if (p){std::cout << "p points to something" << std::endl;}
+        else {std::cout << "p is empty" << std::endl;}
+        if (q){std::cout << "q points to something" << std::endl;}
+        else {std::cout << "q is empty" << std::endl;}
+        return 0;
+    }
+    #+END_SRC
+
+    #+RESULTS:
+    : p points to something
+    : q is empty
+
++ =void pointer= is a special pointer that holds only _address_ of an object.
+  But cannot dereference the object or use it's value.
+
+  #+BEGIN_SRC cpp
+  int a = 33; // defining a random integer value
+  void *p = nullptr; // defining a new void pointer
+
+  p = &a; // assigning the address-of a
+  std::cout << p << std::endl; // this will print the address of variable a
+  std::cout << *p << std::endl; // error: dereference is not working on void pointers
+  #+END_SRC
+
++ void pointers are used on just memory-memory operations
++ key difference between *reference* and *pointer*
+  - reference is just an alternative /identifier/ of a variable
+  - pointer is an object that stores only /addresses/ of a varialbe
+
++ there are also confusing pointer deffinition styles to be aware of
+  #+BEGIN_SRC cpp
+  int* p1, p2; // p1 is a pointer while p2 is an int object. avoid this style
+  int *p1, p2; // always prefer this one
+  #+END_SRC
+
++ pointers to pointers
+
+  + example:
+
+  #+BEGIN_SRC cpp
+  #include <iostream>
+
+  int main(void)
+  {
+      int a = 389;
+      int *p = &a;
+      int **pp = &p;
+      int ***ppp = &pp;
+
+      std::cout << a << std::endl;
+      std::cout << *p << std::endl;
+      std::cout << **pp << std::endl;
+      std::cout << ***ppp << std::endl;
+
+      return 0;
+  }
+  #+END_SRC
+
++ references to pointers
+
+  + we cannot assign a reference to a pointer because references are not objects
+    and they don't have addresses.
+    #+BEGIN_SRC cpp
+    int a = 39;
+    int &b = a;
+    int *p = b;
+    #+END_SRC
+  + but since pointers are objects we can reference pointers
+
+    + example
+
+    #+BEGIN_SRC cpp
+    #include <iostream>
+
+    int main(void)
+    {
+        int a = 3; // regular assignment to int obj
+        int &b = a; // reference to a
+        int *p = &b; // pointing to b's value (a). same as "int *p=&a;"
+        int *&q = p; // reference to pointer p
+        int &q = p; // spits out an error. reference identifier must have a *
+
+        std::cout << a << std::endl; // output: 3
+        std::cout << *p << std::endl;// output: 3
+        std::cout << b << std::endl; // output: 3
+        std::cout << *q << std::endl;// output: 3
+        return 0;
+    }
+    #+END_SRC
+
++ reading complicated pointers from *right* to *left* makes life easier.
+
+  + example
+  #+BEGIN_SRC cpp
+  int *&q = p // q is a reference to a pointer
+  #+END_SRC
+
+* Day 6 (const)
++ all constant variables must be initialized with a value. default
+  initialization is not allowed
+  #+BEGIN_SRC cpp
+  const int a = 333; // okay
+  const int b; // error!. default initialization is not allowed
+  #+END_SRC
+
++ to share a *const* variable between multiple files use *extern* keyword
+  =This part is not totally understood. Research and complete this part=
+
++ const variables also accept initializations with a variable or a function
+  return value
+
+  example:
+  #+BEGIN_SRC cpp
+  int s = 333;
+  const int x = s; // okay.
+  const int dbl = sizeof(s); // okay.
+  #+END_SRC
+
++ it is also posible to create a =reference= to a const variable. here is how:
+  #+BEGIN_SRC cpp
+  const int x = 33; // creating a const integer object
+  const int &ref = x; // constant x now has one more constant identifier
+  ref = 8943; // Error. Trying to change constant variable
+  int &ref2 = x; // Error. Value must be "const"
+  #+END_SRC
++ =const pointer=
+  #+BEGIN_SRC cpp
+  int x = 0;
+  int *const p = &x; // p wil always point to x. top-level const
+  const double pi = 3.14159;
+  const double *const p2 = &pi; // we put const keyword at the begining cuz pi is const.
+  // low level const
+  #+END_SRC
+
++ how to read the low-level pointer?. reading *right* to *left*
+  #+BEGIN_SRC cpp
+  // p3 is a constant pointer which points to a constan integer
+  const int *const p3 = &i;
+  #+END_SRC
++ =constant expressions=
+  + when defining a constant variable it is a constant expression
+  + when initializing a constant variable to an arithmatic expression it is a
+    constant expression
+  + when initializing a constant variable to a return value of a function it is
+    not a constant expression. Because the value is not known until runtime
+
+* Day 7 (types)
++ It is posible to changing type identifiers in c++. Think it like reference to types
+  #+BEGIN_SRC cpp :results output
+  #include <iostream>
+
+  int main(void)
+  {
+      typedef int savolla;
+      //using savolla = int; // c++11 new standard
+      savolla x = 333;
+      int y = 33;
+      std::cout << "savolla " << x << std::endl;
+      std::cout << "int     " << y << std::endl;
+
+      return 0;
+  }
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla 333
+  : int     33
+
++ c++11  introduced a new standard for aliasing types
+  #+BEGIN_SRC cpp
+  using savolla = int;
+  #+END_SRC
+
++ =auto= is pretty cool operator in c++
++ it predicts which type a variable should be by looking the value it has
+  #+BEGIN_SRC cpp
+  unsigned char c[] = "blah blah blah"; // instead of writing this:
+  auto c = "blah blah blah"; // we just write auto and magic happens
+  #+END_SRC
+
++ make sure to declaring *auto* variables separately. it might cause errors otherwise
+
+  + wrong way
+    #+BEGIN_SRC cpp
+    auto i = 0, pi = 3.14; // error: inconsistent types at the same line
+    #+END_SRC
+
+  + right way. separately defined auto variables
+    #+BEGIN_SRC cpp
+    auto i = 0;
+    auto pi = 3.14;
+    #+END_SRC
+
++ *auto* becomes handy espesially when we can't predict the result of an
+  arithmatic expression or a return type of a function
+
+  #+BEGIN_SRC cpp
+  auto x = a + b; // no matter what a and b's types are the auto will do the job
+  auto j = unstableFunction(); // function can return anything. auto is awesome!
+  #+END_SRC
+
++ auto drops top-level constants. But low-level constants are kept. if we want
+  to keep top-level constants we need to say explicitly
+  #+BEGIN_SRC cpp
+  const auto x = 33;
+  #+END_SRC
+* Day 8 (strings)
++ =using= keyword
+  #+BEGIN_SRC cpp
+  // instead of using std:: we can use a using keyword
+
+  #include <iostream>
+  using std::cout;
+  cout << "hello";
+
+  #include <string>
+  using std::string;
+  string name = "savolla";
+
+  #+END_SRC
+
++ don't use *using* keyword inside header files. This might cause some name
+  conflicts later.
+
++ initializing =string=
+
+  + string is part of standard library. so we need to use strings like
+    #+BEGIN_SRC cpp
+    #include <string>
+    std::string name = "savolla";
+    #+END_SRC
+
+  + or with *using* at the beginning
+    #+BEGIN_SRC cpp
+    #include <string>
+    using std::string;
+    string name = "savolla";
+    #+END_SRC
+
+  + initializing strings
+    #+BEGIN_SRC cpp
+    string s1; // default initialization is allowed
+    string s2 = s1; // copy initialization
+    string s3 = "vizima"; // copy initialization
+    string s4(10,'c'); // s4 = "cccccccccc"; // direct initialization
+    string s5("temeria"); // s5 = "temeria"  // direct initialization
+    #+END_SRC
+
++ string operations
+
+  | syntax          | description                                     |
+  |-----------------+-------------------------------------------------|
+  | getline(cin, s) | reads whitespace-separated string               |
+  | s.empty()       | returns true if string s is empty               |
+  | s.size()        | returns string length                           |
+  | s[n]            | returns the char on n(th) index                 |
+  | s1 + s2         | adds two strings (-,*,/ are not allowed)        |
+  | s1 = s2         | copies s2 to s1                                 |
+  | s1 == s2        | compares are s1 and s2 same or notes            |
+  | s1 != s2        |                                                 |
+  | <,<=,>,=>       | comparisons are case sensitive and alphabetical |
+
+  #+BEGIN_SRC cpp :results output
+  #include <iostream>
+  #include <string>
+  using std::cout;
+  using std::endl;
+  using std::string;
+
+  int main(void)
+  {
+      string s0 = "AZZ";
+      string s1 = "BAA";
+
+      if (s0 > s1){cout << s0 << " > " << s1 << endl;}
+      if (s0 < s1){cout << s0 << " < " << s1 << endl;} // B is alphabetically bigger than A
+
+      string s2 = "AZZDK";
+      string s3 = "bAA";
+
+      if (s0 > s1){cout << s2 << " > " << s3 << endl;}
+      if (s0 < s1){cout << s2 << " < " << s3 << endl;} // b is bigger than A
+      return 0;
+  }
+  #+END_SRC
+
+  #+RESULTS:
+  : AZZ < BAA
+  : AZZjfdk < bAA
+
+  + getline() and std::cin
+
+    std::cin reads until a white space in encountered.
+    #+BEGIN_SRC cpp
+    string hello;
+    cin >> hello; // consider user enters "hello world"
+    cout << hello; // only "hello" will be printed
+    #+END_SRC
+
+    this is not the case for getline();
+    #+BEGIN_SRC cpp
+    string hello;
+    getline(cin, hello); // consider user enters "hello world" again
+    cout << hello; // "hello world" will be printed
+    #+END_SRC
+
+_PROTIP_: using aliases on functions in c++11. This is really cool!!!
+#+BEGIN_SRC cpp :results output
+#include <iostream>
+#include <string>
+using str = std::string; // aliasing type
+auto print = std::cout; //  aliasing function (we used auto because we don't know return type)
+
+int main(void)
+{
+    str name = "savolla";
+    print << name;
+    return 0;
+}
+#+END_SRC
+
+#+RESULTS:
+
++ strings can be added like:
+  #+BEGIN_SRC cpp
+  string s0 = "hello";
+  string s1 = "world";
+
+  string s2 = s0 + s2; // s2 = "helloworld"
+
+  s0 += " "; // s0 = "hello "
+  s0 += s1; // s0 = "hello world"
+  #+END_SRC
+
++ when adding strings with string literals and char literals we need to obey to
+  some rules in c++
+
+  when adding, there must be at least one string variable!
+  #+BEGIN_SRC cpp
+  string s0 = "Hello";
+  string s1 = s0 + ", " + "World"; // legal: at least one string variable s0 summed with ", "
+  // this means (s0 + ", ") + "World"
+  // s0 + ", " returns a string
+  #+END_SRC
+
+  #+BEGIN_SRC cpp
+  string s0 = "Hello" + ", "; // illegal: no string variable while adding
+  #+END_SRC
+
+  #+BEGIN_SRC cpp
+  string s0 = "yo!";
+  string s1 = "this is " + "my jam " + s0; // illegal
+  // first two literals were added ("this is " + "my jam") + s0
+  // but firts operation returns a string literal which is illegal
+  #+END_SRC
+
++ in c and c++ string literals and strings are not same things. This is why
+  adding rules might seem a bit confusing.
+
+  - "Hello" -> string literal. " symbol makes it string literal
+  - s0 = "World" -> string
+
++ to deal with _characters_ inside a string variable, we use *cctype* header.
+
+  | member      | description                                      |
+  |-------------+--------------------------------------------------|
+  | isalnum(c)  | true if c is letter or digit                     |
+  | isalpha(c)  | true if c is a letter                            |
+  | iscntrl(c)  | true if c is a control char                      |
+  | isdigit(c)  | true if c is a digit                             |
+  | isgraph(c)  | true if c is not space but printable             |
+  | islower(c)  | true if c is lowercase letter                    |
+  | isprint(c)  | true if c is a printable character. not \344     |
+  | ispunct(c)  | if c is _ , + < / ; .  kind of symbol            |
+  | isspace(c)  | true is c is a whitespace, tab or vertical space |
+  | isupper(c)  |                                                  |
+  | isxdigit(c) | true if c is a hexadecimal digit                 |
+  | tolower(c)  | if c is an uppercase changes it to lovercase     |
+  | toupper(c)  |                                                  |
+
++ processing every character inside a string
+
+  c++ provides a short way to do this with *range for*
+
+  with a regular, everyday, normal *for*
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  #include <string>
+  using str = std::string;
+  auto &print = std::cout;
+
+  int main(void)
+  {
+      str name("savolla");
+      for(int i = 0; i<name.size(); i++)
+      {
+          print << name[i];
+      }
+
+      return 0;
+  }
+
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla
+
+  with *range for*
+  #+BEGIN_SRC cpp
+  #include <iostream>
+  #include <string>
+  using str = std::string;
+  auto &print = std::cout;
+
+  int main(void)
+  {
+      str name("savolla");
+      // it's like (for c in name) like in python HO HO HO!! :P
+      for(auto c : name){print << c;} // range for. we could write char instead of auto
+
+      return 0;
+  }
+
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla
+
+
+_PROTIP_: libaries we include up to this time (string , cctype) are parts of
+standard library. We would not include them in our programs. But this is a good
+practice to see which library is imported in the program. But this makes the
+program bigger at the same time.
+
++ if we want to change the actual string variable in our loops we need to create
+  a reference to it
+  #+BEGIN_SRC cpp :results output
+  #include <iostream>
+  using std::cout;
+  using std::string;
+
+  int main(void)
+  {
+      string s0 = "hello, world!";
+      for (auto &r : s0) // created a reference to change the actual string
+      {
+          r = toupper(r);
+      }
+      cout << s0;
+  }
+  #+END_SRC
+
+  #+RESULTS:
+  : HELLO, WORLD!
+* Day 9 (strings continued)
+/Processing Only Some Characters?
++ when we use string[0] it means first character of the string and it called *subscript*
++ in *subscripts* we need to always ensure that there is a value at that given
+  location
+  #+BEGIN_SRC cpp :results output
+  #include <iostream>
+  using std::string;
+
+  void subscriptFunc(string x, int index)
+  {
+      // handling every case is a really good practice
+      if(!x.empty() && index < x.size() && index > 0)
+      {
+          std::cout << x[index] << std::endl;
+      }
+      else
+      {
+          std::cout << "error" << std::endl;
+      }
+  }
+  int main(void)
+  {
+      string name = "savolla";
+      subscriptFunc(name, 99);
+      subscriptFunc(name, -1);
+      subscriptFunc(name, 4);
+      return 0;
+  }
+  #+END_SRC
+
+  #+RESULTS:
+  : error
+  : error
+  : l
++ decltype() takes an expression as a parameter and return expression's type. it
+  works like auto but
+  #+BEGIN_SRC cpp
+  decltype(2 + 1) x = 3.284; // expression in decltype returns an "int" type
+  std::cout << x; // prints 3. because it was int type
+
+  std::string name = "savolla";
+  decltype(name.size()) i = 0; // decltype can also takes function return values
+  #+END_SRC
+
++ This is a cool code and must be understanded. grind it!
+  #+BEGIN_SRC cpp :results output
+    #include <iostream>
+    using std::string;
+
+    int main(void)
+    {
+        // makes first word uppercase
+        string name = "savolla ross";
+        // decltype is used for example purpose. we could use a signle int type instead
+        for (decltype(name.size()) index = 0;
+             // compound conditions can be used in for loops!
+             // instead of using a separete if statement inside for block
+             // we embeded it in for
+             index != name.size() && !isspace(name[index]);
+             ++index)
+             {
+                 // changing every character to uppercase
+                 name[index] = toupper(name[index]);
+             }
+        std::cout << name << std::endl;
+        return 0;
+    }
+  #+END_SRC
+
+  #+RESULTS:
+  : SAVOLLA ross
+
++ out-of-range subscripts are *undefined* and *dangerous* use with caution and
+  always check if user gives a defined subscript as parameter
++ always use unsigned types for substrings to make sure the number can't be negative
+
+  #+BEGIN_SRC cpp :results output
+  #include <iostream>
+  using str = std::string;
+  auto &read = std::cin;
+  auto &print = std::cout;
+
+  int main(void)
+  {
+  		const str hexDigits("0123456789ABCDEF");
+  		str result;
+  		unsigned int input;
+  		while (read >> input)
+  		{
+  				if (input < hexDigits.size())
+  				{
+  						result += hexDigits[input];
+  				}
+  		}
+  		print << result << std::endl;
+  		return 0;
+  }
+  #+END_SRC
+
++ it is good to know the following code is valid because an empty string
+  actually has a value at index 0
+  #+BEGIN_SRC cpp
+  string s0;
+  cout << s0[0]; // index 0 is defined
+  cout << s0[1]; // index 1 is not defined
+  #+END_SRC
+* Day 10 (vectors)
++ vector is a container. Like arrays but more powerfull
++ greates feauture of vectors is that THEY CAN GROW!!. They are not like arrays.
+  Their size is not limited at initialization
++ vector is a template in c++. not a type.
++ deffinition of templates
+  #+BEGIN_SRC cpp
+  vector<int> i_vec; // created a vector which holds int types
+  vector<myCustomType> myVec; // vectors can hold any type
+  vector<vector<string>> _2D_Vec; // vector of string vectors
+  vector<vector<string> > _2D_Vec; // notice white space. it was required in old c++ standards
+  // some compilers may still require a white space between carrot operators
+  #+END_SRC
++ we can't create a vector of *references*. vectors hold only objects. but
+  references are not objects
++ if initializing with a built in type like *int*, values will be 0
++ if not built in like *string*, values are empty. NULL. (empty string)
++ initializing vectors
+  #+BEGIN_SRC cpp
+  vector<int> i_vec = 10; // error.
+  vector<int> i_vec(10); // direct initialization. since int is buitin, i_vec has 10 of 0.
+  vector<int> i_vec{10}; // List initialization .i_vec has one value and it's 10
+  vector<int> i_vec(10, 234); // dirt. init. has 10 items of 234
+  vector<int> i_vec{10, 234}; // i_vec has 2 values. 10 and 234
+  #+END_SRC
++ c++ has different initialization types
+  1. default initialization
+     #+BEGIN_SRC cpp
+     vector<int> i_vec;
+     #+END_SRC
+  2. direct initialization
+     #+BEGIN_SRC cpp
+     vector<int> i_vec(10,3);
+     #+END_SRC
+  3. list initialization
+     #+BEGIN_SRC cpp
+     vector<int> i_vec{10,2,44,333,2,4};
+     #+END_SRC
+
++ also vectors can be assigned to vectors. but both must be same type
+  #+BEGIN_SRC cpp
+  vector<int> i_vec0{1,2,3,4,2,1};
+  vector<int> i_vec1 = i_vec0;
+  #+END_SRC
+
++ adding values to a vector usng *push_back()* method
+
+  #+BEGIN_SRC cpp
+  vector<int> i_vec;
+  for(usingned i=0; i != 100; ++i)
+  {
+      i_vec.push_back(i); // notice push_back(i)
+  }
+  #+END_SRC
+
+  extra knowledge!!. we can also do it with a pointer!
+
+  #+BEGIN_SRC cpp
+  vector<int> i_vec;
+  auto *p = &i_vec;
+  for(usingned i=0; i != 100; ++i)
+  {
+      p->push_back(i); // notice p-> notation
+      // since p is a pointer which points a vector object
+      // p can use vector methods as well.
+      // but when it's a pointer, we use '->' operator instead
+      // in theory these guys are equlivalent:
+      // i_vec.push_back(i) = p->push_back()
+  }
+  #+END_SRC
+
++ _PERFORMANCE_TIP_:
+  1. list initializing vectors causes poor performance. avoid
+     #+BEGIN_SRC cpp
+     vector<int> i_vec{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // avoid !
+     #+END_SRC
+
+  2. adding values in runtime is more efficient. Do this instead !!
+     #+BEGIN_SRC cpp
+     vector<int> i_vec;
+     for (unsigned x=1; x != 11; ++x)
+     {
+        i_vec.push_back(x);
+     }
+     #+END_SRC
+
+  3. it is more efficient to initiazlize a vector with direct initialization
+     when all values are the same
+     #+BEGIN_SRC cpp
+     vector<int> i_vec(10, 3); // i_vec = {3,3,3,3,3,3,3,3,3,3}
+     #+END_SRC
+
+  4. when you have *various* values and you need to initialize them, don't use
+     vectors. use arrays instead !
+     #+BEGIN_SRC cpp
+     int array[10] = {12, 33, 2, 432, 11};
+     #+END_SRC
+
+  5. You initialized an array but you will add items ar runtime? no problem:
+     #+BEGIN_SRC cpp
+     int array[5] = {12, 33, 2, 432, 11};
+     vector<int> i_vec;
+     for (unsigned x=0;
+          x != sizeof(array)/sizeof(array[0]);
+          ++x)
+     {
+        i_vec.push_back(array[x]);
+     }
+     #+END_SRC
+* Day 11 (vectors continued and iterators)
+
++ other operations on *vectors*
+
+  | method               | description                                       |
+  |----------------------+---------------------------------------------------|
+  | v.empty()            | true if vector is empty                           |
+  | v.size()             | returns size of vector                            |
+  | v.push_back()        |                                                   |
+  | v[n] or v[n][m]      | returns the value on index                        |
+  | v1 = v2              | copy v2 to v1                                     |
+  | v1 = {a,b,c..}       | replaces values (not widely used)                 |
+  | v1 == v2 or v1 != v2 | true if they are same size and have same elements |
+  | <,<=,>,=>            |                                                   |
+  |                      |                                                   |
++ we can use *range for* on vectors for _changing_ or _reaching_ values
+
+  + reaching
+  #+BEGIN_SRC cpp
+  vector<int> i_vec{1,3,5,4,5,55,2};
+  for ( auto item : i_vec)
+  {
+      std::cout << item << std::endl;
+  }
+  #+END_SRC
+
+  + changing values (to _change_ purposes we use reference to values)
+  #+BEGIN_SRC cpp
+  vector<int> i_vec{1,3,5,4,5,55,2};
+  for ( auto &item : i_vec)
+  {
+      item *= item // square the elemtn value
+  }
+  #+END_SRC
++ a big _mistake_ !!!
+  new c++ programmers think that subscripting a vector actually adds elements.
+  This is not true. Subscript operator _fetches_ as *existing element*. It does
+  not +add+
+
+  MISTAKE (same for strings. not only vectors)
+  #+BEGIN_SRC cpp
+  vector<int> i_vec; // i_vec has no elements. so it can't be subscriptable
+  for (decltype(i_vec.size()) i=0;
+       i != 100;
+       ++i;)
+  {
+      i_vec[i] = i; // disaster!. i_vec has no elements
+  }
+  #+END_SRC
+
+** iterators
++ iterators are like pointers
++ they hold the information where a container (string,vector) *begins* and *ends*
+  + vec.begin() -> begining address of vec container
+  + vec.end() -> ending address of vec container
++ if a container is _empty_ then *begin()* and *end()* methods have _same_
+  values. And they are called =off-the-end= iterators
+
+  + off-the-end example
+    #+BEGIN_SRC cpp
+    str name; // name is an emtpy container
+    if(name.begin() == name.end()) // on empty cont. begin() and end() are equal
+    {
+        pr << "value is empty"; // prints this
+    }
+    else
+    {
+        pr << "value is not empty";
+    }
+    return 0;
+    #+END_SRC
+
+  + non off-the-end example
+    #+BEGIN_SRC cpp
+    str name = "savolla"; // name is not emtpy container
+    if(name.begin() == name.end())
+    {
+        pr << "value is empty";
+    }
+    else
+    {
+        pr << "value is not empty"; // prints this
+    }
+    return 0;
+    #+END_SRC
++ iterators widely used for determining if an object is empty or not
++ dereferencing items inside a container through iterators
+  #+BEGIN_SRC cpp
+  str name("olexy");
+  if (name.begin() != name.end())
+  {
+      auto iter = name.begin(); // defining an iterator.
+      // notice it doesn't have * or & operators.
+      // they just behave like pointers. and they contain addresses
+      pr << *iter << char(0xA); // dereferending and prints 'o'
+      *iter = toupper(*iter); // changes 'o' to 'O'
+      pr << *iter; // prints 'O'
+      iter++; // iterator now points to the second character 'l'
+      *iter = toupper(*iter); // transforms 'l' to 'L'
+  }
+  #+END_SRC
++ like in "olexy" string, begin() points to the first character 'o' but it is
+  not the case for end(). end() points to the termination character '\0'. we
+  have to *decrement* the end() iterator before reaching last item of the string
+
++ A nice code example for *iterators*
+  #+BEGIN_SRC cpp
+  // checks if given string contains non-printable characters
+  #include <iostream>
+  using str = std::string;
+  auto &print = std::cout;
+
+  void stringControl(std::string x)
+  {
+  	for(auto iter = x.begin();
+  	    iter != x.end();
+  	    ++iter)
+  	{
+  		if(!isprint(*iter))
+  		{
+  			print << "given string contains non printable characters\n";
+  			exit(0);
+  		}
+  	}
+  }
+
+  int main(void)
+  {
+  	str name;
+  	getline(std::cin, name);
+  	stringControl(name);
+  	for(auto iterator = name.begin();
+  	    iterator != name.end();
+  	    ++iterator)
+  	{
+  		*iterator = toupper(*iterator);
+  	}
+  	print << name << char(0xA);
+  	return 0;
+  }
+#+END_SRC
+
++ _PROTIP_
+  in c++ for loops use *"!="* instead of *"<"* operator. This should be a habbit
+  for a c++ programmer because some types (especially iterators) are not
+  *subscriptable*.
+  #+BEGIN_SRC cpp
+  for (unsigned i = 0; i != 100; ++i) // okay in all cases
+  for (unsigned i = 0; i < 100; ++i) // okay in some cases but not all
+  #+END_SRC
+
++ iterators have their own types. But we don't always need to know the type of
+  the iterator. We use *auto* keyword and compiler determines the type for us.
+  But for curiosity here are iterator types:
+  #+BEGIN_SRC cpp
+  vector<int>::iterator vi_iter;
+  vector<int>::const_iterator vic_iter;
+  string::iterator s_iter;
+  string::const_iterator cs_iter;
+  #+END_SRC
+  We could write these instead of *auto* keywords in previous examples
+
++ in *iterators* and *pointers* to call a _member function_ we can use two ways.
+  *notice that methods are same on pointer and iterator*
+
+  #+BEGIN_SRC cpp
+  vector<str> name{"savola","liho","lena"};
+
+  // using member functions through pointers
+  auto *p = &name;
+  pr << p->size() << char(0xA); // 3
+  pr << (*p).size() << char(0xA); // 3
+
+  // using member functions through iterators
+  auto iter = name.begin();
+  pr << iter->size() << char(0xA); // 6
+  pr << (*iter).size() << char(0xA); // 6
+  #+END_SRC
+
++ Use iterators on container types (vector, string..) as pointers
++ Use pointers on built-in types like int,double etc.
+
++ Only syntactical difference between *iterator* and *pointer* is when
+  initializing them
+  #+BEGIN_SRC cpp
+  string name("savolla");
+  unsigned i = 333;
+
+  auto iter = name.begin() // no * or & operator is used. just adding .begin() or .end()
+  auto *p = &i; // used * and & operator (traditional way)
+  #+END_SRC
+* Day 12 (arrays)
++ array is a *data structure* not a type
++ holds data
++ similar to vector but =faster=
++ can't extend like vectors.. arrays are *static* in size. That means we can't
+  add new items to arrays
++ but they are much much faster then vectors!!!
++ if you don't know how much elements you going to have then use *vector*
+  instead of *array*
++ dimension of an array must be known at *compile time*. that means the
+  *dimension* of an array is *constant*
+
+  - *compile time*: when program is being compiled
+  - *run time*: when program is being run
+
+  + example
+  #+BEGIN_SRC cpp
+  const unsigned x = 2; // constant value
+  unsigned y = 3; // non constant value
+
+  int arr0[x]; // array of 2 int objects
+  int arr1[y]; // error. y is not a constant
+
+  string arr2[20]; // array of 20 string objects
+  double *arr3[100]; // array of 100 double pointers
+
+  int arr4[func()]; // legal if func() returns a constant value !
+  #+END_SRC
+
++ we can't use *auto* keyword for initializing arrays
+  #+BEGIN_SRC cpp
+  auto arr0[9]; // error! you *must* use with type!
+  #+END_SRC
+
+
++ compiler is smart enough to figure out how muuch elements an array has. So if
+  you *list initialize* an array you don't need to specify the dimention.
+  #+BEGIN_SRC cpp
+  int arr0[6] = {2,4,2,1,5,6}; // this is okay.
+  int arr1[6] = {3,4,2}; // legal. equivalent to arr1 = {3,4,2,0,0,0}
+  int arr2[] = {2,4,2,1,5,6}; // legal. didn't specify the dimention. better
+  int arr3[3] = {2,4,2,1,5,6}; // error. out of dimension
+  #+END_SRC
+
++ char arrays are special in c++. We can initialize them like *strings*. But we
+  always must remain an extra byte for the *null character* (\0) if we
+  explicitly specify the dimension. Be carefull or just do not specify the dimension
+
+  #+BEGIN_SRC cpp
+  char name0[] = "savolla"; // legal. no explicit dim. null character added automatically
+  char name1[6] = "savolla";  // illegal! no place for null character! dimension must be 7
+  char name2[] = {'s','a','v','o','l','l','a'}; // legal. list init. no null char
+  char name3[] = {'s','a','v','o','l','l','a','\0'}; // legal. list init. with null char
+  // null character was unnecesary in last example
+  #+END_SRC
+
+  character arrays are /special/ because we can print their values directly.
+  without a for loop
+
+  #+BEGIN_SRC cpp
+  char name0[] = "savolla";
+  int arr1[] = {2,3,9,5};
+
+  // with *range for*. Also prints null character. Ugly output. Avoid.
+  for ( auto c : name )
+  {
+      std::cout << c;
+  }
+
+  // short way. pretty output (works just for character arrays)
+  std::cout << name; // outputs: savolla
+
+  // the following code returns only the address of arr1. To display content use for loop
+  std::cout << arr1; // outputs: 0xf782ad0b (random address)
+
+  return 0;
+  #+END_SRC
+
++ an array can't be *initialized* or *assigned* with another array
+  #+BEGIN_SRC cpp
+  int arr0[] = {3,2,4,5};
+  int arr1[] = arr0; // illegal! initializing with an array
+  arr1 = arr0; // illegal! assigning to an array
+  #+END_SRC
+
++ _PROTIP_
+  some compilers might allow array init or assignment. But this is non-standard
+  way of doing things in c++. _Do not initialize an array with another one_ even if
+  compiler lets you to do
+
++ because of arrays hold just *objects* we can't have an array of *references*
++ some /syntactical torture/ of arrays
+
+  - =stage01=: array which contains 10 int pointers
+    #+BEGIN_SRC cpp
+    int *arr[10];
+    #+END_SRC
+
+  - =stage02=: reference to an array
+    #+BEGIN_SRC cpp
+    int a[3] = {1,2,3}; // array's identifier is 'a'
+    int (&b)[3] = a; // now array has a second name! 'b'
+
+    std::cout << a[2]; // outputs 3
+    std::cout << b[2]; // outputs 3
+    #+END_SRC
+
+  - =stage03=: array that points to an array of 10 ints
+    #+BEGIN_SRC cpp
+    // this one is a bit harder to understand.
+    // I'm gonna update it when I get it
+    int a[3] = {1,2,3};
+    int (*parr)[3] = &a;
+    #+END_SRC
+
++ in c++ *arrays* are actually *pointers*. When a program gets compiled the
+  compiler converst the array to a pointer. And all operations we do with arrays
+  are actually pointer operations at the back stage. Implement array data
+  structure you will get it I promise :)
+
++ implementing .begin() and .end() on arrays like in vectors
+
+  - the old way of doint this
+
+    #+BEGIN_SRC cpp
+    int arr[] = {0,1,2,3,4,5};
+
+    // arr.begin()
+    int *beg = arr; // didn't used address-of (&) because an array is already pointer
+
+    // arr.end(). (notice address-of operator)
+    int *end = &arr[6]; // there is no element on 6th index. so this is actually the end of arr
+
+    // let's print all the content of arr to the screen using these pointers
+    for (int *begin = arr; begin != end; ++begin)
+    {
+        std::cout << *begin << ",";
+    }
+    #+END_SRC
+
+  - new way. error free and easier. c++11 feature
+    #+BEGIN_SRC cpp
+    int arr[] = {0,1,2,3,4,5};
+
+    // arr.begin()
+    int *beg = std::begin(arr); // begin() returns a pointer to the first element's address
+
+    // arr.end()
+    int *end = std::end(arr); // end() returns a pointer to the end of arr
+
+    // let's print all the content of arr to the screen using these pointers
+    for (int *begin = std::begin(arr); begin != end; ++begin)
+    {
+        std::cout << *begin << ",";
+    }
+    #+END_SRC
+
+=left on "Pointer Arithmetic" of arrays=
+* Day 13 (expressions)
+
++ 1 + 2 = 3
+  - 1,2 and 3 are *operands*
+  - + and = are *operators*
+
++ operator /types/ in c++
+
+    | operator type    | example | description          |
+    |------------------+---------+----------------------|
+    | unary operator   | *p, &a  | takes one operand    |
+    | binary operator  | !=, *   | takes two operands   |
+    | ternary operator | later   | takes three operands |
+
++ conditional operator (?:)
+  #+BEGIN_SRC cpp
+  unsigned grade = 96;
+
+  string finalGrade = (grade > 60)? "pass" : "fail";
+  // if grade is bigger than 60 then finalGrade is "pass" otherwise "fail"
+  cout << finalGrade; // output: pass
+  #+END_SRC
+
++ nested conditional operators
+  #+BEGIN_SRC cpp
+  unsigned grade = 96;
+  string finalGrade = (grade > 90)? "high pass" : (grade > 60)? "pass" : "fail";
+  cout << finalGrade; // output: high pass
+  #+END_SRC
+
++ nested conditinal ops /quickly/ become unreadable. This is why it is a good
+  idea to not to nest more than 3
+
++ using conditional ops inside in an output expression. notice how parenthesis
+  are important !
+  #+BEGIN_SRC cpp
+  std::cout << ((grade > 60)? "pass" : "fail"); // outputs: pass
+  std::cout << (grade > 60)? "pass" : "fail"; // outputs: 1 (true). because no parenthesis around exp
+  std::cout << grade > 60 ? "pass" : "fail"; // error.
+  #+END_SRC
+
++ bitwise operators
+
+  | operator | name        | usage             |
+  |----------+-------------+-------------------+
+  | ~        | bitwise not | ~expr             |
+  | <<       | left shift  | expr1 << expr2    |
+  | >>       | right shift | expr1 >> expr2    |
+  | &        | bitwise and | expr1 & expr2     |
+  | \^       | bitwise xor | expr1 ^ expr2     |
+  | pipe     | bitwise or  | expr1 pipe  expr2 |
+
+  - biwise or is symbol '|' (couldn't display on org-mode tables)
+
++ use bitwise operators on *unsigned* values. Because of _signed bit_ behaves
+  differently on different systems it might cause unexpected errors
+
++ when working with *bitwise* operators if operand is a "small integer" then it
+  converted to a larger one (int) then operator does its job
+
+  - left shift operator (<<)
+    #+BEGIN_SRC cpp
+    unsigned char bits = 0b00001010; // bits = 10; (1 byte)
+    unsigned char bits2 = 0b10011011; // bits2 = 155; (1 byte)
+
+
+    // example 1
+    bits = (bits << 5);
+    // first converted to int type:
+    // 00001010 -> 00000000 00000000 00000000 00001010
+    // left shift by 5:
+    // 00000000 00000000 00000000 00001010 -> 00000000 00000000 00000001 01000000
+    cout << 0b00000000000000000000000101000000  << "\x0a"; // 320
+    cout << int(bits); // 320
+
+
+    // example 2
+    bits2 = (bits2 << 31);
+    // first converted to int type:
+    // 10011011 -> 00000000 00000000 00000000 10011011
+    // left shift by 31:
+    // 00000000 00000000 00000000 10011011 -> 10000000 00000000 00000000 00000000
+    // most bits were discarded
+    cout << 0b10000000000000000000000000000000 << "\x0a"; // 2147483648
+    cout << int(bits2); // 2147483648
+
+    #+END_SRC
+
+  - right shift operator (>>)
+    #+BEGIN_SRC cpp
+    unsigned char bits3 = 0b10011011; // bits = 155; (1 byte)
+    bits3 = (bits3 >> 3); // converted to int, shifted 3 bits to right and 3 bits were discarted
+    cout << int(bits3); // output: 00000000 00000000 00000000 00010011
+    #+END_SRC
+
+  - bitwise not operator (~)
+    #+BEGIN_SRC cpp
+    char bits4 = 0b00101001;
+    bits4 = (~bits4); // converted to int, inverted all bits
+    // 00101001 -> 11111111 11111111 11111111 11010110
+    // con't confuse ! those extra 1 bits will disappear and final value becomes:
+    // 11010110
+    #+END_SRC
+
+  - and (&), or (|), xor(^) operators
+    #+BEGIN_SRC cpp
+    unsigned char a = 0b10011010;
+    unsigned char b = 0b10100100;
+
+    // and &
+    cout << (a & b) << endl;
+    /*
+      in & operator we multiply bits. (1 * 0 = 0)
+
+           a: 10011010
+      &    b: 10100100
+      -----------------
+              10000000
+    */
+
+    // or |
+    cout << (a | b) << endl;
+    /*
+      in | operator we sum bits. (1 + 0 = 1), (1 + 1 = 1)
+
+           a: 10011010
+      |    b: 10100100
+      -----------------
+              10111110
+    */
+
+
+    // xor ^
+    cout << (a ^ b) << endl;
+    /*
+      xor likes to being *different*. (1 ^ 0 = 1), (1 ^ 1 = 0)
+
+           a: 10011010
+      ^    b: 10100100
+      -----------------
+              00111110
+    */
+    #+END_SRC
+
++ TODO: in what scenario bitwise operators are used in c++
+
++ good example for not to be confused logical operators and bitwise ones
+  #+BEGIN_SRC cpp
+  unsigned long x = 3, y = 7;
+  cout << (x & y) << std::endl; // 3
+  cout << (x | y) << std::endl; // 7
+  cout << (x && y) << std::endl; // 1
+  cout << (x || y) << std::endl; // 1
+  /*
+    logical operators returned  1 because none of those values were 0.
+    everything was non-zero which means "true"
+  */
+  #+END_SRC
+
++ =sizeof()= operator returns the size of an *expression* or *type* in _bytes_
+
++ return value of =sizeof()= is _constant_. that means it can be used in *array
+  dimension initialization*
+
+  #+BEGIN_SRC cpp
+  unsigned long long x;
+  string arr[sizeof(x)]; // legal array dimension initialization
+  cout << sizeof(x) << endl; // output: 8.
+  cout << sizeof x << endl; // legal. output: 8. can be used without paranthesis
+
+  cout << sizeof(int) << endl; // output: 4. can take type name itself
+  cout << sizeof(4 + 3 / 12) << endl; // output: 4. arithmatic expression
+
+  #+END_SRC
+
++ the *type* of return value sizeof() is *size_t*
+
++ *size_t* type is complicated. it's actually a synonim of *unsigned int* but
+  it's value is different on another architectures/operating-systems.
+
++ _PROTIP_: using size_t as a variable type in programs is a *really bad idea*
+  #+BEGIN_SRC cpp
+  size_t j = 3; // avoid!
+  #+END_SRC
+
++ TODO: why strings and vectors have fixed size while arrays and other builtin
+  type sizes are not
+
++ Getting size of a _vector_, _string_ and an _array_
+
+  - =vector and string=: when *sizeof()* operator used with a vector, the returned value is
+    not a true value. in my system it's 24 bytes no mather how _long_ or which
+    _type_ the vector is. Same thing applies on *strings*
+
+    #+BEGIN_SRC cpp
+    std::vector<int> i_vec{3,33,23,389,3};
+    std::vector<string> s_vec{"jfkd","uıre","uıf"};
+    std::string a = "savolla";
+
+    cout << sizeof(i_vec) << endl; // output: 24 (in my system). expected result was 5
+    cout << sizeof(s_vec) << endl; // output: 24 (in my system). expected result was 3
+    cout << sizeof(a) << endl; // output: 32 (in my system). expected result was 7
+    #+END_SRC
+
+    As we saw before the *size* of _vectors_ and _strings_ can be archieved by
+    using *.size()* method
+
+    #+BEGIN_SRC cpp
+    std::vector<int> i_vec{3,33,23,389,3};
+    std::vector<string> s_vec{"jfkd","uıre","uıf"};
+    std::string a = "savolla";
+
+    cout << i_vec.size() << endl; // output: 5
+    cout << s_vec.size() << endl; // output: 3
+    cout << a.size() << endl; // output: 7
+    #+END_SRC
+
+  - =array=: As expected, getting size of an array is *werird* in c++. We can't
+    use .size() method on arrays. and remember *sizeof()* returns size in *bytes*.
+    To get size of an array we will use simple trick
+
+    #+BEGIN_SRC cpp
+    int arr[]{1,4,4,3,4,5,56};
+
+    cout << sizeof(arr) << endl; // int is 4 bytes. arr has 7 elements. output: 4*7 = 28
+    cout << sizeof(*arr) << endl; // arrays were pointers. *arr returns first element. output: 4(size of 1)
+    cout << sizeof(arr)/sizeof(*arr) << endl; // 28/4 = 7.. weirdo!
+    // arrays are assholes.
+    #+END_SRC
+
+* Day 14 (expressions continued)
+
++ =comma operator= is a cool operator that mostly used in *for loop*
+
+  - if you want to change more that one value at the _same time__, comma operator
+    is your friend
+  - even though we can define more than one counter inside a for loop
+    #+BEGIN_SRC cpp
+    // notice we used commas in first part and last part of the for loop.
+    // we can also use comma inside second part of the for loop
+    for(unsigned i=9, j=30;
+        i != j;
+        i += 2, j += 1)
+    {
+        cout << i << "\x2c\x20" << j << "\x0a";
+    }
+    #+END_SRC
+
+  - we can also use comma in =conditional operators=
+  - TODO: why does code also executes false conditions?
+    #+BEGIN_SRC cpp
+    int x = 3;
+    x? /*do this*/, /*and this*/ : /*do this if false*/, /*is this bug? also works if true*/
+    #+END_SRC
+* Day 15 (statements)
++ *null statement*
+  #+BEGIN_SRC cpp
+  ; // null statement
+  {} // null block
+  #+END_SRC
+
+  - example usage
+    #+BEGIN_SRC cpp
+    while (cin >> input && input != "exit")
+    {
+        ; // every null statelement should have a comment
+    }
+
+    // or
+    {}
+    #+END_SRC
+
+  - adding comments after a *null statement* improves readability
+
+  - extra semicolons are legal but not always harmless
+
+    - harmless extra semicolons
+      #+BEGIN_SRC cpp
+      unsigned a = 3;;;;
+      #+END_SRC
+
+      #+BEGIN_SRC cpp
+      int main(void)
+      {
+           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;;;;;;;;;   ;;;;;;;;   ;;;;;;;;;;
+         ;;;;;;;;;{}  ;;;;;;;{}  ;;;;;;;;;;
+         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;;;;                                   ;;;;;
+      ;;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;;;
+      ;;;;; ;;{{{{{{{{{{{{{}}}}}}}}}}}}};;;  ;;;;;
+      ;;;;;; ;;/* TOTALLY LEGAL C++ PROGRAM !!*/;;
+      ;;;;;;; ;;;;;;;;;;;;;;;;;;;;;;;;  ;;;;;;;;;;
+       ;;;;;;;                        ;;;;;;;;;;;;
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+         return 0;
+      }
+      #+END_SRC
+
+    - harmfull semicolon
+      #+BEGIN_SRC cpp
+      while (a != 6); // this causes infinite loop
+      {
+         ++a;
+      }
+      #+END_SRC
++ *switch case statement*
+  - accepts only *constant integral* values as labels
+    #+BEGIN_SRC cpp
+    unsigned x = 3;
+    unsigned char y;
+    cin >> y;
+
+    switch (y)
+    {
+        case 3.14159: // error. not integer value
+            break;
+        case x: // integral but not constant value
+            break;
+    }
+
+    #+END_SRC
+
+  - program that counts vowels and consonans in a word
+
+    #+BEGIN_SRC cpp
+    int main(void)
+    {
+        string word;
+        unsigned vows;
+        unsigned cons;
+        while (getline(cin, word) && word != "exit")
+        {
+            for ( auto c : word )
+            {
+                switch(c)
+                {
+                    case 'a':case 'e':case 'i':case 'o':case 'u':
+                        ++vows;
+                        break; // do not forget break statment
+
+                    default:
+                        ++cons;
+                        break;
+                }
+            }
+        }
+        cout << "vows: " << vows << endl;
+
+        return 0;
+    }
+    #+END_SRC
+
+    + Notice that we used *case* statements in one line. this is legal bacause c++
+      is *free-type* language.
+
+    + aaand.. do not forget *break* statment after each _case_ statement
+    + adding *default* statement is a _good practice_ even if you don't need it.
+      Empty *default* statement needs a *null statement*
+
+    + to *define* variables inside *case* statements use _curly braces_
+      #+BEGIN_SRC cpp
+      switch (value)
+      {
+          case 3:
+              /* do something */
+              break;
+          case 34: // pay attention! we have colons even if we have block
+          {
+              int a = 533; // defining a variable inside curly braces
+          }
+          default:
+              ;; // empty statement to supply default
+      }
+
+      #+END_SRC
++ *for loop*
+  - this form of for loop results an *infinite loop*
+    #+BEGIN_SRC cpp
+    for (int i=0;;++i)
+    {
+        cout << i << endl;
+    }
+    #+END_SRC
+
+  - this example is also infinite loop but makes sence
+    #+BEGIN_SRC cpp
+    vector<int> i_vec;
+    for (int i; cin >> i; ) // for loops not just accepting *comparison* expressions
+    {
+        i_vec.push_back(i);
+    }
+
+    #+END_SRC
+
+  - range for loops introduced in c++11. They can be used only with *containers*
+    such as /arrays/, /vectors/ and /strings/
+
+  - in for loops we sometimes might not know the type of the container. In those
+    situations the *auto* keyword should be used
+    #+BEGIN_SRC cpp
+    for ( auto c : array )
+    {
+        // do something
+    }
+    #+END_SRC
+* Day 16 (statements try-catch-throw)
+- By using *stdexcept* header we are able to use handlers
+- *try* block
+- *throw* expression
+- *catch* function
+- TODO: study try-catch
+* Day 17 (functions)
++ usage of postfix operators
+
+  #+BEGIN_SRC cpp
+  int factorial(unsigned int x)
+  {
+      unsigned int result = 1;
+      while(result > 1)
+      {
+          result *= x--; // notice postfix --
+          // x is multiplied with restult and assigned to result. at last decremented
+      }
+      return result;
+  }
+  #+END_SRC
+
++ we can't *compound define* arguments in function
+  #+BEGIN_SRC cpp
+  void f0(int a,b,c,d) // illegal!!
+  void f0(int a, int b, int c, int d) // okay
+  #+END_SRC
+
++ functions can't *directly* return *array* of *function* type. Instead it can
+  return a _pointer_ to the array or a function (details for later)
+
++ *local static objects* are crazy things.. Their value is remembered after
+  function is ended. When calling the same function again the static object's
+  value will be still there.
+
+  #+BEGIN_SRC cpp
+  void a()
+  {
+      // char and x are static variables. Their values will always be remembered
+      static char cntr = 1; // I want to print the following only once
+      if(cntr == 1)
+      {
+          cout << "static\tordinary" << endl;
+          --cntr; // cntr becomes 0. Hence this print won't be executed anymore
+      }
+
+      static unsigned x = 0; // x will always be immortal in this scope
+      unsigned y = 0; // y is mortal
+      ++x, ++y; // notice the comma operator
+      cout << x << "\x09" << y << endl; // 0x09 = '\t'
+  }
+
+  int main(void)
+  {
+      a();
+      a();
+      a();
+      a();
+      a();
+
+      return 0;
+  }
+  #+END_SRC
+
+  #+RESULTS:
+
+  : static  ordinary
+  : 1       1
+  : 2       1
+  : 3       1
+  : 4       1
+  : 5       1
+
++ function declarations = function prototype
++ prototypes go inside header files.
++ to change an object value with a function there are two ways
+
+  1. using a *pointer* (C programmer). =less efficient=
+     #+BEGIN_SRC cpp
+     void reset_ptr(int *p)
+     {
+         *p = 0;
+     }
+
+     int main(void)
+     {
+         int x = 3;
+         int *ptr = &x; // defining extra pointer
+         reset_ptr(ptr);
+         std::cout << x << std::endl; // output: 0
+
+         return 0;
+     }
+     #+END_SRC
+
+  2. using a *reference* (C++ programmer) =more efficient=
+     #+BEGIN_SRC cpp
+     void reset_ref(int *r)
+     {
+         r = 0;
+     }
+
+     int main(void)
+     {
+         int x = 3;
+         reset_ref(x);
+         std::cout << x << std::endl; // output: 0
+
+         return 0;
+     }
+     #+END_SRC
++ swap function using reference parameters
+  #+BEGIN_SRC cpp
+  void swap(int &x, int &y)
+  {
+      int tmp;
+      tmp = x;
+      x = y;
+      y = tmp;
+  }
+  #+END_SRC
++ _PROTIP:_ when a *reference* passed as parameter into a function and its value
+  is not chaning inside the function, pass it as *const*
+
+  #+BEGIN_SRC cpp
+  bool isShorter(const string s1, const string s2)
+  {
+      return (s1.size() < s2.size());
+  }
+  #+END_SRC
+
++ TODO: continue to functions chapter. You left it at the middle
+* Day 18 (class)

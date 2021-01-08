@@ -1,0 +1,788 @@
+#+TITLE: Javascript
+:PROPERTIES:
+:EXPORT_FILE_NAME: javascript-cheat-sheet
+:EXPORT_TITLE: Javascript Cheat Sheet
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+
+* Concepts
+** JSON
++ javascript object notation
++ data representation format
++ used in *config* files
++ supported types;
+  1. strings: "hello world", "savolla"
+  2. numbers: 10, 1.5, -30
+  3. boolean: true, false
+  4. null: null
+  5. arrays: [1,2,3], ["Hello", "world"]
+  6. objects: {"key":"value"}, {"age":30}
++ everything in json is _valid javascript code_
+* Tips
+* Facts
++ best learningn resource : [[https://www.amazon.com/gp/bookseries/B01N9EBP9V][You Don't Know JS]]
+* How To
+** create a json file
+this is actually an _array_ in javascript. this is why it starts with '[]'
+#+begin_src js
+[
+    {
+        "name":"software engineering",
+        "delay": 2,
+        "book":
+        [
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"},
+            {"name" : "codecomplete2"}
+        ]
+]
+#+end_src
+** display json contents in html
+1. paste the json string inside script tag and make it a string by surroud it with `
+2. use =JSON.parse= method to make JSON parsable with indexes
+
+#+begin_src html
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>MultiTasker</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let topics =
+        `[
+                {
+                    "name":"software engineering",
+                    "delay": 2,
+                    "book":
+                    [
+                        {"name" : "codecomplete2"},
+                        {"name" : "Applying UML"},
+                        {"name" : "clean code"},
+                        {"name" : "clean coder"},
+                        {"name" : "solid principles"}
+                    ]
+                }
+        ]`
+        console.log( JSON.parse(topics)[0].book)
+    </script>
+  </body>
+</html>
+#+end_src
+** from codecamp
++ print something on screen?
+  #+BEGIN_SRC js
+  console.log("hello");
+  #+END_SRC
++ declare a local variable?
+  #+BEGIN_SRC js
+  let loc = 5;
+  #+END_SRC
++ declare a global variable?
+  #+BEGIN_SRC js
+  glob = 5;
+  #+END_SRC
++ declare a constant variable?
+  #+BEGIN_SRC js
+  const c = 5;
+  #+END_SRC
++ declare a function scope variable?
+  #+BEGIN_SRC js
+  var c = 5;
+  #+END_SRC
++ concat two strings?
+  #+BEGIN_SRC js
+  let v0 = "Hello";
+  let v1 = "World";
+  let v2 = v0 + " " + v1;
+  #+END_SRC
++ you increment and decrement numbers
+  #+BEGIN_SRC js
+  let a = 3;
+  a++; // increment
+  a--; // decrement
+  console.log(a);
+  #+END_SRC
++ declare floating point numbers?
+  #+BEGIN_SRC js
+  let f0 = 2.38;
+  #+END_SRC
++ get the *length* of a string?
+  #+BEGIN_SRC js
+  let name = "savolla";
+  console.log(name.length);
+  #+END_SRC
++ reach first letter of a string?
+  #+BEGIN_SRC js
+  let x = "hello";
+  console.log(x[0]);
+  #+END_SRC
++ get the last character of a string?
+  #+BEGIN_SRC js
+  let name = "savolla";
+  console.log(name[name.length - 1]);
+  #+END_SRC
++ create an array ?
+  #+BEGIN_SRC js
+  let numbers = [1,2,3,4,5];
+  #+END_SRC
++ create a multi-dimentional array?
+  #+BEGIN_SRC js
+  let A = [["abatox", 20],
+           ["savolla", 28],
+           ["lena", 48]];
+  console.log(A[1][0]);
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla
+  : undefined
++ *append* data into an array?
+  #+BEGIN_SRC js
+  let A = [1,2,3,4];
+  A.push(5);
+  console.log(A[A.length -1 ]);
+  #+END_SRC
+
+  #+RESULTS:
+  : 5
+  : undefined
++ remove an item from an array?
+  #+BEGIN_SRC js
+  let A = [1,2,3,4];
+  A.pop();
+  console.log(A[A.length -1 ]);
+  #+END_SRC
+
+  #+RESULTS:
+  : 3
+  : undefined
++ remove *first* element from an array?
+  #+BEGIN_SRC js
+  let A = [1,2,3];
+  A.shift();
+  console.log(A);
+  #+END_SRC
+
+  #+RESULTS:
+  : [2 (\, 3)]
++ add an element to the beginning of the array?
+  #+BEGIN_SRC js
+  let A = [1,2,3,4];
+  A.unshift(0);
+  #+END_SRC
++ define a functions?
+  #+BEGIN_SRC js
+function sayHi( name ) {
+    console.log("Hello " + name);
+}
+sayHi("lenacka");
+sayHi("savolla");
+sayHi("abatox");
+  #+END_SRC
+
+  #+RESULTS:
+  : Hello lenacka
+  : Hello savolla
+  : Hello abatox
+  : undefined
++ *dequeue* one element from an array?
+  #+BEGIN_SRC js
+function dequeue( array ) {
+    return array.shift();
+}
+let A = [1,2,3,4,5];
+console.log(dequeue(A));
+  #+END_SRC
+
+  #+RESULTS:
+  : 1
+  : undefined
++ write an *if* structure?
+  #+BEGIN_SRC js
+if ( condition ) {
+    // code
+}
+else if ( condition ) {
+    // code
+}
+else {
+    // code
+}
+  #+END_SRC
++ use *and* and *or* operators in if statements?
+  #+BEGIN_SRC js
+if ( code && code || code )
+    code
+  #+END_SRC
++ create an object in js?
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "Ares",
+    "color" : "brown",
+    "age" : 12,
+    "personality" : "calm"
+};
+  #+END_SRC
++ access a property of an object ?
+  use *dot notation*
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "Ares",
+    "color" : "brown",
+    "age" : 12,
+    "personality" : "calm"
+};
+
+n = dog.name;
+m = dog.age;
+  #+END_SRC
++ update an object property?
+  #+BEGIN_SRC js
+dog = {
+    "name" : "",
+    "color" : "",
+    "age" : null,
+    "personality" : ""
+};
+
+my_dog = dog;
+my_dog.name = "Ares";
+my_dog.color = "brown";
+my_dog.age = 12;
+my_dog.personality = "calm";
+  #+END_SRC
++ *delete* a property from an object?
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "Ares",
+    "color" : "brown",
+    "age" : 12,
+    "personality" : "calm"
+};
+
+delete dog.personality;
+  #+END_SRC
++ test if an object has a specific property?
+  use *hasOwnProperty* method of an object
+  #+BEGIN_SRC js
+dog = {
+    "name" : "Ares",
+    "color" : "",
+    "age" : null
+};
+
+if ( dog.hasOwnProperty("color") )
+    console.log("yes");
+else
+    console.log("no");
+
+  #+END_SRC
+
+  #+RESULTS:
+  : yes
+  : undefined
++ access nested object properties?
+  #+BEGIN_SRC js
+obj = {
+    "p0" : "ABC",
+    "internal" : {
+        "p0" : "abc",
+        "p1" : "def",
+    }
+}
+
+console.log(obj.internal.p0);
+  #+END_SRC
++ make a while loop?
+  #+BEGIN_SRC js
+  let i = 5;
+  while ( i > 0 ) {
+      console.log(i);
+      i--;
+  }
+  #+END_SRC
++ make a for loop?
+  just like in C or C++
+  #+BEGIN_SRC js
+for ( let i = 0; i < 5; ++i ) {
+    console.log(i);
+}
+  #+END_SRC
++ lookup a value in an object list?
+  when looking inside a list of objects use "[]" instead of "."
+  #+BEGIN_SRC js
+var contacts = [
+    {
+        "first_name" : "Akira",
+        "last_name" : "Laine",
+        "number" : "05330000000",
+    },
+    {
+        "first_name" : "Harry",
+        "last_name" : "Potter",
+        "number" : "05330000001",
+    },
+    {
+        "first_name" : "Sherlock",
+        "last_name" : "Holmes",
+        "number" : "05330000002",
+    },
+]
+
+function lookup( name, property ) {
+    for ( let i = 0; i < contacts.length; i++ ) {
+        if ( contacts[i].first_name === name ) {
+            return contacts[i][property] || "No such property " + property;
+        }
+    }
+    return "No such contact";
+}
+
+let prop = lookup("Akira", "number");
+console.log(prop);
+  #+END_SRC
+
+  #+RESULTS:
+  : 05330000000
+  : undefined
++ generate random number between 0 and 1?
+ #+BEGIN_SRC js
+Math.random();
+ #+END_SRC
++ generate a *whole random* number between 0 & 100 ?
+  #+BEGIN_SRC js
+let r = Math.floor( Math.random() * 100 );
+console.log(r);
+  #+END_SRC
+
+  #+RESULTS:
+  : 48
+  : undefined
++ generate a *whole random* number between any range?
+  #+BEGIN_SRC js
+function gen_rand( min, max ) {
+    let r = Math.floor( Math.random() * (max - min) + min );
+    return r;
+}
+
+let x = gen_rand(50, 100);
+console.log(x);
+  #+END_SRC
++ convert a *string* to *integer* ? (stoi)
+  #+BEGIN_SRC js
+let s = "54";
+let q = "54";
+console.log(s + q); /* outputs: 5454 */
+s = parseInt(s);
+q = parseInt(q);
+console.log(s + q); /* outputs: 108 */
+  #+END_SRC
++ convert a string to integer with a special base?
+  #+BEGIN_SRC js
+  let m = "10010111001";
+  let n = parseInt(m, 2); /* outputs: 1209 */
+  #+END_SRC
++ prevent objects from *mutation* ?
+  use *Object.freeze(MY_OBJ)*
+  #+BEGIN_SRC js
+const MATH_CONSTANTS = {
+    PI : 3.141592,
+    E : 2.718281,
+    PHI : 1.61803399
+}
+// const itself will not prevent mutation. need an extra step
+Object.freeze(MATH_CONSTANTS);
+  #+END_SRC
++ make *anonimous functions* in js?
+  they also called *arrow functions* in js
+  #+BEGIN_SRC js
+  const magic = () => new Date();
+  console.log(magic());
+  #+END_SRC
++ make *anonimous functions* with parameters?
+  used *s0* as a parameter below
+  #+BEGIN_SRC js
+const stoi = (s0) => parseInt(s0);
+console.log(stoi("54"));
+  #+END_SRC
++ concat two arrays into one?
+  use *concat*
+  #+BEGIN_SRC js
+let A = [1,2,3,4];
+let B = [5,6,7,8];
+A = A.concat(B);
+console.log(A);
+  #+END_SRC
+
+  #+RESULTS:
+  : [1 (\, 2) (\, 3) (\, 4) (\, 5) (\, 6) (\, 7) (\, 8)]
++ check a number if it's an *integer* ?
+  #+BEGIN_SRC js
+  Number.isInteger(123);
+  #+END_SRC
++ filter an array ?
+  use *filter* function
+  #+BEGIN_SRC js
+let A = [1,2,3,4,5,6,7];
+A = A.filter(x => (x > 4));
+console.log(A);
+  #+END_SRC
++ convert a string into an *array of words*?
+  #+BEGIN_SRC js
+let s = "that was a dark and stormy night";
+let words = s.split(" ");
+console.log(words);
+  #+END_SRC
++ run a function through array elements?
+  use *map()* function. it works like *transform* in C++
+  #+BEGIN_SRC js
+let A = [1,2,3,4,5];
+A = A.map(x => x*2);
+console.log(A);
+  #+END_SRC
++ fill an array with random values?
+  1. create an array with 10 elements
+  2. *fill* the array with zeros
+  3. *map* the array with random values
+
+  #+BEGIN_SRC js
+  let A = new Array(10);
+  A.fill(0);
+  A = A.map(x => Math.floor(Math.random() * 10));
+  #+END_SRC
++ create fixed size array like *int A[100];* in C?
+  #+BEGIN_SRC js
+let A = new Array(100);
+  #+END_SRC
++ use *variables* inside *string template literals* ?
+  use *${VAR_NAME}*
+  #+BEGIN_SRC js
+var Person = {
+    "name" : "savolla",
+    "age" : 28
+}
+let s = `Hello, my name is ${Person.name}`;
+  #+END_SRC
++ write a function that returns an object?
+  this is the best way to return an object
+
+  here is the *long one*
+  #+BEGIN_SRC js
+function makeDog( name, age, color ) {
+    return {
+        name : name,
+        age : age,
+        color : color
+    };
+}
+ares = makeDog("ares", 12, "brown");
+puki = makeDog("puki", 8, "white");
+  #+END_SRC
+
+  here is the *short one*
+  #+BEGIN_SRC js
+const makeDog = ( name, age, color ) => ( {name, age, color} );
+ares = makeDog("ares", 12, "brown");
+puki = makeDog("puki", 8, "white");
+  #+END_SRC
++ make objects have methods?
+  #+BEGIN_SRC js
+const circle = {
+    x : 0,
+    y : 0,
+    grow : function() {
+        this.x++;
+        this.y++;
+    },
+    shrink : function() {
+        this.x--;
+        this.y--;
+    },
+    eliptic : function( px, py ) {
+        this.x = px;
+        this.y = py;
+    }
+}
+  #+END_SRC
++ create a constructor of a class?
+  just like in C++
+  #+BEGIN_SRC js
+class veggie {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+cabbage = new veggie("cabb");
+console.log(cabbage.name);
+  #+END_SRC
++ import a specific function from another js file?
+  it's like *from matplotlib import pyplot* in python
+  #+BEGIN_SRC js
+import { function_name } from "path/to/file"
+  #+END_SRC
+  notice that we didn't use file extension in *path/to/file*
+* Flashcards
++ 4 ways to declare a variable?
+    #+BEGIN_SRC js
+    var a = "savolla"; // function scope variable
+    let a = "savolla"; // local variable
+    const pi = 3.141592 // constant variable
+    x = 87; // global variable
+    #+END_SRC
++ what are *function scope* variables?
+  they are *global* just in function scope
+  #+BEGIN_SRC js
+function f() {
+    for ( let i = 0; i < 5; ++i ) {
+        var f_global = 10;
+    }
+    console.log(f_global);
+}
+
+f();
+  #+END_SRC
+
+  #+RESULTS:
+  : 10
+  : undefined
++ do javascript confused with integer division?
+  No. it can output floats when dividing two integers
+  #+BEGIN_SRC js
+  let a = 7;
+  let b = 2;
+  let c = a / b;
+  console.log(c);
+  #+END_SRC
++ do javascript support compound operators?
+  Yes.
+  #+BEGIN_SRC js
+  let a = 3;
+  a += 2;
+  a -= 2;
+  a *= 3;
+  a /= 2;
+  #+END_SRC
++ what to do if there are *double quotes* inside a string?
+  single quote that string to avoid *escaping*
+  #+BEGIN_SRC js
+  let ling = '<a href="https://www.example.com">Click</a>';
+  #+END_SRC
++ can we change a specific character in a string by indexy?
+  No. strings are immutable
+  #+BEGIN_SRC js
+  let name = "vavolla";
+  name[0] = "s"; // FIXME: ERROR
+  #+END_SRC
+
+  #+RESULTS:
++ can we store *different typed* values in an array?
+  Yes!
+  #+BEGIN_SRC js
+  let multi = ["savolla", 28, 105.43, true, 2==1];
+  console.log(multi[0]);
+  console.log(multi[1]);
+  console.log(multi[2]);
+  console.log(multi[3]);
+  console.log(multi[4]);
+  #+END_SRC
+
+  #+RESULTS:
+  : savolla
+  : 28
+  : 105.43
+  : true
+  : false
+  : undefined
++ can we also store *expressions* into an array?
+  Yes!
+  #+BEGIN_SRC js
+  let multi = [2==2, 2==1];
+  console.log(multi[0]);
+  console.log(multi[1]);
+  #+END_SRC
+
+  #+RESULTS:
+  : true
+  : false
+  : undefined
++ can we modify arrays using bracket notation?
+  Yes! this does not work with strings but arrays are okay with that
+  #+BEGIN_SRC js
+  let A = ['a','b','c'];
+  A[0] = 'x';
+  A[1] = 'y';
+  A[2] = 'z';
+  #+END_SRC
++ what happens if we *pop* a multi-dimentional array?
+  #+BEGIN_SRC js
+  let A = [[1,2],
+           [3,3],
+           [4,5]];
+  A.pop();
+  console.log(A);
+  #+END_SRC
+
+  #+RESULTS:
+  : [[1 (\, 2)] (\, [3 (\, 3)])]
++ can we remove *curly brackets* from single lined *if* ?
+  Yes! javascript *allows* that
+  #+BEGIN_SRC js
+  if ( condition )
+      x = 10;
+  #+END_SRC
++ how *==* operator behaves in javascript?
+  it can compare values *type independent*
+  #+BEGIN_SRC js
+let a = '3';
+let b = 3;
+if ( a == b )
+    console.log("yes");
+else
+    console.log("no");
+  #+END_SRC
+
+  #+RESULTS:
+  : yes
+  : undefined
++ how *===* operator behaves in javascript?
+  it works like *==* but this time it compares *same types*
+  #+BEGIN_SRC js
+let a = '3';
+let b = 3;
+if ( a === b )
+    console.log("yes");
+else
+    console.log("no");
+  #+END_SRC
+
+  #+RESULTS:
+  : no
+  : undefined
++ what is the opposite of *===* operator ?
+  #+BEGIN_SRC js
+  !==
+  #+END_SRC
++ how *switch* statements work in js?
+  just like in C++ :)
++ iterate *nested loops*
+  #+BEGIN_SRC js
+A =[];
+for ( let i = 0; i<3; ++i ) {
+    A.push([]);
+    for ( let j = 0; j<3; ++j ) {
+        A[i].push(j);
+    }
+}
+console.log(A);
+  #+END_SRC
++ example of contacts list with js objects
+  #+BEGIN_SRC js
+var contacts = [
+    {
+        "first_name" : "Akira",
+        "last_name" : "Laine",
+        "number" : "05330000000",
+    },
+    {
+        "first_name" : "Harry",
+        "last_name" : "Potter",
+        "number" : "05330000001",
+    },
+    {
+        "first_name" : "Sherlock",
+        "last_name" : "Holmes",
+        "number" : "05330000002",
+    },
+]
+
+for ( let i = 0; i< contacts.length; ++i ) {
+    console.log(contacts[i].first_name);
+    console.log(contacts[i].last_name);
+    console.log(contacts[i].number);
+}
+  #+END_SRC
++ does javascript allow us to use *ternary* operators?
+  Yes!
+  #+BEGIN_SRC js
+let a = 2;
+let b = 7;
+let c;
+a > b ? c = 3 : c = 1;
+console.log(c);
+  #+END_SRC
++ how to do *nested ternary* operator?
+  #+BEGIN_SRC js
+function sign( n ) {
+    return n > 0 ? "+" : n < 0 ? "-" : "0";
+}
+
+console.log(sign(-32)); // outputs: -
+  #+END_SRC
++ can we change values of *const* array?
+  Yes! I don't know why but yes we can!
+  #+BEGIN_SRC js
+const s = [1,2,3,4,5];
+s[0] = 111;
+s[4] = 112;
+s[2] = 113;
+  #+END_SRC
++ which *higher order* functions javascript have?
+  #+BEGIN_SRC js
+filter();
+map();
+sort();
+split();
+reduce();
+  #+END_SRC
++ what *higher order function* can be used to sum every element in an array?
+
+  use *reduce()*
+  #+BEGIN_SRC js
+  let A = [1,2,3,4,5];
+  A = A.reduce((result = 0, x) => result += x);
+  console.log(A);
+  #+END_SRC
++ what the *rest operator* does?
+  it let's us to call functions with infinite arguments. when it's used in function parameters, it treats arguments as *array*
+
+  #+BEGIN_SRC js
+function sum(...args) {
+    return args.reduce( (x, result = 0) => result += x);
+}
+console.log(sum(1,2,3,4,5,6)); // outputs: 21
+  #+END_SRC
++ what is *destructuring technique* ?
+  it's a shortcut for assigning *Object properties* to another Object
+  #+BEGIN_SRC js
+var dog = {
+    "name" : "ares",
+    "color" : "brown",
+    "age" : 12
+};
+
+var NEW_DOG = {
+    "name" : a,
+    "color" : b,
+    "age" : c
+} = dog;
+  #+END_SRC
++ what are the benefits of *string template literals* ?
+  1. variables can be used inside the string. without concatination
+  2. double quotes can be used without escaping them
+  3. new lines treated as new lines. so we can make multi-line strings
++ how *private* class members look in js?
+  use *underscore* before the name
+  #+BEGIN_SRC js
+class Person {
+    constructor(name) {
+        this._name = name;
+    }
+}
+  #+END_SRC
+* Problems & Solutions

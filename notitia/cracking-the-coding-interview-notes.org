@@ -1,0 +1,211 @@
+#+TITLE: Cracking The Coding Interview Notes
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: cracking-the-coding-interview-notes
+:EXPORT_TITLE: *Cracking the Coding Interview* Notes
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+Bu post'da Türkçe olarak /Cracking the Coding Interview/ kitabının özetini çıkartıyorum. Ilk ve ikinci bölümleri ingilizce yazdım, dert etmeyin onları revize edip Türkçeleştireceğim. Bu kitapta, iş başvurularında dikkat edilecek hususlar çok güzel anlatılmıştır. Ben de en azından özetini çıkararak önemli yerleri sizinle paylaşmaya karar verdim. İyi okumalar
+[[file:./images/screenshot-56.png]]
+
+* Bölüm 1
++ recruiters look for the following;
+  - analytical skills
+    a. how *confidently* you solved the problem
+    b. how *optimal* was your solution
+    c. how *fast* you are
+    d. how *efficient* was your algorithm
+  - coding skills
+    a. how *clean* your code is
+    b. how *good* your *style* was
+    c. did you *handle errors* or not
+  - computer science knowledge. do you have *strong foundation* or not
+  - did you make *challanging* / *interesting* projects before or not
+  - do you *communicate well* or not
++ having knowledge of data structures and algorithms is really important and positively corelates with being a good developer
++ the reason behind *whiteboard coding* is that recruiters want you to focus on _actual problem solving_ instead of struggling in *restricted* computer environment when compilers spit errors all over the place. the code you write does not need to be perfect and it's okay if it contains some syntactical errors. just show to the interviewer how you approach to the problem and write an acceptable code
++ companies usually follow a pattern when selecting interview questions. there are two types of questions;
+  1. algorithm questions
+  2. technology questions (do you have experience with techonology X?)
++ interviewers always compare your performance to other's that came before and after you. even if you think that you performed well, a japanese hacker who came before you can change all the game. it's all about luck m8
++ don't think that you've been rejected immediately if you don't get response in 2-3 days. your interviewer might still work on your and other assessments. be patient and calm
++ if you've been rejected but really want that job you must wait for at least *6 months* before re-application.
+* Bölüm 2
++ before face-to-face interview you always get a *screen* interview. this is actually a phone interview where skype or relative apps are used
++ coding and algorithms questions are asked during the screen interview. questions are hard as ones that asked in face-to-face interview
++ sometimes interviewer might give you a *homework* which you solve and send the code through e-mail. (rare case)
++ the most of the time questions are asked in real time and you try to solve them while interviewer watches (common case)
++ you do one or two screens before they take you to face-to-face arena
+
+* Bölüm 3
++ aşağıdaki maddelerde, bazı _değişken_ durumlar anlatılmıştır;
+
+  - görüşmeciler (interviewer) çok tecrübeli ve uzun süre çalışan geliştiricileri, daha düşük standartlarda görüp algoritmik soruları daha kolay sorabilir. ne de olsa bu insanlar mezun olalı yıllar olmuştur ve görüşmeciler, onların paslandıklarının farkındadırlar
+
+  - bazı şirketlerde de tam tersi olabilir. yani uzun süre çalışanların daha çok problem çözdüğünü ve bu konuda yıllar geçtikçe daha iyi olduklarını düşünürler ve yeni mezunlara göre daha zor sorabilirler
+
+  - çoğu zaman tecrübeli kişilere *system tasarımı* soruları gelirken yeni mezun olanlar bu konuda çalşma yapmadıkları için (daha çok akademik derslere ağırlık verdiklerinden) genelde bu sorulardan kurtulabilirler
+
+  - yeni mezunlara göre tecrübelilerin, sorulara çok daha ayrıntılı cevap vermeleri beklenir. yani yeni mezunsak iş çok daha kolay. sadece algoritma sorularına çalışmamız (hackerrank, codewars) ve şu an zaman varken bol bol proje yapmamız yeterli olacaktır. tecrübelilerin iş bulması bizden daha zor
+
++ *skill atrophy*: bir yetenek ya da bilgi kullanılmadığında, o yeteneğin körelmesi anlamına gelir. bizim perspektifimizden bakıldığında, algoritma ve kodlama bir yetenektir ve asla atrofiye uğramaması gerekir
+
+#+begin_quote
+kitapta bu bölümde, SDET ve PM ile ilgili kariyer ve görüşme tavsiyeleri verilmiş. bu bizi şu anda ilgilendirmiyor.
+#+end_quote
+
++ SDET: (software design engineer and tester) yazılımları test eden elemanlardır. bunların genelde normal bir developerdan daha iyi olması beklenir çünkü bu iş aynı zamanda *kalite kontrol*'ün yazılım camiasındaki karşılığıdır. bu yüzden bir SDET'in iş bulması demek, buraya kadar bahsi geçen pozisyonlardan daha çok çalışması gerek demek oluyor
+
++ PM (Product Manager): daha çok takım yönetimi yapan ve geliştiricilerin ürettiği yazılımın sorumluluğunu üstlenen elemandır. kod yazmaktan çok işin business tarafıyla ilgilenir
+
++ bir startup'a katılmak istiyorsan;
+
+  - CV'de ilk göze çarpan kısmın, *yapılan projeler* olması gerekir. startup alım süreçlerinde CV incelemesi sırasında kişinin ne kadar *girişimci* ve programlama konusunda ne kadar *üretken* olduğu, bu kısımda göze çarpar. yani "ben şu dilleri biliyorum", "şu teknolojileri biliyorum"'a bakmazlar (genelde)
+
+  - kesinlikle, bir startup görüşmecisiyle "samimi" ve "arkadaşça" iletişim kurulması gerekir. şirket henüz çok küçüktür ve insanlar yanlarında genelde takılabilecekleri insanlar arar. burada işin sosyal tarafı, iş tarafı kadar ağır basabilir
+
+  - startup'daki projede kullanılan dil ile ilgili çok iyi bir derinliğe sahip ol çünkü sorular genelde dil spesifik gelir. (bir startup'a göre dil öğrenmek değil de bildiğimiz dilde iş yapan bir startup'a başvurmak çok daha efektif olur)
+
+  - strtuplar tecrübe de isterler. buradan benim çıkarttığım, büyük şirketler, tecrübeli developerları görüşme esnasında çok hırpalarken, startuplarda genelde iş küçük olduğundan tecrübelileri havada kapıyor olabilirler. bu yüzden yeni mezun birinin büyük bir şirkette iş bulması, startup'da iş bulmasından daha kolaydır (?)
+
+#+begin_quote
+buradan sonrası, şirket içi iş görüşmelerinden ve interviewerlara tavsiyelerden bahsediyor. bizim için şu anlık önemli değil
+#+end_quote
+* Bölüm 4
+** Tecrübe Kazanma Yolları
++ iyi bir tecrübe yoksa, iyi bir CV olmaz. iyi bir CV yoksa da kimse sizi iş görüşmesine çağırmaz
++ öğrenciler bakımından yukarıdaki sorunun çözümü;
+  1. gerçek sorunlar çözen projeler yap
+  2. staj yap
+  3. startup ara
+  4. boş zamanında bir proje yap,
+  5. hackatonlara katıl,
+  6. github'da open source bir projeye katkıda bulun
+** Iyi Bir CV Yazma Yolları
++ aslında şirketler birinde sadece şunları ararlar;
+  1. *zeki misin?*
+  2. *kod yazabilir misin?*
+  CV'de yazanlar, bu iki şeyin kanıtı olmalıdır. şirketlere zeki ve çalışkan olduğunuzu katınladığınız anda işi kaparsınız
++ CV yazarken, odak noktası kesinlikle "zeki misin?" ve "kod yazabiliyor musun?" sorularına cevap vermeli. teknik olmayan şeyeri (hobi gibi) CV'ye eklemek çok akıllıca değildir
++ öğrencilerin ve 10 seneden az tecrübesi olan kişilerin CV'si _1 sayfa_ olmalıdır. data tecrübeliler _1.5 ya da 2 sayfa_ olmalıdır
++ uzun bir CV hiç bir zaman faydalı değildir çünkü iş verenler CV'ye bakarken en fazla 10 saniye harcarlar.
++ CV'ye sadece _sırasıyla_;
+  1. en büyük projeleri
+  2. en büyük tecrübeleri (iş tecrübesi, programlama dilleri)
+  3. en büyük başarılarını
+  yukarıdakilerden daha fazla şey yazmak, iş verenin sadece dikkatini dağıtır.
++ bazı işverenler, uzun CV gördüklerinde direk fırlatırlar..
++ CV her zaman İngilizce olmalıdır. her zaman ana dili ingilizce olan ya da bir tercumana okutup gramer ya da yazım yanlışlarınızı kontrol ettirin.
++ CV'de *yaş*, *cinsiyet*, *medeni durum* _belirtmeyin_. bunu yaparsanız, özellikle Amerika'da ters teper
+*** Tecrübeler
++ eğer çok tecrübeliysen ve 1 sayfaya sığdıramıyorsan, 1 sayfaya sığdırmanın yollarını ara. ya da en önemsizleri ele. 1 sayfa *is the key*
++ tecrübe kısmında, iş geçmişinin tamamını yazmak önerilmez. çünkü çok iş değiştiren biri olarak görünürsün. onun yerine sadece en önemlileri yaz. her şirket isminin altına tek cümleyle ne yaptığını anlat. örnek bir cümle kalıbı;
+
+  #+begin_quote
+Y'yi yaparak X'i başardım
+  #+end_quote
+*** Projeler
++ proje kısmı, yaptığınız en büyük 2-4 projeden oluşmalı
++ projelerin açıklama kısmında;
+  1. hangi dil ya da dillerle yazıldı
+  2. hangi teknolojiler kullanıldı
+  3. proje bir takım projesi mi? bir kurs yardımıyla mı yapıldı? kendin mi yaptın?
++ yukarıdaki her maddeye uyulması mecburi değildir. eğer maddeler sizi iyi gösteriyorsa o zaman belirtin.
++ 3. maddede, eğer projeyi bağımsız olarak tek başınıza yaptıysanız bunu belirtin. bu, iş verenler için takım projesi'nden daha değerlidir
++ çoğu insan CV'sine yaptığı bütün projeleri yazar ki bu iş verenleri yoran bir şey. maximum 4 proje yazın
+*** Programlama Dilleri
++ bu güne kadar çalıştığınız bütün dilleri yazmaya kalkmayın
++ en iyi olduğunuz ve en iyi bildiğiniz dilleri yazın çünkü bir insan bütün dillerin tüm teknik detaylarını bilemez. abartılmış bir liste, iş verenin sizin hakkınızda pozitif düşünceler oluşturmaz
++ uzun dil listesine sahip adayları genelde iş görüşmesinde özellikle sınarlar ve normal bir listeye sahip birine nazaran çok daha zor sorular yöneltebilirler.
++ yetkinlik seviyenizi kabaca parantezler içinde belirtin. örnek bir liste;
+  1. java (fluent)
+  2. C++ (proficient)
+  3. javascript (prior experience)
++ yetkinlik seviyesi için yıl yazmayın. 10 sene önce javascript öğrenip sadece bir kaç kere yazdıysanız bu gerçeten 10 yıllık bir tecrübe mi?
++ eğer bir sertifikanız varsa ve bu bir programlama diliyle alakalıysa kesinlikle CV'de buna yer vermeyin. iş verenler bu sertifikaları ciddiye almazlar
++ eğer bir dilin belli bir versiyonuyla ilgili tecrubeniz varsa mesela, C11, C99, Perl5 gibi, iş verenler kesinlikle bu tarz bir şeyi ciddiye almazlar. bunun yerine C ve Perl demek daha doğrudur. aslında bu tarz bir şey, yazılımcının dil konusunda ne kadar spesifik olduğunu gösterir ama çoğu şirket buna değer vermez
++ *stigma*: bir programlamma dilinin zaman içinde ön yargılara maruz kalıp değerini yitirmesidir. örnek olarak Visual Basic ve .NET teknolojileri. eğer .NET işine baş vurmuyorsanız, bu teknolojileri ve diğer stigma kazanmış (ön yargı kazanmış) dilleri ya da teknolojileri CV'de belirtmeye gerek yok
++ yukarıdaki maddeden yola çıkarak şirketlerin (özellikle Amerikadakilerin) önem verdikleri diller en az'dan en çoğa sıralanmıştır;
+
+  1. C#, .NET, Visual Basic
+  2. Ruby, Python, Javascript
+  3. Java, C++
+
+*** İş Başvurusuna Hazırlık Haritası
+[[file:./images/screenshot-54.png]]
+[[file:./images/screenshot-55.png]]
+
+* Bölüm 5
++ CV'de yazılan projeler incelenip genelde bu projelerle ilgili size soru yöneltilir. CV'yi inceleyen kişi, görüşmeden önce bu projelere ne kadar hakim olduğunuzu görmek için zor sorular hazırlayabilir.
++ CV'deki projeleri çok iyi çalşıp, şöyle bir tablo hazırlanması çok faydalı olacaktır;
+
+  | yaygın soru             | proje1    | proje2    | proje3    |
+  |-------------------------+-----------+-----------+-----------|
+  | zorluklar/buglar        | --------- | --------- | --------- |
+  | hatalar/başarısızlıklar | --------- | --------- | --------- |
+  | keyif alınan taraflar   | --------- | --------- | --------- |
+  | liderlik                | --------- | --------- | --------- |
+  | çatışmalar (takım ise)  | --------- | --------- | --------- |
+  | neyi farklı yapardın    | --------- | --------- | --------- |
+
++ bu tabloyu doldurup iyice çalış. iş veren projeler hakkında soru sordukça burda yazdıklarını hatırla ve cevapla
++ size "zayıf yanlarınız" nelerdir diye sorduklarında gerçek bir zayıflık söyleyin. "çok çalışmak" gibi cevaplar çok ciddiye alınmaz ve dürüst olmadığınızı düşündürür.
++ zayıflıklarınızdan bahsederken aynı zamanda bu zayıflıklarla nasıl başa çıkmaya çalıştığınızı da anlatmanız gerekir. örnek;
+
+  #+begin_quote
+  yeni bir projeye başladığımda çok hızlı burn out olabiliyorum. başa çıkmak için pomodoro tekniğini kullanıyorum
+  #+end_quote
+
+  #+begin_quote
+  yeni bir teknolojiyi öğrenirken, kendimi bu konuda sonuna kadar gitmem gerektiğine inandırıyorum. bundan dolayı teknolojiye öğrenmeye odaklanmak yerine, kendimi en iyi kaynağı araştırmaya zaman harcarken bulabiliyorum. Bu konuda tecrübe kazandığım için artık çoğu kez yaptığım yanlışın farkına varabiliyorum
+  #+end_quote
+
+** Interviewer'a Yöneltilebilecek Sorular
++ interviewer size soru sormanıza izin verebilir. bir iş görüşmesinde, 3 tip önemli soru çeşidi vardır;
+*** Hakiki Sorular
+cevaplarını gerçekten bilmek istediğiniz sorulardır
+#+begin_quote
+şirkette, geliştirici, tester ve yönetici dengesi nasıl? takımda proje planlaması nasıl yapılıyor?
+#+end_quote
+#+begin_quote
+peki siz bu şirkete nasıl geldiniz? genelde bu çalışma ortamında sizi en çok zorlayan ne oluyor?
+#+end_quote
+
+*** Teknik Sorular
+bu sorular genelde şirkete başvurmadan önce bayağı bir araştırdığınızı anlatır
+#+begin_quote
+gördüğüm kadarıyla X teknolojisini kullanıyorsunuz. bununla Y problemini nasıl çözüyorsunuz?
+#+end_quote
+#+begin_quote
+yaptığınız ürün X teknolojisi yerine neden Y'yi seçti? Y'nin A,B,C konularında avantajları olduğunu biliyorum ancak diğer şirketler Y'yi D sorunu yüzünden kullanmıyorlar
+#+end_quote
+
+*** Çalışkanlık Yansıtan Sorular
+bu tarz sorular iş verenin, sizin ne kadar azimli olduğunuzu görmesini ve şirket için faydalı olacağınızı düşünmesini sağlar
+#+begin_quote
+Yazılımın ölçeklenebilirliği konusunda kendimi geliştirmeye çalışıyorum. bu şirkette bu konuyla alakalı neler öğrenebilirim?
+#+end_quote
+#+begin_quote
+Kullandığınız X teknolojisini daha önce hiç duymadım ancak çok ilginç bir yönteme benziyor. Nasıl çalıştığından biraz bahseder misiniz?
+#+end_quote
+
+** Dikkat edilmesi gereken hususlar
++ projelerle ilgili konuşurken ya da sorular yöneltirken asla ama asla *kibirli* görünme. Kendini her zaman bir çaylakmışçasına *alçak gönüllü* ve *saygılı* olarak göster. /(genel olarak öyle ol zaten)/
++ görüşmeciler bu tarz çok insan ile karşılaştıklarından, artık insan sarrafı olma yolunda ilerliyorlardır. en ufak bir kibir belirtisinde çizerler
++ soruları cevaplarken, karşınızdakini detaya boğmayın. çok önemli noktalara değinin ve daha fazla detay gerektiren bir konuda, karşınızdakinden izin alıp öyle devam etmeye özen gösterin. çünkü gelen kişinin, teknik detaylardan ne kadar anladığını ya da duymaktan hoşlanıp hoşlanmadığını bilemezsiniz.
++ takım projesinde yer aldıysanız, takımın başarılarını anlatmak yerine kendinizin bu takımdaki başarılarınızdan bahsedin. çünkü takım ile ilgili konuşmalarınızda, sizin ne yaptığınız ile ilgili bir fikir oluşmaz
++ "kendininden biraz bahseder misiniz?" tarzı bir soru geldiğinde kronolojik sıraya gitmeye dikkat edin ve sırasıyla şunlardan bahsedin;
+  1. Şu anda bir yerde çalışıyorsanız rol belirterek söze girin
+  2. hangi okulda okudun ve hangi bölüm
+  3. stajlar
+  4. okuldan sonra ne yaptın
+  5. iş dışında yaptığın projeler/çalışmalar
+  6. şu anda neden burda olduğunu anlatarak toparla bitir
+  hobilerden bahsetmek istersen bunu 5. maddede belirt ancak hobilerden bahsetmek bazen tehlikeli olabilir. dikkat et
+
+* Bölüm 6
+** Big O
++ içini dışını bilmezsen, kötü gözle bakarlar
++

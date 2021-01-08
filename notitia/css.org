@@ -1,0 +1,565 @@
+#+TITLE: CSS
+:PROPERTIES:
+:EXPORT_FILE_NAME: css-cheat-sheet
+:EXPORT_TITLE: CSS Cheat Sheet
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+
+* How To
+ 1. name a css file?
+   *style.css* or *main.css*
+ 2. how to link *style.css* with *index.html* ?
+   in html file,
+   #+BEGIN_SRC html
+<link href="./style.css" rel="stylesheet"/>
+   #+END_SRC
+ 3. write internal css?
+   put your css code inside *style* tags
+   #+BEGIN_SRC html
+   <head>
+     <style>
+       h3 {
+         color : red;
+       }
+     </style>
+   </head>
+   #+END_SRC
+ 4. how comments look in css?
+   #+BEGIN_SRC css
+/* this is a comment */
+   #+END_SRC
+ 5. change h1,h2 and h3 at the same *selector*?
+   #+BEGIN_SRC css
+h1,h2,h3 {
+    color : olive;
+}
+   #+END_SRC
+ 6. change *background color* of the entire page?
+   #+BEGIN_SRC css
+body {
+    background-color : black;
+}
+   #+END_SRC
+ 7. style by *classes* or *id*?
+   #+BEGIN_SRC html
+<h3 class="cls0"> TITLE0 </h3>
+<h3 id="cls1"> TITLE1 </h3>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+.cls0 {
+    color : red;
+}
+
+#cls1 {
+    color : blue;
+}
+   #+END_SRC
+ 8. set *space between two lines*?
+   #+BEGIN_SRC css
+line-height : 1.5em;
+   #+END_SRC
+ 9. set *font* ?
+   #+BEGIN_SRC css
+font-family : monospace;
+   #+END_SRC
+ 10. set a background image?
+    #+BEGIN_SRC css
+ background-image: url("../img/bg.png");
+    #+END_SRC
+ 11. set opacity of text?
+    use *rgba()* with a value between 1 and 0 at the end
+    #+BEGIN_SRC css
+ .class0 {
+     color : rgba(100,53,81,0.5);
+ }
+    #+END_SRC
+ 12. make *links* without _underline_ ?
+    #+BEGIN_SRC css
+ a {
+     text-decoration : none;
+ }
+    #+END_SRC
+ 13. cancel all the *default margins*?
+    #+BEGIN_SRC css
+    *{
+        margin : 0;
+    }
+    #+END_SRC
+ 14. *change font* of an element?
+    #+BEGIN_SRC css
+ .element {
+     font-family : Fira Code;
+ }
+    #+END_SRC
+ 15. use *google fonts*
+     1. go to *google fonts* page
+     2. select your font
+     3. click *select this style*
+     4. copy <link> part and paste is between <head> element
+     5. copy *CSS rules* and paste it to CSS file where you want to use that font
+     6. click on *@import* section and copy the code inside =<style>= element
+     7. paste it into the top of your CSS file
+ 16. make a font bolder?
+    use *font-weight*
+    #+BEGIN_SRC css
+ .element {
+     font-weight: bold;
+ }
+    #+END_SRC
+ 17. make font italic?
+    use *font-style*
+    #+BEGIN_SRC css
+ .element {
+     font-style : italic;
+ }
+    #+END_SRC
+ 18. reach a *nested element* inside a class?
+    use *>* syntax
+    #+BEGIN_SRC html
+ <div class="cls0">
+   <ul>
+     <li>item</li>
+     <li>item</li>
+   </ul>
+ </div>
+    #+END_SRC
+
+    #+BEGIN_SRC css
+ cls0 > ul > li {
+     /* your code */
+ }
+    #+END_SRC
+ 19. increase space between *letters* in a paragraph?
+    #+BEGIN_SRC css
+ .element {
+     letter-spacing: 5px;
+ }
+    #+END_SRC
+ 20. increase space between *words* ?
+    #+BEGIN_SRC css
+ .element {
+     word-spacing: 5px;
+ }
+    #+END_SRC
+ 21. capitalize an entire *paragraph* ?
+    #+BEGIN_SRC css
+ .element {
+     text-transform: capitalize;
+ }
+    #+END_SRC
+ 22. add *hover* action to an element?
+     #+BEGIN_SRC css
+     .element:hover {
+     /* code */
+     }
+     #+END_SRC
+ 23. add *opacity* to an element?
+    #+BEGIN_SRC css
+ .element {
+     opacity: 0.5;
+ }
+
+    #+END_SRC
+ 24. add a *border* around an element?
+    #+BEGIN_SRC css
+ .element {
+     border-style: solid;
+ }
+    #+END_SRC
+ 25. add *border width* of an element?
+    #+BEGIN_SRC css
+ .element {
+     border-width: 10px;
+ }
+    #+END_SRC
+ 26. overlap two elements?
+    with *negative margin*
+ 27. make list items on one line?
+    #+BEGIN_SRC html
+ <ul>
+     <li>item1</li>
+     <li>item2</li>
+     <li>item3</li>
+ </ul>
+    #+END_SRC
+
+    #+BEGIN_SRC css
+ ul > li {
+    display: inline;
+ }
+    #+END_SRC
+ 28. display text in the center of the element?
+    use *text-align: center*
+ 29. create a *navigation bar* of a website?
+    #+BEGIN_SRC html
+ <div class="navbar">
+   <a href="#">Home</a>
+   <a href="#">Contact</a>
+   <a href="#">Coffee</a>
+   <a href="#">Music</a>
+ </div>
+    #+END_SRC
+
+    #+BEGIN_SRC css
+ .navbar a {
+     font-family: Fira Code;
+     margin-right: 20px;
+     font-size: 1rem;
+     text-decoration: none;
+ }
+
+ .navbar {
+     background: black;
+ }
+    #+END_SRC
+ 30. add a *custom font* to the css?
+    add the following on the top of css file
+    #+BEGIN_SRC css
+ @font-face {
+     font-family: "font-name";
+     src: url("../fonts/my-font.ttf");
+ }
+    #+END_SRC
+ 31. set opacity of an element?
+    use *opacity* attribute
+    #+BEGIN_SRC css
+ .element {
+     opacity: 0.5;
+ }
+    #+END_SRC
+ 32. use *image* as a background instead of straight color?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+ }
+    #+END_SRC
+ 33. make an image non-repeatable?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+     background-repeat: no-repeat;
+ }
+    #+END_SRC
+ 34. *spread* the image into one area (div) ?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+     background-size: cover;
+ }
+    #+END_SRC
+ 35. *center* the background image?
+    #+BEGIN_SRC css
+ .element {
+     background-position: center;
+ }
+    #+END_SRC
+ 36. adjust the position by x and y values of a background image?
+    use persentages to adjust
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.extension");
+     background-position: 20% 50%;
+ }
+    #+END_SRC
+ 37. add an image with protected *aspect ratio*?
+    #+BEGIN_SRC css
+ .element {
+     background: url("/path/to/image.jpg");
+     background-size: contain;
+ }
+    #+END_SRC
+ 38. align text to the center?
+    #+BEGIN_SRC css
+ .element {
+     text-align: center;
+ }
+    #+END_SRC
+ 39. make a *parallax* effect?
+    use *background-attachment*
+    #+BEGIN_SRC css
+ .banner {
+     background: url("../img/bg.jpg");
+     background-attachment: fixed;
+ }
+    #+END_SRC
+ 40. make a gradient element? use *grey* and *white*
+    #+BEGIN_SRC css
+ .element {
+     background-attachment: linear-gradient(grey, white);
+ }
+    #+END_SRC
+ 41. give *angle* to the gradient?
+    #+BEGIN_SRC css
+ .element {
+     background: linear-gradient(45deg, white, black);
+ }
+    #+END_SRC
+ 42. make a nice *transition effect* ? when user scrolls down the transparent
+    screen comes on the background image. the background image does not change btw
+    #+BEGIN_SRC html
+ <div class="first">
+ </div>
+
+ <div class="second">
+ </div>
+    #+END_SRC
+
+    #+BEGIN_SRC css
+ .first {
+     background: url("../img/bg2.jpg");
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100vh;
+ }
+
+ .second {
+     background: url("../img/bg2.jpg");
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     opacity: 0.5;
+     height: 100vh;
+ }
+    #+END_SRC
+ 43.
+* What Is
+ + what css stands for?
+   cascading style sheets
+ + what is the *syntax* for css?
+   #+BEGIN_SRC css
+selector{
+    property0 : value0;
+    property1 : value1;
+}
+   #+END_SRC
+ + what is the difference between *span* and *div*
+   - div is usefull for grouping elements together
+   - span is usefull for assigning some class or id names inline
+   - when elements grouped with *div* it will cause a new line
+   - hovewer span won't cause a new line
+ + what is the best way to represent a color ?
+   using *rgb*
+   #+BEGIN_SRC css
+h1 {
+    color : rgb(100,100,100);
+}
+   #+END_SRC
+ + what is the most primitive way to represent size?
+   pixels.
+   #+BEGIN_SRC css
+.cls0 {
+    font-size : 12px;
+}
+   #+END_SRC
+ + what is the drawbacks of representing something in pixels?
+   since pixels are constant and depends on nothing, it makes the element non-responsive. so the size will not change when screen size change
+ + what is *font stack* ?
+   it is a concept where we present different font families to the web browser. if web browser fails to render the first font family then it tryes out the second one. if web browser fails at every font then the last one (monospace) font will be assumed
+
+   example usage;
+   #+BEGIN_SRC css
+.element {
+    font-family : 'Courier New' Courier, monospace;
+}
+   #+END_SRC
+ + what is *css box mode* ?
+   #+BEGIN_SRC text
++-------------------------------------+
+|               Margin                |
+|  +-------------------------------+  |
+|  |            Border             |  |
+|  |  +-------------------------+  |  |
+|  |  |         Padding         |  |  |
+|  |  |  +-------------------+  |  |  |
+|  |  |  |      Content      |  |  |  |
+|  |  |  +-------------------+  |  |  |
+|  |  +-------------------------+  |  |
+|  +-------------------------------+  |
++-------------------------------------+
+   #+END_SRC
+ + what is the shortcut way of writin *borders*?
+   parameter order matters!
+   #+BEGIN_SRC css
+.element {
+    /* width style and color */
+    border: 5px solid blue;
+}
+   #+END_SRC
+ + what is the *difference* between _border_ and _outline_ ?
+   - borders are like glued to the content. we can't put space between content and border
+   - outlines in other hand they are more flexible than borders. also we can use only outlines instead of borders. we can give *offset* to outlines which borders can't quite handle.
+
+      #+BEGIN_SRC css
+   .element {
+       outline: 0.2rem solid black;
+       outline-offset: 10px /* set outline 10px above the content */
+       outline-offset: -10px /* set outline 10px inside the content */
+   }
+      #+END_SRC
+ + what are *gradients* ?
+   it's a color effect. _two or more_ colors are mixed into one element. and result will look
+   like an _oval_ object. used in button coloring
+* Flash Cards
+ + where css can be added?
+   1. inline
+   2. inside <head> element
+   3. seperate file
+ + when you have multiple css files in which directory should we put them?
+   css/
+ + what happens if we add *internal css* in a page that has *external css* ?
+   internal css will override external one
+ + what happens if we add *inline css* in a page that has *external css* or *internal css* ?
+   *inline* css will override *external* and *internal* ones
+ + what does *color* attrubute do?
+   it changes the text color
+ + can we add *multiple classes* inside an element?
+   we can also add *classes* with *ids*
+   #+BEGIN_SRC html
+<h3 class="title" class="lowercase" id="testid"> hello </h3>
+   #+END_SRC
+ + unique elements should have ...
+   id
+ + why *div* blocks are used?
+   to group elements. this helps us to specify elements in css
+ + which grouping style causes *new line* ?
+   div
+ + where to get cool color schemes?
+   1. [[https://coolors.co/][coolors]]
+   2. [[https://color.adobe.com/explore][adobe color]]
+ + what happens when we use *width* and *height* in persentage?
+   the persentage will work depending on the *parent div*'s sizes. for example if parent div has 20px height and we give 50% height to the child then child will have 10px height
+   #+BEGIN_SRC css
+.parent {
+    height : 20px;
+    width : 20px;
+}
+.child {
+    height : 50%; /* 20%50 = 10 */
+    width : 50%; /* 20%50 = 10 */
+}
+   #+END_SRC
+ + persentages will depend on ...
+   parent values!
+ + what *vw* and *vh* do?
+   vw and vh are *measure units* in css. they are relative values depend on *screen size*. when browser window size change, then those values are also change
+   example;
+
+   #+BEGIN_SRC html
+<div class="cls0">
+</div>
+<div class="cls1">
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+.cls0 {
+    background-color : orange;
+    width : 50vw;
+    height : 50vh;
+}
+
+.cls1 {
+    background-color : yellow;
+    width : 50vw;
+    height : 50vh;
+    margin-left: 50vw;
+}
+   #+END_SRC
+ + what *calc()* function does in css?
+   it takes two values with *px*, *vh*, *vw*, *rem*, *em* etc and applies arithmatic operations on them.
+ + use case scenario of *calc()* function
+   assume we have a *navbar* on top of the page and it has 100px height. now let's say we need a *banner* below navbar. this banner will have height of entire page (without scroll bar). how do we adjust that height automatically?
+
+   in this case we can use *calc()* function like this:
+   #+BEGIN_SRC html
+<div class="navbar">
+</div>
+
+<div class="banner">
+</div>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+*{
+    margin : 0; /* zero out default margins */
+}
+
+.navbar {
+    background : blue;
+    height : 100px;
+}
+
+.banner {
+    background : green;
+    height : calc(100vh - 100px); /* 100vh - navbar.height */
+}
+   #+END_SRC
+ + what *measure* type should we use on *line-height* property ?
+   em
+   #+BEGIN_SRC css
+.element {
+    line-height: 1em;
+}
+   #+END_SRC
+ + what areas a,b,c and d effect in *padding: a b c d* ?
+   #+BEGIN_SRC css
+.element {
+    padding: top, right, left, bottom;
+}
+   #+END_SRC
+ + what border-radius value turn element into circle?
+   50%
+ + what *block elements* do when rendered?
+   - always start a new line
+   - takes over full width
+ + what *inline elements* do when rendered?
+   - does not start a new line
+   - does not occupy the full width
+ + for *block centering* what topics are used in css?
+   flex and grids
+ + browser will ignore margin's *margin-top* and *margin-bottom* properties if the element is ...
+   inline
+ + browser will ignore margin's *margin-left* and *margin-right* properties if the element is ...
+   block
+ + what property should we use to make the browser respect to *inline element* top and bottom margins?
+   use *inline-block*
+   #+BEGIN_SRC html
+<a href="#">Home</a>
+<a href="#">Contact</a>
+<a href="#">Coffee</a>
+<a href="#">Music</a>
+   #+END_SRC
+
+   #+BEGIN_SRC css
+a {
+    inline-block:
+}
+   #+END_SRC
+ + create a nice banner with an image in bakcground
+   #+BEGIN_SRC html
+<div class=".banner">
+  <p>some text here</p>
+</div>
+   #+END_SRC
+
+  #+BEGIN_SRC css
+.banner {
+    background: url("../img/bg1.jpg"); /* load the image */
+    background-size: cover; /* spread image across the div area */
+    background-repeat: no-repeat; /* prevent repetition */
+}
+  #+END_SRC
+ + what to do if background image is too bright and text on it is not visible?
+   add some *opacity*
+   #+BEGIN_SRC css
+.element {
+    background: url("/path/to/image.jpg");
+    opacity: 0.5;
+}
+   #+END_SRC

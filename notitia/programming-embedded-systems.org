@@ -1,0 +1,157 @@
+#+TITLE: Programming Embedded Systems
+#+HUGO_BASE_DIR: ~/txt/blog/
+#+HUGO_SECTION: en/posts
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: programming-embedded-systems-notes
+:EXPORT_TITLE: Programming Embedded Systems Notlarım
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+Programming Embedded Systems 1999'da yazılan 200 sayfalık bir kitaptır. Bir Gömülü Yazılım gelitirmek için adım adım nelerin yapılması gerektiğini anlatır. Bu da benim çıkardığım Türkçe Özet
+[[file:./images/screenshot-87.png]]
+
+* Bölüm 1
+** Gömülü Sistem Nedir
+- Gömülü sistemler genelde daha büyük bir sistemin parçası olurlar. örnek olarak bir araba içindeki sistemler; fren sistemi ya da hava yastığı sistemi için olan devrenin içindeki yazılım bir gömülü sistemdir
+- Genel amaçlı bir bilgisayarın içinde de gömülü sistemler mevcuttur; klavye, mouse, hard drive, ses kartı. Bunların hepsi kendi başına içinde küçük yazılımlar olan tek başına gömülü sistemlerdir
+** Donanım
+- Gömülü sistemlerin tarihi ilk olarak 1971'de Intel'in Japon bir firma için ürettiği 4004 mikroişlemcisi ile başlıyor. ilk mikroişlemcidir bu.
+- işlemci gücü MIPS ile ölçülür (Millions of Instruction Per Second)
+- işlemci gücünü etkileyen bir başka özellik de register boyutudur. 8-bit ya da 16-bit işlemcilerin register boyutları da sırasıyla 8 ve 16 bittir
+- 8-bit işlemci, yalnızda 256 byte kadar RAM destekler çünkü \(2^8=256\)
+- 16-bit işlemci ise 64KB RAM destekleyebilir: \(2^{16}=65536\) ise \(65536\div1024 = 64\)
+- 32-bit, 4GB RAM
+- 64-bit, 4PB ancak 64-bit sistemler çok fazla RAM desteklediği için şu anda dünyada bu kadar RAM'e sahip bir makine yok (mu acaba?). Bu yüzden çoğu CPU üreticisi adreslenebilecek miktarı 1 TB olarak ayarlayıp -ki hala çok yüksek RAM- bit sayısını 50 yaparlar; \(2^{50}\div1024^4=1TB\)
+- 8-bit cihazların yaşam ömrü şaşırtıcı:
+  [[file:./images/screenshot-85.png]]
+- Dijital saatler gibi cihazlar ve buna benzer gömülü sistemler RAM'e gerek duymayıp, CPU'nun kendi registerlarını kullanabilir. Dijital saatler 8-bit CPU kullanabilir
+- Oyun konsolu tasarlayan mühendisler, konsolun maliyetini ucuzlatmak adına, hafıza ve diğer pahalı birimleri dışardan takılabilir olarak üretirler. Bu sayede konsolun maliyeti düşerken, oyunların maliyeti yükselir. Bunun bir örneği Ateri Kasetlerinde görülür
+** Diller
+- C dilinin yazılış amacı, *low level* bir dil oluşturmaktır
+- C'nin gömülü sistemler için en avantajlı 2 yanı vardır;
+  1. neredeyse her işlemci için kod üretebiliyor olması
+  2. donanımla bu kadar kolay konuşabiliyor olması
+- Assembly, C++, Ada, Rust, µPython, Java diğer Gömülü alanlarda kullanılan dillerdendir
+- Assembly, donanımın tam kontrolünü ele alır, çok hızlı çalışır ancak kodu başka bir işlemciye port edemezsin. kod çok uzundur ve okuması zordur
+- C++, C diline bir de Object Oriented özellikler ve bir çok Abstraction eklemiştir ve bu yazılım geliştirme açısından çok verimli bir dil olmasına neden olmuştur. Ancak bu özellikler, kodun çalışmasını kötü yönde etkilemiştir ve C kadar hızlı olamamasına sebep olmuştur. C++'a özgü özellikler, büyük projelerde iyi rol oynayabilir ancak örneğin bir dijital saat gibi basit bir gömülü sistemde çok da ihtiyaç yoktur
+- Ada, Gömülü sistemlerde önemli bir dildir. C++ yerine kullanılabilecek bir dil olma niteliğindedir. Kullanım alanı daha çok Amerikan Savunma Sanaiinden dışarıya çıkamadığı için yine popülaritesini kaybeden şanssız dillerdendir
+* Bölüm 2
+- Gömülü sistemlerde "hello world" programı, çoğu zaman bir LED'i 1 Hz hızında yakıp söndürmektir.
+
+- *delay* fonksiyonlarında kullanılan sadece bir sayacı sıfıra kadar geriye sayan C kod yapısı şu şekilde kısaca kurulabilir;
+  #+begin_src c
+int i = 100;
+while (i--);
+  #+end_src
+
+- basit bir LED yanıp söndürme programı;
+  #+begin_src c
+#define LED_GREEN 0x40
+#define P2LTCH    0xFF5E
+void delay( unsigned int nMilliseconds );
+void toggleLed( unsigned char ledMask );
+
+void main(void) {
+    while (1) {
+        toggleLed(LED_GREEN);
+        delay(500);
+    }
+}
+
+void delay( unsigned int nMilliseconds ) {
+    #define CYCLES_PER_MS 260
+    unsigned long nCycles = nMilliseconds * CYCLES_PER_MS;
+    while (nCycles--);
+}
+
+void toggleLed( unsigned char ledMask ) {
+    asm {
+        mov dx, P2LTCH
+        in al, dx
+        mov ah, ledMask
+        xor al, ah
+        out dx, al
+    }
+}
+  #+end_src
+
+- Gömülü yazılımların, diğer saf yazılımlardan farkı, daima sonsuz bir döngü ile bitiyor olmasıdır
+
+- Cihazlar ya resetlenene kadar ya da bozulana kadar çalışmaya devam ederler
+
+* Bölüm 3
+- compiler, linker gibi toolların içinde bulunduğu paket halindekii programa, *toolchain* denir
+
+- Malesef her platform için kullanılan toolchain farklılık gösterir. ARM için farklı, Atmel, Microchip için farklı toolchainler kurulması gerekir
+
+- kaynak kodu, bir gömülü sistemde çalışabilir bir yazılıma dönüştürmek için şu 3 adım izlenmesi gerekir;
+  1. her kaynak dosyasının *compile* edilip *object* dosyasına dönüşmesi
+  2. birinci adımda oluşan her object dosyasının bir *linker* ile bağlanıp tek bir obje dosyasına dönüşmesi. üretilen bu son dosyaya *relocatable program* denir
+  3. relocatable program, bir *locator* ile hedef gömülü sistemde çalıştırılabilir bir dosyaya dönüştürülür
+  [[file:./images/screenshot-86.png]]
+
+- bazı eski işlemciler. bu işlemciler 2000'lerde beyaz eşya, otomobil vs gibi ürünlerin yapımında kullanılan işlemcilerdir;
+  a. Fujitsu SPARClite
+  b. Hitachi H8/300
+  c. Hitachi H8/300H
+  d. Hitachi H8/S
+  e. Hitachi SH
+  f. IBM/Motorola PowerPC
+  g. Intel i960
+  h. MIPS R3xxx
+  i. MIPS R4xx0
+  j. Mitsubishi D10V
+  k. Mitsubishi M32R/D
+  l. Motorola 68k
+  m. Sun Sparc
+  n. Sun MicroSPARC
+  o. Toshiba TX39
+
+- object dosyalarının belli başlı formatları vardır. bunlardan ikisi COFF ve ELF'dir. COFF (Common Object File Format), ELF (Extended Linker Format)
+
+- eğer bir gömülü sistem projesinde birden çok dil ya da compiler kullanılacaksa object dosyalarının formatlarının aynı olmasına dikkat edilmelidir. aksi taktirde linker farklı formatlardaki obje dosyalarının bağlayamayabilir
+
+- bir obje dosyası 3 temel kısımdan oluşur;
+  a. =text= bu kısımda kodun kendisi yer alır
+  b. =data= global değişkenler burada yer alır
+  c. =bss= henüz değer atanmamış ve static değişkenler burada bulunur
+
+- kaynak dosyalarında bazen =extern= komutu ile başka kaynak dosyalarındaki değişkenler referans verilebilir. linkleme sırasında bu komutlarda tarif edilen değişkenleri yerine koymak, linkerın görevidir
+
+** linking
+- linker, obje dosyalarında bulunan =text=, =data= ve =bss= bölümü tek bir dosya içine yazar ve =extern= komutuyla tarif edilen değişkenleri yerine koyar
+
+- linker'ın kendi scripting dili vardır. bu dil sayesinde kod bölümleri /(text, data, bss)/ birbiriyle istendiği gibi bağlanıp, istenen bölümler başka bölümlere aktarılabilir
+
+** startup code
+- yarın öbür gün bir C ya da C++ programındaki =main()= fonksiyonundan önce gerçekleşen işlemler sorulduğunda - ki gömülü sistemler iş mülakatlarında bunlar sorulur - startup kodunda neler olup bittiğini bilmek faydalı olacaktır
+
+- yazılım geliştirme araçlarının geleneksel olarak yaptıkları işlemlerden biri, programın önüne bir =startup= kodu yerleştirmektir
+
+- startup kodu, o platforma özel olan Assembly diliyle yazılıp, daha yüksek seviyeli dillerin çalışması için uygun bir ortam hazırlar
+
+- her yüksek seviyeli dil, çalışmak için değişik kriterlere ihtiyaç duyar. örnek olarak C ve C++, =main()= çağırılmadan önce startup kodunun, *stack*'i ayarlamasına ihtiyaç duyar. stack oluşturulmazsa C ve C++ kodu çalışamaz. Bu sadece C ve C++ için gereken işlemlerden sadece biridir
+
+- startup kodu genellikle ya =startup.asm= ya da =crt0.s= olarak isimli dosyalarda yer alır. *crt0.s*, "C Runtime"'ın kısaltılmışıdır
+
+- =main= fonksiyonundan önce olanlar sırasıyla;
+  1. disable all interrupts  (=cli= command in x86)
+  2. Copy initialized data from ROM to RAM (=data=)
+  3. zero-out uninitialized data area (=bss=)
+  4. Allocate space for and initialize the stack
+  5. initialize the processor's stack pointer
+  6. create and initialize the heap
+  7. execute "constructors" and "initializers" for global vars (only in C++)
+  8. enable interrupts
+  9. call =main()=
+
+- 9. adımdan sonra da program eğer =main()='den çıkarsa diye sonsuz döngü konur. sonsuz döngü yerine istenirse program akışı istenen yere doğru yönlendirilebilir
+
+- startup kodu *ilk çalışan* kod olduğu için bunun linker scriptinde belirtilmesi gerekir. linker scriptingde ilk belirtilmesi gereken şey programın ilk çalışacağı kısmın neresi olduğudur. bir yazılımın ilk çalışan kod satırına ya da fonksiyonuna *entry point* denir
+
+-
+** locator
+- linking işlemi bittiğinde geriye son işlem olan locator işlemi kalır
+- locator genelde ayrı bir programdır ancak GNU araçlarında, locator işlevini linker otomatik gerçekleştirir

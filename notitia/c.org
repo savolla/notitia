@@ -1,0 +1,373 @@
+#+TITLE: C
+#+AUTHOR: savolla
+#+EMAIL: savolla@protonmail.com
+#+DATE: Fri Jan  8 22:02:29 2021
+#+DESCRIPTION: C Programming Languages
+
+* Facts
+- all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
+- all user defined header files must be included in *double quotes*
+- you always need to pass _the size of an array_ when using arrays in functions
+- every compiler has _it's own_ *inline assembly* syntax
+  #+begin_src c
+void printArray(int *arr, size_t size) {
+    // some code
+}
+  #+end_src
+** scenarios for using inline assembly
+1. *C variable* --> *CPU register*
+2. *CPU register* --> *C variable*
+3. operate on multiple C variables inside assembly
+** inline assembly is used for;
+  1. accessing CPU *general purpose registers*
+  2. accessing CPU *special registers*
+  3. accessing *stack pointer*
+** format specifiers
+1. =%p= addresses in hexadeicmal format
+2. =%lu= long unsigned integer
+3. =%lld= long long integer
+4. =%llu= long long unsigned integer
+5. =%llx= long long integer with hexadecimal representation
+6. =%c= char data
+** struct's attribute assignment
+you can't assign values to struct attributes. for example the following code will spit out an error
+  #+begin_src c
+struct A {
+    int x = 333;
+};
+  #+end_src
+the valid version of the above code is:
+  #+begin_src c
+struct A {
+    int x;
+};
+  #+end_src
+** struct sizes don't make sense
+the following struct's size is 12 bytes.
+#+begin_src c
+typedef struct A {
+    int x;
+    char y;
+    int z;
+} A;
+#+end_src
+this doesn't make sense right? because;
+- int x  : 4 bytes
+- char y : 1 byte
+- int z  : 4 bytes
+it must be 9 bytes.. however compilers make _padding operations_ to keep the memory layout stable. for example after defining variable x which occupies 4 bytes, compiler occupies 1 byte for variable y and right after that does 3 bytes padding! now our memory layout becomes stable ($$2^n$$). then it occupies 4 more bytes for variable z which is 4 bytes. and sizeof operator returns 12
+
+consider the following example of code, where we define one more *char* variable after y;
+#+begin_src c
+typedef struct A {
+    int x;
+    char y;
+    char k; // new char
+    // 2 bytes padding
+    int z;
+} A;
+#+end_src
+=sizeof()= operator returns 12 again. because this time compiler adds 2 more bytes padding right after 'k' variable. now it makes sense
+** static keyword makes global variables private
+yes! when we use *static* on a global variable that is declared in one file (say file1.c) and if another file (file2.c) tryies to access that with *extern* then compiler will complain. so static provides some privacy for globals
+
+- file1.c
+#+begin_src c
+static int globalVariable;
+
+int main(void) {
+    return 0;
+}
+#+end_src
+
+- file2.c
+#+begin_src c
+extern int globalVariable;
+
+void changeGlobal() {
+    globalVariable = 90000;
+}
+#+end_src
+
+this won't compile
+
+** c standards
+- currently the most widely used language in Embedded is C. but C++ and Rust are gaining popularity
+
+- the first C standard was *ANSI C* this standard is called =C89= or =C90= for short
+
+- more features added to C in 1999. so this standard is called =C99=. C with more features
+
+- in 2011 new standard came out and it is called =C11=
+
+- *C11* is the compiler default for *gcc*
+
+- all standards have *backward compatability*. you can compile C90 code to C99 but can't compile (successfully) from C99 to C90
+** static functions are private
+functions in one file can be used from another file with *extern* keyword. however if we use the *static* keyword, this function will not be accessible form other files anymore. for example;
+
+- file1.c
+  #+begin_src c
+static int secret_function(void) {
+    return 3;
+}
+  #+end_src
+
+- file2.c
+  #+begin_src c
+extern int secret_function(void);
+
+void using_secret_function() {
+    int c = secret_function();
+}
+  #+end_src
+if we compile these files with;
+#+begin_src sh
+gcc file1.c file2.c
+#+end_src
+compiler will complain
+** compiler help the programmer with division operations
+- in C if *numerator* is explicitly casted to =float=, compiler will assume that the *denominator* is also =float=. so you don't need to cast the denominator to float again
+
+- the following code will output =integer= type value "26.0000" (no explicit cast);
+  #+begin_src c
+  float x = 80 / 3;
+  printf("%f", x);
+  #+end_src
+
+- the following code will output =float= type value "26.6666";
+  #+begin_src c
+  float x = (float) 80 / 3;
+  printf("%f", x);
+  #+end_src
+
+- by doing explicit casting, number 3 will be casted to float by compiler _automatically_
+** void pointer
+- void pointers can hold any value
+  #+begin_src c
+int a = 112;
+char c = 'c';
+double d = 0.20;
+
+void *p = &a;
+p = &a;
+p = &a;
+  #+end_src
+** working with sleep functions
++ weirdly this code will not output anything on the screen
+  #+begin_src c
+  #include <unistd.h>
+  #include <stdio.h>
+
+  int main(void) {
+      while (1) {
+          printf("hello brother");
+          sleep(1);
+      }
+      return 0;
+  }
+  #+end_src
++ however when we add *new line* this will work..
+  #+begin_src c
+  #include <unistd.h>
+  #include <stdio.h>
+
+  int main(void) {
+      while (1) {
+          printf("hello brother\n");
+          sleep(1);
+      }
+      return 0;
+  }
+  #+end_src
+
+* Tips
+- you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
+- use =__asm__= when writing inline assembly. this is because the word =asm= might conflict with other variable name in code
+** always write descriptions like this
+ignore the commas ','. it is org-mode thing
+#+begin_src c
+/**
+   ,**
+   ,* @file      main.c
+   ,* @author    savolla
+   ,* @version   V1.0
+   ,* @brief     Default main function.
+   ,**
+,*/
+#+end_src
+** always declare functions before call
+- in C, functions are always need to be declared before deffinition
+#+begin_src c
+void func1(int c); // func declarations
+void func2(int c); // func declarations
+
+int main(void) {
+    int x = func1(3); // function call
+    int y = func2(3); // function call
+    return 0;
+}
+
+// deffinitions of functions
+void func1(int c) {
+    return c++;
+}
+
+void func2(int c) {
+    return c*c;
+}
+#+end_src
+this is the case when you work in just one file. the better solution will be;
+1. declare functions in *header* file
+2. define functions in another *c file*
+3. import header file into main.c
+** use this convention while making include guards
+  #+begin_src c
+#ifndef _YOUR_HEADER_H__
+#define _YOUR_HEADER_H__
+// your function declarations go here
+#endif /* _YOUR_HEADER_H__ */
+  #+end_src
+
+* Concept
+** Include Guards
+- prevent multiple inclusion of same header file
+  #+begin_src c
+#ifndef _YOUR_HEADER_H__
+#define _YOUR_HEADER_H__
+// your function declarations go here
+#endif /* _YOUR_HEADER_H__ */
+  #+end_src
+** Implicit Casting
+- this is a *casting type* that made by the compiler
+- this happens when the programmer tries to make operations with two different types
+  #+begin_src c
+  unsigned char c = 0x55;
+  unsigned int i = 0x11;
+  char z = c + i;
+  #+end_src
+
+- compiler gives error when implicit casting results with *data loss*. in the following code programmer is trying to add one byte data with two byte data and assigning the result to =unsigned char= type. "FF" part will be lost and compiler complains
+
+  #+begin_src c
+  unsigned char c = 0x80 + 0xFF00;
+  #+end_src
+
+- hovewer in the following example the programmer trying to do the same thing but this time there is no data loss. so compiler will not complain
+
+  #+begin_src c
+  unsigned char c = 0x80 + 0x0011; // no problem
+  #+end_src
+
+* How To
+** define a struct
+#+begin_src c
+typedef struct A{
+    int a;
+    char c;
+} A;
+#+end_src
+** print the address of a variable
+#+begin_src c
+char c = 'a';
+printf( "%p", &c );
+#+end_src
+** write inline assembly
+*** example code
+the following example work on =gcc= and takes no special parameters while compiling
+
+1. increment function
+  #+begin_src c
+  int inc( int number ) {
+    __asm__(".intel_syntax noprefix;" // switch to intel syntax
+            "mov eax, %0;"
+            "inc eax;"
+            "mov %1, eax;"
+            ".att_syntax prefix;" // enable this to make the following codes work
+            : "=r"(number) // outputs(=) to (r)egister
+            : "r"(number)); // input comes from (r)egister
+    return number;
+  }
+  #+end_src
+
+2. add function
+  #+begin_src c
+  int add(int a, int b) {
+    int result;
+    __asm__(".intel_syntax noprefix;"
+            "mov eax, %1;"
+            "add eax, %2;"
+            "mov %0, eax;"
+            ".att_syntax prefix;"
+            : "=r"(result)
+            : "r"(a), "r"(b));
+    return result;
+  }
+  #+end_src
+
+*** single line inline assembly
++ syntax for *arm-none-eabi-gcc* inline assembly
+  #+BEGIN_SRC c
+  //
+  //    mendatory        use quotes
+  //        /              /
+        __asm__ volatile( "mov r0, r1" );
+  //    --      --------   ----------
+  //     \        \            \
+  // underscores  type        assembly
+  // are optional  qualifier   code
+  //
+  #+END_SRC
+
+*** multiline assemby
++ use this syntax in case of *multiple asm lines*. only addition is '\n\t' part
+  #+BEGIN_SRC c
+  __asm__ volatile( "mov r0, r1\n\t"
+                    "mov r1, 0x43\n\t"
+                    "inc r1\n\t");
+  #+END_SRC
+
+
++ x86 gcc uses the same syntax but it adds double '%' symbols in front of register names
+  #+BEGIN_SRC c
+  __asm__ volatile("mov %%rax, 0x1\n\t"
+                   "mov %%rbx, %%rax\n\t");
+  #+END_SRC
+
+
++ here is the full syntax for inline assembly for *arm-none-eaby-gcc*
+  #+BEGIN_SRC c
+  //               your asm      C vars or imm
+  //              mnemonics     values for input  idk yet
+  //                  /               /            /
+     __asm volatile( code : output : input : clobber );
+  //          \                \            \
+  //     instruct gcc      C vars go      ':' colons are
+  //     to not optimize   here to store   mendatory!
+  //     this line         code results
+  //
+  #+END_SRC
+
+*** pass C variable into CPU register
++ example of scenario *C variable* --> *CPU register*
+  #+BEGIN_SRC c
+  #include <stdint.h>
+  int main(void) {
+      uint32_t x = 12;
+      __asm volatile( "mov eax, %0" : : "r"(x) : );
+      return 0;
+  }
+  #+END_SRC
+
+*** pass CPU register into C variable
++ example of scenario *CPU register* --> *C variable*
+  #+BEGIN_SRC c
+  #include <stdint.h>
+  int main(void) {
+      uint32_t x;
+      __asm volatile( "mrs %0, control" : "=r"(x) : : );
+      return 0;
+  }
+  #+END_SRC
+
+* Problems & Solutions

@@ -1,0 +1,21 @@
+#+TITLE: SQL
+
+* Concepts
+* Tips
+* Facts
+* How To
+** write search query
+#+begin_src sql
+SELECT #column1, #column2 FROM #tablename WHERE #columnN = #search_keyword;
+SELECT * FROM #tablename WHERE #column_N = #search_keyword;
+SELECT * FROM #tablename WHERE #column_N LIKE #search_keyword;
+#+end_src
+** delete values from table
+#+begin_src sql
+DELETE FROM #table_name WHERE #column_name = #value
+#+end_src
+** write insert query
+#+begin_src sql
+insert into ( #column1, #column2, #colum3 ) values ( "value1", "value2", "value3" );
+#+end_src
+* Problems & Solutions

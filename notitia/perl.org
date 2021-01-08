@@ -1,0 +1,35 @@
+#+TITLE: Perl
+
+* facts
++ perl's extension is *.pl*
++ perl is more useful than shell scripting because it is compatible with other shells
++ perl is very powerfull when it comes to *Regex*
++ perl is used for;
+  1. linux sysasmin
+  2. network programming
+  3. database handling
+  4. email handling
+  5. web development
++ perl competes with python
++ perl is more secure than shell
++ every expression must end with a semicolon ';'
+
+* concepts
+** shebang
+this must be on the first line of every perl script
+#+begin_src perl
+#!/usr/bin/perl
+#+end_src
+* how to
+** run perl program
+1. open up a file
+   #+begin_src sh
+emacs program.pl
+   #+end_src
+2. write some code
+   #+begin_src perl
+#!/usr/bin/perl
+print("what's your name?");
+$name = <STDIN>;
+print("hello $name");
+   #+end_src

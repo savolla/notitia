@@ -1,0 +1,310 @@
+#+TITLE: HTML
+:PROPERTIES:
+:EXPORT_FILE_NAME: html-cheat-sheet
+:EXPORT_TITLE: HTML Cheat Sheet
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+
+* How To
++ create a *heading*?
+  #+BEGIN_SRC html
+<h1>Heading</h1>
+  #+END_SRC
++ create a *paragraph element*?
+  #+BEGIN_SRC html
+<p>paragraph</p>
+  #+END_SRC
++ create an *image element*?
+  notice there are _no closing forward slashes_ in *img* elements
+  #+BEGIN_SRC html
+<img src="path/to/image">
+  #+END_SRC
++ *break a line*?
+  #+BEGIN_SRC html
+<br/>
+  #+END_SRC
++ tell html to use latest html version?
+  by putting the *docstring*
+  #+BEGIN_SRC html
+<!DOCTYPE html>
+  #+END_SRC
++ generate all *initial html structure* with *emmet*?
+  =! + TAB=
++ generate a *div* with a *class* with *emmet*?
+  =div.class_name + TAB=
++ generate a *div* with an *id* with *emmet*?
+  =div#id_name + TAB=
++ create 5 div elements with unique class names?
+  =.container$*5=
++ get *dummy text* for experimenting?
+  __NUMBER__ is a number of words you want
+  =lorem__NUMBER__ + TAB=
++ get 5 dummy texts that has 4 words per line ?
+  =lorem__WORDS__*__LINES__=
++ display an image ?
+  #+BEGIN_SRC html
+<img src="./path/to/image.png" alt="alternative text"/>
+  #+END_SRC
++ display images from internet (external images)?
+  #+BEGIN_SRC html
+<img src="http://www.addrsofpic.com/pic.png" alt="blah" />
+  #+END_SRC
++ *adjust the size* of very big images?
+  just use *width*. height will be adjusted automatically as soon as we don't specify it explicitly.
+  #+BEGIN_SRC html
+<img src="./path/to/img.png" width="256" alt="pexels" />
+  #+END_SRC
++ add links?
+  #+BEGIN_SRC html
+<a href="www.google.com">GOOGLE</a>
+  #+END_SRC
++ add link that opens a new tab when opened?
+  use *target="_blank"*
+  #+BEGIN_SRC html
+<a href="www.google.com" target="_blank">GOOGLE</a>
+  #+END_SRC
++ add internal link? (in site link)
+  specify html file path in link element
+  #+BEGIN_SRC html
+<a href="./path/to/html">Home</a>
+  #+END_SRC
++ scroll and focus on an element with a link?
+  #+BEGIN_SRC html
+<a id="top" href="#bottom">go bottom</a>
+<!-- Some looooooong text (5000 lines) -->
+<a id="bottom href="#top">go to top</a>
+  #+END_SRC
++ convert an image into a link?
+  use *a>img* + TAB
+  #+BEGIN_SRC html
+<a href="www.google.com">
+  <img src="google_icon.png" alt="icon"/>
+</a>
+  #+END_SRC
++ use special characters in html? like copyright?
+  #+BEGIN_SRC html
+<p>copyright &copy;</p>
+  #+END_SRC
++ make left, down, right, up arrows?
+  #+BEGIN_SRC html
+<p>left &larr;</p>
+<p>right &rarr;</p>
+<p>up &uarr;</p>
+<p>down &darr;</p>
+  #+END_SRC
++ make *unordered list* ?
+  #+BEGIN_SRC html
+<ul>
+  <li>peter</li>
+  <li>john</li>
+  <li>sarah</li>
+  <li>michael</li>
+  <li>melinda</li>
+</ul>
+  #+END_SRC
++ make *ordered list* ?
+  #+BEGIN_SRC html
+<ol>
+  <li>michael</li>
+  <li>melinda</li>
+  <li>opeth</li>
+  <li>axe</li>
+</ol>
+  #+END_SRC
++ create *table* in html?
+  always start with *<table>* element and then *<tr>* for rows
+  #+BEGIN_SRC html
+<table>
+
+  <!-- row of table headers -->
+  <tr>
+   <th>header1</th>
+   <th>header2</th>
+   <th>header3</th>
+  </tr>
+
+  <!-- row of table data -->
+  <tr>
+    <td>data1</td>
+    <td>data2</td>
+    <td>data3</td>
+  </tr>
+
+  <!-- second row of table data -->
+  <tr>
+    <td>data1</td>
+    <td>data2</td>
+    <td>data3</td>
+  </tr>
+
+</table>
+  #+END_SRC
++ take an input from user?
+  1. create a form element *form + TAB*
+  2. *input + TAB*
+    #+BEGIN_SRC html
+    <form method="" action="">
+      <input type="text" name="" value="" />
+    </form>
+    #+END_SRC
++ *label* the *input bar*
+  #+BEGIN_SRC html
+  <form method="" action="">
+    <label for="nick">username</label> <!-- label the input bar -->
+    <input type="text" name="username" id="nick" /> <!-- input bar -->
+    <input type="submit" /> <!-- submit button -->
+  </form>
+  #+END_SRC
++ make passwords invisible when typing?
+  notice *input type="password"* here. thi is the important one
+  #+BEGIN_SRC html
+<input type="password" name="password" value="" />
+  #+END_SRC
++ show *example input* inside input box?
+  #+BEGIN_SRC html
+<input type="text" name="email" placeholder="john@protonmail.com" />
+  #+END_SRC
++ use *radio buttons* in html?
+  #+BEGIN_SRC html
+<p>Your favorite language</p>
+<input name="coding" type="radio" value=""/>Javascript
+<br />
+<input name="coding" type="radio" value=""/>C++
+<br />
+<input name="coding" type="radio" value=""/>C
+<br />
+<input name="coding" type="radio" value=""/>Python
+<br />
+  #+END_SRC
++ make a big *text area* ?
+  *rows* how many rows should be in our text area
+  *cols* how many columns should be in our text area
+  #+BEGIN_SRC html
+<textarea rows="" cols=""></textarea>
+  #+END_SRC
++ make *check boxes* in html?
+  #+BEGIN_SRC html
+<p>What are your favorite languages?</p>
+<input name="" type="checkbox" value=""/> C++ <br />
+<input name="" type="checkbox" value=""/> C <br />
+<input name="" type="checkbox" value=""/> Python <br />
+<input name="" type="checkbox" value=""/> Javascript <br />
+<input name="" type="checkbox" value=""/> Rust <br />
+  #+END_SRC
++ make a *checkbox* that already checked by default?
+  put *checked="checked"* inside input element
+  #+BEGIN_SRC html
+<input type="checkbox" checked="checked"/> testbox
+  #+END_SRC
++ make a *dropdown menu* in html?
+  label is not really necessary here but hey!
+  #+BEGIN_SRC html
+<label for="menu0">favorite PL</label>
+<select id="manu0" name="">
+  <option value="#">select language</option>
+  <option value="js">javascript</option>
+  <option value="c">C</option>
+  <option value="cpp">C++</option>
+  <option value="rs">Rust</option>
+</select>
+  #+END_SRC
+* What Is
++ what is the first html line should be in a web page?
+  #+BEGIN_SRC html
+<!DOCTYPE html>
+  #+END_SRC
++ what is the root element of html page?
+  #+BEGIN_SRC html
+<html>
+  #+END_SRC
++ what *head* should contain?
+  it contains the *information* about the page
+  1. page title
+  2. links to external resources like *css* and *js* files
+  3. metadata
++ what *<tr>* means?
+  table row
++ what *<td>* means?
+  table data
++ what *<th>* means?
+  table header
++ what is the importance of *value* attribute in *radio buttons* ?
+  value in radio buttons is the data that will be passed into database or somewhere. when we select a radio button *A* and A contains *value="C++"* then "C++" string will be sent from this radio button when submitted
++ what is the difference between *radio buttons* and *check box* ?
+  - radio buttons: choose only one
+  - check boxes: choose multiple
++ what is the *checkbox shortcut* with *emmet*
+  input:c + TAB
++ what is the *submit button* shortcut with *emmet*
+  input:s + TAB
+* Flash Cards
++ is content in *head* element visible in page?
+  No.
++ where <title>page0</title> will be displayed?
+  in the browser tab!
++ generate 5 list items with line numbers using *emmet*
+  ul>li.cls${$.}*5
++ what will *.container + TAB* output?
+  div is the most used element. so we don't need to write *div.container*
+  #+BEGIN_SRC html
+<div class="container">
+
+</div>
+  #+END_SRC
++ how many *headings* there are in html?
+  there are 6 hadings
+  #+BEGIN_SRC html
+<h1>BIGGEST</h1>
+<h2>Bigger</h2>
+<h3>normal</h3>
+<h4>smaller</h4>
+<h5>smallest</h5>
+<h6>tiny</h6>
+  #+END_SRC
++ what path convention should be used in html?
+  dot and a slash "./" is used in most frameworks and languages like *react* *php* etc.
++ how initial html page structure look?
+  #+BEGIN_SRC html
+<!DOCTYPE html>
+<html>
+  <head>
+    some code..
+  </head>
+  <body>
+    some code..
+  </body>
+</html>
+  #+END_SRC
++ where to get *copyright free* pictures?
+  1. [[https://www.pexels.com/][pexels]] also has videos
+  2. [[https://pixabay.com/tr/][pixabay]]
+  3. [[https://gratisography.com/][gratisography]]
++ how comments look in html?
+  #+BEGIN_SRC html
+<!-- this is a comment -->
+  #+END_SRC
++ what do *sup* and *sub* elements do?
+  *sup*: pushes text up. it's like x^2 (where 2 in above x)
+  *sub*: pushed text down. it's like index x_i (where i below x)
+  #+BEGIN_SRC html
+<p>x<sub>i</sub> = 2<sup>x</sup></p>
+  #+END_SRC
++ create 5 unordered list element which are links using *emmet*
+  ul>(li>a)*5 + TAB
++ what happens when user enters nonsense in *email input box*?
+  page will say something like "you forgot to put \@" symbol bla bla bla
++ what *value* attribute does in *input* elements?
+  it is the _hardcoded_ value. here is the example;
+  #+BEGIN_SRC html
+<!-- "GO!" will be written on submit button -->
+<input type="submit" value="GO!" />
+
+<!-- "deleteme first" will be written in input box -->
+<input type="text" value="deleteme first!" />
+  #+END_SRC
++ why *name* attributes need to be same in *radio buttons*
+  if we don't make them same then we can select more than one radio buttons. And this doesn't make sense
++ what *value* attribute in elements actually do ?
+  it returns that value when submitted. *value* is important in buttons, dropdown manus, checkboxes, radio buttons etc.

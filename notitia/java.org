@@ -1,0 +1,218 @@
+#+TITLE: Java
+
+* Concepts
+** nested classes
+- java allows you to define a class into another class. they called nested classes
+*** inner class
+- inner class _have access_ to outer class members
+- inner class' main function _cannot be static_
+
+  #+begin_src java
+  public class OuterClass {
+      int a = 3;
+      public class InnerClass {
+          int b = a; // can use outer class' members
+      }
+  }
+  #+end_src
+
+*** inner static class
+- inner static classes _don't have access_ to outer class members
+
+  #+begin_src java
+  public class OuterClass {
+      int a = 3;
+      public static class InnerClass {
+          int b = a; // this is not allowed
+      }
+  }
+  #+end_src
+** Maven, Gradle and Ant
+they are three build tools for java
+** swing
++ this is a library for GUI development in java.
++ it is really *outdated* but it teaches the basics
+* Tips
++ if you don't know the name of the exception while making try catch methods, you can always make the program spit this error and then get the name from the error log
++ all SQL queries must be used in try-catch blocks. because query result may not be return something
++ if you see "Must be Caught" errors then this statment must be used in try-catch blocks
++ when working with databases, whatch out those varchar[25] varaibles. java gets those variables as *string* so strings are not limited to 25. always check the length before storing varchar elements from java to database.
++ when adding values to database, use =execute= method. when getting some value from database use =executeQuery=. the "executeQuery" method will return a =Resultset= object. catch it
++ when querying a database, give the full path to tables. like =databas_ename.table_name=. this is important. mysql might allow this kind of notation since it is a full blown database application. JDBC is not that clever
+* Facts
++ non-static class members can't be used with *this* keyword
+  #+begin_src java
+public class A {
+    public static int x;
+    public static assign() {
+        this.x = 111; // spits out error
+    }
+}
+  #+end_src
+
+  correct code: remove *this*
+  #+begin_src java
+public class A {
+    public static int x;
+    public static assign() {
+        x = 111; // works fine
+    }
+}
+  #+end_src
++ in java, you can't include more than one package
+  #+begin_src java
+package path.to.package1;
+package path.to.package2; // second one is not allowed
+  #+end_src
++ you don't have to import classes if they are in the same package
+
+* How To
+** use linked lists
+*** create item
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.add("item 3");
+        x.add("item 4");
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+*** set/change items
+use =set= method to do this
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.set(1,"ITEM 1"); // set method
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+*** remove an item
+use =remove= method to do this
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.remove(0);
+        x.remove(1);
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+*** sort items
+use =Collections.sort()= sorts *alphabetically*
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.add("item 3");
+        x.add("item 4");
+        Collections.sort(x);
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+
+*** reverse sort items
+use =Collections.reverse()= sorts *alphabetically*
+#+begin_src java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class JavaLinkedListApp {
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<String>();
+        x.add("item 1");
+        x.add("item 2");
+        x.add("item 3");
+        x.add("item 4");
+        Collections.reverse(x);
+        System.out.println("Liste: " + x);
+    }
+}
+#+end_src
+** handle errors
+#+begin_src java
+public static int takeNumberData() {
+    Scanner input = new Scanner(System.in);
+    String data;
+    int number;
+    data = input.next();
+    try {
+        number = Integer.parseInt(data);
+    } catch (NumberFormatException e) {
+        System.out.println("this is not a number!");
+        return -1;
+    }
+    return number;
+}
+#+end_src
+** create a swing application
+1. open up *netbeans*
+2. create new project
+3. select; Ant -> Java Application
+4. name your project
+5. untick "create main class"
+6. wait for project creation
+7. right click on your project;
+   New -> JFrame Form
+8. name your form
+9. a new frame with controls will be open
+** create a blank GUI window
+we use JFrame class from swing library to do this
+#+begin_src java
+import javax.swing.JFrame;
+
+public class GUI {
+    public GUI() {
+        JFrame frame = new JFrame();
+    }
+
+    public static void main(String[] args) {
+        new GUI();
+    }
+}
+#+end_src
+** use database in java
+** type cast in java
+#+begin_src java
+int number = 11;
+String text = (String)number;
+#+end_src
+** iterate java list/array
++ the traditional =arr[0]= notation doesn't work in java
+#+begin_src java
+ArrayList<int> x = new ArrayList<int>();
+x.add(1);
+x.add(2);
+
+x.get(0); // 0th index
+#+end_src
+* Problems & Solutions

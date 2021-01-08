@@ -1,0 +1,198 @@
+#+TITLE: Csharp
+
+* Frameworks
+** .Net Core
+*** concepts
+**** methods
+***** Startup.cs/ConfigureServices
++ sets some initial configurations for the project. web app will read and run this method first
++ the following line will be there by default to make MVC work
+
+#+BEGIN_SRC cpp
+services.AddCountrollersWithViews();
+#+END_SRC
+
+***** Startup.cs/Configure
++ this determines if web app should run in development mode or product mode
++ under this method, developers can add a special setting that makes site routing according to Controllers;
+
+#+BEGIN_SRC cpp
+endpoints.MapDefaultControllerRoute();
+#+END_SRC
+
+*** how to
+**** use getter and setter methods
+in C# there is no need to write long *get* and *set* functions like in C++. you simply put those inside property
+#+BEGIN_SRC cpp
+public class Joke
+{
+    public int Id {get; set;}
+    public string joke_question {get; set;}
+    public string joke_answer {get; set;}
+}
+#+END_SRC
+**** create a simple website with .NET Core MVC
+this tutorial will create a website with a database. also this will be only applicable on *windows* platform and *visual studio 2019*
+***** project creation
+1. open up visual studio and press *create a new project*
+2. select *ASP .NET Core Web Application*
+3. Name your Project
+4. select *Web Application (Model-View-Controller)* and change the *authentication* to *Individual User Accounts*
+5. .Net Core will generate lots of code for us. so we don't need to do everything from scratch
+6. run the project. let visual studio download whatever it needs to download. the first run will take some time btw
+***** folders and MVC
++ three directories are so important in *solution explorer*;
+1. *Model* : where classes are defined. for example a shopping website has Customer, Shipping classes in Model directory
+2. *View* : displays the data to the user. this folder contains different kinds of files called *razor pages*
+    - razor pages
+    + are combinations of *html* and *c#*.
+    + file extension of the razor page is *.cshtml*
+3. *Controller* : controls _when_ pages appear. what data should they show to the user
+***** create first page
+here we will use *Model* and *View* to create first page
+1. right click on *Model/Add/Class*
+2. select *Class* from popup menu and name your class (Joke.cs) and press *Add*
+3. create some properties if you like. see [[shortcuts]] for visual studio (optinal)
+4. you _must create_ an *empty constructor* of the class. because  it will be used by other classes. because of visual studio generated lots of code for us, we actually don't know exactly what those codes are (yet)
+5. unfold *Data* directory from solution explorer (will be used later)
+6. right click on *Controller/Add/Controller*
+7. select *MVC Controller with Views, using Entity Framework* from popup
+8. from popup menu, on *Model* section, select the _name of the class you just created_ in Model directory (Joke Class)
+9. for *Data Context Class*, press _plus button_ (or add)
+10. look at the solution explorer's *Data* section. in textbox, delete the highlighted part and write what you see under Data directory (ApplicationDbContext in my case)
+11. tick everyhting below (3 of things need to be ticked)
+12. click *create*. this might take some time. after this step, several new directories will be created in our solution (you need internet connection for this to work)
+***** database migration
+our pages will not be *dynamic* if we don't create a database. Here are steps for database creation;
+
+1. check if a file starts with *0000000* is created under *Data/Migrations* directory. this contains some database informations.
+2. go to *Tools/NuGet Package Manager/Package Manager Console* to open package manager. wait for initialization
+3. enter the command:
+#+BEGIN_SRC sh
+add-migration "first-database-migration"
+#+END_SRC
+after this command, a c# file will be created under *Data/Migrations*. This is a code that creates a database table (Joke Table) see [[ORM]]
+4. finally enter this command in package manager console to create a new database inside SQL server
+#+BEGIN_SRC sh
+update-database
+#+END_SRC
+
+now go and check the tables of our newly created database if you want by clicking *View/SQL Server Object Explorer* (optional). now we have a website with database connected
+
+***** add our controller to the front page
+go to *Views/Shared/_Layout.cshtml* and copy one of the *nav-bar* classes and change it to
+#+BEGIN_SRC html
+asp-controller="Jokes" <!-- out controller's name -->
+asp-action="Index" <!-- front page of our Joke controller -->
+#+END_SRC
+this will add *Jokes view* to the front page.
+***** add search bar feature I
+
+1. go to *_Layout.cshtml* and copy another *nav-bar* element and start modifying it;
+#+BEGIN_SRC html
+asp-controller="Jokes" <!-- out controller's name -->
+asp-action="ShowSearchForm" <!-- this will be our search bar -->
+<a>Search</a> <!-- change link to more reasonable name -->
+#+END_SRC
+
+*ShowSearchForm* doesn't exist yet. So we need to define it in *Jokes Controller*. if you try to access this link, it will give "page not found" error
+
+2. go to *Controllers/JokesController.cs* and copy the first *Task* method and start modifying it
+#+BEGIN_SRC c++
+public async Task<IActionResult> ShowSearchForm() { // we changed Index to ShowSearchForm
+    return View(); // we deleted everything inside the paranthesis
+}
+#+END_SRC
+
+3. right click on *ShowSearchForm* in the code and click *Add View*. select *Razor View* instead of empty one
+(we could create a view called *ShowSearchForm* under *View* folder but we choose the shorter way)
+
+4. on the popup menu;
+- leave the View Name as is
+- Template : create
+- Model Class : Joke
+- options:
+    [x] partial view
+    [x] reference script
+
+this *will not* create a search bar. we will modify this code to make a search bar now
+
+***** add search bar feature II
+
+1. open *View/Jokes/ShowSearchForm.cshtml*
+
+2. since do not *modify* or *create* Jokes Model, we delete this line;
+#+BEGIN_SRC html
+@model JokesWebsite.Models.Joke
+#+END_SRC
+
+3. there is a line at the bottom for Joke validation. it's basically check if user inputs a joke in correct format. delete this line as well
+#+BEGIN_SRC html
+@section Scripts {
+@{await Html.RenderPartialAsync("__ValidationScriptPartial");}
+}
+#+END_SRC
+
+4. finaly convert the code into this:
+#+BEGIN_SRC html
+<h4>Search for a Joke</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ShowSearchResults"> <!-- where we want to go after submition -->
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />          <!-- SearchPhrase will be a parameter -->
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+#+END_SRC
+
+5. *SearchPhrase* will go to our Joke Controller's *ShowSearchResults* method as a parameter. Go to *Controllers/JokeController.sh*
+#+BEGIN_SRC cpp
+// GET: Jokes/ShowSearchResults
+public async Task<IActionResult> ShowSearchResults(string SearchPhrase)  // SearchPhrase is coming from ShowSearchForm
+{
+    return View("Index", await _context.Joke.Where( j => j.JokeQuestion.Contains
+                (SearchPhrase)).ToListAsync());
+}
+#+END_SRC
+
+this code snippet uses a lambda function inside the return statement
+
+now we have a section with search
+
+***** show joke owner
+:LEFT_HERE:
+***** hide the joke answer
+***** limit "create" for logged users
+** Windows Form
+*** controls
++ *group box* : a container of elements. it provides an easier way to access the elements
++ *link label* : this is a label. when clicked, it redirects the user to a web page
+*** facts
++ the difference between *show()* and *showDialog()* is the show() will let you do operations on previous form while showDialog() won't
+*** how to
+**** open a new form when a button is clicked
+1. double click on the button. a new button click event method will be generated
+2. create a new object of your form
+3. use show() method to pop the form when clicked
+   #+begin_src c++
+   YOUR_FORM f = new YOUR_FORM();
+   f.show();
+   #+end_src
+**** exit the application
+there are two exit methods in windows form applications
+#+begin_src c++
+Application.Exit();
+Environment.Exit(0);
+#+end_src
+* How To

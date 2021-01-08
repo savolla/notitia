@@ -1,0 +1,167 @@
+#+TITLE: GUI Tools
+
+* Gaming
+** retroarch
+*** facts
+**** best cores for specific platforms
++ *snes* : bsnes-hd beta
++ *n64*: mupen43plus-next
++ *ps1*: epsxe
+* DAW
+** famitracker
+*** key bindings
+
+#+BEGIN_SRC sh
+<F1> # open documentation
+<SPACE> # toggle record mode. write music
+<Enter> # start over the song / stop the song
+<F7> # start player
+<F8> # stop player
+<PageUp> # go up faster (4 moves at once)
+<PageDown> # go down faster (4 moves at once)
+<Home> # go to start of the frame
+<End> # go to the end of the frame
+<Ctrl> v # pastes selected notes and overwrites previous notes
+<Ctrl> m # pastes selected notes but does not overwrite anything
+#+END_SRC
+
+*** how to
++ create sound
+  1. *go to* toolbar and *click* on _instruments_
+  2. *click* on _new instrument_
+  3. *press* *<space>* to enter _edit mode_
+  4. *click* on editor below
+  5. *click* on first bar and press +*z**
+  6. it will create a _C-3_ sound
+
++ selecting a group of notes and pressing *<Ctrl> <F1>* will _decrease_ notes by a _semitone_
++ selecting a group of notes and pressing *<Ctrl> <F2>* will _increase_ notes by a _semitone_
++ selecting a group of notes and pressing *<Ctrl> <F3>* will _decrease_ notes by an _octave_
++ selecting a group of notes and pressing *<Ctrl> <F4>* will _increase_ notes by an _octave_
+
+*** info
++ each channel has 4 collumns. _note, instrument, volume, effect_ for example: _C-3 00 F 462_
++ Nintendo can use only 5 channels. _pulse1, pulse2, triangle, noice, DPSM_
++ keyboard keys from +*z** to **ç** can be used as piano keys
++ you can select region of notes with _mouse_ then _copy_ and _paste_ notes
++ pressing *<shift>* and _arrow keys_ will also select a region
+* Image Processors
+** gimp
+*** key bindings
+*** how to
++ center the text
+  1. press Q
+  2. click image
+  3. select text layer
+  4. Layer/Crop to Content
+  5. use Align options at left
+
++ add shadow to text
+  1. write a text
+  2. Layer/Light and Shadow/Drop Shadow
+* Game Engine
+** unity
+*** key bindings
+
+~f~               : focus on an object
+~q~               : toggle hand mode. helps to move around the level
+~w~               : toggle move tool
+~e~               : toggle rotate tool
+~r~               : toggle resize tool
+~t~               : toggle rectangle moving, resizing tool
+~y~               : toggles multi mode. resize, rotate and move at the same time
+~<CTRL> d~        : duplicate object. don't forget to select it first
+~<SHIFT> <SPACE>~ : maximize game windows
+
+*** how to
+
+1. *focus* on an _object_
+
+   + first way:
+     - *select* _object_ from the _scene_
+     - *press* ~f~
+
+   + second way
+     - *select* _object_ from _hierarchy menu_
+     - *double click* on _object_
+2. *set* object on _origin_
+   - *select* _object_
+   - *right click* on menu Inspector/Transform
+   - *click* _reset_
+
+3. *color* an *object*
+   - *right click* on menu Project/Create/Material
+   - *rename* it to something reasonable
+   - *click* color bar next to *albedo*
+   - *press* ~<ENTER>~ (optional for first time run. if you have tiling WM)
+   - select your color
+   - *drag* your _new skin_ on the object you want to color
+
+4. add *rigid body* to an *object*
+   - *select* the *object*
+   - *go to* *inspector* menu
+   - *click* *add component* below the menu
+   - *click* Physics/Rigidbody
+
+   you can test this future by giving a bit height to the object and randomly rotate it
+   then press *play* button. you should see the object falls
+
+5. *change* *sky color*
+   - *click* on *main camera*
+   - *click* Inspector/Camera/Skybox
+   - *click* *solid color*
+   - *select* *background color*
+
+6. *add* a *script*
+   - *right click* on *project* menu
+   - *click* Create/C# Script
+   - *write* your *code* inside script and *save*
+   - *drag and drop* your *script* on target *object*
+
+7. *change* _snapping_ behaviour
+   - *go to* ~Edit/Snap Settings~
+   - *change* x,y,z values
+
+   now when you move any object by holding ~Ctrl~ key it's movement will be snappy
+8. *create* an _object of objects_
+   - *create* an object with simple cube, sphere etc. and rename it to "obj_child"
+   - *press* ~Ctrl Shift n~ and a new _empty_ object will be created in _main menu_
+   - *rename* it to "obj_parent"
+   - *drag* _obj_child_ into _obj_parent_
+
+   you can create a compound objects like _houses_ and easily *resize* and *move* them
+
+*** info
+1. Unity can be programmed by *C#* and *javascript*
+
+2. when you move an object in editor it will move in very high resolution so later
+   you will always need to set it's coordinates manualy. to prevent this hold
+   ~Ctrl~ key, click on any axis of the object (x | y | z) then drag. it will move
+   smoothly. snappy
+
+3. you can create an _object of objects_. for example you created a *house* from
+   basic elements like cubes. you can now make that house a *compound object*
+   a.k.a. _object of objects_. see line 8 in _how to_ section
+
+4. list of Menus:
+   - =Hierarchy=: contains *game objects*, *camera*, *lighting*, *characters* etc.
+   - =Inspector=: contains all the properties of selectred object from *Hierarchy* menu
+   - =Project/Assets=: contains *backgrounds*, *sprites*, *weapon* *sprites*, *torches*,
+     *rocks*, *trees*, *game scripts*, materials
+
+   you should create a folder for every class in *Assests* section. for example create
+   *sprites* folder and store them here. same thing for *scripts* and *materials*
+
+5. *rigid body* component makes the object fall through gravity
+
+6. *collider* component makes objects collide with other collider objects. collider
+   object do not fall.
+
+*** tips
+1. you can *grab* the _game window_ and *place* it next to _scene_. and *move* the
+   _camera_. it really helps while testing
+
+2. you can think of *scenes* as *levels* in the game
+
+3. [2D] if you want your character stay on the ground, add *collider* and *rigid body*
+   to your character object. add *edge collider* to the top of your ground

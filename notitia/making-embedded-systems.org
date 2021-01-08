@@ -1,0 +1,60 @@
+#+TITLE: Making Embedded Systems
+#+HUGO_BASE_DIR: ~/txt/blog/
+#+HUGO_SECTION: en/posts
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: making-embedded-systems-notes
+:EXPORT_TITLE: Making Embedded Systems Notlarım
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+*Making Embedded Systems* Türkçe kitap özeti
+[[file:./images/screenshot-84.png]]
+
+* Bölüm 0
+- *microcontroller*: kendi içinde, RAM'i kod hafızası yani FLASH (ROM, EEPROM) ve bir işlemcisi olan bütün bir cihazdır
+- *DSP*: özelleşmiş bir microcontroller'dır. ana amacı, gelen analog bir sinyali işleyip ilginç sonuçlar elde etmektir. Normal microcontrollerlardan farkı, matematiksel işlemleri çok daha hızlı yapabiliyor olmasıdır.
+* Bölüm 1
+- *Gömülü Sistem*: tek bir amaç için tasarlanmış, içinde bir yazılım barındıran, genel amaçlı bir bilgisayara göre çok daha az işlem gücü ve hafızaya sahip cihazlara denir.
+- gömülü sistemlerde, işlemciler normal bilgisayarların işlemcilerine göre daha yavaş çalışırlar ki güç tüketimi az olsun. RAM açısından da aynı şekilde daha zayıftır ki maliyeti daha az olsun.
+- yazılımın da bu kısıtlı imkanlarda doğru bir şekilde çalışması gerekir. O kadar doğru çalışması gerekir ki örneğin bir kalp pilinde her hangi bir bug, ölümle sonuçlanabilir. Bir uçağın elektronik devresinde en ufak bir yazılım hatası, onca insanın ölümüne yol açabilir
+** Compilerlar, OOP ve Yazılım dilleri
+- çoğu büyük MCU üreticisi, cross-compiler olarak GNU araçlarını kullanır
+- gömülü yazılım çoğu kez C dilini destekler. C++ gibi diller kısmen desteklenir. Genelde cross-compilerlar C++ için çoklu kalıtım, templateleri vs desteklenmez
+- Java için artan bir destek var ancak Java'yı destekleyen bir sistemin genelde büyük bir sistem olması gerekir. dar ve ucuz alanlarda C hala hüküm sürer
+- kullanacağın dile takılma. dizayn ve mimari çok çok daha önemli
+** Gömülü Yazılım Geliştirmek
+*** Debugging
+- yazılımı başka bir platform için yazdığımızdan dolayı, yazılımı, kod yazdığımız bilgisayarda debug edemeyiz. Bunun için *cross debugger*'lar kullanılır
+- cross debugger'ın çalışması için JTAG'e ihtiyacın var. Bu kendi başına bir cihaz ve fiyatı 500 lira civarında. ama platforma göre değişir. örneğin STM'in ST-Link diye onboard bir debuggerı var
+- cross compiler senin bilgisayarında çalışıp, JTAG ile haberleşir. JTAG ise senin üstünde uğraştığın MCU'nun JTAG arayüzüne bağlanır. oradan debug yapar
+- bir donanımın debugging desteklemesi, onu ekstra pahalı yapar. ayrıca debug işlemi genelde problemli olduğu için, donanımlar çok basit seviyede debugging desteklemektedirler
+- kısaca işlemciler/mikrodenetleyiciler, debug destekler ancak öyle bir Java ya da C# debug ederkenki performans ve özellik beklememek gerek
+- kod yazdığın PC ile hedef platform arasında debugger bağlantısı kuran alete, *emulator* denir. JTAG bunlardan biridir.
+- çoğu gömülü sistem donanımı *printf* tabanlı debuggingi destekler. bazen kullanılmayan bir I/O portundana bir LED bağlayıp belli durumlarda bir işlevin gerçekleşip gerçekleşmediğini kontrol etmek için o LED yakıp söndürülür. bir emulator satın almak yerine bu tarz çözümler mevcuttur
+- Yine de gömülü sistemleri debug etmek, her şeyin düzgün çalışacağı anlamına gelmez. bazı buglar vardır ki debugging işlemi bittikten sonra kendini gösterir...
+*** Zorluklar
+- gömülü alanda kısıtlayıcı nitelikler;
+  1. RAM (memory)
+  2. ROM (code space)
+  3. CPU speed
+  4. battery life
+  5. çevre birimler (peripherals)
+- üzerinde uğraştığın donanımı çok iyi bilmen gerek. çünkü eğer donanımın desteklemediği bir şeyi yaptırmaya çalışırsan, donanıma zarar verme ihtimalin var.
+
+*** Zorlukların Üstesinden Gelmek
+- sistemi modüllere böl
+- modüller arasına *interface*'ler koy ki modüller birbirlerine bağlı kalıp *coupling*'i arttırmasın
+- gömülü sistemlerde sistemi modüllere bölmek çok daha kolaydır. örneğin bir X sensörü Y haberleşme kanalından Z ile haberleşiyorsa, demek ki bunların hepsi farklı objelerdir yani farklı modüllere aittirler. sırasıyla X, Y ve Z diye 3 ayrı modül oluşturulabilir
+- modüllere ayırmak'da kullanılan temel soru şu; "bu kısım kendi başına bağımsız bir donanım/protokol mü?". sorunun cevabı evet ise o parça için farklı modül oluşturulur
+- modüller kendi başlarına test edilebilir. Böylelikle kod kalitesi ve "maintainabiliry" artmış olur
+- modüllerin arasına interface koymayı unutma. direk *pound include* kötü fikir
+- her zaman test ve dökümantasyon yaz
+- kodu ilk zaman için küçük ve optimize yazmaya çalışma. donanımın kısıtlı olduğu bir alanda bu şekilde çalışmanın gerekli olduğu düşünülür ancak çoğu problem ve bug buralardan gelebilir. onun yerine şu adımları izle;
+  1. çalışan basit bir kod yaz
+  2. kodu test et
+  3. dökümante et
+  4. tüm testlerden geçtiyse, optimizasyon işlemine geç
+  5. 2. adıma git
+* Bölüm 2

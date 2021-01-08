@@ -1,0 +1,56 @@
+#+TITLE: Object Oriented Analysis And Design With Applications
+
+* Bölüm 5
++ 2 tip UML diyagramı vardır;
+  1. Structured Diyagramlar
+  2. Behavioral Diyagramlar
++ structural diyagramlar: sistemin mimarisini gösteirler. static diyagramlardır
++ structural diyagramlar;
+   [[file:./images/screenshot-57.png]]
++ behavior diyagramlar: sisteme giren çıkan sinyal/event/mesaj gibi unsurların gösterilmesini amaçlar
++ behavior diyagramlara örnekler;
+   [[file:./images/screenshot-58.png]]
++ UML diyagramları kesinlikle kabataslak olmalıdır. fazla detay, yazılımcıyı kısıtlar ve UML'i yapan mimarın aynı zamanda yazılım geliştirme tarafını da düşünmesine sebep olur ki bu çok mantıklı bir şey değildir
+** package diyagramları
++ package diyagramları şu işe yarar;
+  1. ortak amaca hizmet eden sınıfları gruplamak
+  2. ortak amaca yönelik usecase'leri gruplamak
+  3. şemanın daha derli toplu ve anlaşılır görünmesini sağlamak
++ örnek bir package diyagramı;
+  [[file:./images/screenshot-62.png]]
+  - *FileHandling* ve *Graphics* sınıfları *Utilities* package'ının içine konulmuş. Utility de Java altına
+  - en aşağıdaki ise aslında bir sınıftır. ancak görsel olarak package içinde görünmese de isminin arkasındakiler *package*'dır
++ eğer sınıflar birbirine bağımlıysa bu bağımlılıklar _kesikli oklarla_ gösterilir;
+  [[file:./images/screenshot-60.png]]
++ genelde birbirinden kalıtım alan sınıfları, bir package altına koyarız
+*** visibility
++ bir package içinde public ve private sınıflar bulunabilir. private sınıfın bir package içinde yer alması demek, aynı package içinde bulunan tüm sınıflar tarafından kullanılabileceği, ancak package dışından erişilemeyeceği anlamına gelir
++ aşağıda *cruncher* sınıfı private'dir ve aynı package içindeki tüm sınıflar onu görebilir
+  [[file:./images/screenshot-63.png]]
+*** relationship
++ diğer UML elemanları gibi package'ler de izole olarak bulunmazlar. onların da bir şekilde ilişki kurmaları ve kullanılmaları gerekir
++ package'larda 3 tip ilişki (relation) vardır;
+  1. dependency (bağımlılık)
+  2. generalization
+  3. refinement
++ dependency ilikisi, örneğin balık, suya ihtiyaç duyar. susuz yaşayamaz. buna bağımlılık diyoruz.
++ package arası bağımlılıklar kesikli çizgi ile gösterilir;
+  [[file:./images/screenshot-64.png]]
++ generalization ise aslında kalıtım olarak çevrilebilir. örneğin balık aslında bir hayvandır.
++ packagelar arası generalization, şu şekilde gösterilir;
+  [[file:./images/screenshot-65.png]]
+** component diyagramları
++ bir component, tekrar kullanılabilir (reusable) bütün bir program, kütüphane ya da bir framework'dür
++ componentler, içlerinde benzer bir iş yapan sınıflar barındırırlar. bu sınıflar tabiki package'larla ayrılmış da olabilir
++ özetle packagelar sınıfları, componentler de package'ları içine alabilir. bazen componentler, içine başka componentler bile alabilirler
++ componentler birbirine bir interface ile bağlıdır
+  [[file:./images/screenshot-66.png]]
++ yukarıda component'lerin sağ üstündeki işaretler, component simgesidir. componentleri şu şekilde *stereotype* kullanarak da ifade edebiliriz;
+  [[file:./images/screenshot-67.png]]
++ componentler *interface*'ler ile birbirlerine bağlanmak zorundadırlar. bu sayede istendiği zaman birbirlerinden kolayca ayrılabilirler
++ interface'lerin bir başka güzel tarafı da, componentlerden biri, daha iyi bir component ile birleştirilebilir. (tak çıkar)
++ yarım ay şeklinde gösterilen interface, *required interface* adını alır
+  [[file:./images/screenshot-68.png]]
++ top şeklinde olan ise *provided interface* adını alır
+  [[file:./images/screenshot-69.png]]
++

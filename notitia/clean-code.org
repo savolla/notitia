@@ -1,0 +1,27 @@
+#+TITLE: Clean Code
+
+* Naming
+** variable naming
+1. is "accountList" a LinkedList?
+2. use Pronnclbe nmes
+3. useCamelCase
+4. USE_ALL_CAPS_FOR_CONSTANTS_OR_GLOBALS
+5. 1 != l
+6. can't find name? use *Domain Term*
+** method naming
+1. useCamelCase
+2. use VERBS
+3. isReturnedTrueOrFalse()
+4. accessor ? "get"
+5. mutator ? "set"
+6. add() != add() && state() != state()
+7. can't find name? use *Domain Term*
+** class naming
+1. UsePascalCase
+2. always use NOUNS
+3. include Design Pattern names
+4. can't find name? use *Domain Term*
+** interface naming
+1. use 'I' prefix
+2. UsePascalCase
+3. can't find name? use *Domain Term*

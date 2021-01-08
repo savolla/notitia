@@ -1,0 +1,17 @@
+#+TITLE: Assembly
+#+AUTHOR: savolla
+#+EMAIL: savolla@protonmail.com
+#+DATE: Fri Jan  8 22:02:29 2021
+#+DESCRIPTION: Different types of assembly languages
+
+* [[./i386-linux-assembly.org][i386 Linux Assembly]]
+* [[./x86_64-linux-assembly.org][x86_64 Linux Assembly]]
+* [[./arm-linux-assembly.org][ARM Linux Assembly]]
+* [[./aarch64-linux-assembly.org][ARM64 Linux Assembly]]
+
+| arch   | instruction | syscall NR | return | arg0 | arg1 | arg2 | arg3 | arg4 | arg5 |
+|--------+-------------+------------+--------+------+------+------+------+------+------|
+| x86    | =init 0x80= | eax        | eax    | ebx  | ecx  | edx  | esi  | edi  | ebp  |
+| x86_64 | =syscall=   | rax        | rax    | rdi  | rsi  | rdx  | r10  | r8   | r9   |
+| ARM    | =svc 0=     | r7         | r0     | r0   | r1   | r2   | r3   | r4   | r5   |
+| ARM64  | =svc 0=     | x8         | x0     | x0   | x1   | x2   | x3   | x4   | x5   |

@@ -1,0 +1,7 @@
+#+TITLE: VHDL
+
+* facts
++ HDL : Hardware Descriptive Language
++ found in 1981
++ IEEE standard
++ initially created for ASIC synthesis
