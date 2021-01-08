@@ -4858,7 +4858,6 @@ rm -rf ~/.emacs.d/.local/straight/build*/with-editor && doom sync
 ***** 'Re-entering top level after C stack overflow'
 delete all undo-tree cache files in =~/.emacs.d/.local/cache/undo-tree=
 
-
 *** vim
 **** blog
 ***** less known vim tricks :vim:howto:tools:
