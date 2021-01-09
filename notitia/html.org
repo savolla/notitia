@@ -1,4 +1,5 @@
 #+TITLE: HTML
+#+STARTUP: overview
 :PROPERTIES:
 :EXPORT_FILE_NAME: html-cheat-sheet
 :EXPORT_TITLE: HTML Cheat Sheet

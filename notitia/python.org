@@ -1,4 +1,5 @@
 #+TITLE: Python
+#+STARTUP: overview
 
 * Facts
 + sınıf metodları hiç parametre almasa bile, içinde mutlaka *self* parametresi barındırmalıdır. örnek: [[sınıf oluşturmak]]
@@ -9,6 +10,8 @@
 * Consepts
 ** __init__
 python classları için kullanılan *constructor*. diğer çoğu dilde genelde sınıfın adı kullanılır init yerine ama python'da bu şekilde. örnek: [[sınıf oluşturmak]]
+** if __name__ == __main__
+python'un main fonksiyonu
 ** self
 C++'daki *this*'in aynısı. bunun özel bi olayı var, sınıf oluştururken kesinlikle her methodun içine parametre olarak verilmelidir. örnek : [[sınıf oluşturmak]]
 ** format string

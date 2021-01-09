@@ -1,4 +1,5 @@
 #+TITLE: VHDL
+#+STARTUP: overview
 
 * facts
 + HDL : Hardware Descriptive Language

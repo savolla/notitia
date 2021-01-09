@@ -1,4 +1,5 @@
 #+TITLE: Assembly
+#+STARTUP: overview
 #+AUTHOR: savolla
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Jan  8 22:02:29 2021

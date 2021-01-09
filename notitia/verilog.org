@@ -1,4 +1,5 @@
 #+TITLE: Verilog
+#+STARTUP: overview
 
 * Facts
 + found in 1985

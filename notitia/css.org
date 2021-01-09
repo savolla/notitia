@@ -1,4 +1,5 @@
 #+TITLE: CSS
+#+STARTUP: overview
 :PROPERTIES:
 :EXPORT_FILE_NAME: css-cheat-sheet
 :EXPORT_TITLE: CSS Cheat Sheet

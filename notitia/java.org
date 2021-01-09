@@ -1,4 +1,5 @@
 #+TITLE: Java
+#+STARTUP: overview
 
 * Concepts
 ** nested classes

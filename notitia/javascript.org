@@ -1,4 +1,5 @@
 #+TITLE: Javascript
+#+STARTUP: overview
 :PROPERTIES:
 :EXPORT_FILE_NAME: javascript-cheat-sheet
 :EXPORT_TITLE: Javascript Cheat Sheet

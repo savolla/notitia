@@ -1,4 +1,5 @@
 #+TITLE: Csharp
+#+STARTUP: overview
 
 * Frameworks
 ** .Net Core

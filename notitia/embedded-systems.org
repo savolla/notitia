@@ -104,6 +104,10 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 
 ** Renesas
 Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+** Assembler
+translates the assembly language into machine language
+** ISA
+The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
 
 * Platforms
 ** STM32F407VGT6

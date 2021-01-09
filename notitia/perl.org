@@ -1,4 +1,5 @@
 #+TITLE: Perl
+#+STARTUP: overview
 
 * facts
 + perl's extension is *.pl*
