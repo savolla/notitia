@@ -150,6 +150,23 @@ nasm -f elf -o test <CODE>.asm #
 #+begin_src sh
 gcc -save-temps -o your_program your_program.c
 #+end_src
+**** compile gcc from source
+Instead of downloading the tarball, we clone from the Git mirror,
+because the tarball didn't contain the full GCC distribution.
+
+#+begin_src bash
+git clone https://github.com/gcc-mirror/gcc
+cd gcc
+./contrib/download_prerequisites
+mkdir build && cd build
+../configure                                           \
+    --prefix=/usr                                      \
+    --disable-multilib                                 \
+    --with-system-zlib                                 \
+    --enable-languages=c,c++,d,fortran,go,objc,obj-c++
+make
+#+end_src
+
 * Binary Analysis
 ** objdump
 *** how to
