@@ -1,0 +1,98 @@
+#+TITLE: Rust
+#+AUTHOR: savolla
+#+EMAIL: savolla@protonmail.com
+#+DATE: Sat Jan  9 22:55:56 2021
+
+* Tips
+
+1. run =rustup doc= to read local rust documentation
+
+2. run =cargo run= _to run a project_. using =cargo build= everytime is time consuming
+
+* Facts
+
+1. Rust uses a *main* function like in C and C++
+
+2. *cargo* creates git repository automatically. also creates ~src~ directory and ~main.rs~ inside
+
+3. =cargo check= command can check the project if it compiles. but does not generate an executable. this saves time
+
+* How To
+** syntax
+*** variable definition
+*** for loop
+*** foreach loop
+*** while
+*** do while
+*** if - else
+*** function definition
+*** struct definition
+*** main function
+** maintain
+
+1. install Rust
+#+begin_src bash :results none
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+#+end_src
+
+2. update Rust
+#+begin_src sh :results none
+rustup update
+#+end_src
+
+3. uninstall Rust
+#+begin_src sh :results none
+rustup self uninstall
+#+end_src
+
+** write a simple ~hello world~
+
+#+begin_src rust :results output
+fn main() {
+    println!("Hello, World!");
+}
+#+end_src
+
+** compile rust code :rustc:
+
+#+begin_src sh
+rustc $RUST_FILE.rs
+#+end_src
+
+** create a new rust project :cargo:
+
+#+begin_src sh
+cargo new $PROJECT_NAME
+#+end_src
+
+** build rust project :cargo:
+
+#+begin_src sh
+cd $YOUR_RUST_PROJECT
+cargo build
+#+end_src
+
+** generate code for production :cargo:
+
+#+begin_src sh
+cd $YOUR_RUST_PROJECT
+cargo build --release
+#+end_src
+
+
+* Concepts
+** rustup
+command line utility to install, update, delete *rust* language
+** Rustacean
+rust fan
+** cargo
+project builder, package manager. makes life easier for rustaceans
+** TOML
+"Tom’s Obvious, Minimal Language" is used for rust project configuration. configuration can be found in ~Cargo.toml~
+
+* Tools
+** rustup
+** cargo
+
+* Libraries
+* Tutorials
