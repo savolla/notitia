@@ -1,0 +1,3 @@
+This repo is my *personal wiki*. Here I log all kinds of information like programming, linux, embedded systems, music etc. I also create blog posts inside this wiki and post [[https://savolla.github.io/][here]].
+
+Entry Point of [[./notitia/index.org][Notitia]]
