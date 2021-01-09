@@ -17,6 +17,8 @@
 
 3. =cargo check= command can check the project if it compiles. but does not generate an executable. this saves time
 
+4. =cargo build= command can be useful when building cloned repositories
+
 * How To
 ** syntax
 *** variable definition
