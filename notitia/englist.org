@@ -1,4 +1,5 @@
 #+TITLE: Englist
+#+STARTUP: overview
 
 * Words to Memorize
 - =acommodation=           konaklama

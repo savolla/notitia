@@ -1,4 +1,5 @@
 #+TITLE: Reading Lists
+#+STARTUP: overview
 
 * Reading List to Become a Professional
 ** Job Interview Prep

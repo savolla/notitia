@@ -2,6 +2,7 @@
 #+AUTHOR: savolla
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Jan  8 22:02:29 2021
+#+STARTUP: overview
 #+OPTIONS: Knowledge collected for Software Engineering
 
 * Tips

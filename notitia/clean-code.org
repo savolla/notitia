@@ -1,4 +1,5 @@
 #+TITLE: Clean Code
+#+STARTUP: overview
 
 * Naming
 ** variable naming

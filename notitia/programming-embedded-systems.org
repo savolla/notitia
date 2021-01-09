@@ -1,4 +1,5 @@
 #+TITLE: Programming Embedded Systems
+#+STARTUP: overview
 #+HUGO_BASE_DIR: ~/txt/blog/
 #+HUGO_SECTION: en/posts
 

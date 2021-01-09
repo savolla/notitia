@@ -1,4 +1,5 @@
 #+TITLE: Command Line Tools
+#+STARTUP: overview
 
 * Image Processors
 ** imagemagick

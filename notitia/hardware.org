@@ -1,4 +1,5 @@
 #+TITLE: Hardware
+#+STARTUP: overview
 
 * Calculators
 ** CASIO fx-991ex

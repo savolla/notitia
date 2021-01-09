@@ -1,4 +1,5 @@
 #+TITLE: Dive Into Refactoring
+#+STARTUP: overview
 
 * Bölüm 1 : Code Smells
 ** Bloaters

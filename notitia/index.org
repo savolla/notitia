@@ -26,7 +26,7 @@
 
 * OS
  * [[./linux.org][Linux]]
- * [[./windows.org][Windos]]
+ * [[./windows.org][Windows]]
 
 * Books
  * [[./book-summaries.org][Summaries]]

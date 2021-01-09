@@ -1,4 +1,5 @@
 #+TITLE: Text Editors
+#+STARTUP: overview
 
 * emacs
 ** General

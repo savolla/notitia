@@ -1,4 +1,5 @@
 #+TITLE: GUI Tools
+#+STARTUP: overview
 
 * Gaming
 ** retroarch

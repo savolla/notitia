@@ -1,4 +1,5 @@
 #+TITLE: Object Oriented Analysis And Design With Applications
+#+STARTUP: overview
 
 * Bölüm 5
 + 2 tip UML diyagramı vardır;

@@ -1,4 +1,5 @@
 #+TITLE: Linux
+#+STARTUP: overview
 
 * How To
 ** manage dotfiles

@@ -1,4 +1,5 @@
 #+TITLE: Daily Schedule
+#+STARTUP: overview
 
 * 06:06 :morning_ritual:
 ** stretch

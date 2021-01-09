@@ -1,13 +1,18 @@
 #+TITLE: Book Summaries
 
- * [[./cracking-the-coding-interview-notes.org][Cracking the Coding Interview]]
+* Embedded Systems
+
+ * [[./operating-systems-from-0-to-1.org][Operating Systems: From 0 to 1]]
+ * [[./making-embedded-systems.org][Making Embedded Systems]]
+ * [[./programming-embedded-systems.org][Programming Embedded Systems]]
+ * [[./cpp-primer.org][C++ Primer]]
+
+* Software Engineering
+
  * [[./object-oriented-analysis-and-design-with-applications.org][Object-Oriented Analysis and Design with Applications]]
+ * [[./cracking-the-coding-interview-notes.org][Cracking the Coding Interview]]
  * [[./code-complete.org][Code Complete]]
  * [[./dive-into-design-patterns.org][Dive Into Design Patterns]]
  * [[./domain-driven-design.org][Domain Driven Design]]
  * [[./dive-into-refactoring.org][Dive Into Refactoring]]
- * [[./operating-systems-from-0-to-1.org][Operating Systems: From 0 to 1]]
  * [[./clean-code.org][Clean Code]]
- * [[./making-embedded-systems.org][Making Embedded Systems]]
- * [[./programming-embedded-systems.org][Programming Embedded Systems]]
- * [[./cpp-primer.org][C++ Primer]]

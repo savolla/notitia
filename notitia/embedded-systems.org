@@ -2,6 +2,7 @@
 #+AUTHOR: savolla
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Jan  8 22:02:29 2021
+#+STARTUP: overview
 #+OPTIONS: Knowledge collected for Embedded Systems
 
 * Articles
@@ -66,7 +67,7 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
  [[file:./images/screenshot-72.png]]
 
 ** Interrupt Storm
-- this even happends when amount of _incoming interrupts_ is an astronomic number
+- this event happends when amount of _incoming interrupts_ is an astronomic number
 - ISRs are working constantly and the main system is busy all the time.
 - system is not responsive anymore.
 - requires a reset

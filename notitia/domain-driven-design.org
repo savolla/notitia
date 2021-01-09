@@ -1,4 +1,5 @@
 #+TITLE: Domain Driven Design
+#+STARTUP: overview
 
 * Bölüm 0
 + yazılım'ı asıl karmaşık yapan şey kod ya da yanlış tasarım değildir. asıl karmaşaya neden olan, insanın kendi iş sistemidir. yazılım sadece bu iş sistemini yazılımlaştırıp otomatize etmeye yarar.

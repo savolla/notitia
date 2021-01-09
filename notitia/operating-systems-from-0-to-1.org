@@ -1,4 +1,5 @@
 #+TITLE: Operating Systems From 0 To 1
+#+STARTUP: overview
 
 * Chapter 1 - 3
 + I annoteted the pdf file with the most important informations
