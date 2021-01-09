@@ -145,6 +145,18 @@ nasm -f bin -o test <CODE>.asm #
 nasm -f elf -o test <CODE>.asm #
 #+END_SRC
 ** gcc
+*** facts
+**** supported languages
+1. C
+2. C++
+3. Objective-C
+4. Objective-C++
+5. Fortran
+6. Ada
+7. D
+8. Go
+9. BRIG (HSAIL).
+   
 *** how to
 **** save .i, .o and .s files while compiling
 #+begin_src sh
