@@ -10,13 +10,13 @@
 + [[https://www.livecareer.com/resume-search/r/senior-embedded-software-engineer-29aac52d404b476e87fdb747db1370e7][good example CV for embedded systems]]
 
 * Books
-1. An Embedded Software Primer
-   [[file:./images/screenshot-09.png]]
-   According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
+** An Embedded Software Primer
+[[file:./images/screenshot-09.png]]
+According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
 
 * Tips
 
-- don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead
+- don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead. use tools like *objcopy*
 
 * Facts
 ** what happens before main()

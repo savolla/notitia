@@ -5,17 +5,3 @@
  * [[./postgres.org][PostgreSQL]]
  * [[./mssql.org][MSSQL]]
 
-* MSSQL
-** how to
-*** create more than one primary keys in a table
-this technique is called *clustered primary key*
-#+begin_src sql
-CREATE TABLE [dbo].[StudentCourse]
-(
-    [StudentId] INT NOT NULL,
-    [CourseId] INT NOT NULL,
-    PRIMARY KEY CLUSTERED ("StudentId","CourseId"),
-    CONSTRAINT [FK_StudentCourse_Course] FOREIGN KEY ([CourseId]) REFERENCES [Course]([CourseId]),
-    CONSTRAINT [FK_StudentCourse_Student] FOREIGN KEY ([StudentId]) REFERENCES [Student]([StudentId])
-)
-#+end_src
