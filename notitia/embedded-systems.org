@@ -63,6 +63,9 @@ sudo pacman -S bluez bluez-utils rfkill
 - don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead. use tools like *objcopy*
 
 * Facts
+
++ ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
+
 ** what happens before main()
 *** According to Making Embedded Systems book
 0. _start function
@@ -261,4 +264,3 @@ sudo pacman -S bluez bluez-utils rfkill
 sudo pacman -S minicom picocom
 #+end_src
 
-*** adjust ~udev~ rules

@@ -117,8 +117,11 @@ project builder, package manager. makes life easier for rustaceans
 ** TOML
 "Tom’s Obvious, Minimal Language" is used for rust project configuration. configuration can be found in ~Cargo.toml~
 ** prelude
+
 very small *module* that rust includes in every program by default
+
 ** crate
+
 rust module that can be downloaded with *cargo* or built into the rust language
 
 * Tools
