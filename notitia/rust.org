@@ -37,6 +37,10 @@ io::stdin()
 
 7. all references are *immutable* by default. so we need to specify mutable reference with =&mut $REFERNCE_NAME=
 
+8. rust cretes can be found in [[https://crates.io/][crates.io]]
+
+9. when using external *cretes* include them under =[dependencies]= section in ~Cargo.toml~. Once we include a new dependency, run =cargo build= to download those
+
 * How To
 ** syntax
 *** comment in rust
