@@ -41,6 +41,7 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 
 * Concepts
 ** I²C
+
 - developed by Philips (now NXP)
 - serial communication protocol
 - I²C enables designers to add more GPIO pins to MCU
@@ -61,22 +62,26 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
  [[file:./images/screenshot-71.png]]
 
 ** NVRAM
+
 - non volatile RAM
 - data does not go away when power goes off
 - this is a costy component
  [[file:./images/screenshot-72.png]]
 
 ** Interrupt Storm
+
 - this event happends when amount of _incoming interrupts_ is an astronomic number
 - ISRs are working constantly and the main system is busy all the time.
 - system is not responsive anymore.
 - requires a reset
 
 ** DMA
+
 - direct memory access
 - translator between peripherals and the RAM
 
 ** SWD
+
 - serial wired debug
 - two-wire protocol for accessing the ARM debug interface
 - alternative to JTAG (just in ARM MPUs)
@@ -91,6 +96,7 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
   e. printf style debugging
 
 ** ITM unit
+
 - Instrumentation Trace Macrocell Unit
 
 - a unit inside the *ARM Cortex M4* Processor
@@ -100,14 +106,24 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 - contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
 
 ** newlib
-- *Newlib* is a C standard library implementation intended for use on embedded systems
+
+C standard library implementation intended for use on embedded systems
 
 ** Renesas
+
 Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+
 ** Assembler
+
 translates the assembly language into machine language
+
 ** ISA
+
 The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
+
+** OpenOCD
+
+Open (source) on Circuit Debugger. This is a software tool that helps embedded programmers to debug/flash embedded code to Microcontrollers. Supports JTAG and SWD protocols
 
 * Platforms
 ** STM32F407VGT6
@@ -119,3 +135,20 @@ The assembly language must support a different set of machine instructions. The 
 - comes with *ARM Cortex-M4*
 
 * Problems & Solutions
+* Tutorials
+** Use Rust for Embedded Development
+*** install packages first
+**** rust
+install rust first
+
+#+begin_src sh
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+#+end_src
+
+**** itm
+a rust *crete* for interfacing ITM unit inside Cortex-M4 processor. Makes *printf* debug style easier
+
+#+begin_src sh :results none
+cargo install itm
+#+end_src
+**** OpenOCD
