@@ -1,4 +1,5 @@
 #+TITLE: Rust
+#+STARTUP: overview
 #+AUTHOR: savolla
 #+EMAIL: savolla@protonmail.com
 #+DATE: Sat Jan  9 22:55:56 2021
@@ -91,6 +92,8 @@ rust fan
 project builder, package manager. makes life easier for rustaceans
 ** TOML
 "Tom’s Obvious, Minimal Language" is used for rust project configuration. configuration can be found in ~Cargo.toml~
+** prelude
+very small *module* that rust includes in every program by default
 
 * Tools
 ** rustup

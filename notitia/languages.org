@@ -8,6 +8,7 @@
  * [[./c.org][c]]
  * [[./cpp.org][cpp]]
  * [[./assembly.org][assembly]]
+ * [[./rust.org][rust]]
 
 * Scripting
  * [[./perl.org][perl]]
