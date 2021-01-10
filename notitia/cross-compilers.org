@@ -174,3 +174,5 @@ These are available cross compilers that available. =std= columns indicates the 
 | x86_64-uwp-windows-gnu               | ✓   |                                                             |
 | x86_64-uwp-windows-msvc              | ✓   |                                                             |
 | x86_64-wrs-vxworks                   | ?   |                                                             |
+
+* ARM 64-bit ~aarch64~
