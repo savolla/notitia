@@ -5,28 +5,28 @@
 #+DESCRIPTION: Index of Various Programming Languages
 
 * System
- * [[./c.org][c]]
- * [[./cpp.org][cpp]]
- * [[./assembly.org][assembly]]
- * [[./rust.org][rust]]
+ * [[./c.org][c]]                         
+ * [[./cpp.org][cpp]]                       
+ * [[./assembly.org][assembly]]                  
+ * [[./rust.org][rust]]                      
 
 * Scripting
- * [[./perl.org][perl]]
- * [[./python.org][python]]
- * [[./bash.org][bash]]
+ * [[./perl.org][perl]]                      
+ * [[./python.org][python]]                    
+ * [[./bash.org][bash]]                      
 
 * Hardware Description
- * [[./vhdl.org][vhdl]]
- * [[./verilog.org][verilog]]
+ * [[./vhdl.org][vhdl]]                      
+ * [[./verilog.org][verilog]]                   
 
 * OOP
- * [[./java.org][java]]
- * [[./csharp.org][c#]]
+ * [[./java.org][java]]                      
+ * [[./csharp.org][c#]]                        
 
 * Databases
- * [[./sql.org][sql]]
+ * [[./sql.org][sql]]                       
 
 * Web
- * [[./html.org][html]]
- * [[./css.org][css]]
- * [[./javascript.org][javascript]]
+ * [[./html.org][html]]                      
+ * [[./css.org][css]]                       
+ * [[./javascript.org][javascript]]                
