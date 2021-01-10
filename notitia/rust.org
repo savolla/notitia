@@ -4,6 +4,13 @@
 #+EMAIL: savolla@protonmail.com
 #+DATE: Sat Jan  9 22:55:56 2021
 
+* TODO Rust Book
+continue from [[https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html][there]]
+
+* TODO Rust Discovery Book
+continue from [[https://docs.rust-embedded.org/discovery/05-led-roulette/build-it.html][there]]
+
+
 * Tips
 
 1. run =rustup doc= to read local rust documentation

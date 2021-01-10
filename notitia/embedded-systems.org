@@ -66,6 +66,7 @@ sudo pacman -S bluez bluez-utils rfkill
 
 + ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
 
+
 ** what happens before main()
 *** According to Making Embedded Systems book
 0. _start function
