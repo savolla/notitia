@@ -10,6 +10,17 @@
 
 2. run =cargo run= _to run a project_. using =cargo build= everytime is time consuming
 
+3. brake long lines like this;
+   #+begin_src rust
+io::stdin().read_line(&mut guessed_number).expect("failed to read line bro..");
+
+// convert the upper line into this;
+
+io::stdin()
+    .read_line(&mut guessed_number)
+    .expect("failed to read line bro..");
+   #+end_src
+
 * Facts
 
 1. Rust uses a *main* function like in C and C++
@@ -20,8 +31,18 @@
 
 4. =cargo build= command can be useful when building cloned repositories
 
+5. all variables in rust are =immutable= by default
+
+6. rust uses =&= notation to specify *references*. just like in C
+
+7. all references are *immutable* by default. so we need to specify mutable reference with =&mut $REFERNCE_NAME=
+
 * How To
 ** syntax
+*** comment in rust
+#+begin_src rust
+// this is a comment
+#+end_src
 *** variable definition
 *** for loop
 *** foreach loop
@@ -82,7 +103,6 @@ cd $YOUR_RUST_PROJECT
 cargo build --release
 #+end_src
 
-
 * Concepts
 ** rustup
 command line utility to install, update, delete *rust* language
@@ -94,6 +114,8 @@ project builder, package manager. makes life easier for rustaceans
 "Tom’s Obvious, Minimal Language" is used for rust project configuration. configuration can be found in ~Cargo.toml~
 ** prelude
 very small *module* that rust includes in every program by default
+** crate
+rust module that can be downloaded with *cargo* or built into the rust language
 
 * Tools
 ** rustup
