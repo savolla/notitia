@@ -91,7 +91,7 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
   e. printf style debugging
 
 ** ITM unit
-- instrumentation trace macrocell unit
+- Instrumentation Trace Macrocell Unit
 
 - a unit inside the *ARM Cortex M4* Processor
 
