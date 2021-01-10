@@ -179,8 +179,19 @@ install /nm, objcopy, objdump, size, ld, lld, nm/ tools for rust.
 cargo install cargo-binutils
 #+end_src
 
+**** bluetooth packages
 
+#+begin_src sh
+sudo pacman -S bluez bluez-utils rfkill
+#+end_src
 
+**** serial com
+
+#+begin_src sh
+sudo pacman -S minicom picocom
+#+end_src
+
+*** adjust ~udev~ rules
 
 * shovel :container:
 
@@ -213,4 +224,9 @@ sudo pacman -S gnu-arm-eabi-gcc
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 cargo install itm
 cargo install cargo-binutils
+#+end_src
+*** bluetooth interfacing
+
+#+begin_src sh
+sudo pacman -S bluez bluez-utils rfkill
 #+end_src
