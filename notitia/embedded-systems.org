@@ -188,6 +188,7 @@ Your phone screen rotates automatically when you rotate the phone. An Accelerome
 ** Magnetometer             :sensor:
 
 [[file:./images/screenshot-90.png]]
+a MEMS device that can be used as a *Compass*. We have it inside our smart phones. All compass apps that you download from app store uses this device
 
 ** Gyroscope                :sensor:
 
