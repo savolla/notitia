@@ -144,6 +144,9 @@ sudo pacman -S bluez bluez-utils rfkill
 
 - contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
 
+** MEMS                     :hardware:
+
+Micro Electro-Mechanical Systems. see [[https://www.youtube.com/watch?v=i2U49usFo10][this video]]
 
 
 ** newlib                   :software:
@@ -175,6 +178,20 @@ translates the assembly language into machine language
 
 The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
 
+
+
+** Accelerometer            :sensor:
+
+[[file:./images/screenshot-89.png]]
+Your phone screen rotates automatically when you rotate the phone. An Accelerometer is used in these applications. It detects 3D planes.
+
+** Magnetometer             :sensor:
+
+[[file:./images/screenshot-90.png]]
+
+** Gyroscope                :sensor:
+
+[[file:./images/screenshot-91.png]]
 
 
 ** Renesas                  :company:
@@ -243,6 +260,3 @@ sudo pacman -S minicom picocom
 #+end_src
 
 *** adjust ~udev~ rules
-
-
-
