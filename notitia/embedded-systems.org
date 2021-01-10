@@ -5,16 +5,58 @@
 #+STARTUP: overview
 #+OPTIONS: Knowledge collected for Embedded Systems
 
+* TODO Articles
 
-* Articles
+Read and learn things from these. Extract knowledge and store here
 
 + [[https://jaycarlson.net/][jay carlson's entire website]]
 + [[https://www.livecareer.com/resume-search/r/senior-embedded-software-engineer-29aac52d404b476e87fdb747db1370e7][good example CV for embedded systems]]
++ [[https://wiki.archlinux.org/index.php/Udev][what is udev]] useful knowledge for *Embedded Linux applications*
 
-* Books
+* TODO Books
+
 ** An Embedded Software Primer
 [[file:./images/screenshot-09.png]]
 According to the Professor at ODTU who gives courses on embedded systems, he recommended this book as the "best resource"
+
+* TODO shovel :container:
+
+this is my embedded development container project. under this header I collect necessary tools for my container
+
+** install these
+*** serial com
+
+#+begin_src sh
+sudo pacman -S minicom
+sudo pacman -S picocom
+sudo pacman -S openocd
+#+end_src
+
+*** debuggers
+
+#+begin_src sh
+sudo pacman -S gnu-arm-eabi-gdb
+#+end_src
+
+*** cross-compilers
+
+#+begin_src sh
+sudo pacman -S gnu-arm-eabi-gcc
+#+end_src
+
+*** rust
+
+#+begin_src sh
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+cargo install itm
+cargo install cargo-binutils
+#+end_src
+*** bluetooth interfacing
+
+#+begin_src sh
+sudo pacman -S bluez bluez-utils rfkill
+#+end_src
+
 
 * Tips
 
@@ -41,7 +83,8 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 ** run ARM binaries on x86 Linux
 
 * Concepts
-** I²C
+
+** I²C                      :comm_protocol:
 
 - developed by Philips (now NXP)
 - serial communication protocol
@@ -62,26 +105,7 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 - here is how I²C looks like
  [[file:./images/screenshot-71.png]]
 
-** NVRAM
-
-- non volatile RAM
-- data does not go away when power goes off
-- this is a costy component
- [[file:./images/screenshot-72.png]]
-
-** Interrupt Storm
-
-- this event happends when amount of _incoming interrupts_ is an astronomic number
-- ISRs are working constantly and the main system is busy all the time.
-- system is not responsive anymore.
-- requires a reset
-
-** DMA
-
-- direct memory access
-- translator between peripherals and the RAM
-
-** SWD
+** SWD                      :comm_protocol:
 
 - serial wired debug
 - two-wire protocol for accessing the ARM debug interface
@@ -96,7 +120,21 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
   d. stop/run CPU
   e. printf style debugging
 
-** ITM unit
+
+
+** NVRAM                    :hardware:
+
+- non volatile RAM
+- data does not go away when power goes off
+- this is a costy component
+ [[file:./images/screenshot-72.png]]
+
+** DMA                      :hardware:
+
+- direct memory access
+- translator between peripherals and the RAM
+
+** ITM unit                 :hardware:
 
 - Instrumentation Trace Macrocell Unit
 
@@ -106,39 +144,52 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 
 - contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
 
-** newlib
+
+
+** newlib                   :software:
 
 C standard library implementation intended for use on embedded systems
 
-** Renesas
-
-Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
-
-** Assembler
-
-translates the assembly language into machine language
-
-** ISA
-
-The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
-
-** OpenOCD
+** OpenOCD                  :software:
 
 Open (source) on Circuit Debugger. This is a software tool that helps embedded programmers to debug/flash embedded code to Microcontrollers. Supports JTAG and SWD protocols
 
-** minicom
+** minicom                  :software:
 
 serial communication software for linux. (PuTTY equivalent)
 
+
+
+** Interrupt Storm          :jargon:
+
+- this event happends when amount of _incoming interrupts_ is an astronomic number
+- ISRs are working constantly and the main system is busy all the time.
+- system is not responsive anymore.
+- requires a reset
+
+** Assembler                :jargon:
+
+translates the assembly language into machine language
+
+** ISA                      :jargon:
+
+The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
+
+
+
+** Renesas                  :company:
+
+Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+
 * Platforms
 ** STM32F407VGT6
+
 - comes with it's own debugger called *ST-LINK/V2-A*
 
 - the overview of the platform:
   [[./images/screenshot-73.png]]
 
 - comes with *ARM Cortex-M4*
-
 * Problems & Solutions
 * Tutorials
 ** Use Rust for Embedded Development
@@ -193,40 +244,5 @@ sudo pacman -S minicom picocom
 
 *** adjust ~udev~ rules
 
-* shovel :container:
 
-this is my embedded development container project. under this header I collect necessary tools
 
-** install these
-*** serial com
-
-#+begin_src sh
-sudo pacman -S minicom
-sudo pacman -S picocom
-sudo pacman -S openocd
-#+end_src
-
-*** debuggers
-
-#+begin_src sh
-sudo pacman -S gnu-arm-eabi-gdb
-#+end_src
-
-*** cross-compilers
-
-#+begin_src sh
-sudo pacman -S gnu-arm-eabi-gcc
-#+end_src
-
-*** rust
-
-#+begin_src sh
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-cargo install itm
-cargo install cargo-binutils
-#+end_src
-*** bluetooth interfacing
-
-#+begin_src sh
-sudo pacman -S bluez bluez-utils rfkill
-#+end_src
