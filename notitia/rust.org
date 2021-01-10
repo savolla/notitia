@@ -21,6 +21,13 @@ io::stdin()
     .expect("failed to read line bro..");
    #+end_src
 
+4. when creating a bare-metal application, use the following macros at the start of the code
+   #+begin_src rust
+#![deny(unsafe_code)] //
+#![no_main] // don't use main function. use "entry point" instead
+#![no_std] // don't use OS abstractions. use "core" instead
+   #+end_src
+
 * Facts
 
 1. Rust uses a *main* function like in C and C++
@@ -41,8 +48,12 @@ io::stdin()
 
 9. when using external *cretes* include them under =[dependencies]= section in ~Cargo.toml~. Once we include a new dependency, run =cargo build= to download those
 
-10. a *crete* called =core= is used on bare-metal applications.
+10. a *crete* called =core= is used on bare-metal applications by using the following macro;
+    #+begin_src rust
+#![no_std]
+    #+end_src
 
+11. when function's return type is =!= then it means that this function _can't terminate_ or _never returns_. This function type is used in *Embedded Applications*
 
 * How To
 ** syntax
@@ -59,6 +70,14 @@ io::stdin()
 *** function definition
 *** struct definition
 *** main function
+*** define entry point
+
+#+begin_src rust
+fn entry() -> ! {
+    // some code
+}
+#+end_src
+
 ** maintain
 
 1. install Rust
