@@ -41,6 +41,9 @@ io::stdin()
 
 9. when using external *cretes* include them under =[dependencies]= section in ~Cargo.toml~. Once we include a new dependency, run =cargo build= to download those
 
+10. a *crete* called =core= is used on bare-metal applications.
+
+
 * How To
 ** syntax
 *** comment in rust
