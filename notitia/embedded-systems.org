@@ -159,3 +159,17 @@ cargo install itm
 #+begin_src sh
 sudo pacman -S openocd
 #+end_src
+**** arm-none-eabi-gdb
+
+The GNU Debugger for the ARM EABI (bare-metal) target
+
+#+begin_src sh
+sudo pacman -S arm-none-eabi-gdb
+#+end_src
+**** cargo-binutils
+
+install /nm, objcopy, objdump, size, ld, lld, nm/ tools for rust.
+
+#+begin_src sh
+cargo install cargo-binutils
+#+end_src
