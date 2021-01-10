@@ -183,16 +183,17 @@ The assembly language must support a different set of machine instructions. The 
 ** Accelerometer            :sensor:
 
 [[file:./images/screenshot-89.png]]
-Your phone screen rotates automatically when you rotate the phone. An Accelerometer is used in these applications. It detects 3D planes.
+Your phone screen rotates automatically when you rotate the phone. A *sensor* called Accelerometer is used in these applications. It detects 3D planes. This is a MEMS device
 
 ** Magnetometer             :sensor:
 
 [[file:./images/screenshot-90.png]]
-a MEMS device that can be used as a *Compass*. We have it inside our smart phones. All compass apps that you download from app store uses this device
+a MEMS device that can be used as a *Compass*. We have it inside our smart phones. All compass apps that you download from app store uses this sensor.
 
 ** Gyroscope                :sensor:
 
 [[file:./images/screenshot-91.png]]
+a MEMS device that can detect *rotation* and *angular velocity*.
 
 
 ** Renesas                  :company:
