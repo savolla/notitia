@@ -139,6 +139,7 @@ Open (source) on Circuit Debugger. This is a software tool that helps embedded p
 ** Use Rust for Embedded Development
 *** install packages first
 **** rust
+
 install rust first
 
 #+begin_src sh
@@ -146,9 +147,15 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 #+end_src
 
 **** itm
+
 a rust *crete* for interfacing ITM unit inside Cortex-M4 processor. Makes *printf* debug style easier
 
 #+begin_src sh :results none
 cargo install itm
 #+end_src
+
 **** OpenOCD
+
+#+begin_src sh
+sudo pacman -S openocd
+#+end_src
