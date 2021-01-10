@@ -127,4 +127,3 @@ rust module that can be downloaded with *cargo* or built into the rust language
 
 * Libraries
 * Tutorials
-** Using Rust for Embedded Development

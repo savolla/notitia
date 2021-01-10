@@ -5,6 +5,7 @@
 #+STARTUP: overview
 #+OPTIONS: Knowledge collected for Embedded Systems
 
+
 * Articles
 
 + [[https://jaycarlson.net/][jay carlson's entire website]]
@@ -125,6 +126,10 @@ The assembly language must support a different set of machine instructions. The 
 
 Open (source) on Circuit Debugger. This is a software tool that helps embedded programmers to debug/flash embedded code to Microcontrollers. Supports JTAG and SWD protocols
 
+** minicom
+
+serial communication software for linux. (PuTTY equivalent)
+
 * Platforms
 ** STM32F407VGT6
 - comes with it's own debugger called *ST-LINK/V2-A*
@@ -171,5 +176,41 @@ sudo pacman -S arm-none-eabi-gdb
 install /nm, objcopy, objdump, size, ld, lld, nm/ tools for rust.
 
 #+begin_src sh
+cargo install cargo-binutils
+#+end_src
+
+
+
+
+* shovel :container:
+
+this is my embedded development container project. under this header I collect necessary tools
+
+** install these
+*** serial com
+
+#+begin_src sh
+sudo pacman -S minicom
+sudo pacman -S picocom
+sudo pacman -S openocd
+#+end_src
+
+*** debuggers
+
+#+begin_src sh
+sudo pacman -S gnu-arm-eabi-gdb
+#+end_src
+
+*** cross-compilers
+
+#+begin_src sh
+sudo pacman -S gnu-arm-eabi-gcc
+#+end_src
+
+*** rust
+
+#+begin_src sh
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+cargo install itm
 cargo install cargo-binutils
 #+end_src
