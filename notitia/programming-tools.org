@@ -360,21 +360,26 @@ this is a static website generator
    #+begin_src sh
    sudo pacman -S hugo
    #+end_src
+
 2. create a new site directory
    #+begin_src sh
    hugo new site $YOUR_SITE_NAME
    #+end_src
+
 3. download a theme from [[https://themes.gohugo.io/][here]].
    #+begin_src sh
    cd $YOUR_SITE_NAME
    git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c
    #+end_src
+
 4. start the server to run your site
    #+begin_src sh
    cd $YOUR_SITE_NAME
    hugo server
    #+end_src
+
    find the localhost address and port in the output and open this url in browser. this port number is usualy *1313*
+
 5. open in browser
    #+begin_src sh
    $YOUR_BROSWER http://localholt:$PORT_NUMBER
