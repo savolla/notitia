@@ -167,3 +167,23 @@ deepest depths of hell..
    [[file:./images/screenshot-06.png]]
 5. diarrhea blast
     [[file:./images/screenshot-07.png]]
+* Perfect Equalizer for Metal :music:
+:PROPERTIES:
+:EXPORT_FILE_NAME: perfect-equalizer-for-metal
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:EXPORT_TITLE: Perfect Equalizer for Metal
+:END:
+This is my personal *Equalizer Preference*. This is a result of one year of tweaking. Every Frequency is tuned and tested 1 Hz at a time. Tuned for the following genres;
+
+- Djent
+- Slam
+- Break Core
+- Brutal Death
+- Technical Death
+- Black Metal
+
+ [[file:./images/screenshot-92.png]]
+
+- I used *ATH-M40x* Studio headphones for tuning.

@@ -51,6 +51,7 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 cargo install itm
 cargo install cargo-binutils
 #+end_src
+
 *** bluetooth interfacing
 
 #+begin_src sh
@@ -65,7 +66,6 @@ sudo pacman -S bluez bluez-utils rfkill
 * Facts
 
 + ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
-
 
 ** what happens before main()
 *** According to Making Embedded Systems book
