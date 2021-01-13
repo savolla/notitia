@@ -431,3 +431,13 @@ from selenium.webdriver.common.by import By
 * pip
 python package manager
 ** how to
+*** upgrade all python packages
+
+#+begin_src sh :results none
+pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U  # upgrade all python packages
+#+end_src
+*** list outdated packages
+
+#+begin_src sh
+pip list --outdated # list all outdated packages
+#+end_src

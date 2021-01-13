@@ -116,9 +116,16 @@ iconv -f iso-8859-9 bozuk-encoding.srt > turkce-encoding.srt
    #+END_SRC
 
 ** zip files
+*** zip a directory
+
    #+BEGIN_SRC bash
    zip -r $ARCHIVE_NAME.zip $DIRECTORY_TO_ZIP
    #+END_SRC
+*** zip a file
+
+#+begin_src sh
+zip file.zip file
+#+end_src
 
 ** sync clock with network or set system clock
    #+BEGIN_SRC bash
@@ -137,3 +144,8 @@ export PATH
 #+END_SRC
 *** permanent
 add the temporary commands into .bashrc or .zshrc
+** convert images to pdf
+
+#+begin_src sh
+convert img1 img2 img3 document.pdf
+#+end_src

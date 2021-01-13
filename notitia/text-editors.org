@@ -445,6 +445,31 @@ nvim
 3. \ is the leader in spacevim
 **** open configuration
 SPC f v d
+** plugins
+*** coc
+**** how to
+***** lists all extensions' commands
+#+begin_src sh
+:CocList commands
+#+end_src
+***** intall a coc extension
+#+begin_src sh
+:CocInstall [EXTENSION]
+#+end_src
+***** remove coc extension
+#+begin_src sh
+:CocUninstal [EXTENSION]
+#+end_src
+***** list all available extensions
+#+begin_src sh
+:CocInstall marketplace # install this extension first
+:CocList marketplace
+#+end_src
+***** open coc configuration file
+#+begin_src sh
+:CocConfig
+#+end_src
+
 * visual studio
 ** shortcuts
 1. create a class property by doing:

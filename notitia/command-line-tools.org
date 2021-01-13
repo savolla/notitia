@@ -134,6 +134,16 @@ echo "1+1" | bc # outputs 2
 #+BEGIN_SRC bash
 pacman -Qm
 #+END_SRC
+**** remove pacman cache
+
+#+begin_src sh
+pacman -Scc
+#+end_src
+**** remove orphan packages
+
+#+begin_src sh
+pacman -Rns $(pacman -Qtdq)
+#+end_src
 * Searchers
 ** find
 *** how to
