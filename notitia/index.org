@@ -9,15 +9,18 @@
 #+HUGO_SECTION: en/posts
 
 * Topics
+
  * [[./software-engineering.org][Software Engineering]]
  * [[./embedded-systems.org][Embedded Systems]]
  * [[./music.org][Music]]
 
 * Programming
+
  * [[./languages.org][Languages]]
  * [[./databases.org][Databases]]
 
 * Tools
+
  * [[./text-editors.org][Text Editors]]
  * [[./programming-tools.org][Programming Tools]]
  * [[./command-line-tools.org][Command Line Tools]]
@@ -25,16 +28,20 @@
  * [[./GUI-tools.org][GUI Tools]]
 
 * OS
+
  * [[./linux.org][Linux]]
  * [[./windows.org][Windows]]
 
 * Books
+
  * [[./book-summaries.org][Summaries]]
  * [[./reading-lists.org][Reading Lists]]
 
 * Languages
+
  * [[./englist.org][English]]
  * [[./russian.org][Русский]]
 
 * Schedule
+
  * [[./daily-schedule.org][Daily Routine]]
