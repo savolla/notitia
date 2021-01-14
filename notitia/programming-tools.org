@@ -254,6 +254,12 @@ docker network ls
 #+begin_src sh
 docker network rm $NETWORK
 #+end_src
+**** see all containers
+
+#+begin_src sh
+docker container ls -a
+#+end_src
+
 *** problems & solutions
 * UML
 ** plantuml
