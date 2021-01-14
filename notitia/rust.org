@@ -139,7 +139,6 @@ rustup target add $TARGET_TRIPLE
 
 here is the [[./rust-platform-support.org][list of targets]] supported by *rust*
 
-
 * Concepts
 ** rustup
 command line utility to install, update, delete *rust* language

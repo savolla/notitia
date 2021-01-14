@@ -178,6 +178,11 @@ mkdir build && cd build
     --enable-languages=c,c++,d,fortran,go,objc,obj-c++
 make
 #+end_src
+**** compile 32-bit code
+
+#+begin_src sh
+gcc -m32 # other options
+#+end_src
 
 * Binary Analysis
 ** objdump
