@@ -149,3 +149,6 @@ add the temporary commands into .bashrc or .zshrc
 #+begin_src sh
 convert img1 img2 img3 document.pdf
 #+end_src
+
+* Distros
+ * [[./alpine.org][alpine]]
