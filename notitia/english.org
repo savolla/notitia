@@ -1,0 +1,161 @@
+#+TITLE: English
+#+STARTUP: overview
+
+* Words to Memorize
+- =acommodation=           konaklama
+- =across=                 karşısında
+- =adhare=                 bağlı
+- =advantage=              avantaj
+- =allude=                 ima etmek
+- =ambition=               hırs
+- =annually=               yıllık
+- =arrogance=              kibir
+- =aside=                  bir kenara
+- =aspect=                 yön (kitap her *yön*'den iyidi)
+- =assessing=              değerlendirmek
+- =attic=                  çatı katı
+- =audible=                duyulabilir
+- =auxiliary=              yardımcı
+- =beware=                 dikkat et
+- =bottleneck=             darboğaz
+- =boundary=               sınır
+- =brittle=                kırılgan
+- =cater=                  sağlamak
+- =certain=                belli
+- =coherent=               tutarlı
+- =comprehencive=          kapsamlı
+- =comprise=               içermek
+- =concise=                özlü, kısa
+- =concrete=               beton
+- =condense=               condense
+- =conductor=              iletken
+- =conservative=           muhafazakar
+- =consideration=          düşünce
+- =constipated=            kabız
+- =constitute=             oluşturmak
+- =constraint=             kısıtlama
+- =contenteditable=        memnun
+- =convey=                 iletmek
+- =cram=                   tıkmak
+- =crook=                  hırsız
+- =curated=
+- =deafening=              sağır edici
+- =dedicated=              adanmış
+- =delimeter=              sınırlayıcı
+- =depics=                 ifade etmek, göstermek
+- =depict=                 göstermek
+- =despite=                rağmen
+- =differing=              farklı
+- =diligence=              çalışkanlık
+- =discourse=              söyleşi
+- =dispatch=               sevk etmek
+- =ease off=               gevşemek, hafiflemek
+- =emerge=                 ortaaya çıkmak
+- =endeavor=               çaba
+- =entrepreneurial=        girişimci
+- =eradicate=              kökünü kurutmak
+- =estate=                 arazi
+- =estimate=               tahmin
+- =evidently=              belli ki
+- =excerpt=                alıntı
+- =exhibiting=             sergilemek
+- =expose=                 maruz kalma
+- =facade=                 cephe (evin dış cehesi)
+- =faul=                   faul
+- =fellow=                 adam (?)
+- =fluency=                akıcılık
+- =forward=                ileri
+- =frontier=               sınır
+- =fuzzy=                  belirsiz
+- =genuine=                gerçek, hakiki
+- =gestate=                gebelik
+- =go round=               dolaşmak
+- =hardboard=              sunta
+- =headed=                 başlı
+- =hinder=                 engellemek
+- =houseing-department=    konut-bölüm
+- =however=                ancak
+- =however=                ancak
+- =idiom=                  deyim
+- =inextricable=           içinden çıkılmaz
+- =initiative=             girişim
+- =insulator=              yalıtkan
+- =interfere=              karışmak (engellemek anlamında)
+- =intermingling=          birbirine karıştırmak
+- =intern=                 asistan
+- =intertwined=            iç içe
+- =intimately=             yakından
+- =intricacy=              karmaşa
+- =intuitive=              sezgisel
+- =judiciously=            akıllıca
+- =lattice=                kafes
+- =lawn=                   çim
+- =letter box=             mektup kutusu
+- =loan=                   kredi
+- =masquarading=           maskelemek
+- =mud=                    çamur
+- =muffled=                örtülü
+- =occasionally=           bazen
+- =oppurtunity=            fırsat
+- =ossify=                 kemikleşmek
+- =outlined=               özetlenen
+- =pejorative=             aşağılayıcı
+- =perpendicular=          dik (açısal diklik)
+- =persuade=               ikna etmek
+- =pinnacle=               çukur
+- =pins out=               iğnelemek
+- =precise=                kesin
+- =precise=                kesin
+- =precisely=              kesin olarak
+- =predicate=              yüklem
+- =premise=                öncül
+- =prescient=              ileri görüşlü
+- =prethora=               bolluk
+- =privilege=              ayrıcalık
+- =profound=               derin (konu olarak)
+- =prominent=              belirgin
+- =proposal=               öneri
+- =query=                  sorgu
+- =quintessentially=       özetle
+- =recipient=              alıcı
+- =regardless=             ne olursa olsun
+- =relational=             bağlantılı
+- =relevance=              alaka
+- =responsive=             duyarlı
+- =retrieve=               geri almak
+- =rigorous=               titiz
+- =rigorously=             titizlikle
+- =rough=                  kaba
+- =rough=                  kaba
+- =row=                    sıra (matrisin satırı)
+- =scattered=              dağılmış
+- =scruple=                vicdan
+- =seldom=                 nadiren
+- =self-reliant=           kendine güvenen
+- =semblance=              görünüş
+- =several=                birkaç
+- =shrug=                  omuz silkmek
+- =snuggle=                sokulmak
+- =sophomore=              ikinci sınıf öğrencisi
+- =stairway=               merdiven
+- =statement=              ifade
+- =stitch=                 dikiş/dikmek
+- =subsequent=             sonraki
+- =superstition=           batıl inanç
+- =supervisor=             gözetmen/yönetici
+- =suppress=               bastırmak
+- =surgeon=                cerrah
+- =tenet=                  ilke
+- =therefore=              bu nedenle
+- =thesaurus=              eş anlamlılar sözlüğü
+- =trailed=                izledi
+- =unbolted=               sürgüsü açılmış
+- =uncharted=              keşvedilmemiş
+- =unconventional=         alışılmadık
+- =undertaken=             üstlenilen
+- =unselfish=              özverili
+- =venue=                  buluşma yeri
+- =vivid=                  canlı
+- =vocabulary=             kelime bi+ gisi
+- =walkway=                yürüyüş yolu
+- =wrap up=                sarmak (ambalajlamak anlamında)
