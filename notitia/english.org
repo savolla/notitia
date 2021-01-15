@@ -3,6 +3,7 @@
 
 * Words to Memorize
 - =acommodation=           konaklama
+- =permeate=               nüfuz etmek
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =advantage=              avantaj

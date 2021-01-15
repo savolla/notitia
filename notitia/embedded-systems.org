@@ -165,6 +165,9 @@ Open (source) on Circuit Debugger. This is a software tool that helps embedded p
 
 serial communication software for linux. (PuTTY equivalent)
 
+** TensorFlow Light         :software:
+
+a version of tensorflow for specifically *microcontrollers*
 
 
 ** Interrupt Storm          :jargon:

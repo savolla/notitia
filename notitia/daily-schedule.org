@@ -34,14 +34,20 @@
 - [ ] hardware design know it all
 *** software
 **** read one chapter
-- [-] making embedded systems
-- [-] programming embedded systems
-- [-] the art of concurrency
-- [ ] embedded-primer
-- [ ] GNU/Linux Rapid Embedded Programming
+
+- [-] making embedded systems                     (25 / 314)
+- [-] programming embedded systems                (46 / 197)
+- [-] the art of concurrency                      (16 / 303)
+- [ ] embedded-primer                             ( 7 / 225)
+- [ ] GNU/Linux Rapid Embedded Programming        (19 / 321)
+- [ ] OOC                                         ( 1 / 221)
+
 *** Qt
 **** read one chapter
-- learning Qt
+
+- [ ] learning Qt
+- [ ] Hands-on Embedded Programming with Qt       (18 / 400)
+
 *** video course
 **** FastBit
 - [-] embedded C =usecase of static with functions=

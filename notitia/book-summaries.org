@@ -6,6 +6,7 @@
  * [[./making-embedded-systems.org][Making Embedded Systems]]
  * [[./programming-embedded-systems.org][Programming Embedded Systems]]
  * [[./cpp-primer.org][C++ Primer]]
+ * [[./reusable-firmware-development.org][Reusable Firmware Development]]
 
 * Software Engineering
 
@@ -16,3 +17,4 @@
  * [[./domain-driven-design.org][Domain Driven Design]]
  * [[./dive-into-refactoring.org][Dive Into Refactoring]]
  * [[./clean-code.org][Clean Code]]
+ * [[./object-oriented-c.org][Object Oriented C]]
