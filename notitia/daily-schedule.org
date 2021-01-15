@@ -38,6 +38,7 @@
 - [-] programming embedded systems
 - [-] the art of concurrency
 - [ ] embedded-primer
+- [ ] GNU/Linux Rapid Embedded Programming
 *** Qt
 **** read one chapter
 - learning Qt
