@@ -203,6 +203,10 @@ a MEMS device that can be used as a *Compass*. We have it inside our smart phone
 a MEMS device that can detect *rotation* and *angular velocity*.
 
 
+** SysML
+system modelling language inherited from UML
+
+
 ** Renesas                  :company:
 
 Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info

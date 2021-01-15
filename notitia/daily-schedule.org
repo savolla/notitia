@@ -41,6 +41,9 @@
 - [ ] embedded-primer                             ( 7 / 225)
 - [ ] GNU/Linux Rapid Embedded Programming        (19 / 321)
 - [ ] OOC                                         ( 1 / 221)
+- [ ] TinyML                                      (19 / 504)
+- [ ] Building Embedded Systems                   (22 / 337)
+- [ ] Real Time Software Design for ES            (21 / 1358)
 
 *** Qt
 **** read one chapter
