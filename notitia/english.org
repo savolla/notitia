@@ -3,7 +3,7 @@
 
 * Words to Memorize
 - =acommodation=           konaklama
-- =permeate=               nüfuz etmek
+- =merely=                 sadece (only eş anlamlı)
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =advantage=              avantaj
@@ -28,6 +28,7 @@
 - =comprise=               içermek
 - =concise=                özlü, kısa
 - =concrete=               beton
+- =condemn=                mahkum etmek
 - =condense=               condense
 - =conductor=              iletken
 - =conservative=           muhafazakar
@@ -72,6 +73,7 @@
 - =gestate=                gebelik
 - =go round=               dolaşmak
 - =hardboard=              sunta
+- =harness=                kablo ağı
 - =headed=                 başlı
 - =hinder=                 engellemek
 - =houseing-department=    konut-bölüm
@@ -101,10 +103,12 @@
 - =ossify=                 kemikleşmek
 - =outlined=               özetlenen
 - =pejorative=             aşağılayıcı
+- =permeate=               nüfuz etmek
 - =perpendicular=          dik (açısal diklik)
 - =persuade=               ikna etmek
 - =pinnacle=               çukur
 - =pins out=               iğnelemek
+- =praise=                 övgü
 - =precise=                kesin
 - =precise=                kesin
 - =precisely=              kesin olarak
