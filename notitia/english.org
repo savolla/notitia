@@ -3,6 +3,7 @@
 
 * Words to Memorize
 - =acommodation=           konaklama
+- =facility=               olanak
 - =dispose=                elden çıkarmak
 - =pliable=                esnek
 - =chore=                  zevksiz iş
