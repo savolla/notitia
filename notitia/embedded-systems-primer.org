@@ -1,0 +1,8 @@
+#+TITLE: Embedded Systems Primer
+#+AUTHOR: savolla
+
+* Bölüm 0
+
+- Bu kitap *Gömülü yazılım* konusunda _sadece temelleri öğretir_. Spesifik olarak her hangi bir microcontroller, dil ya da yazılım geliştirme metodolojisinden bahsetmez.
+
+-
