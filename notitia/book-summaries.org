@@ -19,3 +19,4 @@
  * [[./clean-code.org][Clean Code]]
  * [[./object-oriented-c.org][Object Oriented C]]
  * [[./embedded-systems-primer.org][Embedded Systems Primer]]
+ * [[./tinyML-notes.org][TinyML]]
