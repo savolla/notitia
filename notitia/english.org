@@ -3,16 +3,6 @@
 
 * Words to Memorize
 - =acommodation=           konaklama
-- =do not fare=            işe yaramaz
-- =facility=               olanak
-- =dispose=                elden çıkarmak
-- =pliable=                esnek
-- =chore=                  zevksiz iş
-- =idiosyncrasies=         özel durumlar
-- =cope=                   başa çıkmak (cope with)
-- =disenchantment=         hayal kırıklığı
-- =confines=               sınırlar
-- =merely=                 sadece (only eş anlamlı)
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =advantage=              avantaj
@@ -32,6 +22,7 @@
 - =brittle=                kırılgan
 - =cater=                  sağlamak
 - =certain=                belli
+- =chore=                  zevksiz iş
 - =coherent=               tutarlı
 - =comprehencive=          kapsamlı
 - =comprise=               içermek
@@ -40,6 +31,7 @@
 - =condemn=                mahkum etmek
 - =condense=               condense
 - =conductor=              iletken
+- =confines=               sınırlar
 - =conservative=           muhafazakar
 - =consideration=          düşünce
 - =constipated=            kabız
@@ -47,6 +39,7 @@
 - =constraint=             kısıtlama
 - =contenteditable=        memnun
 - =convey=                 iletmek
+- =cope=                   başa çıkmak (cope with)
 - =cram=                   tıkmak
 - =crook=                  hırsız
 - =curated=
@@ -59,7 +52,10 @@
 - =differing=              farklı
 - =diligence=              çalışkanlık
 - =discourse=              söyleşi
+- =disenchantment=         hayal kırıklığı
 - =dispatch=               sevk etmek
+- =dispose=                elden çıkarmak
+- =do not fare=            işe yaramaz
 - =ease off=               gevşemek, hafiflemek
 - =emerge=                 ortaaya çıkmak
 - =endeavor=               çaba
@@ -72,6 +68,7 @@
 - =exhibiting=             sergilemek
 - =expose=                 maruz kalma
 - =facade=                 cephe (evin dış cehesi)
+- =facility=               olanak
 - =faul=                   faul
 - =fellow=                 adam (?)
 - =fluency=                akıcılık
@@ -89,6 +86,7 @@
 - =however=                ancak
 - =however=                ancak
 - =idiom=                  deyim
+- =idiosyncrasies=         özel durumlar
 - =inextricable=           içinden çıkılmaz
 - =initiative=             girişim
 - =insulator=              yalıtkan
@@ -105,6 +103,7 @@
 - =letter box=             mektup kutusu
 - =loan=                   kredi
 - =masquarading=           maskelemek
+- =merely=                 sadece (only eş anlamlı)
 - =mud=                    çamur
 - =muffled=                örtülü
 - =occasionally=           bazen
@@ -117,6 +116,7 @@
 - =persuade=               ikna etmek
 - =pinnacle=               çukur
 - =pins out=               iğnelemek
+- =pliable=                esnek
 - =praise=                 övgü
 - =precise=                kesin
 - =precise=                kesin
@@ -124,6 +124,7 @@
 - =predicate=              yüklem
 - =premise=                öncül
 - =prescient=              ileri görüşlü
+- =presumably=             muhtemelen (probably)
 - =prethora=               bolluk
 - =privilege=              ayrıcalık
 - =profound=               derin (konu olarak)

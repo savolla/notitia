@@ -18,3 +18,4 @@
  * [[./dive-into-refactoring.org][Dive Into Refactoring]]
  * [[./clean-code.org][Clean Code]]
  * [[./object-oriented-c.org][Object Oriented C]]
+ * [[./embedded-systems-primer.org][Embedded Systems Primer]]

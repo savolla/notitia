@@ -40,7 +40,7 @@
 - [-] the art of concurrency                      (16 / 303)
 - [ ] embedded-primer                             ( 7 / 225)
 - [ ] GNU/Linux Rapid Embedded Programming        (19 / 321)
-- [-] OOC                                         ( 7 / 221)
+- [-] OOC                                         ( 9 / 221)
 - [ ] TinyML                                      (19 / 504)
 - [ ] Building Embedded Systems                   (22 / 337)
 - [ ] Real Time Software Design for ES            (21 / 1358)

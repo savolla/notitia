@@ -4,10 +4,11 @@
 ** Set
 
 #+begin_src c
+// FILE: set.h
 #ifndef __SET_H_
 #define __SET_H_
 
-extern const void *Set;
+extern const void *Set; // Set is not a struct! it is a pointer
 
 void *add (void *set, consts void *element);
 void *find (const void *set, const void *element);
@@ -17,4 +18,26 @@ int contains (const void *set, const void *element);
 #endif // __SET_H_
 #+end_src
 
-- void pointerlara dikkat et. C'de generic programlama bu şekilde yapılır. Set'in birden fazla tiple çalışmasını istiyorsan *void pointer* kullanmalısın
+- ~fact~ void pointerlara dikkat et. C'de generic programlama bu şekilde yapılır. Set'in birden fazla tiple çalışmasını istiyorsan *void pointer* kullanmalısın
+
+- ~tip~ =remove= is an ANSI-C library function to remove a file and lives in =stdio.h=. so don't use =remove= in any of your function names. use =drop= instead
+
+- ~fact~ void pointerlar *generic programlama* için kullanıldığında, söz konusu tipin ne olduğunu dışardan görmek mümkün olmaz. yani *information hiding* gerçekleşir yani =abstraction= olayı gerçekleşir. Halbu ki diğer taraftan tip güvenliği ortadan kalkar. Fonksiyona artık istendiği şekilde farklı tipte değişken parametre olarak verilebilir ancak bunun nasıl tamir edileceğini daha sonraki bölümlerde anlatacağız
+
+** Memory Management
+
+- to obtain a =Set= we need to handle memory management. Because =Set= is not a struct. So we need to find a way to instantiate a =Set= somehow
+
+  #+begin_src c
+// FILE : new.h
+void *new ( const void *type, ... );
+void *delete ( const void *item );
+  #+end_src
+
+- we again used void pointers so we can obtain different objects with this header file
+
+- the =new= and =delete= functions are frontend functions to =calloc()= and =free()=
+
+** Object
+
+-
