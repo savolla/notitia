@@ -128,6 +128,8 @@
 - =prethora=               bolluk
 - =privilege=              ayrıcalık
 - =profound=               derin (konu olarak)
+- =pervercity=             üstünlük
+- =subtle=                 ince (hoş, incelikli)
 - =prominent=              belirgin
 - =proposal=               öneri
 - =query=                  sorgu
