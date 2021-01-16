@@ -1,0 +1,20 @@
+#+TITLE: Object Oriented C
+
+* Bölüm 1
+** Set
+
+#+begin_src c
+#ifndef __SET_H_
+#define __SET_H_
+
+extern const void *Set;
+
+void *add (void *set, consts void *element);
+void *find (const void *set, const void *element);
+void *drop (void *set, void *element);
+int contains (const void *set, const void *element);
+
+#endif // __SET_H_
+#+end_src
+
+- void pointerlara dikkat et. C'de generic programlama bu şekilde yapılır. Set'in birden fazla tiple çalışmasını istiyorsan *void pointer* kullanmalısın
