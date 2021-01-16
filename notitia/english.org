@@ -3,6 +3,7 @@
 
 * Words to Memorize
 - =acommodation=           konaklama
+- =do not fare=            işe yaramaz
 - =facility=               olanak
 - =dispose=                elden çıkarmak
 - =pliable=                esnek
