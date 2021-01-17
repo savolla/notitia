@@ -66,7 +66,7 @@
 
 - yapay zeka modeline girdi olarak bir tensör verilir. çıktı olarak da bir tensör alınır
 
-** tensor
+** Tensor
 
 - bu, tek boyutlu bir tensor'dür. Bunun diğer bir ismi *vector*'dür. boyutu ise $(5,)$ şeklinde gösterilir
 
@@ -95,3 +95,42 @@
      [2 2 0]]
 ]
   #+end_src
+** Sliding Windowing Technique
+
+- Devamlı olarak gelen veriden bir anlam çıkartmak zordur. Çünkü verinin tamamına ihtiyacımız vardır. Örneğin bir ortalama alacaksak verinin tamamen eldilene kadar beklenilmesi gerekir.
+
+ [[file:./images/screenshot-94.png]]
+
+- Peki ya veri daha akarken bir sonuç çıkartmak istersek? işte o zaman veriye kendi belirlediğimiz genişlikte bir pencere açarız.
+
+ [[file:./images/screenshot-93.png]]
+
+- Yukarıdaki her yıldız verisinin gelmesi 10 saniye sürüyor. Biz de her 10 saniyede bir verinin fotoğrafını çekip o verilerin ortalamasını alıp, yapay zeka modelimize okutup çıktı elde ederiz.
+
+ [[file:./images/screenshot-95.png]]
+
+- Yapay Zeka Modelimize gidecek olan veri;
+
+ [[file:./images/screenshot-96.png]]
+
+- tabiki bu sayılar direk bu şekilde yapay zeka modeline verilemez. sayıların normalize olması gerekir
+** Normalizasyon
+
+- Yapay Zeka algoritmalarına verilen verilerin 1 ile 0 arasına sıkıştırılması gerekir. Buna normalizasyon denir
+
+- Basit bir normalizasyon tekniği olarak, sayıları maximum değerini bulup, tensörde bulunan her veriye bölmek verilebilir. Bu sayede tüm sayılar 1 ve 0 arasına sıkışır
+
+  normalize olmamış veri: [108 104 102 103 65]
+
+  en büyük sayı : 108
+
+  normalize olmuş veri: [1, 0.96, 0.94, 0.95, 0.60]
+
+*** Linear Scaling
+TODO
+*** Clipping
+TODO
+*** Log Scaling
+TODO
+*** Z-Score
+TODO
