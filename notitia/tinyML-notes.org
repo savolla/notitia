@@ -1,0 +1,60 @@
+#+TITLE: Tiny Ml Notes
+#+AUTHOR: savolla
+
+* Bölüm 1
+
+- Gömülü sistemlerde (Cortex-M4) yapay zeka uygulaması yapmak mümkün!
+
+- çoğu gömülü sistem yazılımı, =new= ya da =malloc()= kullanmaktan kaçınır.
+
+- ~fact~ using heap in embedded systems is a bad idea
+
+- Dynamic memory allocation'ın en büyük zararı, zaman içinde RAM'i bozmasıdır. bkz: *Fragmentation*
+
+- Tensorflow'un MCU'lar için çıkardığı ürün *Tensorflow Lite*'dır
+
+* Bölüm 2
+
+- Bu kitapta şu *Gömülü Yapay Zeka* projeleri yer almaktadır;
+
+  1. Speech recognition (microphone)
+  2. hareket algılama (hareket sensörü)
+  3. Detect PPL (camera sensor)
+
+- yukarıda bahsi geçen projeleri siz kendiniz modifiye edebilirsiniz. örnek olarak Speech recognition ile yapılan insan konuşması algılama projesini modifiye edip köpek havlamasını tespit edebilen bir cihaz yapılabilir. Bu sayede insan yerine köpek tespiti yapan küçük cihazlar yapabilirsiniz
+
+- Yapay zekayı eğitme kısmını tamamen [[https://colab.research.google.com/notebooks/intro.ipynb#scrollTo=OwuxHmxllTwN][Google Colab]] üstünde gerçekleştireceğiz. Yani süper özelliklere sahip bir bilgisayara ihtiyacımız kalmadı
+
+- Low power bir MCU'da (1 mW gibi) gidip de 10 mW tüketen bir kamera sensörü kullanırsanız, kullandığınız low power MCU'nun bir anlamı kalmaz
+
+* Bölüm 3
+
+- Yapay Zeka ilk bakışta zor görünen bir alan olarak karşımıza çıksa ve ileri matematik, tonlarca makale ve uzman olmak için yıllar geçmesi gerekiyor gibi görünse de aslında işin uygulama kısmı bir kaç tool'dan ibarettir. Göz korkutacak bir şey yok. Yapay zeka ile ilgili bir kaç konsept öğrendikten sonra, projelerde kullanabilirsiniz
+
+- Bu kitapta yapay zeka uygulamalarını küçük cihazlarda nasıl kullanacağımızı anlatıyoruz. Teori ile işimiz yok.
+
+- Kullanışlı yapay zeka uygulamalarını yapmaya başlamak için bütün teoriyi bilmeye gerek yok. Bu bölümde gerekli miktarda bir giriş yapılacak
+
+- yapay zeka uygulaması, diğer kod ile yazdığımız uygulamalardan farklıdır. kod yazmak yerine, hali hazırda var olan bir yapay zeka algoritmasına topladığımız verileri gireriz ve yapay zeka algoritması, bu verileri işleyip finalde bize bir model çıkartır. Biz bu modele yeni bir veri girdiğimizde de model bize bir tahmin üretir
+
+- yapay zeka uygulamalarında kod kalitesinden çok _veri kalitesi_ önemlidir
+
+- örnek olarak bir fabrika düşünelim, üretim yapan bir makine var ancak bu makine bazen bozulyor ve tamiri masraflı. bu makinenin sıcaklığını, titreşimi gibi verileri bir süre aldığımızı var sayalım. yeterli miktarda veriye ulaştıktan sonra bir yapay zeka algoritmasını bu verilerle eğitip, makina bozulmaya yakın onu kapatan bir yapay zeka uygulaması yapabiliriz
+
+- *training* : yapay zeka kendisine sunulan verileri işleyip öğrenmesine denir. Sonuçta bir model oluşur
+
+- *model* : yapay zeka algoritmasının ürettiği çıktı. Bu çıktı aslında bir programdır ve yeni veriler geldiğinde bir tahmin üretir
+
+- *inference*: modele yeni veriler verdiğimizde, modelin yeni bir tahmin yapma sürecine denir
+
+- bir yapay zeka uygulamasında izlenecek adımlar;
+
+  1. Hedef Belirleme (uygulama ne yapacak)
+  2. Veri Toplama
+  3. Nöral Network Oluşturma
+  4. *Train* işlemi
+  5. Convert the mode ~TODO~
+  6. *Inference* işlemi (yeni girdi verip çıktı al)
+  7. modeli test et ve sorun gider
+
+-
