@@ -67,6 +67,18 @@ sudo pacman -S bluez bluez-utils rfkill
 
 + ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
 
+** Why using ~malloc()~ or ~new~ is bad in embedded
+
+1. *Out of memory* problems can occur since Embedded Environments are low memory
+
+2. Slow. Dynamic memory allocation is either relatively slow and gets slower as the memory gets fragmented
+
+3. If you are going to use the same dynamic memory for different threads and interrupts then allocation/freeing routines need to perform locking which can cause problems servicing interrupts fast enough.
+
+4. Dynamic memory allocation makes it very difficult to debug
+
+5. Cause *Memory Leaks*
+
 ** what happens before main()
 *** According to Making Embedded Systems book
 0. _start function
@@ -210,6 +222,28 @@ system modelling language inherited from UML
 ** Renesas                  :company:
 
 Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+** Robot
+sensors + actuators + control = robot
+
+** Sensor
+- cameras
+- Depth sensor
+- Buttons
+- switches
+- encoders
+- GPS
+- IMU
+** Actuator
+
+anything that moves
+
+- Wheels
+- Wings
+- Rotor
+- Motor
+- Arm
+- Servo
+- Step motor
 
 * Platforms
 ** STM32F407VGT6
