@@ -134,3 +134,20 @@ TODO
 TODO
 *** Z-Score
 TODO
+*** Model Training
+
+- *weight* : nöron içindeki veri. ilk anda rastgele bir sayıdır
+
+- *bias*: bir nöral ağ parametresi
+
+- *batch*: öğrenme sırasında sunulan veri
+
+- *epoch*: eğitme sayısı
+
+- *loss*: performans kriteridir ve mükemmel bir modelde sıfırdır
+
+- *accuracy*: performans kriteridir ve mükemmel bir modelde 100% olması beklenir
+
+- *hyperparameters*: yapay zeka modeli eğitilmeden önce yapılan ayarların tümüne denir
+
+- *overfitting*: model datayı ezberlediğinde olur. bir modeli aşırı eğitirsek, çıkan model sadece eğitildiği datayı tanıyacaktır ve çok yüksek tahminler yapar. yeni bir veri geldiğinde kötü sonuç verecektir
