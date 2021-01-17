@@ -125,7 +125,10 @@
 - =premise=                öncül
 - =prescient=              ileri görüşlü
 - =presumably=             muhtemelen (probably)
+- =linger=                 oyalanmak
 - =prethora=               bolluk
+- =impending=              yaklaşan
+- =beneath=                altında
 - =privilege=              ayrıcalık
 - =profound=               derin (konu olarak)
 - =pervercity=             üstünlük

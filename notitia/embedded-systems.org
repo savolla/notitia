@@ -262,7 +262,6 @@ anything that moves
   3. DAC jack
   4. 4 LEDs
   5. 2 push buttons
-  6.
 * Problems & Solutions
 * Tutorials
 ** Use Rust for Embedded Development
