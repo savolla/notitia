@@ -2,6 +2,7 @@
 #+STARTUP: overview
 
 * Words to Memorize
+
 - =accommodation=          konaklama
 - =across=                 karşısında
 - =adhare=                 bağlı
@@ -28,12 +29,11 @@
 - =coherent=               tutarlı
 - =comprehencive=          kapsamlı
 - =comprise=               içermek
-- =concise=                özlü, kısa
-- =concrete=               beton
+- =concise=                kısa ve öz
+- =concrete=               somut
 - =condemn=                mahkum etmek
-- =condense=               condense
 - =conductor=              iletken
-- =confines=               sınırlar
+- =confine=                sınırlamak
 - =conservative=           muhafazakar
 - =consideration=          düşünce
 - =constipated=            kabız
@@ -41,15 +41,13 @@
 - =constraint=             kısıtlama
 - =contenteditable=        memnun
 - =convey=                 iletmek
-- =cope=                   başa çıkmak (cope with)
+- =cope with=              başa çıkmak
 - =cram=                   tıkmak
 - =crook=                  hırsız
-- =curated=
 
 - =deafening=              sağır edici
 - =dedicated=              adanmış
 - =delimeter=              sınırlayıcı
-- =depics=                 ifade etmek, göstermek
 - =depict=                 göstermek
 - =despite=                rağmen
 - =differing=              farklı
@@ -61,6 +59,7 @@
 - =do not fare=            işe yaramaz
 
 - =ease off=               gevşemek, hafiflemek
+- =establish=              kurmak
 - =emerge=                 ortaaya çıkmak
 - =endeavor=               çaba
 - =entrepreneurial=        girişimci
