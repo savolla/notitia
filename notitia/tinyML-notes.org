@@ -1,5 +1,17 @@
 #+TITLE: Tiny Ml Notes
 #+AUTHOR: savolla
+#+HUGO_BASE_DIR: ~/txt/blog/
+#+HUGO_SECTION: en/posts
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: tinyml-book-notes
+:EXPORT_TITLE: TinyML Kitap Özeti
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+
+[[file:./images/screenshot-97.png]]
 
 * Bölüm 1
 
@@ -7,7 +19,7 @@
 
 - çoğu gömülü sistem yazılımı, =new= ya da =malloc()= kullanmaktan kaçınır.
 
-- ~fact~ using heap in embedded systems is a bad idea
+- ~fact~ Gömülü sistemlerde *heap* kullanmak kötü bir fikirdir
 
 - Dynamic memory allocation'ın en büyük zararı, zaman içinde RAM'i bozmasıdır. bkz: *Fragmentation*
 
@@ -151,3 +163,17 @@ TODO
 - *hyperparameters*: yapay zeka modeli eğitilmeden önce yapılan ayarların tümüne denir
 
 - *overfitting*: model datayı ezberlediğinde olur. bir modeli aşırı eğitirsek, çıkan model sadece eğitildiği datayı tanıyacaktır ve çok yüksek tahminler yapar. yeni bir veri geldiğinde kötü sonuç verecektir
+
+- *underfit*: modeli yeterli data ile eğitmemişsek ya da nöral network'ün mimarisi, karmaşıklığı anlayamayacak kadar küçük olduğunda olur. kısaca underfit bir model yarıda kalmış bir modeldir.
+
+- overfitting ile başa çıkmak için;
+
+  + nöral network küçültülebilir ki veriyi tamamen ezberleyecek kadar geniş bir kapasiteye sahip olamasın.
+
+  + daha fazla veri ile beslenebilir (en iyi çözümdür)
+
+  + *data augmentation* diye bir teknik kullanılabilir. Bu teknik ile eldeki veri setini kullanarak yeni veriler elde edilebilir
+
+  + *regularization* kullanılabilir. L1 ve L2 regularizasyon teknikleri kullanılabilir
+
+  + *dropout*: eğitim sırasında, her *epoch*'da rastgele nöronlar arası bağlantıların rast gele koparılması tekniğine verilen isimdir
