@@ -57,4 +57,3 @@
   6. *Inference* işlemi (yeni girdi verip çıktı al)
   7. modeli test et ve sorun gider
 
--
