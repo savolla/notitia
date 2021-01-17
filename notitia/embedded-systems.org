@@ -254,6 +254,15 @@ anything that moves
   [[./images/screenshot-73.png]]
 
 - comes with *ARM Cortex-M4*
+
+- internal peripherals
+
+  1. two 3-axis accelometers
+  2. one microphone
+  3. DAC jack
+  4. 4 LEDs
+  5. 2 push buttons
+  6.
 * Problems & Solutions
 * Tutorials
 ** Use Rust for Embedded Development
