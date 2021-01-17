@@ -41,7 +41,7 @@
 - [-] embedded-primer                             (12 / 225)
 - [ ] GNU/Linux Rapid Embedded Programming        (19 / 321)
 - [-] OOC                                         ( 9 / 221)
-- [ ] TinyML                                      (19 / 504)
+- [-] TinyML                                      (36 / 504)
 - [ ] Building Embedded Systems                   (22 / 337)
 - [ ] Real Time Software Design for ES            (21 / 1358)
 - [ ] Linux Device Driver Development Cookbook    (14 / 344)

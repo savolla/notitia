@@ -2,10 +2,9 @@
 #+STARTUP: overview
 
 * Words to Memorize
-- =acommodation=           konaklama
+- =accommodation=          konaklama
 - =across=                 karşısında
 - =adhare=                 bağlı
-- =advantage=              avantaj
 - =allude=                 ima etmek
 - =ambition=               hırs
 - =annually=               yıllık
@@ -16,10 +15,13 @@
 - =attic=                  çatı katı
 - =audible=                duyulabilir
 - =auxiliary=              yardımcı
+
+- =beneath=                altında
 - =beware=                 dikkat et
 - =bottleneck=             darboğaz
 - =boundary=               sınır
 - =brittle=                kırılgan
+
 - =cater=                  sağlamak
 - =certain=                belli
 - =chore=                  zevksiz iş
@@ -43,6 +45,7 @@
 - =cram=                   tıkmak
 - =crook=                  hırsız
 - =curated=
+
 - =deafening=              sağır edici
 - =dedicated=              adanmış
 - =delimeter=              sınırlayıcı
@@ -56,6 +59,7 @@
 - =dispatch=               sevk etmek
 - =dispose=                elden çıkarmak
 - =do not fare=            işe yaramaz
+
 - =ease off=               gevşemek, hafiflemek
 - =emerge=                 ortaaya çıkmak
 - =endeavor=               çaba
@@ -67,6 +71,7 @@
 - =excerpt=                alıntı
 - =exhibiting=             sergilemek
 - =expose=                 maruz kalma
+
 - =facade=                 cephe (evin dış cehesi)
 - =facility=               olanak
 - =faul=                   faul
@@ -75,9 +80,11 @@
 - =forward=                ileri
 - =frontier=               sınır
 - =fuzzy=                  belirsiz
+
 - =genuine=                gerçek, hakiki
 - =gestate=                gebelik
 - =go round=               dolaşmak
+
 - =hardboard=              sunta
 - =harness=                kablo ağı
 - =headed=                 başlı
@@ -85,8 +92,10 @@
 - =houseing-department=    konut-bölüm
 - =however=                ancak
 - =however=                ancak
+
 - =idiom=                  deyim
 - =idiosyncrasies=         özel durumlar
+- =impending=              yaklaşan
 - =inextricable=           içinden çıkılmaz
 - =initiative=             girişim
 - =insulator=              yalıtkan
@@ -97,23 +106,30 @@
 - =intimately=             yakından
 - =intricacy=              karmaşa
 - =intuitive=              sezgisel
+
 - =judiciously=            akıllıca
+
 - =lattice=                kafes
 - =lawn=                   çim
 - =letter box=             mektup kutusu
+- =linger=                 oyalanmak
 - =loan=                   kredi
+
 - =masquarading=           maskelemek
 - =merely=                 sadece (only eş anlamlı)
 - =mud=                    çamur
 - =muffled=                örtülü
+
 - =occasionally=           bazen
 - =oppurtunity=            fırsat
 - =ossify=                 kemikleşmek
 - =outlined=               özetlenen
+
 - =pejorative=             aşağılayıcı
 - =permeate=               nüfuz etmek
 - =perpendicular=          dik (açısal diklik)
 - =persuade=               ikna etmek
+- =pervercity=             üstünlük
 - =pinnacle=               çukur
 - =pins out=               iğnelemek
 - =pliable=                esnek
@@ -125,18 +141,15 @@
 - =premise=                öncül
 - =prescient=              ileri görüşlü
 - =presumably=             muhtemelen (probably)
-- =linger=                 oyalanmak
 - =prethora=               bolluk
-- =impending=              yaklaşan
-- =beneath=                altında
 - =privilege=              ayrıcalık
 - =profound=               derin (konu olarak)
-- =pervercity=             üstünlük
-- =subtle=                 ince (hoş, incelikli)
 - =prominent=              belirgin
 - =proposal=               öneri
+
 - =query=                  sorgu
 - =quintessentially=       özetle
+
 - =recipient=              alıcı
 - =regardless=             ne olursa olsun
 - =relational=             bağlantılı
@@ -148,6 +161,7 @@
 - =rough=                  kaba
 - =rough=                  kaba
 - =row=                    sıra (matrisin satırı)
+
 - =scattered=              dağılmış
 - =scruple=                vicdan
 - =seldom=                 nadiren
@@ -161,21 +175,26 @@
 - =statement=              ifade
 - =stitch=                 dikiş/dikmek
 - =subsequent=             sonraki
+- =subtle=                 ince (hoş, incelikli)
 - =superstition=           batıl inanç
 - =supervisor=             gözetmen/yönetici
 - =suppress=               bastırmak
 - =surgeon=                cerrah
+
 - =tenet=                  ilke
 - =therefore=              bu nedenle
 - =thesaurus=              eş anlamlılar sözlüğü
 - =trailed=                izledi
+
 - =unbolted=               sürgüsü açılmış
 - =uncharted=              keşvedilmemiş
 - =unconventional=         alışılmadık
 - =undertaken=             üstlenilen
 - =unselfish=              özverili
+
 - =venue=                  buluşma yeri
 - =vivid=                  canlı
 - =vocabulary=             kelime bi+ gisi
+
 - =walkway=                yürüyüş yolu
 - =wrap up=                sarmak (ambalajlamak anlamında)

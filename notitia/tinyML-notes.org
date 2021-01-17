@@ -57,3 +57,41 @@
   6. *Inference* işlemi (yeni girdi verip çıktı al)
   7. modeli test et ve sorun gider
 
+- MCU'lar genelde az hafıza ve işlem gücüne sahip olduklarından dolayı, model oluştururken, cihazın bu özellikleri göz önünde bulundurulmalıdır. Yani çok büyük bir nöral networkü, küçük bir MCU'ya koymak olanaksızdır.
+
+- Nöral networkün boyutunu etkileyen faktörler;
+
+  1. Nöron sayısı
+  2. Nöronlar arasındaki bağlantı sayısı
+
+- yapay zeka modeline girdi olarak bir tensör verilir. çıktı olarak da bir tensör alınır
+
+** tensor
+
+- bu, tek boyutlu bir tensor'dür. Bunun diğer bir ismi *vector*'dür. boyutu ise $(5,)$ şeklinde gösterilir
+
+  #+begin_src python
+[1 3 4 5 6]
+  #+end_src
+
+- bu ise 2D bir tensördür. başka bi isimle *matrix* denir. boyutu $(3, 3)$'dür
+
+  #+begin_src python
+[[1 3 4]
+ [5 6 0]
+ [2 2 0]]
+  #+end_src
+
+- matrix'den daha çok boyutlu tensörlere de kısaca *tensor* dneir. Aşağıdaki matris $(2,3,3)$ boyutlarına sahiptir çünkü _2 tane 3'e 3'lük matris barındırıyor_
+
+  #+begin_src python
+[
+    [[1 3 4]
+     [5 6 0]
+     [2 2 0]]
+
+    [[1 3 4]
+     [5 6 0]
+     [2 2 0]]
+]
+  #+end_src
