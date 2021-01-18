@@ -179,3 +179,31 @@ TODO
   + *regularization* kullanılabilir. L1 ve L2 regularizasyon teknikleri kullanılabilir
 
   + *dropout*: eğitim sırasında, her *epoch*'da rastgele nöronlar arası bağlantıların rast gele koparılması tekniğine verilen isimdir
+** train -> validate -> test
+
+- genelde veri 3 parçaya bölünür;
+
+  + %60 Training
+  + %20 Validation
+  + %20 Test
+
+- overfit olan bir modelin validasyon verisiyle sınandığında oluşturduğu grafik. Bu tarz bir grafik oluşuyorsa bilin ki model overfit olmuş;
+
+ [[file:./images/screenshot-98.png]]
+
+- overfit olan modeli iyileştirmeye başladığımızda, her seferinde bir validasyon işleminden geçiririz. Bir süre sonra validasyonda başarı sağladığımızda hemen sevinmemek gerekir. çünkü modelimiz validasyon verisini de ezberlemiş olabilir ve validasyona göre de overfit olmuş olabilir. İşte bu yanılgıyı ortadan kaldırmak için bir de *test* datasını kullanırız. Test datasını, modelimizin validasyona göre overfit olup olmadığını anlamak için kullanırız
+
+- test verisinde de başarılı olan bir model elde ettiğimiz zaman artık Yapay Zeka Modelimiz hazrı demektir ve MCU'da çalıştırılabilecek düzeye gelmiş demektir
+** Converting the Model
+
+- Yukarıda anlattığımız bütün train, validasyon ve test aşamalarını *normal* Tensorflow ile gerçekleştireceğiz.
+
+- Modelimiz hazır hale geldikten sonra da Ram ve işlem gücü konusunda gelişmiş bilgisayarlardan daha zayıf olan Mikrodenetleyizimize (MCU) bu modeli çalıştırmak için *Tensorflow Lite* kullanırız
+
+- Tensorflow Lite, modeli alır ve bir takım optimizasyonlar yapıp modelin daha küçük ve daha hızlı çalışmasını sağlar
+
+- *Converting the Model*'dan kastımız da;
+
+  Model --> Tensorflow Lite --> MCU uyumlu Model
+
+- Modeli dönüştürme aşaması gayet hızlı ve kolay bir süreçtir
