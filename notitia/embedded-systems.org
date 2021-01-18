@@ -171,6 +171,10 @@ git pull
 
 Micro Electro-Mechanical Systems. see [[https://www.youtube.com/watch?v=i2U49usFo10][this video]]
 
+** RTC :hardware:
+
+Real Time Clock
+
 
 ** newlib                   :software:
 
