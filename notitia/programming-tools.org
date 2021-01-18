@@ -209,58 +209,7 @@ objdump -M intel -[d|D] <BINARY>
 objdump -M i386,intel -[d|D] <BINARY>
 #+END_SRC
 * Containers
-** docker
-*** concepts
-*** tips
-*** facts
-*** how to
-**** remove all images
-
-#+begin_src sh
-docker rmi $(docker images -q) // remove all images
-#+end_src
-**** remove all containers
-
-#+begin_src sh
-docker rm $(docker ps -a -q) // remove all containers
-#+end_src
-**** execute a command on a container running in the background
-
-#+begin_src sh
-docker container exec -it $CONTAINER_NAME $SHELL_COMMAND
-#+end_src
-**** disconnect a container from a network
-
-#+begin_src sh
-docker network disconnect $NETWORK $CONTAINER_NAME
-#+end_src
-**** connect a container to a network
-
-#+begin_src sh
-docker network connect $NETWORK $CONTAINER_NAME
-#+end_src
-**** show information on one or more networks
-
-#+begin_src sh
-docker network inspect $NETWORK
-#+end_src
-**** list networks
-
-#+begin_src sh
-docker network ls
-#+end_src
-**** remove one or more newtorks
-
-#+begin_src sh
-docker network rm $NETWORK
-#+end_src
-**** see all containers
-
-#+begin_src sh
-docker container ls -a
-#+end_src
-
-*** problems & solutions
+ * [[./docker.org][docker]]
 * UML
 ** plantuml
 *** concepts

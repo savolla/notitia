@@ -128,22 +128,7 @@ youtube-dl -cio -f 22 '%(autonumber)s-%(title)s.%(ext)s' $VIDEO_LINK
 echo "1+1" | bc # outputs 2
 #+end_src
 * Package Managers
-** pacman
-*** how to
-**** how to see only AUR packages I've installed
-#+BEGIN_SRC bash
-pacman -Qm
-#+END_SRC
-**** remove pacman cache
-
-#+begin_src sh
-pacman -Scc
-#+end_src
-**** remove orphan packages
-
-#+begin_src sh
-pacman -Rns $(pacman -Qtdq)
-#+end_src
+ * [[./pacman.org][pacman]]
 * Searchers
 ** find
 *** how to

@@ -58,6 +58,13 @@ cargo install cargo-binutils
 sudo pacman -S bluez bluez-utils rfkill
 #+end_src
 
+*** testing
+
+#+begin_src sh
+git clone https://github.com/ThrowTheSwitch/Unity.git
+git pull
+#+end_src
+
 
 * Tips
 
@@ -244,6 +251,9 @@ anything that moves
 - Arm
 - Servo
 - Step motor
+** Unity
+unit testing for c (especially embedded software)
+
 
 * Platforms
 ** STM32F407VGT6
