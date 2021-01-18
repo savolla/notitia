@@ -11,6 +11,8 @@
 :EXPORT_AUTHOR: savolla
 :END:
 
+* TinyML Kitap Notları
+
 [[file:./images/screenshot-97.png]]
 
 * Bölüm 1
@@ -109,7 +111,7 @@
   #+end_src
 ** Sliding Windowing Technique
 
-- Devamlı olarak gelen veriden bir anlam çıkartmak zordur. Çünkü verinin tamamına ihtiyacımız vardır. Örneğin bir ortalama alacaksak verinin tamamen eldilene kadar beklenilmesi gerekir.
+- Devamlı olarak gelen veriden bir anlam çıkartmak zordur. Çünkü verinin tamamına ihtiyacımız vardır. Örneğin bir ortalama alacaksak verinin tamamen elde edilene kadar beklenilmesi gerekir.
 
  [[file:./images/screenshot-94.png]]
 
