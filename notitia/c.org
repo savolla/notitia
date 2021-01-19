@@ -15,6 +15,8 @@ void printArray(int *arr, size_t size) {
 }
   #+end_src
 - every compiler has _it's own_ *inline assembly* syntax
+- macros are always fast and portable
+- ternary operators are faster
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
 2. *CPU register* --> *C variable*
@@ -234,6 +236,22 @@ this is the case when you work in just one file. the better solution will be;
 #endif /* _YOUR_HEADER_H__ */
   #+end_src
 
+** tips for ~#define~ macros
+
+1. don't use semicolons at the end
+
+2. use CAPITALIZED names
+
+3. preprocessors can calculate things for you like ( 60 * 40 * 12 )
+
+4. always be concerned about =sign= and =data size= like 'L' or 'UL' ( 60UL * 40UL * 12UL )
+
+5. always _parentesize macro arguments_
+  #+begin_src c
+#define MIN(A,B) ( (A) >= (B) ? (B) : (A) )
+  #+end_src
+
+* Snippets
 * Concept
 ** Include Guards
 - prevent multiple inclusion of same header file
@@ -266,17 +284,21 @@ this is the case when you work in just one file. the better solution will be;
 
 * How To
 ** define a struct
+
 #+begin_src c
 typedef struct A{
     int a;
     char c;
 } A;
 #+end_src
+
 ** print the address of a variable
+
 #+begin_src c
 char c = 'a';
 printf( "%p", &c );
 #+end_src
+
 ** write inline assembly
 *** example code
 the following example work on =gcc= and takes no special parameters while compiling
@@ -374,5 +396,17 @@ the following example work on =gcc= and takes no special parameters while compil
       return 0;
   }
   #+END_SRC
+** print the actual name of a variable
+
+#+begin_src c
+#include <stdio.h>
+
+#define PRINT_VAR_NAME( VARIABLE ) printf("var name: " #VARIABLE);
+
+int main(void) {
+    int savolla;
+    PRINT_VAR_NAME(savolla)
+}
+#+end_src
 
 * Problems & Solutions

@@ -70,6 +70,8 @@ git pull
 
 - don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead. use tools like *objcopy*
 
+- use *ternary operators* instead of *if-else* in embedded systems. it increases performance
+
 * Facts
 
 + ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
