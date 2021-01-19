@@ -267,6 +267,7 @@ this is a function that waits interupts from hardware. when it recieves a signal
 The example of ISR is *keyboard handler* function;
 
 [Key Press] -> [Keyboard] -> [Signal] -> [Keyboard ISR] -> [Signal] -> [CPU]
+** Status Register
 
 * Platforms
 ** STM32F407VGT6

@@ -7,16 +7,22 @@
 
 * Facts
 - all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
+
 - all user defined header files must be included in *double quotes*
+
 - you always need to pass _the size of an array_ when using arrays in functions
   #+begin_src c
 void printArray(int *arr, size_t size) {
     // some code
 }
   #+end_src
+
 - every compiler has _it's own_ *inline assembly* syntax
+
 - macros are always fast and portable
+
 - ternary operators are faster
+
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
 2. *CPU register* --> *C variable*
@@ -187,10 +193,24 @@ p = &a; // same story
       return 0;
   }
   #+end_src
+** when to use ~volatile~
+
+use ~volatile~ for the variables like;
+
+- Hardware Registers (CPU etc)
+- Peripheral Registers such as *Sensors*
+- Non-Stack variables like ISR signals
+- Variables that _shared by multiple tasks_ in multi-threaded programming
 
 * Tips
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
+
+- don't forget to use =volatile= for shared variables in your code. Because when compile with optimization flags, compiler might break something. so volatile is a reminder
+
+- include ~stdbool.h~ to use =true=, =false= and =bool= keywords
+
 - use =__asm__= when writing inline assembly. this is because the word =asm= might conflict with other variable name in code
+
 ** always write descriptions like this
 ignore the commas ','. it is org-mode thing
 #+begin_src c
@@ -292,6 +312,16 @@ if UNIX variable is not defined, don't compile and spit error "Only Unix is supp
 #error "Only Unix is supported"
 #endif
 #+end_src
+** ~true~ and ~false~ in C
+
+#+begin_src c
+#include <stdbool.h>
+
+int main(void) {
+    bool a = true;
+    return 0;
+}
+#+end_src
 
 * Concept
 ** Include Guards
@@ -326,6 +356,13 @@ if UNIX variable is not defined, don't compile and spit error "Only Unix is supp
 ** ~#error~ macro
 
 user defined error message. see usage in ~Snippets~
+** volatile variable
+
+it is a variable that can change *unexpectedly*. in C, volatile variables are defined like;
+
+#+begin_src c
+volatile thermal_sensor_output;
+#+end_src
 
 * How To
 ** define a struct
