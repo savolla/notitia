@@ -201,8 +201,14 @@ use ~volatile~ for the variables like;
 - Peripheral Registers such as *Sensors*
 - Non-Stack variables like ISR signals
 - Variables that _shared by multiple tasks_ in multi-threaded programming
+** void pointers can be used for generic programming
+
+#+begin_src c
+
+#+end_src
 
 * Tips
+
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
 
 - don't forget to use =volatile= for shared variables in your code. Because when compile with optimization flags, compiler might break something. so volatile is a reminder
@@ -210,6 +216,8 @@ use ~volatile~ for the variables like;
 - include ~stdbool.h~ to use =true=, =false= and =bool= keywords
 
 - use =__asm__= when writing inline assembly. this is because the word =asm= might conflict with other variable name in code
+
+- Whenever you define a variable and it represents a =size= of something, use =size_t= instead of int, long etc
 
 ** always write descriptions like this
 ignore the commas ','. it is org-mode thing
@@ -363,6 +371,9 @@ it is a variable that can change *unexpectedly*. in C, volatile variables are de
 #+begin_src c
 volatile thermal_sensor_output;
 #+end_src
+** ~size_t~
+
+
 
 * How To
 ** define a struct

@@ -281,6 +281,14 @@ set to 1 if last operation result is *even*. reset if odd
 ** Zero Flag
 
 set if result is 0. reset if non-zero
+** Interrupt Latency
+
+Time passed before CPU reads the interrupt and finally returns
+
+=HW= -[IRQ]-> =ISR= -[IRQ]-> =CPU=
+
+Interrupt Latency happends here
+
 
 * Platforms
 ** STM32F407VGT6
