@@ -262,6 +262,12 @@ unit testing for c (especially embedded software)
 
 ** ISR
 
+this is a function that waits interupts from hardware. when it recieves a signal then it sends this signal to the CPU and interupts the already running process. When ISR is complete then the active process continues to proceed
+
+The example of ISR is *keyboard handler* function;
+
+[Key Press] -> [Keyboard] -> [Signal] -> [Keyboard ISR] -> [Signal] -> [CPU]
+
 * Platforms
 ** STM32F407VGT6
 
