@@ -252,6 +252,47 @@ this is the case when you work in just one file. the better solution will be;
   #+end_src
 
 * Snippets
+** 3 types of infinite loops
+
+some compilers generate warnings for this.
+#+begin_src c
+while (1) {
+   // code
+}
+#+end_src
+
+works with other languages
+#+begin_src c
+for (;;) {
+   // code
+}
+#+end_src
+
+Assembly nerds way
+#+begin_src c
+LOOP:
+    // code
+    goto LOOP;
+#+end_src
+
+Creative one
+#+begin_src c
+#define ever (;;)
+
+for ever {
+    // code
+}
+#+end_src
+** ~#error~ macro usage
+
+if UNIX variable is not defined, don't compile and spit error "Only Unix is supported"
+
+#+begin_src
+#ifndef UNIX
+#error "Only Unix is supported"
+#endif
+#+end_src
+
 * Concept
 ** Include Guards
 - prevent multiple inclusion of same header file
@@ -281,6 +322,10 @@ this is the case when you work in just one file. the better solution will be;
   #+begin_src c
   unsigned char c = 0x80 + 0x0011; // no problem
   #+end_src
+
+** ~#error~ macro
+
+user defined error message. see usage in ~Snippets~
 
 * How To
 ** define a struct
