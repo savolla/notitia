@@ -9,23 +9,23 @@
 - all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
 - all user defined header files must be included in *double quotes*
 - you always need to pass _the size of an array_ when using arrays in functions
-- every compiler has _it's own_ *inline assembly* syntax
   #+begin_src c
 void printArray(int *arr, size_t size) {
     // some code
 }
   #+end_src
+- every compiler has _it's own_ *inline assembly* syntax
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
 2. *CPU register* --> *C variable*
 3. operate on multiple C variables inside assembly
 ** inline assembly is used for;
-  1. accessing CPU *general purpose registers*
-  2. accessing CPU *special registers*
-  3. accessing *stack pointer*
+1. accessing CPU *general purpose registers*
+2. accessing CPU *special registers*
+3. accessing *stack pointer*
 ** format specifiers
 1. =%p= addresses in hexadeicmal format
-2. =%lu= long unsigned integer
+2. =%lu= unsigned long  integer
 3. =%lld= long long integer
 4. =%llu= long long unsigned integer
 5. =%llx= long long integer with hexadecimal representation
@@ -150,12 +150,14 @@ int a = 112;
 char c = 'c';
 double d = 0.20;
 
-void *p = &a;
-p = &a;
-p = &a;
+void *p = &a; // p holds integer (4 bytes)
+p = &a; // p now holds char ( 1 byte )
+p = &a; // same story
   #+end_src
 ** working with sleep functions
+
 + weirdly this code will not output anything on the screen
+
   #+begin_src c
   #include <unistd.h>
   #include <stdio.h>
@@ -168,7 +170,9 @@ p = &a;
       return 0;
   }
   #+end_src
+
 + however when we add *new line* this will work..
+
   #+begin_src c
   #include <unistd.h>
   #include <stdio.h>
