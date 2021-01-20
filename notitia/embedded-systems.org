@@ -109,7 +109,8 @@ git pull
 
 * Concepts
 
-** I²C                      :comm_protocol:
+** Communication Protocol
+*** I²C
 
 - developed by Philips (now NXP)
 - serial communication protocol
@@ -130,7 +131,7 @@ git pull
 - here is how I²C looks like
  [[file:./images/screenshot-71.png]]
 
-** SWD                      :comm_protocol:
+*** SWD
 
 - serial wired debug
 - two-wire protocol for accessing the ARM debug interface
@@ -145,21 +146,13 @@ git pull
   d. stop/run CPU
   e. printf style debugging
 
-
-
-** NVRAM                    :hardware:
-
-- non volatile RAM
-- data does not go away when power goes off
-- this is a costy component
- [[file:./images/screenshot-72.png]]
-
-** DMA                      :hardware:
+** Hardware
+*** DMA
 
 - direct memory access
 - translator between peripherals and the RAM
 
-** ITM unit                 :hardware:
+*** ITM unit
 
 - Instrumentation Trace Macrocell Unit
 
@@ -169,76 +162,84 @@ git pull
 
 - contains a FIFO buffer. Programmer can print to this buffer and ITM will spit out the content
 
-** MEMS                     :hardware:
+*** MEMS
 
 Micro Electro-Mechanical Systems. see [[https://www.youtube.com/watch?v=i2U49usFo10][this video]]
 
-** RTC :hardware:
+*** NVRAM
+
+- non volatile RAM
+- data does not go away when power goes off
+- this is a costy component
+ [[file:./images/screenshot-72.png]]
+
+*** RTC
 
 Real Time Clock
+*** Accelerometer
 
+[[file:./images/screenshot-89.png]]
+Your phone screen rotates automatically when you rotate the phone. A *sensor* called Accelerometer is used in these applications. It detects 3D planes. This is a MEMS device
 
-** newlib                   :software:
+*** Magnetometer
+
+[[file:./images/screenshot-90.png]]
+a MEMS device that can be used as a *Compass*. We have it inside our smart phones. All compass apps that you download from app store uses this sensor.
+
+*** Gyroscope
+
+[[file:./images/screenshot-91.png]]
+a MEMS device that can detect *rotation* and *angular velocity*.
+
+** Software
+*** Unity
+unit testing for c (especially embedded software)
+
+*** newlib
 
 C standard library implementation intended for use on embedded systems
 
-** OpenOCD                  :software:
+*** OpenOCD
 
 Open (source) on Circuit Debugger. This is a software tool that helps embedded programmers to debug/flash embedded code to Microcontrollers. Supports JTAG and SWD protocols
 
-** minicom                  :software:
+*** minicom
 
 serial communication software for linux. (PuTTY equivalent)
 
-** TensorFlow Light         :software:
+*** TensorFlow Light
 
 a version of tensorflow for specifically *microcontrollers*
 
+*** ISR
 
-** Interrupt Storm          :jargon:
+this is a function that waits interupts from hardware. when it recieves a signal then it sends this signal to the CPU and interupts the already running process. When ISR is complete then the active process continues to proceed
+
+The example of ISR is *keyboard handler* function;
+
+[Key Press] -> [Keyboard] -> [Signal] -> [Keyboard ISR] -> [Signal] -> [CPU]
+*** SysML
+
+system modelling language inherited from UML
+
+** Jargon
+*** Interrupt Storm
 
 - this event happends when amount of _incoming interrupts_ is an astronomic number
 - ISRs are working constantly and the main system is busy all the time.
 - system is not responsive anymore.
 - requires a reset
 
-** Assembler                :jargon:
+*** Assembler
 
 translates the assembly language into machine language
 
-** ISA                      :jargon:
+*** ISA
 
 The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
 
 
-
-** Accelerometer            :sensor:
-
-[[file:./images/screenshot-89.png]]
-Your phone screen rotates automatically when you rotate the phone. A *sensor* called Accelerometer is used in these applications. It detects 3D planes. This is a MEMS device
-
-** Magnetometer             :sensor:
-
-[[file:./images/screenshot-90.png]]
-a MEMS device that can be used as a *Compass*. We have it inside our smart phones. All compass apps that you download from app store uses this sensor.
-
-** Gyroscope                :sensor:
-
-[[file:./images/screenshot-91.png]]
-a MEMS device that can detect *rotation* and *angular velocity*.
-
-
-** SysML
-system modelling language inherited from UML
-
-
-** Renesas                  :company:
-
-Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
-** Robot
-sensors + actuators + control = robot
-
-** Sensor
+*** Sensor
 - cameras
 - Depth sensor
 - Buttons
@@ -246,7 +247,7 @@ sensors + actuators + control = robot
 - encoders
 - GPS
 - IMU
-** Actuator
+*** Actuator
 
 anything that moves
 
@@ -257,31 +258,30 @@ anything that moves
 - Arm
 - Servo
 - Step motor
-** Unity
-unit testing for c (especially embedded software)
 
-** ISR
+*** Robot
 
-this is a function that waits interupts from hardware. when it recieves a signal then it sends this signal to the CPU and interupts the already running process. When ISR is complete then the active process continues to proceed
+sensors + actuators + control = robot
 
-The example of ISR is *keyboard handler* function;
 
-[Key Press] -> [Keyboard] -> [Signal] -> [Keyboard ISR] -> [Signal] -> [CPU]
-** Status Register
+*** Renesas :company:
+
+Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+*** Status Register
 
 a.k.a. Flag register. Contains the information about current state of the Processor. Flag register names in different architectures;
 
 - *x86* : FLAGS
 - *AVR* : SREG
 - *ARM* : APSR /(application program status register)/
-** Parity Flag
+*** Parity Flag
 
 set to 1 if last operation result is *even*. reset if odd
-** Carry Flag :TODO:
-** Zero Flag
+*** Carry Flag :TODO:
+*** Zero Flag
 
 set if result is 0. reset if non-zero
-** Interrupt Latency
+*** Interrupt Latency
 
 Time passed before CPU reads the interrupt and finally returns
 
