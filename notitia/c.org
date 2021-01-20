@@ -375,6 +375,9 @@ volatile thermal_sensor_output;
 
 
 
+** non-cononical mode
+
+in Linux/Unix systems, when functions like =getchar()= is used, the user will always need to press =Return= key for confirmation. To disable this, we need to put the terminal into *non-cononical mode*
 
 * How To
 ** define a struct
@@ -500,6 +503,44 @@ the following example work on =gcc= and takes no special parameters while compil
 int main(void) {
     int savolla;
     PRINT_VAR_NAME(savolla)
+}
+#+end_src
+** put terminal in ~non-cononical mode~
+
+put this *function* somewhere in your code
+
+#+begin_src c
+void disableCononicalMode() {
+  struct termios info;
+  tcgetattr(0, &info);     /* get current terminal attirbutes; 0 is the file
+                              descriptor for stdin */
+  info.c_lflag &= ~ICANON; /* disable canonical mode */
+  info.c_cc[VMIN] = 1;     /* wait until at least one keystroke available */
+  info.c_cc[VTIME] = 0;    /* no timeout */
+  tcsetattr(0, TCSANOW, &info); /* set immediately */
+}
+#+end_src
+
+and call it from the =main= function
+
+#+begin_src c
+#include <stdio.h>
+
+int main(void) {
+    disableCononicalMode();
+
+    char c = getchar(); // it will not wait for Enter key now
+
+    return 0;
+}
+#+end_src
+** set back the terminal into ~cononical mode~
+
+#+begin_src c
+void setCononicalMode() {
+    tcgetattr(0, &info);
+    info.c_lflag |= ICANON;
+    tcsetattr(0, TCSANOW, &info);
 }
 #+end_src
 
