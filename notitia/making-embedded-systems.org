@@ -121,3 +121,5 @@
   * *read* : cihaz'dan veri okur
   * *write* : cihaz'a veri yazar
   * *ioctl* (*ayoktal* diye okunur) : input output
+
+-
