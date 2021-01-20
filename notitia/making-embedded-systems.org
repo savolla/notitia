@@ -86,3 +86,25 @@
 - ~concept~ CPU'nun dışında kalan elemanlara *Peripheral* denir
 
 - Blok diyagramında, yazılım tasarımı yapmış olmamıza rağmen, diyagram sanki bir elektronik devre şeması gibi görünür
+
+- Blok Diyagramında, CPU bloğunun içine yazılan elemanlar, Bu eleman için bir kod yazılacağı anlamına gelir
+
+ [[file:./images/screenshot-103.png]]
+
+ Yukarıdaki şemada, SPI protokolü CPU içine yazılmıştır. Demek ki buradan anlayabiliriz ki SPI için kod yazılacak
+
+- Aşağıda örnek bir *Architecture Block Diagram* verilmiştir;
+
+ [[file:./images/screenshot-106.png]]
+
+** Hierarchy of Control
+
+- Hiyerarşi Diyagramı, Block Diagram'ında belirtilen modüllerin birbirine nasıl bağlı olduğunu gösterip hangisi hangisini kullanacağını gösterir. =main= en yukarıda olmak üzere diğer modlüllerin hiyerarşisi tasarlanır
+
+ [[file:./images/screenshot-105.png]]
+
+** Layered View
+
+- Modül'ü büyük çiz eğer;
+  + complexity yüksek
+  + modülü diğer modüller kullanıyorsa
