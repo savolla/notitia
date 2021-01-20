@@ -145,6 +145,19 @@ git pull
   c. add breakpoints
   d. stop/run CPU
   e. printf style debugging
+*** SPI
+
+- Most chips use SPI protocol;
+
+  + Memory Chips /(EEPROMS, SD Cards)/
+  + Display Modules /(OLED, LCD)/
+  + ADCs mostly use SPI
+
+- In SPI there is a notion of *Master* and *Slave*
+
+- Master: Starts the data transaction, sends and recieves the data from Slaves
+
+- Master is mostly a Microcontroller (MCU) or FPGA
 
 ** Hardware
 *** DMA

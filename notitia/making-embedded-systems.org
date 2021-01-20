@@ -59,3 +59,30 @@
   4. tüm testlerden geçtiyse, optimizasyon işlemine geç
   5. 2. adıma git
 * Bölüm 2
+- Bu bölümde, Gömülü Sistem Mimarisi nasıl inşa edilir onu göreceğiz
+
+- ilk adım olarak bunu yapmak gerekir.
+
+- Donanımcılar şematikleri çizerken, yazılımcıların da paralel olarak "Software Block Diagrams" çizmeleri gerekir.
+
+- Blok Diyagramları, yazılım sistemindeki bazı komponentlerin birbiriyle olan ilişkilerini görmemizi ve ileride yeni özellikler katmamızı kolaylaştırmamızı sağlar
+
+- 3 tip blok diyagram tipi vardır;
+
+  1. Architecture Block Diagram
+  2. Hierarchy of Control Organization Chart
+  3. Software Layering View
+
+- ~fact~ many Flash Memory chips communicate over the SPI bus
+
+** Architecture Block Diagrams
+
+- Fiziksel komponentler block olarak çizilir. Sistem kabataslak tasarlanır
+
+- Obje Tabanlı düşünmeyi sağlar. /(implementasyonda, obje tabanlı bir dil kullanılmıyor olsa bile)/
+
+- CPU'ya bağlı her chip aslında bir Obje olarak düşünülür
+
+- ~concept~ CPU'nun dışında kalan elemanlara *Peripheral* denir
+
+- Blok diyagramında, yazılım tasarımı yapmış olmamıza rağmen, diyagram sanki bir elektronik devre şeması gibi görünür
