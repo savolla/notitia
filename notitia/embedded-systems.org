@@ -72,6 +72,8 @@ git pull
 
 - use *ternary operators* instead of *if-else* in embedded systems. it increases performance
 
+- don't use SPI when distance is more than 1 meter
+
 * Facts
 
 + ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
@@ -113,12 +115,19 @@ git pull
 *** I²C
 
 - developed by Philips (now NXP)
+
+- also called *TWI* /"Two Wired Interface/
+
 - serial communication protocol
+
 - I²C enables designers to add more GPIO pins to MCU
+
 - some MCUs have this feature
+
 - I²C bus consists of two data lines;
   1. SDA (serial data line)
   2. SCA (serial clock line)
+
 - with I²C you can add bunch of *slaves* such as;
   a. SPD EEPROMS
   b. LED/LCD drivers
@@ -127,9 +136,18 @@ git pull
   e. Sound Controller
   f. sensors
   g. write/read real time clocks
+
 - slaves are easily replacable
+
 - here is how I²C looks like
  [[file:./images/screenshot-71.png]]
+
+- If you don't have enough I/O pins, you can use I²C since it't TWI
+
+- I²C requires two *pull up* resistors to let the current flow over *SDL* and *SCL*
+
+[[file:./images/screenshot-102.png]]
+
 
 *** SWD
 
@@ -158,6 +176,31 @@ git pull
 - Master: Starts the data transaction, sends and recieves the data from Slaves
 
 - Master is mostly a Microcontroller (MCU) or FPGA
+
+- SPI interface has 4 different elements;
+
+ [[file:./images/screenshot-99.png]]
+
+ *SCLK* - Serial Clock
+ *MOSI* - Master Out Slave In
+ *MISO* - Master In Slave Out
+ *SS* - Slave Select
+
+- SPI protocol used the *CLOCK*. So it is a synchronized Protocol
+
+- CONS of this protocol is that it needs a GPIO pin per peripheral. While I²C does not. But since I²C uses adresses, slaves need to do a little bit operation to understand if the incoming data is for them or not. SPI is simpler and uses *SS* slave select
+
+- *SS* will select the slave. Basically it says "hey slave open your ear and listen!" while other slaves are not listening and don't know anything about the incoming data
+
+- Below, there is an example for *multiple slaves*
+
+ [[file:./images/screenshot-100.png]]
+
+- SPI is faster than I²C and UART
+
+- requires more pins than UART and I²C
+
+- used in short distances. don't use SPI when distance is more than 1 meter
 
 ** Hardware
 *** DMA
@@ -300,6 +343,14 @@ sensors + actuators + control = robot
 *** Renesas
 
 Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
+*** Full Duplex
+
+When data is *coming* and *going* _at the same time_ using two caples. This concept is most important in communication protocols. For example SPI is Full Duplex thanks to MISO and MOSI data lines
+
+*** Half Duplex
+
+When data flows in one direction and two devices need to wait each other before sending the data. This can be thought as when two people talk on the phone
+
 
 * Platforms
 ** STM32F407VGT6
