@@ -108,3 +108,16 @@
 - Modül'ü büyük çiz eğer;
   + complexity yüksek
   + modülü diğer modüller kullanıyorsa
+
+[[file:./images/screenshot-107.png]]
+** Driver Interface
+
+- Donanım ile doğrudan doğruya iletişim kuran modüllere *Driver* denir
+
+- Driver'ların 5 temel fonksiyonu vardır;
+
+  * *open* (bazen *init*) : driverı başlatır
+  * *close* : driverı kapatır
+  * *read* : cihaz'dan veri okur
+  * *write* : cihaz'a veri yazar
+  * *ioctl* (*ayoktal* diye okunur) : input output
