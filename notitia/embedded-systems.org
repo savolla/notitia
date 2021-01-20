@@ -191,6 +191,28 @@ a MEMS device that can be used as a *Compass*. We have it inside our smart phone
 [[file:./images/screenshot-91.png]]
 a MEMS device that can detect *rotation* and *angular velocity*.
 
+*** Carry Flag :TODO:
+*** Zero Flag
+
+set if result is 0. reset if non-zero
+*** Parity Flag
+
+set to 1 if last operation result is *even*. reset if odd
+*** Interrupt Latency
+
+Time passed before CPU reads the interrupt and finally returns
+
+=HW= -[IRQ]-> =ISR= -[IRQ]-> =CPU=
+
+Interrupt Latency happends here
+
+*** Status Register
+
+a.k.a. Flag register. Contains the information about current state of the Processor. Flag register names in different architectures;
+
+- *x86* : FLAGS
+- *AVR* : SREG
+- *ARM* : APSR /(application program status register)/
 ** Software
 *** Unity
 unit testing for c (especially embedded software)
@@ -238,7 +260,6 @@ translates the assembly language into machine language
 
 The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
 
-
 *** Sensor
 - cameras
 - Depth sensor
@@ -263,32 +284,9 @@ anything that moves
 
 sensors + actuators + control = robot
 
-
-*** Renesas :company:
+*** Renesas
 
 Microcontrollers designer just like ARM. check [[https://en.wikipedia.org/wiki/Renesas_Electronics][this]] for more info
-*** Status Register
-
-a.k.a. Flag register. Contains the information about current state of the Processor. Flag register names in different architectures;
-
-- *x86* : FLAGS
-- *AVR* : SREG
-- *ARM* : APSR /(application program status register)/
-*** Parity Flag
-
-set to 1 if last operation result is *even*. reset if odd
-*** Carry Flag :TODO:
-*** Zero Flag
-
-set if result is 0. reset if non-zero
-*** Interrupt Latency
-
-Time passed before CPU reads the interrupt and finally returns
-
-=HW= -[IRQ]-> =ISR= -[IRQ]-> =CPU=
-
-Interrupt Latency happends here
-
 
 * Platforms
 ** STM32F407VGT6
