@@ -6,6 +6,15 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+- header files include things such as;
+  1. macros
+  2. types
+  3. data structures
+  4. variables
+  5. functions
+
+- in C, the term *interface* is implemented by using *header* files
+
 - all executable statements must be written inside a function. we do it by writing code into *main* funciton. variable assignements can be used outside of the functions
 
 - all user defined header files must be included in *double quotes*
