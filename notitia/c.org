@@ -383,10 +383,12 @@ volatile thermal_sensor_output;
 ** ~size_t~
 
 
-
 ** non-cononical mode
 
 in Linux/Unix systems, when functions like =getchar()= is used, the user will always need to press =Return= key for confirmation. To disable this, we need to put the terminal into *non-cononical mode*
+** ~base.h~
+
+one important test function lives here is called =text_expect_i=. This function takes two values and compares them
 
 * How To
 ** define a struct
