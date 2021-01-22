@@ -189,6 +189,7 @@
 - =surgeon=                cerrah
 
 - =tenet=                  ilke
+- =trivial=                gereksiz
 - =therefore=              bu nedenle
 - =thesaurus=              eş anlamlılar sözlüğü
 - =trailed=                izledi
