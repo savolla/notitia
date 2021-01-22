@@ -6,6 +6,26 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+- Types that don't carry any value can represented with Enums. Here are examples;
+  #+begin_src c
+enum Gender {
+    MALE,
+    FEMALE
+};
+
+enum TrafficLights {
+    RED,
+    YELLOW,
+    GREEN
+};
+
+enum MusicGenres {
+    ROCK,
+    POP,
+    JAZZ
+};
+  #+end_src
+
 - header files include things such as;
   1. macros
   2. types
