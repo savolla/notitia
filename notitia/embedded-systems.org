@@ -236,6 +236,11 @@ Micro Electro-Mechanical Systems. see [[https://www.youtube.com/watch?v=i2U49usF
 Real Time Clock
 *** OTP
 One time Progammable memory
+*** MPU
+- Memory Protection Unit. Provided by many modern Microprocessors.
+- Stack Overflow protection
+- Isolation of discrete tasks
+- if a Processor has it, then it can run RTOS
 *** Accelerometer
 
 [[file:./images/screenshot-89.png]]
