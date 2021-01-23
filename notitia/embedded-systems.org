@@ -112,7 +112,6 @@ git pull
 ** run ARM binaries on x86 Linux
 
 * Concepts
-
 ** Communication Protocol
 *** I²C
 
@@ -308,6 +307,16 @@ The example of ISR is *keyboard handler* function;
 *** SysML
 
 system modelling language inherited from UML
+*** ~sbrk~ and ~brk~
+
+- These are *systemcall*
+- Every Heap memory region have a *boundary* called *break*
+- =sbrk= and =brk= adjust this *brake* value by increasing or decreasing
+- =malloc= function is actually using thsese systemcalls to allocate heap memory
+- =sbrk= syscall returns the address of the *brake*
+- =brk= however returns 0 on success and non-zero on failure
+
+ [[file:./images/screenshot-108.png]]
 
 ** Jargon
 *** Interrupt Storm

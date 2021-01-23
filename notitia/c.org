@@ -400,8 +400,6 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
 
-
-
 * How To
 ** define a struct
 
