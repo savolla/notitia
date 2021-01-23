@@ -76,6 +76,8 @@ git pull
 
 * Facts
 
+- EEPROM and Flash are both *electrically erasable* memories but the fabrication of them are completely different. Flash is *faster* and *cheaper* than EEPROM
+
 - if you see something like "Xtal Ocsillators" in a MCU datasheet as a *peripheral* then it means that you don't need to connect any Cristals to supply timer to this MCU. It can run on its own
 
 - ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
@@ -249,7 +251,7 @@ Micro Electro-Mechanical Systems. see [[https://www.youtube.com/watch?v=i2U49usF
 
 Real Time Clock
 *** OTP
-One time Progammable memory
+One time Progammable memory. The actual ROMs
 *** MPU
 - Memory Protection Unit. Provided by many modern Microprocessors.
 - Stack Overflow protection
@@ -292,6 +294,33 @@ a.k.a. Flag register. Contains the information about current state of the Proces
 - *x86* : FLAGS
 - *AVR* : SREG
 - *ARM* : APSR /(application program status register)/
+*** PIC
+
+- stands for *Peripheral Interface Controller*
+- a microcontroller produced by *Microchip*
+- widely used in 8-bit apllications
+- Here is the Architecture of =PIC16F887=
+
+ [[file:./images/screenshot-110.png]]
+*** MPROM
+
+Type of ROM. Once you program it you can never erase it
+*** EEPROM
+
+- You can erase it.
+- Sometimes datasheets indicate EEPROMs as ROMs. They are actually erasable don't worry
+*** Flash
+
+- Same as EEPROM but faster and cheaper
+- Dominates the Embedded World as *code memory*
+*** FRAM
+
+- Ferroelectric Random Access Memory
+- Expen$ive
+- _Access speed is higher than Flash_
+- Tipically this kind of Memory is found in Texas Instruments Microcontrollers like ~MSP430FR2422~
+- Can be effective in _ultra low power_ applications
+
 ** Software
 *** Unity
 unit testing for c (especially embedded software)
