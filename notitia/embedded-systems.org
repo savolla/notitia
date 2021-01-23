@@ -68,6 +68,8 @@ git pull
 
 * Tips
 
+- when an MCU has more than one SRAM don't let this confuse you. This is a totally a marketing technique. It actually have only one SRAM
+
 - don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead. use tools like *objcopy*
 
 - use *ternary operators* instead of *if-else* in embedded systems. it increases performance
