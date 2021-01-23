@@ -577,3 +577,5 @@ if UNIX variable is not defined, don't compile and spit error "Only Unix is supp
 #endif
 #+end_src
 * Problems & Solutions
+** ~implicit declaration of function $function_name~
+This happens when *missin* includes or function prototype problems

@@ -234,6 +234,8 @@ Micro Electro-Mechanical Systems. see [[https://www.youtube.com/watch?v=i2U49usF
 *** RTC
 
 Real Time Clock
+*** OTP
+One time Progammable memory
 *** Accelerometer
 
 [[file:./images/screenshot-89.png]]
@@ -362,6 +364,12 @@ When data flows in one direction and two devices need to wait each other before 
   [[./images/screenshot-73.png]]
 
 - comes with *ARM Cortex-M4*
+
+- 168 MHz CPU speed
+
+- has DSP
+
+- has MPU (memory protection unit)
 
 - internal peripherals
 
