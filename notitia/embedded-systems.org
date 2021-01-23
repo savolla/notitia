@@ -76,6 +76,8 @@ git pull
 
 * Facts
 
+- if you see something like "Xtal Ocsillators" in a MCU datasheet as a *peripheral* then it means that you don't need to connect any Cristals to supply timer to this MCU. It can run on its own
+
 - ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
 
 - We don't use =main= function with *command line arguments* in embedded. So main function always written with =void= parameter like =int main(void)=
@@ -107,6 +109,20 @@ git pull
 6. Jumping to main
 7. Exiting the program with the return code from main
 *** According to Programming Embedded Systems book
+** Anatomy of a Typical Small MCU
+
+[[file:./images/screenshot-109.png]]
+
+When we power this MCU;
+1. Clock starts to send digital signals to CPU in very high speed. So CPU will start working
+2. CPU starts to read the *Program Memory* from address 0x00000000 to 0xFFFFFFFF
+3. CPU generates the address like 0x00000000 sends this address to *Address Bus*
+4. Program Memory outputs the instruction at 0x00000000 and sends the instruction through *Data Bus*
+5. CPU has some internal mechanisms to decode the instruction. It decodes and executes.
+6. CPU increments the address and reads the next instruction from the Program Memory
+
+While the read of Program Memory, sometimes CPU needs to store some temporary memory to the RAM which here represented as *Data Memory*. I/O is an interface between various sensors, actuators and CPU.
+
 
 * How To
 ** run ARM binaries on x86 Linux
@@ -148,7 +164,6 @@ git pull
 - I²C requires two *pull up* resistors to let the current flow over *SDL* and *SCL*
 
 [[file:./images/screenshot-102.png]]
-
 
 *** SWD
 
