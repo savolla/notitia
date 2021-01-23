@@ -76,7 +76,9 @@ git pull
 
 * Facts
 
-+ ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
+- ARM's business model is based on *only designing* chips _does not manufacture_. Intel on the other hand designs and manufactures their chips
+
+- We don't use =main= function with *command line arguments* in embedded. So main function always written with =void= parameter like =int main(void)=
 
 ** Why using ~malloc()~ or ~new~ is bad in embedded
 
@@ -350,7 +352,6 @@ When data is *coming* and *going* _at the same time_ using two caples. This conc
 *** Half Duplex
 
 When data flows in one direction and two devices need to wait each other before sending the data. This can be thought as when two people talk on the phone
-
 
 * Platforms
 ** STM32F407VGT6

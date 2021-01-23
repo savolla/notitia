@@ -6,6 +6,8 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+- =main= function _always_ needs to return an =int=
+
 - Types that don't carry any value can represented with Enums. Here are examples;
   #+begin_src c
 enum Gender {
@@ -236,6 +238,48 @@ use ~volatile~ for the variables like;
 
 #+end_src
 
+** 3 types of infinite loops
+
+some compilers generate warnings for this.
+#+begin_src c
+while (1) {
+   // code
+}
+#+end_src
+
+works with other languages
+#+begin_src c
+for (;;) {
+   // code
+}
+#+end_src
+
+Assembly nerds way
+#+begin_src c
+LOOP:
+    // code
+    goto LOOP;
+#+end_src
+
+Creative one
+#+begin_src c
+#define ever (;;)
+
+for ever {
+    // code
+}
+#+end_src
+** ~true~ and ~false~ in C
+
+#+begin_src c
+#include <stdbool.h>
+
+int main(void) {
+    bool a = true;
+    return 0;
+}
+#+end_src
+
 * Tips
 
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
@@ -308,58 +352,6 @@ this is the case when you work in just one file. the better solution will be;
 #define MIN(A,B) ( (A) >= (B) ? (B) : (A) )
   #+end_src
 
-* Snippets
-** 3 types of infinite loops
-
-some compilers generate warnings for this.
-#+begin_src c
-while (1) {
-   // code
-}
-#+end_src
-
-works with other languages
-#+begin_src c
-for (;;) {
-   // code
-}
-#+end_src
-
-Assembly nerds way
-#+begin_src c
-LOOP:
-    // code
-    goto LOOP;
-#+end_src
-
-Creative one
-#+begin_src c
-#define ever (;;)
-
-for ever {
-    // code
-}
-#+end_src
-** ~#error~ macro usage
-
-if UNIX variable is not defined, don't compile and spit error "Only Unix is supported"
-
-#+begin_src
-#ifndef UNIX
-#error "Only Unix is supported"
-#endif
-#+end_src
-** ~true~ and ~false~ in C
-
-#+begin_src c
-#include <stdbool.h>
-
-int main(void) {
-    bool a = true;
-    return 0;
-}
-#+end_src
-
 * Concept
 ** Include Guards
 - prevent multiple inclusion of same header file
@@ -401,14 +393,14 @@ it is a variable that can change *unexpectedly*. in C, volatile variables are de
 volatile thermal_sensor_output;
 #+end_src
 ** ~size_t~
-
-
 ** non-cononical mode
 
 in Linux/Unix systems, when functions like =getchar()= is used, the user will always need to press =Return= key for confirmation. To disable this, we need to put the terminal into *non-cononical mode*
 ** ~base.h~
 
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
+
+
 
 * How To
 ** define a struct
@@ -575,4 +567,13 @@ void setCononicalMode() {
 }
 #+end_src
 
+** ~#error~ macro usage
+
+if UNIX variable is not defined, don't compile and spit error "Only Unix is supported"
+
+#+begin_src
+#ifndef UNIX
+#error "Only Unix is supported"
+#endif
+#+end_src
 * Problems & Solutions
