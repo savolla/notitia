@@ -42,6 +42,7 @@ sudo pacman -S gnu-arm-eabi-gdb
 
 #+begin_src sh
 sudo pacman -S gnu-arm-eabi-gcc
+pacaur -S microchip-mplabxc8-bin
 #+end_src
 
 *** rust
@@ -79,8 +80,6 @@ git pull
 - don't use SPI when distance is more than 1 meter
 
 * Facts
-
-
 
 - Arm Cortex-M4 has *Thumb-2* ISA. Thumb-2 is a collection of 16-bit and 32-bit instructions
 
@@ -141,6 +140,13 @@ While the read of Program Memory, sometimes CPU needs to store some temporary me
 
 * How To
 ** run ARM binaries on x86 Linux
+** how to specify a pointer to some address
+
+#+begin_src c
+#define ADDRESS_OF_TEMPERATURE_SENSOR 0xDEADBEAF
+
+char *temeratureSensor = (char *)ADDRESS_OF_TEMPERATURE_SENSOR
+#+end_src
 
 * Concepts
 ** Communication Protocol
@@ -374,6 +380,8 @@ system modelling language inherited from UML
 - =brk= however returns 0 on success and non-zero on failure
 
  [[file:./images/screenshot-108.png]]
+*** xc8
+compiler for 8-bit PIC microcontrollers. supports PIC10/12/16/18 devices
 
 ** Jargon
 *** Interrupt Storm
