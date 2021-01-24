@@ -68,6 +68,8 @@ git pull
 
 * Tips
 
+- *Reset Handler* function should copy the *.data* section from *code memory* to SRAM
+
 - when an MCU has more than one SRAM don't let this confuse you. This is a totally a marketing technique. It actually have only one SRAM
 
 - don't give the *elf* executable to the customer. because there are tools like elf analizers which can decompile all the code to the C language and customers will know everything about the software implementation. give them .bin or .hex file instead. use tools like *objcopy*
@@ -77,6 +79,8 @@ git pull
 - don't use SPI when distance is more than 1 meter
 
 * Facts
+
+- Arm Cortex-M4 has *Thumb-2* ISA. Thumb-2 is a collection of 16-bit and 32-bit instructions
 
 - EEPROM and Flash are both *electrically erasable* memories but the fabrication of them are completely different. Flash is *faster* and *cheaper* than EEPROM
 
@@ -378,7 +382,7 @@ translates the assembly language into machine language
 
 *** ISA
 
-The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/.
+The assembly language must support a different set of machine instructions. The design of the machine language *encoding* is called the /instruction set architecture (ISA)/. it's actually can be thought as *the flavor of assembly* like x86, Thumb etc
 
 *** Sensor
 - cameras
