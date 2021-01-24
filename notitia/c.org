@@ -7,6 +7,10 @@
 
 * Facts
 
+- unary *postfix* =++= and =--= operands increment/decrement and then _update_ the operand: example =x++=
+
+- unary *prefix* =++= and =--= operands increment/decrement but _does not _update_ the operand: example =++x=
+
 - pointers occupy 8 bytes in 64-bit machines, 4 bytes in 32-bit machines and so on. it doesn't matter if we specify different types for pointer such as =char*= =void*= or =unsigned long long int*=. it occupies always the same size.
 
 - IEEE-754 is a standard for representing and modifying floating point numbers
@@ -300,7 +304,6 @@ int main(void) {
   [[file:./images/screenshot-112.png]]
 
 * Tips
-
 
 - use *float* data type when representing *too small numbers*, *too big numbers* and *deciaml numbers*
 
