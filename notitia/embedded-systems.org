@@ -163,15 +163,21 @@ When we power this MCU;
 
 While the read of Program Memory, sometimes CPU needs to store some temporary memory to the RAM which here represented as *Data Memory*. I/O is an interface between various sensors, actuators and CPU.
 
+** Applications of Bitwise Operations
+
+in embedded C program, most of the time you will be doing;
+
+- *testing* of bits (&)
+- *setting* of bits (|)
+- *clearing* of bits (~ and &)
+- *toggling* of bits (^)
 
 * How To
 ** run ARM binaries on x86 Linux
 ** how to specify a pointer to some address
 
 #+begin_src c
-#define ADDRESS_OF_TEMPERATURE_SENSOR 0xDEADBEAF
-
-char *temeratureSensor = (char *)ADDRESS_OF_TEMPERATURE_SENSOR
+uint32_t *p = (uint32_t *)0xFFFF0000;
 #+end_src
 
 * Concepts
@@ -406,8 +412,6 @@ system modelling language inherited from UML
 - =brk= however returns 0 on success and non-zero on failure
 
  [[file:./images/screenshot-108.png]]
-*** xc8
-compiler for 8-bit PIC microcontrollers. supports PIC10/12/16/18 devices
 
 ** Jargon
 *** Interrupt Storm
@@ -459,6 +463,13 @@ When data is *coming* and *going* _at the same time_ using two caples. This conc
 *** Half Duplex
 
 When data flows in one direction and two devices need to wait each other before sending the data. This can be thought as when two people talk on the phone
+*** Bit Masking
+
+it's a binary manipulation technique where we test some specific bits of a bit stream. To test the specific bits we create a *binary pattern* called *Bit Mask* and then we =&= this pattern with the actual bit stream
+
+[[file:./images/screenshot-115.png]]
+
+We can also do other operations like setting bits, toggling etc
 
 * Platforms
 ** STM32F407VGT6
