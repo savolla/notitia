@@ -80,6 +80,8 @@ git pull
 
 * Facts
 
+
+
 - Arm Cortex-M4 has *Thumb-2* ISA. Thumb-2 is a collection of 16-bit and 32-bit instructions
 
 - EEPROM and Flash are both *electrically erasable* memories but the fabrication of them are completely different. Flash is *faster* and *cheaper* than EEPROM
@@ -101,6 +103,11 @@ git pull
 4. Dynamic memory allocation makes it very difficult to debug
 
 5. Cause *Memory Leaks*
+
+** Pointer use cases in embedded;
+- configure the peripheral register addresses
+- Read/Write into peripheral data register
+- Read/Write into SRAM/FLASH locations
 
 ** what happens before main()
 *** According to Making Embedded Systems book

@@ -71,6 +71,11 @@ void printArray(int *arr, size_t size) {
 4. =%llu= long long unsigned integer
 5. =%llx= long long integer with hexadecimal representation
 6. =%c= char data
+7. =%lf= double
+8. =%f= float
+9. =%0.5f= 5 digits after precision
+10. =%e= scientific notation
+11. =%0.8e= 8 digits after the precision scientific notation
 ** struct's attribute assignment
 you can't assign values to struct attributes. for example the following code will spit out an error
   #+begin_src c
@@ -585,9 +590,10 @@ too big and too small numbers could take too much memory space. So instead of st
 [[file:./images/screenshot-111.png]]
 
 #+begin_src c
-float -1.60217662 x 10^-19 // charge of an electron
-// distance between earth and andromeda galaxy in km
+double electronCharge = -1.60217662e-19; // charge of an electron
+double distance = 2.3651826e+19; // distance between earth and andromeda galaxy in km
 #+end_src
+
 * Problems & Solutions
 ** ~implicit declaration of function $function_name~
 This happens when *missin* includes or function prototype problems
