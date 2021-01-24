@@ -23,6 +23,33 @@ According to the Professor at ODTU who gives courses on embedded systems, he rec
 
 this is my embedded development container project. under this header I collect necessary tools for my container
 
+** capabilities
+*** supported MCUs
+Supported by =sdcc=
+**** Intel MCS51
+- 8031
+- 8032
+- 8051
+- 8052
+**** Zilog Z80
+- z80
+- z180
+- gbz80
+- Rabbit 2000/3000
+- Rabbit 3000A
+- TLCS-90
+**** HC08
+- hc08
+- s08
+**** Padauk
+- pdk14
+- pdk15
+**** Microchip
+- PIC16
+- PIC18
+**** Padauk
+- pdk13
+
 ** install these
 *** serial com
 
@@ -41,8 +68,7 @@ sudo pacman -S gnu-arm-eabi-gdb
 *** cross-compilers
 
 #+begin_src sh
-sudo pacman -S gnu-arm-eabi-gcc
-pacaur -S microchip-mplabxc8-bin
+sudo pacman -S gnu-arm-eabi-gcc sdcc
 #+end_src
 
 *** rust

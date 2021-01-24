@@ -301,6 +301,7 @@ int main(void) {
 
 * Tips
 
+
 - use *float* data type when representing *too small numbers*, *too big numbers* and *deciaml numbers*
 
 - you can always use online IDE from [[https://www.onlinegdb.com/][here]]. this makes things easy
@@ -372,6 +373,11 @@ this is the case when you work in just one file. the better solution will be;
   #+begin_src c
 #define MIN(A,B) ( (A) >= (B) ? (B) : (A) )
   #+end_src
+
+** useful =stdint.h= aliases;
+- =uintmax_t= : type for the largest _unsigned_ integer
+- =intmax_t=  : type for the largest _signed_ integer
+- =uintptr_t= : useful if you are unsure about the size of the pointer or when you are coding for unknown architecture like PIC where you are not sure about size of the pointer you can use this
 
 * Concept
 ** Include Guards
