@@ -107,6 +107,10 @@ git pull
 
 * Facts
 
+- in STM32F407VGT6 APB bus is slower than AHB bus
+
+- by default the most of the *peripherals* of ST MCUs are not active. we have to activate them in code before using them. To activate a peripheral we only need to enble the *clock* for them
+
 - Memory Map of ARM Cortex Mx processor
   [[file:./images/screenshot-117.png]]
 
@@ -181,6 +185,21 @@ in embedded C program, most of the time you will be doing;
 - *setting* of bits (|)
 - *clearing* of bits (~ and &)
 - *toggling* of bits (^)
+** Operation Modes of GPIOs in STM32F407VGT6
+
+In STM32F407VGT6, GPIO pins have different operation modes. They are not primitive as Arduino GPIOs where you can only set HIGH and LOW..
+
+1. Mode
+2. Output Type
+3. Output Speed
+4. pull-up/pull-down
+5. Input                   : read from external peripheral like sensor data
+6. Output                  : turn on or of a led
+7. Bit Set/Reset
+8. Configuration Lock
+9. Function Low
+10. Function High
+
 
 * How To
 ** run ARM binaries on x86 Linux
@@ -212,6 +231,13 @@ uint32_t bitwiseToggle( uint32_t data, uint32_t bitMask ) {
     return (data ^ bitMask);
 }
 #+end_src
+** Procedure to turn on the LED on STM32F407VGT6
+
+1. Identify the GPIO ~port~ used to connect the LED /(GPIOD)/
+2. Identify the GPIO ~pin~ where the LED is connected /(12)/
+3. ~Activate~ the GPIOD peripheral /(Enable the Clock)/
+4. Configure the GPIO pin mode as ~output~
+5. ~Write~ to the GPIO ping
 
 * Concepts
 ** Communication Protocol
@@ -407,7 +433,11 @@ Type of ROM. Once you program it you can never erase it
 *** AHB
 
 "Advanced High Performance Bus" this is a specific Address Bus which used in ARM CPUs. This bus connects CPU, Flash, RAM and other peripherals
+*** RCC
 
+STM32F407VGT6 component. Stands for Reset Clock Control. This is an engine that controls clocks of CPU, peripherals, different Busses, Memories. If you want to enable a peripheral then you first need to activate the clock of that peripheral using RCC
+
+the ~base address~ of RCC is =0x4002 3800= to =0x4002 3BFF=
 ** Software
 *** Unity
 unit testing for c (especially embedded software)
@@ -510,6 +540,7 @@ We can also do other operations like setting bits, toggling etc
 * Platforms
 ** STM32F407VGT6
 
+*** Facts
 - comes with it's own debugger called *ST-LINK/V2-A*
 
 - the overview of the platform:
@@ -530,6 +561,15 @@ We can also do other operations like setting bits, toggling etc
   3. DAC jack
   4. 4 LEDs
   5. 2 push buttons
+
+*** Base Addresses
+
+| Peripheral       | Base Address | Last Address | Mask Value         |
+|------------------+--------------+--------------+--------------------|
+| RCC              | 0x4002 3800  | 0x4002 3BFF  |                    |
+| GPIOD            | 0x4002 0C00  | 0x4002 0FFF  |                    |
+| on board RED led | 0x4002 0C14  |              | u16int_t (1 << 12) |
+
 * Problems & Solutions
 * Tutorials
 ** Use Rust for Embedded Development
