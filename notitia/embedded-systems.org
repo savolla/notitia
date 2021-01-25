@@ -107,6 +107,16 @@ git pull
 
 * Facts
 
+- Memory Map of ARM Cortex Mx processor
+  [[file:./images/screenshot-117.png]]
+
+- Most of the time the *Memory Map* is mentioned in the *Reference Manual* of the MCU
+
+- STM32Fx based MCUs have a concept called *Ports*. Each port has 16 pins where you can connect external peripherals such as LED, Display, button, Bluetotth Transciever, EEPROM, joystick, keypad etc. for example in STM32F407VGT6 there are A,B,C,D,E ports
+
+- in STM32Fx MCUs each I/O Port has it's own CPU peripheral hardware inside the MCU. This hardware has registers which can be read and write into. In this way we can read and write to external peripherals that we connect to GPIOs
+  [[file:./images/screenshot-116.png]]
+
 - Arm Cortex-M4 has *Thumb-2* ISA. Thumb-2 is a collection of 16-bit and 32-bit instructions
 
 - EEPROM and Flash are both *electrically erasable* memories but the fabrication of them are completely different. Flash is *faster* and *cheaper* than EEPROM
@@ -178,6 +188,29 @@ in embedded C program, most of the time you will be doing;
 
 #+begin_src c
 uint32_t *p = (uint32_t *)0xFFFF0000;
+#+end_src
+** use bitwise operators
+
+#+begin_src c
+// Test
+uint32_t bitwiseTest( uint32_t data, uint32_t bitMask ) {
+    return (data & bitMask);
+}
+
+// Set
+uint32_t bitwiseSet( uint32_t data, uint32_t bitMask ) {
+    return (data | bitMask);
+}
+
+// Clear
+uint32_t bitwiseClear( uint32_t data, uint32_t bitMask ) {
+    return (data & ~(bitMask));
+}
+
+// Toggle
+uint32_t bitwiseToggle( uint32_t data, uint32_t bitMask ) {
+    return (data ^ bitMask);
+}
 #+end_src
 
 * Concepts
@@ -371,6 +404,9 @@ Type of ROM. Once you program it you can never erase it
 - _Access speed is higher than Flash_
 - Tipically this kind of Memory is found in Texas Instruments Microcontrollers like ~MSP430FR2422~
 - Can be effective in _ultra low power_ applications
+*** AHB
+
+"Advanced High Performance Bus" this is a specific Address Bus which used in ARM CPUs. This bus connects CPU, Flash, RAM and other peripherals
 
 ** Software
 *** Unity
