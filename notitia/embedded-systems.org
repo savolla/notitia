@@ -576,6 +576,7 @@ Register that Enables RCC that connected to AHB bus. Address is =0x40023830=
   * =01= : Output Mode
   * =10= : Alternate Function Mode
   * =11= : Analog Mode
+
 **** GPIOx_ODR
 
 - Output Data Register
@@ -584,12 +585,45 @@ Register that Enables RCC that connected to AHB bus. Address is =0x40023830=
 *** How To
 **** turn on the LED on STM32F407VGT6
 
-***** Identify the GPIO ~port~ used to connect the LED /(GPIOD)/
-***** Identify the GPIO ~pin~ where the LED is connected /(12)/
-***** ~Activate~ the GPIOD peripheral /(Enable the Clock)/
+***** Identify the GPIO ~port~ used to connect the LED
+
+Use *Data Sheet* to do this. Open up the data sheet and find the Circuit diagram. Find The LED you want to turn on and find out it's GPIO port
+
+***** Identify the GPIO ~pin~ where the LED is connected
+***** ~Activate~ the GPIOD peripheral
+
+Enable the Clock for the GPIO port. Use =RCC_AHB1ENR= register
+
 ***** Configure the GPIO pin mode as ~output~
+
+Set the Mode of the GPIO port to *Output* by modifying =GPIOx_MODER= register
+
 ***** ~Write~ to the GPIO ping
 
+***** Code
+
+#+begin_src c
+#inclde <stdint.h>
+
+#define CLOCK 0x40023830
+#define GPIOD_MODE_REGISTER 0x40020C00
+#define GPIOD_OUTPUT_REGISTER 0x40020C14
+
+int main(void) {
+
+    // create pointers
+    uint32_t *clock = (uint32_t*)GPIOD_CLOCK;
+    uint32_t *gpiod_mode_register = (uint32_t*)GPIOD_MODE_REGISTER;
+    uint32_t *gpiod_output_register = (uint32_t*)GPIOD_OUTPUT_REGISTER;
+
+    // set bits
+    ,*clock |= (1 < 3); // set 3rd bit of RCC_AHB1ENR to enable GPIOD
+    ,*gpiod_mode_register |= (1 < 23); // set 23th bit to set output of pin 12
+    ,*gpiod_output_register |= (1 < 12) // set 12th GPIO pin to 3.3V
+
+    return 0;
+}
+#+end_src
 
 
 

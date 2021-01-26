@@ -7,6 +7,8 @@
 
 * Facts
 
+- =0b10= represents binary value =0010=
+
 - =!= _not operator_ and =~= _negate operator_ are not the same thing!
 
 - pointers occupy 8 bytes in 64-bit machines, 4 bytes in 32-bit machines and so on. it doesn't matter if we specify different types for pointer such as =char*= =void*= or =unsigned long long int*=. it occupies always the same size.
@@ -315,6 +317,21 @@ p++;
 - the new value of p is =0xFFFF0004=
 
 * Tips
+
+- don't mix the following expressions;
+
+  #+begin_src c
+  ( 1 < 5 ); // this is boolean expression and outputs 0
+  ( 1 << 5 ); // this one is left shift and outputs 0b100000
+  #+end_src
+
+- use binary representation of a number when doing left or right shift operations. it makes things easier
+
+  #+begin_src c
+uint b = 0;
+b |= ( 0b111 < 5 ); // use this instead of expression below
+// b |= ( 7 < 5 )
+  #+end_src
 
 - use *float* data type when representing *too small numbers*, *too big numbers* and *deciaml numbers*
 
