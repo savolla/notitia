@@ -200,7 +200,6 @@ In STM32F407VGT6, GPIO pins have different operation modes. They are not primiti
 9. Function Low
 10. Function High
 
-
 * How To
 ** run ARM binaries on x86 Linux
 ** how to specify a pointer to some address
@@ -231,6 +230,19 @@ uint32_t bitwiseToggle( uint32_t data, uint32_t bitMask ) {
     return (data ^ bitMask);
 }
 #+end_src
+** delay between executions
+
+There are two types of delay mechanisms in Embedded; *Software Delay* and *Hardware Delay*. Software delay is implemented by using empty *loops* and Hardware Delays use hardware peripherals like *timers*. Hardware delays are more accurate and performance efficient while software delays are not accurate and consume too much energy
+
+The example of software delay
+#+begin_src c
+#include <stdint.h>
+
+for ( uintmax_t i = 0; i < 10000000; i++) {}
+#+end_src
+
+To use Hardware delay we need to activate timer peripherals and use them. Which is more work in code
+
 * Concepts
 ** Communication Protocol
 *** I²C
@@ -528,6 +540,7 @@ it's a binary manipulation technique where we test some specific bits of a bit s
 [[file:./images/screenshot-115.png]]
 
 We can also do other operations like setting bits, toggling etc
+*** Bit Extraction
 
 * Platforms
 ** STM32F407VGT6

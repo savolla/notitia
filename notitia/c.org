@@ -7,6 +7,14 @@
 
 * Facts
 
+- you can change the value of =const= variables by using a pointer
+
+- the following expressions are same;
+  #+begin_src c
+const int x = 10;
+int const x = 10;
+  #+end_src
+
 - =0b10= represents binary value =0010=
 
 - =!= _not operator_ and =~= _negate operator_ are not the same thing!
@@ -246,6 +254,8 @@ use ~volatile~ for the variables like;
 - Peripheral Registers such as *Sensors*
 - Non-Stack variables like ISR signals
 - Variables that _shared by multiple tasks_ in multi-threaded programming
+** when to use ~const~
+
 ** void pointers can be used for generic programming
 
 #+begin_src c
@@ -317,6 +327,12 @@ p++;
 - the new value of p is =0xFFFF0004=
 
 * Tips
+
+- when using *type qualifiers* in C, use this convention because it is easyer to read.
+
+  #+begin_src c
+int const x = 10; // READ: x is a constant value of type int
+  #+end_src
 
 - when setting spesific bits of a register don't use shift left or right operations. Because some bit vales might be used by other processes and you just reset their values without permission.
 
