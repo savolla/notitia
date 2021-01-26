@@ -231,14 +231,6 @@ uint32_t bitwiseToggle( uint32_t data, uint32_t bitMask ) {
     return (data ^ bitMask);
 }
 #+end_src
-** Procedure to turn on the LED on STM32F407VGT6
-
-1. Identify the GPIO ~port~ used to connect the LED /(GPIOD)/
-2. Identify the GPIO ~pin~ where the LED is connected /(12)/
-3. ~Activate~ the GPIOD peripheral /(Enable the Clock)/
-4. Configure the GPIO pin mode as ~output~
-5. ~Write~ to the GPIO ping
-
 * Concepts
 ** Communication Protocol
 *** I²C
@@ -541,34 +533,65 @@ We can also do other operations like setting bits, toggling etc
 ** STM32F407VGT6
 
 *** Facts
-- comes with it's own debugger called *ST-LINK/V2-A*
 
 - the overview of the platform:
   [[./images/screenshot-73.png]]
 
+**** features
+- comes with it's own debugger called *ST-LINK/V2-A*
 - comes with *ARM Cortex-M4*
-
 - 168 MHz CPU speed
-
 - has DSP
-
 - has MPU (memory protection unit)
 
-- internal peripherals
+**** internal peripherals
 
   1. two 3-axis accelometers
   2. one microphone
   3. DAC jack
   4. 4 LEDs
   5. 2 push buttons
-
 *** Base Addresses
 
-| Peripheral       | Base Address | Last Address | Mask Value         |
-|------------------+--------------+--------------+--------------------|
-| RCC              | 0x4002 3800  | 0x4002 3BFF  |                    |
-| GPIOD            | 0x4002 0C00  | 0x4002 0FFF  |                    |
-| on board RED led | 0x4002 0C14  |              | u16int_t (1 << 12) |
+| Peripheral              | Base Address | Last Address | Mask Value         |
+|-------------------------+--------------+--------------+--------------------|
+| RCC_AHB1ENR             | 0x4002 3830  | 0x4002 3BFF  |                    |
+| GPIOD                   | 0x4002 0C00  | 0x4002 0FFF  |                    |
+| GPIOx_MODER (for GPIOD) | 0x4002 0C00  |              |                    |
+| GPIOx_ODR               | 0x4002 0C14  |              | u16int_t (1 << 12) |
+
+*** Concept
+**** RCC_AHB1ENR
+
+Register that Enables RCC that connected to AHB bus. Address is =0x40023830=
+
+**** GPIOx_MODER
+
+- GPIO Mode Registe
+- Configures the _operation mode_ of GPIO pins.
+- it's a 32-bit register which reserves 2 bits for each GPIO pin
+- We set those 2 bits to a specific value to indicate _operation mode_;
+
+  * =00= : Input Mode
+  * =01= : Output Mode
+  * =10= : Alternate Function Mode
+  * =11= : Analog Mode
+**** GPIOx_ODR
+
+- Output Data Register
+- 16-bit register where every bit is a GPIO pin
+- Here you can set a bit to =1= and this will output 3.3V from a specific GPIO pin
+*** How To
+**** turn on the LED on STM32F407VGT6
+
+***** Identify the GPIO ~port~ used to connect the LED /(GPIOD)/
+***** Identify the GPIO ~pin~ where the LED is connected /(12)/
+***** ~Activate~ the GPIOD peripheral /(Enable the Clock)/
+***** Configure the GPIO pin mode as ~output~
+***** ~Write~ to the GPIO ping
+
+
+
 
 * Problems & Solutions
 * Tutorials
