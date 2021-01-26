@@ -647,4 +647,4 @@ double distance = 2.3651826e+19; // distance between earth and andromeda galaxy 
 
 * Problems & Solutions
 ** ~implicit declaration of function $function_name~
-This happens when *missin* includes or function prototype problems
+This happens when *missing* includes or function prototype problems
