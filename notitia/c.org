@@ -6,8 +6,9 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+- =const= doen not mean that the value never changes. its only programming safety feature to ensure that the programmer shouldn't try to modify the value
 
-- you can change the value of =const= variables by using a pointer
+- you can change the value of =const= variables by using a pointer. But not the *global const* variables
 
 - the following expressions are same;
   #+begin_src c
@@ -659,6 +660,34 @@ too big and too small numbers could take too much memory space. So instead of st
 #+begin_src c
 double electronCharge = -1.60217662e-19; // charge of an electron
 double distance = 2.3651826e+19; // distance between earth and andromeda galaxy in km
+#+end_src
+** change a ~const~ variable's value
+
+We can only change local =const= values with a pointer
+
+#+begin_src c
+int main(void) {
+
+    uint32_t const CONSTANT = 1;
+    uint32_t *pointerToCONSTANT = (uint32_t*)&CONSTANT;
+    *pointerToCONSTANT = 33;
+
+    return 0;
+}
+#+end_src
+
+But cannot change the *global constants* because they are placed in =.rodata= section. The following code _will not work_
+
+#+begin_src c
+uint32_t const CONSTANT = 1;
+
+int main(void) {
+
+    uint32_t *pointerToCONSTANT = (uint32_t*)&CONSTANT;
+    ,*pointerToCONSTANT = 33;
+
+    return 0;
+}
 #+end_src
 
 * Problems & Solutions
