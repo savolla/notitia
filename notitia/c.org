@@ -6,7 +6,12 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
-- =const= doen not mean that the value never changes. its only programming safety feature to ensure that the programmer shouldn't try to modify the value
+- benefits of using =const= on function arguments;
+  1. increases ~readability~
+  2. more ~security~
+  3. compiler generates more ~optimized~ code
+
+- =const= does not mean that the value never changes. its only programming safety feature to ensure that the programmer shouldn't try to modify the value
 
 - you can change the value of =const= variables by using a pointer. But not the *global const* variables
 
@@ -257,6 +262,15 @@ use ~volatile~ for the variables like;
 - Variables that _shared by multiple tasks_ in multi-threaded programming
 ** when to use ~const~
 
+use ~const~ for the variables like;
+
+- mathematical constants such as $\pi$, $e$
+- guarding function argument data with ~CDMP~, ~MDCP~ and ~CDCP~ for secure code
+
+  (CDMP : Constant Data Modifieble Pointer)
+  (MDCP : Modifieble Data Constant Pointer)
+  (CDCP : Constant Data Constant Pointer)
+
 ** void pointers can be used for generic programming
 
 #+begin_src c
@@ -326,8 +340,104 @@ p++;
 #+end_src
 
 - the new value of p is =0xFFFF0004=
+** importance of ~const~
+
+usage of =const= in _function prototypes_ is a _defencive programming_ technique. it ensures the data that given by the user or another function should not be changed. for example;
+
+1. =copy source=. In cases like =copy= operations, the data that is trying to be copyed should not be changed. This is why we need to use =const=
+
+   #+begin_src c
+void copy( uint32_t const *src, uint32_t *dst );
+   #+end_src
+
+2. =file paths=.
+
+   #+begin_src c
+int open( const char *file_path, int open_flag );
+   #+end_src
+
+** constant pointers
+
+*** MDCP
+
+(~Modifiable~ data and ~constant~ pointer)
+
+- can't change the *pointed address*
+- can change the *value inside* that address
+
+**** code example
+
+  #+begin_src c
+// "p data is the constant pointer that points to type uint32_t"
+uint32_t *const p = (uint32_t *)0x40000000;
+  #+end_src
+
+**** Allowed Operations
+
+  #+begin_src c
+uint32_t *const p = (uint32_t *)0x40000000;
+,*p = 40; // can change the value inside 0x40000000
+,*p = 10;
+  #+end_src
+
+**** Not Allowed Operations
+
+  #+begin_src c
+uint32_t *const p = (uint32_t *)0x40000000; // once defined
+p = (uint32_t)0x80000000; // This is not allowed
+  #+end_src
+**** Use Case
+
+The following function can change the data inside the addres but can't change the address itself. This is a safety guard to prevent chaos in sensitive applications like money transfer etc
+
+#+begin_src c
+void updateUserData( uint8_t *const pUserAge, uint8_t *const pUserSalary ) {
+    // code
+}
+#+end_src
+
+*** CDMP
+~constant~ data and ~modifiable~ pointer
+
+*** CDCP
+
+~constant~ data and ~constant~ pointer
+
+- can't change the *pointed address*
+- can't change the *value inside* that address
+
+**** code example
+
+  #+begin_src c
+// "p is a constant pointer that points to constant data "
+uint32_t const *const p = (uint32_t *)0x40000000;
+  #+end_src
+
+**** Allowed Operations
+
+You can only read that is present by the pointer
+
+**** Not Allowed Operations
+
+  #+begin_src c
+uint32_t const *const p = (uint32_t *)0x40000000;
+p = (uint32_t)0x80000000; // This is not allowed
+*p = 45; // This is also now allowed
+  #+end_src
+
+**** Use Case
+
+The usage of CDCP is rare. This can be used for some system spesific appications like reading Status Register from the hardware. Accidental modification made to Status Register may cause system failure. Also the address of Status Register is constant. So we pass antother =const= here as well
+
+#+begin_src c
+void readStatusRegister( uint8_t const *const pStatusRegister ) {
+    // code
+}
+#+end_src
 
 * Tips
+
+- use =const= keyword generously whenever you find the chance to use it.
 
 - when using *type qualifiers* in C, use this convention because it is easyer to read.
 
