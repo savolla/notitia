@@ -318,6 +318,8 @@ p++;
 
 * Tips
 
+- when setting spesific bits of a register don't use shift left or right operations. Because some bit vales might be used by other processes and you just reset their values without permission.
+
 - don't mix the following expressions;
 
   #+begin_src c
