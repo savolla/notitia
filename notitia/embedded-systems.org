@@ -546,6 +546,7 @@ We can also do other operations like setting bits, toggling etc
 ** STM32F407VGT6
 
 *** Facts
+- *Mode Registers* are always placed in =0x00=
 
 - the overview of the platform:
   [[./images/screenshot-73.png]]
