@@ -7,6 +7,10 @@
 
 * Facts
 
+- =const= is not the opposite of =volatile=. Some people think it is. This is not true
+
+- =const= guards changes made by the programmer, =volatile= guards changes made by the compiler
+
 - there are 5 options for compiler optimization;
   1. =-O0= : No optimization, debugging friendly
   2. =-O1= : Generates optimized code. Not debugging friendly
@@ -263,12 +267,13 @@ p = &a; // same story
   #+end_src
 ** when to use ~volatile~
 
-use ~volatile~ for the variables like;
+use ~volatile~ for the variables that can _change unexpectedly_. A variable can be changed by the hardware, by the software and another thread
 
-- Hardware Registers (CPU, Memory-mapped peripheral registers, GPIO pins)
+- Hardware Registers (CPU, Memory-mapped peripheral registers, GPIO registers)
 - Peripheral Registers such as *Sensors*
-- Global variables that share data between main code and ISR code
+- Global variables (that share data between main code and ISR code)
 - Variables that _shared by multiple tasks_ in multi-threaded programming (RTOS)
+- software delay counters must be volatile
 
 ** when to use ~const~
 
@@ -456,6 +461,8 @@ Use case:
 Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
 
 * Tips
+
+- when doing *software delay* make sure you define loop counter =i= _volatile_. Because when you optimize the code with =-O3= flag, compiler will remove the delay line. Compiler thinks that this will slow down the application so it removes that delay
 
 - use =const= keyword generously whenever you find the chance to use it.
 
