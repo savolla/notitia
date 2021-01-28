@@ -204,7 +204,7 @@ In STM32F407VGT6, GPIO pins have different operation modes. They are not primiti
 ** ~const~ and ~volatile~
 :PROPERTIES:
 :EXPORT_FILE_NAME: const-and-volatile
-:EXPORT_TITLE: Good Old Friends ~const~ & ~volatile~
+:EXPORT_TITLE: =const= & =volatile=
 :HUGO_BASE_DIR: ~/txt/blog/
 :HUGO_SECTION: en/posts
 :EXPORT_AUTHOR: savolla
@@ -268,11 +268,13 @@ foo is a *constant* pointer of *constant* integer value
 
 *** volatile
 
-- No optimization, value inside =foo= can change *unexpectedly* by another sources like other functions, threads or hardware interrupts
+- No optimization, value inside =foo= can change *unexpectedly* by another sources like other functions, threads or hardware interrupts and by the programmer itself
 
   #+begin_src c
 int volatile foo;
   #+end_src
+
+- Great use case for *Memory Mapped Registers* like GPIO ports, sensors, onboard LEDs etc. Compiler optimization is disabled for =foo=
 
   #+begin_src c
 int volatile *foo;
@@ -290,7 +292,7 @@ int volatile *volatile foo;
 
 *** const & volatile
 
-- *pointed address* can't be changed. Value inside that address is *volatile*. That means compiler optimization not allowed for =foo= and data can be changed by programmer, other functions, other threads and hardware interrupts
+- *pointed address* can't be changed. Value inside that address is *volatile*. That means compiler optimization is not allowed for =foo= and data can be changed by programmer, other functions, other threads and hardware interrupts
 
 #+begin_src c
 int volatile *const foo;
