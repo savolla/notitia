@@ -3,7 +3,7 @@
 #+EMAIL: savolla@protonmail.com
 #+DATE: Fri Jan  8 22:02:29 2021
 #+STARTUP: overview
-#+OPTIONS: Knowledge collected for Embedded Systems
+#+DESCRIPTION: Knowledge collected for Embedded Systems
 
 * TODO Articles
 
@@ -199,6 +199,66 @@ In STM32F407VGT6, GPIO pins have different operation modes. They are not primiti
 8. Configuration Lock
 9. Function Low
 10. Function High
+** ~const~ and ~volatile~
+
+*** const
+
+- =const= in the following code indicates that =foo= is *read-only* value. And can't be changed by programmer and other functions or threads
+
+  #+begin_src c
+int const foo;
+  #+end_src
+
+  here is how to read the upper code;
+  #+begin_quote
+foo is a constant integer value
+  #+end_quote
+
+- This is the example of *constant pointer*. This means that the pointed address is fixed and cannot be changed but the value in that address can be changed
+
+  #+begin_src c
+int *const foo;
+  #+end_src
+
+  |                  | Can Be Changed |
+  |------------------+----------------|
+  | Value at Address | Yes            |
+  | Pointed Address  | No             |
+
+  here is how to read the upper code;
+  #+begin_quote
+foo is a constant pointer which points to integer value
+  #+end_quote
+
+- =foo= value is fixed but the *pointed address* can be changed
+
+  #+begin_src c
+int const *foo;
+  #+end_src
+
+  |                  | Can Be Changed |
+  |------------------+----------------|
+  | Value at Address | No             |
+  | Pointed Address  | Yes            |
+
+  here is how to read the upper code;
+  #+begin_quote
+foo is a pointer which points to constant integer value
+  #+end_quote
+
+- Both value and pointer are fixed. Can't be changed by programmer or other sources. This is now truly *read-only* value by address and value
+
+  #+begin_src c
+int const *const foo;
+  #+end_src
+
+  here is how to read the upper code;
+  #+begin_quote
+foo is a *constant* pointer of *constant* integer value
+  #+end_quote
+
+*** volatile
+*** const & volatile
 
 * How To
 ** run ARM binaries on x86 Linux
