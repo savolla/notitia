@@ -7,6 +7,19 @@
 
 * Facts
 
+- If you know that the data is coming from another source and can only be changed by that source and the programmer is not allowed to change the data then use =const volatile=. This is useful when a register is just read-only like temperature sensor etc. and you want to read from it several times.
+
+  #+begin_src c
+//
+//   programmer can't    pointed address
+//  modify the value     can't be changed
+//         /               /
+uint32_t const volatile *const p = (uint32_t*)TEMPERATURE_SENSOR_REGISTER_ADDR;
+//                \
+//           data is coming
+//           from another source
+  #+end_src
+
 - =const= is not the opposite of =volatile=. Some people think it is. This is not true
 
 - =const= guards changes made by the programmer, =volatile= guards changes made by the compiler
