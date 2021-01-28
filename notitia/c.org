@@ -6,6 +6,15 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+
+- there are 5 options for compiler optimization;
+  1. =-O0= : No optimization, debugging friendly
+  2. =-O1= : Generates optimized code. Not debugging friendly
+  3. =-O2= : More optimized code. Compilation is slow
+  4. =-O3= : Super optimized code. Code might have some bugs. Dangerous flag
+  5. =-Os= : Optimize for *size*. Beneficial if have _smaller Flash_ size
+  6. =-Ofast= : Optimize for *speed*. Beneficial if have _slower CPU_
+
 - benefits of using =const= on function arguments;
   1. increases ~readability~
   2. more ~security~
@@ -256,10 +265,11 @@ p = &a; // same story
 
 use ~volatile~ for the variables like;
 
-- Hardware Registers (CPU etc)
+- Hardware Registers (CPU, Memory-mapped peripheral registers, GPIO pins)
 - Peripheral Registers such as *Sensors*
-- Non-Stack variables like ISR signals
-- Variables that _shared by multiple tasks_ in multi-threaded programming
+- Global variables that share data between main code and ISR code
+- Variables that _shared by multiple tasks_ in multi-threaded programming (RTOS)
+
 ** when to use ~const~
 
 use ~const~ for the variables like;
@@ -434,6 +444,16 @@ void readStatusRegister( uint8_t const *const pStatusRegister ) {
     // code
 }
 #+end_src
+** volatile pointer
+
+Example:
+#+begin_src c
+// READ: pStatusReg is a non-volatile pointer that points to volatile uin8 data
+uint8_t volatile *pStatusReg;
+#+end_src
+
+Use case:
+Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
 
 * Tips
 
