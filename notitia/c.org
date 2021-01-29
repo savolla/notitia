@@ -477,6 +477,10 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 
 * Tips
 
+- use =char string[] = "some string";= insted of =char *string = "some string";=
+
+- use =calloc= instead of =malloc= because it fills the allocated data with zeros. also arcane multiplication operations are not required
+
 - when doing *software delay* make sure you define loop counter =i= _volatile_. Because when you optimize the code with =-O3= flag, compiler will remove the delay line. Compiler thinks that this will slow down the application so it removes that delay
 
 - use =const= keyword generously whenever you find the chance to use it.
@@ -630,9 +634,57 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
 * Library
 ** stdlib.h
+*** calloc
 
-- =calloc(int num_of_blocks, int size_of_block)= : like malloc
-- =malloc(size_t bytes)= : allocates =bytes= bytes
+Allocates several memory regions at once
+
+#+begin_src c
+int *buf = (int*)calloc( 100, sizeof(int) );
+free(buf);
+#+end_src
+
+*** malloc
+
+Allocates memory region.
+
+#+begin_src c
+int *buf = (int *)malloc(sizeof(int) * 10);
+free(buf);
+#+end_src
+
+Upper code allocates 40 bytes of memory
+** string.h
+*** strlen
+
+Returns string length
+
+#+begin_src c
+char const *name = "savolla";
+size_t length = strlen(name);
+#+end_src
+*** strdup
+
+Duplicates the string and returns it
+
+#+begin_src c
+char const *name = "savolla";
+char *tmp = strdup(name);
+#+end_src
+*** strtok
+
+Splits strings by the delimiter
+
+#+begin_src c
+char name[] = "hello world    this is my coding session  ";
+char const delimiter = " ";
+char *piece = strtok(name, delimiter);
+
+while ( piece != NULL ) {
+    printf("%s\n", piece);
+    piece = strtok(NULL, " ");
+}
+
+#+end_src
 
 * How To
 ** define a struct
