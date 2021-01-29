@@ -210,9 +210,10 @@ In STM32F407VGT6, GPIO pins have different operation modes. They are not primiti
 :EXPORT_AUTHOR: savolla
 :END:
 
+*** Cheat Sheet
 *** const
 
-- =const= in the following code indicates that =foo= is *read-only* value. And can't be changed by programmer and other functions or threads
+1. =const= in the following code indicates that =foo= is *read-only* value. And can't be changed by programmer and other functions or threads
 
   #+begin_src c
 int const foo;
@@ -223,7 +224,7 @@ int const foo;
 foo is a *constant* integer value
   #+end_quote
 
-- This is the example of *constant pointer*. This means that the pointed address is fixed and cannot be changed but the value in that address can be changed
+2. This is the example of *constant pointer*. This means that the pointed address is fixed and cannot be changed but the value in that address can be changed
 
   #+begin_src c
 int *const foo;
@@ -239,7 +240,7 @@ int *const foo;
 foo is a *constant* pointer which points to integer value
   #+end_quote
 
-- =foo= value is fixed but the *pointed address* can be changed
+3. =foo= value is fixed but the *pointed address* can be changed
 
   #+begin_src c
 int const *foo;
@@ -255,7 +256,7 @@ int const *foo;
 foo is a pointer which points to *constant* integer value
   #+end_quote
 
-- Both value and pointer are fixed. Can't be changed by programmer or other sources. This is now truly *read-only* value by address and value
+4. Both value and pointer are fixed. Can't be changed by programmer or other sources. This is now truly *read-only* value by address and value
 
   #+begin_src c
 int const *const foo;
@@ -268,19 +269,19 @@ foo is a *constant* pointer of *constant* integer value
 
 *** volatile
 
-- No optimization, value inside =foo= can change *unexpectedly* by another sources like other functions, threads or hardware interrupts and by the programmer itself
+1. No optimization, value inside =foo= can change *unexpectedly* by another sources like other functions, threads or hardware interrupts and by the programmer itself
 
   #+begin_src c
 int volatile foo;
   #+end_src
 
-- Great use case for *Memory Mapped Registers* like GPIO ports, sensors, onboard LEDs etc. Compiler optimization is disabled for =foo=
+2. Great use case for *Memory Mapped Registers* like GPIO ports, sensors, onboard LEDs etc. Compiler optimization is disabled for =foo=
 
   #+begin_src c
 int volatile *foo;
   #+end_src
 
-  - Following code examples have very *rare* use cases. They almost never used
+3. Following code examples have very *rare* use cases. They almost never used
 
   #+begin_src c
 int *volatile foo;
@@ -292,13 +293,13 @@ int volatile *volatile foo;
 
 *** const & volatile
 
-- *pointed address* can't be changed. Value inside that address is *volatile*. That means compiler optimization is not allowed for =foo= and data can be changed by programmer, other functions, other threads and hardware interrupts
+1. *pointed address* can't be changed. Value inside that address is *volatile*. That means compiler optimization is not allowed for =foo= and data can be changed by programmer, other functions, other threads and hardware interrupts
 
 #+begin_src c
 int volatile *const foo;
 #+end_src
 
-- Same as above but this time the data inside address can't be changed by programmer and other software elements like threads, other functions etc. Data can be changed _only by hardware_. This is a perfect case for storing sensor data. Which can only be changed by the sensor itself (like temperature sensor) and programmer is allowed only to read the data
+2. Same as above but this time the data inside address can't be changed by programmer and other software elements like threads, other functions etc. Data can be changed _only by hardware_. This is a perfect case for storing sensor data. Which can only be changed by the sensor itself (like temperature sensor) and programmer is allowed only to read the data
 
 #+begin_src c
 int const volatile *const foo;
