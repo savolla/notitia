@@ -683,7 +683,6 @@ while ( piece != NULL ) {
     printf("%s\n", piece);
     piece = strtok(NULL, " ");
 }
-
 #+end_src
 
 * How To
