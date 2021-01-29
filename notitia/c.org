@@ -628,6 +628,11 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 ** ~base.h~
 
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
+* Library
+** stdlib.h
+
+- =calloc(int num_of_blocks, int size_of_block)= : like malloc
+- =malloc(size_t bytes)= : allocates =bytes= bytes
 
 * How To
 ** define a struct
