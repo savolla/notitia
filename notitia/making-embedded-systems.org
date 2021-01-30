@@ -122,4 +122,6 @@
   * *write* : cihaz'a veri yazar
   * *ioctl* (*ayoktal* diye okunur) : input output
 
--
+- ~C tip~ you should put all your global variables inside a struct
+
+- ~C tip~ use =static= to indicate =private=
