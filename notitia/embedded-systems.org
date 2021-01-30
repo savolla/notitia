@@ -550,6 +550,10 @@ Type of ROM. Once you program it you can never erase it
 STM32F407VGT6 component. Stands for Reset Clock Control. This is an engine that controls clocks of CPU, peripherals, different Busses, Memories. If you want to enable a peripheral then you first need to activate the clock of that peripheral using RCC
 
 the ~base address~ of RCC is =0x4002 3800= to =0x4002 3BFF=
+*** Active Low
+
+A hardware component (mostly pins) that outputs *high* while the voltage is *low*. If you see a component with *bars* that means this component is active low. In the pin description, Active Low pins have slashes before their names
+
 ** Software
 *** Unity
 unit testing for c (especially embedded software)

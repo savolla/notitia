@@ -125,3 +125,41 @@
 - ~C tip~ you should put all your global variables inside a struct
 
 - ~C tip~ use =static= to indicate =private=
+
+-
+* Bölüm 3
+
+- Donanımcılar cihazı yaparken, gömülü yazılımcılar da paralel olarak *test kodu* yazmaları gerekir
+
+- Test kodu yazabilmek için, CPU ya da MCU'yu çok iyi öğrenmek gerekir ki bunun yolu, data sheet okumaktan geçer
+
+- Bir gömülü yazılımcı olarak, her çipi (sensör, MCU vs.) farklı bir *kütüphane* olarak düşünmek gerekir. Aynı diğer kütüphaneler gibi (Qt, Gtk, Boost, STL vs.)
+
+- Aslında Datasheetler, yazılımcılar için değil, elektrik mühendisleri için yazılmıştır. Ayrıca yeni başlayanlara göre de değildir. Öyle olsaydı bir kaç ciltlik kitap olurlardı. Datasheetler bir miktar tecrübeli mühendisler için yazılmıştır
+
+** Datasheet Nasıl Okunur
+
+- Eğer Ne aradığınızı bilmiyorsanız, datasheet'i elinize aldığınızda ilk yapmanız gereken *Description* kısmını okumaktır. Sesli ve anlayarak okumak gerekir. Description kısmı bir ya da bir buçuk sayfa kadar uzunlukta olabilir
+
+- Ne Aradığınızı biliyorsanız, *Block Diagram* kısmını açın ve aradığınız komponenti burada bulunuz. Ardından ismini, *Table of Contents* kısmında bulup o komponente ait olan kısmı okuyun. Önemli olan yerlerin altını çizin
+
+- Cihaz için gereken yazılımı için datasheet'den yararlanırken, mental yorgunluğu'ı azaltmak ve zaman'dan kazanmak için, sadece elektronik mühendislerini ilgilendiren kısımları atlayın. Bunlar;
+
+  1. Absolute Maximum Ratings
+  2. Recommended Operation Conditions
+  3. Electrical Characteristics
+  4. Packaging Information
+  5. Layout
+  6. Mechanical Considerations
+
+- İşler ters gittiğinde, yani cihaz beklendiği gibi çalışmıyorsa ya da hiç çalışmıyorsa bakılması gereken bölümler;
+
+  1. *Pinout Diyagramları*
+
+     Cihazı debug etmek istediğinde pinlerin çıkış voltajlarına bakılması gerekir. Ya da bazen pinlerin *Active Low* olmasından dolayı yanlış programlanması söz konusu olabilir. Pinout Diyagramlarına bakıp, pinlerin isimlerinin önünde slash '/' ya da ona benzer farklı prefixler falan varsa, Active low olabilirler
+
+  2. *Pin Description*
+
+     Pinlerin çıkış değerleri burada listelenmiştir. Pinout çıktılarını, Active Low olup olmadıkları buradan yazar. cihazı Osiloskopa bağladığınızda, pinlerin çıkışlarını kontrol edip datasheet'deki değerlerle karşılaştırabilirsiniz
+
+  3.
