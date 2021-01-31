@@ -35,7 +35,7 @@
 *** software
 **** read one chapter
 
-- [-] making embedded systems                     (38 / 314)
+- [-] making embedded systems                     (62 / 314)
 - [-] programming embedded systems                (46 / 197)
 - [-] the art of concurrency                      (16 / 303)
 - [-] embedded-primer                             (12 / 225)
@@ -55,7 +55,7 @@
 
 *** video course
 **** FastBit
-- [-] embedded C      =usecase of static with functions=
+- [-] embedded C      =structures and bitfields=
 - [ ] cortex m4
 - [ ] microcontrollers 1
 - [ ] microcontrollers 2

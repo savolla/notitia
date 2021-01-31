@@ -137,13 +137,19 @@
 
 - Aslında Datasheetler, yazılımcılar için değil, elektrik mühendisleri için yazılmıştır. Ayrıca yeni başlayanlara göre de değildir. Öyle olsaydı bir kaç ciltlik kitap olurlardı. Datasheetler bir miktar tecrübeli mühendisler için yazılmıştır
 
-** Datasheet Nasıl Okunur
+** Gömülü Yazılımcılar için Datasheet Nasıl Okunur
 
-- Eğer Ne aradığınızı bilmiyorsanız, datasheet'i elinize aldığınızda ilk yapmanız gereken *Description* kısmını okumaktır. Sesli ve anlayarak okumak gerekir. Description kısmı bir ya da bir buçuk sayfa kadar uzunlukta olabilir
+- Cihazın *User Manual*'i varsa, Datasheet'den önce bu okunmalıdır. *Application Notes* kısmı özellikle es geçilmemelidir
 
-- Ne Aradığınızı biliyorsanız, *Block Diagram* kısmını açın ve aradığınız komponenti burada bulunuz. Ardından ismini, *Table of Contents* kısmında bulup o komponente ait olan kısmı okuyun. Önemli olan yerlerin altını çizin
+- User Manual'den sonra *Errata* dökümanını indirin. Şu anda elinizde bulunan cihazın datasheetin'de ya da kendisindeki hatalar Errata'da yer alır. Eğer Errata'da elinizdeki datasheet hatalı diyorsa, hemen güncel bir kopyasını indirin. Datasheet eski ise en güncel olanı indirin
 
-- Cihaz için gereken yazılımı için datasheet'den yararlanırken, mental yorgunluğu'ı azaltmak ve zaman'dan kazanmak için, sadece elektronik mühendislerini ilgilendiren kısımları atlayın. Bunlar;
+- Eğer Ne aradığınızı bilmiyorsanız, datasheet'i elinize aldığınızda ilk yapmanız gereken *Description* kısmını okumaktır. Sesli ve anlayarak okumak gerekir. Description kısmı bir ya da bir buçuk sayfa kadar uzunlukta olabilir. Cihazın neler yapabildiğini an kısa ve öz şekilde anlatır
+
+- Ne Aradığınızı biliyorsanız, *Block Diagram* kısmını açın ve aradığınız komponenti/peripheral'i burada bulunuz. Ardından ismini, *Table of Contents* kısmında bulup o komponente ait olan kısmı okuyun. Önemli olan yerlerin altını çizin
+
+- Şanslıysak, bazen yazılımcılara özel bölümler ile karşılaşabiliriz. Bu bölümlerin adı genellikle *Theory of Operation* ya da *Application Information* olarak geçer. Buraların kesinlikle okunması gerekir. Bir Driver yazacaksak, en faydalı bilgileri burada bulabiliriz
+
+- Cihaz için gereken yazılım için datasheet'den yararlanırken, mental yorgunluğu'ı azaltmak ve zaman'dan kazanmak için, sadece elektronik mühendislerini ilgilendiren kısımları atlayın. Bunlar;
 
   1. Absolute Maximum Ratings
   2. Recommended Operation Conditions
@@ -156,10 +162,14 @@
 
   1. *Pinout Diyagramları*
 
-     Cihazı debug etmek istediğinde pinlerin çıkış voltajlarına bakılması gerekir. Ya da bazen pinlerin *Active Low* olmasından dolayı yanlış programlanması söz konusu olabilir. Pinout Diyagramlarına bakıp, pinlerin isimlerinin önünde slash '/' ya da ona benzer farklı prefixler falan varsa, Active low olabilirler
+     Cihazı debug etmek istendiğinde, pinlerin çıkış voltajlarına bakılması gerekir. Ya da bazen pinlerin *Active Low* olmasından dolayı yanlış programlanması söz konusu olabilir. Pinout Diyagramlarına bakıp, pinlerin isimlerinin önünde slash '/' ya da ona benzer farklı prefixler falan varsa, Active low olabilirler
 
   2. *Pin Description*
 
      Pinlerin çıkış değerleri burada listelenmiştir. Pinout çıktılarını, Active Low olup olmadıkları buradan yazar. cihazı Osiloskopa bağladığınızda, pinlerin çıkışlarını kontrol edip datasheet'deki değerlerle karşılaştırabilirsiniz
 
-  3.
+  3. *Performance Characteristics*
+
+     Cihazdan beklenen performans gelmediği zaman buraya bakılır. Örneğin cihazın 70C sıcaklıktan yüksek bir ortamda çalıştırıyorsanız ancak *Performance Characteristics* tablosunda 50C max diyorsa sorunu buldunuz demek olur
+
+  4. *Sample Schematics*
