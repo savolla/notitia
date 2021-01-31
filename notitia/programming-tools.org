@@ -145,6 +145,10 @@ nasm -f bin -o test <CODE>.asm #
 nasm -f elf -o test <CODE>.asm #
 #+END_SRC
 ** gcc
+*** tips
+
+- *-s* strip the binary. remove all the symbols from binary for security
+
 *** facts
 **** supported languages
 1. C
@@ -156,13 +160,63 @@ nasm -f elf -o test <CODE>.asm #
 7. D
 8. Go
 9. BRIG (HSAIL).
-   
+
+*** concepts
+**** =__packed__=
+
+~__packed__~ is a *variable attribute* for preventing allignment of memory.
+   for example if you want to make a structure that occupies *exactly* 5 bytes you use ~__packed__~ attribute
+
+   this example occupies *8 bytes*. allignement is done on this structure
+
+   #+BEGIN_SRC c
+   typedef struct {
+   int age;
+   char genger;
+   } person;
+   #+END_SRC
+
+   this one will occupy 5 bytes with ~__packed__~ attribute
+
+   #+BEGIN_SRC c
+   typedef struct {
+   int age;
+   char genger;
+   } __attribute__((__packed__)) person2;
+   #+END_SRC
+**** =__attribute__(weak)=
+
+Function attribute which indicates *overridable* function. This is like *abstract* keyword in C
+
+#+begin_src c
+void f0(void) __attribute__(weak);
+
+void f0(void) {
+    // deffinition here
+}
+#+end_src
+
+**** =__attribute__(section())=
+
+puts the symbol on another section. other than .data or .bss. usefull when dealing with MCUs
+
+#+begin_src c
+int x __attribute__(section(".random_section")) = 32;
+#+end_src
+
+**** =__attribute__(nacked)=
+
+Function attribute which indicates the function is *pure assembly* function. No _prolog_ or _epilog_ is generated for the function
+
 *** how to
 **** save .i, .o and .s files while compiling
+
 #+begin_src sh
 gcc -save-temps -o your_program your_program.c
 #+end_src
+
 **** compile gcc from source
+
 Instead of downloading the tarball, we clone from the Git mirror,
 because the tarball didn't contain the full GCC distribution.
 
@@ -183,6 +237,12 @@ make
 #+begin_src sh
 gcc -m32 # other options
 #+end_src
+
+**** detect CPU architecture with gcc
+
+  #+BEGIN_SRC sh
+  gcc -c -Q -march=native --help=target | grep march | awk '{print $2}' | head -1
+  #+END_SRC
 
 * Binary Analysis
 ** objdump
