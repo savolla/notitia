@@ -387,7 +387,7 @@ To use Hardware delay we need to activate timer peripherals and use them. Which 
 
 - I²C requires two *pull up* resistors to let the current flow over *SDL* and *SCL*
 
-[[file:./images/screenshot-102.png]]
+ [[file:./images/screenshot-102.png]]
 
 *** SWD
 
