@@ -1,0 +1,35 @@
+#+TITLE: Test Driven Development For Embedded C
+#+AUTHOR: savolla
+#+HUGO_BASE_DIR: ~/txt/blog/
+#+HUGO_SECTION: en/posts
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: test-driven-development-for-embedded-c
+:EXPORT_TITLE: Test-Driven Development for Embedded C Kitap Özeti
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+
+* Bölüm 0
+
+- Bu kitap, Agile ve Gömülü Sistemlerin harmanlamasıdır
+
+- Test Driven Development = TDD
+
+- Gömülü sistemlerde genelde yazılım ve donanım geliştirme süreci paralel ilerler. Donanım henüz ortada olmadığı için yazılımcıların, döküman yazıp beklemekten başka pek yapabileceği bir şey yoktur. Ancak TDD konseptinin ortaya çıkmasıyla bu durum değişebilir
+
+- Henüz kod ortada yokken, kod için test yazılabilir. Ve yazılımcılar donanımı beklerken Test yazabilirler. Bekleme, çok üretken bir sürece dönüşür
+
+- Aslında normal bir yazılımcının oturup test yazması çok sıkıcı bir hal alırken, Gömülü sistem yazılımcılarının test yazması mecburi bir hal alır. Bu da ileride donanım çıktıktan sonra yazılan koddaki hataların olabildiğince aza indergenmesini sağlar
+
+- Ne kadar çok test o kadar çok yazılım kalitesi ve o kadar az uykusuz geçen gece demektir
+
+- Bu kitapta 2 tane test framwrok'ü kullanılmıştır;
+
+  1. Unity : C için
+  2. CppUTest : C ve C++'ı destekler
+
+* Bölüm 1
+
+-

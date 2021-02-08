@@ -1,0 +1,11 @@
+#+TITLE: Snippets
+#+AUTHOR: savolla
+#+DESCRIPTION: functions that help
+
+* get nth digit of a number
+
+#+begin_src python
+int getDigit( int number, int digit ) {
+    return (number % (int)pow( 10, digit ) / (int)pow( 10, (digit -1 )));
+}
+#+end_src
