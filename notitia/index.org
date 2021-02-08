@@ -14,6 +14,7 @@
 * Programming
  * [[./languages.org][Languages]]
  * [[./databases.org][Databases]]
+ * [[./snippets.org][Snippets]]
 
 * Tools
  * [[./text-editors.org][Text Editors]]
