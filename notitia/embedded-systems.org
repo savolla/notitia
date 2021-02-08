@@ -553,6 +553,18 @@ the ~base address~ of RCC is =0x4002 3800= to =0x4002 3BFF=
 *** Active Low
 
 A hardware component (mostly pins) that outputs *high* while the voltage is *low*. If you see a component with *bars* that means this component is active low. In the pin description, Active Low pins have slashes before their names
+*** Lidar
+This is a sensor that used in Self-driving car applications that Scans the environment by sending many laser beams
+
+[[file:./images/screenshot-90.png]]
+
++ better and faster than cameras. since cameras have blind spots
++ Lidar can scan 300 meter in 360 degrees
+*** Teraranger
+ROS compatible sensor that acts like lidar but for shorter distances. It is not movable.
+*** Xsens
+
+ROS compatible sensor Motion sensor. it is wearable. here is the [[https://www.youtube.com/watch?v=KqKa2Gc7lh8][video]]
 
 ** Software
 *** Unity
@@ -751,9 +763,6 @@ int main(void) {
     return 0;
 }
 #+end_src
-
-
-
 * Problems & Solutions
 * Tutorials
 ** Use Rust for Embedded Development
