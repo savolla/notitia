@@ -1,0 +1,29 @@
+#+TITLE: Pacman
+#+STARTUP: overview
+
+* How To
+** how to see only AUR packages I've installed
+#+BEGIN_SRC bash
+pacman -Qm
+#+END_SRC
+** remove pacman cache
+
+#+begin_src sh
+pacman -Scc
+#+end_src
+** remove orphan packages
+
+#+begin_src sh
+pacman -Rns $(pacman -Qtdq)
+#+end_src
+** install packages without confirmation
+
+- default answer
+#+begin_src sh
+pacman -S git curl --noconfirm
+#+end_src
+
+- answer "yes" automatically
+  #+begin_src sh
+yes | pacman -S git curl
+  #+end_src

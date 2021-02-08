@@ -1,0 +1,8 @@
+#+TITLE: Alpine
+
+* how to
+** install a package
+
+#+begin_src sh
+apk add --no-cache $PACKAGE
+#+end_src

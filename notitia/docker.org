@@ -1,0 +1,111 @@
+#+TITLE: Docker
+#+STARTUP: overview
+
+* Concepts
+* Tips
+** example dockerfile you can use
+
+#+begin_src dockerfile
+FROM archlinux # base image. downloaded from dockerhub
+RUN pacman -Syu # runs only when creating the image
+RUN pacman -S git curl --noconfirm
+#+end_src
+
+* Facts
+*** difference between ~RUN~ and ~CMD~
+- *RUN*: executes only _when creating_ the image
+- *CMD*: executes only _after creating_ the image
+*** dockerfile commands
+
+- ~FROM~ : Sets the Base Image for subsequent instructions.
+
+- ~MAINTAINER~ : (deprecated - use LABEL instead) Set the Author field of the generated images.
+
+- ~RUN~ : execute any commands in a new layer on top of the current image and commit the results.
+
+- ~CMD~ : provide defaults for an executing container.
+
+- ~EXPOSE~ : informs Docker that the container listens on the specified network ports at runtime. NOTE: does not actually make ports accessible.
+
+- ~ENV~ : sets environment variable.
+
+- ~ADD~ : copies new files, directories or remote file to container. Invalidates caches. Avoid ADD and use COPY instead.
+
+- ~COPY~ : copies new files or directories to container. By default this copies as root regardless of the USER/WORKDIR settings. Use --chown=<user>:<group> to give ownership to another user/group. (Same for ADD.)
+
+- ~ENTRYPOINT~ : configures a container that will run as an executable.
+
+- ~VOLUME~ : creates a mount point for externally mounted volumes or other containers.
+
+- ~USER~ : sets the user name for following RUN / CMD / ENTRYPOINT commands.
+
+- ~WORKDIR~ : sets the working directory.
+
+- ~ARG~ : defines a build-time variable.
+
+- ~ONBUILD~ : adds a trigger instruction when the image is used as the base for another build.
+
+- ~STOPSIGNAL~ : sets the system call signal that will be sent to the container to exit.
+
+- ~LABEL~ : apply key/value metadata to your images, containers, or daemons.
+
+- ~SHELL~ : override default shell is used by docker to run commands.
+-
+- ~HEALTHCHECK~ : tells docker how to test a container to check that it is still working.
+
+* How To
+** remove all images
+
+#+begin_src sh
+docker rmi $(docker images -q) // remove all images
+#+end_src
+
+** remove all containers
+
+#+begin_src sh
+docker rm $(docker ps -a -q) // remove all containers
+#+end_src
+
+** execute a command on a container running in the background
+
+#+begin_src sh
+docker container exec -it $CONTAINER_NAME $SHELL_COMMAND
+#+end_src
+
+** disconnect a container from a network
+
+#+begin_src sh
+docker network disconnect $NETWORK $CONTAINER_NAME
+#+end_src
+
+** connect a container to a network
+
+#+begin_src sh
+docker network connect $NETWORK $CONTAINER_NAME
+#+end_src
+
+** show information on one or more networks
+
+#+begin_src sh
+docker network inspect $NETWORK
+#+end_src
+
+** list networks
+
+#+begin_src sh
+docker network ls
+#+end_src
+
+** remove one or more networks
+
+#+begin_src sh
+docker network rm $NETWORK
+#+end_src
+
+** see all containers
+
+#+begin_src sh
+docker container ls -a
+#+end_src
+
+* Problems & Solutions

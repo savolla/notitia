@@ -149,6 +149,17 @@ add the temporary commands into .bashrc or .zshrc
 #+begin_src sh
 convert img1 img2 img3 document.pdf
 #+end_src
+** disable sudo for a specific command
+
+#+begin_src sh
+sudo vim /etc/sudoers.d/$YOUR_UTILITY
+#+end_src
+
+Add the following
+
+#+begin_src sh
+savolla ALL=(root) NOPASSWD: $ABSOLUTE_PATH_TO_YOUR_UTILITY
+#+end_src
 
 * Distros
  * [[./alpine.org][alpine]]
