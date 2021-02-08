@@ -7,6 +7,7 @@
  * [[./programming-embedded-systems.org][Programming Embedded Systems]]
  * [[./cpp-primer.org][C++ Primer]]
  * [[./reusable-firmware-development.org][Reusable Firmware Development]]
+ * [[./ros-robotic-projects.org][Ros Robotic Projects]]
 
 * Software Engineering
 

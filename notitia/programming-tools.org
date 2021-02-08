@@ -86,27 +86,36 @@ git reset $YOUR_FILE
    git --git-dir=$HOME/path/to/.git commit -m "initial"
    #+end_src
 **** store your credentials for automatic pushes
+
 #+begin_quote
 this is not secure! your password and username will be stored inside *.git* directory in *planetext*. enyone on your PC will have access to them. you've been warned!
 #+end_quote
 
 1. go to your repository
+
    #+begin_src sh
    cd $YOUR_REPO
    #+end_src
+
 2. make some changes
+
 3. modify the *git config* for password and username storing
+
    #+begin_src sh
    git config --global credential.helper store
    #+end_src
+
 4. commit and push your changes
+
    #+begin_src sh
    git commit -m "username and password adjustment"
    git push -u origin $YOUR_BRANCH
    #+end_src
+
 5. now the git utility will ask you *username* and *password*. enter those and you are good to go
 
 after this operation, git won't ask for username and password for this repository. this is not a global modification btw. you have to do this for every repo
+
 **** switch to specific commit
 useful if you want to go back to the last checkpoint in your project. let's say you commited your project when it was working without problems. you code a little bit more and bam.. it's not working now.. insted of fixing bugs, you might go back in git commit history
 1. get the last commit's *id*
