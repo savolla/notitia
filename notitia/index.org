@@ -32,7 +32,7 @@
  * [[./reading-lists.org][Reading Lists]]
 
 * Languages
- * [[./englist.org][English]]
+ * [[./english.org][English]]
  * [[./russian.org][Русский]]
 
 * Schedule

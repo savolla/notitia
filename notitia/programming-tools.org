@@ -75,16 +75,22 @@ MKDIR_P ?= mkdir -p
 git reset $YOUR_FILE
 #+end_src
 **** control a repository from outside
+
 1. use *--git-dir=* option
+
 2. specify the *.git* folder of your project
+
    #+begin_src sh
    git --git-dir=$HOME/path/to/.git
    #+end_src
+
 3. you can now issue normal git commands after that string like:
+
    #+begin_src sh
    git --git-dir=$HOME/path/to/.git add -u
    git --git-dir=$HOME/path/to/.git commit -m "initial"
    #+end_src
+
 **** store your credentials for automatic pushes
 
 #+begin_quote
