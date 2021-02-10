@@ -88,11 +88,12 @@
 
 - =hardboard=              sunta
 - =harness=                kablo ağı
+- =hazardous=              tehlikeli
 - =headed=                 başlı
+- =heady=                  sert
 - =hinder=                 engellemek
 - =houseing-department=    konut-bölüm
 - =however=                ancak
-- =heady=                  sert
 
 - =idiom=                  deyim
 - =idiosyncrasies=         özel durumlar
@@ -188,11 +189,12 @@
 - =suppress=               bastırmak
 - =surgeon=                cerrah
 
+- =tending=                bakım
 - =tenet=                  ilke
-- =trivial=                gereksiz
 - =therefore=              bu nedenle
 - =thesaurus=              eş anlamlılar sözlüğü
 - =trailed=                izledi
+- =trivial=                gereksiz
 
 - =unbolted=               sürgüsü açılmış
 - =uncharted=              keşvedilmemiş
