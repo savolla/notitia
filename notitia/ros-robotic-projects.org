@@ -18,4 +18,22 @@
   - Open-Rave
   - Orocos
 
-+ Gazebo, yüksek kalitede bir fizik motorudur
++ Gazebo, yüksek kalitede bir fizik motorudur. ROS ile desekli çalışabilir. Tek başına da çalışabilir
+
++ Gazebo'da oluşturulan modeller XML tabanlıdır ve formatın ismi, *SDF*'dir (Simulation Description Format)
+
++ ROS ise *URDF* (Universal Robot Description Format) kullanır.
+
++ ROS'da oluşturulan URDF formatındaki modeller, Gazebo tarafından otomatik olarak SDF formatına dönüştürülebilir
+
++ Ancak modeller SDF formatındaysa, ROS'a yönelik özellikleri port etmekte sorun yaşanabilir. En iyisi her zaman URDF kullanmak olacaktır
+
++ ~tip~ URDF olarak oluşturulan modelleri, Gazebo içindeki *URDF2SDF* API'yı ile dönüştürürsek, işimiz daha garanti olur
+
++ ROS mesajlarının Gazebo tarafından anlaşılabilmesi için de ekstra bağımlılık gerekir. Bu paketleri kurmak için şu komutları kullan
+
+  #+begin_src sh
+  sudo apt install ros-melodic-ros-control ros-melodic-ros-controllers ros-melodic-Gazebo-ros-control
+  #+end_src
+
++
