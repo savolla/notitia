@@ -65,6 +65,7 @@
 - =emerge=                 ortaaya çıkmak
 - =endeavor=               çaba
 - =entrepreneurial=        girişimci
+- =enhance=                girişimci
 - =eradicate=              kökünü kurutmak
 - =estate=                 arazi
 - =estimate=               tahmin
@@ -131,6 +132,7 @@
 - =pejorative=             aşağılayıcı
 - =profligate=             berbat
 - =prose=                  düzyazı
+- =proposal=               teklif
 - =permeate=               nüfuz etmek
 - =perpendicular=          dik (açısal diklik)
 - =persuade=               ikna etmek
