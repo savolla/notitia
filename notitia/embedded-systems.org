@@ -665,6 +665,14 @@ it's a binary manipulation technique where we test some specific bits of a bit s
 
 We can also do other operations like setting bits, toggling etc
 *** Bit Extraction
+** Mechanic
+*** Mechanum Wheels
+
+[[file:./images/screenshot-118.png]]
+
+with these wheels your vihacle can translate in x and y axises. Here is the [[https://www.youtube.com/watch?v=83tVkgT89dM][video]] that explains *Mechanum Wheels* in action
+
+There are also left and right handed version of those
 
 * Platforms
 ** STM32F407VGT6
