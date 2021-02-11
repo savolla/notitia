@@ -101,5 +101,7 @@ Add the following
 savolla ALL=(root) NOPASSWD: $ABSOLUTE_PATH_TO_YOUR_UTILITY
 #+end_src
 
+
 * Distros
  * [[./alpine.org][alpine]]
+ * [[./ubuntu.org][ubuntu]]
