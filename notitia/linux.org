@@ -11,7 +11,7 @@ git init --bare $HOME/.dotfiles
 
 2. add alias to your .bashrc
 #+begin_src sh
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
 #+end_src
 
 3. don't show untracked files since they are too much
@@ -32,7 +32,7 @@ dotfiles add $YOUR_DOTFILE
 
 6. commit
 #+begin_src sh
-dotfiles commit
+dotfiles commit -m "blah blah"
 #+end_src
 
 7. create a repository called *dotfiles* on *github*
