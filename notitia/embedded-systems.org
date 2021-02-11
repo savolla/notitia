@@ -665,7 +665,7 @@ it's a binary manipulation technique where we test some specific bits of a bit s
 
 We can also do other operations like setting bits, toggling etc
 *** Bit Extraction
-** Mechanic
+** Robotics
 *** Mechanum Wheels
 
 [[file:./images/screenshot-118.png]]
@@ -673,153 +673,160 @@ We can also do other operations like setting bits, toggling etc
 with these wheels your vihacle can translate in x and y axises. Here is the [[https://www.youtube.com/watch?v=83tVkgT89dM][video]] that explains *Mechanum Wheels* in action
 
 There are also left and right handed version of those
+*** Mobile Manipulator
 
-* Platforms
-** STM32F407VGT6
+It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum Wheels
 
-*** Facts
-- *Mode Registers* are always placed in =0x00=
+[[file:./images/screenshot-119.png]]
 
-- the overview of the platform:
-  [[./images/screenshot-73.png]]
 
-**** features
-- comes with it's own debugger called *ST-LINK/V2-A*
-- comes with *ARM Cortex-M4*
-- 168 MHz CPU speed
-- has DSP
-- has MPU (memory protection unit)
 
-**** internal peripherals
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ,*clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
+    ,*gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
+    ,*gpiod_mode_register |= 0x01000000; // set 24th bit
+    ,*gpiod_output_register |= 0x1000 // set 12th GPIO pin to 3.3V
+    // create pointers
+    // set bits
+    return 0;
+    uint32_t *clock = (uint32_t*)GPIOD_CLOCK;
+    uint32_t *gpiod_mode_register = (uint32_t*)GPIOD_MODE_REGISTER;
+    uint32_t *gpiod_output_register = (uint32_t*)GPIOD_OUTPUT_REGISTER;
+  * =00= : Input Mode
+  * =01= : Output Mode
+  * =10= : Alternate Function Mode
+  * =11= : Analog Mode
   1. two 3-axis accelometers
   2. one microphone
   3. DAC jack
   4. 4 LEDs
   5. 2 push buttons
-*** Base Addresses
-
-| Peripheral              | Base Address | Last Address | Mask Value         |
-|-------------------------+--------------+--------------+--------------------|
-| RCC_AHB1ENR             | 0x4002 3830  | 0x4002 3BFF  |                    |
-| GPIOD                   | 0x4002 0C00  | 0x4002 0FFF  |                    |
-| GPIOx_MODER (for GPIOD) | 0x4002 0C00  |              |                    |
-| GPIOx_ODR               | 0x4002 0C14  |              | u16int_t (1 << 12) |
-
-*** Concept
-**** RCC_AHB1ENR
-
-Register that Enables RCC that connected to AHB bus. Address is =0x40023830=
-
-**** GPIOx_MODER
-
-- GPIO Mode Registe
-- Configures the _operation mode_ of GPIO pins.
-- it's a 32-bit register which reserves 2 bits for each GPIO pin
-- We set those 2 bits to a specific value to indicate _operation mode_;
-
-  * =00= : Input Mode
-  * =01= : Output Mode
-  * =10= : Alternate Function Mode
-  * =11= : Analog Mode
-
-**** GPIOx_ODR
-
-- Output Data Register
-- 16-bit register where every bit is a GPIO pin
-- Here you can set a bit to =1= and this will output 3.3V from a specific GPIO pin
-*** How To
-**** turn on the LED on STM32F407VGT6
-
-***** Identify the GPIO ~port~ used to connect the LED
-
-Use *Data Sheet* to do this. Open up the data sheet and find the Circuit diagram. Find The LED you want to turn on and find out it's GPIO port
-
-***** Identify the GPIO ~pin~ where the LED is connected
-***** ~Activate~ the GPIOD peripheral
-
-Enable the Clock for the GPIO port. Use =RCC_AHB1ENR= register
-
-***** Configure the GPIO pin mode as ~output~
-
-Set the Mode of the GPIO port to *Output* by modifying =GPIOx_MODER= register
-
-***** ~Write~ to the GPIO ping
-
-***** Code
-
+  [[./images/screenshot-73.png]]
 #+begin_src c
-#inclde <stdint.h>
-
+#+begin_src sh
+#+begin_src sh
+#+begin_src sh
+#+begin_src sh
+#+begin_src sh
+#+begin_src sh
+#+begin_src sh :results none
+#+end_src
+#+end_src
+#+end_src
+#+end_src
+#+end_src
+#+end_src
+#+end_src
+#+end_src
 #define CLOCK 0x40023830
 #define GPIOD_MODE_REGISTER 0x40020C00
 #define GPIOD_OUTPUT_REGISTER 0x40020C14
-
-int main(void) {
-
-    // create pointers
-    uint32_t *clock = (uint32_t*)GPIOD_CLOCK;
-    uint32_t *gpiod_mode_register = (uint32_t*)GPIOD_MODE_REGISTER;
-    uint32_t *gpiod_output_register = (uint32_t*)GPIOD_OUTPUT_REGISTER;
-
-    // set bits
-    ,*clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
-    ,*gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
-    ,*gpiod_mode_register |= 0x01000000; // set 24th bit
-    ,*gpiod_output_register |= 0x1000 // set 12th GPIO pin to 3.3V
-
-    return 0;
-}
-#+end_src
+#inclde <stdint.h>
+* Platforms
 * Problems & Solutions
 * Tutorials
+** STM32F407VGT6
 ** Use Rust for Embedded Development
+*** Base Addresses
+*** Concept
+*** Facts
+*** How To
 *** install packages first
-**** rust
-
-install rust first
-
-#+begin_src sh
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-#+end_src
-
-**** itm
-
-a rust *crete* for interfacing ITM unit inside Cortex-M4 processor. Makes *printf* debug style easier
-
-#+begin_src sh :results none
-cargo install itm
-#+end_src
-
+**** GPIOx_MODER
+**** GPIOx_ODR
 **** OpenOCD
-
-#+begin_src sh
-sudo pacman -S openocd
-#+end_src
+**** RCC_AHB1ENR
 **** arm-none-eabi-gdb
-
-The GNU Debugger for the ARM EABI (bare-metal) target
-
-#+begin_src sh
-sudo pacman -S arm-none-eabi-gdb
-#+end_src
-**** cargo-binutils
-
-install /nm, objcopy, objdump, size, ld, lld, nm/ tools for rust.
-
-#+begin_src sh
-cargo install cargo-binutils
-#+end_src
-
 **** bluetooth packages
-
-#+begin_src sh
-sudo pacman -S bluez bluez-utils rfkill
-#+end_src
-
+**** cargo-binutils
+**** features
+**** internal peripherals
+**** itm
+**** rust
 **** serial com
-
-#+begin_src sh
+**** turn on the LED on STM32F407VGT6
+***** Code
+***** Configure the GPIO pin mode as ~output~
+***** Identify the GPIO ~pin~ where the LED is connected
+***** Identify the GPIO ~port~ used to connect the LED
+***** ~Activate~ the GPIOD peripheral
+***** ~Write~ to the GPIO ping
+- *Mode Registers* are always placed in =0x00=
+- 16-bit register where every bit is a GPIO pin
+- 168 MHz CPU speed
+- Configures the _operation mode_ of GPIO pins.
+- GPIO Mode Registe
+- Here you can set a bit to =1= and this will output 3.3V from a specific GPIO pin
+- Output Data Register
+- We set those 2 bits to a specific value to indicate _operation mode_;
+- comes with *ARM Cortex-M4*
+- comes with it's own debugger called *ST-LINK/V2-A*
+- has DSP
+- has MPU (memory protection unit)
+- it's a 32-bit register which reserves 2 bits for each GPIO pin
+- the overview of the platform:
+Enable the Clock for the GPIO port. Use =RCC_AHB1ENR= register
+Register that Enables RCC that connected to AHB bus. Address is =0x40023830=
+Set the Mode of the GPIO port to *Output* by modifying =GPIOx_MODER= register
+The GNU Debugger for the ARM EABI (bare-metal) target
+Use *Data Sheet* to do this. Open up the data sheet and find the Circuit diagram. Find The LED you want to turn on and find out it's GPIO port
+a rust *crete* for interfacing ITM unit inside Cortex-M4 processor. Makes *printf* debug style easier
+cargo install cargo-binutils
+cargo install itm
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+install /nm, objcopy, objdump, size, ld, lld, nm/ tools for rust.
+install rust first
+int main(void) {
+sudo pacman -S arm-none-eabi-gdb
+sudo pacman -S bluez bluez-utils rfkill
 sudo pacman -S minicom picocom
-#+end_src
-
+sudo pacman -S openocd
+| GPIOD                   | 0x4002 0C00  | 0x4002 0FFF  |                    |
+| GPIOx_MODER (for GPIOD) | 0x4002 0C00  |              |                    |
+| GPIOx_ODR               | 0x4002 0C14  |              | u16int_t (1 << 12) |
+| Peripheral              | Base Address | Last Address | Mask Value         |
+| RCC_AHB1ENR             | 0x4002 3830  | 0x4002 3BFF  |                    |
+|-------------------------+--------------+--------------+--------------------|
+}
