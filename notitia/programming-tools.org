@@ -192,6 +192,20 @@ git clone https://github.com/savolla/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 stow *
 #+end_src
+**** remove a file from repository
+
+#+begin_src sh
+git rm
+#+end_src
+
+1. The "rm" command helps you to remove files from a Git repository. ...
+2. The name of a file (or multiple files) you want to remove. ...
+3. Removes the file only from the Git repository, but not from the filesystem. ...
+4. Recursively removes folders. ...
+5. No files are actually removed.
+
+
+
 
 ** github
 *** how to

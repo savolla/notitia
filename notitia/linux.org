@@ -2,66 +2,6 @@
 #+STARTUP: overview
 
 * How To
-** manage dotfiles
-*** create dotfiles
-1. initialize git
-#+begin_src sh
-git init --bare $HOME/.dotfiles
-#+end_src
-
-2. add alias to your .bashrc
-#+begin_src sh
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
-#+end_src
-
-3. don't show untracked files since they are too much
-#+begin_src sh
-cd ~/.dotfiles
-git config status.showUntrackedFiles no
-#+end_src
-
-4. source the .bashrs
-#+begin_src sh
-source ~/.bashrc
-#+end_src
-
-5. add your dotfiles
-#+begin_src sh
-dotfiles add $YOUR_DOTFILE
-#+end_src
-
-6. commit
-#+begin_src sh
-dotfiles commit -m "blah blah"
-#+end_src
-
-7. create a repository called *dotfiles* on *github*
-
-8. essentials
-#+begin_src sh
-dotfiles branch -M main
-dotfiles remote add origin https://github.com/savolla/dotfiles.git
-dotfiles push -u origin main
-#+end_src
-
-*** restore dotfiles on a new system
-
-1. install *stow*
-#+begin_src sh
-sudo pacman -S stow
-#+end_src
-
-2. clone your dotfiles from github
-#+begin_src sh
-git clone https://github.com/savolla/dotfiles.git ~/.dotfiles
-#+end_src
-
-3. restore your dotfiles
-#+begin_src sh
-cd ~/.dotfiles
-stow *
-#+end_src
-
 ** see lastly modified 5 files
 #+begin_src sh
 ls -tl | head -n 5
