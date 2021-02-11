@@ -80,7 +80,7 @@ fn entry() -> ! {
 }
 #+end_src
 
-** maintain
+** install / maintain
 
 1. install Rust
 #+begin_src bash :results none
