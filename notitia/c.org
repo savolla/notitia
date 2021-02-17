@@ -646,6 +646,7 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 ** ~base.h~
 
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
+
 * Library
 ** stdlib.h
 *** calloc
