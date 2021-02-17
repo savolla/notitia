@@ -17,7 +17,8 @@
 9. BRIG (HSAIL).
 
 * concepts
-** =__packed__=
+** compiler attributes
+*** =__packed__=
 
 ~__packed__~ is a *variable attribute* for preventing allignment of memory.
    for example if you want to make a structure that occupies *exactly* 5 bytes you use ~__packed__~ attribute
@@ -40,7 +41,7 @@
    } __attribute__((__packed__)) person2;
    #+END_SRC
 
-** =__attribute__(weak)=
+*** =__attribute__(weak)=
 
 Function attribute which indicates *overridable* function. This is like *abstract* keyword in C
 
@@ -52,7 +53,7 @@ void f0(void) {
 }
 #+end_src
 
-** =__attribute__(section())=
+*** =__attribute__(section())=
 
 puts the symbol on another section. other than .data or .bss. usefull when dealing with MCUs
 
@@ -60,7 +61,7 @@ puts the symbol on another section. other than .data or .bss. usefull when deali
 int x __attribute__(section(".random_section")) = 32;
 #+end_src
 
-** =__attribute__(nacked)=
+*** =__attribute__(nacked)=
 
 Function attribute which indicates the function is *pure assembly* function. No _prolog_ or _epilog_ is generated for the function
 
