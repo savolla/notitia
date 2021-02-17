@@ -18,10 +18,10 @@
 
 * concepts
 ** compiler attributes
-*** =__packed__=
+*** packed
 
-~__packed__~ is a *variable attribute* for preventing allignment of memory.
-   for example if you want to make a structure that occupies *exactly* 5 bytes you use ~__packed__~ attribute
+~packed~ is a *variable attribute* for preventing allignment of memory.
+   for example if you want to make a structure that occupies *exactly* 5 bytes you use ~packed~ attribute
 
    this example occupies *8 bytes*. allignement is done on this structure
 
@@ -32,16 +32,16 @@
    } person;
    #+END_SRC
 
-   this one will occupy 5 bytes with ~__packed__~ attribute
+   this one will occupy 5 bytes with ~packed~ attribute
 
    #+BEGIN_SRC c
    typedef struct {
    int age;
    char genger;
-   } __attribute__((__packed__)) person2;
+   } __attribute__((packed)) person2;
    #+END_SRC
 
-*** =__attribute__(weak)=
+*** weak
 
 Function attribute which indicates *overridable* function. This is like *abstract* keyword in C
 
@@ -53,7 +53,7 @@ void f0(void) {
 }
 #+end_src
 
-*** =__attribute__(section())=
+*** section()
 
 puts the symbol on another section. other than .data or .bss. usefull when dealing with MCUs
 
@@ -61,7 +61,7 @@ puts the symbol on another section. other than .data or .bss. usefull when deali
 int x __attribute__(section(".random_section")) = 32;
 #+end_src
 
-*** =__attribute__(nacked)=
+*** nacked
 
 Function attribute which indicates the function is *pure assembly* function. No _prolog_ or _epilog_ is generated for the function
 
