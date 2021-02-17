@@ -721,7 +721,11 @@ A x = {11, 22, 33};
 + this is called ~C99 method~. in this method, the _order is NOT important_
 
 #+begin_src c
-A x = {11, 22, 33};
+A x = {
+    .a=11,
+    .b=22,
+    .c=33
+};
 #+end_src
 
 *** set variables after instantiation
