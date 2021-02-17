@@ -1,0 +1,16 @@
+#+TITLE: Github
+
+* how to
+** search code in Github :howto:tools:git:
+:PROPERTIES:
+:EXPORT_FILE_NAME: search-code-in-github
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_AUTHOR: savolla
+:END:
+1. for example I'm searching for "setq" keyword which exists in ".doom.d" directory, file is called "config.el" and is written in "Emacs Lisp" language
+2. go to [[https://www.github.com/search][github search]]
+3. search for the following string
+   #+begin_src txt
+setq extension:el path:.doom.d filename:config.el language:"Emacs Lisp" extension:.el
+   #+end_src

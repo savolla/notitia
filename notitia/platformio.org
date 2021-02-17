@@ -1,0 +1,16 @@
+#+TITLE: Platformio
+
+* how to
+** create a new project
+
+1. find your board ID by issuing
+
+   #+begin_src sh
+pio boards | grep -i "$YOUR_BOARD_NAME"
+   #+end_src
+
+2. create a project direcotry and =cd= to it then
+
+   #+begin_src sh
+pio project init --ide emacs --board $BOARD_ID
+   #+end_src
