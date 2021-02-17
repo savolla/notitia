@@ -39,6 +39,7 @@
    char genger;
    } __attribute__((__packed__)) person2;
    #+END_SRC
+
 ** =__attribute__(weak)=
 
 Function attribute which indicates *overridable* function. This is like *abstract* keyword in C
