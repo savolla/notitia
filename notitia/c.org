@@ -105,6 +105,8 @@ void printArray(int *arr, size_t size) {
 
 - ternary operators are faster
 
+- ~struct~ deffinitions don't consume memory. Only instances of the struct consume memory
+
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
 2. *CPU register* --> *C variable*
@@ -693,6 +695,42 @@ typedef struct A{
     int a;
     char c;
 } A;
+#+end_src
+** instantiate a struct members
+
+three types of member instantiation are available in C. Consider the following =struct=
+
+#+begin_src c
+typedef struct A {
+    int a;
+    int b;
+    int c;
+};
+#+end_src
+
+*** set variables on instantiation ~C89~
+
++ this is called ~C89 method~. in this method, the _order is important_
+
+#+begin_src c
+A x = {11, 22, 33};
+#+end_src
+
+*** set variables on instantiation ~C99~
+
++ this is called ~C99 method~. in this method, the _order is NOT important_
+
+#+begin_src c
+A x = {11, 22, 33};
+#+end_src
+
+*** set variables after instantiation
+
+#+begin_src c
+A x;
+x.a = 11;
+x.b = 22;
+x.c = 33;
 #+end_src
 
 ** print the address of a variable
