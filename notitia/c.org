@@ -479,6 +479,18 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 
 * Tips
 
+- use =const= keyword when setting =struct= members in ~C99~ method. This will make those values unchangable
+
+  #+begin_src c
+  struct A const x = {
+    .a = 11;
+    .b = 22;
+    .c = 33;
+  }
+
+  x.b = 999; // gives error
+  #+end_src
+
 - use =char string[] = "some string";= insted of =char *string = "some string";=
 
 - use =calloc= instead of =malloc= because it fills the allocated data with zeros. also arcane multiplication operations are not required
