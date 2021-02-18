@@ -705,7 +705,7 @@ while ( piece != NULL ) {
 #+end_src
 
 * How To
-** deal with fixed size structs
+** optimize struct size
 
 Use *bit-fields* for this. For example I'm dealing with a TCP packet which bit structure look like;
 
