@@ -478,7 +478,6 @@ uint8_t volatile *pStatusReg;
 Use case:
 Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
 
-
 * Tips
 ** general
 - use *bit-fields* when dealing with network packets

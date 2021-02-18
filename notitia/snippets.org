@@ -40,7 +40,6 @@ int main(void) {
     return 0;
 }
 #+end_src
-
 * python
 ** get nth digit of a number
 
