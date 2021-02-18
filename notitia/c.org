@@ -6,6 +6,7 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+** general
 
 - all *global* =const= variables live in FLASH or ROM memory
 
@@ -478,6 +479,7 @@ Use case:
 Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
 
 * Tips
+** general
 
 - use =packed= compiler attribute when dealing with some tcp or udp packets. so they are already 32-bit packets. You don't want to consume more memory than that
 
@@ -703,6 +705,25 @@ while ( piece != NULL ) {
 #+end_src
 
 * How To
+** deal with fixed size structs
+
+Use *bit-fields* for this. For example I'm dealing with a TCP packet which bit structure look like;
+
+[[file:./images/screenshot-120.png]]
+
+#+begin_src c
+typedef struct {
+    uint8_t crc       :2;
+    uint8_t status    :1;
+    uint16_t payload  :12;
+    uint8_t bat       :3;
+    uint8_t sensor    :3;
+    uint8_t longAddr  :8;
+    uint8_t shortAddr :2;
+    uint8_t addrMode  :1;
+} Packet;
+#+end_src
+
 ** define a struct
 
 #+begin_src c
