@@ -310,6 +310,9 @@ int const volatile *const foo;
 #+end_src
 
 ** applications of ~union~ in embedded systems
+1. Bit extraction form *network packets* etc
+
+
 
 * How To
 ** run ARM binaries on x86 Linux
