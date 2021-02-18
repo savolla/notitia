@@ -687,17 +687,30 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 * Platforms
 ** STM32F407VGT6
 
+*** flash a led
+
 #+begin_src c
-    // *clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
-    // *gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
-    // *gpiod_mode_register |= 0x01000000; // set 24th bit
-    // *gpiod_output_register |= 0x1000 // set 12th GPIO pin to 3.3V
+#inclde <stdint.h>
+
+#define CLOCK (0x40023830)
+#define GPIOD_MODE_REGISTER (0x40020C00)
+#define GPIOD_OUTPUT_REGISTER (0x40020C14)
+
+int main(void) {
+
     // create pointers
-    // set bits
-    return 0;
     uint32_t *clock = (uint32_t*)GPIOD_CLOCK;
     uint32_t *gpiod_mode_register = (uint32_t*)GPIOD_MODE_REGISTER;
     uint32_t *gpiod_output_register = (uint32_t*)GPIOD_OUTPUT_REGISTER;
+
+    // set bits
+    ,*clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
+    ,*gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
+    ,*gpiod_mode_register |= 0x01000000; // set 24th bit
+    ,*gpiod_output_register |= 0x1000; // set 12th GPIO pin to 3.3V
+
+    return 0;
+}
 #+end_src
 
   * =00= : Input Mode
@@ -711,24 +724,6 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
   4. 4 LEDs
   5. 2 push buttons
   [[./images/screenshot-73.png]]
-#+begin_src sh
-#+begin_src sh
-#+begin_src sh
-#+begin_src sh
-#+begin_src sh
-#+begin_src sh
-#+begin_src sh :results none
-#+end_src
-#+end_src
-#+end_src
-#+end_src
-#+end_src
-#+end_src
-#+end_src
-#define CLOCK 0x40023830
-#define GPIOD_MODE_REGISTER 0x40020C00
-#define GPIOD_OUTPUT_REGISTER 0x40020C14
-#inclde <stdint.h>
 * Problems & Solutions
 * Tutorials
 ** Use Rust for Embedded Development
