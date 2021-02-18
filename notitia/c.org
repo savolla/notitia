@@ -707,7 +707,7 @@ while ( piece != NULL ) {
 #+end_src
 
 * How To
-** extract bits
+** extract bits easily
 
 Use *bit-fields* for this. For example I'm dealing with a TCP packet which bit structure look like;
 
@@ -766,7 +766,7 @@ typedef union {
 } Packet;
 #+end_src
 
-And viola! we made it!
+And viola! we made it!. bit fields are set automatically. no need to do tedious bitwise operations
 
 #+begin_src c
 int main(void) {
