@@ -480,6 +480,7 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 
 * Tips
 ** general
+- use *bit-fields* when dealing with network packets
 
 - use =packed= compiler attribute when dealing with some tcp or udp packets. so they are already 32-bit packets. You don't want to consume more memory than that
 
@@ -710,6 +711,8 @@ while ( piece != NULL ) {
 Use *bit-fields* for this. For example I'm dealing with a TCP packet which bit structure look like;
 
 [[file:./images/screenshot-120.png]]
+
+It is obvios that tcp packet is 32-bit. and our struct also needs to be 32-bit if we want to send it right?. There is a compiler feature called *bit-field*
 
 #+begin_src c
 typedef struct {
