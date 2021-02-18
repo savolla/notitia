@@ -2,15 +2,41 @@
 #+AUTHOR: savolla
 #+DESCRIPTION: functions that help
 
-* get nth digit of a number
+* c
+** extract information from a network packet
+
+#+begin_src c
+// network packet struct made with bit-fields. struct is exactly 4 bytes
+typedef struct {
+    uint32_t crc       :2;
+    uint32_t status    :1;
+    uint32_t payload   :12;
+    uint32_t bat       :3;
+    uint32_t sensor    :3;
+    uint32_t longAddr  :8;
+    uint32_t shortAddr :2;
+    uint32_t addrMode  :1;
+} Packet;
+
+// parse the bit packet
+Packet packetParser( uint32_t bitStream ) {
+    Packet packet;
+    packet.crc = bitStream & 3;
+    packet.status = (bitStream >> 2) & 1;
+    packet.payload = (bitStream >> 3) & 0xfff;
+    packet.bat = (bitStream >> 15) >> 3;
+    packet.sensor = (bitStream >> 18) >> 3;
+    packet.longAddr = (bitStream >> 21) & 0xff;
+    packet.shortAddr = (bitStream >> 29) & 3;
+    packet.addrMode = (bitStream >> 31) & 1;
+    return packet;
+}
+#+end_src
+* python
+** get nth digit of a number
 
 #+begin_src python
 int getDigit( int number, int digit ) {
     return (number % (int)pow( 10, digit ) / (int)pow( 10, (digit -1 )));
 }
-#+end_src
-* extract information from a network packet
-
-#+begin_src c
-
 #+end_src
