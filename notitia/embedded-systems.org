@@ -310,7 +310,8 @@ int const volatile *const foo;
 #+end_src
 
 ** applications of ~union~ in embedded systems
-1. Bit extraction form *network packets* etc
+1. Bit extraction /(form *network packets* etc)/
+2. Storing distinct data /(to save memory)/
 
 
 

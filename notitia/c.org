@@ -477,7 +477,6 @@ uint8_t volatile *pStatusReg;
 
 Use case:
 Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
-** usecases of ~union~ in embedded systems
 
 
 * Tips
@@ -708,7 +707,7 @@ while ( piece != NULL ) {
 #+end_src
 
 * How To
-** optimize struct size
+** extract bits
 
 Use *bit-fields* for this. For example I'm dealing with a TCP packet which bit structure look like;
 
@@ -730,6 +729,24 @@ typedef struct {
 #+end_src
 
 if we instansiate the =Packet= this struct will be 32-bit no problem. Don't forget to make _all members same type_
+
+#+begin_src c
+typedef union {
+  uint32_t bitStream;
+
+  struct {
+    uint32_t crc : 2;
+    uint32_t status : 1;
+    uint32_t payload : 12;
+    uint32_t bat : 3;
+    uint32_t sensor : 3;
+    uint32_t longAddr : 8;
+    uint32_t shortAddr : 2;
+    uint32_t addrMode : 1;
+  } field;
+
+} Packet;
+#+end_src
 
 ** define a struct
 
