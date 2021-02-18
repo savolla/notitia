@@ -109,6 +109,7 @@ git pull
 
 * Facts
 
+** general
 - in STM32F407VGT6 APB bus is slower than AHB bus
 
 - by default the most of the *peripherals* of ST MCUs are not active. we have to activate them in code before using them. To activate a peripheral we only need to enble the *clock* for them
@@ -307,6 +308,8 @@ int volatile *const foo;
 #+begin_src c
 int const volatile *const foo;
 #+end_src
+
+** applications of ~union~ in embedded systems
 
 * How To
 ** run ARM binaries on x86 Linux
