@@ -713,11 +713,13 @@ int main(void) {
 }
 #+end_src
 
+*** Mode Register
   * =00= : Input Mode
   * =01= : Output Mode
   * =10= : Alternate Function Mode
   * =11= : Analog Mode
 
+*** Peripherals
   1. two 3-axis accelometers
   2. one microphone
   3. DAC jack
