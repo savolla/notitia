@@ -97,7 +97,7 @@ git pull
 
 * Tips
 
-- *Reset Handler* function should copy the *.data* section from *code memory* to SRAM
+- *Reset Handler* ISR function should copy the *.data* section from *code memory* to SRAM
 
 - when an MCU has more than one SRAM don't let this confuse you. This is a totally a marketing technique. It actually have only one SRAM
 
@@ -684,72 +684,33 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 
 [[file:./images/screenshot-119.png]]
 
+* Platforms
+** STM32F407VGT6
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ,*clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
-    ,*gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
-    ,*gpiod_mode_register |= 0x01000000; // set 24th bit
-    ,*gpiod_output_register |= 0x1000 // set 12th GPIO pin to 3.3V
+#+begin_src c
+    // *clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
+    // *gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
+    // *gpiod_mode_register |= 0x01000000; // set 24th bit
+    // *gpiod_output_register |= 0x1000 // set 12th GPIO pin to 3.3V
     // create pointers
     // set bits
     return 0;
     uint32_t *clock = (uint32_t*)GPIOD_CLOCK;
     uint32_t *gpiod_mode_register = (uint32_t*)GPIOD_MODE_REGISTER;
     uint32_t *gpiod_output_register = (uint32_t*)GPIOD_OUTPUT_REGISTER;
+#+end_src
+
   * =00= : Input Mode
   * =01= : Output Mode
   * =10= : Alternate Function Mode
   * =11= : Analog Mode
+
   1. two 3-axis accelometers
   2. one microphone
   3. DAC jack
   4. 4 LEDs
   5. 2 push buttons
   [[./images/screenshot-73.png]]
-#+begin_src c
 #+begin_src sh
 #+begin_src sh
 #+begin_src sh
@@ -764,15 +725,12 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 #+end_src
 #+end_src
 #+end_src
-#+end_src
 #define CLOCK 0x40023830
 #define GPIOD_MODE_REGISTER 0x40020C00
 #define GPIOD_OUTPUT_REGISTER 0x40020C14
 #inclde <stdint.h>
-* Platforms
 * Problems & Solutions
 * Tutorials
-** STM32F407VGT6
 ** Use Rust for Embedded Development
 *** Base Addresses
 *** Concept
