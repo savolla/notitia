@@ -692,7 +692,7 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 #+begin_src c
 #inclde <stdint.h>
 
-#define CLOCK (0x40023830)
+#define GPIOD_CLOCK (0x40023830)
 #define GPIOD_MODE_REGISTER (0x40020C00)
 #define GPIOD_OUTPUT_REGISTER (0x40020C14)
 
