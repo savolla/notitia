@@ -148,6 +148,18 @@ void printArray(int *arr, size_t size) {
 
 - There is a thing called *string literal* which is stored in ROM instead of RAM
 
+  #+begin_src c
+  char msg1[] = "I'm stored in RAM";
+  char *msg2 = "I'm stored in ROM";
+  #+end_src
+
+- string literals are constant. cannot be changed!. the following code will spit an ERROR
+
+  #+begin_src c
+  char *msg2 = "I'm stored in ROM";
+  msg2[15] = 'A'; // trying to change ROM to RAM
+  #+end_src
+
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
 2. *CPU register* --> *C variable*
