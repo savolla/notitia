@@ -670,6 +670,11 @@ it's a binary manipulation technique where we test some specific bits of a bit s
 
 We can also do other operations like setting bits, toggling etc
 *** Bit Extraction
+*** Pull Up & Pull Down Resistor
+
+- They are used in *Digital Logic*
+-
+
 ** Robotics
 *** Mechanum Wheels
 
