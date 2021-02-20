@@ -144,6 +144,7 @@ void printArray(int *arr, size_t size) {
   char msg1[] = "A"; // this is a string. size is 2 because has '\0' at the end
   char msg2 = 'A'; // this is a simple character value
   #+end_src
+
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
 2. *CPU register* --> *C variable*
@@ -690,6 +691,7 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 ** ~base.h~
 
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
+** string literal
 
 * Library
 ** stdlib.h
