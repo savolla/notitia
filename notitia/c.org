@@ -509,6 +509,9 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 
 * Tips
 ** general
+
+- don't use =sizeof()= operator on *string* data. use =strlen()=. because =sizeof()= will give string_size+1 (extra '\0'). include =<string.h>= for =strlen()=
+
 - use *bit-fields* when dealing with network packets
 
 - use =packed= compiler attribute when dealing with some tcp or udp packets. so they are already 32-bit packets. You don't want to consume more memory than that
