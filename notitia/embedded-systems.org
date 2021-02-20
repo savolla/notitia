@@ -674,6 +674,8 @@ We can also do other operations like setting bits, toggling etc
 
 - They are used in *Digital Logic*
 - On every digital circuit when you see a resistor, chances are those resistors are pull up/down resistors
+- *Pull Up* resistor is connected to *Power Supply*
+- *Pull Down* resistor is connected to *Ground*
 
 ** Robotics
 *** Mechanum Wheels
