@@ -693,6 +693,10 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
 ** string literal
 
+#+begin_src c
+char *msg = "this is a string literal";
+#+end_src
+
 * Library
 ** stdlib.h
 *** calloc
