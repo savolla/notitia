@@ -673,7 +673,7 @@ We can also do other operations like setting bits, toggling etc
 *** Pull Up & Pull Down Resistor
 
 - They are used in *Digital Logic*
--
+- On every digital circuit when you see a resistor, chances are those resistors are pull up/down resistors
 
 ** Robotics
 *** Mechanum Wheels
