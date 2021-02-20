@@ -133,7 +133,7 @@ void printArray(int *arr, size_t size) {
 - There is a thing called *varible length array* that introduced in C99. (not included in ANSI C (C90))
 
   #+begin_src c
-  short const len = 10;
+  uint8_t const len = 10;
   uint32_t arr[len];
   #+end_src
 
