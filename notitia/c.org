@@ -138,12 +138,15 @@ void printArray(int *arr, size_t size) {
   #+end_src
 
 ** strings
+
 - those two are not same
 
   #+begin_src c
   char msg1[] = "A"; // this is a string. size is 2 because has '\0' at the end
   char msg2 = 'A'; // this is a simple character value
   #+end_src
+
+- There is a thing called *string literal* which is stored in ROM instead of RAM
 
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
