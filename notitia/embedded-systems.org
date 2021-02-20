@@ -676,6 +676,7 @@ We can also do other operations like setting bits, toggling etc
 - On every digital circuit when you see a resistor, chances are those resistors are pull up/down resistors
 - *Pull Up* resistor is connected to *Power Supply*
 - *Pull Down* resistor is connected to *Ground*
+- Here is the [[https://www.youtube.com/watch?v=G_i1ZhadTa0][video]] that explains pull up/pull down resistors greatly
 
 ** Robotics
 *** Mechanum Wheels
