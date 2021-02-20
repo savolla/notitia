@@ -539,6 +539,15 @@ uint8_t volatile *pStatusReg;
 Use case:
 Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
 
+** Pre-Processor Directives
+
+| Purpose                 | Syntax                                                  |
+|-------------------------+---------------------------------------------------------|
+| macro                   | =#define=                                               |
+| file inclusion          | =#include=                                              |
+| conditional compilation | =#ifdef=, =#endif=, =#if=, =#else=, =#ifndef=, =#undef= |
+| other                   | =#error=, =#pragma=                                     |
+
 * Tips
 ** general
 
@@ -1061,13 +1070,14 @@ void setCononicalMode() {
 
 ** ~#error~ macro usage
 
-if UNIX variable is not defined, don't compile and spit error "Only Unix is supported"
+if for exmple =UNIX= variable is not defined, stop the compilation and spit error "Only Unix is supported"
 
 #+begin_src
 #ifndef UNIX
 #error "Only Unix is supported"
 #endif
 #+end_src
+
 ** represent too big and too small numbers
 
 too big and too small numbers could take too much memory space. So instead of storing the actual number we store only the _exponent_ and _mantissa_ parts
