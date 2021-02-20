@@ -153,12 +153,21 @@ void printArray(int *arr, size_t size) {
   char *msg2 = "I'm stored in ROM";
   #+end_src
 
-- string literals are constant. cannot be changed!. the following code will spit an ERROR
+- string literals are constant. cannot be changed!. the following code will not spit any errors! so this is really strict case in C. The code is wrong and no warnings..
 
   #+begin_src c
   char *msg2 = "I'm stored in ROM";
   msg2[15] = 'A'; // trying to change ROM to RAM
   #+end_src
+
+- string literals must be always =const= !
+
+  #+begin_src c
+  char const *msg2 = "I'm stored in ROM";
+  msg2[15] = 'A'; // trying to change ROM to RAM
+  #+end_src
+
+- now compiler will shows error
 
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
