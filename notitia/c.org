@@ -8,6 +8,12 @@
 * Facts
 ** general
 
+- if we initialize arrays like this, the remaining elements will be initiazlized with 0
+
+  #+begin_src c
+  uint32_t arr[10] = {1,2,3}; // actuall arrays is {1,2,3,0,0,0,0,0,0,0}
+  #+end_src
+
 - all *global* =const= variables live in FLASH or ROM memory
 
 - If you know that the data is coming from another source and can only be changed by that source and the programmer is not allowed to change the data then use =const volatile=. This is useful when a register is just read-only like temperature sensor etc. and you want to read from it several times.
