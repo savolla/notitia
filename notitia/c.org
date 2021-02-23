@@ -564,6 +564,85 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 #endif
   #+end_src
 
+- #ifdef incidates *deffinition* of a *macro*
+
+  #+begin_src c
+#ifdef NEW_FEATURE
+// code
+#endif
+  #+end_src
+
+  if =NEW_FEATURE= macro is defined in code, include the =code=. otherwise exclude
+
+- #define macros can be passed as compiler arguments with =-D= argument. You don't always need to define macros inside code. This is how applications are compiled with specific features. for example compilation for windows or linux environment. Consider the following code
+
+  #+begin_src c
+/*
+  @file: program.c
+  @brief: cross platform application
+  ,*/
+
+#ifdef _LINUX__
+// code for linux
+#elif _WINDOWS__
+// code for windows
+#elif _MACOS__
+// code for macos
+#endif
+  #+end_src
+
+  Let's compile for *Linux* platform
+
+  #+begin_src sh
+gcc -D_LINUX__ -03 -Wall -c -o program.o program.c
+  #+end_src
+
+- there is also #undef director. which _undefines_ a macro
+
+- #error and #warning directives are used for terminating or sending a warning mesage in case some features are not defined or defined
+
+  #+begin_src c
+#if defined(_LINUX__) && defined(_WINDOWS__) && defined(_MACOSX__)
+    #error "You can't compile this program for every platform at once!"
+#endif
+
+#if defined(_LINUX__)
+    #warning "The program will be compiled for Linux platform"
+#endif
+
+#if defined(_WINDOWS__)
+    #warning "The program will be compiled for Windows platform"
+#endif
+
+#if defined(_MACOSX__)
+    #warning "The program will be compiled for Macosx platform"
+#endif
+  #+end_src
+
+** ~defined~ operator
+
+- useful operator for avoiding nested #ifdef statements
+
+  #+begin_src c
+#ifdef FEATURE_1
+    #ifdef FEATURE_2
+    // this code will only be available if FEATURE_1 and FEATURE_2 are defined
+    #endif
+#endif
+  #+end_src
+
+  above code can be reduced to one line with the following code
+
+  #+begin_src c
+#if defined(FEATURE_1) && defined(FEATURE_2)
+    // this code will only be available if FEATURE_1 and FEATURE_2 are defined
+#endif
+  #+end_src
+
+- =defined()= operator usually used with #if directives
+
+- also use =!defined()= to indicate =ifndef=
+
 
 * Tips
 ** general
@@ -580,7 +659,7 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 #endif
   #+end_src
 
-  after that when you want to enable the code block, just change =0= to =1=
+  after that when you want to enable the code block, just change =0= to =1=. this is more practical
 
 - don't use =sizeof()= operator on *string* data. use =strlen()=. because =sizeof()= will give string_size+1 (extra '\0'). include =<string.h>= for =strlen()=
 
