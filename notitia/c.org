@@ -548,8 +548,39 @@ Use this syntax generously whenever you are accessing memory mapped registers in
 | conditional compilation | =#ifdef=, =#endif=, =#if=, =#else=, =#ifndef=, =#undef= |
 | other                   | =#error=, =#pragma=                                     |
 
+- when using *conditional* compilation directives, condition must end with =#endif=
+
+  #+begin_src c
+#if // or #ifdef or #ifndef
+// code
+#endif
+  #+end_src
+
+- code between conditional compilation directives will be included or not included depending on the condition. for example the following code will not included in compilation;
+
+  #+begin_src c
+#if 0
+// this code will not be compiled
+#endif
+  #+end_src
+
+
 * Tips
 ** general
+
+- when excluding *code blocks* from the code, don't use *comments*. comments are used for _commenting_.. not code exclusion. use conditional compiler directive like this;
+
+  #+begin_src c
+#if 0
+// this code will not be included
+// this code will not be included
+// this code will not be included
+// this code will not be included
+// this code will not be included
+#endif
+  #+end_src
+
+  after that when you want to enable the code block, just change =0= to =1=
 
 - don't use =sizeof()= operator on *string* data. use =strlen()=. because =sizeof()= will give string_size+1 (extra '\0'). include =<string.h>= for =strlen()=
 
@@ -667,10 +698,15 @@ this is the case when you work in just one file. the better solution will be;
 
 4. always be concerned about =sign= and =data size= like 'L' or 'UL' ( 60UL * 40UL * 12UL )
 
-5. always _parentesize macro arguments_
+5. always _parentesize macro arguments_ and _function_
   #+begin_src c
 #define MIN(A,B) ( (A) >= (B) ? (B) : (A) )
   #+end_src
+
+6. When defining Address values, use =UL= at the end
+   #+begin_src c
+#define STACK_ADDRESS (0x80000000UL)
+   #+end_src
 
 ** useful =stdint.h= aliases;
 - =uintmax_t= : type for the largest _unsigned_ integer
