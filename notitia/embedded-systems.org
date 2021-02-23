@@ -312,6 +312,12 @@ int const volatile *const foo;
 ** applications of ~union~ in embedded systems
 1. Bit extraction /(form *network packets* etc)/
 2. Storing distinct data /(to save memory)/
+** ARM Cortex-Mx
+
+- manufacturers love to use Cortex-M processors because;
+  1. low cost
+  2. low power
+  3. low silicon area (smaller)
 
 * How To
 ** run ARM binaries on x86 Linux
