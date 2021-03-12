@@ -110,6 +110,7 @@ git pull
 * Facts
 
 ** general
+
 - in STM32F407VGT6 APB bus is slower than AHB bus
 
 - by default the most of the *peripherals* of ST MCUs are not active. we have to activate them in code before using them. To activate a peripheral we only need to enble the *clock* for them
@@ -804,3 +805,48 @@ int main(void) {
 **** itm
 **** rust
 **** serial com
+** Fastbit Embedded Brain Academy
+*** Course 2 (Cortex-M4)
+****  Facts
+
++  ARM Cortex-M is 32-bit processor
+
++  Cortex-M processor cannot use *arm* instructions. It uses _Thumb_ instruction set which gives same 32-bit *arm* instruction performance but in 16-bit
+
++  Areas that Cortex-M4 is used
+
+  1. health monitoring devices
+  2. fitness tracking deivces
+  3. automative applications
+  4. IoT applications
+  5. Mobile and Home appliances
+  6. Toys and Consumer Products
+  7. Test and Measurnig devices
+
++  ARM Cortex-M processor adventages
+
+  1. low cost (almost same the price of 8-bit or 16-bit proc.)
+  2. low power
+  3. low silicon area (smaller)
+  4. can be used in *Ultra low and high performance* applications
+  5. has 240 external interrupts
+  6. RTOS friendly
+  7. very good documentation
+
++  Compatitors of ARM Cortex-M;
+
+  1. Arduino boards. uses AVR processor (Microchip)
+  2. MSP430. uses ARM based another processor (Texas Instruments)
+
++ Features of the Cortex M0/M3/M4 processor
+
+  1.
+
+****  Concepts
+***** Processor Core
+
+Electoronic chip inside a processor. Contains ALU, instruction decoders, registers etc. A CPU can contain several *processor cores*. This is why a processor is called *multi core*
+
+***** Processor (CPU)
+
+CPU contains one or more *Processor Core* and surrounding *processor specific peripherals*

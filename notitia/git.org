@@ -134,3 +134,9 @@ git rm
 3. Removes the file only from the Git repository, but not from the filesystem. ...
 4. Recursively removes folders. ...
 5. No files are actually removed.
+
+** specify branch while cloning
+
+#+begin_src sh
+git clone -b <branch> <remote_repo>
+#+end_src
