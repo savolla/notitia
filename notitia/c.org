@@ -1098,7 +1098,7 @@ the following example work on =gcc= and takes no special parameters while compil
   #+END_SRC
 
 
-+ here is the full syntax for inline assembly for *arm-none-eaby-gcc*
++ here is the full syntax for inline assembly for *arm-none-eabi-gcc*
   #+BEGIN_SRC c
   //               your asm      C vars or imm
   //              mnemonics     values for input  idk yet

@@ -811,11 +811,13 @@ int main(void) {
 
 ***** General
 
-+  ARM Cortex-M is 32-bit processor
++ ARM Cortex-M is 32-bit processor
 
-+  Cortex-M processor cannot use *arm* instructions. It uses _Thumb_ instruction set which gives same 32-bit *arm* instruction performance but in 16-bit
++ Cortex-M processor cannot use *arm* instructions. It uses _Thumb_ instruction set which gives same 32-bit *arm* instruction performance but in 16-bit
 
 + *Operation Mode* (Thread & Handler) and *Access Levels* (PAL & NPAL) are different things
+
++ core registers can't be accesses by dereferencing. you must use *inline assembly*
 
 ***** Areas that Cortex-M4 is used
 
@@ -863,15 +865,21 @@ int main(void) {
 
 + *Handler Mode* always operates in *PAL*
 
-+ to switch between access levels we use *CONTROL* register
++ to switch between access levels we use *CONTROL* register which is a *priviledged register*
 
 ***** Cortex-M core Registers
 
 + *r0 - r12* are *general purpose registers*
-+ *r13* is *stack pointer* (SP)
-+ *r14* is *link register* (LR)
++ *r13* is *stack pointer*   (SP)
++ *r14* is *link register*   (LR)
 + *r15* is *program counter* (PC)
 
+****** Priviledged Registers
+1. XPSR (see ~Concepts~)
+2. PRIMASK
+3. FAULTMASK
+4. BASEPRI
+5. CONTROL
 
 ****  Concepts
 
@@ -883,9 +891,15 @@ Electoronic chip inside a processor. Contains ALU, instruction decoders, registe
 
 CPU contains one or more *Processor Core* and surrounding *processor specific peripherals*
 
-***** xpsr
+***** XPSR
 
-this is an ARM register which stands for *Interrupt Program Status Register*. If this register's first 9 bits are zero, this means the program is in *Thread Mode*. Otherwise in *Handler Mode*
++ Holds the *status information* of the currently executed program.
++ Priviledged register and can be accessed only from PAL mode
++ This register is the combination of 3 registers;
+
+  1. Application PSR (APSR) : equivalent of =FLAGS= register in x86. Check the documentation for more info
+  2. Interrupt PSR   (IPSR) : contains the *Number of Current ISR*. For example =0= means *Thread Mode* or =5= means *Hard Bus Exception*
+  3. Execution PSR   (EPSR) :
 
 ***** Link Register (r14)
 
