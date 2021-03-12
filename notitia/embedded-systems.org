@@ -872,7 +872,9 @@ int main(void) {
 + *r14* is *link register* (LR)
 + *r15* is *program counter* (PC)
 
+
 ****  Concepts
+
 ***** Processor Core
 
 Electoronic chip inside a processor. Contains ALU, instruction decoders, registers etc. A CPU can contain several *processor cores*. This is why a processor is called *multi core*
