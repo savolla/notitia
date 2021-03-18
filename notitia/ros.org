@@ -1,0 +1,22 @@
+#+TITLE: Ros
+#+AUTHOR: savolla
+#+DATE: Thu Feb 11 17:38:26 2021
+
+* tips
++ When you designing Robots in SolidWorks, export them in *STL* format to import to ROS
+* facts
+* how to
+** create a package
+
+#+begin_src sh
+initros1 # optional
+mkdir -p $PACKAGE_PATH/src
+catkin_init_workspace
+cd $PACKAGE_PATH/src
+catkin_create_pkg $YOUR_PACKAGE_NAME catkin
+cd $PACKAGE_PATH/
+catkin_make
+cd $PACKAGE_PATH/src/$YOUR_PACKAGE_NAME
+#+end_src
+
+Now you can create your directories here

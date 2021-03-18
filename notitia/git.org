@@ -1,0 +1,142 @@
+#+TITLE: Git
+
+* how to
+** undo the "git add"
+#+begin_src sh
+git reset $YOUR_FILE
+#+end_src
+** control a repository from outside
+
+1. use *--git-dir=* option
+
+2. specify the *.git* folder of your project
+
+   #+begin_src sh
+   git --git-dir=$HOME/path/to/.git
+   #+end_src
+
+3. you can now issue normal git commands after that string like:
+
+   #+begin_src sh
+   git --git-dir=$HOME/path/to/.git add -u
+   git --git-dir=$HOME/path/to/.git commit -m "initial"
+   #+end_src
+
+** store your credentials for automatic pushes
+
+#+begin_quote
+this is not secure! your password and username will be stored inside *.git* directory in *planetext*. enyone on your PC will have access to them. you've been warned!
+#+end_quote
+
+1. go to your repository
+
+   #+begin_src sh
+   cd $YOUR_REPO
+   #+end_src
+
+2. make some changes
+
+3. modify the *git config* for password and username storing
+
+   #+begin_src sh
+   git config --global credential.helper store
+   #+end_src
+
+4. commit and push your changes
+
+   #+begin_src sh
+   git commit -m "username and password adjustment"
+   git push -u origin $YOUR_BRANCH
+   #+end_src
+
+5. now the git utility will ask you *username* and *password*. enter those and you are good to go
+
+after this operation, git won't ask for username and password for this repository. this is not a global modification btw. you have to do this for every repo
+
+** switch to specific commit
+useful if you want to go back to the last checkpoint in your project. let's say you commited your project when it was working without problems. you code a little bit more and bam.. it's not working now.. insted of fixing bugs, you might go back in git commit history
+1. get the last commit's *id*
+   #+begin_src sh
+git log
+   #+end_src
+2. go back to last commit
+   #+begin_src sh
+git reset --hard $COMMIT_ID
+   #+end_src
+now all the local changes you made will be lost
+** manage dotfiles
+*** create dotfiles
+1. initialize git
+#+begin_src sh
+git init --bare $HOME/.dotfiles
+#+end_src
+
+2. add alias to your .bashrc
+#+begin_src sh
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
+#+end_src
+
+3. don't show untracked files since they are too much
+#+begin_src sh
+cd ~/.dotfiles
+git config status.showUntrackedFiles no
+#+end_src
+
+4. source the .bashrs
+#+begin_src sh
+source ~/.bashrc
+#+end_src
+
+5. add your dotfiles
+#+begin_src sh
+dotfiles add $YOUR_DOTFILE
+#+end_src
+
+6. commit
+#+begin_src sh
+dotfiles commit -m "blah blah"
+#+end_src
+
+7. create a repository called *dotfiles* on *github*
+
+8. essentials
+#+begin_src sh
+dotfiles branch -M main
+dotfiles remote add origin https://github.com/savolla/dotfiles.git
+dotfiles push -u origin main
+#+end_src
+
+*** restore dotfiles on a new system
+
+1. install *stow*
+#+begin_src sh
+sudo pacman -S stow
+#+end_src
+
+2. clone your dotfiles from github
+#+begin_src sh
+git clone https://github.com/savolla/dotfiles.git ~/.dotfiles
+#+end_src
+
+3. restore your dotfiles
+#+begin_src sh
+cd ~/.dotfiles
+stow *
+#+end_src
+** remove a file from repository
+
+#+begin_src sh
+git rm
+#+end_src
+
+1. The "rm" command helps you to remove files from a Git repository. ...
+2. The name of a file (or multiple files) you want to remove. ...
+3. Removes the file only from the Git repository, but not from the filesystem. ...
+4. Recursively removes folders. ...
+5. No files are actually removed.
+
+** specify branch while cloning
+
+#+begin_src sh
+git clone -b <branch> <remote_repo>
+#+end_src

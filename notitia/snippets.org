@@ -2,7 +2,46 @@
 #+AUTHOR: savolla
 #+DESCRIPTION: functions that help
 
-* get nth digit of a number
+* c
+** extract information from a network packet
+
+#+begin_src c
+// network packet union made with bit-fields. since it is a union, bit extrction is done automtically
+typedef union {
+  uint32_t bitStream;
+
+  struct {
+    uint32_t crc : 2;
+    uint32_t status : 1;
+    uint32_t payload : 12;
+    uint32_t bat : 3;
+    uint32_t sensor : 3;
+    uint32_t longAddr : 8;
+    uint32_t shortAddr : 2;
+    uint32_t addrMode : 1;
+  } field;
+
+} Packet;
+
+int main(void) {
+
+    Packet pkg = (Packet)0xffffffff;
+
+    printf("crc      : %d\n", pkg.field.crc);
+    printf("status   : %d\n", pkg.field.status);
+    printf("payload  : %d\n", pkg.field.payload);
+    printf("bat      : %d\n", pkg.field.bat);
+    printf("sensor   : %d\n", pkg.field.sensor);
+    printf("longAddr : %d\n", pkg.field.longAddr);
+    printf("addrMode : %d\n", pkg.field.addrMode);
+    printf("size : %lu\n", sizeof(pkg));
+    printf("%x\n", pkg.bitStream);
+
+    return 0;
+}
+#+end_src
+* python
+** get nth digit of a number
 
 #+begin_src python
 int getDigit( int number, int digit ) {

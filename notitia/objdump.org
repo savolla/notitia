@@ -1,0 +1,24 @@
+#+TITLE: Objdump
+
+* how to
+** display only executable sections
+#+BEGIN_SRC sh
+objdump -d <BINARY>
+#+END_SRC
+** display all sections
+#+BEGIN_SRC sh
+objdump -D <BINARY>
+#+END_SRC
+** display with source code
+- this requires =-g= option when compiling with *gdb*
+#+BEGIN_SRC sh
+objdump -S <BINARY>
+#+END_SRC
+** switch to intel syntax
+#+BEGIN_SRC sh
+objdump -M intel -[d|D] <BINARY>
+#+END_SRC
+** display assembly in 32-bit layout
+#+BEGIN_SRC sh
+objdump -M i386,intel -[d|D] <BINARY>
+#+END_SRC

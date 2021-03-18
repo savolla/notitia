@@ -1,0 +1,11 @@
+#+TITLE: Nasm
+
+* how to
+** make binary executable
+#+BEGIN_SRC sh
+nasm -f bin -o test <CODE>.asm #
+#+END_SRC
+** make elf executable
+#+BEGIN_SRC sh
+nasm -f elf -o test <CODE>.asm #
+#+END_SRC

@@ -65,6 +65,7 @@
 - =emerge=                 ortaaya çıkmak
 - =endeavor=               çaba
 - =entrepreneurial=        girişimci
+- =enhance=                girişimci
 - =eradicate=              kökünü kurutmak
 - =estate=                 arazi
 - =estimate=               tahmin
@@ -88,11 +89,12 @@
 
 - =hardboard=              sunta
 - =harness=                kablo ağı
+- =hazardous=              tehlikeli
 - =headed=                 başlı
+- =heady=                  sert
 - =hinder=                 engellemek
 - =houseing-department=    konut-bölüm
 - =however=                ancak
-- =heady=                  sert
 
 - =idiom=                  deyim
 - =idiosyncrasies=         özel durumlar
@@ -130,6 +132,7 @@
 - =pejorative=             aşağılayıcı
 - =profligate=             berbat
 - =prose=                  düzyazı
+- =proposal=               teklif
 - =permeate=               nüfuz etmek
 - =perpendicular=          dik (açısal diklik)
 - =persuade=               ikna etmek
@@ -188,11 +191,12 @@
 - =suppress=               bastırmak
 - =surgeon=                cerrah
 
+- =tending=                bakım
 - =tenet=                  ilke
-- =trivial=                gereksiz
 - =therefore=              bu nedenle
 - =thesaurus=              eş anlamlılar sözlüğü
 - =trailed=                izledi
+- =trivial=                gereksiz
 
 - =unbolted=               sürgüsü açılmış
 - =uncharted=              keşvedilmemiş

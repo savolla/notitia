@@ -1,0 +1,16 @@
+#+TITLE: Ubuntu
+#+AUTHOR: savolla
+#+DATE: Thu Feb 11 14:13:58 2021
+
+* how to
+** remove orphans
+
+#+begin_src sh
+sudo apt-get autoremove
+#+end_src
+
+** completely remove a package
+
+#+begin_src sh
+sudo apt --purge remove $YOUR_PACKAGE
+#+end_src

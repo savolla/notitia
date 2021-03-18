@@ -6,6 +6,8 @@
 #+DESCRIPTION: C Programming Languages
 
 * Facts
+** general
+
 
 - all *global* =const= variables live in FLASH or ROM memory
 
@@ -104,6 +106,68 @@ void printArray(int *arr, size_t size) {
 - macros are always fast and portable
 
 - ternary operators are faster
+
+- ~struct~ deffinitions don't consume memory. Only instances of the struct consume memory
+
+** arrays
+
+- if we initialize arrays like this, the remaining elements will be initiazlized with 0
+
+  #+begin_src c
+  uint32_t arr[10] = {1,2,3}; // actuall arrays is {1,2,3,0,0,0,0,0,0,0}
+  #+end_src
+
+- the following is legal;
+
+  #+begin_src c
+  uint32_t arr[] = {1,2,3}; // it's size will be 3
+  uint32_t arr[100]; // all elements will initialized with 0
+  #+end_src
+
+- but this is not legal
+
+  #+begin_src c
+  uint32_t arr[]; // you must specify the size
+  #+end_src
+
+- There is a thing called *varible length array* that introduced in C99. (not included in ANSI C (C90))
+
+  #+begin_src c
+  uint8_t const len = 10;
+  uint32_t arr[len];
+  #+end_src
+
+** strings
+
+- those two are not same
+
+  #+begin_src c
+  char msg1[] = "A"; // this is a string. size is 2 because has '\0' at the end
+  char msg2 = 'A'; // this is a simple character value
+  #+end_src
+
+- There is a thing called *string literal* which is stored in ROM instead of RAM
+
+  #+begin_src c
+  char msg1[] = "I'm stored in RAM";
+  char *msg2 = "I'm stored in ROM";
+  #+end_src
+
+- string literals are constant. cannot be changed!. the following code will not spit any errors! so this is really strict case in C. The code is wrong and no warnings..
+
+  #+begin_src c
+  char *msg2 = "I'm stored in ROM";
+  msg2[15] = 'A'; // trying to change ROM to RAM
+  #+end_src
+
+- string literals must be always =const= !
+
+  #+begin_src c
+  char const *msg2 = "I'm stored in ROM";
+  msg2[15] = 'A'; // trying to change ROM to RAM
+  #+end_src
+
+- now compiler will shows error
 
 ** scenarios for using inline assembly
 1. *C variable* --> *CPU register*
@@ -475,7 +539,145 @@ uint8_t volatile *pStatusReg;
 Use case:
 Use this syntax generously whenever you are accessing memory mapped registers in you microcontroller code. Since it is volatile, compiler won't do any optimization and won't break the code
 
+** Pre-Processor Directives
+
+| Purpose                 | Syntax                                                  |
+|-------------------------+---------------------------------------------------------|
+| macro                   | =#define=                                               |
+| file inclusion          | =#include=                                              |
+| conditional compilation | =#ifdef=, =#endif=, =#if=, =#else=, =#ifndef=, =#undef= |
+| other                   | =#error=, =#pragma=                                     |
+
+- when using *conditional* compilation directives, condition must end with =#endif=
+
+  #+begin_src c
+#if // or #ifdef or #ifndef
+// code
+#endif
+  #+end_src
+
+- code between conditional compilation directives will be included or not included depending on the condition. for example the following code will not included in compilation;
+
+  #+begin_src c
+#if 0
+// this code will not be compiled
+#endif
+  #+end_src
+
+- #ifdef incidates *deffinition* of a *macro*
+
+  #+begin_src c
+#ifdef NEW_FEATURE
+// code
+#endif
+  #+end_src
+
+  if =NEW_FEATURE= macro is defined in code, include the =code=. otherwise exclude
+
+- #define macros can be passed as compiler arguments with =-D= argument. You don't always need to define macros inside code. This is how applications are compiled with specific features. for example compilation for windows or linux environment. Consider the following code
+
+  #+begin_src c
+/*
+  @file: program.c
+  @brief: cross platform application
+  ,*/
+
+#ifdef _LINUX__
+// code for linux
+#elif _WINDOWS__
+// code for windows
+#elif _MACOS__
+// code for macos
+#endif
+  #+end_src
+
+  Let's compile for *Linux* platform
+
+  #+begin_src sh
+gcc -D_LINUX__ -03 -Wall -c -o program.o program.c
+  #+end_src
+
+- there is also #undef director. which _undefines_ a macro
+
+- #error and #warning directives are used for terminating or sending a warning mesage in case some features are not defined or defined
+
+  #+begin_src c
+#if defined(_LINUX__) && defined(_WINDOWS__) && defined(_MACOSX__)
+    #error "You can't compile this program for every platform at once!"
+#endif
+
+#if defined(_LINUX__)
+    #warning "The program will be compiled for Linux platform"
+#endif
+
+#if defined(_WINDOWS__)
+    #warning "The program will be compiled for Windows platform"
+#endif
+
+#if defined(_MACOSX__)
+    #warning "The program will be compiled for Macosx platform"
+#endif
+  #+end_src
+
+** ~defined~ operator
+
+- useful operator for avoiding nested #ifdef statements
+
+  #+begin_src c
+#ifdef FEATURE_1
+    #ifdef FEATURE_2
+    // this code will only be available if FEATURE_1 and FEATURE_2 are defined
+    #endif
+#endif
+  #+end_src
+
+  above code can be reduced to one line with the following code
+
+  #+begin_src c
+#if defined(FEATURE_1) && defined(FEATURE_2)
+    // this code will only be available if FEATURE_1 and FEATURE_2 are defined
+#endif
+  #+end_src
+
+- =defined()= operator usually used with #if directives
+
+- also use =!defined()= to indicate =ifndef=
+
+
 * Tips
+** general
+
+- when excluding *code blocks* from the code, don't use *comments*. comments are used for _commenting_.. not code exclusion. use conditional compiler directive like this;
+
+  #+begin_src c
+#if 0
+// this code will not be included
+// this code will not be included
+// this code will not be included
+// this code will not be included
+// this code will not be included
+#endif
+  #+end_src
+
+  after that when you want to enable the code block, just change =0= to =1=. this is more practical
+
+- don't use =sizeof()= operator on *string* data. use =strlen()=. because =sizeof()= will give string_size+1 (extra '\0'). include =<string.h>= for =strlen()=
+
+- use *bit-fields* when dealing with network packets
+
+- use =packed= compiler attribute when dealing with some tcp or udp packets. so they are already 32-bit packets. You don't want to consume more memory than that
+
+- use =const= keyword when setting =struct= members in ~C99~ method. This will make those values unchangable
+
+  #+begin_src c
+  struct A const x = {
+    .a = 11;
+    .b = 22;
+    .c = 33;
+  }
+
+  x.b = 999; // gives error
+  #+end_src
 
 - use =char string[] = "some string";= insted of =char *string = "some string";=
 
@@ -575,10 +777,15 @@ this is the case when you work in just one file. the better solution will be;
 
 4. always be concerned about =sign= and =data size= like 'L' or 'UL' ( 60UL * 40UL * 12UL )
 
-5. always _parentesize macro arguments_
+5. always _parentesize macro arguments_ and _function_
   #+begin_src c
 #define MIN(A,B) ( (A) >= (B) ? (B) : (A) )
   #+end_src
+
+6. When defining Address values, use =UL= at the end
+   #+begin_src c
+#define STACK_ADDRESS (0x80000000UL)
+   #+end_src
 
 ** useful =stdint.h= aliases;
 - =uintmax_t= : type for the largest _unsigned_ integer
@@ -632,6 +839,12 @@ in Linux/Unix systems, when functions like =getchar()= is used, the user will al
 ** ~base.h~
 
 one important test function lives here is called =text_expect_i=. This function takes two values and compares them
+** string literal
+
+#+begin_src c
+char *msg = "this is a string literal";
+#+end_src
+
 * Library
 ** stdlib.h
 *** calloc
@@ -686,6 +899,86 @@ while ( piece != NULL ) {
 #+end_src
 
 * How To
+** extract bits easily
+
+Use *bit-fields* for this. For example I'm dealing with a TCP packet which bit structure look like;
+
+[[file:./images/screenshot-120.png]]
+
+It is obvios that tcp packet is 32-bit. and our struct also needs to be 32-bit if we want to send it right?. There is a compiler feature called *bit-field*
+
+#+begin_src c
+typedef struct {
+    uint32_t crc       :2;
+    uint32_t status    :1;
+    uint32_t payload   :12;
+    uint32_t bat       :3;
+    uint32_t sensor    :3;
+    uint32_t longAddr  :8;
+    uint32_t shortAddr :2;
+    uint32_t addrMode  :1;
+} Packet;
+#+end_src
+
+if we instansiate the =Packet= this struct will be 32-bit no problem. Don't forget to make _all members same type_. But after this operatins we will need to implement a *bitParser* function and do some /bitwise magic/ like this;
+
+#+begin_src c
+// parse the bit packet
+Packet packetParser( uint32_t bitStream ) {
+    Packet packet;
+    packet.crc = bitStream & 3;
+    packet.status = (bitStream >> 2) & 1;
+    packet.payload = (bitStream >> 3) & 0xfff;
+    packet.bat = (bitStream >> 15) >> 3;
+    packet.sensor = (bitStream >> 18) >> 3;
+    packet.longAddr = (bitStream >> 21) & 0xff;
+    packet.shortAddr = (bitStream >> 29) & 3;
+    packet.addrMode = (bitStream >> 31) & 1;
+    return packet;
+}
+#+end_src
+
+Thankfully there is a trick to automatically map bits into bit fields in C. We simply put the bitStream intot a union and put the =Packet= struct into this union and change the name to =field=
+
+#+begin_src c
+typedef union {
+  uint32_t bitStream;
+
+  struct {
+    uint32_t crc : 2;
+    uint32_t status : 1;
+    uint32_t payload : 12;
+    uint32_t bat : 3;
+    uint32_t sensor : 3;
+    uint32_t longAddr : 8;
+    uint32_t shortAddr : 2;
+    uint32_t addrMode : 1;
+  } field;
+
+} Packet;
+#+end_src
+
+And viola! we made it!. bit fields are set automatically. no need to do tedious bitwise operations
+
+#+begin_src c
+int main(void) {
+
+    Packet pkg = (Packet)0xffffffff;
+
+    printf("crc      : %d\n", pkg.field.crc);
+    printf("status   : %d\n", pkg.field.status);
+    printf("payload  : %d\n", pkg.field.payload);
+    printf("bat      : %d\n", pkg.field.bat);
+    printf("sensor   : %d\n", pkg.field.sensor);
+    printf("longAddr : %d\n", pkg.field.longAddr);
+    printf("addrMode : %d\n", pkg.field.addrMode);
+    printf("size : %lu\n", sizeof(pkg));
+    printf("%x\n", pkg.bitStream);
+
+    return 0;
+}
+#+end_src
+
 ** define a struct
 
 #+begin_src c
@@ -693,6 +986,46 @@ typedef struct A{
     int a;
     char c;
 } A;
+#+end_src
+** instantiate a struct members
+
+three types of member instantiation are available in C. Consider the following =struct=
+
+#+begin_src c
+typedef struct A {
+    int a;
+    int b;
+    int c;
+};
+#+end_src
+
+*** set variables on instantiation ~C89~
+
++ this is called ~C89 method~. in this method, the _order is important_
+
+#+begin_src c
+A x = {11, 22, 33};
+#+end_src
+
+*** set variables on instantiation ~C99~
+
++ this is called ~C99 method~. in this method, the _order is NOT important_
+
+#+begin_src c
+A x = {
+    .a=11,
+    .b=22,
+    .c=33
+};
+#+end_src
+
+*** set variables after instantiation
+
+#+begin_src c
+A x;
+x.a = 11;
+x.b = 22;
+x.c = 33;
 #+end_src
 
 ** print the address of a variable
@@ -765,7 +1098,7 @@ the following example work on =gcc= and takes no special parameters while compil
   #+END_SRC
 
 
-+ here is the full syntax for inline assembly for *arm-none-eaby-gcc*
++ here is the full syntax for inline assembly for *arm-none-eabi-gcc*
   #+BEGIN_SRC c
   //               your asm      C vars or imm
   //              mnemonics     values for input  idk yet
@@ -852,13 +1185,14 @@ void setCononicalMode() {
 
 ** ~#error~ macro usage
 
-if UNIX variable is not defined, don't compile and spit error "Only Unix is supported"
+if for exmple =UNIX= variable is not defined, stop the compilation and spit error "Only Unix is supported"
 
 #+begin_src
 #ifndef UNIX
 #error "Only Unix is supported"
 #endif
 #+end_src
+
 ** represent too big and too small numbers
 
 too big and too small numbers could take too much memory space. So instead of storing the actual number we store only the _exponent_ and _mantissa_ parts
