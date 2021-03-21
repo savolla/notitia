@@ -140,3 +140,7 @@ git rm
 #+begin_src sh
 git clone -b <branch> <remote_repo>
 #+end_src
+** hide untracked files
+#+begin_src sh
+git config --global status.showUntrackedFiles no
+#+end_src
