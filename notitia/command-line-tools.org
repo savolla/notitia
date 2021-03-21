@@ -113,7 +113,7 @@ youtube-dl -cio -f 22 '%(autonumber)s-%(title)s.%(ext)s' $VIDEO_LINK
 ** mpv
 *** key bindings
 *** how to
-1. play youtube videos with only audio
+**** play youtube videos with only audio
    #+BEGIN_SRC sh
    mpv -vo=null $VIDEO_URL
    #+END_SRC
@@ -148,3 +148,6 @@ program launcher and more
 #+begin_src sh
 rofi-theme-selector
 #+end_src
+* Android Management
+ * [[./adb.org][adb]]
+ * [[./scrcpy.org][scrcpy]]

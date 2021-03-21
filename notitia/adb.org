@@ -1,0 +1,11 @@
+#+TITLE: Adb
+
+* problems & solutions
+** error: failed to get feature set
+
+restart the adb server
+
+#+begin_src sh
+adb kill-server
+sudo adb start-server
+#+end_src
