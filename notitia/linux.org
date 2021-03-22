@@ -101,6 +101,13 @@ Add the following
 savolla ALL=(root) NOPASSWD: $ABSOLUTE_PATH_TO_YOUR_UTILITY
 #+end_src
 
+** generate random number
+#+begin_src sh
+echo $RANDOM
+#+end_src
+
+#+RESULTS:
+: 29712
 
 * Distros
  * [[./alpine.org][alpine]]
