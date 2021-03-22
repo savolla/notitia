@@ -28,12 +28,46 @@ this helps to describe task more
 task 1 annotate "your annotation here"
 #+end_src
 
-** xx
-#+begin_src sh
+** modify the task
 
-#+end_src
-** xx
-#+begin_src sh
+Let's say we have a task like this;
 
+#+begin_src sh
+task add "water flowers" pri:H
 #+end_src
+
+And we want to modify the *priority* of it later. we use *mod* with task ID
+
+#+begin_src sh
+task mod 1 pri:L
+#+end_src
+
+** edit task with a text editor
+
+you need to know the ID of the task
+
+#+begin_src sh
+task 1 edit
+#+end_src
+** undo changes
+
+this will show the *diff* between current and previos change. answer yes or no to commit
+
+#+begin_src bash
+task undo
+#+end_src
+** clean deleted tasks
+
+*task* does not delete *deleted tasks*. you need to clean them separately
+
+#+begin_src sh
+task purge
+#+end_src
+
+* concepts
+** dates
+- *due date*
+- *scheduled*
+- *until*
+- *one more..*
 * problems & solutions
