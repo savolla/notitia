@@ -1,0 +1,39 @@
+#+TITLE: Task
+
+* facts
++ You can add more than one tags
+* how to
+** create a task
+#+begin_src sh
+task add "water flowers"
+#+end_src
+** add tags
+
+#+begin_src sh
+task add +home "water flowers"
+task add +home +work "meal"
+#+end_src
+
+** add priority of a task
+#+begin_src sh
+task add pri:H "task one"   # high priority
+task add pri:M "task two"   # medium priority
+task add pri:L "task three" # low priority
+#+end_src
+** annotate the task
+
+this helps to describe task more
+
+#+begin_src sh
+task 1 annotate "your annotation here"
+#+end_src
+
+** xx
+#+begin_src sh
+
+#+end_src
+** xx
+#+begin_src sh
+
+#+end_src
+* problems & solutions
