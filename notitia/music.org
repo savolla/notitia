@@ -36,7 +36,7 @@ easier to digest and fun
   legent album from a legend
 + [[https://plini.bandcamp.com/album/sweet-nothings][Plini - Sweet Nothings]]
 [[file:./images/screenshot-19.png]]
-  I bet this will be the sweetest thing you will ever listened. your ears will overflow with candies
+I bet this will be the sweetest thing you will ever listened. your ears will overflow with candies
 
 ** level 2
 still electronic but with some interesting elements
@@ -46,6 +46,10 @@ still electronic but with some interesting elements
 + [[https://www.youtube.com/watch?v=nzvLiwUK3R8][Aphex Twin Live at Field Day]]
 [[file:./images/screenshot-21.png]]
   did you ever experienced ear bleeding? just skip to 1:51:00 and wait.
+
++ [[https://www.youtube.com/watch?v=oWzzNvcxY4w][Machine Girl - WLFGRL]]
+ [[file:./images/screenshot-124.png]]
+This album sounds like when you accidentally hit your nose a bit hard and it feels funny for a moment.
 
 ** level 3
 still electronic but.. this time adding depression
