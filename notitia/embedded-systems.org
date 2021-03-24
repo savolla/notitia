@@ -97,6 +97,29 @@ git pull
 
 * Tips
 
+- what you need to know in Turkey
+
+  | Context   | Demand |
+  |-----------+--------|
+  | SPI       | +      |
+  | I2C       | +      |
+  | RS485     | +      |
+  | RS232     | +      |
+  | Ethernet  | +      |
+  | CAN       | +      |
+  |-----------+--------|
+  | Qt        | ++     |
+  | RTOS      | +      |
+  | Python    | +      |
+  | FPGA      | +      |
+  | github    | +      |
+  | C         | +++    |
+  | C++       | +++    |
+  | ARM       | +      |
+  | Englisgh  | ++     |
+  | Arduino   | +      |
+  | Raspberry | +      |
+
 - *Reset Handler* ISR function should copy the *.data* section from *code memory* to SRAM
 
 - when an MCU has more than one SRAM don't let this confuse you. This is a totally a marketing technique. It actually have only one SRAM
@@ -786,128 +809,3 @@ int main(void) {
   5. 2 push buttons
   [[./images/screenshot-73.png]]
 * Problems & Solutions
-* Tutorials
-** Use Rust for Embedded Development
-*** Base Addresses
-*** Concept
-*** Facts
-*** How To
-*** install packages first
-**** GPIOx_MODER
-**** GPIOx_ODR
-**** OpenOCD
-**** RCC_AHB1ENR
-**** arm-none-eabi-gdb
-**** bluetooth packages
-**** cargo-binutils
-**** features
-**** internal peripherals
-**** itm
-**** rust
-**** serial com
-** Fastbit Embedded Brain Academy
-*** Course 2 (Cortex-M4)
-****  Facts
-
-***** General
-
-+ ARM Cortex-M is 32-bit processor
-
-+ Cortex-M processor cannot use *arm* instructions. It uses _Thumb_ instruction set which gives same 32-bit *arm* instruction performance but in 16-bit
-
-+ *Operation Mode* (Thread & Handler) and *Access Levels* (PAL & NPAL) are different things
-
-+ core registers can't be accesses by dereferencing. you must use *inline assembly*
-
-***** Areas that Cortex-M4 is used
-
-+ health monitoring devices
-+ fitness tracking deivces
-+ automative applications
-+ IoT applications
-+ Mobile and Home appliances
-+ Toys and Consumer Products
-+ Test and Measurnig devices
-
-***** Compatitors of ARM Cortex-M;
-
-+ Arduino boards. uses AVR processor (Microchip)
-+ MSP430. uses ARM based another processor (Texas Instruments)
-
-***** ARM Cortex-M processor adventages
-
-+ low cost (almost same the price of 8-bit or 16-bit proc.)
-+ low power
-+ low silicon area (smaller)
-+ can be used in *Ultra low and high performance* applications
-+ has 240 external interrupts
-+ RTOS friendly
-+ very good documentation
-
-***** Operation Modes of Processors
-
-+ all user applications run on *Thread Mode* of the CPU. also called *User Mode*
-+ all _exception handlers_ and _interrupt handlers_ run under *Handler Mode* of the CPU
-+ Processors always start on *Thread Mode*. After every *Reset*!
-+ *Thread* and *Handler* modes are _provided by the CPU_. Not a software
-+ Whenever processor core meets an *Exception* or *Interrupt* it immidiately switches to *Handler Mode* and execute an ISR (interrupt service roution) associated with exception or interrupt and then returns to thread mode
-
-***** Access Levels of Cortex-M Processors
-+ there are two access levels of cortex-m processors;
-  1. PAL (priviledged access level)
-  2. NPAL (non-priviledged access level)
-
-+ when the code runs on PAL, then code has _full access_ to the *processor specific resources* and *restricted registers*. This is not true when code runs on NPAL
-
-+ By default every program will run in PAL
-
-+ when running on *Thread Mode* it is possible to change access level to *NPAL*. After that, the only way to get back in PAL is to change Operation level into *Handler Mode*
-
-+ *Handler Mode* always operates in *PAL*
-
-+ to switch between access levels we use *CONTROL* register which is a *priviledged register*
-
-***** Cortex-M core Registers
-
-+ *r0 - r12* are *general purpose registers*
-+ *r13* is *stack pointer*   (SP)
-+ *r14* is *link register*   (LR)
-+ *r15* is *program counter* (PC)
-
-****** Priviledged Registers
-1. XPSR (see ~Concepts~)
-2. PRIMASK
-3. FAULTMASK
-4. BASEPRI
-5. CONTROL
-
-****  Concepts
-
-***** Processor Core
-
-Electoronic chip inside a processor. Contains ALU, instruction decoders, registers etc. A CPU can contain several *processor cores*. This is why a processor is called *multi core*
-
-***** Processor (CPU)
-
-CPU contains one or more *Processor Core* and surrounding *processor specific peripherals*
-
-***** XPSR
-
-+ Holds the *status information* of the currently executed program.
-+ Priviledged register and can be accessed only from PAL mode
-+ This register is the combination of 3 registers;
-
-  1. Application PSR (APSR) : equivalent of =FLAGS= register in x86. Check the documentation for more info
-  2. Interrupt PSR   (IPSR) : contains the *Number of Current ISR*. For example =0= means *Thread Mode* or =5= means *Hard Bus Exception*
-  3. Execution PSR   (EPSR) :
-
-***** Link Register (r14)
-
-In ARM ISA when a function is called, the address of instruction right after the callee function is loaded into link register. So CPU will know where to return after that callee function is finished. To make things more clear, before a function call, LR will be loaded with value PC+1. (PC is program counter here)
-
-There is also an instruction called =bl= which means /"branch with link"/. when we use this instruction with an address the LR will be that address + 1"
-
-#+begin_src asm
-bl 0x00000001 ;; when this instrution is executed r13 will be loaded with 0x88888888
-add r0, 12, 0 ;; address of this instruction is 0x88888888
-#+end_src
