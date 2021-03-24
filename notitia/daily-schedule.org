@@ -28,11 +28,13 @@
 ** embedded systems
 *** electronics
 **** read one chapter
+
 =NOTE= review notes first
 - [ ] the art of electronics
 - [ ] digital fundamentals floyd
 - [ ] hardware design know it all
 *** software
+
 **** read one chapter
 
 - [-] making embedded systems                     (62 / 314)
@@ -55,14 +57,15 @@
 
 *** video course
 **** FastBit
-- [-] embedded C      =structures and bitfields=
+
+- [-] embedded C      =DONE=
 - [ ] cortex m4
 - [ ] microcontrollers 1
 - [ ] microcontrollers 2
 - [ ] RTOS
 - [ ] DMA
 - [ ] bootloader
-- [ ] embedded linux
+- [-] embedded linux   ==
 - [ ] linux device drivers
 **** Quantum Leaps
 - [ ] lesson 0

@@ -1,0 +1,20 @@
+#+TITLE: Rust Embedded Systems Tutorial
+#+DESCRIPTION: this tutorial is followed from  [[https://docs.rust-embedded.org/book/intro/index.html][here]]
+
+* Base Addresses
+* Concept
+* Facts
+* How To
+* install packages first
+** GPIOx_MODER
+** GPIOx_ODR
+** OpenOCD
+** RCC_AHB1ENR
+** arm-none-eabi-gdb
+** bluetooth packages
+** cargo-binutils
+** features
+** internal peripherals
+** itm
+** rust
+** serial com

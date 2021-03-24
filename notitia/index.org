@@ -37,3 +37,8 @@
 
 * Schedule
  * [[./daily-schedule.org][Daily Routine]]
+
+* Tutorials
+ * [[./rust-embedded-systems-tutorial.org][Rust Embedded Systems Tutorial]]
+ * [[./fastbit-2-cortextm4-course.org][Fastbit 2: Cortex-M4]]
+ * [[./fastbit-8-embedded-linux-course.org][Fastbit 8: Embedded Linux]]
