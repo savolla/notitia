@@ -39,7 +39,7 @@
 
 - Yapay zekayı eğitme kısmını tamamen [[https://colab.research.google.com/notebooks/intro.ipynb#scrollTo=OwuxHmxllTwN][Google Colab]] üstünde gerçekleştireceğiz. Yani süper özelliklere sahip bir bilgisayara ihtiyacımız kalmadı
 
-- Low power bir MCU'da (1 mW gibi) gidip de 10 mW tüketen bir kamera sensörü kullanırsanız, kullandığınız low power MCU'nun bir anlamı kalmaz
+- ~fact~ Low power bir MCU'da (1 mW gibi) gidip de 10 mW tüketen bir kamera sensörü kullanırsanız, kullandığınız low power MCU'nun bir anlamı kalmaz. Proje "low power" olmaktan çıkar yani
 
 * Bölüm 3
 
@@ -53,7 +53,7 @@
 
 - yapay zeka uygulamalarında kod kalitesinden çok _veri kalitesi_ önemlidir
 
-- örnek olarak bir fabrika düşünelim, üretim yapan bir makine var ancak bu makine bazen bozulyor ve tamiri masraflı. bu makinenin sıcaklığını, titreşimi gibi verileri bir süre aldığımızı var sayalım. yeterli miktarda veriye ulaştıktan sonra bir yapay zeka algoritmasını bu verilerle eğitip, makina bozulmaya yakın onu kapatan bir yapay zeka uygulaması yapabiliriz
+- örnek olarak bir fabrika düşünelim, üretim yapan bir makine var ancak bu makine bazen bozuluyor ve tamiri masraflı. bu makinenin sıcaklığını, titreşimi gibi verileri bir süre aldığımızı var sayalım. yeterli miktarda veriye ulaştıktan sonra bir yapay zeka algoritmasını bu verilerle eğitip, makina bozulmaya yakın onu kapatan bir yapay zeka uygulaması yapabiliriz
 
 - *training* : yapay zeka kendisine sunulan verileri işleyip öğrenmesine denir. Sonuçta bir model oluşur
 
