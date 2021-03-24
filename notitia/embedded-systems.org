@@ -119,6 +119,7 @@ git pull
   | Englisgh  | ++     |
   | Arduino   | +      |
   | Raspberry | +      |
+  | linux     | +      |
 
 - *Reset Handler* ISR function should copy the *.data* section from *code memory* to SRAM
 
