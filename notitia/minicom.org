@@ -1,5 +1,7 @@
 #+TITLE: Minicom
 
-* problems & solutions
+* facts
++ minicom is used to connect a device which doesn't have a *display* and not connected to LAN. so *ssh* is also not possible.
 
+* problems & solutions
 ** minicom: cannot open /dev/modem: No such file or directory

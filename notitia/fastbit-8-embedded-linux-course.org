@@ -1,3 +1,22 @@
 #+TITLE: Fastbit 8 Embedded Linux Course
 
 * Chapter 1
+** Using Minicom
+
++ ~fact~ for Linux, the best *serial monitoring software* is [[./minicom.org][minicom]]
+
++ ~fact~ when a device does not have a display or not connected to the LAN we can use *serial monitoring software* to communicate/control the device over USB cable
+
++ ~howto~ detect serial device and connect to it using minicom;
+
+  1. open a terminal
+
+  2. watch dmesg output for 1 second
+
+     #+begin_src sh
+watch -n1 sudo dmesg | grep usb
+     #+end_src
+
+     #+RESULTS:
+
+  3.
