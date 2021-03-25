@@ -1,0 +1,23 @@
+#+TITLE: Imagemagick
+
+* how to
+** resize an image (ignore aspect ratio)
+#+BEGIN_SRC sh
+convert example.png -resize 200x100 example.png
+#+END_SRC
+** resize an image (respect aspect ratio)
+#+BEGIN_SRC sh
+convert example.png -resize %50 example.png
+#+END_SRC
+** convert between formats
+#+BEGIN_SRC sh
+convert howtogeek.png howtogeek.jpg
+#+END_SRC
+** rotate an image
+#+BEGIN_SRC sh
+convert howtogeek.jpg -rotate 90 howtogeek-rotated.jpg
+#+END_SRC
+** negate an image
+#+BEGIN_SRC sh
+convert splash.png -negate splash.png
+#+END_SRC

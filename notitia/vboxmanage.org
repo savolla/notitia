@@ -1,0 +1,15 @@
+#+TITLE: Vboxmanage
+
+* how to
+** start a vm
+#+begin_src sh
+vboxmanage startvm win10
+#+end_src
+** take a snapshot of a vm
+#+begin_src sh
+vboxmanage snapshot win10 take $NAME
+#+end_src
+** restore snapshot
+#+begin_src sh
+vboxmanage snapshot win10 restore $NAME
+#+end_src
