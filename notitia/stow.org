@@ -1,0 +1,2 @@
+#+TITLE: Stow
+#+DESCRIPTION: restores dotfiles from a directory

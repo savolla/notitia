@@ -1,0 +1,8 @@
+#+TITLE: Rofi
+#+DESCRIPTION: program launcher and more
+
+* how to
+** change theme
+#+begin_src sh
+rofi-theme-selector
+#+end_src

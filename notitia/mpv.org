@@ -1,0 +1,11 @@
+#+TITLE: Mpv
+
+* key bindings
+* how to
+** play youtube videos with only audio
+   #+BEGIN_SRC sh
+   mpv -vo=null $VIDEO_URL
+   #+END_SRC
+* info
+1. you can play videos from youtube with only audio (see: hot to 1)
+* tips

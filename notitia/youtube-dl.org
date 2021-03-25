@@ -1,0 +1,11 @@
+#+TITLE: Youtube Dl
+
+* how to
+** download video with best quality
+#+begin_src sh
+youtube-dl -f 22 $VIDEO_LINK
+#+end_src
+** download a playlist
+#+begin_src sh
+youtube-dl -cio -f 22 '%(autonumber)s-%(title)s.%(ext)s' $VIDEO_LINK
+#+end_src

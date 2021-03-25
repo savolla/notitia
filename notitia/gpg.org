@@ -1,0 +1,61 @@
+#+TITLE: Gpg
+
+* gpg :tools:howto:gpg:
+:PROPERTIES:
+:EXPORT_FILE_NAME: what-is-gpg
+:HUGO_BASE_DIR: ~/txt/blog/
+:HUGO_SECTION: en/posts
+:EXPORT_TITLE: what is gpg
+:EXPORT_AUTHOR: savolla
+:END:
++ also called *gnu privacy guard*
++ this is a key which helps to encrypt and decript files
++ there are 2 types of gpg keys;
+1. private : unlocks everything you lock with that
+2. public : you send to other people
++ gpg keys _expire_ ! so you need to generate them once or twice a year
+** how to
+*** generate a gpg key
+1. first generate personal key:
+   #+BEGIN_SRC sh
+gpg --full-gen-key
+   #+END_SRC
+2. choose *RSA and RSA*
+3. choose *4096* for maximum security
+4. choose *y = 1* to make the key expire in one year
+5. enter your *real name and surname*
+6. enter your *email*
+7. confirm
+8. enter a password. this is the password of your key. _DON'T FORGET IT_
+
+*** encrypt files with gpg
+1. navigate to directory you want to encrypt (here I generate a random file)
+   #+BEGIN_SRC sh
+echo "secret message" > ~/secret-file.txt
+   #+END_SRC
+
+2. encrypt the file
+   #+BEGIN_SRC sh
+# -r : recepient (in this case me)
+# -e : file to encrypt
+gpg -r your_mail@provider.com -e secret-file.txt
+   #+END_SRC
+   after this command, a file with *gpg* extension will be created. so now you can put this file (*secret-file.txt.gpg*) on the internet and no one will know what it is
+
+3. remove the original file (optional)
+   + basic remove
+   #+BEGIN_SRC sh
+rm secret-file.txt
+   #+END_SRC
+
+   + deep remove (more secure)
+   #+BEGIN_SRC sh
+shred -u secret-file.txt
+   #+END_SRC
+
+*** decrypt files with gpg
+1. decrypt command
+   #+BEGIN_SRC sh
+gpg -d secret-file.txt
+   #+END_SRC
+2. then enter the password of your *gpg key*. the password you entered while [[generate a gpg key][generating]] the key

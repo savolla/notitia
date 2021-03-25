@@ -6,7 +6,6 @@
 * Version Control
  * [[./github.org][github]]
  * [[./git.org][git]]
-
 * Compilers
  * [[./nasm.org][nasm]]
  * [[./gcc.org][gcc]]
@@ -24,3 +23,5 @@
 * Robotics
  * [[./ros.org][ros]]
  * [[./gazebo.org][gazebo]]
+* Serial Monitoring
+ * [[./minicom.org][minicom]]

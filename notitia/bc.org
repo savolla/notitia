@@ -1,0 +1,7 @@
+#+TITLE: Bc
+
+* how to
+** use bc
+#+begin_src sh
+echo "1+1" | bc # outputs 2
+#+end_src

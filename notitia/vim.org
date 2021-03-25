@@ -1,0 +1,137 @@
+#+TITLE: Vim
+
+* vim
+* blog
+** less known vim tricks :vim:howto:tools:
+:properties:
+:export_file_name: less-known-vim-tricks
+:hugo_base_dir: ~/txt/blog/
+:hugo_section: en/posts
+:export_author: savolla
+:end:
+*** ourput redirection
++ you can redirect outputs of a *shell command* in vim
+  1. press =esc=
+  2. =:r !ls -la=
+  3. =ret=
+*** whitespace removal
++ remove all *trailing whitespaces*. you can also make the following a *permanent macro*
+  1. press =esc=
+  2. =:%s/\s\+$//e=
+  3. =ret=
+*** time travel
++ show the file 10 mins *ago*
+  1. press =esc=
+  2. =:earlier 10m=
+  3. =ret=
++ show the file *after* 10 mins
+  1. press =esc=
+  2. =:later 10m=
+  3. =ret=
+* code blocks
++ essential vimrc
+#+begin_src sh
+set tabstop=4
+set shiftwidth=4
+set expandtab
+syntax on
+inoremap jk <esc>
+#+end_src
+* how to
+** permanent macros in vim :vim:howto:tools:
+:properties:
+:export_file_name: permanent-macros-in-vim
+:hugo_base_dir: ~/txt/blog/
+:hugo_section: en/posts
+:export_author: savolla
+:end:
+this is a short *step by step* tutorial to save your *vim macro* and use it everytime
+1. fire up *vim*
+2. do =q a=
+3. create your macro
+4. press =q= to finish
+5. exit vim =:q!=
+6. =vim ~/.vimrc=
+7. type =let @q = ''=
+8. put your cursor on *first single quote*
+9. do =" a p=
+10. macro should be pasted inside single quotes like:
+#+begin_src sh
+let @q = 'your_macro_content'
+#+end_src
+11. save and exit =esc :wq=
+12. fire up *vim* again
+13. do =@ q=
+now you should have your macro saved. after this moment everytime you open a vim session, this macro will be read from =.vimrc= and you will able to use it.
+** redirect command output into vim session
+1. press =esc=
+2. =:r !ls -la=
+3. =ret=
+** remove all trailing whitespaces
+1. press =esc=
+2. =:%s/\s\+$//e=
+3. =ret=
+** time travel
++ show the file 10 mins *ago*
+  1. press =esc=
+  2. =:earlier 10m=
+  3. =ret=
++ show the file *after* 10 mins
+  1. press =esc=
+  2. =:later 10m=
+  3. =ret=
+** show line numbers
+#+begin_src sh
+:set number
+#+end_src
+* spacevim
+** tutorials / howto
+*** how to installation
+1. install dependencies
+#+begin_src sh
+sudo pacman -s neovim
+sudo pacman -s clang
+sudo pip install --user pynvim
+sudo pip3 install --user pynvim
+#+end_src
+2. download and install
+#+begin_src sh
+curl -slf https://spacevim.org/install.sh | bash
+#+end_src
+3. open nvim and type *vimprocinstall*
+#+begin_src sh
+nvim
+:vimprocinstall
+#+end_src
+4. restart nvim. it will download all the plugins
+
+*** essential keys
+1. <f3> opens *file manager*
+2. <f2> opens *tagbar*
+3. \ is the leader in spacevim
+*** open configuration
+spc f v d
+* plugins
+** coc
+*** how to
+**** lists all extensions' commands
+#+begin_src sh
+:coclist commands
+#+end_src
+**** intall a coc extension
+#+begin_src sh
+:cocinstall [extension]
+#+end_src
+**** remove coc extension
+#+begin_src sh
+:cocuninstal [extension]
+#+end_src
+**** list all available extensions
+#+begin_src sh
+:cocinstall marketplace # install this extension first
+:coclist marketplace
+#+end_src
+**** open coc configuration file
+#+begin_src sh
+:cocconfig
+#+end_src
