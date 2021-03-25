@@ -11,12 +11,34 @@
 
   1. open a terminal
 
-  2. watch dmesg output for 1 second
+  2. watch dmesg output for *usb*
 
      #+begin_src sh
-watch -n1 sudo dmesg | grep usb
+while true; do sudo dmesg | grep -e usb -e cdc_acm; sleep 1; clear; done
      #+end_src
 
-     #+RESULTS:
+  3. plug the *device* (/beagle bone black/ for example)
 
-  3.
+     if you are patient enough you will see something like this after a while;
+
+     [[file:./images/screenshot-126.png]]
+
+  4. take *cdc_acm* string ("ttyACM0" in this example)
+
+  5. fireup *minicom* as sudo with -s option and select "Serial Port Setup"
+
+     #+begin_src sh
+sudo minicom -s
+     #+end_src
+
+  6. Press 'A' to modify *Serial Device*
+
+  7. delete the string here and type cdc_acm string instead. then press *Enter*
+
+      [[file:./images/screenshot-127.png]]
+
+  8. Press *ESC* and save it as *dfl*
+
+     [[file:./images/screenshot-128.png]]
+
+  9. exit
