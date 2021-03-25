@@ -42,3 +42,17 @@ sudo minicom -s
      [[file:./images/screenshot-128.png]]
 
   9. exit
+** Getting Started with BBB
+
++ ~fact~ Beaglebone Black comes with a *Debian* based linux distrobution
+
++ ~fact~ Built-in linux distrobution is stored inside a hardware component called *eMMS*
+
++ ~fact~ Beaglebone Black specs
+  - 4GB eMMS /(flash)/ + SD Card slot
+  - 2 x 200MHz ARM7 processors
+  - 512MB DDR3 Ram
+  - 8 PWM outputs
+  - 7 12-bit ADC
+
++
