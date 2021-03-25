@@ -55,4 +55,6 @@ sudo minicom -s
   - 8 PWM outputs
   - 7 12-bit ADC
 
-+
++ BBB supports *Ethernet Over USB* but you need a driver on your host OS side to get this work
+
++ whenever you see something like *usb0*, *usb1* in =ifconfig= output, know that this devices supports *Ethernet Over USB*
