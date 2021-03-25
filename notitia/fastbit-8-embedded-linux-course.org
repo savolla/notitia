@@ -82,3 +82,14 @@ ping PASTE_IP_HERE
        There should be a connection. If pinging is working then everythings okay. pinging google.com is not gonna work because we didn't set DNS and gateway
 
     5. set DNS on target
+
+       #+begin_src sh
+vim /etc/resolv.conf
+       #+end_src
+
+       enter the following;
+
+       #+begin_src txt
+nameserer 8.8.8.8
+nameserer 8.8.4.4
+       #+end_src
