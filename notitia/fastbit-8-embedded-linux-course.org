@@ -55,6 +55,30 @@ sudo minicom -s
   - 8 PWM outputs
   - 7 12-bit ADC
 
-+ BBB supports *Ethernet Over USB* but you need a driver on your host OS side to get this work
++ ~fact~ BBB supports *Ethernet Over USB* but you need a driver on your host OS side to get this work
 
-+ whenever you see something like *usb0*, *usb1* in =ifconfig= output, know that this devices supports *Ethernet Over USB*
++ ~fact~ whenever you see something like *usb0*, *usb1* in =ifconfig= output, know that this devices supports *Ethernet Over USB*
+
++ ~howto~ Enable *Ethernet over USB*
+
+  + Target Configurations:
+
+    1. Make sure the device is connected via USB cable to your HOST
+
+    2. type =ifconfig= and see if there are some interfaces like *usb0* or *usb1*. if they are not available then =reboot= the device
+
+    3. Go to host and type =ifconfig=. now you should see a new interface like *enp0s20f0u3*. This is the interface which lets us to use *Enternet over USB*. Copy the ip number of this interface with the following command
+
+       #+begin_src sh
+ifconfig | grep -A 1 enp | grep inet | awk '{ print $2 }' | xsel -b
+       #+end_src
+
+    4. Now come back to target and ping this address by
+
+       #+begin_src sh
+ping PASTE_IP_HERE
+       #+end_src
+
+       There should be a connection. If pinging is working then everythings okay. pinging google.com is not gonna work because we didn't set DNS and gateway
+
+    5. set DNS on target
