@@ -120,3 +120,10 @@ echo "heartbeat" > trigger
 
 + when we look at *trigger* values inside sysfs we see some values inside square brackets. that means the value inside is the *default value*
 * Chapter 2
+* Chapter 10
+
++ ~tip~ when booting BBB from UART, make sure that _USB0 is not connected_ to the PC. This will cause a 4.5 mins delay before booting into UART image
+
+  [[file:./images/screenshot-135.png]]
+
+  BBB's power should be supplied by a 5V adapter here

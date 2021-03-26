@@ -724,7 +724,9 @@ We can also do other operations like setting bits, toggling etc
 - Here is the [[https://www.youtube.com/watch?v=G_i1ZhadTa0][video]] that explains pull up/pull down resistors greatly
 *** Micron
 
-+
++ Micron Technology, Inc. is an American *producer of computer memory and computer data storage* including _dynamic random-access memory_, _flash memory_, and _USB flash drives_. It is headquartered in Boise, Idaho. Its consumer products are marketed under the brands Crucial and Ballistix.
+
++ Micron and Intel together created IM Flash Technologies, which produces NAND flash memory. It owned Lexar between 2006 and 2017
 
 ** Robotics
 *** Mechanum Wheels
