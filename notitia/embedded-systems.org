@@ -605,6 +605,10 @@ ROS compatible sensor Motion sensor. it is wearable. here is the [[https://www.y
 Power Management Integrated Circuit.
 
 [[file:./images/screenshot-129.png]]
+*** WDT
+
++ stands for *watchdog timer*
++ WDT is a system guarding system. it sends reset signal to the MCU if something goes wrong
 
 ** Software
 *** Unity
