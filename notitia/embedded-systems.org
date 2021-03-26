@@ -389,7 +389,7 @@ To use Hardware delay we need to activate timer peripherals and use them. Which 
 
 * Concepts
 ** Communication Protocol
-*** I²C
+*** I2C
 
 - developed by Philips (now NXP)
 
@@ -402,8 +402,8 @@ To use Hardware delay we need to activate timer peripherals and use them. Which 
 - some MCUs have this feature
 
 - I²C bus consists of two data lines;
-  1. SDA (serial data line)
-  2. SCA (serial clock line)
+  1. SDA (serial data)
+  2. SCL (serial clock)
 
 - with I²C you can add bunch of *slaves* such as;
   a. SPD EEPROMS
@@ -419,9 +419,9 @@ To use Hardware delay we need to activate timer peripherals and use them. Which 
 - here is how I²C looks like
  [[file:./images/screenshot-71.png]]
 
-- If you don't have enough I/O pins, you can use I²C since it't TWI
+- If you don't have enough I/O pins, you can use I²C since it's TWI
 
-- I²C requires two *pull up* resistors to let the current flow over *SDL* and *SCL*
+- I²C requires two *pull up* resistors to let the current flow over *SDA* and *SCL*
 
  [[file:./images/screenshot-102.png]]
 

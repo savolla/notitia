@@ -1,4 +1,5 @@
 #+TITLE: Fastbit 8 Embedded Linux Course
+#+TODO: When this course is finished, put all facts, tutorials and howtos into beagleboneblack.org file
 
 * Chapter 1
 ** Using Minicom
@@ -42,6 +43,7 @@ sudo minicom -s
      [[file:./images/screenshot-128.png]]
 
   9. exit
+
 ** Getting Started with BBB
 
 + ~fact~ Beaglebone Black comes with a *Debian* based linux distrobution

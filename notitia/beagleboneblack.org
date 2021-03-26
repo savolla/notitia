@@ -5,4 +5,21 @@
 * howto
 * concepts
 * tables & schemas
+** BBB details
+
+[[file:./images/screenshot-130.png]]
+** Pinout Table
+
+| Pin    | Amount |
+|--------+--------|
+| GPIO   |     65 |
+| PWM    |      8 |
+| TIMER  |      4 |
+| ANALOG |      7 |
+| UART   |    4.5 |
+| I2C    |      2 |
+| SPI    |      2 |
+
+[[file:./images/screenshot-133.png]]
+
 * problems & solutions
