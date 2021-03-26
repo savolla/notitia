@@ -1,0 +1,8 @@
+#+TITLE: Beagleboneblack
+#+DESCRIPTION: Notes collected for Beagle Bone Black Platform
+
+* facts
+* howto
+* concepts
+* tables & schemas
+* problems & solutions

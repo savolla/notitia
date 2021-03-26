@@ -601,6 +601,10 @@ ROS compatible sensor that acts like lidar but for shorter distances. It is not 
 *** Xsens
 
 ROS compatible sensor Motion sensor. it is wearable. here is the [[https://www.youtube.com/watch?v=KqKa2Gc7lh8][video]]
+*** PMIC
+Power Management Integrated Circuit.
+
+[[file:./images/screenshot-129.png]]
 
 ** Software
 *** Unity
@@ -724,89 +728,6 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 [[file:./images/screenshot-119.png]]
 
 * Platforms
-** STM32F407VGT6
-*** how to
-**** turn on the LED on STM32F407VGT6
-***** Code
-***** Configure the GPIO pin mode as ~output~
-***** Identify the GPIO ~pin~ where the LED is connected
-***** Identify the GPIO ~port~ used to connect the LED
-***** ~Activate~ the GPIOD peripheral
-***** ~Write~ to the GPIO ping
-- *Mode Registers* are always placed in =0x00=
-- 16-bit register where every bit is a GPIO pin
-- 168 MHz CPU speed
-- Configures the _operation mode_ of GPIO pins.
-- GPIO Mode Registe
-- Here you can set a bit to =1= and this will output 3.3V from a specific GPIO pin
-- Output Data Register
-- We set those 2 bits to a specific value to indicate _operation mode_;
-- comes with *ARM Cortex-M4*
-- comes with it's own debugger called *ST-LINK/V2-A*
-- has DSP
-- has MPU (memory protection unit)
-- it's a 32-bit register which reserves 2 bits for each GPIO pin
-- the overview of the platform:
-Enable the Clock for the GPIO port. Use =RCC_AHB1ENR= register
-Register that Enables RCC that connected to AHB bus. Address is =0x40023830=
-Set the Mode of the GPIO port to *Output* by modifying =GPIOx_MODER= register
-The GNU Debugger for the ARM EABI (bare-metal) target
-Use *Data Sheet* to do this. Open up the data sheet and find the Circuit diagram. Find The LED you want to turn on and find out it's GPIO port
-a rust *crete* for interfacing ITM unit inside Cortex-M4 processor. Makes *printf* debug style easier
-cargo install cargo-binutils
-cargo install itm
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-install /nm, objcopy, objdump, size, ld, lld, nm/ tools for rust.
-install rust first
-int main(void) {
-sudo pacman -S arm-none-eabi-gdb
-sudo pacman -S bluez bluez-utils rfkill
-sudo pacman -S minicom picocom
-sudo pacman -S openocd
-| GPIOD                   | 0x4002 0C00  | 0x4002 0FFF  |                    |
-| GPIOx_MODER (for GPIOD) | 0x4002 0C00  |              |                    |
-| GPIOx_ODR               | 0x4002 0C14  |              | u16int_t (1 << 12) |
-| Peripheral              | Base Address | Last Address | Mask Value         |
-| RCC_AHB1ENR             | 0x4002 3830  | 0x4002 3BFF  |                    |
-|-------------------------+--------------+--------------+--------------------|
-}
-*** flash a led
-
-#+begin_src c
-#inclde <stdint.h>
-
-#define GPIOD_CLOCK (0x40023830)
-#define GPIOD_MODE_REGISTER (0x40020C00)
-#define GPIOD_OUTPUT_REGISTER (0x40020C14)
-
-int main(void) {
-
-    // create pointers
-    uint32_t *clock = (uint32_t*)GPIOD_CLOCK;
-    uint32_t *gpiod_mode_register = (uint32_t*)GPIOD_MODE_REGISTER;
-    uint32_t *gpiod_output_register = (uint32_t*)GPIOD_OUTPUT_REGISTER;
-
-    // set bits
-    ,*clock |= 0x08; // set 3rd bit of RCC_AHB1ENR to enable GPIOD
-    ,*gpiod_mode_register &= 0xFCFFFFFF; // clear 25th bit
-    ,*gpiod_mode_register |= 0x01000000; // set 24th bit
-    ,*gpiod_output_register |= 0x1000; // set 12th GPIO pin to 3.3V
-
-    return 0;
-}
-#+end_src
-
-*** Mode Register
-  * =00= : Input Mode
-  * =01= : Output Mode
-  * =10= : Alternate Function Mode
-  * =11= : Analog Mode
-
-*** Peripherals
-  1. two 3-axis accelometers
-  2. one microphone
-  3. DAC jack
-  4. 4 LEDs
-  5. 2 push buttons
-  [[./images/screenshot-73.png]]
+ * [[./stm32f407vgt6.org][stm32f407vgt6]]
+ * [[./beagleboneblack.org][BBB]]
 * Problems & Solutions

@@ -40,14 +40,18 @@ add =#+STARTUP: overview= to the beginning of the file
    #+end_src
 you can also use every other command this way.
 **** enable line numbers in source blocks
+
 + this will export with line numbers starting from 1
+
 #+begin_src python -n
 while True:
     print("*****")
     print("Emacs is LOVE")
     print("*****")
 #+end_src
+
 + line numbers will start from 20
+
 #+begin_src python -n 20
 while True:
     print("*****")
@@ -55,15 +59,18 @@ while True:
     print("*****")
 #+end_src
 **** disable table of contects
+
 #+begin_src org
 #+OPTIONS: toc:nil
 #+end_src
+
 **** auto generate table of contents
 1. create a header on top of the org document
 2. add :toc: word after header name
 3. save the file
 internal links will be generated
 **** write your configs in org-mode
+
 This is useful when your config files are huge and messy. this way of writing config files will help you to organize the code and make it more understandable. you can also create code documentations with org-mode. I'm going to use i3 config as an example. (ignore periods in code blocks) so here are the steps.
 
 1. create a =README.org= next to your config file
@@ -82,10 +89,12 @@ This is useful when your config files are huge and messy. this way of writing co
 4. =SPC : org-babel-tangle= this will write your source blocks to the config
 
 after that you will never gonna edit i3 config file again. all you is to come back to this README.org file and add some code blocks here
+
 **** recude size of an image
+
 1. import an image
 2. write =#+ATTR_HTML::width 500= on top of the image
-3. withoud attribute;
+3. without attribute;
    [[file:./images/screenshot-74.png]]
 4. with attribute
    #+ATTR_HTML::width 500
