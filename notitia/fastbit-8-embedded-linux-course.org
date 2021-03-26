@@ -95,3 +95,28 @@ vim /etc/resolv.conf
 nameserer 8.8.8.8
 nameserer 8.8.4.4
        #+end_src
+
++ BBB is using a special kind of linux distrobution called *Angstrom Distrobution*
+** BBB web interface
+
++ ~howto~ change operation mode of leds on BBB
+
+  1. use *sysfs* for this
+
+     #+begin_src sh
+cd /sys/class/leds/beaglebone\:green\:usr0
+cat trigger
+     #+end_src
+
+  2. it will diplay *all the options* that we can use for *usr0* led.
+
+  3. I choose "heartbeat" option. so just echo that value into =trigger= file
+
+     #+begin_src sh
+echo "heartbeat" > trigger
+     #+end_src
+
+     now the led will flash like a "heartbeat"
+
++ when we look at *trigger* values inside sysfs we see some values inside square brackets. that means the value inside is the *default value*
+* Chapter 2
