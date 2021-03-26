@@ -608,7 +608,13 @@ Power Management Integrated Circuit.
 *** WDT
 
 + stands for *watchdog timer*
-+ WDT is a system guarding system. it sends reset signal to the MCU if something goes wrong
++ WDT is a system guarding system. it sends *reset signal* to the MCU if something goes wrong
++ programmer sets a *treshold*. treshold is a time limit for watchdog. program must send a *pet* signal to WDT before treshold ends. If given treshold is exceeded then watchdog will think that something wrong is going on and it will send reset signal.
++ see [[https://www.youtube.com/watch?v=AOlKBPydyKw][this]] video for better explanation
+*** PoE
+
++ stands for *Power Over Ethernet*
++ this is a special *ethernet connector* that also supplies *power* through ethernet
 
 ** Software
 *** Unity
@@ -716,6 +722,9 @@ We can also do other operations like setting bits, toggling etc
 - *Pull Up* resistor is connected to *Power Supply*
 - *Pull Down* resistor is connected to *Ground*
 - Here is the [[https://www.youtube.com/watch?v=G_i1ZhadTa0][video]] that explains pull up/pull down resistors greatly
+*** Micron
+
++
 
 ** Robotics
 *** Mechanum Wheels
