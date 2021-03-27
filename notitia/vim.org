@@ -1,6 +1,5 @@
 #+TITLE: Vim
 
-* vim
 * blog
 ** less known vim tricks :vim:howto:tools:
 :properties:
@@ -85,8 +84,8 @@ now you should have your macro saved. after this moment everytime you open a vim
 :set number
 #+end_src
 * spacevim
-** tutorials / howto
-*** how to installation
+** howto
+*** installation
 1. install dependencies
 #+begin_src sh
 sudo pacman -s neovim
