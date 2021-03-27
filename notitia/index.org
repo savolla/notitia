@@ -5,6 +5,7 @@
 #+STARTUP: showeverything
 #+HUGO_BASE_DIR: ~/txt/blog/
 #+HUGO_SECTION: en/posts
+this is
 
 * Topics
  * [[./software-engineering.org][Software Engineering]]
