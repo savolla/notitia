@@ -89,7 +89,8 @@ for neovim
 
 #+begin_src sh
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'#+end_src
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#+end_src
 
 #+RESULTS:
 
@@ -97,21 +98,27 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ** howto
 *** installation
 1. install dependencies
+
 #+begin_src sh
-sudo pacman -s neovim
-sudo pacman -s clang
+sudo pacman -S neovim
+sudo pacman -S clang
 sudo pip install --user pynvim
 sudo pip3 install --user pynvim
 #+end_src
+
 2. download and install
+
 #+begin_src sh
 curl -slf https://spacevim.org/install.sh | bash
 #+end_src
+
 3. open nvim and type *vimprocinstall*
+
 #+begin_src sh
 nvim
 :vimprocinstall
 #+end_src
+
 4. restart nvim. it will download all the plugins
 
 *** essential keys
