@@ -108,6 +108,17 @@ echo $RANDOM
 
 #+RESULTS:
 : 29712
+** mount an image
+*** iso
+
++ You'll get an error because ISO is read-only file system. just ignore the error
+
+  #+begin_src sh
+sudo mount $PATH_TO_ISO /mnt/$OPTIONAL_DIR -t iso9660 -o loop
+  #+end_src
+
+*** img
+*** windows partition
 
 * Distros
  * [[./alpine.org][alpine]]
