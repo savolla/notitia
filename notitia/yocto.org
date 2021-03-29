@@ -1,0 +1,43 @@
+#+TITLE: Yocto
+
+* facts
+* howto
+** install
+*** installing on arch linux
+
+1. install following packages
+
+   #+begin_src sh
+sudo pacman -S git diffstat unzip texinfo python chrpath wget xterm sdl rpcsvc-proto socat cpio inetutils multilib-devel
+   #+end_src
+
+2. clone the latest *yocto* repository
+
+   #+begin_src sh
+git clone --branch morty git://git.yoctoproject.org/poky.git ~/poky
+   #+end_src
+
+3. setup the environment for installation
+
+   #+begin_src sh
+mkdir -p ~/bin
+ln -s /usr/bin/python2 ~/bin/python
+ln -s /usr/bin/python2-config ~/bin/python-config
+export PATH=~/bin:$PATH
+   #+end_src
+
+4. now go and configure your attributes
+
+   #+begin_src sh
+cd ~/poky
+source oe-init-build-env build-qemux86
+   #+end_src
+
+5. now edit ~conf/local.conf~ file
+
+
+* concepts
+** BSP
+** poky
+
+* problems & solutions
