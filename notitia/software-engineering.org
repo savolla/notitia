@@ -408,6 +408,7 @@ Quality Assurance
 - Request brokers maintain queues of requests (and maybe replies) to
   screen their details
 * Software Design
+- thi is goog
 * Design Patterns
 ** facts
 + designs usually start with *Factory Method* and then evolves toward;
