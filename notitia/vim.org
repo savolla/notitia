@@ -116,7 +116,7 @@ curl -slf https://spacevim.org/install.sh | bash
 
 #+begin_src sh
 nvim
-:vimprocinstall
+:VimProcInstall
 #+end_src
 
 4. restart nvim. it will download all the plugins
