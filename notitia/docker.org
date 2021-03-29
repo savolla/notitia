@@ -54,6 +54,92 @@ RUN pacman -S git curl --noconfirm
 - ~HEALTHCHECK~ : tells docker how to test a container to check that it is still working.
 
 * How To
+** start a container
+
+here is a template you can use
+
+#+begin_src sh
+docker container run \
+    -ti \
+    -v /home/$USER/tnl:/mnt/tnl \
+    --name="CONTAINER_NAME" \
+    --user="USER" \
+    --hostname="HOSTNAME" \
+    IMAGE_NAME \
+    /bin/bash
+#+end_src
+
+#+begin_src sh
+docker container run -ti -v /home/savolla/:/mnt/savolla --name="codemy" --hostname="codemy" archlinux:latest // general 3
+docker container run -ti -v /home/savolla/tnl/vimcpp:/root --name="vimcpp" --hostname="vimcpp" archlinux:latest
+
+docker system df // displays total image container and cache sizes
+
+docker ps -a --size // displays container size
+
+docker container run -ti -v $(pwd):/home/savolla --name="shovel" --hostname="shovel" archlinux:latest /bin/bash // general shovel example 2
+
+docker container run -ti -v $(pwd):/home --name="[CONTAINER_NAMEr" r-user="$USER" --hostname="[HOSTNAME]" [IMAGE] // general
+
+docker create [IMAGE] // create a container without starting it
+docker container rename [CONTAINER_NAME] [NEW_CONTAINER_NAME] // rename a container
+docker container run [IMAGE] // create and start a container
+docker container run --rm [IMAGE] // remove a container after it stops
+docker container run -td [IMAGE] // start a container and keep it running
+docker container run --publish [HOST_PORT]:[CONTAINER_PORT] --detach --name [CONTAINER_NAME] --user="$USER" --hostname [HOSTNAME] -env [ENV_VARIABLE] [IMAGE] // example container creation command
+
+docker container run -it-rm [IMAGE] // same as above but it removes the container after it's done
+
+
+
+
+
+
+docker container run -it --name [CONTAINER_NAME] [IMAGE] [COMMAND] // create, start the container, and run a command in it
+
+docker container run --name [CONTAINER_NAME] --detach --network [BRIDGE_NAME] [CONTAINER]
+docker container run --name [CONTAINER_NAME] --detach --network="none" [CONTAINER] // start a container without a network access
+docker container rm [CONTAINER] // delete a container if it isn't running
+docker container update [CONTAINER] // update the configuration of a container
+docker build [URL] // create an image from a Dockerfile
+docker build -t [URL] // build an image from a Dockerfile and tags it
+docker pull [IMAGE] // pull an image from a registry
+docker push [IMAGE] // push an image to a registry
+docker import [URL/FILE] // create an image from a tarball
+docker commit [CONTAINER] [NEW_IMAGE_NAME] // create an image from a container
+docker rmi [IMAGE] // remove an image
+docker load [TAR_FILE/STDIN_FILE] // load an image from a tar archive as stdin
+docker save [IMAGE] > [TAR_FILE] // save an image to a tar archive stream to stdout with all parent layers, tags and versions
+docker ps // list running containers
+docker ps -a // list running and stopped containers
+docker logs [CONTAINER] // list the logs from a running container
+docker inspect [OBJECT_NAME/ID] // list low-level information on an object
+docker events [CONTAINER] // list real time events from a container
+docker port [CONTAINER] // show port (or specific) mapping from a container
+docker top [CONTAINER] // show running processes ina container
+docker stats [CONTAINER] // show live resource usage statistics of containers
+docker diff [CONTAINER] // show changes to files (or directories) on a filesystem
+docker image ls // show all locally stored images
+docker history [IMAGE] // show history of an image
+docker container start [CONTAINER] // start a stoped container not interactive
+docker container start -ai [CONTAINER] // start a stoped container interactively
+docker container stop [CONTAINER] // stop a running container
+docker container restart [CONTAINER] // stop a running container and start it up again
+docker container pause [CONTAINER] // pause processes in a running container
+docker container unpause [CONTAINER] // unpause processes in a container
+docker container wait [CONTAINER] // block a container until other containers stop
+docker container kill [CONTAINER] // kill a container by sending SIGLKILL to a running container
+docker container attach [CONTAINER] // attach local stardard input, output, and error streams to a running container
+docker network create [BRIDGE_NAME] --driver bridge
+docker network disconnect [CONTAINER] [BRIDGE]
+docker container run --dns=[] --network="bridge" --network-alias=[] --add-host="" --ip="" --ip6="" --link-local-ip=[] // some network parameters
+docker container run: 'rw' readable and writable volume. 'ro' read only volume. this is third argument to use when mounting volumes
+docker container run: --entlrypoint is an argument that specifies what cmd will container run when it starts
+docker container run: --volumes-from="[CONTAINER_NAME]" mount all volumens from the given container
+docker container run: --user="[USER_NAME]" while running container specify a user. but first this user must be created in image
+docker container run: -w="[WORKING_DIRECTORY]" specify working directory when container starts. default is /
+#+end_src
+
 ** remove all images
 
 #+begin_src sh
