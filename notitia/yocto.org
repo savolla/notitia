@@ -35,9 +35,39 @@ source oe-init-build-env build-qemux86
 
 5. now edit ~conf/local.conf~ file
 
+*** installing on ubuntu 18.04
+
+I'm installing yocto on ubuntu since manjaro gave me errors...
+
+1. first install those
+
+    #+begin_src sh
+    sudo apt-get install git tar python
+    #+end_src
+
+2. then install thsese
+
+   #+begin_src sh
+sudo apt-get install \
+    gawk \
+    wget \
+    git-core \
+    diffstat \
+    unzip \
+    texinfo \
+    gcc-multilib \
+    build-essential \
+    chrpath \
+    socat \
+    libsdl1.2-dev \
+    xterm
+   #+end_src
+
 
 * concepts
 ** BSP
 ** poky
+** bitbake
+tool for building *custom* linux images
 
 * problems & solutions

@@ -106,7 +106,6 @@ docker build -t [URL] // build an image from a Dockerfile and tags it
 docker pull [IMAGE] // pull an image from a registry
 docker push [IMAGE] // push an image to a registry
 docker import [URL/FILE] // create an image from a tarball
-docker commit [CONTAINER] [NEW_IMAGE_NAME] // create an image from a container
 docker rmi [IMAGE] // remove an image
 docker load [TAR_FILE/STDIN_FILE] // load an image from a tar archive as stdin
 docker save [IMAGE] > [TAR_FILE] // save an image to a tar archive stream to stdout with all parent layers, tags and versions
@@ -192,6 +191,13 @@ docker network rm $NETWORK
 
 #+begin_src sh
 docker container ls -a
+#+end_src
+** save container
+
+the following command generates a new image from the given container
+
+#+begin_src sh
+docker commit [CONTAINER] [NEW_IMAGE_NAME] // create a new image from a container
 #+end_src
 
 * Problems & Solutions
