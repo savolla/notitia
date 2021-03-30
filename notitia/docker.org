@@ -63,6 +63,7 @@ docker container run \
     -ti \
     -v /home/$USER/tnl:/mnt/tnl \
     --name="CONTAINER_NAME" \
+    --user="USER"
     --hostname="HOSTNAME" \
     IMAGE_NAME \
     /bin/bash

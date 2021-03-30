@@ -64,6 +64,12 @@ sudo apt-get install \
     cpio
    #+end_src
 
+3. clone yocto
+
+   #+begin_src sh
+git clone git://git.yoctoproject.org/poky
+   #+end_src
+
 
 * concepts
 ** BSP
