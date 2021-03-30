@@ -128,7 +128,9 @@ fdisk -l /path/to/image
 
 it will show you the block-size and the start-block of the partition. You can use that to calculate the offset.
 For example, I have an image of a bootable stick with a 4GB FAT32 partition. The output of the fdisk command is
+
 Code:
+#+begin_src sh
 Disk Stick.img: 3984 MB, 3984588800 bytes
 249 heads, 6 sectors/track, 5209 cylinders, total 7782400 sectors
 Units = sectors of 1 * 512 = 512 bytes
@@ -136,11 +138,11 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disk identifier: 0x0004bfaa
 
-#+begin_src sh
 Device      Boot      Start         End      Blocks   Id  System
 Stick.img1  *         128       8015999     4007936    b  W95 FAT32
-512 * 128 = 65536.
 #+end_src
+
+~512 * 128 = 65536.~
 
 So I have a block-size of 512 bytes and the start-block is 128. The offset is
 So the mount command would be
