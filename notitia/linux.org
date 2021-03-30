@@ -151,6 +151,16 @@ mount -o loop,offset=65536 Stick.img /mnt/tmp
 #+end_src
 
 *** windows partition
+** see how many CPU cores I have
+
+#+begin_src sh
+grep -c ^processor /proc/cpuinfo
+#+end_src
+** replace all text patterns to something else
+
+#+begin_src sh
+find <path_to_directory> -type f -exec sed -i 's/<search_text>/<replace_text>/g' {} \;
+#+end_src
 
 * Distros
  * [[./alpine.org][alpine]]
