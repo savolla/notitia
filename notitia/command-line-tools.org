@@ -26,3 +26,5 @@
 * Time Management
  * [[./task.org][task]] utility to manage your tasks
 * Communication
+ * [[./minicom.org][minicom]]
+ * [[./ssh.org][ssh]]
