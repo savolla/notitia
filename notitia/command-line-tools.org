@@ -25,3 +25,4 @@
  * [[./scrcpy.org][scrcpy]]
 * Time Management
  * [[./task.org][task]] utility to manage your tasks
+* Communication

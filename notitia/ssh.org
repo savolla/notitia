@@ -1,0 +1,17 @@
+#+TITLE: Ssh
+
+* facts
+* howto
+* concepts
+* problems & solutions
+** identification changed
+
+#+begin_src txt
+.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#+end_src
+
+#+begin_src sh
+ssh-keygen -R <target-host-ip>
+#+end_src
