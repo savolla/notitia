@@ -3,6 +3,17 @@
 
 * facts
 * howto
+** update angstrom
+
+#+begin_src sh
+opkg update
+#+end_src
+** install a package on angstrom
+
+#+begin_src sh
+opkg install $YOUR_PACKAGE
+#+end_src
+
 * concepts
 * tables & schemas
 ** BBB details
