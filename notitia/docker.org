@@ -56,7 +56,7 @@ RUN pacman -S git curl --noconfirm
 * How To
 ** start a container
 
-here is a template you can use
+here is a template you can use. you can also use ~mkcont~ sctipt for it
 
 #+begin_src sh
 docker container run \

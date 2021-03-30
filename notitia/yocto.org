@@ -42,7 +42,7 @@ I'm installing yocto on ubuntu since manjaro gave me errors...
 1. first install those
 
     #+begin_src sh
-    sudo apt-get install git tar python
+    sudo apt-get install git tar python vim sudo iputils-ping
     #+end_src
 
 2. then install thsese
@@ -60,7 +60,8 @@ sudo apt-get install \
     chrpath \
     socat \
     libsdl1.2-dev \
-    xterm
+    xterm \
+    cpio
    #+end_src
 
 
