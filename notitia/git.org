@@ -144,3 +144,8 @@ git clone -b <branch> <remote_repo>
 #+begin_src sh
 git config --global status.showUntrackedFiles no
 #+end_src
+** remove/delete branch
+
+#+begin_src sh
+git branch -d $BRANCH_NAME
+#+end_src

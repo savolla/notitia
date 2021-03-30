@@ -63,7 +63,6 @@ docker container run \
     -ti \
     -v /home/$USER/tnl:/mnt/tnl \
     --name="CONTAINER_NAME" \
-    --user="USER" \
     --hostname="HOSTNAME" \
     IMAGE_NAME \
     /bin/bash
@@ -73,9 +72,7 @@ docker container run \
 docker container run -ti -v /home/savolla/:/mnt/savolla --name="codemy" --hostname="codemy" archlinux:latest // general 3
 docker container run -ti -v /home/savolla/tnl/vimcpp:/root --name="vimcpp" --hostname="vimcpp" archlinux:latest
 
-docker system df // displays total image container and cache sizes
 
-docker ps -a --size // displays container size
 
 docker container run -ti -v $(pwd):/home/savolla --name="shovel" --hostname="shovel" archlinux:latest /bin/bash // general shovel example 2
 
@@ -194,10 +191,31 @@ docker container ls -a
 #+end_src
 ** save container
 
-the following command generates a new image from the given container
+the following command generates a *new image from the given container*
 
 #+begin_src sh
-docker commit [CONTAINER] [NEW_IMAGE_NAME] // create a new image from a container
+docker commit [CONTAINER] [NEW_IMAGE_NAME]
+#+end_src
+** export image
+
+this is handy because we can share that image later on. dont forget the *tar* word at the end of image name
+
+#+begin_src sh
+docker save $IMAGE_NAME > $IMAGE_NAME.tar
+#+end_src
+** import image
+
+#+begin_src sh
+docker import $IMAGE_NAME.tar
+#+end_src
+
+** display size of containers
+
+there are two commands
+
+#+begin_src sh
+docker system df // displays total image container and cache sizes
+docker ps -a --size // displays container size
 #+end_src
 
 * Problems & Solutions
