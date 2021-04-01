@@ -1,0 +1,20 @@
+#+TITLE: Hamachi
+
+* facts
+* howto
+** connect
+
+#+begin_src sh
+sudo systemctl start logmein-hamachi.service
+sudo hamachi login
+sudo hamachi set-nick savolla
+sudo hamachi join $SERVER_NAME '$PASSWORD' # don't forget single quotes
+#+end_src
+
+if you are already loged in do the following
+
+#+begin_src sh
+sudo hamachi go-online $SERVER_NAME
+#+end_src
+
+* concepts
