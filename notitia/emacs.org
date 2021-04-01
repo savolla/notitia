@@ -104,6 +104,14 @@ after that you will never gonna edit i3 config file again. all you is to come ba
 * Term
 * Tutorials
 * How To
+** unfreez the emacs
+
+sometimes emacs just freezes up. do the following
+
+#+begin_src sh
+pkill -SIGUSR2 emacs
+#+end_src
+
 * Problems & Solutions
 * Configuration Frameworks
 ** Doom Emacs
