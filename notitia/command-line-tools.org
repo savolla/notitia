@@ -28,3 +28,4 @@
 * Communication
  * [[./minicom.org][minicom]]
  * [[./ssh.org][ssh]]
+ * [[./hamachi.org][hamachi]]
