@@ -76,7 +76,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
   #+end_src
 
   #+RESULTS:
-  [[file:/tmp/babel-OrQQfK/plantuml-o9I6aH.png]]
+  : /tmp/babel-65VuvY/plantuml-2Y5KMS.png
 + yukarıdaki UML diyagramının kod karşılığı;
   - A.cpp
     #+begin_src cpp
@@ -157,6 +157,7 @@ baktın yukarıdaki kod örneğinde, ayrılan method daha çok iş yapmaya başl
             void method4() {/* some code */}
     };
     #+end_src
+
 * Concepts
 ** UML
 *** arrows and their meanings
