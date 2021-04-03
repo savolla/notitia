@@ -266,7 +266,7 @@ there must be an easier way..
 #+BEGIN_SRC bash
 emacs -nw
 #+END_SRC
-*** cheat sheet
+*** cheat sheet :doom:emacs:cheatsheet:
 
 =SPC - t t=                                 toggle tabs
 =SPC - t l=                                 list tabs
@@ -296,6 +296,7 @@ emacs -nw
 
 =SPC s f=                                   locate file in system
 =SPC s b=                                   search inside buffer (usefull for searching notes)
+=SPC m f=                                   insert footnotes in org mode
 
 *** problems & solutions
 **** with-editor.elc failed to provide feature ‘with-editor’
