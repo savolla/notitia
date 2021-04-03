@@ -122,7 +122,7 @@ pkill -SIGUSR2 emacs
 3. *org-roam* better note taking
 4. *magit* awesome git tool
 5. *deft* browse the notes
-*** how to
+*** how to :doom:emacs:howto:
 **** create new keybinding for whichkey?
 #+BEGIN_SRC elisp
 (map! :leader :desc "toggle undo tree" "- c u" #'undo-tree-visualize )
@@ -296,7 +296,12 @@ emacs -nw
 
 =SPC s f=                                   locate file in system
 =SPC s b=                                   search inside buffer (usefull for searching notes)
+
+**** org mode :org:cheatsheet:
 =SPC m f=                                   insert footnotes in org mode
+=SPC m q=                                   insert tags quickly
+=SPC m p [u|d]=                             increase or decrease TODO priority
+
 
 *** problems & solutions
 **** with-editor.elc failed to provide feature ‘with-editor’
