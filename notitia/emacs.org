@@ -102,7 +102,6 @@ after that you will never gonna edit i3 config file again. all you is to come ba
 
 *** problems and solutions
 * Term
-* Tutorials
 * How To
 ** unfreez the emacs
 

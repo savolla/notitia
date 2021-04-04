@@ -1,5 +1,6 @@
-#+TITLE: How To Write Effective Documentation
-#+DESCRIPTION: reference video: https://www.youtube.com/watch?v=R6zeikbTgVc
+#+TITLE: Documentation
+
+* How To Write Effective Documentation
 
 + Docs will be read by *users* so when writing docs don't explain all the architecture of the system. Focus on the things that can help users get things done.
 
@@ -23,3 +24,16 @@ Does the end-user need to know about that?
   1. bullets ( *, -, + )
   2. numeric steps (1. 1) 1- )
   3. discrete paragraphs on /context change/
+
+  *simplify* sentences. Don't use complex and hard to understand sentences.
+
++ Be *concise*. Use _didactic_ language instead of passive language. You write a documentation. Not a story.
+
+[[https://www.youtube.com/watch?v=R6zeikbTgVc][reference]]
+
+* Writing Technical Docs
+
++ There are 2 problems with Documentation;
+
+  1. Documentation Rots. /(it's easyly gets outdated as code evolves)/
+  2.
