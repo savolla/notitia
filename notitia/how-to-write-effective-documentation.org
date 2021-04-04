@@ -1,0 +1,25 @@
+#+TITLE: How To Write Effective Documentation
+#+DESCRIPTION: reference video: https://www.youtube.com/watch?v=R6zeikbTgVc
+
++ Docs will be read by *users* so when writing docs don't explain all the architecture of the system. Focus on the things that can help users get things done.
+
++ the helper question when writing something into docs is
+
+  #+begin_quote
+Does the end-user need to know about that?
+  #+end_quote
+
++ Documentation is *bad* when it's *long*. Don't write fvery single detail. The *motto* is *Write Less*
+
++ When starting to write a new documentation, always write the *outlines first*. Outlines help us to write meaningful docs. here are the examples of some useful outlines;
+
+  1. Who is this for
+  2. What is the reader trying to get done
+
+  after those outlines, the only thing you need to do is the *filling the details*. Writing outline first helps us writing less
+
++ Write with *structure*. By structure I mean;
+
+  1. bullets ( *, -, + )
+  2. numeric steps (1. 1) 1- )
+  3. discrete paragraphs on /context change/
