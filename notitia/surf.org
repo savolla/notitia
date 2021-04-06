@@ -4,3 +4,4 @@
 * tip
 * howto
 * concept
+* cheat
