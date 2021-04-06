@@ -173,7 +173,7 @@ example: /org-beamer-theme extension:el/
    #+begin_src sh
    emacs --daemon
    #+end_src
-**** how to block with doom
+**** how to blog with doom
 read [[https://ox-hugo.scripter.co/][this]]
 
 **** add and delete projects in treemacs
@@ -300,7 +300,6 @@ emacs -nw
 =SPC m f=                                   insert footnotes in org mode
 =SPC m q=                                   insert tags quickly
 =SPC m p [u|d]=                             increase or decrease TODO priority
-
 
 *** problems & solutions
 **** with-editor.elc failed to provide feature ‘with-editor’
