@@ -48,6 +48,7 @@
 - =converge=               yakınsamak
 
 - =deafening=              sağır edici
+- =diverse=                çeşitli
 - =dedicated=              adanmış
 - =delimeter=              sınırlayıcı
 - =depict=                 göstermek
@@ -61,6 +62,8 @@
 - =do not fare=            işe yaramaz
 
 - =ease off=               gevşemek, hafiflemek
+- =expertise=              uzmanlık
+- =encompassing=           kapsayan
 - =establish=              kurmak
 - =emerge=                 ortaaya çıkmak
 - =endeavor=               çaba
@@ -125,6 +128,7 @@
 - =muffled=                örtülü
 
 - =occasionally=           bazen
+- =omission=               ihmal
 - =oppurtunity=            fırsat
 - =ossify=                 kemikleşmek
 - =outlined=               özetlenen
@@ -171,6 +175,7 @@
 - =row=                    sıra (matrisin satırı)
 
 - =scattered=              dağılmış
+- =straddling=             üst üste binmiş
 - =signatory=              imza sahibi
 - =skeptical=              şüpheci
 - =scruple=                vicdan
