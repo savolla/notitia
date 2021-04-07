@@ -664,6 +664,12 @@ system modelling language inherited from UML
 - ISRs are working constantly and the main system is busy all the time.
 - system is not responsive anymore.
 - requires a reset
+*** Embedded System
+
+Combination of *Hardware* and *Software* which performs a *Specific Task*
+*** M2M
+
+Machine to Machine Communication. IoT and Embedded systems are examples
 
 *** Assembler
 
