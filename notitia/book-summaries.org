@@ -9,6 +9,10 @@
  * [[./reusable-firmware-development.org][Reusable Firmware Development]]
  * [[./ros-robotic-projects.org][Ros Robotic Projects]]
 
+* IoT
+
+ * [[./designing-the-internet-of-things.org][Designing the IoT]]
+
 * Software Engineering
 
  * [[./object-oriented-analysis-and-design-with-applications.org][Object-Oriented Analysis and Design with Applications]]

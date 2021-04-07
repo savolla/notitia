@@ -160,6 +160,7 @@
 - =proposal=               öneri
 
 - =query=                  sorgu
+- quaint                   antika
 - =quintessentially=       özetle
 
 - =recipient=              alıcı

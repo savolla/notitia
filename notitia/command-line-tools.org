@@ -14,6 +14,7 @@
  * [[./bc.org][bc]]
 * Package Managers
  * [[./pacman.org][pacman]]
+ * [[./pacaur.org][pacaur]]
 * Searchers
  * [[./find.org][find]]
 * Dotfile Managers
