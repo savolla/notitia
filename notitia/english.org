@@ -134,6 +134,7 @@
 - =outlined=               özetlenen
 
 - =pejorative=             aşağılayıcı
+- =perception=             algı
 - =profligate=             berbat
 - =prose=                  düzyazı
 - =proposal=               teklif
