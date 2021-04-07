@@ -1,0 +1,13 @@
+#+TITLE: Pacaur
+
+* facts
+* howto
+** update aur packages
+
+#+begin_src sh
+pacaur --upgrade-all
+#+end_src
+
+* concept
+* tip
+* cheat
