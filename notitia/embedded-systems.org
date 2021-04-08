@@ -667,6 +667,10 @@ system modelling language inherited from UML
 *** Embedded System
 
 Combination of *Hardware* and *Software* which performs a *Specific Task*
+*** WAP
+
+Wireless Application Protocol. It was developed when mobile phones first being connected to the internet. It was difficult to use existing internet protocols on mobile phones. So engineers created a new one
+
 *** M2M
 
 Machine to Machine Communication. IoT and Embedded systems are examples
