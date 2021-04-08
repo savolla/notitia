@@ -664,6 +664,10 @@ system modelling language inherited from UML
 - ISRs are working constantly and the main system is busy all the time.
 - system is not responsive anymore.
 - requires a reset
+*** Fog Computing
+
+Fog Computing = Cloud + IoT
+
 *** Embedded System
 
 Combination of *Hardware* and *Software* which performs a *Specific Task*
