@@ -173,3 +173,10 @@ sudo android-file-transfer
 * Distros
  * [[./alpine.org][alpine]]
  * [[./ubuntu.org][ubuntu]]
+* tips
+
++ When creating symbolic links, specify *full path* to each operand
+
+  #+begin_src sh
+ln -s /opt/FreeTube/freetube /usr/bin/freetube
+  #+end_src
