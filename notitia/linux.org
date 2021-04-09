@@ -163,6 +163,12 @@ grep -c ^processor /proc/cpuinfo
 #+begin_src sh
 find <path_to_directory> -type f -exec sed -i 's/<search_text>/<replace_text>/g' {} \;
 #+end_src
+** connect android to linux
+
+#+begin_src sh
+sudo pacman -S android-file-transfer
+sudo android-file-transfer
+#+end_src
 
 * Distros
  * [[./alpine.org][alpine]]
