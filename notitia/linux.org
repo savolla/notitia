@@ -169,6 +169,11 @@ find <path_to_directory> -type f -exec sed -i 's/<search_text>/<replace_text>/g'
 sudo pacman -S android-file-transfer
 sudo android-file-transfer
 #+end_src
+** convert any audio format to mp3
+
+#+begin_src sh
+ffmpeg -i $WAV_FILE -acodec mp3 $MP3_FILE
+#+end_src
 
 * Distros
  * [[./alpine.org][alpine]]
