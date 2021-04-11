@@ -6,7 +6,7 @@
 
 #+begin_src sh
 sudo systemctl start logmein-hamachi.service
-sudo hamachi login
+sudo hamachi login # this step can be enough
 sudo hamachi set-nick savolla
 sudo hamachi join $SERVER_NAME '$PASSWORD' # don't forget single quotes
 #+end_src
