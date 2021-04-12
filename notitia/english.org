@@ -4,11 +4,11 @@
 * Words to Memorize
 
 - =accommodation=          konaklama
-- =amiable=                sevimli
 - =across=                 karşısında
 - =adhare=                 bağlı
 - =allude=                 ima etmek
 - =ambition=               hırs
+- =amiable=                sevimli
 - =annually=               yıllık
 - =arrogance=              kibir
 - =aside=                  bir kenara
@@ -23,7 +23,7 @@
 - =bottleneck=             darboğaz
 - =boundary=               sınır
 - =brittle=                kırılgan
-
+--------------------------------------------------------------------------------------------------
 - =cater=                  sağlamak
 - =certain=                belli
 - =chore=                  zevksiz iş

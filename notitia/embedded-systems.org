@@ -132,8 +132,11 @@ git pull
 - don't use SPI when distance is more than 1 meter
 
 * Facts
-
 ** general
+
+- Peripherals are momory mapped and peripherals run independant from CPU core
+
+- Usually Embedded Systems teching should be started with *Block Diagramming*
 
 - in STM32F407VGT6 APB bus is slower than AHB bus
 
@@ -343,6 +346,15 @@ int const volatile *const foo;
   1. low cost
   2. low power
   3. low silicon area (smaller)
+** Elements Embedde Systems
+Embedded SYstems consists of some of these concepts
+
+1. Discrete / Continuous Signals
+2. Finite State Machines
+3. Computer Architecture
+4. Debuggers
+5. Software Patterns
+6. Formal Analysis
 
 * How To
 ** run ARM binaries on x86 Linux
@@ -759,4 +771,3 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 * Platforms
  * [[./stm32f407vgt6.org][stm32f407vgt6]]
  * [[./beagleboneblack.org][BBB]]
-* Problems & Solutions

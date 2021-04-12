@@ -1,0 +1,32 @@
+#+TITLE: General Topics
+
+* facts
+** tez yazımı
+Tez çalışmasının ille de bir proje olması gerekmez. Bir şeyin önemini vs. anlatmak da bir tez konusu olabilir. Mesela *On the importance of ...* şeklinde bir başlık da tez olabilir
+** knowing a programming language
+Knowing a programming language requires;
+1. What makes that language different than those you already know?
+2. which problems that language can solve *better* than other languages
+** teachers and books
+teachers and books take everying equally. They don't know what to skkkip or don't know what is less important or very important
+** good engineer and bad engineer
+The biggest difference between good engineer and not so good engineer is that good engineer knows where to look to find the information.
+** what is CPU actually is?
+CPU just moves data around and does some math and logic on that data. That's all
+* tips
+** yeni bir şey öğrenirken
+Yeni bir şeyler öğrenirken zorlandığımızda, asla şunları düşünme;
+1. Hoca kötü
+2. Bu konu beni aşar
+3. Ben aptalım
+4. Kitap doğru düzgün anlatmıyor
+Bunun yerine, şöyle düşünmek gerekir;
+#+begin_quote
+Bu çalıştığım şey gerçekten zor. Hala öğrenme aşamasındayım ve bu konuyu bilenler bile bazen hatalar yapabiliyorken ben henüz yolun başındayken nasıl her şeyi hemen analayabilirim?
+#+end_quote
+** screw homeworks
+Homeworks are always crafted. They expect you to apply some sort of *trick*. If you find that trick then you solve the homework. Use a real world problem to learn something
+** how to learn anything
+When learning things don't follow a book. Beacuse books take everything equally. They don't know what's really important because writers must write a complete book and cover everything. Throw that book away and find something to build. In first project you will look up internet for almost everything and that project will take 10 times longer than normal. Second project will take 5 times longer and so on. You will able to finish your 5th project without looking up anywhere because you will have *experience*. And this is how you learn anything.
+
+* howto
