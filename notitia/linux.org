@@ -2,6 +2,10 @@
 #+STARTUP: overview
 
 * How To
+** extract xz files
+#+begin_src sh
+unxz $FILE.xz
+#+end_src
 ** see lastly modified 5 files
 #+begin_src sh
 ls -tl | head -n 5

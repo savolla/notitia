@@ -14,6 +14,19 @@ opkg update
 opkg install $YOUR_PACKAGE
 #+end_src
 ** cross compile Qt for bbb
+*** downloads
+1. download a _console_ *debian image* from [[https://beagleboard.org/latest-images][here]]
+2. download Qt source code (in my case 5.15)
+   #+begin_src sh
+wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
+   #+end_src
+3. extract Qt source code
+   #+begin_src sh
+unxz qt-everywhere-src-5.15.2.tar.xz
+tar -xvf qt-everywhere-src-5.15.2.tar
+   #+end_src
+4. download *Linaro Toolchain* and *Sysroot* from [[https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/][here]]
+   I choosed
 
 * concepts
 * tables & schemas
