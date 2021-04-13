@@ -14,9 +14,16 @@ opkg update
 opkg install $YOUR_PACKAGE
 #+end_src
 ** cross compile Qt for bbb
+*** what you need
+1. beaglebone black
+2. SD card > 2GB
+3. target image
+4. Qt source code
+5. toolchain
+6. sysroot
 *** downloads
-1. download a _console_ *debian image* from [[https://beagleboard.org/latest-images][here]]
-2. download Qt source code (in my case 5.15)
+1. _console_ *debian image* from [[https://beagleboard.org/latest-images][here]]
+2. Qt source code (in my case 5.15)
    #+begin_src sh
 wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
    #+end_src
@@ -25,8 +32,56 @@ wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15
 unxz qt-everywhere-src-5.15.2.tar.xz
 tar -xvf qt-everywhere-src-5.15.2.tar
    #+end_src
-4. download *Linaro Toolchain* and *Sysroot* from [[https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/][here]]
-   I choosed
+4. download *Linaro Toolchain*
+   #+begin_src sh
+wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
+   #+end_src
+5. extract toolchain
+   #+begin_src sh
+unxz gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
+tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar
+   #+end_src
+6. download *Sysroot*
+   #+begin_src sh
+wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/sysroot-glibc-linaro-2.25-2019.12-arm-linux-gnueabihf.tar.xz
+   #+end_src
+7. extract sysroot
+   #+begin_src sh
+unxz sysroot-glibc-linaro-2.25-2019.12-arm-linux-gnueabihf.tar.xz
+tar -xvf sysroot-glibc-linaro-2.25-2019.12-arm-linux-gnueabihf.tar
+   #+end_src
+*** cross compilation
+1. copy *sysroot* and *toolchain* to =/usr/local/linaro=
+   #+begin_src sh
+sudo cp -r gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf /usr/local/linaro
+sudo cp -r sysroot-glibc-linaro-2.25-2019.12-arm-linux-gnueabihf /usr/local/linaro
+   #+end_src
+2. configure Qt for beaglebone black (for more options go [[https://doc.qt.io/qt-5/configure-options.html][here]])
+   #+begin_src sh
+./configure \
+    -opensource \
+    -confirm-license \
+    -platform linux-g++ \
+    -release \
+    -device linux-beagleboard-g++ \
+    -prefix ~/qt-5.12-for-bbb \
+    -hostprefix ~/qt-5.12-for-bbb \
+    -device-option CROSS_COMPILE=/usr/local/linaro/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf- \
+    -sysroot /usr/local/linaro/sysroot-glibc-linaro-2.25-2019.12-arm-linux-gnueabihf \
+    -nomake tests \
+    -nomake examples \
+    -no-opengl \
+    -reduce-exports \
+    -make libs
+   #+end_src
+
+   here is the meaning of above options:
+   =-platform=:       Specifies the workstation platform,
+   =-device=:         Target device (list of devices available in qt-everywhere/qtbase/mkspecs/devices),
+   =-sysroot=:        Specifies the directory in which sysroot is available,
+   =-prefix=:         Specifies the directory on workstation where compiled Qt and libs will be stored,
+   =-hostprefix=:     Specifies the directory on BBB where target executables will be exported,
+   =-device-option=:  Gives the location of toolchain needed for CROSS_COMPILE,
 
 * concepts
 * tables & schemas
