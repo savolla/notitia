@@ -13,6 +13,7 @@ opkg update
 #+begin_src sh
 opkg install $YOUR_PACKAGE
 #+end_src
+** cross compile Qt for bbb
 
 * concepts
 * tables & schemas
@@ -32,5 +33,3 @@ opkg install $YOUR_PACKAGE
 | SPI    |      2 |
 
 [[file:./images/screenshot-133.png]]
-
-* problems & solutions
