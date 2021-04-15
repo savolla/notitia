@@ -772,5 +772,8 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
  * [[./stm32f407vgt6.org][stm32f407vgt6]]
  * [[./beagleboneblack.org][BBB]]
 * Bookmarks
-
+** video
 [[https://www.youtube.com/watch?v=hybyRIhOovU][Software Design Using Hierarchical State Machine]]
+** article
+[[https://github.com/K3tan/BBB_QT5_guide][Github BBB Qt5 cross compile]]
+[[https://www.interelectronix.com/tr/ubuntu-20-ltsde-raspberry-bilgisayar-modulu-4-icin-qt-515-capraz-derleme.html][Walter Prechtl Cross Compile Qt for RPi]]
