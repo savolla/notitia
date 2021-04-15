@@ -771,3 +771,6 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 * Platforms
  * [[./stm32f407vgt6.org][stm32f407vgt6]]
  * [[./beagleboneblack.org][BBB]]
+* Bookmarks
+
+[[https://www.youtube.com/watch?v=hybyRIhOovU][Software Design Using Hierarchical State Machine]]

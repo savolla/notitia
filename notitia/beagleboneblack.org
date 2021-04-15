@@ -23,24 +23,29 @@ opkg install $YOUR_PACKAGE
 6. sysroot
 *** downloads
 1. _console_ *debian image* from [[https://beagleboard.org/latest-images][here]]
+
 2. Qt source code (in my case 5.15)
    #+begin_src sh
 wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
    #+end_src
+
 3. extract Qt source code
    #+begin_src sh
 unxz qt-everywhere-src-5.15.2.tar.xz
 tar -xvf qt-everywhere-src-5.15.2.tar
    #+end_src
+
 4. download *Linaro Toolchain*
    #+begin_src sh
 wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
    #+end_src
+
 5. extract toolchain
    #+begin_src sh
 unxz gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
 tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar
    #+end_src
+
 6. download *Sysroot*
    #+begin_src sh
 wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/sysroot-glibc-linaro-2.25-2019.12-arm-linux-gnueabihf.tar.xz
