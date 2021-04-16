@@ -96,7 +96,7 @@ git pull
 
 
 * Tips
-
+** General
 - what you need to know in Turkey
 
   | Context   | Demand |
@@ -130,6 +130,31 @@ git pull
 - use *ternary operators* instead of *if-else* in embedded systems. it increases performance
 
 - don't use SPI when distance is more than 1 meter
+
+** State Machines
+
+- *States* should be *Do-ing* something
+
+  - Idling
+  - Waiting to Connect
+  - Connecting
+  - Washing
+  - Off (this is special. initial state for a system)
+
+- States should be *Cohesive*
+
+  - _Do 1 thing_
+  - Should be described with *one sentence* _without logical connectives_
+
+- *Transitions* should be *imperative* and should be one single command
+
+  - Connect
+  - Stop
+  - Disconnect
+  - Push Button
+
+
+
 
 * Facts
 ** general
