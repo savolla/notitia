@@ -40,6 +40,66 @@ int main(void) {
     return 0;
 }
 #+end_src
+** state machine implementation
+
+#+begin_src c
+// @author: savolla
+// @date: Fri Apr 16 22:42:49 2021
+// @desc: My first State Machine implementation in C
+
+#include <stdio.h>
+
+char password;
+void A(void);
+void B(void);
+void C(void);
+void D(void);
+void (*state)();
+
+int main(void) {
+  state = A; // init state
+  while (state != D) {
+    state();
+  }
+  printf("accepted!");
+  return 0;
+}
+
+// deffinitions
+void A() {
+    scanf("%c", &password);
+    if (password == '0') {
+       state = B;
+    }
+    else if (password == '1') {
+        state = A;
+    }
+}
+
+void B() {
+    scanf("%c", &password);
+    if (password == '0') {
+       state = B;
+    }
+    else if(password == '1') {
+        state = C;
+    }
+}
+
+void C() {
+    scanf("%c", &password);
+    if (password == '0') {
+       state = B;
+    }
+    else if(password == '1') {
+        state = D;
+    }
+}
+
+void D() {
+}
+#+end_src
+
 * python
 ** get nth digit of a number
 
@@ -48,3 +108,4 @@ int getDigit( int number, int digit ) {
     return (number % (int)pow( 10, digit ) / (int)pow( 10, (digit -1 )));
 }
 #+end_src
+
