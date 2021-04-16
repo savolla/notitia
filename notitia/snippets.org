@@ -42,6 +42,8 @@ int main(void) {
 #+end_src
 ** state machine implementation
 
+[[file:./images/screenshot-136.png]]
+
 #+begin_src c
 // @author: savolla
 // @date: Fri Apr 16 22:42:49 2021

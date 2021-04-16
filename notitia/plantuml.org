@@ -38,4 +38,3 @@ add the following line under @startuml
 skinparam dpi 300
 @enduml
 #+end_src
-* problems & solutions
