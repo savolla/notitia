@@ -346,7 +346,7 @@ int const volatile *const foo;
   1. low cost
   2. low power
   3. low silicon area (smaller)
-** Elements Embedde Systems
+** Elements Embedded Systems
 Embedded SYstems consists of some of these concepts
 
 1. Discrete / Continuous Signals
@@ -355,6 +355,55 @@ Embedded SYstems consists of some of these concepts
 4. Debuggers
 5. Software Patterns
 6. Formal Analysis
+** Examples of Embedded Systems
+*** Home
+1. Toasters
+2. Kettles
+3. Washing machines
+4. Dishwashers
+5. Food processors
+6. Televisions
+*** Telecommunications
+1. Network routers
+2. Modems
+3. Low power wide area network enabled sensors
+4. Cell towers
+5. Mobile phone.
+*** Medical
+1. x-ray generators
+2. ECG monitors
+3. MRI scanners
+*** science / technology
+1. Electronic Microscopes
+2. Oscilloscopes
+*** Car
+1. Electronic speedometer
+2. ABS
+3. Power steering
+4. Car alarm
+5. Air conditioning
+6. Heads up display
+** Design Patterns that used in Embedded Systems
+*Observer pattern*
+Also known as the publish-subscribe method. It is a method which allows data to be shared to multiple elements and makes it easy to add more elements to share the data. Thus the system becomes more flexible.
+
+*Hardware proxy pattern*
+Elements specifically responsible for accessing certain hardware. These make it easy to update firmware when changes in the hardware design are made. Again, this increases the flexibility of the design.
+
+*Interrupt pattern*
+Used to pause what its currently processing and handle events as soon as they happen. This in turn increases the Responsiveness.
+
+*Queuing pattern*
+Uses queued messages to share information among multiple processes.
+
+*Rendezvous pattern*
+Synchronises 2 or more separate processes.
+
+*State pattern*
+Implements a state machine inside firmware.
+
+*CRC pattern*
+Verifies data which makes the system more reliable.
 
 * How To
 ** run ARM binaries on x86 Linux
@@ -683,6 +732,7 @@ Fog Computing = Cloud + IoT
 *** Embedded System
 
 Combination of *Hardware* and *Software* which performs a *Specific Task*
+
 *** WAP
 
 Wireless Application Protocol. It was developed when mobile phones first being connected to the internet. It was difficult to use existing internet protocols on mobile phones. So engineers created a new one
@@ -753,6 +803,9 @@ We can also do other operations like setting bits, toggling etc
 + Micron Technology, Inc. is an American *producer of computer memory and computer data storage* including _dynamic random-access memory_, _flash memory_, and _USB flash drives_. It is headquartered in Boise, Idaho. Its consumer products are marketed under the brands Crucial and Ballistix.
 
 + Micron and Intel together created IM Flash Technologies, which produces NAND flash memory. It owned Lexar between 2006 and 2017
+*** Firmware
+
+Software that specifically written for and Embedded System
 
 ** Robotics
 *** Mechanum Wheels

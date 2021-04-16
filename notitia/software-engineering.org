@@ -280,6 +280,9 @@ fDone // a flag (indicating whether a process is done)
 #+end_src
 ** QA
 Quality Assurance
+** Analysis Pattern
+
+Field specific *Design Pattern*
 
 * Software Architecture
 ** notes from armağan amcalar's youtube stream
