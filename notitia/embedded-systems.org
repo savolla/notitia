@@ -858,3 +858,4 @@ It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum 
 ** article
 [[https://github.com/K3tan/BBB_QT5_guide][Github BBB Qt5 cross compile]]
 [[https://www.interelectronix.com/tr/ubuntu-20-ltsde-raspberry-bilgisayar-modulu-4-icin-qt-515-capraz-derleme.html][Walter Prechtl Cross Compile Qt for RPi]]
+[[https://hackaday.com/2015/08/13/becoming-a-state-machine-design-mastermind/][Becoming a State Machine Design Mastermind]]
