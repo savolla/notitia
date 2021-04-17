@@ -1,0 +1,21 @@
+#+TITLE: Gdb
+
+* fact
+* howto
+** set a condition for a breakpoint
+
+#+begin_src sh
+(gdb) condition <breakpoint_number> $CONDITION
+#+end_src
+
+The =$CONDITION= is written in syntax similar to c using operators such as == != and <.
+
+** Remove a condition from a breakpoint
+
+If no condition is required on a breakpoint anymore (i.e. the breakpoint should always break upon being reached), the breakpoint can be removed using:
+
+#+begin_src sh
+(gdb) condition <breakpoint_number>
+#+end_src
+
+* concept

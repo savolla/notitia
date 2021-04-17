@@ -18,6 +18,7 @@
  * [[./plantuml.org][plantuml]]
 * Debuggers
  * [[./radare2.org][radare2]]
+ * [[./gdb.org][gdb]]
 * Web Development
  * [[./hugo.org][hugo]]
 * Robotics
