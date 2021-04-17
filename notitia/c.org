@@ -1231,6 +1231,16 @@ int main(void) {
     return 0;
 }
 #+end_src
+** exit program within function
+
+#+begin_src c
+#include <stdlib.h> // don't forget this one
+
+int main(void) {
+    exit(0);
+    return 0;
+}
+#+end_src
 
 * Problems & Solutions
 ** ~implicit declaration of function $function_name~
