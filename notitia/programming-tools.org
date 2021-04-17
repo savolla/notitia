@@ -1,28 +1,19 @@
 #+TITLE: Programming Tools
 #+STARTUP: overview
 
-* Build
  * [[./make.org][make]]
-* Version Control
  * [[./github.org][github]]
  * [[./git.org][git]]
-* Compilers
  * [[./nasm.org][nasm]]
  * [[./gcc.org][gcc]]
  * [[./platformio.org][platformio]]
-* Binary Analysis
  * [[./objdump.org][objdump]]
-* Containers
  * [[./docker.org][docker]]
-* UML
  * [[./plantuml.org][plantuml]]
-* Debuggers
  * [[./radare2.org][radare2]]
  * [[./gdb.org][gdb]]
-* Web Development
  * [[./hugo.org][hugo]]
-* Robotics
  * [[./ros.org][ros]]
  * [[./gazebo.org][gazebo]]
-* Serial Monitoring
  * [[./minicom.org][minicom]]
+ * [[./platformio.org][platformio]]
