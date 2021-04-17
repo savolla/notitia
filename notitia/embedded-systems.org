@@ -146,13 +146,15 @@ git pull
   - _Do 1 thing_
   - Should be described with *one sentence* _without logical connectives_
 
-- *Transitions* should be *imperative* and should be one single command
+- *Transitions* should be *imperative* and should be one single command (not always)
 
   - Connect
   - Stop
   - Disconnect
   - Push Button
 
+Example State Diagram
+[[file:./images/screenshot-138.png]]
 
 
 
