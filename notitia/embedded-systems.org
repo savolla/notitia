@@ -677,6 +677,9 @@ the ~base address~ of RCC is =0x4002 3800= to =0x4002 3BFF=
 *** Active Low
 
 A hardware component (mostly pins) that outputs *high* while the voltage is *low*. If you see a component with *bars* that means this component is active low. In the pin description, Active Low pins have slashes before their names
+
+For example *MR* and *OE*
+
 *** Lidar
 This is a sensor that used in Self-driving car applications that Scans the environment by sending many laser beams
 
@@ -847,6 +850,57 @@ There are also left and right handed version of those
 It's a moving robotic arm. Here is a mobile manipulator that also uses Mechanum Wheels
 
 [[file:./images/screenshot-119.png]]
+** Electronic Components
+*** Shift Register
+**** What is it
+
+Shift register is a *sequential logic* circuit that can be useful _when we run out digital pins_ on our microcontroller. It multiplies our digital pins
+
+**** Use Cases
+
++ store binary data (memory)
++ transfer data (data communication)
+
+**** Variations
+
+Shift Registers has 4 varians;
+1. SIPO (serial input parallel output)
+2. SISO (serial input serial output)
+3. PISO (parallel input serial output)
+4. PIPO (parallel input parallel output)
+
+**** SIPO and PISO
+
+[[file:./images/screenshot-139.png]]
+
+These are the *most popular*
+
+SIPO
+#+begin_src txt
+          .---.
+          |   |--output1->
+ -input-->|   |--output2->
+          |   |--output3->
+          |   |--output4->
+          '---'
+#+end_src
+
+PISO
+#+begin_src txt
+          .---.
+--input1->|   |
+--input2->|   |-output-->
+--input3->|   |
+--input4->|   |
+          '---'
+#+end_src
+
+**** SISO and PIPO
+
+They can be seen useless but they can be used for *Data Storage*
+**** SIPO 74HC595 Pinout
+
+[[file:./images/screenshot-140.png]]
 
 * Platforms
  * [[./stm32f407vgt6.org][stm32f407vgt6]]
