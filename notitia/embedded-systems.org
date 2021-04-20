@@ -901,6 +901,11 @@ They can be seen useless but they can be used for *Data Storage*
 **** SIPO 74HC595 Pinout
 
 [[file:./images/screenshot-140.png]]
+*** 7 Segment Display
+
+- There are two configurations
+
+ [[file:./images/screenshot-141.png]]
 
 * Platforms
  * [[./stm32f407vgt6.org][stm32f407vgt6]]
