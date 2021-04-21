@@ -828,6 +828,7 @@ We can also do other operations like setting bits, toggling etc
 - *Pull Up* resistor is connected to *Power Supply*
 - *Pull Down* resistor is connected to *Ground*
 - Here is the [[https://www.youtube.com/watch?v=G_i1ZhadTa0][video]] that explains pull up/pull down resistors greatly
+
 *** Micron
 
 + Micron Technology, Inc. is an American *producer of computer memory and computer data storage* including _dynamic random-access memory_, _flash memory_, and _USB flash drives_. It is headquartered in Boise, Idaho. Its consumer products are marketed under the brands Crucial and Ballistix.
@@ -836,6 +837,9 @@ We can also do other operations like setting bits, toggling etc
 *** Firmware
 
 Software that specifically written for and Embedded System
+*** Impedance
+
+Resistance in AC circuits
 
 ** Robotics
 *** Mechanum Wheels
