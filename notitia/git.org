@@ -64,6 +64,13 @@ git log
 git reset --hard $COMMIT_ID
    #+end_src
 now all the local changes you made will be lost
+
+After that you will not be able to *push* changes to main. In this case use that _dangerous_ command to *force push*
+
+#+begin_src sh
+git push -f origin $YOUR_BRANCH
+#+end_src
+
 ** manage dotfiles
 *** create dotfiles
 1. initialize git
