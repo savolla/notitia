@@ -8,6 +8,7 @@
 * Facts
 ** general
 
+- =time.h= library start to count *months* from 0. For example January is 0
 
 - all *global* =const= variables live in FLASH or ROM memory
 
@@ -368,7 +369,9 @@ use ~const~ for the variables like;
 ** void pointers can be used for generic programming
 
 #+begin_src c
-
+uint8_t x = 12;
+void *p = &x;
+printf("%f", *(double*)p);
 #+end_src
 
 ** 3 types of infinite loops
@@ -642,7 +645,6 @@ gcc -D_LINUX__ -03 -Wall -c -o program.o program.c
 - =defined()= operator usually used with #if directives
 
 - also use =!defined()= to indicate =ifndef=
-
 
 * Tips
 ** general
@@ -1241,6 +1243,26 @@ int main(void) {
     exit(0);
     return 0;
 }
+#+end_src
+** time operations
+*** print current time
+
+#+begin_src c
+#include <time.h>
+time_t currentTime;
+time( &currentTime );
+printf("%s", ctime(&currentTime));
+#+end_src
+
+*** get current month, day etc.
+
+#+begin_src c
+#include <time.h>
+time_t currentTime;
+time( &currentTime );
+
+struct tm *myTime = localtime( &currentTime );
+myTime-> // TAB complete here
 #+end_src
 
 * Problems & Solutions

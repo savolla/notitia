@@ -2,6 +2,24 @@
 #+AUTHOR: savolla
 #+DESCRIPTION: functions that help
 
+#+begin_src c
+#include <stdio.h>
+#include <stdint.h>
+
+typedef struct {
+    char name[10];
+    int age;
+}Person;
+
+int main(void) {
+
+    uint8_t x = 12;
+    void *p = &x;
+    printf("%f", *(double*)p);
+    return 0;
+}
+#+end_src
+
 * c
 ** extract information from a network packet
 
