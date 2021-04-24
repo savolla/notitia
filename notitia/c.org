@@ -371,7 +371,11 @@ use ~const~ for the variables like;
 #+begin_src c
 uint8_t x = 12;
 void *p = &x;
-printf("%f", *(double*)p);
+printf("%d\n", *(uint8_t*)p);
+
+double y = 34.3;
+p = &y;
+printf("%f\n", *(double*)p);
 #+end_src
 
 ** 3 types of infinite loops
@@ -648,6 +652,10 @@ gcc -D_LINUX__ -03 -Wall -c -o program.o program.c
 
 * Tips
 ** general
+
+- don't use functions from =ato..= group. they are broken and useless
+
+- when declaring functions in *headers* or *c files* use =__BEGIN_DECLS= macro
 
 - when excluding *code blocks* from the code, don't use *comments*. comments are used for _commenting_.. not code exclusion. use conditional compiler directive like this;
 
