@@ -1,0 +1,10 @@
+#+TITLE: Genymotion
+
+* fact
+* tip
+* howto
+** start phone from command line
+
+#+begin_src sh
+gmtool admin start $YOUR_DEVICE_NAME
+#+end_src
