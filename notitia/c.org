@@ -649,7 +649,6 @@ gcc -D_LINUX__ -03 -Wall -c -o program.o program.c
 - =defined()= operator usually used with #if directives
 
 - also use =!defined()= to indicate =ifndef=
-
 * Tips
 ** general
 
@@ -801,6 +800,18 @@ this is the case when you work in just one file. the better solution will be;
 - =uintmax_t= : type for the largest _unsigned_ integer
 - =intmax_t=  : type for the largest _signed_ integer
 - =uintptr_t= : useful if you are unsure about the size of the pointer or when you are coding for unknown architecture like PIC where you are not sure about size of the pointer you can use this
+
+** structs
+
+- never use flexible char arrays inside structs!
+
+  #+begin_src c
+  typedef struct {
+      int age;
+      char name[]; // <- this one will cause problems
+  } Person;
+
+  #+end_src
 
 * Concept
 ** Include Guards
