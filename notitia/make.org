@@ -64,3 +64,17 @@ $(RM) -r $(BUILD_DIR)
 
 MKDIR_P ?= mkdir -p
 #+END_SRC
+* tip
+- always use =TAB=
+* fact
+* howto
+** include all headers
+
+You need to specify the include directory
+
+#+begin_src makefile
+INCLUDE_DIR=./include
+
+program: main.c
+	g++ -I$(INCLUDE_DIR) main.c -o program
+#+end_src
