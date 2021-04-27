@@ -5,11 +5,17 @@
 #+DATE: Fri Jan  8 22:02:29 2021
 #+DESCRIPTION: C++ Programming Languages
 
+* tips
+- don't forget *=0* when declaring _virtual functions_
+
+- if you use *this* keyword in _inherited class_ you will refer to _base class_ don't do that mistake
+
 * Facts
 + in C++ there is no =interface= keyword. but we can still implement intrefaces with classes
 * How To
 ** implement interfaces in c++
 1. create a class with only abstract methods with =virtual= keywords and adding ==0= to the ent of methods. and don't forget *virtual destructor*
+
    #+begin_src cpp
    // Shape.cpp
    class Shape {
@@ -18,6 +24,7 @@
        virtual double calculateArea() = 0;
    }
    #+end_src
+
 2. now create a class that implements that interface;
    #+begin_src cpp
    // Triangle.cpp
