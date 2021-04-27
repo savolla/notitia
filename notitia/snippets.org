@@ -101,6 +101,21 @@ else if(password == '1') {
 void D() {
 }
 #+end_src
+* c++
+** random number generation
+
+#+begin_src cpp
+#include <random>
+#include <iostream>
+using namespace std;
+
+int generateRandomInteger( int min, int max ) {
+    random_device rd;
+    mt19937 rng(rd());
+    uniform_int_distribution<int> uni( min, max);
+    return uni(rng);
+}
+#+end_src
 
 * python
 ** get nth digit of a number
