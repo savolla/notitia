@@ -116,6 +116,21 @@ int generateRandomInteger( int min, int max ) {
     return uni(rng);
 }
 #+end_src
+** using vectors
+
+#+begin_src cpp
+#include <vector>
+#include <iostream>
+using namespace std;
+
+int main(void) {
+    vector< int > v = {1,2,3,4};
+
+    cout << v[2] << endl;
+    return 0;
+}
+
+#+end_src
 
 * python
 ** get nth digit of a number
