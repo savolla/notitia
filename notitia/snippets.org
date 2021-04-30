@@ -101,6 +101,29 @@ else if(password == '1') {
 void D() {
 }
 #+end_src
+** socket programming
+*** includes needed for socket programming
+
+#+begin_src c
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#+end_src
+
+
+*** create socket
+
+#+begin_src c
+
+//                       Internet Socket      means use TCP
+//                             /                   /
+int network_socket = socket(AF_INET, SOCK_STREAM, 0);
+//                                         \
+//                                    Type of Socket
+//                                        (TCP)
+
+#+end_src
+
 * c++
 ** random number generation
 
