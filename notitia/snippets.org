@@ -114,14 +114,20 @@ void D() {
 *** create socket
 
 #+begin_src c
-
 //                       Internet Socket      means use TCP
 //                             /                   /
 int network_socket = socket(AF_INET, SOCK_STREAM, 0);
 //                                         \
 //                                    Type of Socket
 //                                        (TCP)
+#+end_src
+*** specify the address for socket
 
+#+begin_src c
+struct socket_in server_address;
+server_address.sin_family = AF_INET;
+server_address.sin_port = htons(9002);
+server_address.sin_addr.s_addr = 0.0.0.0;
 #+end_src
 
 * c++
