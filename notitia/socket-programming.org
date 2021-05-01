@@ -1,0 +1,11 @@
+#+TITLE: Socket Programming
+
+* fact
+
+- socket programming is related to *Telephony Network*
+ [[file:./images/screenshot-143.png]]
+
+
+ [[file:./images/screenshot-142.png]]
+* tip
+* hotwo
