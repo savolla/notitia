@@ -652,6 +652,9 @@ gcc -D_LINUX__ -03 -Wall -c -o program.o program.c
 * Tips
 ** general
 
+- if you want to support c++ for your header files use __BEGIN_DECLS and __END_DECLS. put all function declarations inside these two macros
+
+
 - don't use functions from =ato..= group. they are broken and useless
 
 - when declaring functions in *headers* or *c files* use =__BEGIN_DECLS= macro
