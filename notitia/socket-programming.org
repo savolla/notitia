@@ -8,4 +8,5 @@
  [[file:./images/screenshot-142.png]]
 
 * tip
+- when closing a socket, don't forget to include =unistd.h= header on linux. if you don't your sockets won't be closed and this will cause lots of headache
 * hotwo
