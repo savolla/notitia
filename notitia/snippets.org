@@ -2,6 +2,31 @@
 #+AUTHOR: savolla
 #+DESCRIPTION: functions that help
 
+#+begin_src c
+#include <stdio.h>
+#include <stdint.h>
+
+int32_t getDigit( intmax_t number ) {
+    uint32_t digits = 0;
+    do {
+        number /= 10;
+        digits++;
+    } while ( number != 0 );
+    return digits;
+}
+
+int main(void) {
+
+    int x = 103923;
+
+    int digits = getDigit( x );
+
+    printf("%i", digits);
+
+    return 0;
+}
+#+end_src
+
 * c
 ** extract information from a network packet
 
@@ -128,6 +153,17 @@ struct socket_in server_address;
 server_address.sin_family = AF_INET;
 server_address.sin_port = htons(9002);
 server_address.sin_addr.s_addr = 0.0.0.0;
+#+end_src
+** count digits of a number
+#+begin_src c
+int32_t countDigits( intmax_t number ) {
+    uint32_t digits = 0;
+    do {
+        number /= 10;
+        digits++;
+    } while ( number != 0 );
+    return digits;
+}
 #+end_src
 
 * c++
