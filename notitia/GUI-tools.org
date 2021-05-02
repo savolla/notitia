@@ -6,7 +6,7 @@
 *** facts
 **** best cores for specific platforms
 + *snes* : bsnes-hd beta
-+ *n64*: mupen43plus-next
++ *n64*: mupen64plus-next
 + *ps1*: epsxe
 * DAW
 ** famitracker
