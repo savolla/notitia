@@ -6,51 +6,16 @@
 #include <stdio.h>
 #include <stdint.h>
 
-int32_t countDigits( intmax_t number );
-int32_t sumAllDigits( intmax_t number );
-int32_t power( const int32_t m, const int32_t n );
 
 int main(void) {
 
-    int x = 103923;
+    uintmax_t total = 5;
 
-    int total = sumAllDigits(x);
-
-    printf("%i", total);
+    printf("%zd", factorial(20));
 
     return 0;
 }
 
-int32_t countDigits( intmax_t number ) {
-    uint32_t digits = 0;
-    do {
-        number /= 10;
-        digits++;
-    } while ( number != 0 );
-    return digits;
-}
-
-int32_t sumAllDigits( intmax_t number ) {
-    int digits = countDigits( number ); digits--;
-    int32_t sum = 0;
-    int d = 999;
-    while ( digits > 0 ) {
-        d = number / power( 10, digits );
-        sum += d;
-        number -= d * power( 10, digits );
-        digits--;
-    }
-    return sum;
-}
-
-
-int32_t power( const int32_t m, const int32_t n ) {
-    int32_t M = m;
-    for ( int i = 0; i < n; i++ ) {
-        M *= 10;
-    }
-    return M;
-}
 #+end_src
 
 * c
@@ -91,6 +56,54 @@ printf("%x\n", pkg.bitStream);
 return 0;
 }
 #+end_src
+** socket programming
+*** includes needed for socket programming
+
+#+begin_src c
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#+end_src
+
+*** create socket
+
+#+begin_src c
+//                       Internet Socket      means use TCP
+//                             /                   /
+int network_socket = socket(AF_INET, SOCK_STREAM, 0);
+//                                         \
+//                                    Type of Socket
+//                                        (TCP)
+#+end_src
+*** specify the address for socket
+
+#+begin_src c
+struct socket_in server_address;
+server_address.sin_family = AF_INET;
+server_address.sin_port = htons(9002);
+server_address.sin_addr.s_addr = 0.0.0.0;
+#+end_src
+** count digits of a number
+#+begin_src c
+int32_t countDigits( intmax_t number ) {
+    uint32_t digits = 0;
+    do {
+        number /= 10;
+        digits++;
+    } while ( number != 0 );
+    return digits;
+}
+#+end_src
+** factorial
+#+begin_src c
+uint64_t factorial( uint8_t number ) {
+    if ( number == 1 || number == 0 ) {
+        return 1;
+    }
+    return number * factorial( number -1 );
+}
+#+end_src
+
 ** state machine implementation
 
 [[file:./images/screenshot-136.png]]
@@ -152,46 +165,6 @@ else if(password == '1') {
 void D() {
 }
 #+end_src
-** socket programming
-*** includes needed for socket programming
-
-#+begin_src c
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#+end_src
-
-
-*** create socket
-
-#+begin_src c
-//                       Internet Socket      means use TCP
-//                             /                   /
-int network_socket = socket(AF_INET, SOCK_STREAM, 0);
-//                                         \
-//                                    Type of Socket
-//                                        (TCP)
-#+end_src
-*** specify the address for socket
-
-#+begin_src c
-struct socket_in server_address;
-server_address.sin_family = AF_INET;
-server_address.sin_port = htons(9002);
-server_address.sin_addr.s_addr = 0.0.0.0;
-#+end_src
-** count digits of a number
-#+begin_src c
-int32_t countDigits( intmax_t number ) {
-    uint32_t digits = 0;
-    do {
-        number /= 10;
-        digits++;
-    } while ( number != 0 );
-    return digits;
-}
-#+end_src
-
 * c++
 ** random number generation
 
