@@ -6,7 +6,22 @@
 #include <stdio.h>
 #include <stdint.h>
 
-int32_t getDigit( intmax_t number ) {
+int32_t countDigits( intmax_t number );
+int32_t sumAllDigits( intmax_t number );
+int32_t power( const int32_t m, const int32_t n );
+
+int main(void) {
+
+    int x = 103923;
+
+    int total = sumAllDigits(x);
+
+    printf("%i", total);
+
+    return 0;
+}
+
+int32_t countDigits( intmax_t number ) {
     uint32_t digits = 0;
     do {
         number /= 10;
@@ -15,15 +30,26 @@ int32_t getDigit( intmax_t number ) {
     return digits;
 }
 
-int main(void) {
+int32_t sumAllDigits( intmax_t number ) {
+    int digits = countDigits( number ); digits--;
+    int32_t sum = 0;
+    int d = 999;
+    while ( digits > 0 ) {
+        d = number / power( 10, digits );
+        sum += d;
+        number -= d * power( 10, digits );
+        digits--;
+    }
+    return sum;
+}
 
-    int x = 103923;
 
-    int digits = getDigit( x );
-
-    printf("%i", digits);
-
-    return 0;
+int32_t power( const int32_t m, const int32_t n ) {
+    int32_t M = m;
+    for ( int i = 0; i < n; i++ ) {
+        M *= 10;
+    }
+    return M;
 }
 #+end_src
 
