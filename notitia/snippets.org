@@ -1,5 +1,6 @@
 #+TITLE: Snippets
 #+AUTHOR: savolla
+#+STARTUP: overview
 #+DESCRIPTION: functions that help
 
 #+begin_src c
@@ -165,6 +166,35 @@ else if(password == '1') {
 void D() {
 }
 #+end_src
+** check if prime
+
+#+begin_src c
+#include <math.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+
+bool isPrime( uintmax_t number) {
+    if ( number < 2 || number % 2 == 0 && number != 2 ) {
+        return false;
+    }
+    uintmax_t d;
+    uintmax_t s = floor(sqrt( number ));
+    for ( d = 3; d <= s; d += 2 ) {
+        if ( number % d == 0 ) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(void) {
+
+    printf("%i", isPrime(23));
+    return 0;
+}
+#+end_src
+
 * c++
 ** random number generation
 
