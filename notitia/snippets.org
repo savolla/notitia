@@ -195,6 +195,19 @@ int main(void) {
 }
 #+end_src
 
+** convert string to int
+#+begin_src c
+#include <inttypes.h>
+
+int _stoi( char string[] ) {
+    return strtoimax( string, NULL, 10 );
+}
+#+end_src
+** convert int to string
+#+begin_src c
+#include <stdio.h>
+snprintf( stringResult, 8, "%d", result);
+#+end_src
 * c++
 ** random number generation
 
