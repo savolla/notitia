@@ -3,12 +3,6 @@
 #+STARTUP: overview
 #+DESCRIPTION: functions that help
 
-#+begin_src c
-#include <stdio.h>
-#include <stdint.h>
-
-#+end_src
-
 * c
 ** extract information from a network packet
 
@@ -227,6 +221,18 @@ int main(void) {
     return 0;
 }
 
+#+end_src
+** get current time
+
+#+begin_src c
+#include <time.h>
+
+char *getCurrentTime( void ){
+    time_t mytime = time(NULL);
+    char *time_str = ctime(&mytime);
+    time_str[strlen(time_str)-1] = '\0';
+    return time_str;
+}
 #+end_src
 * c++
 ** random number generation
