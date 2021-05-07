@@ -7,16 +7,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-
-int main(void) {
-
-    uintmax_t total = 5;
-
-    printf("%zd", factorial(20));
-
-    return 0;
-}
-
 #+end_src
 
 * c
@@ -212,6 +202,31 @@ int _stoi( char string[] ) {
 void _int2string( uint32_t i, char **buffer ) {
     snprintf( buffer, sizeof(buffer), "%d", i);
 }
+#+end_src
+** measure time of a function / operation
+
+#+begin_src c
+#include <stdio.h>
+#include <time.h>
+
+void fun( void  ) {
+    for ( int i = 0; i < 10000000; i++ ) {}
+}
+
+int main(void) {
+
+    clock_t t;
+
+    t = clock();     // <- key part
+    fun();
+    t = clock() - t; // <- key part
+
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
+
+    printf("fun() took %f seconds to execute \n", time_taken);
+    return 0;
+}
+
 #+end_src
 * c++
 ** random number generation
