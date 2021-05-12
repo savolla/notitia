@@ -5709,8 +5709,8 @@ now you see the value for x
 ** retroarch
 *** facts
 **** best cores for specific platforms
-+ *snes* : bsnes-hd beta
-+ *n64*: mupen43plus-next
++ *snes* : bsnes-hd beta OR 2005
++ *n64*: mupen64plus-next
 + *ps1*: epsxe
 ** famitracker
 *** key bindings
