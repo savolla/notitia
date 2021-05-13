@@ -815,6 +815,36 @@ this is the case when you work in just one file. the better solution will be;
   } Person;
 
   #+end_src
+** enum
+*** passing enum types to structs or functions
++ when passing =enum= types in functions use =enum= keyword in front of the type name
+
+  #+begin_src c
+enum Islem {
+SATIS,
+ALIS
+};
+
+typedef struct Emir {
+    char _id[32];
+    char Sembol[16];
+    enum Islem islem; // <----------------------- here
+    uint32_t Adet;
+}Emir;
+  #+end_src
++ or you can =typedef= the =enum=
+  #+begin_src c
+typedef enum Islem {
+SATIS,
+ALIS
+} Islem;
+
+typedef struct Emir {
+    char _id[32];
+    char Sembol[16];
+    Islem islem; // <----------------------- here we didn't use enum because of typedef
+    uint32_t Adet;
+}Emir;
 
 * Concept
 ** Include Guards

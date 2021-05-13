@@ -133,7 +133,7 @@ stow *
 ** remove a file from repository
 
 #+begin_src sh
-git rm
+git rm $FILE_NAME
 #+end_src
 
 1. The "rm" command helps you to remove files from a Git repository. ...
@@ -141,6 +141,12 @@ git rm
 3. Removes the file only from the Git repository, but not from the filesystem. ...
 4. Recursively removes folders. ...
 5. No files are actually removed.
+
+If this is a *directory* then use the following
+
+#+begin_src sh
+git rm -rf $DIR_NAME
+#+end_src
 
 ** specify branch while cloning
 
