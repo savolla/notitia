@@ -85,7 +85,21 @@ void f( int A[], size_t size_A, int B[], size_t size_B ) {
 }
 #+end_src
 
+=size_A= is n and =size_B= is m. so this algorithm will run =O(size_A * size_B)=
+
 $n * m => O(n*m)$
+*** O(m^n)
+**** ex1
+#+begin_src c
+void fib( int a ) {
+    if ( a == 1 )
+        return 1;
+    else if ( a <= 0 )
+        return 0;
+    else
+        return fib( a - 1 ) + fib( a - 2 );
+}
+#+end_src
 
 * Algorithms
 * Data Structures
