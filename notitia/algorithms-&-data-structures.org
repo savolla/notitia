@@ -1,10 +1,41 @@
 #+TITLE: Algorithms Data Structures
 #+DESCRIPTION: Notes for Algorithms and Data Structures
+#+STARTUP: latexpreview
 
 * Big O
+** facts
++ if there are no inputs to an algorithm then it considered as $O(1)$
+  #+begin_src c
+void f( void ) {
+    for ( int i = 0; i < 100000; i++ )
+}
+  #+end_src
 ** Big O examples
-*** O(n)
+*** O(1)
+**** ex1
+#+begin_src c
+void f( void ) {
+    for ( int i = 0; i < 10000; i++ ) {
+        printf("%d\n", A[i]);
+    }
+}
+#+end_src
 
+$1000 => O(1)$
+
+*** O(n)
+**** ex1
+#+begin_src c
+void f( int A[], size_t size ) {
+    for ( int i = 0; i < size; i++ ) {
+        printf("%d\n", A[i]);
+    }
+}
+#+end_src
+
+$n => O(n)$
+
+**** ex2
 #+begin_src c
 void f( int A[], size_t size ) {
     for ( int i = 0; i < size; i++ ) {
@@ -18,11 +49,38 @@ void f( int A[], size_t size ) {
 
 $n + n = 2n => O(n)$
 
+**** ex3
+#+begin_src c
+void f( void ) {
+    for ( int i = 0; i < size; i++ ) {
+        printf("%d\n", A[i]);
+        for ( int i = 0; i < 10000; i++ ) {
+            printf("%d\n", A[i]);
+        }
+    }
+}
+#+end_src
+
+$n * 1000 => O(n)$
+
 *** O(n²)
 #+begin_src c
 void f( int A[], size_t size ) {
     for ( int i = 0; i < size; i++ ) {
-        printf("%d\n", A[i]);
+        for ( int j = 0; j < size; j++ ) {
+            printf("%d\n", A[j]);
+        }
+    }
+}
+#+end_src
+*** O(n*m)
+**** ex1
+#+begin_src c
+void f( int A[], size_t size_A, int B[], size_t size_B ) {
+    for ( int i = 0; i < size_A; i++ ) {
+        for ( int j = 0; j < size_B; j++ ) {
+            printf("%d, %d\n", A[j], B[i]);
+        }
     }
 }
 #+end_src
