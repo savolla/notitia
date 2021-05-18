@@ -85,5 +85,7 @@ void f( int A[], size_t size_A, int B[], size_t size_B ) {
 }
 #+end_src
 
+$n * m => O(n*m)$
+
 * Algorithms
 * Data Structures
