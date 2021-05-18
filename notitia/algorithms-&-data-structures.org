@@ -1,0 +1,31 @@
+#+TITLE: Algorithms Data Structures
+#+DESCRIPTION: Notes for Algorithms and Data Structures
+
+* Big O
+** Big O examples
+*** O(n)
+
+#+begin_src c
+void f( int A[], size_t size ) {
+    for ( int i = 0; i < size; i++ ) {
+        printf("%d\n", A[i]);
+    }
+    for ( int i = 0; i < size; i++ ) {
+        printf("%d\n", A[i]);
+    }
+}
+#+end_src
+
+$n + n = 2n => O(n)$
+
+*** O(n²)
+#+begin_src c
+void f( int A[], size_t size ) {
+    for ( int i = 0; i < size; i++ ) {
+        printf("%d\n", A[i]);
+    }
+}
+#+end_src
+
+* Algorithms
+* Data Structures
