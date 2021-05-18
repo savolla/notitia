@@ -1,4 +1,5 @@
 #+TITLE: Git
+#+STARTUP: overview
 
 * how to
 ** undo the "git add"
@@ -25,7 +26,7 @@ git reset $YOUR_FILE
 ** store your credentials for automatic pushes
 
 #+begin_quote
-this is not secure! your password and username will be stored inside *.git* directory in *planetext*. enyone on your PC will have access to them. you've been warned!
+this is not secure! your password and username will be stored inside *.git* directory in *plaintext*. enyone on your PC will have access to them. you've been warned!
 #+end_quote
 
 1. go to your repository
