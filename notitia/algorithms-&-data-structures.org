@@ -114,3 +114,24 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 + inserting elements in any position
 ***** ~not~ useful when you need;
 + accessing random elements. it always needs linearly search through elements to find given index $O(n)$. *Arrays* perform well in this situation
+**** Circular Linked List
+***** useful when you need
++ application that repeatedly go around the list. (for example CPU scheduler which cycles through processes)
++ to implement [[https://en.wikipedia.org/wiki/Fibonacci_heap][Fibonacci Heap]]
++ to implement [[https://en.wikipedia.org/wiki/Queue_(abstract_data_type)][Queue]]
++ represent a deck of cards in a game.
+**** Doubly Linked List
+***** useful when you need
++ faster *deletion*
++ faster _reverse_ iteration
+**** Stack
+***** useful when you need
++ LIFO application
++ expression evaluation like =(1 + 3) * (5 - 9)=
++ syntax parsing (compiler applications)
++ backtracking (e.g. finding the correct path in a maze)
+**** Queue
+***** useful when you need
++ FIFO application
++ *order* of elements
++ removing or adding to _both ends_.
