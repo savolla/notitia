@@ -105,6 +105,29 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 
 * Algorithms
 * Data Structures
+ * [[./array.org][array]]
+ * [[./matrix.org][matrix]]
+
+ * [[./linked-list.org][linked list]]
+ * [[./circular-linked-list.org][circular linked list]]
+ * [[./doubly-linked-list.org][doubly linked list]]
+
+ * [[./stack.org][stack]]
+ * [[./queue.org][queue]]
+
+ * [[./binary-tree.org][binary tree]]
+ * [[./binary-search-tree.org][binary search tree]]
+ * [[./red-black-tree.org][red black tree]]
+ * [[./b-tree.org][b-tree]]
+ * [[./splay-tree.org][splay tree]]
+ * [[./avl-tree.org][avl tree]]
+ * [[./trie.org][trie]]
+ * [[./minimum-spanning-tree.org][minimum spanning tree]]
+
+ * [[./heap.org][heap]]
+ * [[./hash-map.org][hash map]]
+ * [[./graph.org][graph]]
+
 ** concepts
 ** facts
 *** Trees
