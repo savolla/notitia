@@ -105,6 +105,11 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 
 * Algorithms
 * Data Structures
+** concepts
+** facts
+*** Trees
++ the difference between *Binary Tree* and *Binary Search Tree* is the binary tree has no order when placing the elements where *Binary Search Tree* follows an order. In *Binary Search Tree* bigger elements go to _right_ and smaller ones go _left_.
+
 ** howto
 *** choose the right data structure
 **** Linked List
@@ -136,3 +141,8 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 + *order* of elements
 + removing or adding to _both ends_. it calls *double-ended queue* (you can't use *stack* here since it allows to remove or add from one end)
 **** Binary Tree
+**** Heap
+***** useful when you need
++ implement [[https://en.wikipedia.org/wiki/Priority_queue][Priority Queue]]
++ accessing largest or smaller element fast (min heap and max heap)
++ implement [[https://en.wikipedia.org/wiki/Heapsort][Heap Sort]]
