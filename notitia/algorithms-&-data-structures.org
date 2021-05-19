@@ -104,6 +104,8 @@ void fib( int a ) {
 This algorithm runs recursively and since it does two recursive calls, that means its execution will look line a binary tree. So it's $O(2^n)$
 
 * Algorithms
+** facts
++ there will be no sorting algorithm which is $nlog(n)$
 * Data Structures
  * [[./array.org][array]]
  * [[./matrix.org][matrix]]
