@@ -134,4 +134,5 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 ***** useful when you need
 + FIFO application
 + *order* of elements
-+ removing or adding to _both ends_.
++ removing or adding to _both ends_. it calls *double-ended queue* (you can't use *stack* here since it allows to remove or add from one end)
+**** Binary Tree
