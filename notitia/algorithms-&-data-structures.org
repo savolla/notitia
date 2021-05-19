@@ -144,5 +144,5 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 **** Heap
 ***** useful when you need
 + implement [[https://en.wikipedia.org/wiki/Priority_queue][Priority Queue]]
-+ accessing largest or smaller element fast (min heap and max heap)
 + implement [[https://en.wikipedia.org/wiki/Heapsort][Heap Sort]]
++ accessing largest or smaller element fast (min heap and max heap)

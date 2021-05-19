@@ -1,0 +1,13 @@
+#+TITLE: Hash Table
+#+AUTHOR: savolla
+#+DATE: Wed May 19 16:12:38 2021
+#+DESCRIPTION: notes about Hash Table data structure
+
+* Facts
+* Concepts
+** hash function
+** chaining
+** open addressing
+** linear probing
+** double hashing
+* Howto
