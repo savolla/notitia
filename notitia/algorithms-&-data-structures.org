@@ -106,6 +106,18 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 * Algorithms
 ** facts
 + there will be no sorting algorithm which is $nlog(n)$
++  Quicksort is faster than Mergesort
+
+  | Array Type     | Quicksort | Mergesort |
+  |----------------+-----------+-----------|
+  | Randomized     | wins      |           |
+  | Equal Elements |           | wins      |
+  | Reversed       |           | wins      |
+  | Almost Sorted  |           | wins      |
+  | Sorted         |           | wins      |
+
+  see [[https://www.youtube.com/watch?v=l8SolPFm7aU][this]]
+
 * Data Structures
  * [[./array.org][array]]
  * [[./matrix.org][matrix]]
