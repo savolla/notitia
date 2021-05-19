@@ -107,3 +107,10 @@ This algorithm runs recursively and since it does two recursive calls, that mean
 * Data Structures
 ** howto
 *** choose the right data structure
+**** Linked List
+***** useful when you need;
++ fast insertion $O(1)$ (finding index is not included since it's $O(n)$)
++ fast deletion $O(1)$ (finding index is not included since it's $O(n)$)
++ inserting elements in any position
+***** ~not~ useful when you need;
++ accessing random elements. it always needs linearly search through elements to find given index $O(n)$. *Arrays* perform well in this situation
