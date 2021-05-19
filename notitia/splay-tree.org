@@ -1,0 +1,12 @@
+#+TITLE: Splay Tree
+#+AUTHOR: savolla
+#+DATE: Wed May 19 18:23:45 2021
+#+DESCRIPTION: notes about Splay Tree data structure
+
+* Facts
+** usecases
++ Accessing recent data easily
++ Allowing *duplicate items* (Binary Trees do not allow this)
++ When the application deals with lots of data use splay tree
+* Concepts
+* Howto
