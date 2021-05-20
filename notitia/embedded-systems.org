@@ -159,6 +159,7 @@ Example State Diagram
 
 * Facts
 ** general
+- the word *Speed* in embedded systems is fuzzy and should not be considered as a metric. The better words are *Throughput* and *Response*. They both mean separate things and once we start improve one of those, the other one decreases.
 
 - Peripherals are momory mapped and peripherals run independant from CPU core
 
