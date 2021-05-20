@@ -195,7 +195,7 @@
 - =stitch=                 dikiş/dikmek
 - =straddling=             üst üste binmiş
 - =subsequent=             sonraki
-- =substantial=            özel
+- =substantial=            özel, önemli
 - =subtle=                 ince (hoş, incelikli)
 - =superstition=           batıl inanç
 - =supervisor=             gözetmen/yönetici
