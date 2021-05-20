@@ -278,6 +278,7 @@ p_iTank // a pointer to an integer
 a_chPrint // array of characters to be printed
 fDone // a flag (indicating whether a process is done)
 #+end_src
+
 ** QA
 Quality Assurance
 ** Analysis Pattern
