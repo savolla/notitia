@@ -157,7 +157,6 @@ Example State Diagram
 [[file:./images/screenshot-138.png]]
 
 
-
 * Facts
 ** general
 
