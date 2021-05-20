@@ -179,7 +179,6 @@
 - =row=                    sıra (matrisin satırı)
 
 - =scattered=              dağılmış
-- =steer=                  yönlendirmek
 - =scruple=                vicdan
 - =seldom=                 nadiren
 - =self-reliant=           kendine güvenen
@@ -192,9 +191,11 @@
 - =sophomore=              ikinci sınıf öğrencisi
 - =stairway=               merdiven
 - =statement=              ifade
+- =steer=                  yönlendirmek
 - =stitch=                 dikiş/dikmek
 - =straddling=             üst üste binmiş
 - =subsequent=             sonraki
+- =substantial=            özel
 - =subtle=                 ince (hoş, incelikli)
 - =superstition=           batıl inanç
 - =supervisor=             gözetmen/yönetici
