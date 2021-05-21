@@ -435,6 +435,8 @@ Implements a state machine inside firmware.
 
 *CRC pattern*
 Verifies data which makes the system more reliable.
+** Memory
+- Flash Memory can be erased 10.000 times (can be more than that but it's still not infinite)
 
 * How To
 ** run ARM binaries on x86 Linux
