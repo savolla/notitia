@@ -649,37 +649,33 @@ a.k.a. Flag register. Contains the information about current state of the Proces
 
  [[file:./images/screenshot-110.png]]
 *** MPROM
-
 Type of ROM. Once you program it you can never erase it
 *** EEPROM
-
 - You can erase it.
 - Sometimes datasheets indicate EEPROMs as ROMs. They are actually erasable don't worry
 *** Flash
-
 - Same as EEPROM but faster and cheaper
 - Dominates the Embedded World as *code memory*
 *** FRAM
-
 - Ferroelectric Random Access Memory
 - Expen$ive
 - _Access speed is higher than Flash_
 - Tipically this kind of Memory is found in Texas Instruments Microcontrollers like ~MSP430FR2422~
 - Can be effective in _ultra low power_ applications
 *** AHB
-
-"Advanced High Performance Bus" this is a specific Address Bus which used in ARM CPUs. This bus connects CPU, Flash, RAM and other peripherals
+"Advanced High Performance Bus" this is a specific Address Bus which used in ARM CPUs. This bus connects CPU, Flash, RAM and other peripherals together
 *** RCC
-
-STM32F407VGT6 component. Stands for Reset Clock Control. This is an engine that controls clocks of CPU, peripherals, different Busses, Memories. If you want to enable a peripheral then you first need to activate the clock of that peripheral using RCC
-
+=STM32F407VGT6= component. Stands for *Reset Clock Control*. This is an engine that controls clocks of;
+- CPU
+- peripherals
+- different Busses
+- Memories.
+If you want to enable a peripheral then you first need to activate the clock of that peripheral using RCC
 the ~base address~ of RCC is =0x4002 3800= to =0x4002 3BFF=
 *** Active Low
-
 A hardware component (mostly pins) that outputs *high* while the voltage is *low*. If you see a component with *bars* that means this component is active low. In the pin description, Active Low pins have slashes before their names
 
 For example *MR* and *OE*
-
 *** Lidar
 This is a sensor that used in Self-driving car applications that Scans the environment by sending many laser beams
 

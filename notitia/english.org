@@ -130,6 +130,8 @@
 - =mud=                    çamur
 - =muffled=                örtülü
 
+- =neither=                hiçbiri
+
 - =occasionally=           bazen
 - =omission=               ihmal
 - =oppurtunity=            fırsat
