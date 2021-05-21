@@ -474,6 +474,12 @@ for ( uintmax_t i = 0; i < 10000000; i++) {}
 #+end_src
 
 To use Hardware delay we need to activate timer peripherals and use them. Which is more work in code
+** choose pull-down resistor value
+#+begin_src quote
+R = 10 * Empedance_of_Pin
+#+end_src
+
+To check the empedance of the pin refer to the TRM
 
 * Concepts
 ** Communication Protocol
@@ -836,8 +842,14 @@ We can also do other operations like setting bits, toggling etc
 
 - They are used in *Digital Logic*
 - On every digital circuit when you see a resistor, chances are those resistors are pull up/down resistors
-- *Pull Up* resistor is connected to *Power Supply*
-- *Pull Down* resistor is connected to *Ground*
+- *Pull Up* resistor is connected to *Power Supply* and driver signal *High* by default
+
+ [[file:./images/screenshot-150.png]]
+
+- *Pull Down* resistor is connected to *Ground* and driver signal *Low* by default
+
+ [[file:./images/screenshot-149.png]]
+
 - Here is the [[https://www.youtube.com/watch?v=G_i1ZhadTa0][video]] that explains pull up/pull down resistors greatly
 
 *** Micron
