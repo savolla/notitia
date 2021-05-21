@@ -723,6 +723,13 @@ It basically one logic gate with extra pin called *Enable*. It enables the gate 
 With this technique we can select which part will drive the signal. Therefore it prevents Bus Fight
 
 [[file:./images/screenshot-148.png]]
+*** SR Latch
+
+[[file:./images/screenshot-156.png]]
+*** D Flip Flop
+Used as memory in computers
+
+[[file:./images/screenshot-157.png]]
 
 ** Software
 *** Unity
