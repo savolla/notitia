@@ -97,6 +97,10 @@ git pull
 
 * Tips
 ** General
+- if your embedded system will be used in a communication application it is better to use a crystall that is equal or a multiplier of that network
+
+- if you buy a 16MHz CPU you need at most 16MHz Crystall to supply clock signal to it. You can get slower crystall like 8MHz but not faster than 16MHz!
+
 - what you need to know in Turkey
 
   | Context   | Demand |
