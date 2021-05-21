@@ -706,6 +706,10 @@ Power Management Integrated Circuit.
 
 + stands for *Power Over Ethernet*
 + this is a special *ethernet connector* that also supplies *power* through ethernet
+*** VCC
++ Voltage Connected to Connector
++ 5 or 3 volts
+
 
 ** Software
 *** Unity
