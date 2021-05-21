@@ -709,6 +709,14 @@ Power Management Integrated Circuit.
 if the _parts in PCB_ have been built using *Metal Oxide Semiconductor* (MOS) technology, you'll sometimes see *VDD* instead of *VCC* as voltage input and *VSS* instead of *GND*
 *** Decoupling Capacitor
 Also known as *Bypass Capacitor*. it usually placed between VCC and GND to stabilize the voltage. it protects the circuit from *noise* and *shock*
+*** Tri-State Output
+It basically one logic gate with extra pin called *Enable*. It enables the gate first and then allows it to output.
+
+[[file:./images/screenshot-147.png]]
+
+With this technique we can select which part will drive the signal. Therefore it prevents Bus Fight
+
+[[file:./images/screenshot-148.png]]
 
 ** Software
 *** Unity
@@ -843,6 +851,10 @@ Software that specifically written for and Embedded System
 Resistance in AC circuits
 *** Bus Fight
 When two electronic parts drive the same signal at the same time and one of them drives *high* and other one drives *low* then it is called *Bus Fight*. it is an *error* in hardware design and can cause one or both parts to be destroyed. Bus fights can also be invisible if the fight last several nanoseconds long. it won't destroy the part(s) immediately but will do it over time.
+
+Techniques to prevent Bus Fight;
+1. Open Collector
+2. Tri-State
 
 ** Robotics
 *** Mechanum Wheels
