@@ -893,6 +893,14 @@ But in this solution the added buffer will cause a little bit delay to the circu
 
 *** Overloaded Circuit
 This is a circuit that has *Loading Problem*
+*** Propagation Delay
+Transition time between two states (high / low) of an electronic component.
+
+It is represented in *Timing Diagrams* like this;
+
+[[file:./images/screenshot-159.png]]
+
+In example above the the clock goes from HIGH to LOW. At the middle is the *Propagation Delay*
 
 ** Robotics
 *** Mechanum Wheels
