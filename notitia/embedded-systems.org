@@ -711,6 +711,8 @@ Power Management Integrated Circuit.
 + 5 or 3 volts
 *** VDD & VSS
 if the _parts in PCB_ have been built using *Metal Oxide Semiconductor* (MOS) technology, you'll sometimes see *VDD* instead of *VCC* as voltage input and *VSS* instead of *GND*
+*** Decoupling Capacitor
+
 ** Software
 *** Unity
 unit testing for c (especially embedded software)
