@@ -839,11 +839,11 @@ We can also do other operations like setting bits, toggling etc
 
 + Micron and Intel together created IM Flash Technologies, which produces NAND flash memory. It owned Lexar between 2006 and 2017
 *** Firmware
-
 Software that specifically written for and Embedded System
 *** Impedance
-
 Resistance in AC circuits
+*** Bus Fight
+When two electronic parts drive the same signal at the same time and one of them drives *high* and other one drives *low* then it is called *Bus Fight*. it is an *error* in hardware design and can cause one or both parts to be destroyed. Bus fights can also be invisible if the fight last several nanoseconds long. it won't destroy the part(s) immediately but will do it over time.
 
 ** Robotics
 *** Mechanum Wheels
