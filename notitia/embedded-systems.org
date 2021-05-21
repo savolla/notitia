@@ -867,6 +867,21 @@ When two electronic parts drive the same signal at the same time and one of them
 Techniques to prevent Bus Fight;
 1. Open Collector
 2. Tri-State
+*** Loading Problem
+[[file:./images/screenshot-151.png]]
+
+The signal's current coming from that buffer (at left bottom) will not be enough to feed bunch of circuits. You'll always need to know how much current each part will consume to be active. In the above example.
+
+This problem is solved by adding one *driver* to the signal line. It will strengthed the signal along the line.
+
+[[file:./images/screenshot-152.png]]
+
+But in this solution the added buffer will cause a little bit delay to the circuit. Here is how to solve this problem better. We add another similar buffer *in parallel*
+
+[[file:./images/screenshot-153.png]]
+
+*** Overloaded Circuit
+This is a circuit that has *Loading Problem*
 
 ** Robotics
 *** Mechanum Wheels
