@@ -712,6 +712,7 @@ Power Management Integrated Circuit.
 *** VDD & VSS
 if the _parts in PCB_ have been built using *Metal Oxide Semiconductor* (MOS) technology, you'll sometimes see *VDD* instead of *VCC* as voltage input and *VSS* instead of *GND*
 *** Decoupling Capacitor
+Also known as *Bypass Capacitor*. it usually placed between VCC and GND to stabilize the voltage. it protects the circuit from *noise* and *shock*
 
 ** Software
 *** Unity
