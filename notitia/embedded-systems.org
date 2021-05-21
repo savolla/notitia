@@ -156,9 +156,9 @@ git pull
 Example State Diagram
 [[file:./images/screenshot-138.png]]
 
-
 * Facts
 ** general
+
 - the word *Speed* in embedded systems is fuzzy and should not be considered as a metric. The better words are *Throughput* and *Response*. They both mean separate things and once we start improve one of those, the other one decreases.
 
 - Peripherals are momory mapped and peripherals run independant from CPU core
@@ -709,8 +709,8 @@ Power Management Integrated Circuit.
 *** VCC
 + Voltage Connected to Connector
 + 5 or 3 volts
-
-
+*** VDD & VSS
+if the _parts in PCB_ have been built using *Metal Oxide Semiconductor* (MOS) technology, you'll sometimes see *VDD* instead of *VCC* as voltage input and *VSS* instead of *GND*
 ** Software
 *** Unity
 unit testing for c (especially embedded software)
