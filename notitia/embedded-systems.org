@@ -464,6 +464,8 @@ Verifies data which makes the system more reliable.
 
   3. I/O Bus
 
+** UART
+- UART circuit recuires an external *clock circuit* It can't use processor's clock circuit because it must work at a specific speed to be compatible with other communication devices. UART will run at speed of *14.7456 MHz* because it is an even multiple of 28.800 and 28.800 bits per second is a common speed for communication.
 
 * How To
 ** run ARM binaries on x86 Linux
@@ -937,15 +939,7 @@ But in this solution the added buffer will cause a little bit delay to the circu
 
 *** Overloaded Circuit
 This is a circuit that has *Loading Problem*
-*** Propagation Delay
-Transition time between two states (high / low) of an electronic component.
-
-It is represented in *Timing Diagrams* like this;
-
-[[file:./images/screenshot-159.png]]
-
-In example above the the clock goes from HIGH to LOW. At the middle is the *Propagation Delay*
-
+*** Propagation Delay Transition time between two states (high / low) of an electronic component. It is represented in *Timing Diagrams* like this; [[file:./images/screenshot-159.png]] In example above the the clock goes from HIGH to LOW. At the middle is the *Propagation Delay*
 ** Robotics
 *** Mechanum Wheels
 
