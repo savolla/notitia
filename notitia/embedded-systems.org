@@ -516,6 +516,13 @@ To check the empedance of the pin refer to the TRM
 ** find how much bits a number takes
  $log_{2}{1048576} = 20$
  So the number 1048576 takes 20 bits (which is 1 MB)
+** implement memory mapping
+
+Refer "Embedded Software Primer" book's 3rd chapter page 52 if you don't understand anything from this screenshot
+
+[[file:./images/screenshot-161.png]]
+
+look how "NOT" gates used with "NAND" gates to determite which device's *CE* signal will be triggered
 
 * Concepts
 ** Communication Protocol
@@ -766,6 +773,9 @@ With this technique we can select which part will drive the signal. Therefore it
 Used as memory in computers
 
 [[file:./images/screenshot-157.png]]
+*** Address Bus
+- one directional bus. goes from CPU to RAM/ROM/other I/O devices
+- This is the most important bus of the architecture because it helps CPU to specify which Device and which data will be Written or Read
 
 ** Software
 *** Unity
