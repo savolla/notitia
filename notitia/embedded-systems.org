@@ -437,6 +437,33 @@ Implements a state machine inside firmware.
 Verifies data which makes the system more reliable.
 ** Memory
 - Flash Memory can be erased 10.000 times (can be more than that but it's still not infinite)
+** Hardware
+- memory mapping is implemented like this;
+  1. determine how many parts will be in the circuit
+  2. if there will be 2 (ROM and RAM) then divide the address space into two
+  3. if the maximum address is 0xFFFF then 0xFFFF / 2 = 0x7FFF
+
+     in this case ROM will use the memory from
+     0x0000 to 0x7FFF
+
+     and RAM will use memory from
+     0x8000 to 0xFFFF
+  4. The important thing to notice is the binary representation of address 0x7FFF is;
+
+     0111 1111 1111 1111
+
+     The MSB contains "0" that means the CE (chip enable) pin will not select RAM.
+
+     Refer to 3rd chapter of "Embedded Software Primer" book if you forgot this topic
+
+- Microprocessors contain 2 most important *busses*;
+  1. Address Bus
+  2. Data Bus
+
+  And if there will be lots of I/O devices, to prevent *busyness* in Address Bus it will also contain
+
+  3. I/O Bus
+
 
 * How To
 ** run ARM binaries on x86 Linux
