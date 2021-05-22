@@ -776,6 +776,8 @@ Used as memory in computers
 *** Address Bus
 - one directional bus. goes from CPU to RAM/ROM/other I/O devices
 - This is the most important bus of the architecture because it helps CPU to specify which Device and which data will be Written or Read
+*** I/O Bus
+selector of I/O devices which connected to CPU. for example if we have 2 I/O pins when we can connect (enable the CE pin) to 4 different device
 
 ** Software
 *** Unity
