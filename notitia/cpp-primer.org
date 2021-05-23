@@ -194,7 +194,7 @@ int main(void){
    unnecesary. On some machines ~double~ is *faster*. ~long double~ is also
    unnecesary and *slow*
 * Day 3 (Type conversions)
-** A goog example on type conversions
+** A good example on type conversions
 #+BEGIN_SRC cpp
 bool b = 42; // b is true (1)
 bool k = -33; // k is true (1)
