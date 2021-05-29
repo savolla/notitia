@@ -60,6 +60,7 @@
 - =disenchantment=         hayal kırıklığı
 - =dispatch=               sevk etmek
 - =dispose=                elden çıkarmak
+- =distinguish=            ayırmak
 - =diverse=                çeşitli
 - =do not fare=            işe yaramaz
 
