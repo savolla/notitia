@@ -1,5 +1,6 @@
 #+TITLE: Quotes
 #+STARTUP: overview
 #+ROAM_TAGS: keyword
+#+ROAM_ALIAS: "Quotes" "quote"
 #+CREATED: [2021-06-12 Cts]
 #+LAST_MODIFIED: [2021-06-12 Cts 02:45]

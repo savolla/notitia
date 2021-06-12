@@ -5,10 +5,9 @@
 #+LAST_MODIFIED: [2021-06-12 Cts 02:46]
 
 #+begin_quote
-"The best way to keep a secret is to never have it"
+"The best way to keep a secret is to never have it" - [[file:20210612024529-keyword-quotes.org][quote]]
 #+end_quote
 
 - see also ::
-  + [[file:20210612024529-keyword-quotes.org][Quotes]]
 
 - references ::
