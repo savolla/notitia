@@ -1,0 +1,13 @@
+#+TITLE: 20210612210850-quote
+#+STARTUP: overview latexpreview
+#+ROAM_TAGS: quote permanent
+#+CREATED: [2021-06-12 Cts]
+#+LAST_MODIFIED: [2021-06-12 Cts 21:08]
+
+#+begin_quote
+"One cannot think without writing" - [[file:20210612024529-keyword-quotes.org][quote]] by [[file:niklas_luhmann.org][Niklas Luhmann]]
+#+end_quote
+
+- see also ::
+
+- references ::
