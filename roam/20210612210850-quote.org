@@ -5,7 +5,7 @@
 #+LAST_MODIFIED: [2021-06-12 Cts 21:08]
 
 #+begin_quote
-"One cannot think without writing" - [[file:20210612024529-keyword-quotes.org][quote]] by [[file:niklas_luhmann.org][Niklas Luhmann]]
+"One cannot think without writing" - [[id:e2154f21-c75e-430c-9732-4c1fac95ded0][quote]] by [[file:niklas_luhmann.org][Niklas Luhmann]]
 #+end_quote
 
 - see also ::
