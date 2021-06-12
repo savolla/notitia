@@ -8,7 +8,7 @@
 #+CREATED: [2021-06-12 Cts]
 #+LAST_MODIFIED: [2021-06-12 Cts 19:41]
 
-it is a new dwarf [[file:20210612202708-keyword-planet.org][planet]] that found beyond Pluto
+it is a new dwarf [[file:20210612202708-keyword-planet.org][planet]] that found beyond [[file:20210612202840-concept-pluto.org][Pluto]]
 
 - see also ::
 #  + [[roam:why is Sedna important]]

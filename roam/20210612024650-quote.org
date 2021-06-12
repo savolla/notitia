@@ -1,6 +1,6 @@
 #+TITLE: 20210612024650-quote
 #+STARTUP: overview latexpreview
-#+ROAM_TAGS: quote permanent
+#+ROAM_TAGS: advice quote permanent
 #+CREATED: [2021-06-12 Cts]
 #+LAST_MODIFIED: [2021-06-12 Cts 02:46]
 
