@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       47b6c572-cb13-4c46-b5c8-b9224075127e
+:END:
 #+TITLE: Sedna
 #+STARTUP: overview latexpreview inlineimages
 #+ROAM_TAGS: concept permanent
@@ -5,7 +8,7 @@
 #+CREATED: [2021-06-12 Cts]
 #+LAST_MODIFIED: [2021-06-12 Cts 19:41]
 
-it is a new dwarf planet that found beyond Pluto
+it is a new dwarf [[file:20210612202708-keyword-planet.org][planet]] that found beyond Pluto
 
 - see also ::
 #  + [[roam:why is Sedna important]]
