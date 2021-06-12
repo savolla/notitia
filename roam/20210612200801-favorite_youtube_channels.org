@@ -1,0 +1,11 @@
+#+TITLE: favorite Youtube channels
+#+STARTUP: overview
+#+ROAM_TAGS: archive youtube procrastination index
+#+CREATED: [2021-06-12 Cts]
+#+LAST_MODIFIED: [2021-06-12 Cts 20:08]
+
+- [[https://www.youtube.com/watch?v=DcqqchtdjGQ][Ayhan Tarakci]]  :: Science, Astronomy
+- [[https://www.youtube.com/user/b31416][Baris Ozcan]]  :: Science, Astronomy, Art
+- [[https://www.youtube.com/user/MrRuhicenet][Ruhi Cenet]]  :: Science, Mystery, Journalism
+- [[https://www.youtube.com/user/MentalOutlawStudios][Mental Outlaw]]  :: Linux, Privacy, Security
+- [[https://www.youtube.com/channel/UC8ENHE5xdFSwx71u3fDH5Xw][ThePrimeagen]]  :: vim, Programming
