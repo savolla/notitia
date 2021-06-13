@@ -1,5 +1,17 @@
+:PROPERTIES:
+:ID:       bebc4638-f2cf-43a7-a203-fce02c97ce50
+:END:
 #+TITLE: code optimization in Python
 #+STARTUP: overview
-#+ROAM_TAGS: index
+#+ROAM_TAGS: optimization python index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 05:44]
+
+[when you need code optimization]
+[the idea of optimization and profiling]
+[being a human profiler is almost imposible]
+[cProfile]
+[profiling decorator] :
+[how profiling decorator works]: It takes an original function as an argument. When you run the profiling decorator it starts the [code profiler] first. Right after that it starts the given function. When function is finished it stops the code profiler and prints out a [profile report]
+[[file:20210613135041-permanent-python_profiling_function.org][Python profiling function]]
+[usage of profiling function]

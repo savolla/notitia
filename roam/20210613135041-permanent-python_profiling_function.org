@@ -1,21 +1,24 @@
 # Title must come at the end
+:PROPERTIES:
+:ID:       92ee769b-8c4c-403c-92df-731a1dd56367
+:END:
 #+TITLE: Python profiling function
 #+STARTUP: overview
 # Find tags by asking;
 # 1) Topic tag: What are related words to this note?
 # 2) Context tag: What is the main idea of this note?
-#+ROAM_TAGS: snippet python permanent
+#+ROAM_TAGS: archive optimization snippet python permanent
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 13:50]
 
 # You can link multiple Concepts and Permanent Notes!
-This is a [[id:af5f039a-d974-424f-be4d-eac872fb4b66][Python]] [decorator] that uses cProfile module to profile given function
+This is a [[file:20210613141012-concept-python_decorator.org][Python decorator]] that uses cProfile module to do profiling on the given function
 
 #+begin_src python
 import cProfile, pstats, io
 from pstats import SoftKey
 
-def profiler( function ):
+def runProfiler( function ):
    def inner(*args, **kwargs):
       pr = cProfile.Profile()
       pr.enable()
