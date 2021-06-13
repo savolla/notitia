@@ -1,18 +1,10 @@
 #+TITLE: Archive
 #+STARTUP: overview latexpreview inlineimages
-#+ROAM_TAGS: concept permanent
-#+ROAM_ALIAS: "Archive" "what is Archive" "what Archive is"
+#+ROAM_TAGS: index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:55]
 
-Finished projects, [[id:6d5ebfa2-b0c2-4903-aced-f5e337ca88e3][Bookmarks]] or something you want to save and *reuse* later.
+Finished projects or something you want to save and *reuse* later.
 
-- see also ::
-#  + [[roam:why is Archive important]]
-#  + [[roam:when to use Archive]]
-#  + [[roam:how to use Archive]]
-#  + [[roam:examples of Archive]]
-#  + [[roam:founder of Archive]]
-  + [[file:20210612025056-keyword-concept.org][Concept]]
-
-- references ::
++ [[id:6d5ebfa2-b0c2-4903-aced-f5e337ca88e3][Bookmarks]]
++ [[file:20210613040440-vocabulary.org][Vocabulary]]

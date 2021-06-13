@@ -1,12 +1,22 @@
+:PROPERTIES:
+:ID:       b44053ec-5fb6-4349-83cb-6482359a4977
+:END:
 #+TITLE: Project
 #+STARTUP: overview latexpreview inlineimages
 #+ROAM_TAGS: index
-#+ROAM_ALIAS: "Project" "what is Project" "what Project is"
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:49]
 
 Sequence of tasks that depend on some deadline. Has a goal or an outcome when finished.
 
-
-- see also ::
-  + [[file:20210613031402-keyword-cortex.org][Cortex]]
++ [[file:20210613045926-currently_reading_books.org][Currently Reading Books]]
+# * Book Reading Projects
+# - [[id:86cb86d3-726f-46bd-bc80-6687cbefb55e][Computer Organization and Design: The Hardware/Software Interface]
+# - [[file:20210603124032-book.org][Calculus: Early Transcendentals]]
+# - [[file:20210610024538-book.org][Aptalı Tanımak]]
+# * Article Reading Projects
+# - [[https://quantum.country/qcvc][Learn Quantum Computing]]
+# - [[https://www.garethrees.co.uk/][Read or get all the summaries from here!]]
+# * Watching Projects
+# - [[id:0a957f82-8e35-4bc3-a497-4f5d8a73dd49][Graphs in C]]
+# - [[https://www.youtube.com/watch?v=cFBERZBvLEM][Diksiyon ve Davranış Eğitimi]]

@@ -9,5 +9,3 @@
 
 
 
-- see also ::
-  + [[file:20210613031402-keyword-cortex.org][Cortex]]
