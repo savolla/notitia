@@ -1,0 +1,11 @@
+#+TITLE: Mathematics
+#+STARTUP: overview
+#+ROAM_TAGS: index
+#+ROAM_ALIAS: "math"
+#+CREATED: [2021-06-13 Paz]
+#+LAST_MODIFIED: [2021-06-13 Paz 03:17]
+
+
+
+- see also ::
+  + [[file:20210613031402-keyword-cortex.org][Cortex]]
