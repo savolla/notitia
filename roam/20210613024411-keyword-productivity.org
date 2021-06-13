@@ -1,8 +1,8 @@
 #+TITLE: productivity
 #+STARTUP: overview
-#+ROAM_TAGS: keyword
+#+ROAM_TAGS: index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:44]
 
 - see also ::
-  [[file:20210613032404-keyword-keyword.org][Keyword]]
+  [[file:20210613031402-keyword-cortex.org][Cortex]]

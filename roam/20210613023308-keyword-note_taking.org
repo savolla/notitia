@@ -1,8 +1,8 @@
 #+TITLE: note taking
 #+STARTUP: overview
-#+ROAM_TAGS: keyword
+#+ROAM_TAGS: productivity index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:33]
 
 - see also ::
-  [[file:20210613032404-keyword-keyword.org][Keyword]]
+  [[file:20210613024411-keyword-productivity.org][productivity]]
