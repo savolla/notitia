@@ -1,18 +1,18 @@
 #+TITLE: Area
 #+STARTUP: overview latexpreview inlineimages
-#+ROAM_TAGS: concept permanent
-#+ROAM_ALIAS: "Area" "what is Area" "what Area is"
+#+ROAM_TAGS: index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:51]
 
 A field or a topic. Thing someone spend his/her life on. It is some sort of [[file:20210613024904-concept-project.org][Project]] but without a deadline and much much longer. For example "Medicine", "Programming" are Areas.
 
-- see also ::
-#  + [[roam:why is Area important]]
-#  + [[roam:when to use Area]]
-#  + [[roam:how to use Area]]
-#  + [[roam:examples of Area]]
-#  + [[roam:founder of Area]]
-  + [[file:20210612025056-keyword-concept.org][Concept]]
++ [[id:c5a296d6-e491-49db-91cb-e3a2cb508563][Embedded Systems]]
++ [[file:20210613024411-keyword-productivity.org][productivity]]
++ [[file:20210613031640-music.org][Music]]
++ [[file:20210613031700-digital_art.org][Digital Art]]
++ [[file:20210613031722-mathematics.org][Mathematics]]
++ [[file:20210613033811-diction.org][Diction]]
 
-- references ::
++ see also ::
+  + [[file:20210613031402-keyword-cortex.org][Cortex]]
+
