@@ -3,7 +3,7 @@
 :END:
 #+TITLE: Productivity
 #+STARTUP: overview
-#+ROAM_TAGS: index
+#+ROAM_TAGS: concept area index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:44]
 
