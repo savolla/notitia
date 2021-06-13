@@ -1,0 +1,18 @@
+#+TITLE: Project
+#+STARTUP: overview latexpreview inlineimages
+#+ROAM_TAGS: concept permanent
+#+ROAM_ALIAS: "Project" "what is Project" "what Project is"
+#+CREATED: [2021-06-13 Paz]
+#+LAST_MODIFIED: [2021-06-13 Paz 02:49]
+
+Sequence of tasks that depend on some deadline. Has a goal or an outcome when finished.
+
+- see also ::
+#  + [[roam:why is Project important]]
+#  + [[roam:when to use Project]]
+#  + [[roam:how to use Project]]
+#  + [[roam:examples of Project]]
+#  + [[roam:founder of Project]]
+  + [[file:20210612025056-keyword-concept.org][Concept]]
+
+- references ::

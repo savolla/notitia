@@ -1,0 +1,18 @@
+#+TITLE: Resources
+#+STARTUP: overview latexpreview inlineimages
+#+ROAM_TAGS: concept permanent
+#+ROAM_ALIAS: "Resources" "what is Resources" "what Resources is"
+#+CREATED: [2021-06-13 Paz]
+#+LAST_MODIFIED: [2021-06-13 Paz 02:54]
+
+A _source_ of content which contains valuable and useful information.
+
+- see also ::
+#  + [[roam:why is Resources important]]
+#  + [[roam:when to use Resources]]
+#  + [[roam:how to use Resources]]
+#  + [[roam:examples of Resources]]
+#  + [[roam:founder of Resources]]
+  + [[file:20210612025056-keyword-concept.org][Concept]]
+
+- references ::
