@@ -14,6 +14,6 @@ Very productive German Sociologist who wrote 70 books, 600 articles using a note
 - mail ::
 
 - see also ::
-  + [[roam:Person]]
+  + [[file:20210613032337-keyword-person.org][Person]]
 
 - references ::
