@@ -1,0 +1,36 @@
+# Title must come at the end
+#+TITLE: Python profiling function
+#+STARTUP: overview
+# Find tags by asking;
+# 1) Topic tag: What are related words to this note?
+# 2) Context tag: What is the main idea of this note?
+#+ROAM_TAGS: snippet python permanent
+#+CREATED: [2021-06-13 Paz]
+#+LAST_MODIFIED: [2021-06-13 Paz 13:50]
+
+# You can link multiple Concepts and Permanent Notes!
+This is a [[id:af5f039a-d974-424f-be4d-eac872fb4b66][Python]] [decorator] that uses cProfile module to profile given function
+
+#+begin_src python
+import cProfile, pstats, io
+from pstats import SoftKey
+
+def profiler( function ):
+   def inner(*args, **kwargs):
+      pr = cProfile.Profile()
+      pr.enable()
+      retval = function(*args, **kwargs)
+      pr.disable()
+      s = io.StringIO()
+      sortby = SortKey.CUMULATIVE
+      ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+      ps.print_stats()
+      print(s.getvalue())
+      return retval
+   return inner
+#+end_src
+
+- see also ::
+# Continuation or Related notes here
+
+- references ::
