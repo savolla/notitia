@@ -16,4 +16,4 @@ A field or a topic. Thing that someone spend his/her life on. It is some sort of
 + [[file:20210613031700-digital_art.org][Digital Art]]
 + [[file:20210613031722-mathematics.org][Mathematics]]
 + [[file:20210613033811-diction.org][Diction]]
-
++ [[file:20210613204240-society.org][Society]]
