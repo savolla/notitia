@@ -7,5 +7,3 @@
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 02:33]
 
-- see also ::
-  [[id:05c272d6-b64d-4ce9-8aff-e89767372877][Productivity]]
