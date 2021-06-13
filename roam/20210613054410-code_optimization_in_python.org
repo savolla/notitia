@@ -3,17 +3,11 @@
 :END:
 #+TITLE: code optimization in Python
 #+STARTUP: overview
-#+ROAM_TAGS: profiling optimization python index
+#+ROAM_TAGS: optimization python index
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 05:44]
 
-[[file:20210613162953-permanent-when_you_need_code_optimization.org][when you need code optimization]]
-[[file:20210613164032-concept-code_profiling.org][code profiling]]
-[[file:20210613164430-permanent-being_a_human_code_profiler.org][being a human code profiler]]
-cProfile
-[profiling decorator] :
-[how profiling decorator works]: It takes an original function as an argument. When you run the profiling decorator it starts the [code profiler] first. Right after that it starts the given function. When function is finished it stops the code profiler and prints out a [profile report]
-[[file:20210613135041-permanent-python_profiling_function.org][Python profiling function]]
-[[file:20210613154136-permanent-use_profiling_function.org][use profiling function]]
-[[file:20210613155716-permanent-interpret_the_profiling_report.org][interpret the profiling report]]
-[[file:20210613160940-permanent-find_the_slowest_function_in_profiling_report.org][find the slowest function in profiling report]]
+There are several methods of doing code optimization in [[id:af5f039a-d974-424f-be4d-eac872fb4b66][Python]]
+
++ [[file:20210613162953-permanent-when_you_need_code_optimization.org][when you need code optimization]]
++ [[file:20210613173826-code_profiling_in_python.org][code profiling in python]]
