@@ -4,6 +4,6 @@
 #+CREATED: [2021-06-13 Paz]
 #+LAST_MODIFIED: [2021-06-13 Paz 05:32]
 
-+ [ ] [[id:0a957f82-8e35-4bc3-a497-4f5d8a73dd49][Graphs in C]]
-+ [ ] [[https://www.youtube.com/watch?v=cFBERZBvLEM][Diksiyon ve Davranış Eğitimi]]
-+ [ ] [[https://www.youtube.com/watch?v=8qEnExGLZfY][Python Optimization]]
++ [ ] [[https://www.youtube.com/watch?v=uOCSNgDi694&list=PLmnKof5TajdfSFu75Z1aoGiBPi8Wjzjok][Graphs in C]] : [[file:20210613153621-programming.org][Programming]]
++ [ ] [[https://www.youtube.com/watch?v=cFBERZBvLEM][Diksiyon ve Davranış Eğitimi]] : [[file:20210613033811-diction.org][Diction]]
++ [ ] [[https://www.youtube.com/watch?v=4EBs1BDvuzk][Python Multiprocessing]] : [[file:20210613153621-programming.org][Programming]]
