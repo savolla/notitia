@@ -1,7 +1,0 @@
-#+TITLE: Society
-#+STARTUP: overview
-#+ROAM_TAGS: area index
-#+CREATED: [2021-06-13 Paz]
-#+LAST_MODIFIED: [2021-06-13 Paz 20:42]
-
-[[file:20210613052315-aptalı_tanımak.org][Aptalı Tanımak]]

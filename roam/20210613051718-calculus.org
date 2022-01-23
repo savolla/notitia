@@ -1,7 +1,0 @@
-#+TITLE: Calculus
-#+STARTUP: overview
-#+ROAM_TAGS: concept math area index
-#+CREATED: [2021-06-13 Paz]
-#+LAST_MODIFIED: [2021-06-13 Paz 05:17]
-
-+ [[file:20210613051510-calculus_early_transcendentals.org][Calculus: Early Transcendentals]]

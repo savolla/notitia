@@ -1,5 +1,0 @@
-#+TITLE: planet
-#+STARTUP: overview
-#+ROAM_TAGS: keyword
-#+CREATED: [2021-06-12 Cts]
-#+LAST_MODIFIED: [2021-06-12 Cts 20:27]

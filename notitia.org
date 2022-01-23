@@ -9098,10 +9098,10 @@ program bigger at the same time.
 5. GUI Bloopers 2.0: Common User Interface Design Don'ts and Dos
 
 ***** Mentality
-1. jThe Productive Programmer
-2. jExtreme Programming Explained: Embrace Change
-3. jCoders at Work: Reflections on the Craft of Programming
-4. jFacts and Fallacies of Software Engineering
+1. The Productive Programmer
+2. Extreme Programming Explained: Embrace Change
+3. Coders at Work: Reflections on the Craft of Programming
+4. Facts and Fallacies of Software Engineering
 
 ***** History
 1. Dreaming in Code: Two Dozen Programmers, Three Years, 4,732 Bugs, and One Quest for Transcendent Software

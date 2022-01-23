@@ -1,9 +1,0 @@
-#+TITLE: Currently Reading Books
-#+STARTUP: overview
-#+ROAM_TAGS: index
-#+CREATED: [2021-06-13 Paz]
-#+LAST_MODIFIED: [2021-06-13 Paz 04:59]
-
-+ [[file:20210613050047-computer_organization_and_design_the_hardware_software_interface.org][Computer Organization and Design: The Hardware/Software Interface]]
-+ [[file:20210613051510-calculus_early_transcendentals.org][Calculus: Early Transcendentals]]
-+ [[file:20210613052315-aptalı_tanımak.org][Aptalı Tanımak]]

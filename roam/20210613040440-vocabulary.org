@@ -1,8 +1,0 @@
-#+TITLE: Vocabulary
-#+STARTUP: overview
-#+ROAM_TAGS: index
-#+CREATED: [2021-06-13 Paz]
-#+LAST_MODIFIED: [2021-06-13 Paz 04:04]
-
-+ [[file:20210613040335-english.org][English]]
-+ [[file:20210613040904-русскии.org][Русский]]
