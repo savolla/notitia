@@ -1,24 +1,18 @@
 #+TITLE: Yocto
 
-* facts
-* howto
-** install
-*** installing on arch linux
-
+* how to
+** how to install yocto on arch linux
 1. install following packages
-
    #+begin_src sh
 sudo pacman -S git diffstat unzip texinfo python chrpath wget xterm sdl rpcsvc-proto socat cpio inetutils multilib-devel
    #+end_src
 
 2. clone the latest *yocto* repository
-
    #+begin_src sh
 git clone --branch morty git://git.yoctoproject.org/poky.git ~/poky
    #+end_src
 
 3. setup the environment for installation
-
    #+begin_src sh
 mkdir -p ~/bin
 ln -s /usr/bin/python2 ~/bin/python
@@ -27,7 +21,6 @@ export PATH=~/bin:$PATH
    #+end_src
 
 4. now go and configure your attributes
-
    #+begin_src sh
 cd ~/poky
 source oe-init-build-env build-qemux86
@@ -35,18 +28,15 @@ source oe-init-build-env build-qemux86
 
 5. now edit ~conf/local.conf~ file
 
-*** installing on ubuntu 18.04
-
+** how to install yocto on ubuntu 18.04
 I'm installing yocto on ubuntu since manjaro gave me errors...
 
 1. first install those
-
     #+begin_src sh
     sudo apt-get install git tar python vim sudo iputils-ping
     #+end_src
 
 2. then install thsese
-
    #+begin_src sh
 sudo apt-get install \
     gawk \
@@ -65,16 +55,21 @@ sudo apt-get install \
    #+end_src
 
 3. clone yocto
-
    #+begin_src sh
 git clone git://git.yoctoproject.org/poky
    #+end_src
-
-
-* concepts
+* what
 ** BSP
 ** poky
 ** bitbake
 tool for building *custom* linux images
 
-* problems & solutions
+* when
+* where
+** where is the yocto documentation?
+[[https://docs.yoctoproject.org/][here]]
+
+* who
+* which
+* why
+* if
