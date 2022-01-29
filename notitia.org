@@ -421,6 +421,15 @@ Triangle .up.|> Shape
 
    #+RESULTS:
    [[file:/tmp/babel-AKVKVd/plantuml-f7twXB.png]]
+***** pass 2D array into a cpp funciton
+#+begin_src cpp
+const int row = 2;
+const int column = 2;
+
+void function( int array[row][column] ) {
+    // your operations
+}
+#+end_src
 
 *** perl
 **** facts
@@ -5869,13 +5878,21 @@ now you see the value for x
    to your character object. add *edge collider* to the top of your ground
 ** qemu-kvm
 *** how
-**** how to mount a qcow2 image?
+**** <<mount the qcow2 image>>
 #+begin_src sh
 qemu-nbd --connect=/dev/nbd0 /path/to/your/vm-image.qcow2
 fdisk /dev/nbd0 -l
 mount /dev/nbd0p1 /mnt/your/mountpoint/
 #+end_src
+**** <<delete snapshots of qcow2 image>>
+#+begin_src sh
+qemu-img snapshot -l $PATH_TO_IMAGE                 # list all your snapshots
+qemu-img snapshot -d $SNAPTHOT_NAME $PATH_TO_IMAGE  # delete one of your snapshots
+#+end_src
+after that you
 *** why
+**** why qcow2 image size becomes bigger than the actual disk size?
+because of those snapshots you took. You can [[delete snapshots of qcow2 image]] to reduce it's size.
 *** what
 *** when
 *** where
