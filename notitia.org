@@ -5867,6 +5867,19 @@ now you see the value for x
 
 3. [2D] if you want your character stay on the ground, add *collider* and *rigid body*
    to your character object. add *edge collider* to the top of your ground
+** qemu-kvm
+*** how
+**** how to mount a qcow2 image?
+#+begin_src sh
+qemu-nbd --connect=/dev/nbd0 /path/to/your/vm-image.qcow2
+fdisk /dev/nbd0 -l
+mount /dev/nbd0p1 /mnt/your/mountpoint/
+#+end_src
+*** why
+*** what
+*** when
+*** where
+*** who
 
 * Concepts
 ** ORM
